@@ -143,7 +143,100 @@ reader = easyocr.Reader(["en"], gpu = False)
 positionResult = reader.readtext("img.jpg")
 contentResult = reader.readtext("img.jpg", detail = 0)
 
-# identify all compound names and ic50 values from the abstract image
+# identify the ic50 value from abstract image
+
+# find ic50 keyword location
+elements = []
+for element in positionResult:
+    if(ic50(element[1].lower())):
+        elements.append(element)
+
+# find the rightmost ic50 keyword
+position = []
+centerX = 0
+for element in elements:
+    localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
+    if(localCenterX > centerX):
+        centerX = localCenterX
+        position = element
+
+# check if ic50 keyword contains the required value
+valueFound = False
+for word in position[1].lower().split():
+    if("nm" in word):
+        valueFound = True
+        break
+
+# if ic50 keyword contains the value, retrieve the value
+if(valueFound):
+    pos = position[1].find("=")
+    if(pos == -1 or (pos + 1) >= len(position[1])):
+        valueFound = False
+    else:
+        ic50Value = position[1][pos + 1: ]
+
+# if no value is found in ic50 keyword
+else:
+    # find all keywords conataining "nm"
+    nmArr = []
+    for element in positionResult:
+        if("nm" in element[1].lower() and min(element[0][0][0], element[0][3][0]) >= max(position[0][1][0], position[0][2][0])):
+            nmArr.append(list(element))
+            nmArr[0][1] = nmArr[0][1].lower()
+    
+    for element in nmArr:
+        # if the keyword contains only "nm", needs to contain it with the number before it e.g.: keyword(50), keyword(nm), combined into keyword(50nm)
+        if(element[1].strip() == "nm"):
+
+            downY = max(element[0][2][1], element[0][3][1])
+            topY = min(element[0][0][1], element[0][1][1])
+            leftX = (element[0][0][0] + element[0][3][0]) / 2
+            rightX = (element[0][1][0] + element[0][2][0]) / 2
+            valueElement = []
+            xDistance = element[0][1][0]
+            for localElement in positionResult:
+                localCenterY = (localElement[0][0][1] + localElement[0][1][1] + localElement[0][2][1] + localElement[0][3][1]) / 4
+                # same y level as "nm" keyword
+                if(localCenterY <= downY and localCenterY >= topY):
+                    localRightX = (localElement[0][1][0] + localElement[0][2][0]) / 2
+                    # left of "nm" keyword
+                    if(localRightX < rightX):
+                        localxDistance = leftX - localRightX
+                        # closest to "nm" keyword
+                        if(localxDistance < xDistance):
+                            valueElement = localElement
+                            xDistance = localxDistance
+            
+            # combine keyword "nm" with the number before it
+            element[1] = valueElement[1] + element[1]
+            element[0][0] = valueElement[0][0]
+            element[0][3] = valueElement[0][3]
+
+    # find the corresponding value for the given "ic50" keyword
+    downY = max(position[0][2][1], position[0][3][1])
+    topY = min(position[0][0][1], position[0][1][1])
+    leftX = (position[0][0][0] + position[0][3][0]) / 2
+    rightX = (position[0][1][0] + position[0][2][0]) / 2
+    xDistance = position[0][1][0]
+    for element in nmArr:
+        localCenterY = (element[0][0][1] + element[0][1][1] + element[0][2][1] + element[0][3][1]) / 4
+        # same y level as "ic50" keyword
+        if(localCenterY <= downY and localCenterY >= topY):
+            localLeftX = (element[0][0][0] + element[0][3][0]) / 2
+            # right of "ic50" keyword
+            if(localLeftX > leftX):
+                localxDistance = localLeftX - rightX
+                # closest to "ic50" keyword
+                if(localxDistance < xDistance):
+                    ic50Value = element[1]
+                    localxDistance = xDistance
+
+if(ic50Value):
+    ic50Value = ic50Value.strip()
+    if(ic50Value[0] == "="):
+        ic50Value = ic50Value[1:]
+
+# identify all compound names from the abstract image
 compoundFound = False
 for word in contentResult:
     word = word.lower().strip()
@@ -159,16 +252,11 @@ for word in contentResult:
         if(compoundName(word)):
             compoundArr.append(word)
         compoundFound = False
-    
-    if("=" in word and "nm" in word):
-        ic50Arr.append(word)
 
 if(len(moleculeArr) > 0):
     molecule = moleculeArr[-1]
 if(len(compoundArr) > 0):
     compound = compoundArr[-1]
-if(len(ic50Arr) > 0):
-    ic50Value = ic50Arr[-1]
 
 moleculeArr.clear()
 compoundArr.clear()
@@ -183,7 +271,6 @@ for word in abstractText.split():
         compoundFound = True
         continue
     if(compoundFound):
-        print(word)
         if(compoundName(word)):
             compoundArr.append(word)
         compoundFound = False
