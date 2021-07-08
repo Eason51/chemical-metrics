@@ -1,3 +1,4 @@
+
 from html.parser import HTMLParser
 from chemdataextractor import Document
 import easyocr
@@ -7,18 +8,28 @@ TARGET = "janus kinase"
 fileId = 6
 DOMAIN = "https://pubs.acs.org"
 
+# hold title content after parsing html file
 titleText = ""
+# hold links to abstract images after parsing html file
 imgArr = []
+# hold abstract content after parsing html file
 abstractText = ""
 
+# hold all identified molecule names
 moleculeArr = []
+# hold all identified compound names
 compoundArr = []
+# hold all identified ic50 values
 ic50Arr = []
 
+# hold the molecule name
 molecule = ""
+# hold the compound name
 compound = ""
+# hold the ic50 value
 ic50Value = ""
 
+# identify whether a string is "ic50"
 def ic50(string):
     string = string.lower()
     pos = string.find("ic")
@@ -37,6 +48,7 @@ def ic50(string):
         return False
     return True
 
+# identify whether a string is in the form of a compound name
 def compoundName(string):
     if(string == ""):
         return False
@@ -46,9 +58,10 @@ def compoundName(string):
     if(len(string) >= 2 and string[:-1].isdigit() and string[-1].isalpha()):
         return True
 
-
+# open a file locally, should be retrieved through http request in real programs
 with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
 
+    # parsing a html file
     class TableParser(HTMLParser):
         def __init__(self):
             HTMLParser.__init__(self)
@@ -112,22 +125,25 @@ with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
             if(self.titleText and tag == "span"):
                 self.titleText = False
 
+    # parse the given html file with TableParser()
     tableParser = TableParser()
     tableParser.feed(inputFile.read())
 
     imgArr = tableParser.imgArr
     abstractText = tableParser.abstractText
 
+# find all identified molecule names inside of title
 doc = Document(titleText)
 for NR in doc:
     moleculeArr.append(NR.cems[0])
 
+# identify all text within the abstract image
 reader = easyocr.Reader(["en"], gpu = False)
 # retrieve picture through http request
 positionResult = reader.readtext("img.jpg")
 contentResult = reader.readtext("img.jpg", detail = 0)
 
-
+# identify all compound names and ic50 values from the abstract image
 compoundFound = False
 for word in contentResult:
     word = word.lower().strip()
@@ -158,6 +174,7 @@ moleculeArr.clear()
 compoundArr.clear()
 ic50Arr.clear()
 
+# identify all compound names and ic50 values from abstract text
 compoundFound = False
 ic50Found = False
 for word in abstractText.split():
