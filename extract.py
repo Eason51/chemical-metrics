@@ -2,7 +2,7 @@
 from html.parser import HTMLParser
 from chemdataextractor import Document
 import easyocr
-from torch._C import ConcreteModuleTypeBuilder
+
 
 TARGET = "janus kinase"
 fileId = 6
@@ -15,13 +15,6 @@ imgArr = []
 # hold abstract content after parsing html file
 abstractText = ""
 
-# hold all identified molecule names
-moleculeArr = []
-# hold all identified compound names
-compoundArr = []
-# hold all identified ic50 values
-ic50Arr = []
-
 # hold the molecule name
 molecule = ""
 # hold the compound name
@@ -29,7 +22,18 @@ compound = ""
 # hold the ic50 value
 ic50Value = ""
 
-# identify whether a string is "ic50"
+# Arr variables provide additional and alternative information, in case the identified molecule, compound, ic50value are incorrect
+
+# hold all identified molecule names
+moleculeArr = []
+# hold all identified compound names
+compoundArr = []
+# hold all identified ic50 values
+ic50Arr = []
+
+
+
+# identify whether a string is "ic50", OCR result could be "icso", "icSo" etc.
 def ic50(string):
     string = string.lower()
     pos = string.find("ic")
@@ -48,100 +52,136 @@ def ic50(string):
         return False
     return True
 
-# identify whether a string is in the form of a compound name
+# identify whether a string is in the form of a compound name, pure number like 18, or number followed by letter like 18ae
 def compoundName(string):
     if(string == ""):
         return False
     string = string.lower().strip()
     if(string.isdigit()):
         return True
-    if(len(string) >= 2 and string[:-1].isdigit() and string[-1].isalpha()):
+    if(len(string) >= 2 and string[0].isdigit()):
+        onlyDigit = True
+        for c in string:
+            if(not onlyDigit and not c.isalpha()):
+                return False
+            if(onlyDigit and not c.isdigit()):
+                onlyDigit = False
         return True
+    return False
 
+# identify whether a string is in the form of a molecule name, either pure letters, or contains numbers with dash("-")
+def moleculeName(string):
+    string = string.lower().strip()
+    if(string.isalpha()):
+        return True
+    hasNumber = False
+    hasDash = False
+    for letter in string:
+        if(letter.isdigit()):
+            hasNumber = True
+        elif(letter == "-"):
+            hasDash = True
+    if(hasNumber and not hasDash):
+        return False
+    return True
+
+
+# parsing a html file
+# --------------------------------------------------------------------------------------------------------------
+
+class TableParser(HTMLParser):
+    def __init__(self):
+        HTMLParser.__init__(self)
+
+        self.imgArr = []
+        self.abstractText = ""
+        self.boldAbstractTextArr = []
+
+        self.abstractFound = False
+        self.figureFound = False
+        self.imgLinkFound = False
+        self.textFound = False
+        self.boldTextFound = False
+
+        self.titleFound = False
+        self.titleText = False
+
+
+
+    def handle_starttag(self, tag, attrs):
+        if(tag == "div" and len(attrs) >= 1):
+            for attr in attrs:
+                if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
+                    self.abstractFound = True
+                    break
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
+            self.abstractText += " . "
+            self.abstractFound = False
+        if(self.abstractFound and tag == "figure"):
+            self.figureFound = True
+        if(self.figureFound and tag == "a" and len(attrs) >= 2):
+            title = link = ""
+            for attr in attrs:
+                if(attr[0] == "title"):
+                    title = attr[1]
+                elif(attr[0] == "href"):
+                    link = DOMAIN + attr[1]
+            if(title == "High Resolution Image"):
+                self.imgArr.append(link)
+        if(self.abstractFound and tag == "p" and len(attrs) == 1 and attrs[0][1] == "articleBody_abstractText"):
+            self.textFound = True
+        if(tag == "h1" and len(attrs) == 1 and attrs[0][1] == "article_header-title"):
+            self.titleFound =True
+        if(self.titleFound and tag == "span"):
+            self.titleText = True
+        if(self.textFound and tag == "b"):
+            self.boldTextFound = True
+
+
+    def handle_data(self, data):
+        if(self.textFound):
+            self.abstractText += data
+        if(self.titleText):
+            global titleText
+            titleText += data
+        if(self.boldTextFound):
+            self.boldAbstractTextArr.append(data)
+
+    
+    def handle_endtag(self, tag):
+        if(self.figureFound and tag == "figure"):
+            self.figureFound = False
+        if(self.textFound and tag == "p"):
+            self.textFound = False
+        if(self.titleFound and tag == "h1"):
+            self.titleFound = False
+        if(self.titleText and tag == "span"):
+            self.titleText = False
+        if(self.boldTextFound and tag == "b"):
+            self.boldTextFound = False
+
+
+
+tableParser = TableParser()
 # open a file locally, should be retrieved through http request in real programs
 with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
 
-    # parsing a html file
-    class TableParser(HTMLParser):
-        def __init__(self):
-            HTMLParser.__init__(self)
-
-            self.imgArr = []
-            self.abstractText = ""
-
-            self.abstractFound = False
-            self.figureFound = False
-            self.imgLinkFound = False
-            self.textFound = False
-
-            self.titleFound = False
-            self.titleText = False
-
-
-
-        def handle_starttag(self, tag, attrs):
-            if(tag == "div" and len(attrs) >= 1):
-                for attr in attrs:
-                    if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
-                        self.abstractFound = True
-                        break
-            if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
-                self.abstractText += " . "
-                self.abstractFound = False
-            if(self.abstractFound and tag == "figure"):
-                self.figureFound = True
-            if(self.figureFound and tag == "a" and len(attrs) >= 2):
-                title = link = ""
-                for attr in attrs:
-                    if(attr[0] == "title"):
-                        title = attr[1]
-                    elif(attr[0] == "href"):
-                        link = DOMAIN + attr[1]
-                if(title == "High Resolution Image"):
-                    self.imgArr.append(link)
-            if(self.abstractFound and tag == "p" and len(attrs) == 1 and attrs[0][1] == "articleBody_abstractText"):
-                self.textFound = True
-            if(tag == "h1" and len(attrs) == 1 and attrs[0][1] == "article_header-title"):
-                self.titleFound =True
-            if(self.titleFound and tag == "span"):
-                self.titleText = True
-
-
-        def handle_data(self, data):
-            if(self.textFound):
-                self.abstractText += data
-            if(self.titleText):
-                global titleText
-                titleText = data
-
-        
-        def handle_endtag(self, tag):
-            if(self.figureFound and tag == "figure"):
-                self.figureFound = False
-            if(self.textFound and tag == "p"):
-                self.textFound = False
-            if(self.titleFound and tag == "h1"):
-                self.titleFound = False
-            if(self.titleText and tag == "span"):
-                self.titleText = False
-
     # parse the given html file with TableParser()
-    tableParser = TableParser()
     tableParser.feed(inputFile.read())
-
     imgArr = tableParser.imgArr
     abstractText = tableParser.abstractText
 
-# find all identified molecule names inside of title
-doc = Document(titleText)
-for NR in doc:
-    moleculeArr.append(NR.cems[0])
+
+
+# process image information
+# --------------------------------------------------------------------------------------------------------------  
+
 
 # identify all text within the abstract image
 reader = easyocr.Reader(["en"], gpu = False)
 # retrieve picture through http request
-positionResult = reader.readtext("img.jpg")
-contentResult = reader.readtext("img.jpg", detail = 0)
+positionResult = reader.readtext(f"images/{TARGET}/image{fileId}.jpeg")
+
 
 # identify the ic50 value from abstract image
 
@@ -149,6 +189,8 @@ contentResult = reader.readtext("img.jpg", detail = 0)
 elements = []
 for element in positionResult:
     if(ic50(element[1].lower())):
+        elements.append(element)
+    elif("ic" in element[1].lower() and "nm" in element[1].lower()):
         elements.append(element)
 
 # find the rightmost ic50 keyword
@@ -160,6 +202,7 @@ for element in elements:
         centerX = localCenterX
         position = element
 
+
 # check if ic50 keyword contains the required value
 valueFound = False
 for word in position[1].lower().split():
@@ -170,6 +213,8 @@ for word in position[1].lower().split():
 # if ic50 keyword contains the value, retrieve the value
 if(valueFound):
     pos = position[1].find("=")
+    if(pos == -1):
+        pos = position[1].find(":")
     if(pos == -1 or (pos + 1) >= len(position[1])):
         valueFound = False
     else:
@@ -180,12 +225,13 @@ else:
     # find all keywords conataining "nm"
     nmArr = []
     for element in positionResult:
-        if("nm" in element[1].lower() and min(element[0][0][0], element[0][3][0]) >= max(position[0][1][0], position[0][2][0])):
+        # the "nm" keyword has to locate on the right of "ic50" keyword
+        if("nm" in element[1].lower() and (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4 >= min(position[0][1][0], position[0][2][0])):
             nmArr.append(list(element))
             nmArr[0][1] = nmArr[0][1].lower()
     
     for element in nmArr:
-        # if the keyword contains only "nm", needs to contain it with the number before it e.g.: keyword(50), keyword(nm), combined into keyword(50nm)
+        # if the keyword contains only "nm", needs to combine it with the number before it e.g.: keyword(50), keyword(nm), combined into keyword(50nm)
         if(element[1].strip() == "nm"):
 
             downY = max(element[0][2][1], element[0][3][1])
@@ -212,7 +258,7 @@ else:
             element[0][0] = valueElement[0][0]
             element[0][3] = valueElement[0][3]
 
-    # find the corresponding value for the given "ic50" keyword
+    # find the corresponding value for the given "ic50" keyword, e.g. "ic50 = 12nm", find keyword(12nm) on the right of "ic50"
     downY = max(position[0][2][1], position[0][3][1])
     topY = min(position[0][0][1], position[0][1][1])
     leftX = (position[0][0][0] + position[0][3][0]) / 2
@@ -233,11 +279,17 @@ else:
 
 if(ic50Value):
     ic50Value = ic50Value.strip()
-    if(ic50Value[0] == "="):
+    if(ic50Value[0] in ["=", ":"]):
         ic50Value = ic50Value[1:]
 
+
+
 # identify all compound names from the abstract image
+contentResult = []
+for element in positionResult:
+    contentResult.append(element[1])
 compoundFound = False
+# identify all "compound" keyword and the name after it
 for word in contentResult:
     word = word.lower().strip()
     if(word == "compound"):
@@ -253,32 +305,133 @@ for word in contentResult:
             compoundArr.append(word)
         compoundFound = False
 
-if(len(moleculeArr) > 0):
-    molecule = moleculeArr[-1]
-if(len(compoundArr) > 0):
-    compound = compoundArr[-1]
+if(len(compoundArr) == 1):
+    compound = compoundArr[0]
 
-moleculeArr.clear()
+
+if(not compound):
+    compoundPosArr = []
+    # find all keyword in the form of a compound name
+    for element in positionResult:
+        if(compoundName(element[1]) and "nm" not in element[1].lower()):
+            compoundPosArr.append(element)
+    
+    # find the centerX of all identified keyword
+    tempArr = []
+    for element in compoundPosArr:
+        centerX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
+        tempArr.append([centerX, element[1]])
+    tempArr.sort(reverse=True)
+
+    # use the rightmost keyword as compound name
+    if(len(tempArr) > 0):
+        compound = tempArr[0][1]
+
+
 compoundArr.clear()
 ic50Arr.clear()
 
-# identify all compound names and ic50 values from abstract text
+
+# process text information
+# --------------------------------------------------------------------------------------------------------------
+
+# find all identified molecule names inside of title
+doc = Document(titleText)
+for NR in doc.cems:
+    moleculeArr.append(NR.text)
+tempArr = []
+for name in moleculeArr:
+    if(moleculeName(name)):
+        tempArr.append(name)
+moleculeArr = tempArr # moleculeArr contains all chemistry named entities found in the title
+
+if(len(moleculeArr) == 1):
+    molecule = moleculeArr[0]
+    moleculeArr.clear()
+else:
+    # if there's multiple named entities in title, then use abstract text to help identification
+    titleMoleculeArr = moleculeArr.copy()
+    moleculeArr.clear()
+    
+    doc = Document(abstractText)
+    for NR in doc.cems:
+        moleculeArr.append(NR.text)
+    textArr = []
+    for name in moleculeArr:
+        if(moleculeName(name)):
+            textArr.append(name)
+    
+    if(len(titleMoleculeArr) == 0):
+        moleculeArr = textArr.copy()
+    elif(len(textArr) == 0):
+        moleculeArr = titleMoleculeArr.copy()
+    else:
+        # find named entities that appear both in title and in abstract text
+        moleculeArr = list(set(titleMoleculeArr).intersection(textArr))
+        if(len(moleculeArr) == 0):
+            moleculeArr = titleMoleculeArr.copy()
+    
+    if(len(moleculeArr) == 1):
+        molecule = moleculeArr[0]
+
+
+
+
+# identify compound name from abstract text, comppound names are always in bold ( <b>keyword</b> )
+compoundArr = tableParser.boldAbstractTextArr.copy()
+# find all keywords in the form of compound name
+tempArr = []
+for name in compoundArr:
+    if(compoundName(name)):
+        tempArr.append(name)
+
+# find the frequency of occurrence of each keyword in abstract text
+compoundArr.clear()
+for name in tempArr:
+    nameFound = False
+    for freqName in compoundArr:
+        if(freqName[1] == name):
+            freqName[0] += 1
+            nameFound = True
+            break
+    if(not nameFound):
+        compoundArr.append([1, name])
+compoundArr.sort(reverse=True)
+
+tempArr.clear()
+if(len(compoundArr) > 0):
+    # find all keywords with the highest frequency of occurrence
+    maxFreq = compoundArr[0][0]
+    for freqName in compoundArr:
+        if(freqName[0] == maxFreq):
+            tempArr.append([-1, freqName[1]])
+    
+    # find the position where the keyword is in abstract text
+    # if there are multiple keywords have the highest frequency, select the one occurs last in text
+    for posName in tempArr:
+        position = len(tableParser.boldAbstractTextArr) - 1
+        while(position >= 0):
+            if(tableParser.boldAbstractTextArr[position] == posName[1]):
+                posName[0] = position
+                break
+            position -= 1
+    
+    tempArr.sort(reverse=True)
+    compoundArr = tempArr.copy()
+
+
+
+# identify all ic50 values from abstract text
 compoundFound = False
 ic50Found = False
 for word in abstractText.split():
     word = word.lower().strip()
-    if("compound" in word):
-        compoundFound = True
-        continue
-    if(compoundFound):
-        if(compoundName(word)):
-            compoundArr.append(word)
-        compoundFound = False
     
     if(ic50(word)):
         ic50Found = True
+        ic50Arr.append("")
     if(ic50Found):
-        ic50Arr.append(word)
+        ic50Arr[-1] += (word + " ")
         if("nm" in word):
             ic50Found = False
 
