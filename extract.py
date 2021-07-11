@@ -1,4 +1,4 @@
-
+import requests
 from html.parser import HTMLParser
 from chemdataextractor import Document
 import easyocr
@@ -7,6 +7,14 @@ import easyocr
 TARGET = "janus kinase"
 fileId = 6
 DOMAIN = "https://pubs.acs.org"
+
+
+# fullname and abbreviation is used in ic50 extraction in abstract image
+# stores the fullname of the target gene, omit number, e.g. if target is "jak1", fullname is "janus kinase"
+FULLNAME = ""
+# stores the abbreviation of the target gene, omit number, e.g. if target is "jak1", abbreviation is "jak"
+ABBREVIATION = ""
+
 
 # hold title content after parsing html file
 titleText = ""
@@ -84,6 +92,119 @@ def moleculeName(string):
     if(hasNumber and not hasDash):
         return False
     return True
+
+
+
+
+
+
+# find FULLNAME and ABBREVIATION of TARGET
+# --------------------------------------------------------------------------------------------------------------
+
+# trim the number at the end of TARGET
+i = len(TARGET) - 1
+while(i >= 0):
+    if(not TARGET[i].isalpha()):
+        i -= 1
+    else:
+        break
+queryTarget = TARGET[:i + 1]
+
+# target name identification is performed through an online database: http://allie.dbcls.jp/
+# at this point, the user might input a fullname or an abbreviation, so it needs to be queried twice
+
+# queryLongUrl: treat the input as a fullname, find abbreviation
+queryLongUrl = f"https://allie.dbcls.jp/long/exact/Any/{queryTarget.lower()}.html"
+# queryShortUrl: treat the input as an abbreviation, find fullname
+queryShortUrl = f"https://allie.dbcls.jp/short/exact/Any/{queryTarget.lower()}.html"
+
+longResponse = requests.get(queryLongUrl)
+shortReponse = requests.get(queryShortUrl)
+
+# Parsers cannot exit from inside, the reset() method needs to be called from outside
+def exitParser(parser):
+    parser.reset()
+
+# Parse the reponse from online enquiry and store useful information
+class TargetParser(HTMLParser):
+    def __init__(self, ):
+        HTMLParser.__init__(self)
+
+        self.tableFound = False
+        self.resultFound = False
+        # the returned abbreviation or full name
+        self.result = ""
+        self.columnNum = 0
+        self.frequencyFound = False
+        # frequency of occurrence of self.result found in database
+        self.frequency = 0
+
+    
+    def handle_starttag(self, tag, attrs):
+        if(tag == "table"):
+            self.tableFound = True
+        if(tag == "table" and len(attrs) > 0):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "sortable"):
+                    self.resultFound = True
+        if(self.resultFound and tag == "td"):
+            self.columnNum += 1
+        if(self.columnNum == 2 and tag == "div"):
+            exitParser(self)
+        if(self.columnNum == 2 and tag == "br"):
+            self.frequencyFound = True
+
+    
+    def handle_data(self, data):
+        if(self.frequencyFound):
+            frequencyStr = ""
+            for c in data:
+                if(c.isdigit()):
+                    frequencyStr += c
+            self.frequency = int(frequencyStr)
+            return
+        if(self.columnNum == 2):
+            self.result += data
+        if(self.tableFound):
+            if("not found" in data):
+                exitParser(self)
+
+    
+    def handle_endtag(self, tag):
+        if(self.resultFound and tag == "table"):
+            self.resultFound = False
+        if(self.tableFound and tag == "table"):
+            self.tableFound = False
+
+
+longParser = TargetParser()
+shortParser = TargetParser()
+try:
+    longParser.feed(longResponse.text)    
+except AssertionError as ae:
+    pass
+
+try:
+    shortParser.feed(shortReponse.text)
+except AssertionError as ae:
+    pass
+
+longForm = shortParser.result.lower().strip()
+longFrequency = shortParser.frequency
+shortForm = longParser.result.lower().strip()
+shortFrequency = longParser.frequency
+
+# if the input is a full name, shortFrequency will be 0, the input will be FULLNAME, vice versa.
+if(shortFrequency > longFrequency):
+    FULLNAME = queryTarget
+    ABBREVIATION = shortForm
+else:
+    FULLNAME = longForm
+    ABBREVIATION = queryTarget
+
+
+
+
 
 
 # parsing a html file
