@@ -36,6 +36,7 @@ class Table:
         class Row:
 
             def __init__(self):
+                # a cell may hold empty string, if html element is "&nbsp"
                 self.cells = [] # list[str]
 
         def __init__(self):
@@ -54,10 +55,14 @@ class TableParser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
 
+        # enable this flag to skip handle_data for the next element
         self.disableRead = False
 
+        # the link(s) to access abstract image
         self.imgArr = []
+        # complete abstract text content
         self.abstractText = ""
+        # all elements in abstract text in bold (<b></b>)
         self.boldAbstractTextArr = []
 
         self.abstractFound = False
@@ -69,20 +74,25 @@ class TableParser(HTMLParser):
         self.titleFound = False
         self.titleText = False
 
+        # a BodyText object to hold the content of body text
         self.bodyText = BodyText()
         self.newSectionFound = False
         self.sectionTitleFound = False
         self.paragraphFound = False
         self.paragraphDivCount = 0
+        # hold the content of the paragraph currently being parsed
         self.paragraphText = ""
         self.paragraphHeaderFound = False
+        # hold the title for the currently parsed paragraph (could be empty)
         self.paragraphHeader = ""
 
+        # hold all the Table objects contained in the current article
         self.tables = [] # list[Table]
         self.tableFound = False
         self.tableDivCount = 0
         self.tableCaptionFound = False
         self.tableCaptionDivCount = 0
+        # hold the caption of the table currently being parsed
         self.tableCaption = ""
 
         self.tableGridFound = False
@@ -90,16 +100,20 @@ class TableParser(HTMLParser):
         self.gridHeaderFound = False
         self.cellFound = False
         self.gridBodyFound = False
+        # hold the content of the current parsing cell
+        self.cell = ""
+        self.cellSpace = False
 
         self.tableDescriptionFound = False
         self.tableDescriptionDivCount = 0
         self.tableFootnoteFound = False
         
-        
-
 
 
     def handle_starttag(self, tag, attrs):
+        
+        # handle title, abstract image and abstract text
+
         if(tag == "div" and len(attrs) >= 1):
             for attr in attrs:
                 if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
@@ -128,6 +142,8 @@ class TableParser(HTMLParser):
         if(self.textFound and tag == "b"):
             self.boldTextFound = True
 
+        #handle body text
+        
         if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
             self.sectionTitleFound = True
             self.newSectionFound = True
@@ -141,6 +157,8 @@ class TableParser(HTMLParser):
                 if(attr[0] == "class" and attr[1] == "article-section__title"):
                     self.paragraphHeaderFound = True
 
+        # handle table caption
+        
         if(tag == "div" and len(attrs) > 1):
             for attr in attrs:
                 if(attr[0] == "class" and attr[1] == "NLM_table-wrap"):
@@ -161,6 +179,8 @@ class TableParser(HTMLParser):
         if(self.tableCaptionFound and tag == "a"):
             self.disableRead = True
         
+        # handle table grid
+        
         if(self.tableFound and tag == "table"):
             self.tableGridFound = True
         if(self.tableGridFound and tag == "colgroup"):
@@ -179,6 +199,12 @@ class TableParser(HTMLParser):
             self.tables[-1].grid.body.append(Table.Grid.Row())
         if(self.gridBodyFound and tag == "td"):
             self.cellFound = True
+        if(self.cellFound and tag == "sup"):
+            self.cellSpace = True
+        if(self.cellFound and tag == "br"):
+            self.cell += " "
+        
+        # handle table description
         
         if(self.tableFound and (not self.tableCaptionFound) and (not self.tableGridFound) and tag == "div" and len(attrs) > 0):
             for attr in attrs:
@@ -196,15 +222,17 @@ class TableParser(HTMLParser):
         if(self.tableFootnoteFound and tag in ["sup", "a"]):
             self.disableRead = True
 
-        
-
-        
 
 
     def handle_data(self, data):
         if(self.disableRead):
             return
-        
+        if(self.cellSpace):
+            self.cell += " "
+            return
+
+        # handle title and abstract
+
         if(self.textFound):
             self.abstractText += data
         if(self.titleText):
@@ -213,10 +241,14 @@ class TableParser(HTMLParser):
         if(self.boldTextFound):
             self.boldAbstractTextArr.append(data)
         
+        # handle body text
+
+        # found a new section, append the section to bodyText
         if(self.newSectionFound):
             section = BodyText.Section(data)
             self.bodyText.sections.append(section)
             self.newSectionFound = False
+            # ignore any content after references
             if(data == "References"):
                 exitParser(self)
         if(self.paragraphFound):
@@ -224,19 +256,26 @@ class TableParser(HTMLParser):
         if(self.paragraphHeaderFound):
             self.paragraphHeader += data
 
+        # handle Tables
+
         if(self.tableCaptionFound):
             self.tableCaption += data
         if(self.gridHeaderFound and self.cellFound):
-            self.tables[-1].grid.header[-1].cells.append(data)
+            self.cell += data            
         if(self.gridBodyFound and self.cellFound):
-            self.tables[-1].grid.body[-1].cells.append(data)
+            self.cell += data
         if(self.tableFootnoteFound):
             self.tables[-1].descriptions[-1] += data
 
     
     def handle_endtag(self, tag):
+       
+        # handle title and abstract
+        
         if(self.disableRead):
             self.disableRead = False
+        if(self.cellSpace):
+            self.cellSpace = False
         if(self.figureFound and tag == "figure"):
             self.figureFound = False
         if(self.textFound and tag == "p"):
@@ -248,8 +287,11 @@ class TableParser(HTMLParser):
         if(self.boldTextFound and tag == "b"):
             self.boldTextFound = False
         
+        # handle body text
+        
         if(self.sectionTitleFound and tag == "div"):
             self.sectionTitleFound = False
+        # found the end of a paragraph, append the content to the last section
         if(self.paragraphFound and tag == "div" and self.paragraphDivCount == 1):
             if(len(self.bodyText.sections[-1].paragraphs) == 0):
                 newParagraph = BodyText.Section.Paragraph()
@@ -260,12 +302,15 @@ class TableParser(HTMLParser):
             self.paragraphDivCount -= 1
         elif(self.paragraphFound and tag == "div" and self.paragraphDivCount > 1):
             self.paragraphDivCount -= 1
+        # found a paragraph header, append a new paragraph with header to the last section
         if(self.paragraphHeaderFound and tag == "h3"):
             self.paragraphHeaderFound = False
             newParagraph = BodyText.Section.Paragraph(self.paragraphHeader)
             self.bodyText.sections[-1].paragraphs.append(newParagraph)
             self.paragraphHeader = ""
         
+        # handle table caption
+
         if(self.tableFound and tag == "div" and self.tableDivCount == 1):
             self.tableFound = False
             self.tableDivCount -= 1
@@ -279,6 +324,8 @@ class TableParser(HTMLParser):
         elif(self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount > 1):
             self.tableCaptionDivCount -= 1
         
+        # handle table grip
+
         if(self.tableGridFound and tag == "table"):
             self.tableGridFound = False
         if(self.tableColCountFound and tag == "colgroup"):
@@ -286,11 +333,17 @@ class TableParser(HTMLParser):
         if(self.gridHeaderFound and tag == "thead"):
             self.gridHeaderFound = False
         if(self.gridHeaderFound and tag == "th" and self.cellFound):
+            self.tables[-1].grid.header[-1].cells.append(self.cell)
+            self.cell = ""
             self.cellFound = False
         if(self.gridBodyFound and tag == "tbody"):
             self.gridBodyFound = False
         if(self.gridBodyFound and tag == "td" and self.cellFound):
+            self.tables[-1].grid.body[-1].cells.append(self.cell)
+            self.cell = ""
             self.cellFound = False
+
+        # handle table description
 
         if(self.tableDescriptionFound and self.tableDescriptionDivCount == 1 and tag == "div"):
             self.tableDescriptionDivCount -= 1
@@ -300,10 +353,7 @@ class TableParser(HTMLParser):
         if(self.tableFootnoteFound and tag == "div"):
             self.tableFootnoteFound = False
         
-        
-
-
-
+    
 
 tableParser = TableParser()
 # open a file locally, should be retrieved through http request in real programs
@@ -345,15 +395,16 @@ with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
         print()
         print("grid header: ")
         for row in table.grid.header:
-            print("row: ", end=" ")
+            print("row: ", end="   ")
             for cell in row.cells:
-                print(cell, end="  ")
+                print(cell, end="   ")
             print()
         
         print()
         print("grid body: ")
         for row in table.grid.body:
-            print("row: ", end=" ")
+            print("row: ", end="   ")
             for cell in row.cells:
-                print(cell, end="  ")
+                print(cell, end="   ")
             print()
+
