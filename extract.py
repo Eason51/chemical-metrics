@@ -6,7 +6,7 @@ import easyocr
 
 
 TARGET = "janus kinase"
-fileId = 5
+fileId = 6
 DOMAIN = "https://pubs.acs.org"
 
 
@@ -583,10 +583,32 @@ with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
 
 
 
+
+# retrieve target information
+# -------------------------------------------------------------------------------------------------------------- 
+
+# find occurrences of target fullname and abbreviation in title
 number = ""
 fullIndex = titleText.lower().rfind(FULLNAME)
 abbrIndex = titleText.lower().rfind(ABBREVIATION)
-if((fullIndex + len(FULLNAME) + 1) < len(titleText) and (abbrIndex + len(ABBREVIATION) + 1) < len(titleText)):
+# find the number following the target name, e.g. "jak3", find "3" after "jak"
+if(fullIndex == -1 and abbrIndex == -1):
+    pass
+# if only fullname is found
+elif(fullIndex != -1 and (fullIndex + len(FULLNAME) + 1) < len(titleText)):    
+    index = fullIndex + len(FULLNAME) + 1
+    while(titleText[index].isdigit()):
+        number += titleText[index]
+        index += 1
+# if only abbreviation is found
+elif(abbrIndex != -1 and (abbrIndex + len(FULLNAME) + 1) < len(titleText)):
+    index = abbrIndex + len(ABBREVIATION) + 1
+    while(titleText[index].isdigit()):
+        number += titleText[index]
+        index += 1
+# of both fullname and abbreviation are found
+elif((fullIndex + len(FULLNAME) + 1) < len(titleText) and (abbrIndex + len(ABBREVIATION) + 1) < len(titleText)):
+    # abbreviation is preferred over fullname
     index = abbrIndex + len(ABBREVIATION) + 1
     while(titleText[index].isdigit()):
         number += titleText[index]
@@ -596,23 +618,16 @@ if((fullIndex + len(FULLNAME) + 1) < len(titleText) and (abbrIndex + len(ABBREVI
         while(titleText[index].isdigit()):
             number += titleText[index]
             index += 1
-elif((fullIndex + len(FULLNAME) + 1) < len(titleText)):    
-    index = fullIndex + len(FULLNAME) + 1
-    while(titleText[index].isdigit()):
-        number += titleText[index]
-        index += 1
-elif((abbrIndex + len(FULLNAME) + 1) < len(titleText)):
-    index = abbrIndex + len(ABBREVIATION) + 1
-    while(titleText[index].isdigit()):
-        number += titleText[index]
-        index += 1
 
+# use abbreviation and the identfied number as the target name to look for in the image
 if(number):
     focusedTarget = ABBREVIATION + number
 
+# if targetname is not found in the title, search in the abstract text
 if(not focusedTarget):
     targetArr = []
 
+    # find every full target name in the abstract text, record its frequency and last occurred position
     index = 0
     while(index >= 0 and index < len(abstractText)):
         index = abstractText.lower().find(FULLNAME, index)
@@ -640,7 +655,7 @@ if(not focusedTarget):
             index += 1
                 
 
-    
+    # find every abbreviatioin target name in the abstract text, record its frequency and last occurred position
     index = 0
     while(index >= 0 and index < len(abstractText)):
         index = abstractText.lower().find(ABBREVIATION, index)
@@ -667,11 +682,10 @@ if(not focusedTarget):
         elif(index != -1):
             index += 1        
         
-    
+    #sort target names first by frequency, then by last occured position
     if(len(targetArr) > 0):
         targetArr.sort(reverse=True)
         focusedTarget = targetArr[0][2]
-
 
 
 
@@ -698,7 +712,7 @@ for element in positionResult:
         elements.append(element)
         leftX = min(element[0][0][0], element[0][3][0])
         rightX = max(element[0][1][0], element[0][2][0])
-        xrangeArr.append([leftX, rightX])        
+        xrangeArr.append([leftX, rightX, element[1]])        
 
 
 # find the rightmost ic50 keyword
@@ -711,7 +725,7 @@ for element in elements:
     
     localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
     for range in xrangeArr:
-        if(localCenterX >= range[0] and localCenterX <= range[1]):
+        if(localCenterX >= range[0] and localCenterX <= range[1] and element[1] != range[2]):
             needTarget = True
             break
     if(localCenterX > centerX):
@@ -801,42 +815,68 @@ if((not needTarget) and len(position) > 0):
 
 
 
-
+# if multiple ic50 values exist for one compound, need to use target name to identify
 if((not ic50Value) and focusedTarget):
     targetArr = []
 
+    # find all tokens containing target name
     for element in positionResult:
         if(focusedTarget in element[1].lower()):
             centerX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
             targetArr.append([centerX, element])
 
+    # sort with the rightmost first
     targetArr.sort(reverse=True)
-    if(len(targetArr) > 0):
-        targetElement = targetArr[0][1]
-        centerX = targetArr[0][0]
-        topY = min(targetElement[0][0][1], targetElement[0][1][1])
-        downY = max(targetElement[0][2][1], targetElement[0][3][1])
 
-        elementArr = []
-        for element in positionResult:
-            localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
-            if(localCenterX > centerX):
-                localCenterY = (element[0][0][1] + element[0][1][1] + element[0][2][1] + element[0][3][1]) / 4
-                if(localCenterY >= topY and localCenterY <= downY):
-                    elementArr.append([localCenterX, element])
-        
-        elementArr.sort()
-        if(len(elementArr) > 0):
-            identifiedString = targetElement[1]
-            for element in elementArr:
-                identifiedString += element[1][1]
-                index = identifiedString.find("=")
-                if(index == -1):
-                    index = identifiedString.find(":")
-                if(index != -1 and (index + 1) < len(identifiedString)):
-                    ic50Value = identifiedString[index + 1:]
-                else:
-                    ic50Value = identifiedString
+    if(len(targetArr) > 0):
+        for target in targetArr:
+            targetElement = target[1]
+
+            # if the value is already contained in the token
+            if(":" in targetElement[1] or "=" in targetElement[1]):
+                hasDigit = False
+                for c in targetElement[1]:
+                    if(c.isdigit()):
+                        hasDigit = True
+                        break
+                if(hasDigit):
+                    ic50Value = targetElement[1]
+                    break
+
+            centerX = targetArr[0][0]
+            topY = min(targetElement[0][0][1], targetElement[0][1][1])
+            downY = max(targetElement[0][2][1], targetElement[0][3][1])
+
+            # find all tokens to the right of the target name
+            elementArr = []
+            for element in positionResult:
+                localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
+                if(localCenterX > centerX):
+                    localCenterY = (element[0][0][1] + element[0][1][1] + element[0][2][1] + element[0][3][1]) / 4
+                    if(localCenterY >= topY and localCenterY <= downY):
+                        elementArr.append([localCenterX, element])
+            
+            # arrange the identified tokens from left to right, append them all into a string
+            elementArr.sort()
+            if(len(elementArr) > 0):
+                identifiedString = targetElement[1]
+                for element in elementArr:
+                    identifiedString += element[1][1]
+                    index = identifiedString.find("=")
+                    if(index == -1):
+                        index = identifiedString.find(":")
+                    if(index != -1 and (index + 1) < len(identifiedString)):
+                        ic50Value = identifiedString[index :]
+                    else:
+                        ic50Value = identifiedString
+                    
+
+                    if(":" not in ic50Value and "=" not in ic50Value):
+                        ic50Value = ""
+                    
+            # if the rightmost target name has no value, check the target names on its left
+            if(ic50Value):
+                break
 
 
 
