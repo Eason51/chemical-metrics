@@ -1,3 +1,4 @@
+from re import L
 import requests
 from html.parser import HTMLParser
 from chemdataextractor import Document
@@ -5,7 +6,7 @@ import easyocr
 
 
 TARGET = "janus kinase"
-fileId = 6
+fileId = 5
 DOMAIN = "https://pubs.acs.org"
 
 
@@ -15,6 +16,8 @@ FULLNAME = ""
 # stores the abbreviation of the target gene, omit number, e.g. if target is "jak1", abbreviation is "jak"
 ABBREVIATION = ""
 
+focusedTarget = ""
+
 
 # hold title content after parsing html file
 titleText = ""
@@ -22,6 +25,13 @@ titleText = ""
 imgArr = []
 # hold abstract content after parsing html file
 abstractText = ""
+
+# BodyText object for holding body text
+bodyText = None
+# Table object for holding tables
+tables = None
+
+
 
 # hold the molecule name
 molecule = ""
@@ -40,6 +50,50 @@ compoundArr = []
 ic50Arr = []
 
 
+# Classes for holding the content and structure of body text and tables
+
+class BodyText:
+    
+    class Section:
+        
+        class Paragraph:
+            def __init__(self, header = ""):
+                self.header = header
+                self.contents = [] # list[str]
+        
+        def __init__(self, title):
+            self.title = title
+            self.paragraphs = [] # list[self.Paragraph]
+    
+    def __init__(self):
+        self.sections = [] # list[self.Section]
+
+
+class Table:
+
+    class Grid:
+
+        class Row:
+
+            def __init__(self):
+                # a cell may hold empty string, if html element is "&nbsp"
+                self.cells = [] # list[str]
+
+        def __init__(self):
+            self.columnNum = 0
+            self.header = [] # list[self.Row]
+            self.body = [] # list[self.Row]
+
+    def __init__(self):
+        self.caption = ""
+        self.descriptions = [] # list[str]
+        self.grid = self.Grid()
+
+
+
+# Parsers cannot exit from inside, the reset() method needs to be called from outside
+def exitParser(parser):
+    parser.reset()
 
 # identify whether a string is "ic50", OCR result could be "icso", "icSo" etc.
 def ic50(string):
@@ -121,9 +175,7 @@ queryShortUrl = f"https://allie.dbcls.jp/short/exact/Any/{queryTarget.lower()}.h
 longResponse = requests.get(queryLongUrl)
 shortReponse = requests.get(queryShortUrl)
 
-# Parsers cannot exit from inside, the reset() method needs to be called from outside
-def exitParser(parser):
-    parser.reset()
+
 
 # Parse the reponse from online enquiry and store useful information
 class TargetParser(HTMLParser):
@@ -214,8 +266,14 @@ class TableParser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
 
+        # enable this flag to skip handle_data for the next element
+        self.disableRead = False
+
+        # the link(s) to access abstract image
         self.imgArr = []
+        # complete abstract text content
         self.abstractText = ""
+        # all elements in abstract text in bold (<b></b>)
         self.boldAbstractTextArr = []
 
         self.abstractFound = False
@@ -227,9 +285,46 @@ class TableParser(HTMLParser):
         self.titleFound = False
         self.titleText = False
 
+        # a BodyText object to hold the content of body text
+        self.bodyText = BodyText()
+        self.newSectionFound = False
+        self.sectionTitleFound = False
+        self.paragraphFound = False
+        self.paragraphDivCount = 0
+        # hold the content of the paragraph currently being parsed
+        self.paragraphText = ""
+        self.paragraphHeaderFound = False
+        # hold the title for the currently parsed paragraph (could be empty)
+        self.paragraphHeader = ""
+
+        # hold all the Table objects contained in the current article
+        self.tables = [] # list[Table]
+        self.tableFound = False
+        self.tableDivCount = 0
+        self.tableCaptionFound = False
+        self.tableCaptionDivCount = 0
+        # hold the caption of the table currently being parsed
+        self.tableCaption = ""
+
+        self.tableGridFound = False
+        self.tableColCountFound = False
+        self.gridHeaderFound = False
+        self.cellFound = False
+        self.gridBodyFound = False
+        # hold the content of the current parsing cell
+        self.cell = ""
+        self.cellSpace = False
+
+        self.tableDescriptionFound = False
+        self.tableDescriptionDivCount = 0
+        self.tableFootnoteFound = False
+        
 
 
     def handle_starttag(self, tag, attrs):
+        
+        # handle title, abstract image and abstract text
+
         if(tag == "div" and len(attrs) >= 1):
             for attr in attrs:
                 if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
@@ -258,8 +353,97 @@ class TableParser(HTMLParser):
         if(self.textFound and tag == "b"):
             self.boldTextFound = True
 
+        #handle body text
+        
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
+            self.sectionTitleFound = True
+            self.newSectionFound = True
+        if(tag == "div" and len(attrs) == 1 and "NLM_p" in attrs[0][1]):
+            self.paragraphFound = True
+            self.paragraphDivCount += 1
+        elif(self.paragraphFound and tag == "div"):
+            self.paragraphDivCount += 1
+        if(tag == "h3" and len(attrs) > 0):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "article-section__title"):
+                    self.paragraphHeaderFound = True
+
+        # handle table caption
+        
+        if(tag == "div" and len(attrs) > 1):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "NLM_table-wrap"):
+                    self.tableFound = True
+                    self.tableDivCount += 1
+                    self.tables.append(Table())
+                    return
+        if(self.tableFound and tag == "div"):
+            self.tableDivCount += 1
+        if(self.tableFound and tag == "div" and len(attrs) > 0):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "NLM_caption"):
+                    self.tableCaptionFound = True
+                    self.tableCaptionDivCount += 1
+                    return
+        if(self.tableCaptionFound and tag == "div"):
+            self.tableCaptionDivCount += 1
+        if(self.tableCaptionFound and tag == "a"):
+            self.disableRead = True
+        
+        # handle table grid
+        
+        if(self.tableFound and tag == "table"):
+            self.tableGridFound = True
+        if(self.tableGridFound and tag == "colgroup"):
+            self.tableColCountFound = True
+        if(self.tableColCountFound and tag == "col"):
+            self.tables[-1].grid.columnNum += 1
+        if(self.tableGridFound and tag == "thead"):
+            self.gridHeaderFound = True
+        if(self.gridHeaderFound and tag == "tr"):
+            self.tables[-1].grid.header.append(Table.Grid.Row())
+        if(self.gridHeaderFound and tag == "th"):
+            self.cellFound = True
+        if(self.tableGridFound and tag == "tbody"):
+            self.gridBodyFound = True
+        if(self.gridBodyFound and tag == "tr"):
+            self.tables[-1].grid.body.append(Table.Grid.Row())
+        if(self.gridBodyFound and tag == "td"):
+            self.cellFound = True
+        if(self.cellFound and tag == "sup"):
+            self.cellSpace = True
+        if(self.cellFound and tag == "br"):
+            self.cell += " "
+        
+        # handle table description
+        
+        if(self.tableFound and (not self.tableCaptionFound) and (not self.tableGridFound) and tag == "div" and len(attrs) > 0):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "NLM_table-wrap-foot"):
+                    self.tableDescriptionFound = True
+                    self.tableDescriptionDivCount += 1
+                    return
+        if(self.tableDescriptionFound and tag == "div"):
+            self.tableDescriptionDivCount += 1
+        if(self.tableDescriptionFound and tag == "div" and len(attrs) > 0):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "footnote"):
+                    self.tableFootnoteFound = True
+                    self.tables[-1].descriptions.append("")
+        if(self.tableFootnoteFound and tag in ["sup", "a"]):
+            self.disableRead = True
+
+
 
     def handle_data(self, data):
+        if(self.disableRead):
+            return
+        if(self.cellSpace):
+            self.cell += " "
+            return
+
+        # handle title and abstract
+
         if(self.textFound):
             self.abstractText += data
         if(self.titleText):
@@ -267,9 +451,42 @@ class TableParser(HTMLParser):
             titleText += data
         if(self.boldTextFound):
             self.boldAbstractTextArr.append(data)
+        
+        # handle body text
+
+        # found a new section, append the section to bodyText
+        if(self.newSectionFound):
+            section = BodyText.Section(data)
+            self.bodyText.sections.append(section)
+            self.newSectionFound = False
+            # ignore any content after references
+            if(data == "References"):
+                exitParser(self)
+        if(self.paragraphFound):
+            self.paragraphText += data
+        if(self.paragraphHeaderFound):
+            self.paragraphHeader += data
+
+        # handle Tables
+
+        if(self.tableCaptionFound):
+            self.tableCaption += data
+        if(self.gridHeaderFound and self.cellFound):
+            self.cell += data            
+        if(self.gridBodyFound and self.cellFound):
+            self.cell += data
+        if(self.tableFootnoteFound):
+            self.tables[-1].descriptions[-1] += data
 
     
     def handle_endtag(self, tag):
+       
+        # handle title and abstract
+        
+        if(self.disableRead):
+            self.disableRead = False
+        if(self.cellSpace):
+            self.cellSpace = False
         if(self.figureFound and tag == "figure"):
             self.figureFound = False
         if(self.textFound and tag == "p"):
@@ -280,6 +497,72 @@ class TableParser(HTMLParser):
             self.titleText = False
         if(self.boldTextFound and tag == "b"):
             self.boldTextFound = False
+        
+        # handle body text
+        
+        if(self.sectionTitleFound and tag == "div"):
+            self.sectionTitleFound = False
+        # found the end of a paragraph, append the content to the last section
+        if(self.paragraphFound and tag == "div" and self.paragraphDivCount == 1):
+            if(len(self.bodyText.sections[-1].paragraphs) == 0):
+                newParagraph = BodyText.Section.Paragraph()
+                self.bodyText.sections[-1].paragraphs.append(newParagraph)
+            self.bodyText.sections[-1].paragraphs[-1].contents.append(self.paragraphText)
+            self.paragraphText = ""
+            self.paragraphFound = False
+            self.paragraphDivCount -= 1
+        elif(self.paragraphFound and tag == "div" and self.paragraphDivCount > 1):
+            self.paragraphDivCount -= 1
+        # found a paragraph header, append a new paragraph with header to the last section
+        if(self.paragraphHeaderFound and tag == "h3"):
+            self.paragraphHeaderFound = False
+            newParagraph = BodyText.Section.Paragraph(self.paragraphHeader)
+            self.bodyText.sections[-1].paragraphs.append(newParagraph)
+            self.paragraphHeader = ""
+        
+        # handle table caption
+
+        if(self.tableFound and tag == "div" and self.tableDivCount == 1):
+            self.tableFound = False
+            self.tableDivCount -= 1
+        elif(self.tableFound and tag == "div" and self.tableDivCount > 1):
+            self.tableDivCount -= 1
+        if(self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount == 1):
+            self.tableCaptionFound = False
+            self.tableCaptionDivCount -= 1
+            self.tables[-1].caption = self.tableCaption
+            self.tableCaption = ""
+        elif(self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount > 1):
+            self.tableCaptionDivCount -= 1
+        
+        # handle table grip
+
+        if(self.tableGridFound and tag == "table"):
+            self.tableGridFound = False
+        if(self.tableColCountFound and tag == "colgroup"):
+            self.tableColCountFound = False
+        if(self.gridHeaderFound and tag == "thead"):
+            self.gridHeaderFound = False
+        if(self.gridHeaderFound and tag == "th" and self.cellFound):
+            self.tables[-1].grid.header[-1].cells.append(self.cell)
+            self.cell = ""
+            self.cellFound = False
+        if(self.gridBodyFound and tag == "tbody"):
+            self.gridBodyFound = False
+        if(self.gridBodyFound and tag == "td" and self.cellFound):
+            self.tables[-1].grid.body[-1].cells.append(self.cell)
+            self.cell = ""
+            self.cellFound = False
+
+        # handle table description
+
+        if(self.tableDescriptionFound and self.tableDescriptionDivCount == 1 and tag == "div"):
+            self.tableDescriptionDivCount -= 1
+            self.tableDescriptionFound = False
+        elif(self.tableDescriptionFound and tag == "div" and self.tableDescriptionDivCount > 1):
+            self.tableDescriptionDivCount -= 1
+        if(self.tableFootnoteFound and tag == "div"):
+            self.tableFootnoteFound = False
 
 
 
@@ -288,9 +571,110 @@ tableParser = TableParser()
 with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
 
     # parse the given html file with TableParser()
-    tableParser.feed(inputFile.read())
+    try:
+        tableParser.feed(inputFile.read())
+    except AssertionError as ae:
+        pass
+
     imgArr = tableParser.imgArr
     abstractText = tableParser.abstractText
+    bodyText = tableParser.bodyText
+    tables = tableParser.tables
+
+
+
+number = ""
+fullIndex = titleText.lower().rfind(FULLNAME)
+abbrIndex = titleText.lower().rfind(ABBREVIATION)
+if((fullIndex + len(FULLNAME) + 1) < len(titleText) and (abbrIndex + len(ABBREVIATION) + 1) < len(titleText)):
+    index = abbrIndex + len(ABBREVIATION) + 1
+    while(titleText[index].isdigit()):
+        number += titleText[index]
+        index += 1
+    if(not number):
+        index = fullIndex + len(FULLNAME) + 1
+        while(titleText[index].isdigit()):
+            number += titleText[index]
+            index += 1
+elif((fullIndex + len(FULLNAME) + 1) < len(titleText)):    
+    index = fullIndex + len(FULLNAME) + 1
+    while(titleText[index].isdigit()):
+        number += titleText[index]
+        index += 1
+elif((abbrIndex + len(FULLNAME) + 1) < len(titleText)):
+    index = abbrIndex + len(ABBREVIATION) + 1
+    while(titleText[index].isdigit()):
+        number += titleText[index]
+        index += 1
+
+if(number):
+    focusedTarget = ABBREVIATION + number
+
+if(not focusedTarget):
+    targetArr = []
+
+    index = 0
+    while(index >= 0 and index < len(abstractText)):
+        index = abstractText.lower().find(FULLNAME, index)
+        if(index != -1 and (index + len(FULLNAME) + 1) < len(abstractText)):
+            number = ""
+            index += len(FULLNAME) + 1
+            while(index < len(abstractText)):
+                if(abstractText[index].isdigit()):
+                    number += abstractText[index]
+                    index += 1
+                else:
+                    break
+            if(number):
+                targetName = ABBREVIATION + number
+                targetFound = False
+                for freqPosTarget in targetArr:
+                    if(freqPosTarget[2] == targetName):
+                        freqPosTarget[0] += 1
+                        freqPosTarget[1] = index
+                        targetFound = True
+                        break
+                if(not targetFound):
+                    targetArr.append([1, index, targetName])
+        elif(index != -1):
+            index += 1
+                
+
+    
+    index = 0
+    while(index >= 0 and index < len(abstractText)):
+        index = abstractText.lower().find(ABBREVIATION, index)
+        if(index != -1 and (index + len(ABBREVIATION) < len(abstractText))):
+            number = ""
+            index += len(ABBREVIATION)
+            while(index < len(abstractText)):
+                if(abstractText[index].isdigit()):
+                    number += abstractText[index]
+                    index += 1
+                else:
+                    break
+            if(number):
+                targetName = ABBREVIATION + number
+                targetFound = False
+                for freqPosTarget in targetArr:
+                    if(freqPosTarget[2] == targetName):
+                        freqPosTarget[0] += 1
+                        freqPosTarget[1] = index
+                        targetFound = True
+                        break
+                if(not targetFound):
+                    targetArr.append([1, index, targetName])
+        elif(index != -1):
+            index += 1        
+        
+    
+    if(len(targetArr) > 0):
+        targetArr.sort(reverse=True)
+        focusedTarget = targetArr[0][2]
+
+
+
+
 
 
 
@@ -307,101 +691,154 @@ positionResult = reader.readtext(f"images/{TARGET}/image{fileId}.jpeg")
 # identify the ic50 value from abstract image
 
 # find ic50 keyword location
+xrangeArr = []
 elements = []
 for element in positionResult:
-    if(ic50(element[1].lower())):
+    if(ic50(element[1].lower()) or ("ic" in element[1].lower() and "nm" in element[1].lower())):
         elements.append(element)
-    elif("ic" in element[1].lower() and "nm" in element[1].lower()):
-        elements.append(element)
+        leftX = min(element[0][0][0], element[0][3][0])
+        rightX = max(element[0][1][0], element[0][2][0])
+        xrangeArr.append([leftX, rightX])        
+
 
 # find the rightmost ic50 keyword
+needTarget = False
 position = []
 centerX = 0
 for element in elements:
+    if(needTarget):
+        break
+    
     localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
+    for range in xrangeArr:
+        if(localCenterX >= range[0] and localCenterX <= range[1]):
+            needTarget = True
+            break
     if(localCenterX > centerX):
         centerX = localCenterX
         position = element
 
 
-# check if ic50 keyword contains the required value
-valueFound = False
-for word in position[1].lower().split():
-    if("nm" in word):
-        valueFound = True
-        break
+if((not needTarget) and len(position) > 0):
+    # check if ic50 keyword contains the required value
+    valueFound = False
+    for word in position[1].lower().split():
+        if("nm" in word):
+            valueFound = True
+            break
 
-# if ic50 keyword contains the value, retrieve the value
-if(valueFound):
-    pos = position[1].find("=")
-    if(pos == -1):
-        pos = position[1].find(":")
-    if(pos == -1 or (pos + 1) >= len(position[1])):
-        valueFound = False
+    # if ic50 keyword contains the value, retrieve the value
+    if(valueFound):
+        pos = position[1].find("=")
+        if(pos == -1):
+            pos = position[1].find(":")
+        if(pos == -1 or (pos + 1) >= len(position[1])):
+            valueFound = False
+        else:
+            ic50Value = position[1][pos + 1: ]
+
+    # if no value is found in ic50 keyword
     else:
-        ic50Value = position[1][pos + 1: ]
+        # find all keywords conataining "nm"
+        nmArr = []
+        for element in positionResult:
+            # the "nm" keyword has to locate on the right of "ic50" keyword
+            if("nm" in element[1].lower() and (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4 >= min(position[0][1][0], position[0][2][0])):
+                nmArr.append(list(element))
+                nmArr[0][1] = nmArr[0][1].lower()
+        
+        for element in nmArr:
+            # if the keyword contains only "nm", needs to combine it with the number before it e.g.: keyword(50), keyword(nm), combined into keyword(50nm)
+            if(element[1].strip() == "nm"):
 
-# if no value is found in ic50 keyword
-else:
-    # find all keywords conataining "nm"
-    nmArr = []
+                downY = max(element[0][2][1], element[0][3][1])
+                topY = min(element[0][0][1], element[0][1][1])
+                leftX = (element[0][0][0] + element[0][3][0]) / 2
+                rightX = (element[0][1][0] + element[0][2][0]) / 2
+                valueElement = []
+                xDistance = element[0][1][0]
+                for localElement in positionResult:
+                    localCenterY = (localElement[0][0][1] + localElement[0][1][1] + localElement[0][2][1] + localElement[0][3][1]) / 4
+                    # same y level as "nm" keyword
+                    if(localCenterY <= downY and localCenterY >= topY):
+                        localRightX = (localElement[0][1][0] + localElement[0][2][0]) / 2
+                        # left of "nm" keyword
+                        if(localRightX < rightX):
+                            localxDistance = leftX - localRightX
+                            # closest to "nm" keyword
+                            if(localxDistance < xDistance):
+                                valueElement = localElement
+                                xDistance = localxDistance
+                
+                # combine keyword "nm" with the number before it
+                element[1] = valueElement[1] + element[1]
+                element[0][0] = valueElement[0][0]
+                element[0][3] = valueElement[0][3]
+
+        # find the corresponding value for the given "ic50" keyword, e.g. "ic50 = 12nm", find keyword(12nm) on the right of "ic50"
+        downY = max(position[0][2][1], position[0][3][1])
+        topY = min(position[0][0][1], position[0][1][1])
+        leftX = (position[0][0][0] + position[0][3][0]) / 2
+        rightX = (position[0][1][0] + position[0][2][0]) / 2
+        xDistance = position[0][1][0]
+        for element in nmArr:
+            localCenterY = (element[0][0][1] + element[0][1][1] + element[0][2][1] + element[0][3][1]) / 4
+            # same y level as "ic50" keyword
+            if(localCenterY <= downY and localCenterY >= topY):
+                localLeftX = (element[0][0][0] + element[0][3][0]) / 2
+                # right of "ic50" keyword
+                if(localLeftX > leftX):
+                    localxDistance = localLeftX - rightX
+                    # closest to "ic50" keyword
+                    if(localxDistance < xDistance):
+                        ic50Value = element[1]
+                        localxDistance = xDistance
+
+    if(ic50Value):
+        ic50Value = ic50Value.strip()
+        if(ic50Value[0] in ["=", ":"]):
+            ic50Value = ic50Value[1:]
+
+
+
+
+if((not ic50Value) and focusedTarget):
+    targetArr = []
+
     for element in positionResult:
-        # the "nm" keyword has to locate on the right of "ic50" keyword
-        if("nm" in element[1].lower() and (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4 >= min(position[0][1][0], position[0][2][0])):
-            nmArr.append(list(element))
-            nmArr[0][1] = nmArr[0][1].lower()
-    
-    for element in nmArr:
-        # if the keyword contains only "nm", needs to combine it with the number before it e.g.: keyword(50), keyword(nm), combined into keyword(50nm)
-        if(element[1].strip() == "nm"):
+        if(focusedTarget in element[1].lower()):
+            centerX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
+            targetArr.append([centerX, element])
 
-            downY = max(element[0][2][1], element[0][3][1])
-            topY = min(element[0][0][1], element[0][1][1])
-            leftX = (element[0][0][0] + element[0][3][0]) / 2
-            rightX = (element[0][1][0] + element[0][2][0]) / 2
-            valueElement = []
-            xDistance = element[0][1][0]
-            for localElement in positionResult:
-                localCenterY = (localElement[0][0][1] + localElement[0][1][1] + localElement[0][2][1] + localElement[0][3][1]) / 4
-                # same y level as "nm" keyword
-                if(localCenterY <= downY and localCenterY >= topY):
-                    localRightX = (localElement[0][1][0] + localElement[0][2][0]) / 2
-                    # left of "nm" keyword
-                    if(localRightX < rightX):
-                        localxDistance = leftX - localRightX
-                        # closest to "nm" keyword
-                        if(localxDistance < xDistance):
-                            valueElement = localElement
-                            xDistance = localxDistance
-            
-            # combine keyword "nm" with the number before it
-            element[1] = valueElement[1] + element[1]
-            element[0][0] = valueElement[0][0]
-            element[0][3] = valueElement[0][3]
+    targetArr.sort(reverse=True)
+    if(len(targetArr) > 0):
+        targetElement = targetArr[0][1]
+        centerX = targetArr[0][0]
+        topY = min(targetElement[0][0][1], targetElement[0][1][1])
+        downY = max(targetElement[0][2][1], targetElement[0][3][1])
 
-    # find the corresponding value for the given "ic50" keyword, e.g. "ic50 = 12nm", find keyword(12nm) on the right of "ic50"
-    downY = max(position[0][2][1], position[0][3][1])
-    topY = min(position[0][0][1], position[0][1][1])
-    leftX = (position[0][0][0] + position[0][3][0]) / 2
-    rightX = (position[0][1][0] + position[0][2][0]) / 2
-    xDistance = position[0][1][0]
-    for element in nmArr:
-        localCenterY = (element[0][0][1] + element[0][1][1] + element[0][2][1] + element[0][3][1]) / 4
-        # same y level as "ic50" keyword
-        if(localCenterY <= downY and localCenterY >= topY):
-            localLeftX = (element[0][0][0] + element[0][3][0]) / 2
-            # right of "ic50" keyword
-            if(localLeftX > leftX):
-                localxDistance = localLeftX - rightX
-                # closest to "ic50" keyword
-                if(localxDistance < xDistance):
-                    ic50Value = element[1]
-                    localxDistance = xDistance
+        elementArr = []
+        for element in positionResult:
+            localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
+            if(localCenterX > centerX):
+                localCenterY = (element[0][0][1] + element[0][1][1] + element[0][2][1] + element[0][3][1]) / 4
+                if(localCenterY >= topY and localCenterY <= downY):
+                    elementArr.append([localCenterX, element])
+        
+        elementArr.sort()
+        if(len(elementArr) > 0):
+            identifiedString = targetElement[1]
+            for element in elementArr:
+                identifiedString += element[1][1]
+                index = identifiedString.find("=")
+                if(index == -1):
+                    index = identifiedString.find(":")
+                if(index != -1 and (index + 1) < len(identifiedString)):
+                    ic50Value = identifiedString[index + 1:]
+                else:
+                    ic50Value = identifiedString
 
-if(ic50Value):
-    ic50Value = ic50Value.strip()
-    if(ic50Value[0] in ["=", ":"]):
-        ic50Value = ic50Value[1:]
+
 
 
 
@@ -563,5 +1000,7 @@ print(compound)
 print(compoundArr)
 print(ic50Value)
 print(ic50Arr)
+
+
 
 
