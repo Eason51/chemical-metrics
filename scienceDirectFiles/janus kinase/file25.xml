@@ -1,0 +1,2361 @@
+<full-text-retrieval-response xmlns="http://www.elsevier.com/xml/svapi/article/dtd" xmlns:bk="http://www.elsevier.com/xml/bk/dtd" xmlns:cals="http://www.elsevier.com/xml/common/cals/dtd" xmlns:ce="http://www.elsevier.com/xml/common/dtd" xmlns:ja="http://www.elsevier.com/xml/ja/dtd" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:sa="http://www.elsevier.com/xml/common/struct-aff/dtd" xmlns:sb="http://www.elsevier.com/xml/common/struct-bib/dtd" xmlns:tb="http://www.elsevier.com/xml/common/table/dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xocs="http://www.elsevier.com/xml/xocs/dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><coredata><prism:url>https://api.elsevier.com/content/article/pii/S1359644620303743</prism:url><dc:identifier>doi:10.1016/j.drudis.2020.09.017</dc:identifier><eid>1-s2.0-S1359644620303743</eid><prism:doi>10.1016/j.drudis.2020.09.017</prism:doi><pii>S1359-6446(20)30374-3</pii><dc:title>Pim kinase inhibitors in cancer: medicinal chemistry insights into their activity and selectivity </dc:title><prism:publicationName>Drug Discovery Today</prism:publicationname><prism:aggregationType>Journal</prism:aggregationtype><pubType>rev</pubtype><prism:issn>13596446</prism:issn><prism:volume>25</prism:volume><prism:issueIdentifier>11</prism:issueidentifier><prism:startingPage>2062</prism:startingpage><prism:endingPage>2069</prism:endingpage><prism:pageRange>2062-2069</prism:pagerange><prism:number>11</prism:number><dc:format>text/xml</dc:format><prism:coverDate>2020-11-30</prism:coverdate><prism:coverDisplayDate>November 2020</prism:coverdisplaydate><prism:copyright>© 2020 Elsevier Ltd. All rights reserved.</prism:copyright><prism:publisher>Elsevier Ltd.</prism:publisher><dc:creator>Alnabulsi, Soraya</dc:creator><dc:creator>Al-Hurani, Enas A.</dc:creator><dc:description>
+                  The oncogenic Pim kinase proteins (Pim-1/2/3) regulate tumorigenesis through phosphorylating essential proteins that control cell cycle and proliferation. Pim kinase is a potential chemotherapeutic target in cancer and its inhibition is currently the focus of intensive drug design and development efforts. The distinctive presence of proline amino acids in the hinge region provides an opportunity to inhibit Pim kinase while conserving the physiological functions of other kinases and reducing the toxicity profiles of the inhibitors. Various Pim kinase inhibitors have been clinically evaluated for the treatment of hematological cancers, yet none has reached the clinic. In this review, we discuss the design and development of selective and potent Pim inhibitors with novel chemotypes focusing on structural features essential for high potency and selectivity.
+               </dc:description><openaccess>0</openaccess><openaccessArticle>false</openaccessarticle><openaccessType/></openaccesstype><openArchiveArticle>false</openarchivearticle><openaccessSponsorName/></openaccesssponsorname><openaccessSponsorType/></openaccesssponsortype><openaccessUserLicense/></openaccessuserlicense><link href="https://api.elsevier.com/content/article/pii/S1359644620303743" rel="self"/></link><link href="https://www.sciencedirect.com/science/article/pii/S1359644620303743" rel="scidir"/></link></coredata><objects><object ref="gr1" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="836" height="902" size="101469">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr1.jpg?httpAccept=%2A%2F%2A</object><object ref="gr2" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="836" height="919" size="115546">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr2.jpg?httpAccept=%2A%2F%2A</object><object ref="gr3" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="836" height="583" size="75201">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr3.jpg?httpAccept=%2A%2F%2A</object><object ref="gr4" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="405" height="382" size="25063">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr4.jpg?httpAccept=%2A%2F%2A</object><object ref="gr1" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="152" height="164" size="9685">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr1.sml?httpAccept=%2A%2F%2A</object><object ref="gr2" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="149" height="164" size="6003">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr2.sml?httpAccept=%2A%2F%2A</object><object ref="gr3" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="219" height="153" size="6848">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr3.sml?httpAccept=%2A%2F%2A</object><object ref="gr4" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="174" height="164" size="5055">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr4.sml?httpAccept=%2A%2F%2A</object><object ref="gr1" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="3703" height="3995" size="861074">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr1_lrg.jpg?httpAccept=%2A%2F%2A</object><object ref="gr2" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="3703" height="4071" size="957019">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr2_lrg.jpg?httpAccept=%2A%2F%2A</object><object ref="gr3" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="3703" height="2583" size="706898">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr3_lrg.jpg?httpAccept=%2A%2F%2A</object><object ref="gr4" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="1793" height="1689" size="165750">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644620303743-gr4_lrg.jpg?httpAccept=%2A%2F%2A</object></objects><scopus-id>85092012102</scopus-id><scopus-eid>2-s2.0-85092012102</scopus-eid><pubmed-id>32971234</pubmed-id><link href="https://api.elsevier.com/content/abstract/scopus_id/85092012102" rel="abstract"/></link><originalText><xocs:doc xsi:schemaLocation="http://www.elsevier.com/xml/xocs/dtd http://null/schema/dtds/document/fulltext/xcr/xocs-article.xsd"><xocs:meta xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <xocs:content-family>serial</xocs:content-family>
+      <xocs:content-type>JL</xocs:content-type>
+      <xocs:cid>271275</xocs:cid>
+      <xocs:ssids>
+         <xocs:ssid type="alllist">291210</xocs:ssid>
+         <xocs:ssid type="subj">291727</xocs:ssid>
+         <xocs:ssid type="subj">291850</xocs:ssid>
+         <xocs:ssid type="subj">291928</xocs:ssid>
+         <xocs:ssid type="content">31</xocs:ssid>
+      </xocs:ssids>
+      <xocs:srctitle>Drug Discovery Today</xocs:srctitle>
+      <xocs:normalized-srctitle>DRUGDISCOVERYTODAY</xocs:normalized-srctitle>
+      <xocs:orig-load-date yyyymmdd="20200921">2020-09-21</xocs:orig-load-date>
+      <xocs:available-online-date yyyymmdd="20200921">2020-09-21</xocs:available-online-date>
+      <xocs:vor-load-date yyyymmdd="20201113">2020-11-13</xocs:vor-load-date>
+      <xocs:vor-available-online-date yyyymmdd="20201113">2020-11-13</xocs:vor-available-online-date>
+      <xocs:ew-transaction-id>2020-11-13T20:52:47</xocs:ew-transaction-id>
+      <xocs:eid>1-s2.0-S1359644620303743</xocs:eid>
+      <xocs:pii-formatted>S1359-6446(20)30374-3</xocs:pii-formatted>
+      <xocs:pii-unformatted>S1359644620303743</xocs:pii-unformatted>
+      <xocs:doi>10.1016/j.drudis.2020.09.017</xocs:doi>
+      <xocs:item-stage>S300</xocs:item-stage>
+      <xocs:item-version-number>S300.1</xocs:item-version-number>
+      <xocs:item-weight>FULL-TEXT</xocs:item-weight>
+      <xocs:hub-eid>1-s2.0-S1359644620X00122</xocs:hub-eid>
+      <xocs:timestamp yyyymmdd="20201113">2020-11-13T22:43:06.196067Z</xocs:timestamp>
+      <xocs:dco>0</xocs:dco>
+      <xocs:tomb>0</xocs:tomb>
+      <xocs:date-search-begin>20201101</xocs:date-search-begin>
+      <xocs:date-search-end>20201130</xocs:date-search-end>
+      <xocs:year-nav>2020</xocs:year-nav>
+      <xocs:indexeddate epoch="1600701880">2020-09-21T15:24:40.576377Z</xocs:indexeddate>
+      <xocs:articleinfo>articleinfo articletitlenorm authfirstinitialnorm authfirstsurnamenorm cid cids contenttype copyright crossmark dateloaded dateloadedtxt datesearch datesort dateupdated dco docsubtype doctype doi eid ewtransactionid hubeid indexeddate issfirst issn issnnorm issuelist itemstage itemtransactionid itemweight openaccess openarchive pg pgfirst pglast pii piinorm pubdateend pubdatestart pubdatetxt pubyr sectiontitle sortorder srctitle srctitlenorm srctype ssids alllist content subj subheadings tomb volfirst volissue volumelist webpdf webpdfpagecount yearnav figure body affil articletitle auth authfirstini authfull authlast highlightsabst orcid primabst pubtype ref</xocs:articleinfo>
+      <xocs:issns>
+         <xocs:issn-primary-formatted>1359-6446</xocs:issn-primary-formatted>
+         <xocs:issn-primary-unformatted>13596446</xocs:issn-primary-unformatted>
+      </xocs:issns>
+      <xocs:crossmark is-crossmark="1">true</xocs:crossmark>
+      <xocs:vol-first>25</xocs:vol-first>
+      <xocs:volume-list>
+         <xocs:volume>25</xocs:volume>
+      </xocs:volume-list>
+      <xocs:iss-first>11</xocs:iss-first>
+      <xocs:issue-list>
+         <xocs:issue>11</xocs:issue>
+      </xocs:issue-list>
+      <xocs:vol-iss-suppl-text>Volume 25, Issue 11</xocs:vol-iss-suppl-text>
+      <xocs:sort-order>23</xocs:sort-order>
+      <xocs:first-fp>2062</xocs:first-fp>
+      <xocs:last-lp>2069</xocs:last-lp>
+      <xocs:pages>
+         <xocs:first-page>2062</xocs:first-page>
+         <xocs:last-page>2069</xocs:last-page>
+      </xocs:pages>
+      <xocs:cover-date-orig>
+         <xocs:start-date>202011</xocs:start-date>
+      </xocs:cover-date-orig>
+      <xocs:cover-date-text>November 2020</xocs:cover-date-text>
+      <xocs:cover-date-start>2020-11-01</xocs:cover-date-start>
+      <xocs:cover-date-end>2020-11-30</xocs:cover-date-end>
+      <xocs:cover-date-year>2020</xocs:cover-date-year>
+      <xocs:hub-sec>
+         <xocs:hub-sec-title>REVIEWS</xocs:hub-sec-title>
+         <xocs:hub-sec>
+            <xocs:hub-sec-title>Post Screen</xocs:hub-sec-title>
+         </xocs:hub-sec>
+      </xocs:hub-sec>
+      <xocs:document-type>article</xocs:document-type>
+      <xocs:document-subtype>rev</xocs:document-subtype>
+      <xocs:copyright-line>© 2020 Elsevier Ltd. All rights reserved.</xocs:copyright-line>
+      <xocs:normalized-article-title>PIMKINASEINHIBITORSINCANCERMEDICINALCHEMISTRYINSIGHTSACTIVITYSELECTIVITY</xocs:normalized-article-title>
+      <xocs:normalized-first-auth-surname>ALNABULSI</xocs:normalized-first-auth-surname>
+      <xocs:normalized-first-auth-initial>S</xocs:normalized-first-auth-initial>
+      <xocs:item-toc>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Introduction</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Pim kinase inhibitors under clinical assessment</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Imidazo[1,2-<ce:italic>b</ce:italic>]pyridazines: SGI-1776 and TP-3654</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Oxindole: CX-6258</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Thiazolidine-2,4-dione: AZD1028 (AstraZeneca)</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Pyridinamines: PIM447 (previously known as LGH447, Novartis) and INCB053914 (Incyte)</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Diaminopyrazole: GDC-0339</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Pim kinase inhibitors under development</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>2-Azaindole (indazole)</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Pyrazolo[1,5-a]pyrimidines</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>3,5-disubstituted 6-azaindazoles</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Macrocyclic quinoxaline-pyrrolodihdropiperidinones</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Quinazolinone-pyrrolopyrrolones</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Triazolo[4,3-b]pyridazine-3-yl-quinolines</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Scaffolds worthy of further optimization as Pim kinase inhibitors</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Hispidulin</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Concluding remarks</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Declaration of Competing Interest</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:bibliography">
+            <xocs:item-toc-section-title>References</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+      </xocs:item-toc>
+      <xocs:references>
+         <xocs:ref-info refid="sbref0005">
+            <xocs:ref-normalized-surname>BACHMANN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>726</xocs:ref-first-fp>
+            <xocs:ref-last-lp>730</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0010">
+            <xocs:ref-normalized-surname>WARFEL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2015</xocs:ref-pub-year>
+            <xocs:ref-first-fp>41</xocs:ref-first-fp>
+            <xocs:ref-last-lp>49</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>N</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0015">
+            <xocs:ref-normalized-surname>MONDELLO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>95</xocs:ref-first-fp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0020">
+            <xocs:ref-normalized-surname>MORISHITA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2008</xocs:ref-pub-year>
+            <xocs:ref-first-fp>5076</xocs:ref-first-fp>
+            <xocs:ref-normalized-initial>D</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0025">
+            <xocs:ref-normalized-surname>ZHANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2018</xocs:ref-pub-year>
+            <xocs:ref-first-fp>109</xocs:ref-first-fp>
+            <xocs:ref-last-lp>116</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>X</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0030">
+            <xocs:ref-normalized-surname>BRAULT</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1004</xocs:ref-first-fp>
+            <xocs:ref-normalized-initial>L</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0035">
+            <xocs:ref-normalized-surname>NAWIJN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2011</xocs:ref-pub-year>
+            <xocs:ref-first-fp>23</xocs:ref-first-fp>
+            <xocs:ref-last-lp>34</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0040">
+            <xocs:ref-normalized-surname>NARLIKGRASSOW</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>136</xocs:ref-first-fp>
+            <xocs:ref-last-lp>159</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0045">
+            <xocs:ref-normalized-surname>MUKAIDA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2011</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1437</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1442</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>N</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0050">
+            <xocs:ref-normalized-surname>ARUNESH</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>5</xocs:ref-first-fp>
+            <xocs:ref-last-lp>17</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>G</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0055">
+            <xocs:ref-normalized-surname>MORWICK</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>193</xocs:ref-first-fp>
+            <xocs:ref-last-lp>212</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0060">
+            <xocs:ref-normalized-surname>CERVANTESGOMEZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2013</xocs:ref-pub-year>
+            <xocs:ref-first-fp>S317</xocs:ref-first-fp>
+            <xocs:ref-last-lp>S329</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>F</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0065">
+            <xocs:ref-normalized-surname>RAAB</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2924</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2933</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0070">
+            <xocs:ref-normalized-surname>FOULKS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>403</xocs:ref-first-fp>
+            <xocs:ref-last-lp>412</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0075">
+            <xocs:ref-normalized-surname>CORTES</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2018</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1425</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1433</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0080">
+            <xocs:ref-normalized-surname>BYRNE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2017</xocs:ref-pub-year>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0085">
+            <xocs:ref-normalized-surname>ASATI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>95</xocs:ref-first-fp>
+            <xocs:ref-last-lp>108</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>V</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0090">
+            <xocs:ref-normalized-surname>VULPETTI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>759</xocs:ref-first-fp>
+            <xocs:ref-last-lp>765</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0095">
+            <xocs:ref-normalized-surname>XING</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2015</xocs:ref-pub-year>
+            <xocs:ref-first-fp>6520</xocs:ref-first-fp>
+            <xocs:ref-last-lp>6527</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>L</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0100">
+            <xocs:ref-normalized-surname>BULLOCK</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>41675</xocs:ref-first-fp>
+            <xocs:ref-last-lp>41682</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0105">
+            <xocs:ref-normalized-surname>ARROUCHI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>40</xocs:ref-first-fp>
+            <xocs:ref-last-lp>45</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0110">
+            <xocs:ref-normalized-surname>LIANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2051</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2060</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0115">
+            <xocs:ref-normalized-surname>LIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>824</xocs:ref-first-fp>
+            <xocs:ref-last-lp>833</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Y</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0120">
+            <xocs:ref-normalized-surname>XIA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>74</xocs:ref-first-fp>
+            <xocs:ref-last-lp>86</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Z</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0125">
+            <xocs:ref-normalized-surname>POGACIC</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2007</xocs:ref-pub-year>
+            <xocs:ref-first-fp>6916</xocs:ref-first-fp>
+            <xocs:ref-normalized-initial>V</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="oref0130"/></xocs:ref-info>
+         <xocs:ref-info refid="sbref0135">
+            <xocs:ref-normalized-surname>HADDACH</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2012</xocs:ref-pub-year>
+            <xocs:ref-first-fp>135</xocs:ref-first-fp>
+            <xocs:ref-last-lp>139</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0140">
+            <xocs:ref-normalized-surname>DAKIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2012</xocs:ref-pub-year>
+            <xocs:ref-first-fp>4599</xocs:ref-first-fp>
+            <xocs:ref-last-lp>4604</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>L</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0145">
+            <xocs:ref-normalized-surname>KEETON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>905</xocs:ref-first-fp>
+            <xocs:ref-last-lp>913</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>E</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0150">
+            <xocs:ref-normalized-surname>LEE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>451</xocs:ref-first-fp>
+            <xocs:ref-last-lp>463</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0155">
+            <xocs:ref-normalized-surname>BURGER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2013</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1193</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1197</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0160">
+            <xocs:ref-normalized-surname>GARCIA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2014</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1834</xocs:ref-first-fp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0165">
+            <xocs:ref-normalized-surname>BURGER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2015</xocs:ref-pub-year>
+            <xocs:ref-first-fp>8373</xocs:ref-first-fp>
+            <xocs:ref-last-lp>8386</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0170">
+            <xocs:ref-normalized-surname>KOBLISH</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2018</xocs:ref-pub-year>
+            <xocs:ref-article-number>e0199108</xocs:ref-article-number>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0175">
+            <xocs:ref-normalized-surname>WANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2140</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2153</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>X</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0180">
+            <xocs:ref-normalized-surname>TSUGANEZAWA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2012</xocs:ref-pub-year>
+            <xocs:ref-first-fp>240</xocs:ref-first-fp>
+            <xocs:ref-last-lp>252</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0185">
+            <xocs:ref-normalized-surname>NAKANO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2012</xocs:ref-pub-year>
+            <xocs:ref-first-fp>5151</xocs:ref-first-fp>
+            <xocs:ref-last-lp>5164</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0190">
+            <xocs:ref-normalized-surname>NAKANO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2017</xocs:ref-pub-year>
+            <xocs:ref-first-fp>504</xocs:ref-first-fp>
+            <xocs:ref-last-lp>509</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0195">
+            <xocs:ref-normalized-surname>WANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2013</xocs:ref-pub-year>
+            <xocs:ref-first-fp>3149</xocs:ref-first-fp>
+            <xocs:ref-last-lp>3153</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>X</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0200">
+            <xocs:ref-normalized-surname>HU</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2015</xocs:ref-pub-year>
+            <xocs:ref-first-fp>5258</xocs:ref-first-fp>
+            <xocs:ref-last-lp>5264</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0205">
+            <xocs:ref-normalized-surname>WANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2017</xocs:ref-pub-year>
+            <xocs:ref-first-fp>4458</xocs:ref-first-fp>
+            <xocs:ref-last-lp>4473</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>X</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0210">
+            <xocs:ref-normalized-surname>CEE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2016</xocs:ref-pub-year>
+            <xocs:ref-first-fp>408</xocs:ref-first-fp>
+            <xocs:ref-last-lp>412</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>V</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0215">
+            <xocs:ref-normalized-surname>PETTUS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2016</xocs:ref-pub-year>
+            <xocs:ref-first-fp>6407</xocs:ref-first-fp>
+            <xocs:ref-last-lp>6430</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>L</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0220">
+            <xocs:ref-normalized-surname>WANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1523</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1540</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0225">
+            <xocs:ref-normalized-surname>PASTOR</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2012</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1591</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1597</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0230">
+            <xocs:ref-normalized-surname>MARTINEZGONZALEZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2019</xocs:ref-pub-year>
+            <xocs:ref-first-fp>87</xocs:ref-first-fp>
+            <xocs:ref-last-lp>109</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0235">
+            <xocs:ref-normalized-surname>CHAO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2015</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1969</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1976</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="sbref0240">
+            <xocs:ref-normalized-surname>LIU</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2018</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1369</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1381</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+      </xocs:references>
+      <xocs:refkeys>
+         <xocs:refkey3>ALNABULSIX2020X2062</xocs:refkey3>
+         <xocs:refkey4lp>ALNABULSIX2020X2062X2069</xocs:refkey4lp>
+         <xocs:refkey4ai>ALNABULSIX2020X2062XS</xocs:refkey4ai>
+         <xocs:refkey5>ALNABULSIX2020X2062X2069XS</xocs:refkey5>
+      </xocs:refkeys>
+      <xocs:open-access>
+         <xocs:oa-article-status is-open-access="0" is-open-archive="0"/></xocs:oa-article-status>
+      </xocs:open-access>
+      <xocs:open-research>
+         <xocs:or-embargo-opening-date>2021-11-13T00:00:00.000Z</xocs:or-embargo-opening-date>
+      </xocs:open-research>
+      <xocs:self-archiving>
+         <xocs:sa-start-date>2021-11-13T00:00:00.000Z</xocs:sa-start-date>
+         <xocs:sa-user-license>http://creativecommons.org/licenses/by-nc-nd/4.0/</xocs:sa-user-license>
+      </xocs:self-archiving>
+      <xocs:copyright-info>
+         <xocs:cp-notices>
+            <xocs:cp-notice lang="en">© 2020 Elsevier Ltd. All rights reserved.</xocs:cp-notice>
+         </xocs:cp-notices>
+      </xocs:copyright-info>
+      <xocs:funding-list has-funding-info="1">
+         <xocs:funding-addon-generated-timestamp>2020-09-17T17:54:17.802Z</xocs:funding-addon-generated-timestamp>
+         <xocs:funding-addon-type>http://vtw.elsevier.com/data/voc/AddOnTypes/50.7/eoas</xocs:funding-addon-type>
+         <xocs:funding>
+            <xocs:funding-agency-acronym>JUST</xocs:funding-agency-acronym>
+            <xocs:funding-agency>Jordan University of Science and Technology</xocs:funding-agency>
+            <xocs:funding-agency-id>http://data.elsevier.com/vocabulary/SciValFunders/501100004035</xocs:funding-agency-id>
+            <xocs:funding-agency-country>http://sws.geonames.org/248816</xocs:funding-agency-country>
+         </xocs:funding>
+      </xocs:funding-list>
+      <xocs:attachment-metadata-doc>
+         <xocs:attachment-set-type>item</xocs:attachment-set-type>
+         <xocs:pii-formatted>S1359-6446(20)30374-3</xocs:pii-formatted>
+         <xocs:pii-unformatted>S1359644620303743</xocs:pii-unformatted>
+         <xocs:eid>1-s2.0-S1359644620303743</xocs:eid>
+         <xocs:doi>10.1016/j.drudis.2020.09.017</xocs:doi>
+         <xocs:cid>271275</xocs:cid>
+         <xocs:timestamp>2020-11-13T21:51:30.671774Z</xocs:timestamp>
+         <xocs:cover-date-start>2020-11-01</xocs:cover-date-start>
+         <xocs:cover-date-end>2020-11-30</xocs:cover-date-end>
+         <xocs:attachments>
+            <xocs:web-pdf>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-main.pdf</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/MAIN/application/pdf/56293c16f45f59c6571a3e10ceb44ce5/main.pdf</xocs:ucs-locator>
+               <xocs:filename>main.pdf</xocs:filename>
+               <xocs:extension>pdf</xocs:extension>
+               <xocs:pdf-optimized>true</xocs:pdf-optimized>
+               <xocs:filesize>1282425</xocs:filesize>
+               <xocs:web-pdf-purpose>MAIN</xocs:web-pdf-purpose>
+               <xocs:web-pdf-page-count>8</xocs:web-pdf-page-count>
+               <xocs:web-pdf-images>
+                  <xocs:web-pdf-image>
+                     <xocs:attachment-eid>1-s2.0-S1359644620303743-main_1.png</xocs:attachment-eid>
+                     <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/PREVIEW/image/png/0918664ec58a1e2cda6cd9bec2674311/main_1.png</xocs:ucs-locator>
+                     <xocs:filename>main_1.png</xocs:filename>
+                     <xocs:extension>png</xocs:extension>
+                     <xocs:filesize>100275</xocs:filesize>
+                     <xocs:pixel-height>849</xocs:pixel-height>
+                     <xocs:pixel-width>656</xocs:pixel-width>
+                     <xocs:attachment-type>IMAGE-WEB-PDF</xocs:attachment-type>
+                     <xocs:pdf-page-num>1</xocs:pdf-page-num>
+                  </xocs:web-pdf-image>
+               </xocs:web-pdf-images>
+            </xocs:web-pdf>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr1.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr1/DOWNSAMPLED/image/jpeg/b1ca9cc8f25f1416353e3e8212679c5d/gr1.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>101469</xocs:filesize>
+               <xocs:pixel-height>902</xocs:pixel-height>
+               <xocs:pixel-width>836</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr2.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr2/DOWNSAMPLED/image/jpeg/f0ccf8509440048c91ac65d079b63859/gr2.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>115546</xocs:filesize>
+               <xocs:pixel-height>919</xocs:pixel-height>
+               <xocs:pixel-width>836</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr3.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr3/DOWNSAMPLED/image/jpeg/e321eccd41d56ec03b05ca8471eaf56c/gr3.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>75201</xocs:filesize>
+               <xocs:pixel-height>583</xocs:pixel-height>
+               <xocs:pixel-width>836</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr4.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr4/DOWNSAMPLED/image/jpeg/d74ddd290985153770ac93c679aaf411/gr4.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>25063</xocs:filesize>
+               <xocs:pixel-height>382</xocs:pixel-height>
+               <xocs:pixel-width>405</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr1.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr1/THUMBNAIL/image/gif/7e8614f7803382c26e0a403d13935bf3/gr1.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>9685</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>152</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr2.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr2/THUMBNAIL/image/gif/264a792847bf482dca7e4a54ce1de7ad/gr2.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>6003</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>149</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr3.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr3/THUMBNAIL/image/gif/70802c84e95c949d39744c2f6df00aed/gr3.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>6848</xocs:filesize>
+               <xocs:pixel-height>153</xocs:pixel-height>
+               <xocs:pixel-width>219</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr4.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr4/THUMBNAIL/image/gif/cd8d75d7f3fc96571c4fd7b710800fd5/gr4.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>5055</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>174</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr1_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr1/HIGHRES/image/jpeg/aab2e5d663eb055bfcbf85643416c4d3/gr1_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>861074</xocs:filesize>
+               <xocs:pixel-height>3995</xocs:pixel-height>
+               <xocs:pixel-width>3703</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr2_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr2/HIGHRES/image/jpeg/15d477cacc0a048992b0d81755e6ba83/gr2_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>957019</xocs:filesize>
+               <xocs:pixel-height>4071</xocs:pixel-height>
+               <xocs:pixel-width>3703</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr3_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr3/HIGHRES/image/jpeg/15dfa9c68d4dcb9731d84753c6a5eeb4/gr3_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>706898</xocs:filesize>
+               <xocs:pixel-height>2583</xocs:pixel-height>
+               <xocs:pixel-width>3703</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644620303743-gr4_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644620303743/gr4/HIGHRES/image/jpeg/34d210264160decf65684e1c53a7f103/gr4_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>165750</xocs:filesize>
+               <xocs:pixel-height>1689</xocs:pixel-height>
+               <xocs:pixel-width>1793</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+         </xocs:attachments>
+      </xocs:attachment-metadata-doc>
+   </xocs:meta><xocs:serial-item xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <article xmlns="http://www.elsevier.com/xml/ja/dtd" version="5.5" xml:lang="en" docsubtype="rev">
+         <item-info>
+            <jid>DRUDIS</jid>
+            <aid>2781</aid>
+            <ce:pii>S1359-6446(20)30374-3</ce:pii>
+            <ce:doi>10.1016/j.drudis.2020.09.017</ce:doi>
+            <ce:copyright type="full-transfer" year="2020">Elsevier Ltd</ce:copyright>
+         </item-info>
+         <ce:floats>
+            <ce:figure id="fig0005">
+               <ce:label>Figure 1</ce:label>
+               <ce:caption id="cap0005">
+                  <ce:simple-para id="spar0005" view="all">Pim-1 kinase 3D structure. <ce:bold>(a)</ce:bold> Solid ribbon presentation of Pim-1 kinase showing its ATP-binding site with a focus on the G-loop and hinge region amino acid residues [Protein Data Bank (PDB) code: 1YXT; Resolution at 2<ce:hsp sp="0.25"/></ce:hsp>Å]; <ce:bold>(b)</ce:bold> ATP-binding site with important amino acid residues shown; <ce:bold>(c)</ce:bold> Graphical representation of Pim-1 ATP-binding site amino acid residues.</ce:simple-para>
+               </ce:caption>
+               <ce:alt-text id="at0005" role="short">Figure 1</ce:alt-text>
+               <ce:link locator="gr1" xlink:href="pii:S1359644620303743/gr1" xlink:type="simple" xlink:role="http://data.elsevier.com/vocabulary/ElsevierContentTypes/23.4"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig0010">
+               <ce:label>Figure 2</ce:label>
+               <ce:caption id="cap0010">
+                  <ce:simple-para id="spar0010" view="all">Hit-to lead and lead-to-clinical candidate optimization progress of different Pim kinase inhibitor chemotypes: <ce:bold>(a)</ce:bold> Imidazo[1,2-b]pyridazine; <ce:bold>(b)</ce:bold> oxindole; <ce:bold>(c)</ce:bold> thiazolidine-2,4-dione; <ce:bold>(d)</ce:bold> pyridineamine (*KMS11-luc: luciferase-expressing multiple myeloma cell line and *KMS12-BM: bone marrow-derived multiple myeloma cell line); and <ce:bold>(e)</ce:bold> diaminopyrazole.</ce:simple-para>
+               </ce:caption>
+               <ce:alt-text id="at0010" role="short">Figure 2</ce:alt-text>
+               <ce:link locator="gr2" xlink:href="pii:S1359644620303743/gr2" xlink:type="simple" xlink:role="http://data.elsevier.com/vocabulary/ElsevierContentTypes/23.4"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig0015">
+               <ce:label>Figure 3</ce:label>
+               <ce:caption id="cap0015">
+                  <ce:simple-para id="spar0015" view="all">Hit-to lead optimization progress of different Pim kinase inhibitor chemotypes: <ce:bold>(a)</ce:bold> 2-Azaindole (indazole); <ce:bold>(b)</ce:bold> Pyrazolo[1,5-a]pyrimidines; <ce:bold>(c)</ce:bold> 3,5-disubstituted 6-azaindazoles; <ce:bold>(d)</ce:bold> macrocyclic quinoxaline-pyrrolodihdropiperidinones; <ce:bold>(e)</ce:bold> quinazolinone-pyrrolopyrrolones; and <ce:bold>(f)</ce:bold> triazolo[4,3-b]pyridazine-3-yl-quinolines. Abbreviation: EWG, Electron-withdrawing group.</ce:simple-para>
+               </ce:caption>
+               <ce:alt-text id="at0015" role="short">Figure 3</ce:alt-text>
+               <ce:link locator="gr3" xlink:href="pii:S1359644620303743/gr3" xlink:type="simple" xlink:role="http://data.elsevier.com/vocabulary/ElsevierContentTypes/23.4"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig0020">
+               <ce:label>Figure 4</ce:label>
+               <ce:caption id="cap0020">
+                  <ce:simple-para id="spar0020" view="all">Graphical representation of hispidulin bound into the Pim-1 active site. Green shading indicates H-bonds, whereas gray shading indicates hydrophobic interactions.</ce:simple-para>
+               </ce:caption>
+               <ce:alt-text id="at0020" role="short">Figure 4</ce:alt-text>
+               <ce:link locator="gr4" xlink:href="pii:S1359644620303743/gr4" xlink:type="simple" xlink:role="http://data.elsevier.com/vocabulary/ElsevierContentTypes/23.4"/></ce:link>
+            </ce:figure>
+         </ce:floats>
+         <head>
+            <ce:dochead id="doh0005">
+               <ce:textfn>Review</ce:textfn>
+               <ce:dochead id="doh0010">
+                  <ce:textfn>Post screen</ce:textfn>
+               </ce:dochead>
+            </ce:dochead>
+            <ce:title id="tit0005">Pim kinase inhibitors in cancer: medicinal chemistry insights into their activity and selectivity</ce:title>
+            <ce:author-group id="aug0005">
+               <ce:author id="aut0005" orcid="0000-0003-4805-8802" author-id="S1359644620303743-b82583ec25e4ad05598099788154922c">
+                  <ce:given-name>Soraya</ce:given-name>
+                  <ce:surname>Alnabulsi</ce:surname>
+                  <ce:cross-ref id="crf0005" refid="cor0005">
+                     <ce:sup loc="post">⁎</ce:sup>
+                  </ce:cross-ref>
+                  
+               </ce:author>
+               <ce:author id="aut0010" author-id="S1359644620303743-191d256171d88011d813a48d529ec498">
+                  <ce:given-name>Enas A.</ce:given-name>
+                  <ce:surname>Al-Hurani</ce:surname>
+               </ce:author>
+               <ce:affiliation id="aff0005" affiliation-id="S1359644620303743-0c5179fd2246f246be0c5a599080bae9">
+                  <ce:textfn>Department of Medicinal Chemistry and Pharmacognosy, Faculty of Pharmacy, Jordan University of Science and Technology, PO Box 3030, Irbid 22110, Jordan</ce:textfn>
+                  <sa:affiliation>
+                     <sa:organization>Department of Medicinal Chemistry and Pharmacognosy</sa:organization>
+                     <sa:organization>Faculty of Pharmacy</sa:organization>
+                     <sa:organization>Jordan University of Science and Technology</sa:organization>
+                     <sa:address-line>PO Box 3030</sa:address-line>
+                     <sa:city>Irbid</sa:city>
+                     <sa:postal-code>22110</sa:postal-code>
+                     <sa:country>Jordan</sa:country>
+                  </sa:affiliation>
+               </ce:affiliation>
+               <ce:correspondence id="cor0005">
+                  <ce:label>⁎</ce:label>
+                  <ce:text>
+                     <ce:italic>Corresponding author</ce:italic>:</ce:text>
+               </ce:correspondence>
+            </ce:author-group>
+            
+            <ce:abstract id="abs0010" view="all" class="author"><ce:abstract-sec id="abst0010" view="all">
+                  <ce:simple-para id="spar0030" view="all">The oncogenic Pim kinase proteins (Pim-1/2/3) regulate tumorigenesis through phosphorylating essential proteins that control cell cycle and proliferation. Pim kinase is a potential chemotherapeutic target in cancer and its inhibition is currently the focus of intensive drug design and development efforts. The distinctive presence of proline amino acids in the hinge region provides an opportunity to inhibit Pim kinase while conserving the physiological functions of other kinases and reducing the toxicity profiles of the inhibitors. Various Pim kinase inhibitors have been clinically evaluated for the treatment of hematological cancers, yet none has reached the clinic. In this review, we discuss the design and development of selective and potent Pim inhibitors with novel chemotypes focusing on structural features essential for high potency and selectivity.</ce:simple-para>
+               </ce:abstract-sec></ce:abstract>
+         </head>
+         <body view="all">
+            <ce:sections>
+               <ce:section id="sec0005" role="introduction" view="all">
+                  <ce:section-title id="sect0010">Introduction</ce:section-title>
+                  <ce:para id="par0030" view="all">The proviral integration sites for Moloney murine leukemia virus (pan-Pim) kinase proteins are serine/threonine kinases classified as calcium/calmodulin-regulated kinases (CAMKs) <ce:cross-ref id="crf0010" refid="bib0005">[1]</ce:cross-ref>. The three Pim isoforms (Pim-1/2 and 3) are characterized by highly conserved structures, where Pim-1 has a 61% and 71% amino acid sequence homology with Pim-2 and Pim-3, respectively <ce:cross-ref id="crf0015" refid="bib0010">[2]</ce:cross-ref>. By contrast, their tissue distribution varies because Pim-1 and Pim-2 are mainly expressed in hematopoietic cells, whereas Pim-3 is mainly expressed in brain, kidney, and epithelia <ce:cross-ref id="crf0020" refid="bib0015">[3]</ce:cross-ref>.</ce:para>
+                  <ce:para id="par0035" view="all">Pan-Pim kinase is expressed at high levels under pathological conditions and its activation by different upstream effectors, such as Janus kinase/signal transducers and activators of transcription (JAK/STAT), phosphatidylinositol 3-kinase/ protein kinase B (PI3k/Akt), or nuclear factor (NF)-κB is correlated with the prevention of cellular apoptosis, leading to subsequent tumorigenesis <ce:cross-refs id="crfs0005" refid="bib0015 bib0020 bib0025 bib0030 bib0035 bib0040">[3–8]</ce:cross-refs>. Pim-1 and Pim-2 are overexpressed in hematological and solid tumors <ce:cross-ref id="crf0025" refid="bib0025">[5]</ce:cross-ref>, whereas Pim-3 is overexpressed in hepatocellular, pancreatic, and colon carcinomas <ce:cross-ref id="crf0030" refid="bib0045">[9]</ce:cross-ref>.</ce:para>
+                  <ce:para id="par0040" view="all">The inhibition of pan-Pim kinase by small-molecule modulators is currently the focus of intensive drug design and development efforts, with various inhibitors reported as clinical candidates <ce:cross-refs id="crfs0010" refid="bib0050 bib0055 bib0060 bib0065 bib0070 bib0075 bib0080 bib0085">[10–17]</ce:cross-refs>. Give that it is well known that Pim-1/2/3 isoforms have cellular compensatory mechanisms that maintain each other’s functions, the design of inhibitors emphasized the simultaneous negative modulation of all three isoforms to ensure more effective cancer treatment <ce:cross-ref id="crf0035" refid="bib0040">[8]</ce:cross-ref>.</ce:para>
+                  <ce:para id="par0045" view="all">The Pan-Pim kinase domain is characterized by the unique presence of a proline amino acid residue with a tertiary amine in the hinge region, which is not found in other protein kinases (<ce:cross-ref id="crf0040" refid="fig0005">Fig. 1</ce:cross-ref>
+                     <ce:float-anchor refid="fig0005"/></ce:float-anchor>) <ce:cross-refs id="crfs0015" refid="bib0090 bib0095 bib0100 bib0105">[18–21]</ce:cross-refs>. This structural feature enabled the design of selective pan-Pim kinase inhibitors devoid of off-target activity on other kinases.</ce:para>
+                  <ce:para id="par0050" view="all">Pan-Pim kinase inhibitors are classified (depending on their interactions with hinge residues) into two broad types: ATP-mimetic and ATP-competitive inhibitors. ATP-mimetics (staurosporine <ce:bold>1</ce:bold> and LY333531 <ce:bold>2)</ce:bold> form one canonical hydrogen bond (HB) with the backbone CO of the hinge region. By contrast, ATP-competitive inhibitors (SMI-4a <ce:bold>3</ce:bold> and LY294002 <ce:bold>4)</ce:bold> compensate for the lack of forming canonical HBs with the hinge region by forming other polar contacts inside the ATP-binding site <ce:cross-refs id="crfs0020" refid="bib0110 bib0115 bib0120">[22–24]</ce:cross-refs>.</ce:para>
+                  <ce:para id="par0055" view="all">The study of reported pan-Pim kinase inhibitors (ATP-competitive) crystal structures highlighted the importance of polar interactions with catalytic Lys67 as a key determinant of their inhibition ability. Furthermore, the ability of inhibitors to form hydrophobic interactions with the G-loop and polar interactions with either the hinge region or/and acidic patch (Asp128, Asn172, and Glu171) in the C terminus of ATP-binding site can improve potency.</ce:para>
+                  <ce:para id="par0060" view="all">In this review, we discuss the design, development, and structure–activity relationship (SAR) studies of potent and selective pan-Pim kinase inhibitors (ATP-competitive) with novel chemotypes (published between 2011 and 2019), focusing on structural features essential for high potency and selectivity.</ce:para>
+               </ce:section>
+               <ce:section id="sec0010" view="all">
+                  <ce:section-title id="sect0015">Pim kinase inhibitors under clinical assessment</ce:section-title>
+                  <ce:section id="sec0015" view="all">
+                     <ce:section-title id="sect0020">Imidazo[1,2-<ce:italic>b</ce:italic>]pyridazines: SGI-1776 and TP-3654</ce:section-title>
+                     <ce:para id="par0065" view="all">The early study of Pim-1 crystal structures in complex with ATP-mimetic inhibitors identified imidazo[1,2-<ce:italic>b</ce:italic>]pyridazine as a novel Pim-1/2 inhibitor. Preliminary structure–activity relationship (SAR) studies focusing on variation of substituents at C3 and C6 identified three hit inhibitors with activity ranges between 0.04 and 0.12<ce:hsp sp="0.25"/></ce:hsp>mM and 1.8 and 7.1<ce:hsp sp="0.25"/></ce:hsp>mM against Pim-1 and 2, respectively <ce:cross-ref id="crf0045" refid="bib0125">[25]</ce:cross-ref>. Further SAR studies of imidazo[1,2-<ce:italic>b</ce:italic>]pyridazines were reported in Supergen patent (WO 2008/058126 A2), in which the structure of the clinical candidate <ce:bold>SGI-1776</ce:bold> was disclosed <ce:cross-ref id="crf0050" refid="bib0130">[26]</ce:cross-ref>. <ce:bold>SGI-1776</ce:bold> was the first Pim inhibitor clinically evaluated in patients with relapsed and/or refractory leukemias (ClinicalTrials.gov, NCT01239108) <ce:cross-ref id="crf0055" refid="bib0130">[26]</ce:cross-ref>. Unfortunately, its clinical assessment was terminated because it showed affinity to inhibit the ether-a-go-go-related gene (hERG) channel, with resulting cardiac toxicity <ce:cross-refs id="crfs0025" refid="bib0060 bib0070">[12,14]</ce:cross-refs>. Nevertheless, efforts continued to develop imidazo[1,2-<ce:italic>b</ce:italic>]pyridazine Pim inhibitors, identifying the potent and selective Pim-1 inhibitor <ce:bold>TP-3654</ce:bold> devoid of hERG or cytochrome P450 inhibition profiles <ce:cross-ref id="crf0060" refid="bib0070">[14]</ce:cross-ref>. Currently, <ce:bold>TP-3654</ce:bold> is undergoing clinical assessment in patients with advanced solid tumors (ClinicalTrials.gov, NCT03715504) (<ce:cross-ref id="crf0065" refid="fig0010">Fig. 2</ce:cross-ref>
+                        <ce:float-anchor refid="fig0010"/></ce:float-anchor>a).</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0020" view="all">
+                     <ce:section-title id="sect0025">Oxindole: CX-6258</ce:section-title>
+                     <ce:para id="par0070" view="all">High-throughput screening of the Cylene pharmaceutical library identified oxindole as a novel Pim-1 inhibitor. Subsequent SAR studies highlighted the importance of the oxindole ring with unsubstituted lactam <ce:italic>N</ce:italic>H as the core for inhibitory activity. In addition, the isosteric replacement of carboxylic acid by alicyclic amide-possessing basic nitrogen and conserved furan and phenyl rings coplanarity was crucial for its inhibitory activity <ce:cross-ref id="crf0070" refid="bib0135">[27]</ce:cross-ref>. SAR studies identified <ce:bold>CX-6258</ce:bold> as novel potent pan-Pim inhibitor with cellular antiproliferative activity against different types of cancer cell lines, being most sensitive against the acute myeloid leukemia cell line, MV-4-11. Currently, <ce:bold>CX-6258</ce:bold> is undergoing clinical evaluation (<ce:cross-ref id="crf0075" refid="fig0010">Fig. 2</ce:cross-ref>b) <ce:cross-ref id="crf0080" refid="bib0085">[17]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0025" view="all">
+                     <ce:section-title id="sect0030">Thiazolidine-2,4-dione: AZD1028 (AstraZeneca)</ce:section-title>
+                     <ce:para id="par0075" view="all">Thiazolidine-2,4-dione was identified by Dakin <ce:italic>et al.</ce:italic> as potent and selective pan-Pim inhibitor with potential anticancer activity. Early SAR studies proved that removal of phenolic-OH conserved activity, whereas insertion of cyclic amines <ce:italic>ortho</ce:italic> to thiazolidine-2,4-dione moiety improved potency more than tenfold. In addition, insertion of lipophilic group (phenyl ring in <ce:bold>AZD1208)</ce:bold> 
+                        <ce:italic>orthro</ce:italic> to the cyclic amine enhanced the potency because this group is able to form hydrophobic interactions with hydrophobic amino acids at position 126 <ce:cross-ref id="crf0085" refid="bib0140">[28]</ce:cross-ref>. The drug candidate <ce:bold>AZD1208</ce:bold> was investigated preclinically <ce:cross-ref id="crf0090" refid="bib0145">[29]</ce:cross-ref>, followed by clinical assessment in patients with solid and hematological tumors (ClinicalTrials.gov, NCT01588548) (<ce:cross-ref id="crf0095" refid="fig0010">Fig. 2</ce:cross-ref>c). Unfortunately, <ce:bold>AZD1208</ce:bold> did not show any clinical significance and potentiated CYP3A4 activity in patients under study, which resulted in termination of its development <ce:cross-ref id="crf0100" refid="bib0075">[15]</ce:cross-ref>. A new study revealed the therapeutic significance of <ce:bold>AZD1208</ce:bold> in gastric carcinoma if it is administrated in combination with the Akt inhibitor <ce:bold>AZD5363</ce:bold> 
+                        <ce:cross-ref id="crf0105" refid="bib0150">[30]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0030" view="all">
+                     <ce:section-title id="sect0035">Pyridinamines: PIM447 (previously known as LGH447, Novartis) and INCB053914 (Incyte)</ce:section-title>
+                     <ce:para id="par0080" view="all">The clinical candidate <ce:bold>PIM447</ce:bold> was developed starting from amino-thiazole hit <ce:bold>1</ce:bold>, which showed moderate activity against Pim-1 and 3. The crystallization of <ce:bold>1</ce:bold> into the Pim-1 active site revealed the lack of any intermolecular HB interactions with Pim-1 hydrophilic residues. Consequently, the execution of major structural modifications that focused on increasing structure bulkiness and inserting nitrogen atoms at different skeleton positions <ce:bold>2</ce:bold>, improved the potency dramatically. The high lipophilicity of <ce:bold>2</ce:bold> focused efforts to improve drug-likeness properties, identifying <ce:bold>LGB321</ce:bold> as a picomolar pan-Pim inhibitor with good cellular activity <ce:cross-refs id="crfs0030" refid="bib0155 bib0160">[31,32]</ce:cross-refs>. Although <ce:bold>LGB321</ce:bold> can serve as an <ce:italic>in vitro</ce:italic> and <ce:italic>in vivo</ce:italic> Pim target validation probe, its metabolic instability was an obstacle for further development. Structure–stability studies showed that piperidine oxidation and sequential ring opening led to activity loss, which was overcome by replacing piperidine with cyclohexane. The balanced pharmacokinetic (PK) and pharmacodynamic (PD) profiles of <ce:bold>PIM447</ce:bold> in addition to its high selectivity, preclinical activity in multiple myeloma models, and safety profile resulted in its clinical assessment for hematological malignancies <ce:cross-refs id="crfs0035" refid="bib0065 bib0165">[13,33]</ce:cross-refs>. <ce:bold>PIM447</ce:bold> is currently in Phase I clinical studies in patients with relapsed and/or refractory multiple myeloma (ClinicalTrials.gov, NCT01456689) <ce:cross-ref id="crf0110" refid="bib0065">[13]</ce:cross-ref>. Likewise, preclinical studies showed that <ce:bold>INCB053914</ce:bold> can be of benefit as a chemotherapy against hematological malignancies if it is used alone or in combination with other anticancer agents <ce:cross-ref id="crf0115" refid="bib0170">[34]</ce:cross-ref>. Consequently, <ce:bold>NCB053914</ce:bold> is currently in Phase I clinical studies as a monotherapy in patients with advanced hematological malignancies and in Phase II trials assessed in combination with either intermediate-dose cytarabine, zacytidine, or ruxolitinib (ClinicalTrials.gov, NCT02587598) (<ce:cross-ref id="crf0120" refid="fig0010">Fig. 2</ce:cross-ref>d) <ce:cross-ref id="crf0125" refid="bib0080">[16]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0035" view="all">
+                     <ce:section-title id="sect0040">Diaminopyrazole: GDC-0339</ce:section-title>
+                     <ce:para id="par0085" view="all">Wang <ce:italic>et al.</ce:italic> initiated a project identifying novel Pim-1/2/3 kinase inhibitors with potential anticancer activity targeting multiple myeloma <ce:cross-ref id="crf0130" refid="bib0175">[35]</ce:cross-ref>. The project was inspired by the work of Burger <ce:italic>et al.</ce:italic>, who disclosed an inhibitor with diaminopyridine scaffold <ce:bold>3</ce:bold> in 2013 <ce:cross-ref id="crf0135" refid="bib0155">[31]</ce:cross-ref>. First, isosteric replacement of 3-aminopyridine <ce:bold>3</ce:bold> (shown in red) by 5-aminothiazole group <ce:bold>4</ce:bold> was proposed to identify a new scaffold of Pim kinase inhibitors. 5-Aminobenzothiazole bioisostere <ce:bold>4</ce:bold> retained good enzymatic activity and showed better cellular activity, although its poor PK profile with respect to oral bioavailability (F%<ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>23% compared with 54% for <ce:bold>3</ce:bold>) and hERG inhibition (IC<ce:inf loc="post">50</ce:inf>
+                        <ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>0.11<ce:hsp sp="0.25"/></ce:hsp>mM) drove efforts towards its optimization. Given the essential HB between pyridine-<ce:italic>N</ce:italic> of 4-aminopyridine moiety (shown in blue) <ce:bold>3</ce:bold> and the catalytic Lys67 residue, a second bioisosteric replacement was executed where pyrazole replaced pyridine. In addition, ring expansion of piperidine into azepane identified <ce:bold>5</ce:bold> as novel Pim kinase inhibitor lead. The poor oral bioavailability (F%<ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>8%) of <ce:bold>5</ce:bold> required further optimization.</ce:para>
+                     <ce:para id="par0090" view="all">Consequently, a series of analogs was synthesized to study the structural requirements of diaminopyrazole prototypes that ensure good enzymatic and cellular Pim kinase inhibitory activity together with good PK profiles. It was noticed that an amino group at position 5 of aminothiazole was essential for activity, permeability, and oral bioavailability. In addition, the primary amine on the azepane ring could not be replaced by alcohol or secondary amine and its basicity affected the permeability and oral bioavailability of the compound profoundly. The reduction in primary amine basicity, which was executed through either direct substitution of the primary amine with fluoroalkyl moieties or azepane ring substitution with different electron-withdrawing groups at varying positions, had variable effects on enzymatic and cellular activity in addition to PK. Ensuring the best balance between biochemical assay and cellular potency (B lymphoblast cell line; MM.1S), kinase selectivity, and a good PK profile, the optimized analog <ce:bold>GDC-0339</ce:bold> was identified as a novel oral Pim kinase clinical candidate with potential anticancer activity that could be further investigated for use against multiple myeloma (<ce:cross-ref id="crf0140" refid="fig0010">Fig. 2</ce:cross-ref>e).</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section id="sec0040" view="all">
+                  <ce:section-title id="sect0045">Pim kinase inhibitors under development</ce:section-title>
+                  <ce:section id="sec0045" view="all">
+                     <ce:section-title id="sect0050">2-Azaindole (indazole)</ce:section-title>
+                     <ce:para id="par0095" view="all">Indole <ce:bold>6</ce:bold> was identified as promising Pim-1 hit inhibitor after virtual screening of merged commercially databases followed by <ce:italic>in vitro</ce:italic> biochemical assays <ce:cross-ref id="crf0145" refid="bib0180">[36]</ce:cross-ref>. The lack of kinase selectivity and poor PK profile initiated a structure-based optimization process. For potency optimization, the skeleton of <ce:bold>6</ce:bold> was divided into three parts and SAR studies for each one was conducted in a sequence starting from the top (blue), followed by the left-hand side (red) and then the right-hand side (black).</ce:para>
+                     <ce:para id="par0100" view="all">The X-ray crystallography of <ce:bold>6</ce:bold> in the Pim-1 active site revealed its ability to bind to the ATP-binding site, where its top moiety (at position 7) occupied the pocket facing the acidic patch. To ensure the ability of <ce:bold>6</ce:bold> to form HB with either Asp128 or Glu171, a nitrogen atom was introduced <ce:bold>7</ce:bold>, which enhanced the potency dramatically. In addition, the left-hand phenolic OH, which is pointed towards the G-loop, was selected to be further modified because it is not involved in any type of interaction with the active site residues and is prone to metabolism. The removal of phenolic-OH did not affect the activity, whereas methylation <ce:bold>8</ce:bold> improved the activity through hydrophobic interactions with the G-loop. By contrast, the right-hand side formed essential HBs between its indole-<ce:italic>N</ce:italic>H and Glu121 of the hinge region, which did not allow substantial structural modifications. Consequently, 7-azaindole <ce:bold>9</ce:bold> and 2-azaindole <ce:bold>10</ce:bold> were the best isosteres of indole in which the potency was improved and cLog P decreased. Taking into consideration the kinase selectivity, <ce:bold>10</ce:bold> was chosen for further preclinical studies <ce:cross-ref id="crf0150" refid="bib0185">[37]</ce:cross-ref>, whereas <ce:bold>9</ce:bold> with a better <ce:italic>in vitro</ce:italic> PK profile was further optimized for its kinase selectivity <ce:cross-ref id="crf0155" refid="bib0190">[38]</ce:cross-ref>.</ce:para>
+                     <ce:para id="par0105" view="all">The low kinase selectivity of <ce:bold>9</ce:bold> was rationalized to HB formation between <ce:italic>N</ce:italic>7 of 7-azaindole ring (shown in green) and amino acids of hinge region of different kinases. The hypothesis was tested through insertion of an alkyl or small halogen substituent at C6 to sterically prevent the ability of HB formation. However, the inhibitory potency decreased with increases in the bulkiness of the substituent, which was reversed upon replacement of OMe with an OH group. These modifications resulted in identifying <ce:bold>11</ce:bold> as a selective Pim-1 kinase inhibitor with improved Pim-2 inhibition potency (<ce:cross-ref id="crf0160" refid="fig0015">Fig. 3</ce:cross-ref>
+                        <ce:float-anchor refid="fig0015"/></ce:float-anchor>a) <ce:cross-ref id="crf0165" refid="bib0190">[38]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0050" view="all">
+                     <ce:section-title id="sect0055">Pyrazolo[1,5-a]pyrimidines</ce:section-title>
+                     <ce:para id="par0110" view="all">Wang <ce:italic>et al.</ce:italic> identified hit <ce:bold>12</ce:bold> as a potential pan-Pim inhibitor worthy of further inhibitory potency and PK profile optimization. First, the piperidine ring was replaced with 4-cyanobenzyl group <ce:bold>13</ce:bold> to decrease the probability of ionization (calculated phenol <ce:italic>p</ce:italic>K<ce:inf loc="post">a</ce:inf>
+                        <ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>5.9 and piperidine <ce:italic>N p</ce:italic>K<ce:inf loc="post">a</ce:inf>
+                        <ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>9.75) at physiological pH (7.4) where the predominant forms are zwitterion. The X-ray crystal structures of <ce:bold>12</ce:bold> [Protein Data Bank (PDB) code: 4K0Y] and <ce:bold>13</ce:bold> (PDB code: 4K18) in Pim-1 active site showed that both compounds conserved the essential HB interaction with catalytic Lys67, where the phenol group of <ce:bold>12</ce:bold> and <ce:italic>N</ce:italic>6 of <ce:bold>13</ce:bold> involved were in this interaction. In addition, piperidine to 4-cyanobenzyl group replacement favorably put 4-fluoroaniline <ce:bold>13</ce:bold> closer to hinge region compared with in <ce:bold>12</ce:bold>. Later, the 4-fluoroaniline ring was replaced with pyrrolopyridine to ensure intermolecular interactions with hinge region <ce:bold>14</ce:bold>, improving the inhibitory potency. Further SAR studies to enhance biochemical potency identified <ce:bold>15</ce:bold> as promising lead with picomolar potency, but its low cellular potency [in the mouse pre B cell line (BaF3)] demanded more optimization. The low cellular potency was speculated to be the result of high piperidine <ce:italic>N</ce:italic> basicity (calculated <ce:italic>p</ce:italic>K<ce:inf loc="post">a</ce:inf>
+                        <ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>9.4), which was reduced through the introduction of a fluorine atom on the piperidine ring (calculated <ce:italic>p</ce:italic>K<ce:inf loc="post">a</ce:inf> = 8.3) <ce:bold>16</ce:bold>. Consequently, <ce:bold>16</ce:bold> was identified as a promising lead pan-Pim inhibitor with novel scaffold, and good biochemical and cellular potency worthy of further development (<ce:cross-ref id="crf0170" refid="fig0015">Fig. 3</ce:cross-ref>b) <ce:cross-ref id="crf0175" refid="bib0195">[39]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0055" view="all">
+                     <ce:section-title id="sect0060">3,5-disubstituted 6-azaindazoles</ce:section-title>
+                     <ce:para id="par0115" view="all">A novel pan-Pim inhibitor with a 6-azaindazole chemotype was identified by Hu <ce:italic>et al.</ce:italic> after SAR studies of the Akt inhibitor <ce:bold>17</ce:bold>. Pim kinase inhibition was correlated with a 5-pyridyl-6-azaindazole core <ce:bold>18,</ce:bold> and an extension strategy at three selected positions (C3, C5’, or C6’) was first applied to ensure intermolecular interactions with the acidic patch. Consequently, a subnanomolar inhibitor <ce:bold>19</ce:bold> was identified and its interaction with catalytic Lys67 was later explored by inserting different polar heads at the C6 of the azaindazole core ring. The balanced biochemical and cellular potency profiles of the 3,5-disubstituted 6-azaindazole derivative <ce:bold>20</ce:bold> were the reasons for choosing it as a Pim kinase lead inhibitor. However, the poor PK profile of <ce:bold>20,</ce:bold> especially its very low oral bioavailability in rats (% F<ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>1.0), required further optimization <ce:cross-ref id="crf0180" refid="bib0200">[40]</ce:cross-ref>. The reasons for this low bioavailability were explored by studying its hepatic and intestinal metabolic stability and <ce:italic>in vitro</ce:italic> permeability. The different metabolic and permeability profiles among different analogs drove efforts to focus on intestinal metabolism. The incubation of compounds in rat intestinal microsomes showed that glucuronidation at 6-azaindazole core terminated any activity. Given that the 6-azaindazole ring is essential for any inhibitory activity, the challenge was to increase the metabolic stability without losing any inhibitory activity. To achieve the goal, many heteroaromatic ring isosteres were proposed and studied, resulting in 5-azaindazole <ce:bold>GNE 955</ce:bold> as potential drug candidate with good <ce:italic>in vivo</ce:italic> stability characters (<ce:cross-ref id="crf0185" refid="fig0015">Fig. 3</ce:cross-ref>c). Nevertheless, further improvement of 5-azaindazole as a pan-Pim kinase inhibitor was terminated because of the success of Wang <ce:italic>et al.</ce:italic> in identifying an alternative scaffold with improved PD and PK profiles <ce:cross-ref id="crf0190" refid="bib0205">[41]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0060" view="all">
+                     <ce:section-title id="sect0065">Macrocyclic quinoxaline-pyrrolodihdropiperidinones</ce:section-title>
+                     <ce:para id="par0120" view="all">The reported naphthyridine pyrrolodihydropiperidinone hit <ce:bold>21</ce:bold> was chosen to be further optimized with the aim of identifying drug candidates with potential anticancer activity. The structure-based optimization of <ce:bold>21</ce:bold> first focused on improving its Pim kinase selectivity compared with other kinases. The optimization was rationalized taking into consideration the ability of naphthyridine-<ce:italic>N</ce:italic> at position 5 (shown in red) to form favorable HBs with the backbone <ce:italic>N</ce:italic>H of the kinase hinge region. The isosteric replacement of naphthyridine <ce:bold>21</ce:bold> with a methylquinoxaline <ce:bold>22</ce:bold> improved the kinase selectivity significantly and additionally enhanced Pim-1/2 kinase inhibitory potency. Further structural modifications by replacing the phenyl substituent attached to a secondary amine (shown in blue) with large alkyl groups did not enhance potency in biochemical assays <ce:cross-ref id="crf0195" refid="bib0210">[42]</ce:cross-ref>. Later, the feasibility of connecting an alkyl group at the secondary amine to pyrrolodihydropiperidinone was hypothesized to conserve the overall U-shape conformer of hit inhibitor <ce:bold>22,</ce:bold> and introducing more favorable hydrophobic interactions with the G-loop amino acid residues. A bridge of five atoms with varying alkyl substituents, and number of saturated and unsaturated bonds with different configurations was introduced between the quinazoline and pyrrolodihydropiperidinone rings, resulting in a 13-membered macrocyclic structure <ce:bold>23</ce:bold>. The (<ce:italic>Z</ce:italic>)-configured, allylic methyl substituted macrocycle <ce:bold>24</ce:bold> was chosen for further characterization based on its favorable biochemical potency, solubility, and PK profile. The oral activity and efficacy of <ce:bold>24</ce:bold> in a KMS-12 BM tumor xenograft model (EC<ce:inf loc="post">50</ce:inf>
+                        <ce:hsp sp="0.25"/></ce:hsp>=<ce:hsp sp="0.25"/></ce:hsp>30<ce:hsp sp="0.25"/></ce:hsp>nM) demonstrated the good optimization strategy of macrocyclization that resulted in a compound with properties suitable for <ce:italic>in vivo</ce:italic> Pim kinase inhibition studies (<ce:cross-ref id="crf0200" refid="fig0015">Fig. 3</ce:cross-ref>d).</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0065" view="all">
+                     <ce:section-title id="sect0070">Quinazolinone-pyrrolopyrrolones</ce:section-title>
+                     <ce:para id="par0125" view="all">Methylquinoxaline <ce:bold>25</ce:bold>, which was obtained during macrocyclic optimization strategy of <ce:bold>21,</ce:bold> proved to be a potential Pim kinase inhibitor. Compound <ce:bold>25</ce:bold> showed good biochemical and cellular Pim-1/2 inhibition activity together with good efficacy in a murine KMS-12 BM multiple myeloma xenograft model. However, poor PK properties in dogs initiated SAR studies to find more metabolically stable derivatives with conserved biochemical and cellular Pim kinase inhibitory activity, which resulted in an orally active Pim kinase inhibitor <ce:bold>26</ce:bold>. However, the poor water solubility of <ce:bold>26</ce:bold> prompted more optimization efforts to enhance its drug-likeness properties <ce:cross-ref id="crf0205" refid="bib0215">[43]</ce:cross-ref>.</ce:para>
+                     <ce:para id="par0130" view="all">The crystallization of <ce:bold>26</ce:bold> into the Pim-1 active site (PDB code: 5IPJ) revealed the importance of co-planarity between quinazolinone (shown in red) and pyrrolopyrrolone (shown in blue) rings upon binding with the ATP pocket. This co-planarity results in low water solubility because it enhances the ability of molecules to form a crystal lattice. Consequently, drug-likeness-driven optimization of <ce:bold>26</ce:bold> focused on variation of <ce:italic>N</ce:italic>-methyl and <ce:italic>N</ce:italic>-alkyl substituents at the <ce:italic>N</ce:italic>-2 and C-3 of the quinazolinone ring, respectively. SAR studies followed by PK profiling led to the identification of (<ce:italic>R</ce:italic>)‐8-(6-Methyl-4-oxo-1,4,5,6- tetrahydropyrrolo[3,4‐b]pyrrol-2-yl)-3-(1-methylcyclopropyl)-2-((1-methylcyclopropyl)amino)quinazolin-4(3<ce:hsp sp="0.25"/></ce:hsp>H)‐one <ce:bold>27</ce:bold>, as a drug candidate for hematological malignancies (<ce:cross-ref id="crf0210" refid="fig0015">Fig. 3</ce:cross-ref>e). Compared with <ce:bold>26</ce:bold>; compound <ce:bold>27</ce:bold> showed improved biochemical and cellular activity, good solubility, and a similar binding mode with the active site of Pim-1 (PDB code 6MT0) <ce:cross-ref id="crf0215" refid="bib0220">[44]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0070" view="all">
+                     <ce:section-title id="sect0075">Triazolo[4,3-b]pyridazine-3-yl-quinolines</ce:section-title>
+                     <ce:para id="par0135" view="all">Further efforts to mitigate <ce:italic>h</ce:italic>ERG inhibition, which is correlated with imidazo[1,2-b]pyridazine scaffold (<ce:bold>SGI-1776</ce:bold>), used a scaffold hopping strategy starting with a diverse fragment database and a <ce:bold>SGI-1776</ce:bold> structure. This succeeded in identifying Pim lead inhibitor <ce:bold>28</ce:bold> with a novel triazolo[4,3-b]pyridazine scaffold <ce:cross-ref id="crf0220" refid="bib0225">[45]</ce:cross-ref>. The docking and simulation studies of <ce:bold>28</ce:bold> and structurally related compounds displayed the accommodation of inhibitors inside the Pim-1 catalytic site after dislocating the G-loop with C6 and C7 substituents. Then, a third ring linking C6 and C7 was introduced, which resulted in the discovery of a novel tricyclic trizolopyridazine scaffold. SAR studies of the tricyclic trizolopyridazine identified <ce:bold>29</ce:bold> as a potential Pim inhibitor devoid of <ce:italic>h</ce:italic>ERG inhibition and worthy of further development to enhance its biochemical Pim-2 inhibitory activity and cellular Pim inhibition ability (in a human nonsmall cell lung carcinoma cell line overexpressing Pim-1; H1299-pBAD) (<ce:cross-ref id="crf0225" refid="fig0015">Fig. 3</ce:cross-ref>f) <ce:cross-ref id="crf0230" refid="bib0230">[46]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section id="sec0075" view="all">
+                  <ce:section-title id="sect0080">Scaffolds worthy of further optimization as Pim kinase inhibitors</ce:section-title>
+                  <ce:section id="sec0080" view="all">
+                     <ce:section-title id="sect0085">Hispidulin</ce:section-title>
+                     <ce:para id="par0140" view="all">Hispidulin is a natural flavonoid able to inhibit Pim-1 at a 2.71<ce:hsp sp="0.25"/></ce:hsp>mM concentration. The crystal structure (PDB code: 4XH6) showed its ability to form hydrophobic interactions with the gatekeeper residue (leu120) and H-bond with Lys67. The lack of a hydroxyl group at ring C in addition to HB with Lys67 oriented hispidulin disposition inside the ATP-binding site without forming interactions with the hinge region residues (<ce:cross-ref id="crf0235" refid="fig0020">Fig. 4</ce:cross-ref>
+                        <ce:float-anchor refid="fig0020"/></ce:float-anchor>). However, further optimization is required to enhance potency against Pim-1 <ce:cross-refs id="crfs0040" refid="bib0235 bib0240">[47,48]</ce:cross-refs>.</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section id="sec0085" view="all">
+                  <ce:section-title id="sect0090">Concluding remarks</ce:section-title>
+                  <ce:para id="par0145" view="all">A major issue that should be addressed during any kinase drug design project is selectivity. The presence of hundreds of kinases with conserved ATP region put obstacles to avoid promiscuity during drug design. The exceptional pim kinase structural feature in the presence of tertiary amine in its hinge region paves the way towards designing inhibitors devoid of kinases toxicity. The design of pim kinase inhibitors focuses on removing any atom that is able to form polar contacts with hinge region or sterically block this contact through insertion of bulky groups. The knowledge extracted from crystal structures of inhibitors inside pim kinase active site during early stages aids in putting the design and development progress on the correct track.</ce:para>
+               </ce:section>
+               <ce:section id="sec0090" view="all">
+                  <ce:section-title id="sect0095">Declaration of Competing Interest</ce:section-title>
+                  <ce:para id="par0150" view="all">The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.</ce:para>
+               </ce:section>
+            </ce:sections>
+         </body>
+         <tail view="all">
+            <ce:bibliography id="bibl0005" view="all">
+               <ce:section-title id="sect0100">References</ce:section-title>
+               <ce:bibliography-sec id="bibs0005" view="all">
+                  <ce:bib-reference id="bib0005">
+                     <ce:label>1</ce:label>
+                     <sb:reference id="sbref0005">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Bachmann</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Möröy</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The serine/threonine kinase Pim-1</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Int. J. Biochem. Cell Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>37</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>726</sb:first-page>
+                              <sb:last-page>730</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0010">
+                     <ce:label>2</ce:label>
+                     <sb:reference id="sbref0010">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>N.A.</ce:given-name>
+                                 <ce:surname>Warfel</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.S.</ce:given-name>
+                                 <ce:surname>Kraft</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>PIM kinase (and Akt) biology and signaling in tumors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Pharmacol. Ther.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>151</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2015</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>41</sb:first-page>
+                              <sb:last-page>49</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0015">
+                     <ce:label>3</ce:label>
+                     <sb:reference id="sbref0015">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>P.</ce:given-name>
+                                 <ce:surname>Mondello</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Pim kinases in hematological malignancies: where are we now and where are we going?</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Hematol. Oncol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>7</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>95</sb:first-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0020">
+                     <ce:label>4</ce:label>
+                     <sb:reference id="sbref0020">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>D.</ce:given-name>
+                                 <ce:surname>Morishita</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Pim kinases promote cell cycle progression by phosphorylating and down-regulating p27kip1 at the transcriptional and posttranscriptional levels</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>68</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2008</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>5076</sb:first-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0025">
+                     <ce:label>5</ce:label>
+                     <sb:reference id="sbref0025">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>X.</ce:given-name>
+                                 <ce:surname>Zhang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>PIM kinase as an executional target in cancer</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Cancer Prev.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2018</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>109</sb:first-page>
+                              <sb:last-page>116</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0030">
+                     <ce:label>6</ce:label>
+                     <sb:reference id="sbref0030">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Brault</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>PIM serine/threonine kinases in the pathogenesis and therapy of hematologic malignancies and solid cancers</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Haematologica</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>95</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1004</sb:first-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0035">
+                     <ce:label>7</ce:label>
+                     <sb:reference id="sbref0035">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.C.</ce:given-name>
+                                 <ce:surname>Nawijn</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>For better or for worse: the role of Pim oncogenes in tumorigenesis</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Rev. Cancer</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>11</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2011</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>23</sb:first-page>
+                              <sb:last-page>34</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0040">
+                     <ce:label>8</ce:label>
+                     <sb:reference id="sbref0040">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Narlik-Grassow</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The PIM family of serine/threonine kinases in cancer</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Med. Res. Rev.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>34</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>136</sb:first-page>
+                              <sb:last-page>159</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0045">
+                     <ce:label>9</ce:label>
+                     <sb:reference id="sbref0045">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>N.</ce:given-name>
+                                 <ce:surname>Mukaida</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Roles of Pim-3, a novel survival kinase, in tumorigenesis</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Sci.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>102</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2011</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1437</sb:first-page>
+                              <sb:last-page>1442</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0050">
+                     <ce:label>10</ce:label>
+                     <sb:reference id="sbref0050">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>G.M.</ce:given-name>
+                                 <ce:surname>Arunesh</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Small molecule inhibitors of PIM1 kinase: July 2009 to February 2013 patent update</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Expert Opin. Ther. Pat.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>24</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>5</sb:first-page>
+                              <sb:last-page>17</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0055">
+                     <ce:label>11</ce:label>
+                     <sb:reference id="sbref0055">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Morwick</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Pim kinase inhibitors: a survey of the patent literature</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Expert Opin. Ther. Pat.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>20</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>193</sb:first-page>
+                              <sb:last-page>212</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0060">
+                     <ce:label>12</ce:label>
+                     <sb:reference id="sbref0060">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>F.</ce:given-name>
+                                 <ce:surname>Cervantes-Gomez</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Biological effects of the Pim kinase inhibitor, SGI-1776, in multiple myeloma</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Clin. Lymphoma, Myeloma Leukemia</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>13</sb:volume-nr>
+                              </sb:series>
+                              <sb:issue-nr>Suppl. 2</sb:issue-nr>
+                              <sb:date>2013</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>S317</sb:first-page>
+                              <sb:last-page>S329</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0065">
+                     <ce:label>13</ce:label>
+                     <sb:reference id="sbref0065">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.S.</ce:given-name>
+                                 <ce:surname>Raab</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The first-in-human study of the pan-PIM kinase inhibitor PIM447 in patients with relapsed and/or refractory multiple myeloma</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Leukemia</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>33</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2924</sb:first-page>
+                              <sb:last-page>2933</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0070">
+                     <ce:label>14</ce:label>
+                     <sb:reference id="sbref0070">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.M.</ce:given-name>
+                                 <ce:surname>Foulks</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A small-molecule inhibitor of PIM kinases as a potential treatment for urothelial carcinomas</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Neoplasia (NY)</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>16</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>403</sb:first-page>
+                              <sb:last-page>412</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0075">
+                     <ce:label>15</ce:label>
+                     <sb:reference id="sbref0075">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Cortes</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Phase I studies of AZD1208, a proviral integration Moloney virus kinase inhibitor in solid and haematological cancers</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Br. J. Cancer</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>118</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2018</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1425</sb:first-page>
+                              <sb:last-page>1433</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0080">
+                     <ce:label>16</ce:label>
+                     <sb:reference id="sbref0080">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Byrne</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Preliminary results from an ongoing phase 1/2 study of INCB053914, a pan-proviral integration sites for moloney virus (PIM) kinase inhibitor, in patients with advanced hematologic malignancies</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Blood</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>130</sb:volume-nr>
+                              </sb:series>
+                              <sb:issue-nr>Suppl. 1</sb:issue-nr>
+                              <sb:date>2017</sb:date>
+                           </sb:issue>
+                        </sb:host>
+                        <sb:comment>2585–2585</sb:comment>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0085">
+                     <ce:label>17</ce:label>
+                     <sb:reference id="sbref0085">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>V.</ce:given-name>
+                                 <ce:surname>Asati</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>PIM kinase inhibitors: structural and pharmacological perspectives</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Eur. J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>172</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>95</sb:first-page>
+                              <sb:last-page>108</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0090">
+                     <ce:label>18</ce:label>
+                     <sb:reference id="sbref0090">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Vulpetti</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Bosotti</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Sequence and structural analysis of kinase ATP pocket residues</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Farmaco</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>59</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>759</sb:first-page>
+                              <sb:last-page>765</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0095">
+                     <ce:label>19</ce:label>
+                     <sb:reference id="sbref0095">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Xing</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Kinase hinge binding scaffolds and their hydrogen bond patterns</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2015</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>6520</sb:first-page>
+                              <sb:last-page>6527</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0100">
+                     <ce:label>20</ce:label>
+                     <sb:reference id="sbref0100">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.N.</ce:given-name>
+                                 <ce:surname>Bullock</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structure and substrate specificity of the Pim-1 kinase</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>280</sb:volume-nr>
+                              </sb:series>
+                              <sb:issue-nr>50</sb:issue-nr>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>41675</sb:first-page>
+                              <sb:last-page>41682</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0105">
+                     <ce:label>21</ce:label>
+                     <sb:reference id="sbref0105">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Arrouchi</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A review on PIM kinases in tumors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioinformation</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>15</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>40</sb:first-page>
+                              <sb:last-page>45</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0110">
+                     <ce:label>22</ce:label>
+                     <sb:reference id="sbref0110">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Liang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>Y.</ce:given-name>
+                                 <ce:surname>Li</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Use of regulators and inhibitors of Pim-1, a serine/threonine kinase, for tumour therapy</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Med. Rep.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>9</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2051</sb:first-page>
+                              <sb:last-page>2060</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0115">
+                     <ce:label>23</ce:label>
+                     <sb:reference id="sbref0115">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Y.-W.</ce:given-name>
+                                 <ce:surname>Lin</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A small molecule inhibitor of Pim protein kinases blocks the growth of precursor T-cell lymphoblastic leukemia/lymphoma</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Blood</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>115</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>824</sb:first-page>
+                              <sb:last-page>833</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0120">
+                     <ce:label>24</ce:label>
+                     <sb:reference id="sbref0120">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Z.</ce:given-name>
+                                 <ce:surname>Xia</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Synthesis and evaluation of novel inhibitors of Pim-1 and Pim-2 protein kinases</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>52</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>74</sb:first-page>
+                              <sb:last-page>86</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0125">
+                     <ce:label>25</ce:label>
+                     <sb:reference id="sbref0125">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>V.</ce:given-name>
+                                 <ce:surname>Pogacic</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structural analysis identifies imidazo[1,2–b]pyridazines as PIM kinase inhibitors with in vitro antileukemic activity</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>67</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2007</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>6916</sb:first-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0130">
+                     <ce:label>26</ce:label>
+                     <ce:other-ref id="oref0130">
+                        <ce:textref>Bearss D.J. <ce:italic>et al.</ce:italic> Supergen. Imidazo[1,2-b]pyridazine and pyrazolo[1,5-a]pyrimidine derivatives and their use as protein kinase inhibitors. WO2008058126A2.</ce:textref>
+                     </ce:other-ref>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0135">
+                     <ce:label>27</ce:label>
+                     <sb:reference id="sbref0135">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Haddach</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of CX-6258) a potent, selective, and orally efficacious pan-Pim kinase inhibitor</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>ACS Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>3</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2012</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>135</sb:first-page>
+                              <sb:last-page>139</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0140">
+                     <ce:label>28</ce:label>
+                     <sb:reference id="sbref0140">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>L.A.</ce:given-name>
+                                 <ce:surname>Dakin</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of novel benzylidene-1,3-thiazolidine-2,4-diones as potent and selective inhibitors of the PIM-1, PIM-2, and PIM-3 protein kinases</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>22</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2012</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>4599</sb:first-page>
+                              <sb:last-page>4604</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0145">
+                     <ce:label>29</ce:label>
+                     <sb:reference id="sbref0145">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>E.K.</ce:given-name>
+                                 <ce:surname>Keeton</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>AZD1208, a potent and selective pan-Pim kinase inhibitor, demonstrates efficacy in preclinical models of acute myeloid leukemia</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Blood</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>123</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>905</sb:first-page>
+                              <sb:last-page>913</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0150">
+                     <ce:label>30</ce:label>
+                     <sb:reference id="sbref0150">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Lee</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Pan-Pim kinase inhibitor AZD1208 suppresses tumor growth and synergistically interacts with Akt inhibition in gastric cancer cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Res. Treat.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>51</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>451</sb:first-page>
+                              <sb:last-page>463</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0155">
+                     <ce:label>31</ce:label>
+                     <sb:reference id="sbref0155">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.T.</ce:given-name>
+                                 <ce:surname>Burger</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structure guided optimization, in vitro activity, and in vivo activity of pan-PIM kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>ACS Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>4</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2013</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1193</sb:first-page>
+                              <sb:last-page>1197</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0160">
+                     <ce:label>32</ce:label>
+                     <sb:reference id="sbref0160">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>P.D.</ce:given-name>
+                                 <ce:surname>Garcia</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Pan-PIM kinase inhibition provides a novel therapy for treating hematologic cancers</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Clin. Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>20</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2014</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1834</sb:first-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0165">
+                     <ce:label>33</ce:label>
+                     <sb:reference id="sbref0165">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.T.</ce:given-name>
+                                 <ce:surname>Burger</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Identification of N-(4-((1R,3S,5S)-3-amino-5-methylcyclohexyl)pyridin-3-yl)-6-(2,6-difluorophenyl)-5-fluoropicolinamide (PIM447), a potent and selective proviral insertion site of moloney murine leukemia (PIM) 1, 2, and 3 kinase inhibitor in clinical trials for hematological malignancies</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>58</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2015</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>8373</sb:first-page>
+                              <sb:last-page>8386</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0170">
+                     <ce:label>34</ce:label>
+                     <sb:reference id="sbref0170">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Koblish</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Preclinical characterization of INCB053914, a novel pan-PIM kinase inhibitor, alone and in combination with anticancer agents, in models of hematologic malignancies</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>PLoS One</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>13</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2018</sb:date>
+                           </sb:issue>
+                           <sb:article-number>e0199108</sb:article-number>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0175">
+                     <ce:label>35</ce:label>
+                     <sb:reference id="sbref0175">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>X.</ce:given-name>
+                                 <ce:surname>Wang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Optimization of pan-Pim kinase activity and oral bioavailability leading to diaminopyrazole (GDC-0339) for the treatment of multiple myeloma</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>62</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2140</sb:first-page>
+                              <sb:last-page>2153</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0180">
+                     <ce:label>36</ce:label>
+                     <sb:reference id="sbref0180">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.</ce:given-name>
+                                 <ce:surname>Tsuganezawa</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A novel Pim-1 kinase inhibitor targeting residues that bind the substrate peptide</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Mol. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>417</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2012</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>240</sb:first-page>
+                              <sb:last-page>252</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0185">
+                     <ce:label>37</ce:label>
+                     <sb:reference id="sbref0185">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Nakano</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Rational evolution of a novel type of potent and selective proviral integration site in moloney murine leukemia virus kinase 1 (PIM1) inhibitor from a screening-hit compound</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>55</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2012</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>5151</sb:first-page>
+                              <sb:last-page>5164</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0190">
+                     <ce:label>38</ce:label>
+                     <sb:reference id="sbref0190">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Nakano</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Design and synthesis of potent and selective PIM kinase inhibitors by targeting unique structure of ATP-binding pocket</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>ACS Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2017</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>504</sb:first-page>
+                              <sb:last-page>509</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0195">
+                     <ce:label>39</ce:label>
+                     <sb:reference id="sbref0195">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>X.</ce:given-name>
+                                 <ce:surname>Wang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of novel pyrazolo[1,5-a]pyrimidines as potent pan-Pim inhibitors by structure- and property-based drug design</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2013</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>3149</sb:first-page>
+                              <sb:last-page>3153</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0200">
+                     <ce:label>40</ce:label>
+                     <sb:reference id="sbref0200">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Hu</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of 3,5-substituted 6-azaindazoles as potent pan-Pim inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>25</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2015</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>5258</sb:first-page>
+                              <sb:last-page>5264</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0205">
+                     <ce:label>41</ce:label>
+                     <sb:reference id="sbref0205">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>X.</ce:given-name>
+                                 <ce:surname>Wang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of 5-azaindazole (GNE-955) as a potent pan-Pim inhibitor with optimized bioavailability</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>60</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2017</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>4458</sb:first-page>
+                              <sb:last-page>4473</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0210">
+                     <ce:label>42</ce:label>
+                     <sb:reference id="sbref0210">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>V.J.</ce:given-name>
+                                 <ce:surname>Cee</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery and optimization of macrocyclic quinoxaline-pyrrolo-dihydropiperidinones as potent Pim-1/2 kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>ACS Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>7</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2016</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>408</sb:first-page>
+                              <sb:last-page>412</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0215">
+                     <ce:label>43</ce:label>
+                     <sb:reference id="sbref0215">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>L.H.</ce:given-name>
+                                 <ce:surname>Pettus</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery and optimization of quinazolinone-pyrrolopyrrolones as potent and orally bioavailable pan-Pim kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>59</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2016</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>6407</sb:first-page>
+                              <sb:last-page>6430</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0220">
+                     <ce:label>44</ce:label>
+                     <sb:reference id="sbref0220">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.-L.</ce:given-name>
+                                 <ce:surname>Wang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of (R)-8-(6-Methyl-4-oxo-1,4,5,6-tetrahydropyrrolo[3,4-b]pyrrol-2-yl)-3-(1-methylcyclopropyl)-2-((1-methylcyclopropyl)amino)quinazolin-4(3H)-one, a potent and selective Pim-1/2 kinase inhibitor for hematological malignancies</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>62</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1523</sb:first-page>
+                              <sb:last-page>1540</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0225">
+                     <ce:label>45</ce:label>
+                     <sb:reference id="sbref0225">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Pastor</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Hit to lead evaluation of 1,2,3-triazolo[4,5-b]pyridines as PIM kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>22</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2012</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1591</sb:first-page>
+                              <sb:last-page>1597</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0230">
+                     <ce:label>46</ce:label>
+                     <sb:reference id="sbref0230">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Martínez-González</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of novel triazolo[4,3-b]pyridazin-3-yl-quinoline derivatives as PIM inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Eur. J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>168</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2019</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>87</sb:first-page>
+                              <sb:last-page>109</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0235">
+                     <ce:label>47</ce:label>
+                     <sb:reference id="sbref0235">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.-W.</ce:given-name>
+                                 <ce:surname>Chao</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Total synthesis of hispidulin and the structural basis for its inhibition of proto-oncogene kinase Pim-1</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Nat. Prod.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>78</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2015</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1969</sb:first-page>
+                              <sb:last-page>1976</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0240">
+                     <ce:label>48</ce:label>
+                     <sb:reference id="sbref0240">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.</ce:given-name>
+                                 <ce:surname>Liu</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Hispidulin suppresses cell growth and metastasis by targeting PIM1 through JAK2/STAT3 signaling in colorectal cancer</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Sci.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>109</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2018</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1369</sb:first-page>
+                              <sb:last-page>1381</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+               </ce:bibliography-sec>
+            </ce:bibliography>
+         </tail>
+      </article>
+   </xocs:serial-item></xocs:doc></originaltext></full-text-retrieval-response>

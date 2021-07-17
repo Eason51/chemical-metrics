@@ -1,0 +1,1738 @@
+<full-text-retrieval-response xmlns="http://www.elsevier.com/xml/svapi/article/dtd" xmlns:bk="http://www.elsevier.com/xml/bk/dtd" xmlns:cals="http://www.elsevier.com/xml/common/cals/dtd" xmlns:ce="http://www.elsevier.com/xml/common/dtd" xmlns:ja="http://www.elsevier.com/xml/ja/dtd" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:sa="http://www.elsevier.com/xml/common/struct-aff/dtd" xmlns:sb="http://www.elsevier.com/xml/common/struct-bib/dtd" xmlns:tb="http://www.elsevier.com/xml/common/table/dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xocs="http://www.elsevier.com/xml/xocs/dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><coredata><prism:url>https://api.elsevier.com/content/article/pii/S135964460503477X</prism:url><dc:identifier>doi:10.1016/S1359-6446(05)03477-X</dc:identifier><eid>1-s2.0-S135964460503477X</eid><prism:doi>10.1016/S1359-6446(05)03477-X</prism:doi><pii>S1359-6446(05)03477-X</pii><dc:title>Kinomics: characterizing the therapeutically validated kinase space </dc:title><prism:publicationName>Drug Discovery Today</prism:publicationname><prism:aggregationType>Journal</prism:aggregationtype><pubType>rev</pubtype><prism:issn>13596446</prism:issn><prism:volume>10</prism:volume><prism:issueIdentifier>12</prism:issueidentifier><prism:startingPage>839</prism:startingpage><prism:endingPage>846</prism:endingpage><prism:pageRange>839-846</prism:pagerange><prism:number>12</prism:number><dc:format>text/xml</dc:format><prism:coverDate>2005-06-15</prism:coverdate><prism:coverDisplayDate>15 June 2005</prism:coverdisplaydate><prism:copyright>Copyright © 2005 Elsevier Ltd. All rights reserved.</prism:copyright><prism:publisher>Elsevier Ltd.</prism:publisher><dc:creator>Vieth, Michal</dc:creator><dc:creator>Sutherland, Jeffrey J.</dc:creator><dc:creator>Robertson, Daniel H.</dc:creator><dc:creator>Campbell, Robert M.</dc:creator><dc:description>
+                  The annotation and visualization of medicinally relevant kinase space revealed that kinase inhibitors in the clinic are, on average, of higher molecular weight and more lipophilic than all other clinically investigated drugs. Tyrosine kinases from the vascular endothelial growth factor and epidermal growth factor receptor families are the most pursued targets. Furthermore, oncological indications account for 75% of all kinase-related clinical interest. In addition, analysis of the similarity between kinase targets with respect to sequence, selectivity and structure has revealed that kinases with ≥60% sequence identity are most likely to be inhibited by the same classes of compounds and have similar ATP-binding sites. The identification of this threshold, together with the widely accepted representation of the sequence-based kinase space, is expanding our understanding of the clinical and structural space of the kinome.
+               </dc:description><openaccess>0</openaccess><openaccessArticle>false</openaccessarticle><openaccessType/></openaccesstype><openArchiveArticle>false</openarchivearticle><openaccessSponsorName/></openaccesssponsorname><openaccessSponsorType/></openaccesssponsortype><openaccessUserLicense/></openaccessuserlicense><dcterms:subject>clinical information</dcterms:subject><dcterms:subject>kinase dendrogram</dcterms:subject><dcterms:subject>selectivity</dcterms:subject><dcterms:subject>chemogenomics</dcterms:subject><dcterms:subject>disease mapping</dcterms:subject><dcterms:subject>Kinomics</dcterms:subject><dcterms:subject>target selection</dcterms:subject><dcterms:subject>target annotation</dcterms:subject><link href="https://api.elsevier.com/content/article/pii/S135964460503477X" rel="self"/></link><link href="https://www.sciencedirect.com/science/article/pii/S135964460503477X" rel="scidir"/></link></coredata><objects><object ref="si1" category="thumbnail" type="ALTIMG" multimediatype="GIF image file" mimetype="image/gif" width="345" height="94" size="1816">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-si1.gif?httpAccept=%2A%2F%2A</object><object ref="gr4" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="2149" height="893" size="470103">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr4_lrg.jpg?httpAccept=%2A%2F%2A</object><object ref="gr3" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="1827" height="2361" size="340226">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr3_lrg.jpg?httpAccept=%2A%2F%2A</object><object ref="gr1" category="high" type="IMAGE-HIGH-RES" multimediatype="JPEG image file" mimetype="image/jpeg" width="3242" height="3960" size="813073">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr1_lrg.jpg?httpAccept=%2A%2F%2A</object><object ref="gr2" category="high" type="IMAGE-HIGH-RES" multimediatype="GIF image file" mimetype="image/gif" width="6557" height="9550" size="349767">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr2_lrg.gif?httpAccept=%2A%2F%2A</object><object ref="gr4" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="809" height="336" size="108461">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr4.jpg?httpAccept=%2A%2F%2A</object><object ref="gr3" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="412" height="532" size="62651">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr3.jpg?httpAccept=%2A%2F%2A</object><object ref="gr1" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="732" height="894" size="123517">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr1.jpg?httpAccept=%2A%2F%2A</object><object ref="gr2" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="GIF image file" mimetype="image/gif" width="740" height="1078" size="41617">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr2.gif?httpAccept=%2A%2F%2A</object><object ref="gr2" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="112" height="163" size="2262">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr2.sml?httpAccept=%2A%2F%2A</object><object ref="gr4" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="219" height="91" size="9212">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr4.sml?httpAccept=%2A%2F%2A</object><object ref="gr3" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="127" height="164" size="7879">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr3.sml?httpAccept=%2A%2F%2A</object><object ref="gr1" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="134" height="164" size="4673">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-gr1.sml?httpAccept=%2A%2F%2A</object><object ref="mmc1" category="standard" type="APPLICATION" multimediatype="Microsoft Word file" mimetype="application/word" size="88576">https://api.elsevier.com/content/object/eid/1-s2.0-S135964460503477X-mmc1.doc?httpAccept=%2A%2F%2A</object></objects><scopus-id>20444498116</scopus-id><scopus-eid>2-s2.0-20444498116</scopus-eid><pubmed-id>15970266</pubmed-id><link href="https://api.elsevier.com/content/abstract/scopus_id/20444498116" rel="abstract"/></link><originalText><xocs:doc xsi:schemaLocation="http://www.elsevier.com/xml/xocs/dtd http://null/schema/dtds/document/fulltext/xcr/xocs-article.xsd"><xocs:meta xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <xocs:content-family>serial</xocs:content-family>
+      <xocs:content-type>JL</xocs:content-type>
+      <xocs:cid>271275</xocs:cid>
+      <xocs:ssids>
+         <xocs:ssid type="alllist">291210</xocs:ssid>
+         <xocs:ssid type="subj">291727</xocs:ssid>
+         <xocs:ssid type="subj">291850</xocs:ssid>
+         <xocs:ssid type="subj">291928</xocs:ssid>
+         <xocs:ssid type="content">31</xocs:ssid>
+      </xocs:ssids>
+      <xocs:srctitle>Drug Discovery Today</xocs:srctitle>
+      <xocs:normalized-srctitle>DRUGDISCOVERYTODAY</xocs:normalized-srctitle>
+      <xocs:orig-load-date yyyymmdd="20050619">2005-06-19</xocs:orig-load-date>
+      <xocs:available-online-date yyyymmdd="20050619">2005-06-19</xocs:available-online-date>
+      <xocs:ew-transaction-id>2015-06-03T10:22:52</xocs:ew-transaction-id>
+      <xocs:eid>1-s2.0-S135964460503477X</xocs:eid>
+      <xocs:pii-formatted>S1359-6446(05)03477-X</xocs:pii-formatted>
+      <xocs:pii-unformatted>S135964460503477X</xocs:pii-unformatted>
+      <xocs:doi>10.1016/S1359-6446(05)03477-X</xocs:doi>
+      <xocs:item-stage>S300</xocs:item-stage>
+      <xocs:item-version-number>S300.2</xocs:item-version-number>
+      <xocs:item-weight>FULL-TEXT</xocs:item-weight>
+      <xocs:hub-eid>1-s2.0-S1359644605X70040</xocs:hub-eid>
+      <xocs:timestamp yyyymmdd="20150603">2015-06-03T06:34:11.225384-04:00</xocs:timestamp>
+      <xocs:dco>0</xocs:dco>
+      <xocs:tomb>0</xocs:tomb>
+      <xocs:date-search-begin>20050615</xocs:date-search-begin>
+      <xocs:year-nav>2005</xocs:year-nav>
+      <xocs:indexeddate epoch="1119139200">2005-06-19T00:00:00Z</xocs:indexeddate>
+      <xocs:articleinfo>articleinfo articletitlenorm authfirstinitialnorm authfirstsurnamenorm cid cids contenttype copyright crossmark dateloaded dateloadedtxt datesearch datesort dateupdated dco docsubtype doctype doi eid ewtransactionid hubeid indexeddate issfirst issn issnnorm issuelist itemstage itemtransactionid itemweight openaccess openarchive pg pgfirst pglast pii piinorm pubdatestart pubdatetxt pubyr sortorder srctitle srctitlenorm srctype ssids alllist content subj subheadings tomb volfirst volissue volumelist webpdf webpdfpagecount yearnav figure e-component body mmlmath acknowledge affil appendices articletitle auth authfirstini authfull authkeywords authlast doctopic otherkwds primabst pubtype ref teaserabst</xocs:articleinfo>
+      <xocs:issns>
+         <xocs:issn-primary-formatted>1359-6446</xocs:issn-primary-formatted>
+         <xocs:issn-primary-unformatted>13596446</xocs:issn-primary-unformatted>
+      </xocs:issns>
+      <xocs:crossmark is-crossmark="0">false</xocs:crossmark>
+      <xocs:vol-first>10</xocs:vol-first>
+      <xocs:volume-list>
+         <xocs:volume>10</xocs:volume>
+      </xocs:volume-list>
+      <xocs:iss-first>12</xocs:iss-first>
+      <xocs:issue-list>
+         <xocs:issue>12</xocs:issue>
+      </xocs:issue-list>
+      <xocs:vol-iss-suppl-text>Volume 10, Issue 12</xocs:vol-iss-suppl-text>
+      <xocs:sort-order>9</xocs:sort-order>
+      <xocs:first-fp>839</xocs:first-fp>
+      <xocs:last-lp>846</xocs:last-lp>
+      <xocs:pages>
+         <xocs:first-page>839</xocs:first-page>
+         <xocs:last-page>846</xocs:last-page>
+      </xocs:pages>
+      <xocs:cover-date-orig>
+         <xocs:start-date>20050615</xocs:start-date>
+      </xocs:cover-date-orig>
+      <xocs:cover-date-text>15 June 2005</xocs:cover-date-text>
+      <xocs:cover-date-start>2005-06-15</xocs:cover-date-start>
+      <xocs:cover-date-year>2005</xocs:cover-date-year>
+      <xocs:document-type>article</xocs:document-type>
+      <xocs:document-subtype>rev</xocs:document-subtype>
+      <xocs:copyright-line>Copyright © 2005 Elsevier Ltd. All rights reserved.</xocs:copyright-line>
+      <xocs:normalized-article-title>KINOMICSCHARACTERIZINGTHERAPEUTICALLYVALIDATEDKINASESPACE</xocs:normalized-article-title>
+      <xocs:normalized-first-auth-surname>VIETH</xocs:normalized-first-auth-surname>
+      <xocs:normalized-first-auth-initial>M</xocs:normalized-first-auth-initial>
+      <xocs:item-toc>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Kinase clinical space: compound properties, targets and indications</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>The relationship between selectivity and sequence similarity</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Structural distance</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Kinase selectivity: interpretation of caveats</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Visualizing medicinally relevant kinase space</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Conclusions</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:acknowledgment">
+            <xocs:item-toc-section-title>Acknowledgements</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:appendices">
+            <xocs:item-toc-section-title>Supplementary data</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:bibliography">
+            <xocs:item-toc-section-title>References</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+      </xocs:item-toc>
+      <xocs:references>
+         <xocs:ref-info refid="reference0005">
+            <xocs:ref-normalized-surname>MANNING</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1912</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1934</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>G</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0010">
+            <xocs:ref-normalized-surname>MURCKO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>583</xocs:ref-first-fp>
+            <xocs:ref-last-lp>584</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0015">
+            <xocs:ref-normalized-surname>JOHNSON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>17</xocs:ref-first-fp>
+            <xocs:ref-last-lp>25</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0020">
+            <xocs:ref-normalized-surname>BLUMEJENSEN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>355</xocs:ref-first-fp>
+            <xocs:ref-last-lp>365</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0025">
+            <xocs:ref-normalized-surname>ADAMS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>96</xocs:ref-first-fp>
+            <xocs:ref-last-lp>109</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0030">
+            <xocs:ref-normalized-surname>COMLEY</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>45</xocs:ref-first-fp>
+            <xocs:ref-last-lp>56</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0035">
+            <xocs:ref-normalized-surname>VIETH</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>243</xocs:ref-first-fp>
+            <xocs:ref-last-lp>257</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0040">
+            <xocs:ref-normalized-surname>FABBRO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>109</xocs:ref-first-fp>
+            <xocs:ref-last-lp>114</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>D</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0045">
+            <xocs:ref-normalized-surname>HUNTER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>113</xocs:ref-first-fp>
+            <xocs:ref-last-lp>127</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0050">
+            <xocs:ref-normalized-surname>MARTIRENOM</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>291</xocs:ref-first-fp>
+            <xocs:ref-last-lp>325</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0055">
+            <xocs:ref-normalized-surname>KUNTZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1992</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1078</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1082</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>I</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0060">
+            <xocs:ref-normalized-surname>CARON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>464</xocs:ref-first-fp>
+            <xocs:ref-last-lp>470</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0065">
+            <xocs:ref-normalized-surname>MITTL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>402</xocs:ref-first-fp>
+            <xocs:ref-last-lp>408</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0070">
+            <xocs:ref-normalized-surname>FABIAN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>329</xocs:ref-first-fp>
+            <xocs:ref-last-lp>336</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0075">
+            <xocs:ref-normalized-surname>GRIFFIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>308</xocs:ref-first-fp>
+            <xocs:ref-last-lp>309</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0080">
+            <xocs:ref-normalized-surname>WENLOCK</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1250</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1256</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0085">
+            <xocs:ref-normalized-surname>VIETH</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>224</xocs:ref-first-fp>
+            <xocs:ref-last-lp>232</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0090">
+            <xocs:ref-normalized-surname>BLAKE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>16</xocs:ref-first-fp>
+            <xocs:ref-last-lp>20</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0095">
+            <xocs:ref-normalized-surname>FERRARA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>581</xocs:ref-first-fp>
+            <xocs:ref-last-lp>611</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>N</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0100">
+            <xocs:ref-normalized-surname>LOCKHART</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>52</xocs:ref-first-fp>
+            <xocs:ref-last-lp>60</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0105">
+            <xocs:ref-normalized-surname>KARI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1</xocs:ref-first-fp>
+            <xocs:ref-last-lp>5</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0110">
+            <xocs:ref-normalized-surname>HIDESHIMA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>8766</xocs:ref-first-fp>
+            <xocs:ref-last-lp>8776</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0115">
+            <xocs:ref-normalized-surname>PARGELLIS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>566</xocs:ref-first-fp>
+            <xocs:ref-last-lp>571</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0120">
+            <xocs:ref-normalized-surname>MUELLER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>839</xocs:ref-first-fp>
+            <xocs:ref-last-lp>849</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0125">
+            <xocs:ref-normalized-surname>HOWARD</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2377</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2389</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>O</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0130">
+            <xocs:ref-normalized-surname>MASON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>3251</xocs:ref-first-fp>
+            <xocs:ref-last-lp>3264</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0135">
+            <xocs:ref-normalized-surname>BERMAN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>235</xocs:ref-first-fp>
+            <xocs:ref-last-lp>242</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0140">
+            <xocs:ref-normalized-surname>CHENG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1973</xocs:ref-pub-year>
+            <xocs:ref-first-fp>3099</xocs:ref-first-fp>
+            <xocs:ref-last-lp>3108</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Y</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0145">
+            <xocs:ref-normalized-surname>PARGELLIS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>268</xocs:ref-first-fp>
+            <xocs:ref-last-lp>272</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="reference0150">
+            <xocs:ref-normalized-surname>WAIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>D255</xocs:ref-first-fp>
+            <xocs:ref-last-lp>D257</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+      </xocs:references>
+      <xocs:refkeys>
+         <xocs:refkey3>VIETHX2005X839</xocs:refkey3>
+         <xocs:refkey4lp>VIETHX2005X839X846</xocs:refkey4lp>
+         <xocs:refkey4ai>VIETHX2005X839XM</xocs:refkey4ai>
+         <xocs:refkey5>VIETHX2005X839X846XM</xocs:refkey5>
+      </xocs:refkeys>
+      <xocs:open-access>
+         <xocs:oa-article-status is-open-access="0" is-open-archive="0"/></xocs:oa-article-status>
+      </xocs:open-access>
+      <xocs:attachment-metadata-doc>
+         <xocs:attachment-set-type>item</xocs:attachment-set-type>
+         <xocs:pii-formatted>S1359-6446(05)03477-X</xocs:pii-formatted>
+         <xocs:pii-unformatted>S135964460503477X</xocs:pii-unformatted>
+         <xocs:eid>1-s2.0-S135964460503477X</xocs:eid>
+         <xocs:doi>10.1016/S1359-6446(05)03477-X</xocs:doi>
+         <xocs:cid>271275</xocs:cid>
+         <xocs:timestamp>2015-06-03T06:34:11.225384-04:00</xocs:timestamp>
+         <xocs:cover-date-start>2005-06-15</xocs:cover-date-start>
+         <xocs:attachments>
+            <xocs:web-pdf>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-main.pdf</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/MAIN/application/pdf/7192e3b6f25a00a610e76b026b29b885/main.pdf</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/MAIN/application/pdf/7192e3b6f25a00a610e76b026b29b885/main.pdf</xocs:ucs-locator>
+               <xocs:filename>main.pdf</xocs:filename>
+               <xocs:extension>pdf</xocs:extension>
+               <xocs:pdf-optimized>true</xocs:pdf-optimized>
+               <xocs:filesize>912829</xocs:filesize>
+               <xocs:web-pdf-purpose>MAIN</xocs:web-pdf-purpose>
+               <xocs:web-pdf-page-count>8</xocs:web-pdf-page-count>
+               <xocs:web-pdf-images>
+                  <xocs:web-pdf-image>
+                     <xocs:attachment-eid>1-s2.0-S135964460503477X-main_1.png</xocs:attachment-eid>
+                     <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/PREVIEW/image/png/43101483754c88367638073774ae32b8/main_1.png</xocs:ucs-locator>
+                     <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/PREVIEW/image/png/43101483754c88367638073774ae32b8/main_1.png</xocs:ucs-locator>
+                     <xocs:filename>main_1.png</xocs:filename>
+                     <xocs:extension>png</xocs:extension>
+                     <xocs:filesize>78007</xocs:filesize>
+                     <xocs:pixel-height>849</xocs:pixel-height>
+                     <xocs:pixel-width>656</xocs:pixel-width>
+                     <xocs:attachment-type>IMAGE-WEB-PDF</xocs:attachment-type>
+                     <xocs:pdf-page-num>1</xocs:pdf-page-num>
+                  </xocs:web-pdf-image>
+               </xocs:web-pdf-images>
+            </xocs:web-pdf>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-si1.gif</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/STRIPIN/image/gif/81e7d63610b57891e8f0a2ee5efce79b/si1.gif</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/STRIPIN/image/gif/81e7d63610b57891e8f0a2ee5efce79b/si1.gif</xocs:ucs-locator>
+               <xocs:file-basename>si1</xocs:file-basename>
+               <xocs:filename>si1.gif</xocs:filename>
+               <xocs:extension>gif</xocs:extension>
+               <xocs:filesize>1816</xocs:filesize>
+               <xocs:pixel-height>94</xocs:pixel-height>
+               <xocs:pixel-width>345</xocs:pixel-width>
+               <xocs:attachment-type>ALTIMG</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr4_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr4/HIGHRES/image/jpeg/8246ce9a38a8bcd2ef4c66990a926077/gr4_lrg.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr4/HIGHRES/image/jpeg/8246ce9a38a8bcd2ef4c66990a926077/gr4_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>470103</xocs:filesize>
+               <xocs:pixel-height>893</xocs:pixel-height>
+               <xocs:pixel-width>2149</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr3_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr3/HIGHRES/image/jpeg/3701384d3392eeaaf6a5b2886e852d60/gr3_lrg.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr3/HIGHRES/image/jpeg/3701384d3392eeaaf6a5b2886e852d60/gr3_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>340226</xocs:filesize>
+               <xocs:pixel-height>2361</xocs:pixel-height>
+               <xocs:pixel-width>1827</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr1_lrg.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr1/HIGHRES/image/jpeg/d1802b2ffaa2a863984071376f9d4d86/gr1_lrg.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr1/HIGHRES/image/jpeg/d1802b2ffaa2a863984071376f9d4d86/gr1_lrg.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1_lrg.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>813073</xocs:filesize>
+               <xocs:pixel-height>3960</xocs:pixel-height>
+               <xocs:pixel-width>3242</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr2_lrg.gif</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr2/HIGHRES/image/gif/1628bbbcd53c8c97bb77513d1a454bb1/gr2_lrg.gif</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr2/HIGHRES/image/gif/1628bbbcd53c8c97bb77513d1a454bb1/gr2_lrg.gif</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2_lrg.gif</xocs:filename>
+               <xocs:extension>gif</xocs:extension>
+               <xocs:filesize>349767</xocs:filesize>
+               <xocs:pixel-height>9550</xocs:pixel-height>
+               <xocs:pixel-width>6557</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-HIGH-RES</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr4.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr4/DOWNSAMPLED/image/jpeg/2b5ad0eef9d0ee3e9c312b904808fc7d/gr4.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr4/DOWNSAMPLED/image/jpeg/2b5ad0eef9d0ee3e9c312b904808fc7d/gr4.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>108461</xocs:filesize>
+               <xocs:pixel-height>336</xocs:pixel-height>
+               <xocs:pixel-width>809</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr3.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr3/DOWNSAMPLED/image/jpeg/b45ad657d339e5d96bb86a000f5b68ea/gr3.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr3/DOWNSAMPLED/image/jpeg/b45ad657d339e5d96bb86a000f5b68ea/gr3.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>62651</xocs:filesize>
+               <xocs:pixel-height>532</xocs:pixel-height>
+               <xocs:pixel-width>412</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr1.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr1/DOWNSAMPLED/image/jpeg/86b2e95dd5dd97c04e4edcc4eea1d1c4/gr1.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr1/DOWNSAMPLED/image/jpeg/86b2e95dd5dd97c04e4edcc4eea1d1c4/gr1.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>123517</xocs:filesize>
+               <xocs:pixel-height>894</xocs:pixel-height>
+               <xocs:pixel-width>732</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr2.gif</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr2/DOWNSAMPLED/image/gif/5d69c724eb8eab6fe0ef25c29d2f48af/gr2.gif</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr2/DOWNSAMPLED/image/gif/5d69c724eb8eab6fe0ef25c29d2f48af/gr2.gif</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2.gif</xocs:filename>
+               <xocs:extension>gif</xocs:extension>
+               <xocs:filesize>41617</xocs:filesize>
+               <xocs:pixel-height>1078</xocs:pixel-height>
+               <xocs:pixel-width>740</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr2.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr2/THUMBNAIL/image/gif/393777ee051db01e64b55b2b0754349f/gr2.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr2/THUMBNAIL/image/gif/393777ee051db01e64b55b2b0754349f/gr2.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>2262</xocs:filesize>
+               <xocs:pixel-height>163</xocs:pixel-height>
+               <xocs:pixel-width>112</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr4.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr4/THUMBNAIL/image/gif/30d4ebe6417823a9d97abbb847925b88/gr4.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr4/THUMBNAIL/image/gif/30d4ebe6417823a9d97abbb847925b88/gr4.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>9212</xocs:filesize>
+               <xocs:pixel-height>91</xocs:pixel-height>
+               <xocs:pixel-width>219</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr3.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr3/THUMBNAIL/image/gif/7dc26cf6e0e428660e44cafb2295c320/gr3.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr3/THUMBNAIL/image/gif/7dc26cf6e0e428660e44cafb2295c320/gr3.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>7879</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>127</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-gr1.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/gr1/THUMBNAIL/image/gif/4035d592225d91b083d8f9be128d5d70/gr1.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/gr1/THUMBNAIL/image/gif/4035d592225d91b083d8f9be128d5d70/gr1.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>4673</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>134</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S135964460503477X-mmc1.doc</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S135964460503477X/mmc1/MAIN/application/msword/223256ae8273f0da9eb9fe990f84f7e3/mmc1.doc</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S135964460503477X/mmc1/MAIN/application/msword/223256ae8273f0da9eb9fe990f84f7e3/mmc1.doc</xocs:ucs-locator>
+               <xocs:file-basename>mmc1</xocs:file-basename>
+               <xocs:filename>mmc1.doc</xocs:filename>
+               <xocs:extension>doc</xocs:extension>
+               <xocs:filesize>88576</xocs:filesize>
+               <xocs:attachment-type>APPLICATION</xocs:attachment-type>
+            </xocs:attachment>
+         </xocs:attachments>
+      </xocs:attachment-metadata-doc>
+   </xocs:meta><xocs:serial-item xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <article xmlns="http://www.elsevier.com/xml/ja/dtd" docsubtype="rev" version="5.0" xml:lang="en">
+         <item-info>
+            <jid>DRUDIS</jid>
+            <aid>3477</aid>
+            <ce:pii>S1359-6446(05)03477-X</ce:pii>
+            <ce:doi>10.1016/S1359-6446(05)03477-X</ce:doi>
+            <ce:copyright type="full-transfer" year="2005">Elsevier Ltd</ce:copyright>
+            <ce:doctopics>
+               <ce:doctopic>
+                  <ce:text>Review</ce:text>
+               </ce:doctopic>
+            </ce:doctopics>
+         </item-info>
+         <ce:floats>
+            <ce:figure id="fig1">
+               <ce:label>FIGURE 1</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="simple-para0005" view="all">
+                     <ce:bold>Distribution of clinical kinase space according to the mean molecular weight of small molecule inhibitors, the kinase targets in various stages of development and the clinical indication pursued by two or more small molecule and large molecule compounds. (a)</ce:bold> Mean MW of oral small molecule kinase inhibitors versus all oral drugs [<ce:cross-ref refid="bib16">16</ce:cross-ref>]. Compounds are categorized by highest clinical phase reached (Phase I, Phase II or Phase III), launched drugs or discontinued development. The oral drugs are only those approved in the USA; for kinases, drugs launched worldwide, in addition to those approved in the USA, are shown. Non-small molecule inhibitors were excluded from the analysis. <ce:bold>(b)</ce:bold> Kinase targets pursued by 76 active clinical compounds. PKC indicates typical isoforms of protein kinase C (α, β1, β2 and γ). The number of compounds in each development stage is shown for each kinase target. The Sugen [<ce:cross-ref refid="bib1">1</ce:cross-ref>] and/or HUGO (<ce:inter-ref xlink:href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene" xlink:type="simple">www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene</ce:inter-ref>; [<ce:cross-ref refid="bib30">30</ce:cross-ref>]) nomenclature is used for the targets (see <ce:cross-ref refid="sec1">supplementary table</ce:cross-ref>). <ce:bold>(c)</ce:bold> The number of targeted protein kinases for each indication is shown. Only the indications associated with two or more molecules are displayed. Abbreviations: Abl, v-abl Abelson murine leukemia viral oncogene homolog; AKT, v-akt murine thymoma viral oncogene homolog; Erbb, erystoblastic; ERK, extracellular signal-regulated kinase; FGFR, fibroblast growth factor receptor; FLT, fms-related tyrosine kinase; HER, human epidermal growth factor receptor; JNK, Janus kinase; JTK, Janus tyrosine kinase; KIT, v-kit Hardy-Zuckerman 4 feline sarcoma viral oncogene homolog; MEK, meiosis-specific serine/threonine protein kinase; PDGFRB, platelet-derived growth factor receptor beta; PKC, protein kinase C; PRKC, protein kinase C; RAF, raf murine leukemia viral oncogene homolog; ROCK, Rho-associated, coiled-coil containing protein kinase; SPHK, sphingosine kinase; SRC, sarcoma (Schmidt-Ruppin A-2) viral oncogene homolog; SYK, spleen tyrosine kinase.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr1"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig2">
+               <ce:label>FIGURE 2</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="simple-para0010" view="all">
+                     <ce:bold>Selected launched kinase-targeted small molecule drugs and Phase III compounds.</ce:bold> Drugs launched in the USA are shown in <ce:bold>(a)</ce:bold>, those at Phase III of clinical trials are shown in <ce:bold>(b)</ce:bold>. Indications in the highest phase in the USA and kinases targeted by the compounds are listed. NLR indicates the trials in the USA that are no longer registering patients. Two monoclonal antibodies targeted at EGFR (cetuximab) and VEGF (bevacizumab), not shown here, were also approved by the FDA in 2004.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr2"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig3">
+               <ce:label>FIGURE 3</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="simple-para0015" view="all">
+                     <ce:bold>Relationship between sequence identity of kinase catalytic domains and SAR similarity or ATP-binding site structural similarity.</ce:bold> SAR similarity approaches unity when kinases are inhibited to a similar extent by different groups of inhibitors. ATP-binding site similarity approaches unity as kinase binding site structures become identical. Kinase pairs were grouped into ten evenly separated sequence identity bins. For SAR similarity <ce:bold>(a)</ce:bold>, 1479 pairs arising from 78 kinases are plotted; for ATP-binding site similarity <ce:bold>(b)</ce:bold>, 45,451 pairs arising from all catalytic domains (including multiple chains) in 225 PDB entries are plotted. The average SAR similarity or ATP-binding site structural similarity for each sequence bin is shown at the center of the diamonds, with the vertices corresponding to 95% confidence limits. An all-pairs Tukey HSD (honestly significant difference) test indicates that differences in intrakinase ATP-binding site variations becomes significant below 60% sequence identity; a similar test for SAR similarity, when comparing the 90–100% bin with all other bins, becomes significant below 60% identity. The SAR similarity analysis used public domain data distributed by GVK Biosciences (<ce:inter-ref xlink:href="http://www.gvkbio.com" xlink:type="simple">www.gvkbio.com</ce:inter-ref>) and was supplemented by selected data from internal projects to improve statistics.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr3"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig4">
+               <ce:label>FIGURE 4</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="simple-para0020" view="all">
+                     <ce:bold>Sequence-based kinase space.</ce:bold> These diagrams were originally presented by Manning <ce:italic>et al</ce:italic>. [<ce:cross-ref refid="bib1">1</ce:cross-ref>]. <ce:bold>(a)</ce:bold> Kinase clinical interest space (34 typical kinases shown in yellow); red dots show the 34 primary targets, 15 other targets reported to be inhibited by the clinical compounds (total of 49 kinases with reported data) and 39 other kinases with ≥60% identity to the 49 kinases. The total number of yellow dots is 88 – 49 with reported data and 39 with a high probability of inhibition based on the 60% rule. <ce:bold>(b)</ce:bold> Kinases with structures available on the PDB (59 shown in yellow) and other kinases with ≥60% sequence identity with a structure available on the PDB (138 shown in red). <ce:bold>(c)</ce:bold> Human cancer map showing typical protein kinases associated with cancer (132 shown in red)(<ce:inter-ref xlink:href="http://www.proteome.com" xlink:type="simple">www.proteome.com</ce:inter-ref>) and clinically pursued targets for cancer and tumor indications (23 shown in yellow). The kinase dendrogram is adapted from <ce:inter-ref xlink:href="http://www.sciencemag.org/cgi/data/298/5600/1912/DC2/1" xlink:type="simple">www.sciencemag.org/cgi/data/298/5600/1912/DC2/1</ce:inter-ref> and is reproduced with the kind permission of Cell Signaling Technology and Science. Abbreviations: CAMK, calcium/calmodulin-dependent protein kinase; CK, casein kinase; CMGC, containing CDK, MAPK, GSK3, CLK families; STE, homologs of sterile 11 and sterile 20 kinases; TKL, tyrosine kinase-like.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr4"/></ce:link>
+            </ce:figure>
+         </ce:floats>
+         <head>
+            <ce:dochead>
+               <ce:textfn>Review</ce:textfn>
+            </ce:dochead>
+            <ce:title>Kinomics: characterizing the therapeutically validated kinase space</ce:title>
+            <ce:author-group>
+               <ce:author>
+                  <ce:given-name>Michal</ce:given-name>
+                  <ce:surname>Vieth</ce:surname>
+                  
+               </ce:author>
+               <ce:author>
+                  <ce:given-name>Jeffrey J.</ce:given-name>
+                  <ce:surname>Sutherland</ce:surname>
+               </ce:author>
+               <ce:author>
+                  <ce:given-name>Daniel H.</ce:given-name>
+                  <ce:surname>Robertson</ce:surname>
+               </ce:author>
+               <ce:author>
+                  <ce:given-name>Robert M.</ce:given-name>
+                  <ce:surname>Campbell</ce:surname>
+               </ce:author>
+               <ce:affiliation>
+                  <ce:textfn>Discovery Chemistry Research, Lilly Research Laboratories, Lilly Corporate Center, DC 1513, Indianapolis, IN 46285, USA</ce:textfn>
+               </ce:affiliation>
+            </ce:author-group>
+            <ce:abstract class="teaser">
+               <ce:abstract-sec>
+                  <ce:simple-para id="simple-para0025" view="all">An analysis of kinase clinical space establishes connections in sequence, structural, selectivity and disease space.</ce:simple-para>
+               </ce:abstract-sec>
+            </ce:abstract>
+            <ce:abstract class="author"><ce:abstract-sec>
+                  <ce:simple-para id="simple-para0030" view="all">The annotation and visualization of medicinally relevant kinase space revealed that kinase inhibitors in the clinic are, on average, of higher molecular weight and more lipophilic than all other clinically investigated drugs. Tyrosine kinases from the vascular endothelial growth factor and epidermal growth factor receptor families are the most pursued targets. Furthermore, oncological indications account for 75% of all kinase-related clinical interest. In addition, analysis of the similarity between kinase targets with respect to sequence, selectivity and structure has revealed that kinases with ≥60% sequence identity are most likely to be inhibited by the same classes of compounds and have similar ATP-binding sites. The identification of this threshold, together with the widely accepted representation of the sequence-based kinase space, is expanding our understanding of the clinical and structural space of the kinome.</ce:simple-para>
+               </ce:abstract-sec></ce:abstract>
+            <ce:keywords class="idt">
+               <ce:keyword>
+                  <ce:text>Drug Discovery</ce:text>
+               </ce:keyword>
+            </ce:keywords>
+            <ce:keywords class="keyword">
+               <ce:keyword>
+                  <ce:text>clinical information</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>kinase dendrogram</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>selectivity</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>chemogenomics</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>disease mapping</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>Kinomics</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>target selection</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>target annotation</ce:text>
+               </ce:keyword>
+            </ce:keywords>
+         </head>
+         <body view="all">
+            <ce:sections>
+               <ce:para id="para0005" view="all">The protein kinases [<ce:cross-ref refid="bib1">1</ce:cross-ref>], responsible for the phosphorylation of tyrosine, threonine and serine residues in other proteins, are among the most extensively studied gene families [<ce:cross-refs refid="bib2 bib3">2,3</ce:cross-refs>]. The seminal work of Manning <ce:italic>et al.</ce:italic> [<ce:cross-ref refid="bib1">1</ce:cross-ref>] has defined and categorized the human ‘kinome’ space, consisting of 518 kinases. Multidisciplinary research involving biology, medicine, chemistry and informatics is rapidly advancing our understanding of the function, disease relevance, drugability and inter-relationships of the kinases [<ce:cross-refs refid="bib4 bib5 bib6 bib7 bib8 bib9">4–9</ce:cross-refs>].</ce:para>
+               <ce:para id="para0010" view="all">The analysis of the human kinome by Manning <ce:italic>et al.</ce:italic> [<ce:cross-ref refid="bib1">1</ce:cross-ref>] has provided important foundations for understanding kinase signaling pathways and their role in various diseases. Similarity of protein sequences has been used to establish the relationship of kinases within the super-family, which has facilitated the understanding of kinase properties using an intuitive graphical representation. Beyond sequence-based comparisons, other methods for establishing links between kinases include structural comparisons, classification using selectivity profiles, biological pathways and disease indications, as well as clinical and preclinical interest and activities. Here, connections are drawn between multiple representations of the kinome space with the objective of attaining a better understanding of the therapeutically relevant subspace.</ce:para>
+               <ce:para id="para0015" view="all">Our analysis of the therapeutically validated kinase space has potential implications for target selection, homology modeling [<ce:cross-ref refid="bib10">10</ce:cross-ref>], use of X-ray structures [<ce:cross-ref refid="bib11">11</ce:cross-ref>], anticipation of adverse effects and aspects of chemogenomics [<ce:cross-refs refid="bib12 bib13">12,13</ce:cross-refs>]. In chemogenomics, a lead molecule developed against one target in a gene family provides a potential opportunity for a related target. In many cases, structurally related targets might be involved in the pathology of different diseases and/or belong to separate pathways. This lack of selectivity could be advantageous in early stages of drug discovery, but detrimental in later stages, particularly if it is linked to adverse effects. However, <ce:italic>in vitro</ce:italic> selectivity data are, at best, guidelines in decision-making processes leading to the identification of molecules with functional <ce:italic>in vivo</ce:italic> activity and efficacy linked to target inhibition. That is to say, a lack of <ce:italic>in vitro</ce:italic> selectivity might or might not become apparent in the functional or organism setting [<ce:cross-ref refid="bib8">8</ce:cross-ref>].</ce:para>
+               <ce:section id="section0005" view="all">
+                  <ce:section-title>Kinase clinical space: compound properties, targets and indications</ce:section-title>
+                  <ce:para id="para0020" view="all">Fabian <ce:italic>et al.</ce:italic> [<ce:cross-ref refid="bib14">14</ce:cross-ref>] recently presented an elegant study of interaction maps of 16 clinical kinase inhibitors, which indicated that differences in selectivity profiles might not be correlated with chemical structure, and suggested potential new targets for clinical compounds. However, it should be noted that these kinase selectivity data were generated using phage display and represent the binding of inhibitors, not necessarily kinase activity. In addition, it is unclear whether the kinase produced in phage presents the same conformation and phosphorylation and activation state of a native mammalian kinase in its cellular milieu [<ce:cross-ref refid="bib15">15</ce:cross-ref>].</ce:para>
+                  <ce:para id="para0025" view="all">The information on clinical trials of 101 kinase inhibitors was extracted by a combination of text processing, manual curation and annotation [<ce:cross-ref refid="bib14">14</ce:cross-ref>] using information available on public electronic sources (<ce:inter-ref xlink:href="http://www.clinicaltrials.gov" xlink:type="simple">www.clinicaltrials.gov</ce:inter-ref>), patent literature (<ce:inter-ref xlink:href="http://www.cas.org/SCIFINDER/scicover2.html" xlink:type="simple">www.cas.org/SCIFINDER/scicover2.html</ce:inter-ref>) and small molecule databases (<ce:inter-ref xlink:href="http://www.gvkbio.com" xlink:type="simple">www.gvkbio.com</ce:inter-ref>; <ce:inter-ref xlink:href="http://www.mdli.com" xlink:type="simple">www.mdli.com</ce:inter-ref>). Although every attempt was made to perform a thorough evaluation, the analysis in this review, by necessity, contains only a representation of the clinical space. Clinical data for US trials are comprehensive, thanks to the information provided by the US National Library of Medicine (<ce:inter-ref xlink:href="http://www.clinicaltrials.gov" xlink:type="simple">www.clinicaltrials.gov</ce:inter-ref>). Compounds pursued in the clinic that target kinases were extracted, together with their associated indications. A set of 101 molecule entries with a mechanism of action that involves a specific kinase and reported <ce:italic>in vitro</ce:italic> inhibition data was combined. Each of the 101 entries was annotated with: (i) development stage or phase; (ii) specific kinases targeted; (iii) reported selectivity data for other kinases; (iv) clinically pursued indications; (v) the company developing the compound; and (vi) the chemical structure, when available. Of these compounds, 76 were reported to be active in the clinic, whereas 25 were no longer in active development, 12 entries are antibody–oligonucleotide molecules and 87 are small molecule inhibitors, 60 of which have disclosed structures. Kinase inhibition was identified as the mechanism of action in a total of 36 targets associated with 48 distinct clinical indications. An additional 16 kinase targets that were not identified as the intended target are significantly inhibited <ce:italic>in vitro</ce:italic>.</ce:para>
+                  <ce:para id="para0030" view="all">For each development phase, the properties of kinase-targeted small molecule compounds were examined and compared with those of all oral drugs approved in the USA (<ce:cross-ref refid="fig1">Figure 1a</ce:cross-ref>
+                     <ce:float-anchor refid="fig1"/></ce:float-anchor>). Oral drugs show a marked decline in mean molecular weight (MW) from Phase I to launch [<ce:cross-refs refid="bib16 bib17">16,17</ce:cross-refs>], which is sometimes linked with the high attrition rate of clinical compounds [<ce:cross-refs refid="bib16 bib18">16,18</ce:cross-refs>]. Despite the paucity of data for kinase inhibitors in the clinic, their properties differ slightly from those of ‘non-kinase-targeted’ oral drugs. Only the discontinued and Phase I kinase compounds have similar MW to other orally targeted compounds in the same development phase [<ce:cross-ref refid="bib16">16</ce:cross-ref>]. There is no significant change in MW noted in the progression from Phase I to marketed drugs. Thus, the trends observed for small molecule drugs targeting kinases are different from all other drugs and the failure rate in the clinic for kinase-targeted small molecule compounds cannot be linked to their MW. This observation is supported by the finding that the discontinued kinase inhibitors have lower average MW than those in other development phases. In summary, the small molecule clinical compounds targeting kinases have significantly higher MW (486 for Phase III and 445 for US-launched kinase inhibitors) and calculated logP (clogP of 5.1 for Phase III and 4.7 for US-launched kinase inhibitors) than other compounds in the same phases of development.</ce:para>
+                  <ce:para id="para0035" view="all">The clinically relevant kinase target space consists of 37 proteins (<ce:cross-ref refid="fig1">Figure 1b</ce:cross-ref>). The reported selectivity profiles of clinical compounds reveal that an additional 16 kinase targets are inhibited at a similar potency to those already targeted. Because small molecules are typically profiled against a subset of existing kinases (<200), it is entirely possible that these compounds could inhibit even more kinases. The highest level of clinical interest is devoted to the vascular endothelial growth factor (VEGF) family (in particular, kinase insert domain receptor/VEGF receptor 2 with 18 clinical compounds) and the epidermal growth factor receptor (EGFR) family from the tyrosine kinase (TK) group. The third most targeted kinase with eight compounds is p38a/mitogen-activated protein kinase 14 (p38a/MAPK14). This attention is not entirely surprising given the level of target validation for these kinases in cancer (KDR [<ce:cross-ref refid="bib19">19</ce:cross-ref>], EGFR [<ce:cross-refs refid="bib20 bib21">20,21</ce:cross-refs>] and p38a/MAPK14 [<ce:cross-ref refid="bib22">22</ce:cross-ref>]) and inflammation (p38a/MAPK14) [<ce:cross-ref refid="bib23">23</ce:cross-ref>].</ce:para>
+                  <ce:para id="para0040" view="all">An interesting perspective of the clinical kinase space emerges when examining the distribution of compounds across therapeutic indications and the number of targets associated with each indication (<ce:cross-ref refid="fig1">Figure 1c</ce:cross-ref>). Generic cancer indications, pursued with the largest number of clinical compounds (21), are associated with 20 different kinase targets (18 typical kinases, protein kinase A regulatory subunit and Sphingosine kinase). Oncological indications account for almost 75% of all clinical entries (59 of 76 compounds are still in the clinic). These are also spread across a large number of targets and target groups. Rheumatoid arthritis and inflammatory indications grouped together account for 15–20% of kinase clinical interest (12 of 76 compounds are still in the clinic). Some compounds are pursued for inflammatory as well as oncological indications (three compounds are still in the clinic). Given the growing body of evidence demonstrating colocalization of inflammation, angiogenesis and cancer [<ce:cross-ref refid="bib24">24</ce:cross-ref>], in addition to the link between cytokines and chemokines and tumor anchorage, growth and metastasis [<ce:cross-ref refid="bib25">25</ce:cross-ref>], it is expected that these dual indications (inflammation and cancer) will increase in frequency.</ce:para>
+                  <ce:para id="para0045" view="all">Five launched and five Phase III kinase small molecule drugs, together with their primary targets and indications, are presented in <ce:cross-ref refid="fig2">Figures 2a and 2b</ce:cross-ref>
+                     <ce:float-anchor refid="fig2"/></ce:float-anchor>, respectively.</ce:para>
+               </ce:section>
+               <ce:section id="section0010" view="all">
+                  <ce:section-title>The relationship between selectivity and sequence similarity</ce:section-title>
+                  <ce:para id="para0050" view="all">Kinases can be compared using selectivity profiles arising from differences in the binding affinity of known inhibitors [<ce:cross-ref refid="bib7">7</ce:cross-ref>]. As an alternative to sequence-based similarity, a SAR-based similarity metric that ranges from 0 to 1, which increases with increasing similarity of kinase pIC<ce:inf loc="post">50</ce:inf> values [−log(IC<ce:inf loc="post">50</ce:inf>)] for a series of inhibitors, has been described [<ce:cross-ref refid="bib7">7</ce:cross-ref>]. Our previous analysis has been significantly expanded with 1479 kinase pairs representing 78 kinases with IC<ce:inf loc="post">50</ce:inf> values for four or more compounds.</ce:para>
+                  <ce:para id="para0055" view="all">Dendrograms based on selectivity data differ in some cases from the traditional sequence-based similarity classifications [<ce:cross-ref refid="bib7">7</ce:cross-ref>]. However, the selectivity-based similarity is dependent on the chemotypes used for profiling across multiple targets, and the absence of a sufficient quantity of data for many kinases limits the scope of possible comparisons. To increase the applicability of SAR similarity beyond the kinase space represented by the available biochemical <ce:italic>in vitro</ce:italic> enzymatic selectivity data, the relationship between sequence similarity (which can be established for any pair of kinases) and SAR similarity was examined (<ce:cross-ref refid="fig3">Figure 3a</ce:cross-ref>
+                     <ce:float-anchor refid="fig3"/></ce:float-anchor>). Statistical analysis demonstrates that kinase pairs with sequence identity between 90 and 100%, which are expected to be inhibited to a similar degree, have, on average, statistically indistinguishable SAR similarity from kinase pairs with a sequence identity of >60%. Kinase pairs with a sequence identity of <60% have a lower average SAR similarity distributed over a considerable range. As a general guideline, kinases with >60% sequence identity compared with a kinase of interest have a high probability of being inhibited by the same groups of compounds. However, kinases with <60% identity might or might not be inhibited by the same compounds (<ce:cross-ref refid="fig3">Figure 3a</ce:cross-ref>). This observation is useful for assembling selectivity panels that are complementary to targets of interest and for projecting the extent of selectivity based on limited, but diverse, profiling data. It also shows that it should be possible to cover the complete kinome with a representative set of targets [<ce:cross-ref refid="bib8">8</ce:cross-ref>].</ce:para>
+               </ce:section>
+               <ce:section id="section0015" view="all">
+                  <ce:section-title>Structural distance</ce:section-title>
+                  <ce:para id="para0060" view="all">The similarity of the binding sites of proteins can be quantified using a generalization of the fingerprint approach described by Mason <ce:italic>et al.</ce:italic> [<ce:cross-ref refid="bib26">26</ce:cross-ref>]. This method is a derivative of fingerprint-encoding of small organic molecules [<ce:cross-ref refid="bib26">26</ce:cross-ref>], where the presence of binding site atom pairs at various distances is encoded by a string of integers. The fingerprint is organized in consecutive segments representing pairs of non-hydrogen atoms differentiated by Sybyl atom types (<ce:inter-ref xlink:href="http://www.tripos.com" xlink:type="simple">www.tripos.com</ce:inter-ref>) and each segment is further subdivided into several bins for recording the distance between the atoms. As of 14 January 2005, 59 typical human kinase sequences map to an entry in the Protein Data Bank (PDB) [<ce:cross-ref refid="bib27">27</ce:cross-ref>] when applying the criteria of ≥95% sequence identity calculated over 150 or more alignment positions (excluding continuous insertions that are the result of introns or alternative splicing). When counting multiple instances of the same kinase (e.g. when it is complexed with multiple inhibitors), the number of structures in the PDB rises to 284. The similarity of 45,451 pairs of kinase catalytic domains was calculated using the Tanimoto coefficient (in the form that is applicable to integer strings) applied to the ATP-binding site fingerprints and computed using 24 active-site residues that have been defined previously [<ce:cross-ref refid="bib7">7</ce:cross-ref>].</ce:para>
+                  <ce:para id="para0065" view="all">The relationship between SAR and sequence similarity can be understood by examining the correlation between the sequence similarity of kinases and the corresponding ATP-binding site similarity (<ce:cross-ref refid="fig3">Figure 3b</ce:cross-ref>). Kinases with high sequence identity also have high ATP site similarity, whereas kinases with low sequence identity exhibit a range of structural similarities. For example, 1QD3 (LCK) and 1QPJ (LCK) share 15% sequence identity and 0.991 structural similarity. By contrast, 1UWH (BRAF) and 1P4F (DAPK1) share 17% sequence identity and 0.775 structural similarity, which is one of the lowest values. Using 4429 pairs of catalytic domains corresponding to the same kinase (e.g. different cyclin-dependent kinase 2 structures), it was possible to estimate the intrakinase variability of the structure-based fingerprints. Statistical analysis was performed to determine the level of sequence identity at which ATP-binding site similarity significantly differs from the mean intrakinase structural similarity. Interestingly, the threshold of 60% sequence identity differentiated between binding sites of related kinases and variations in the binding sites of the same kinase. This observation lends credence to the hypothesis that similarity in the selectivity profiles of ATP-competitive inhibitors results from the structural similarity of the corresponding ATP pockets. In addition, this threshold is consistent with the accepted value at which homology modeling becomes reliable [<ce:cross-ref refid="bib10">10</ce:cross-ref>]. This observation significantly increases the applicability of structure-based fingerprints for understanding the properties of kinases in structural space; at ≥60% identity, the total number of human kinases that are represented in the PDB, directly or indirectly, rises from 59 to 138.</ce:para>
+               </ce:section>
+               <ce:section id="section0020" view="all">
+                  <ce:section-title>Kinase selectivity: interpretation of caveats</ce:section-title>
+                  <ce:para id="para0070" view="all">In general, most kinase data reported in <ce:italic>in vitro</ce:italic> biochemical enzyme assays are IC<ce:inf loc="post">50</ce:inf> values, because routine determination of <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">i</ce:inf> values is not feasible for large compound sets. It is important to note that, whereas <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">i</ce:inf> values are essentially ‘immutable’ properties of the compound, IC<ce:inf loc="post">50</ce:inf> values are not (i.e. they are dependent on the concentration of ATP, substrate and/or enzyme, depending on the mode of action of the compound). For example, with ATP-competitive compounds, Cheng–Prusoff [<ce:cross-ref refid="bib28">28</ce:cross-ref>] (<ce:cross-ref refid="eq01">Equation 1</ce:cross-ref>) dictates that the concentration of ATP in the assay relative to <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">m</ce:inf> can alter the IC<ce:inf loc="post">50</ce:inf>, particularly if the concentration of ATP in the assay exceeds the <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">m</ce:inf> ATP concentration.<ce:display>
+                        <ce:formula id="eq01">
+                           <ce:label>[Equation 1]</ce:label>
+                           <mml:math altimg="si1.gif" overflow="scroll">
+                              <mml:mrow>
+                                 <mml:msub>
+                                    <mml:mrow>
+                                       <mml:mtext>IC</mml:mtext>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                       <mml:mn>50</mml:mn>
+                                    </mml:mrow>
+                                 </mml:msub>
+                                 <mml:mo>=</mml:mo>
+                                 <mml:msub>
+                                    <mml:mi>K</mml:mi>
+                                    <mml:mtext>i</mml:mtext>
+                                 </mml:msub>
+                                 <mml:mo stretchy="false">(</mml:mo>
+                                 <mml:mn>1</mml:mn>
+                                 <mml:mo>+</mml:mo>
+                                 <mml:mfrac>
+                                    <mml:mrow>
+                                       <mml:mo stretchy="false">[</mml:mo>
+                                       <mml:mtext>ATP</mml:mtext>
+                                       <mml:mo stretchy="false">]</mml:mo>
+                                    </mml:mrow>
+                                    <mml:mrow>
+                                       <mml:msub>
+                                          <mml:mi>K</mml:mi>
+                                          <mml:mtext>m</mml:mtext>
+                                       </mml:msub>
+                                    </mml:mrow>
+                                 </mml:mfrac>
+                                 <mml:mo stretchy="false">)</mml:mo>
+                              </mml:mrow>
+                           </mml:math>
+                        </ce:formula>
+                     </ce:display>
+                  </ce:para>
+                  <ce:para id="para0075" view="all">When comparing IC<ce:inf loc="post">50</ce:inf> values, care should be taken to note the concentration of ATP relative to the <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">m</ce:inf> ATP concentration. If a given biochemical assay is performed at ATP concentrations significantly higher than the <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">m</ce:inf> concentration, then true comparisons of enzyme selectivity can only be made using apparent <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">i</ce:inf> values (corrected for assay concentration of ATP relative to <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">m</ce:inf> ATP concentration). Assays performed at or below <ce:italic>K</ce:italic>
+                     <ce:inf loc="post">m</ce:inf> are generally not a problem, because the IC<ce:inf loc="post">50</ce:inf> changes minimally (approximately twofold or less) relative to the error of most assays. In many cases, the IC<ce:inf loc="post">50</ce:inf> values become the default because of a lack of the necessary characterization. Although ATP-competitive compounds are predominant and, in many cases, are assumed to be ATP-competitive, the mode of action for many kinase inhibitors could differ. One example involves ‘slow binding’ inhibitors (e.g. those that bind allosterically but then cause a perturbation in the ATP-binding site), which often require preincubation with the enzyme to reach an ‘equilibrium IC<ce:inf loc="post">50</ce:inf>’ [<ce:cross-ref refid="bib29">29</ce:cross-ref>]. In these cases, determination of on–off rates is valuable. This highlights potential caveats in the use of annotated kinase IC<ce:inf loc="post">50</ce:inf> values in the analysis. Although the data are extremely useful for establishing correlations in large datasets of kinase inhibitors, it can be even more useful (and perhaps better correlated and with lower error) when care is taken to include characterization of kinase inhibitors.</ce:para>
+                  <ce:para id="para0080" view="all">Cell-based data for kinase activity are of particular importance because such data combine the effects of enzyme and substrate(s) localization in a more ‘physiological’ context. Cell-based inhibition represents a higher hurdle because cell permeability, stability and greater solubility (where the cells do not tolerate solvent) are required. These data are of great value in determining whether the <ce:italic>in vitro</ce:italic> enzyme data translate to inhibition of substrate phosphorylation <ce:italic>in vivo</ce:italic>. In addition, the selectivity of the kinase inhibitor can be assessed when measuring multiple phosphorylated substrates and/or downstream effectors of kinase pathways. Unfortunately, there is a paucity of cell-based kinase data relative to the <ce:italic>in vitro</ce:italic> data available for isolated enzymes. Given new techniques for multiplexed measurements of phosphorylated substrates and pathways endpoints, it is hoped that this dataset could become more enriched in the near future [<ce:cross-refs refid="bib3 bib6">3,6</ce:cross-refs>]. Cell-based data must also be well annotated because the conditions can dramatically affect the interpretation (e.g. selection of substrate, phosphorylation site, stimuli and time course).</ce:para>
+               </ce:section>
+               <ce:section id="section0025" view="all">
+                  <ce:section-title>Visualizing medicinally relevant kinase space</ce:section-title>
+                  <ce:para id="para0085" view="all">Multiple approaches for visualizing the human kinome have been proposed. In our research, we have used the work of Fabian <ce:italic>et al.</ce:italic> [<ce:cross-ref refid="bib14">14</ce:cross-ref>], who adopted the dendrogram established by Manning <ce:italic>et al.</ce:italic> [<ce:cross-ref refid="bib1">1</ce:cross-ref>], as the basis for visualizing selectivity profiles. Here, clinical and structural space of the human kinome have been depicted, together with the corresponding extensions determined using the 60% sequence-identity rule established in this work (<ce:cross-ref refid="fig4">Figures 4a,b</ce:cross-ref>
+                     <ce:float-anchor refid="fig4"/></ce:float-anchor>). From this representation, it is evident that the currently characterized clinical and structural kinome spaces overlap significantly. The characterization of key kinases by X-ray crystallography would significantly increase the scope of structure-based kinase comparisons. In addition, a comparison of kinases associated with various cancers in the literature with those targets pursued for oncological indications with clinical compounds suggests that our present exploration of the drugable human kinome remains limited in scope (<ce:cross-ref refid="fig4">Figure 4c</ce:cross-ref>). A more complete understanding of <ce:italic>in vitro</ce:italic> and animal data for kinase selectivity, as it translates to human clinical safety and efficacy, will be crucial for successfully developing therapeutically relevant kinase inhibitors.</ce:para>
+               </ce:section>
+               <ce:section id="section0030" view="all">
+                  <ce:section-title>Conclusions</ce:section-title>
+                  <ce:para id="para0090" view="all">Despite the association of kinases with many disease states, kinase inhibitors account for a small fraction of marketed drugs (<1%) and compounds entering clinical trials (<3% in Phase I). In recent years, there has been a rapid growth of biochemical <ce:italic>in vitro</ce:italic> profiling of kinase inhibitors. However, the data generated have not been fully translated into understanding compound evaluation in cellular and clinical settings. By assembling profiling panels of representative kinases, an earlier assessment of relevant selectivity could be achieved. Nonetheless, it has not been shown that lack of selectivity <ce:italic>in vitro</ce:italic> will translate into a lack of selectivity in the clinic. Kinases that are not targeted by late-stage clinical compounds, but are found to be inhibited by them in biochemical assays, could be classified as posing lower selectivity risks in early stages of kinase inhibitor development. Because the vast majority of kinase clinical compounds target oncological indications, the identification of compounds that inhibit multiple clinically pursued targets could be a significant milestone in kinase research.</ce:para>
+               </ce:section>
+            </ce:sections>
+            <ce:acknowledgment>
+               <ce:section-title>Acknowledgements</ce:section-title>
+               <ce:para id="para0095" view="all">We thank Jon Erickson and Horst Hemmerle for fruitful discussions and Cell Signaling Technology for supplying The Human Kinome Tree. This work was supported by the Lilly Postdoctoral Program.</ce:para>
+            </ce:acknowledgment>
+            <ce:appendices view="all">
+               <ce:section id="sec1" view="extended">
+                  <ce:section-title>Supplementary data</ce:section-title>
+                  <ce:para id="para0100" view="all">
+                     <ce:display>
+                        <ce:e-component id="e-component0005">
+                           <ce:label>TABLE S1</ce:label>
+                           <ce:caption>
+                              <ce:simple-para id="simple-para0035" view="all">Explanation of kinase target labels used in <ce:cross-ref refid="fig1">Figure 1b</ce:cross-ref>
+                              </ce:simple-para>
+                           </ce:caption>
+                           <ce:link locator="mmc1"/></ce:link>
+                        </ce:e-component>
+                     </ce:display>
+                  </ce:para>
+               </ce:section>
+            </ce:appendices>
+         </body>
+         <tail view="all">
+            <ce:bibliography id="bibliography0005" view="all">
+               <ce:section-title>References</ce:section-title>
+               <ce:bibliography-sec id="bibliography-sec0005">
+                  <ce:bib-reference id="bib1">
+                     <ce:label>1</ce:label>
+                     <sb:reference id="reference0005">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Manning</ce:surname>
+                                 <ce:given-name>G.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The protein kinase complement of the human genome</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>298</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1912</sb:first-page>
+                              <sb:last-page>1934</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib2">
+                     <ce:label>2</ce:label>
+                     <sb:reference id="reference0010">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Murcko</ce:surname>
+                                 <ce:given-name>M.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Caron</ce:surname>
+                                 <ce:given-name>P.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Transforming the genome to drug discovery</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Drug Discov. Today</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>7</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>583</sb:first-page>
+                              <sb:last-page>584</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib3">
+                     <ce:label>3</ce:label>
+                     <sb:reference id="reference0015">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Johnson</ce:surname>
+                                 <ce:given-name>S.A.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Hunter</ce:surname>
+                                 <ce:given-name>T.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Kinomics: methods for deciphering the kinome</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Methods</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>2</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>17</sb:first-page>
+                              <sb:last-page>25</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib4">
+                     <ce:label>4</ce:label>
+                     <sb:reference id="reference0020">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Blume-Jensen</ce:surname>
+                                 <ce:given-name>P.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Hunter</ce:surname>
+                                 <ce:given-name>T.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Oncogenic kinase signalling</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nature</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>411</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>355</sb:first-page>
+                              <sb:last-page>365</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib5">
+                     <ce:label>5</ce:label>
+                     <sb:reference id="reference0025">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Adams</ce:surname>
+                                 <ce:given-name>J.L.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Lee</ce:surname>
+                                 <ce:given-name>D.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Recent progress towards the identification of selective inhibitors of serine/threonine kinases</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Opin. Drug Discov. Devel.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>2</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>96</sb:first-page>
+                              <sb:last-page>109</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib6">
+                     <ce:label>6</ce:label>
+                     <sb:reference id="reference0030">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Comley</ce:surname>
+                                 <ce:given-name>J.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Expanding the profile of kinase panels</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Drug Discovery World Fall</sb:maintitle>
+                                 </sb:title>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>45</sb:first-page>
+                              <sb:last-page>56</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib7">
+                     <ce:label>7</ce:label>
+                     <sb:reference id="reference0035">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Vieth</ce:surname>
+                                 <ce:given-name>M.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Kinomics-structural biology and chemogenomics of kinase inhibitors and targets</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Biochim. Biophys. Acta</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>1697</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>243</sb:first-page>
+                              <sb:last-page>257</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib8">
+                     <ce:label>8</ce:label>
+                     <sb:reference id="reference0040">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Fabbro</ce:surname>
+                                 <ce:given-name>D.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>An interview with Dorriano Fabbro, PhD</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Assay Drug Dev. Technol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>2</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>109</sb:first-page>
+                              <sb:last-page>114</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib9">
+                     <ce:label>9</ce:label>
+                     <sb:reference id="reference0045">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Hunter</ce:surname>
+                                 <ce:given-name>T.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Signaling-2000 and beyond</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>100</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>113</sb:first-page>
+                              <sb:last-page>127</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib10">
+                     <ce:label>10</ce:label>
+                     <sb:reference id="reference0050">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Marti-Renom</ce:surname>
+                                 <ce:given-name>M.A.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Comparative protein structure modeling of genes and genomes</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Annu. Rev. Biophys. Biomol. Struct.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>29</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>291</sb:first-page>
+                              <sb:last-page>325</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib11">
+                     <ce:label>11</ce:label>
+                     <sb:reference id="reference0055">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Kuntz</ce:surname>
+                                 <ce:given-name>I.D.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structure-based strategies for drug design and discovery</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>257</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1992</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1078</sb:first-page>
+                              <sb:last-page>1082</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib12">
+                     <ce:label>12</ce:label>
+                     <sb:reference id="reference0060">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Caron</ce:surname>
+                                 <ce:given-name>P.R.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Chemogenomic approaches to drug discovery</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Opin. Chem. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>5</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>464</sb:first-page>
+                              <sb:last-page>470</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib13">
+                     <ce:label>13</ce:label>
+                     <sb:reference id="reference0065">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Mittl</ce:surname>
+                                 <ce:given-name>P.R.E.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Grutter</ce:surname>
+                                 <ce:given-name>M.G.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structural genomics: opportunities and challenges</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Opin. Chem. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>5</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>402</sb:first-page>
+                              <sb:last-page>408</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib14">
+                     <ce:label>14</ce:label>
+                     <sb:reference id="reference0070">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Fabian</ce:surname>
+                                 <ce:given-name>M.A.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A small molecule-kinase interaction map for clinical kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Biotechnol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>329</sb:first-page>
+                              <sb:last-page>336</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib15">
+                     <ce:label>15</ce:label>
+                     <sb:reference id="reference0075">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Griffin</ce:surname>
+                                 <ce:given-name>J.D.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Interaction maps for kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Biotechnol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>308</sb:first-page>
+                              <sb:last-page>309</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib16">
+                     <ce:label>16</ce:label>
+                     <sb:reference id="reference0080">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Wenlock</ce:surname>
+                                 <ce:given-name>M.C.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A comparison of physiochemical property profiles of development and marketed oral drugs</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>46</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1250</sb:first-page>
+                              <sb:last-page>1256</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib17">
+                     <ce:label>17</ce:label>
+                     <sb:reference id="reference0085">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Vieth</ce:surname>
+                                 <ce:given-name>M.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Characteristic physical properties and structural fragments of marketed oral drugs</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>47</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>224</sb:first-page>
+                              <sb:last-page>232</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib18">
+                     <ce:label>18</ce:label>
+                     <sb:reference id="reference0090">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Blake</ce:surname>
+                                 <ce:given-name>J.F.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Examination of the computed molecular properties of compounds selected for clinical development</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Biotechniques Suppl</sb:maintitle>
+                                 </sb:title>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>16</sb:first-page>
+                              <sb:last-page>20</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib19">
+                     <ce:label>19</ce:label>
+                     <sb:reference id="reference0095">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Ferrara</ce:surname>
+                                 <ce:given-name>N.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Vascular endothelial growth factor: basic science and clinical progress</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Endocr. Rev.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>25</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>581</sb:first-page>
+                              <sb:last-page>611</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib20">
+                     <ce:label>20</ce:label>
+                     <sb:reference id="reference0100">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Lockhart</ce:surname>
+                                 <ce:given-name>C.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Berlin</ce:surname>
+                                 <ce:given-name>J.D.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The epidermal growth factor receptor as a target for colorectal cancer therapy</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Semin. Oncol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>32</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>52</sb:first-page>
+                              <sb:last-page>60</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib21">
+                     <ce:label>21</ce:label>
+                     <sb:reference id="reference0105">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Kari</ce:surname>
+                                 <ce:given-name>C.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Targeting the epidermal growth factor receptor in cancer: apoptosis takes center stage</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>63</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1</sb:first-page>
+                              <sb:last-page>5</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib22">
+                     <ce:label>22</ce:label>
+                     <sb:reference id="reference0110">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Hideshima</ce:surname>
+                                 <ce:given-name>T.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>p38 MAPK inhibition enhances PS-341 (bortezomib)-induced cytotoxicity against multiple myeloma cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Oncogene</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>8766</sb:first-page>
+                              <sb:last-page>8776</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib23">
+                     <ce:label>23</ce:label>
+                     <sb:reference id="reference0115">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Pargellis</ce:surname>
+                                 <ce:given-name>C.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Regan</ce:surname>
+                                 <ce:given-name>J.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibitors of p38 mitogen-activated protein kinase for the treatment of rheumatoid arthritis</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Opin. Investig. Drugs</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>4</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>566</sb:first-page>
+                              <sb:last-page>571</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib24">
+                     <ce:label>24</ce:label>
+                     <sb:reference id="reference0120">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Mueller</ce:surname>
+                                 <ce:given-name>M.M.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Fusenig</ce:surname>
+                                 <ce:given-name>N.E.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Friends or foes - bipolar effects of the tumour stroma in cancer</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Rev. Cancer</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>4</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>839</sb:first-page>
+                              <sb:last-page>849</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib25">
+                     <ce:label>25</ce:label>
+                     <sb:reference id="reference0125">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Howard</ce:surname>
+                                 <ce:given-name>O.M.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Galligan</ce:surname>
+                                 <ce:given-name>C.L.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>An expanding appreciation of the role chemokine receptors play in cancer progression</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Pharm. Des.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>10</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2377</sb:first-page>
+                              <sb:last-page>2389</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib26">
+                     <ce:label>26</ce:label>
+                     <sb:reference id="reference0130">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Mason</ce:surname>
+                                 <ce:given-name>J.S.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>New 4-point pharmacophore method for molecular similarity and diversity applications: overview of the method and applications, including a novel approach to the design of combinatorial libraries containing privileged substructures</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>42</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>3251</sb:first-page>
+                              <sb:last-page>3264</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib27">
+                     <ce:label>27</ce:label>
+                     <sb:reference id="reference0135">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Berman</ce:surname>
+                                 <ce:given-name>H.M.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The Protein Data Bank</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nucleic Acids Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>28</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>235</sb:first-page>
+                              <sb:last-page>242</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib28">
+                     <ce:label>28</ce:label>
+                     <sb:reference id="reference0140">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Cheng</ce:surname>
+                                 <ce:given-name>Y.C.</ce:given-name>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:surname>Prusoff</ce:surname>
+                                 <ce:given-name>W.H.</ce:given-name>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Relationship between the inhibition constant (Ki) and the concentration of inhibitor which caused 50% inhibition (I<ce:inf loc="post">50</ce:inf>) of an enzymatic reaction</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Biochem. Pharmacol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>22</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1973</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>3099</sb:first-page>
+                              <sb:last-page>3108</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib29">
+                     <ce:label>29</ce:label>
+                     <sb:reference id="reference0145">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Pargellis</ce:surname>
+                                 <ce:given-name>C.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibition of p38 MAP kinase by utilizing a novel allosteric binding site</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Struct. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>9</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>268</sb:first-page>
+                              <sb:last-page>272</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib30">
+                     <ce:label>30</ce:label>
+                     <sb:reference id="reference0150">
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:surname>Wain</ce:surname>
+                                 <ce:given-name>H.M.</ce:given-name>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Genew: the human gene nomenclature database, 2004 updates</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nucleic Acids Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>32</sb:volume-nr>
+                              </sb:series>
+                              <sb:issue-nr>Database issue</sb:issue-nr>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>D255</sb:first-page>
+                              <sb:last-page>D257</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+               </ce:bibliography-sec>
+            </ce:bibliography>
+         </tail>
+      </article>
+   </xocs:serial-item></xocs:doc></originaltext></full-text-retrieval-response>

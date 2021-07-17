@@ -1,0 +1,2144 @@
+<full-text-retrieval-response xmlns="http://www.elsevier.com/xml/svapi/article/dtd" xmlns:bk="http://www.elsevier.com/xml/bk/dtd" xmlns:cals="http://www.elsevier.com/xml/common/cals/dtd" xmlns:ce="http://www.elsevier.com/xml/common/dtd" xmlns:ja="http://www.elsevier.com/xml/ja/dtd" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:sa="http://www.elsevier.com/xml/common/struct-aff/dtd" xmlns:sb="http://www.elsevier.com/xml/common/struct-bib/dtd" xmlns:tb="http://www.elsevier.com/xml/common/table/dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xocs="http://www.elsevier.com/xml/xocs/dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><coredata><prism:url>https://api.elsevier.com/content/article/pii/S0223523411002923</prism:url><dc:identifier>doi:10.1016/j.ejmech.2011.04.007</dc:identifier><eid>1-s2.0-S0223523411002923</eid><prism:doi>10.1016/j.ejmech.2011.04.007</prism:doi><pii>S0223-5234(11)00292-3</pii><dc:title>Sorafenib derivatives induce apoptosis through inhibition of STAT3 independent of Raf </dc:title><prism:publicationName>European Journal of Medicinal Chemistry</prism:publicationname><prism:aggregationType>Journal</prism:aggregationtype><pubType>fla</pubtype><prism:issn>02235234</prism:issn><prism:volume>46</prism:volume><prism:issueIdentifier>7</prism:issueidentifier><prism:startingPage>2845</prism:startingpage><prism:endingPage>2851</prism:endingpage><prism:pageRange>2845-2851</prism:pagerange><prism:number>7</prism:number><dc:format>text/xml</dc:format><prism:coverDate>2011-07-31</prism:coverdate><prism:coverDisplayDate>July 2011</prism:coverdisplaydate><prism:copyright>Copyright © 2011 Elsevier Masson SAS. All rights reserved.</prism:copyright><prism:publisher>Elsevier Masson SAS.</prism:publisher><dc:creator>Chen, Kuen-Feng</dc:creator><dc:creator>Tai, Wei-Tien</dc:creator><dc:creator>Huang, Jui-Wen</dc:creator><dc:creator>Hsu, Cheng-Yi</dc:creator><dc:creator>Chen, Wei-Lin</dc:creator><dc:creator>Cheng, Ann-Lii</dc:creator><dc:creator>Chen, Pei-Jer</dc:creator><dc:creator>Shiau, Chung-Wai</dc:creator><dc:description>
+                  STAT3 is a transcription factor that modulates survival-directed transcription. It is persistently activated in many human cancers. Literature has shown that sorafenib, Raf kinase inhibitor, reduces Phospho-STAT3 and induces cell death. A series of sorafenib derivatives were synthesized as new inhibitors for STAT3. Urea, sulfonamide, and carboxamide linkers brought out different SARs from the end of sorafenib. Urea and carboxamide linked derivatives showed greater inhibition against STAT3 activity than sulfonamide linked derivatives. In particular, 1-(4-chloro-3-(trifluoromethyl)phenyl)-3-(4-(4-cyanophenoxy)phenyl)urea (1), a urea linker, was as potent as sorafenib in reducing P-STAT3 level and cell death but no inhibition for Raf activity. Such result provides a new lead for the design of STAT3 inhibitors.
+               </dc:description><openaccess>0</openaccess><openaccessArticle>false</openaccessarticle><openaccessType/></openaccesstype><openArchiveArticle>false</openarchivearticle><openaccessSponsorName/></openaccesssponsorname><openaccessSponsorType/></openaccesssponsortype><openaccessUserLicense/></openaccessuserlicense><dcterms:subject>Sorafenib</dcterms:subject><dcterms:subject>STAT3</dcterms:subject><dcterms:subject>Apoptosis</dcterms:subject><link href="https://api.elsevier.com/content/article/pii/S0223523411002923" rel="self"/></link><link href="https://www.sciencedirect.com/science/article/pii/S0223523411002923" rel="scidir"/></link></coredata><objects><object ref="gr5" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="556" height="407" size="41694">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr5.jpg?httpAccept=%2A%2F%2A</object><object ref="gr5" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="219" height="160" size="5700">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr5.sml?httpAccept=%2A%2F%2A</object><object ref="gr1" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="378" height="87" size="10258">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr1.jpg?httpAccept=%2A%2F%2A</object><object ref="gr1" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="219" height="50" size="2126">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr1.sml?httpAccept=%2A%2F%2A</object><object ref="gr6" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="224" height="186" size="18781">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr6.jpg?httpAccept=%2A%2F%2A</object><object ref="gr6" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="197" height="163" size="5211">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr6.sml?httpAccept=%2A%2F%2A</object><object ref="gr2" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="384" height="384" size="27892">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr2.jpg?httpAccept=%2A%2F%2A</object><object ref="gr2" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="164" height="164" size="3218">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr2.sml?httpAccept=%2A%2F%2A</object><object ref="gr7" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="581" height="200" size="20500">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr7.jpg?httpAccept=%2A%2F%2A</object><object ref="gr7" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="219" height="75" size="3552">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr7.sml?httpAccept=%2A%2F%2A</object><object ref="fx1" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="207" height="64" size="7857">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-fx1.jpg?httpAccept=%2A%2F%2A</object><object ref="fx1" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="219" height="68" size="2473">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-fx1.sml?httpAccept=%2A%2F%2A</object><object ref="gr4" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="800" height="685" size="60318">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr4.jpg?httpAccept=%2A%2F%2A</object><object ref="gr4" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="191" height="164" size="3245">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr4.sml?httpAccept=%2A%2F%2A</object><object ref="gr3" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="352" height="272" size="16049">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr3.jpg?httpAccept=%2A%2F%2A</object><object ref="gr3" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="212" height="164" size="3505">https://api.elsevier.com/content/object/eid/1-s2.0-S0223523411002923-gr3.sml?httpAccept=%2A%2F%2A</object></objects><scopus-id>79957498765</scopus-id><scopus-eid>2-s2.0-79957498765</scopus-eid><pubmed-id>21531053</pubmed-id><link href="https://api.elsevier.com/content/abstract/scopus_id/79957498765" rel="abstract"/></link><originalText><xocs:doc xsi:schemaLocation="http://www.elsevier.com/xml/xocs/dtd http://null/schema/dtds/document/fulltext/xcr/xocs-article.xsd"><xocs:meta xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <xocs:content-family>serial</xocs:content-family>
+      <xocs:content-type>JL</xocs:content-type>
+      <xocs:cid>271932</xocs:cid>
+      <xocs:ssids>
+         <xocs:ssid type="alllist">291210</xocs:ssid>
+         <xocs:ssid type="subj">291732</xocs:ssid>
+         <xocs:ssid type="subj">291789</xocs:ssid>
+         <xocs:ssid type="subj">291858</xocs:ssid>
+         <xocs:ssid type="subj">291928</xocs:ssid>
+         <xocs:ssid type="content">31</xocs:ssid>
+      </xocs:ssids>
+      <xocs:srctitle>European Journal of Medicinal Chemistry</xocs:srctitle>
+      <xocs:normalized-srctitle>EUROPEANJOURNALMEDICINALCHEMISTRY</xocs:normalized-srctitle>
+      <xocs:orig-load-date yyyymmdd="20110414">2011-04-14</xocs:orig-load-date>
+      <xocs:available-online-date yyyymmdd="20110414">2011-04-14</xocs:available-online-date>
+      <xocs:ew-transaction-id>2011-05-20T07:48:11</xocs:ew-transaction-id>
+      <xocs:eid>1-s2.0-S0223523411002923</xocs:eid>
+      <xocs:pii-formatted>S0223-5234(11)00292-3</xocs:pii-formatted>
+      <xocs:pii-unformatted>S0223523411002923</xocs:pii-unformatted>
+      <xocs:doi>10.1016/j.ejmech.2011.04.007</xocs:doi>
+      <xocs:item-stage>S300</xocs:item-stage>
+      <xocs:item-version-number>S300.1</xocs:item-version-number>
+      <xocs:item-weight>FULL-TEXT</xocs:item-weight>
+      <xocs:hub-eid>1-s2.0-S0223523410X00186</xocs:hub-eid>
+      <xocs:timestamp yyyymmdd="20150514">2015-05-14T05:55:44.535656-04:00</xocs:timestamp>
+      <xocs:dco>0</xocs:dco>
+      <xocs:tomb>0</xocs:tomb>
+      <xocs:date-search-begin>20110701</xocs:date-search-begin>
+      <xocs:date-search-end>20110731</xocs:date-search-end>
+      <xocs:year-nav>2011</xocs:year-nav>
+      <xocs:indexeddate epoch="1302739200">2011-04-14T00:00:00Z</xocs:indexeddate>
+      <xocs:articleinfo>articleinfo crossmark dco dateupdated tomb dateloaded datesearch indexeddate issuelist volumelist yearnav absattachment articletitlenorm authfirstinitialnorm authfirstsurnamenorm cid cids contenttype copyright dateloadedtxt docsubtype doctype doi eid ewtransactionid hubeid issfirst issn issnnorm itemstage itemtransactionid itemweight openaccess openarchive pg pgfirst pglast pii piinorm pubdateend pubdatestart pubdatetxt pubyr sectiontitle sortorder srctitle srctitlenorm srctype subheadings volfirst volissue webpdf webpdfpagecount figure body acknowledge affil articletitle auth authfirstini authfull authkeywords authlast primabst pubtype ref specialabst alllist content subj ssids</xocs:articleinfo>
+      <xocs:issns>
+         <xocs:issn-primary-formatted>0223-5234</xocs:issn-primary-formatted>
+         <xocs:issn-primary-unformatted>02235234</xocs:issn-primary-unformatted>
+      </xocs:issns>
+      <xocs:crossmark is-crossmark="0"/></xocs:crossmark>
+      <xocs:vol-first>46</xocs:vol-first>
+      <xocs:volume-list>
+         <xocs:volume>46</xocs:volume>
+      </xocs:volume-list>
+      <xocs:iss-first>7</xocs:iss-first>
+      <xocs:issue-list>
+         <xocs:issue>7</xocs:issue>
+      </xocs:issue-list>
+      <xocs:vol-iss-suppl-text>Volume 46, Issue 7</xocs:vol-iss-suppl-text>
+      <xocs:sort-order>23</xocs:sort-order>
+      <xocs:first-fp>2845</xocs:first-fp>
+      <xocs:last-lp>2851</xocs:last-lp>
+      <xocs:pages>
+         <xocs:first-page>2845</xocs:first-page>
+         <xocs:last-page>2851</xocs:last-page>
+      </xocs:pages>
+      <xocs:cover-date-orig>
+         <xocs:start-date>201107</xocs:start-date>
+      </xocs:cover-date-orig>
+      <xocs:cover-date-text>July 2011</xocs:cover-date-text>
+      <xocs:cover-date-start>2011-07-01</xocs:cover-date-start>
+      <xocs:cover-date-end>2011-07-31</xocs:cover-date-end>
+      <xocs:cover-date-year>2011</xocs:cover-date-year>
+      <xocs:hub-sec>
+         <xocs:hub-sec-title>Original Articles</xocs:hub-sec-title>
+      </xocs:hub-sec>
+      <xocs:document-type>article</xocs:document-type>
+      <xocs:document-subtype>fla</xocs:document-subtype>
+      <xocs:copyright-line>Copyright © 2011 Elsevier Masson SAS. All rights reserved.</xocs:copyright-line>
+      <xocs:normalized-article-title>SORAFENIBDERIVATIVESINDUCEAPOPTOSISTHROUGHINHIBITIONSTAT3INDEPENDENTRAF</xocs:normalized-article-title>
+      <xocs:normalized-first-auth-surname>CHEN</xocs:normalized-first-auth-surname>
+      <xocs:normalized-first-auth-initial>K</xocs:normalized-first-auth-initial>
+      <xocs:item-toc>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-label>1</xocs:item-toc-label>
+            <xocs:item-toc-section-title>Introduction</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-label>2</xocs:item-toc-label>
+            <xocs:item-toc-section-title>Chemistry</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-label>3</xocs:item-toc-label>
+            <xocs:item-toc-section-title>Biological evaluations</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-label>3.1</xocs:item-toc-label>
+               <xocs:item-toc-section-title>Development of sorafenib derivative lacking inhibition of Raf kinase activation</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-label>3.2</xocs:item-toc-label>
+               <xocs:item-toc-section-title>Structure activity relationship of replacement of urea group and pyridine ring in cell death</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-label>3.3</xocs:item-toc-label>
+               <xocs:item-toc-section-title>Mechanistic validation of the mode of action of sorafenib derivatives</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-label>4</xocs:item-toc-label>
+            <xocs:item-toc-section-title>Discussion</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-label>5</xocs:item-toc-label>
+            <xocs:item-toc-section-title>Conclusion</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-label>6</xocs:item-toc-label>
+            <xocs:item-toc-section-title>Experimental section</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-label>6.1</xocs:item-toc-label>
+               <xocs:item-toc-section-title>Material</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-label>6.2</xocs:item-toc-label>
+               <xocs:item-toc-section-title>Chemical synthesis</xocs:item-toc-section-title>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.2.1</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>Procedures for compound <ce:bold>1</ce:bold>
+                  </xocs:item-toc-section-title>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.1.1</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>1-(4-Chloro-3-(trifluoromethyl)phenyl)-3-(4-(4-cyanophenoxy)phenyl)urea (<ce:bold>1</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+               </xocs:item-toc-entry>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.2.2</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>General procedures for the synthesis of compounds <ce:bold>2</ce:bold>–<ce:bold>25</ce:bold>
+                  </xocs:item-toc-section-title>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.1</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-methyl-4-(4-(phenylsulfonamido)phenoxy)picolinamide (<ce:bold>2</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.2</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-methyl-4-(4-(4-nitrophenylsulfonamido)phenoxy)picolinamide (<ce:bold>3</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.3</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>4-(4-(4-Fluorophenylsulfonamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>4</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.4</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>4-(4-(4-tert-Butylphenylsulfonamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>5</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.5</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-methyl-4-(4-(naphthalene-2-sulfonamido)phenoxy)picolinamide (<ce:bold>6</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.6</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>4-(4-(2-Bromo-4-(trifluoromethyl)phenylsulfonamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>7</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.7</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-methyl-4-(4-(2-nitrophenylsulfonamido)phenoxy)picolinamide (<ce:bold>8</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.8</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>4-(4-(3,5-Bis(trifluoromethyl)benzamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>9</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.9</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>4-(4-(5-Fluoro-2-(trifluoromethyl)benzamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>10</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.10</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-methyl-4-(4-(4-(trifluoromethyl)benzamido)phenoxy)picolinamide (<ce:bold>11</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.11</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>2-Nitro-<ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>12</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.12</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>2-Nitro-<ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>13</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.13</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>2-Bromo-<ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>14</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.14</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>2-Bromo-<ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>15</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.15</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>16</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.16</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>17</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.17</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>2-Fluoro-<ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-5-(trifluoromethyl)benzamide (<ce:bold>18</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.18</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>2-Fluoro-<ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-5-(trifluoromethyl)benzamide (<ce:bold>19</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.19</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(2-methyl-4-(8-nitroquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>20</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.20</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(4-(8-aminoquinolin-4-yloxy)-2-methylphenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>21</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.21</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(4-(8-acetamidoquinolin-4-yloxy)-2-methylphenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>22</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.22</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(3-(8-nitroquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>23</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.23</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(3-(8-aminoquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>24</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+                  <xocs:item-toc-entry ref-elem="ce:sections">
+                     <xocs:item-toc-label>6.2.2.24</xocs:item-toc-label>
+                     <xocs:item-toc-section-title>
+                        <ce:italic>N</ce:italic>-(3-(8-acetamidoquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>25</ce:bold>)</xocs:item-toc-section-title>
+                  </xocs:item-toc-entry>
+               </xocs:item-toc-entry>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-label>6.3</xocs:item-toc-label>
+               <xocs:item-toc-section-title>Biological assay</xocs:item-toc-section-title>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.3.1</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>Cell culture</xocs:item-toc-section-title>
+               </xocs:item-toc-entry>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.3.2</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>Phospho-STAT3-level</xocs:item-toc-section-title>
+               </xocs:item-toc-entry>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.3.3</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>Western blot</xocs:item-toc-section-title>
+               </xocs:item-toc-entry>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.3.4</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>Cell death detection ELISA</xocs:item-toc-section-title>
+               </xocs:item-toc-entry>
+               <xocs:item-toc-entry ref-elem="ce:sections">
+                  <xocs:item-toc-label>6.3.5</xocs:item-toc-label>
+                  <xocs:item-toc-section-title>Apoptosis analysis</xocs:item-toc-section-title>
+               </xocs:item-toc-entry>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:acknowledgment">
+            <xocs:item-toc-section-title>Acknowledgments</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:bibliography">
+            <xocs:item-toc-section-title>References</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+      </xocs:item-toc>
+      <xocs:references>
+         <xocs:ref-info refid="bib1">
+            <xocs:ref-normalized-surname>BROMBERG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>295</xocs:ref-first-fp>
+            <xocs:ref-last-lp>303</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib2">
+            <xocs:ref-normalized-surname>KORTYLEWSKI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1314</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1321</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib3">
+            <xocs:ref-normalized-surname>DONG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2023</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2029</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib4">
+            <xocs:ref-normalized-surname>LIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>969</xocs:ref-first-fp>
+            <xocs:ref-last-lp>980</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Q</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib5">
+            <xocs:ref-normalized-surname>REDELL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2873</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2887</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib6">
+            <xocs:ref-normalized-surname>TURKSON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>6613</xocs:ref-first-fp>
+            <xocs:ref-last-lp>6626</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib7">
+            <xocs:ref-normalized-surname>WU</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1</xocs:ref-first-fp>
+            <xocs:ref-last-lp>12</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib8">
+            <xocs:ref-normalized-surname>KUNNUMAKKARA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>118</xocs:ref-first-fp>
+            <xocs:ref-last-lp>128</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib9">
+            <xocs:ref-normalized-surname>PANDEY</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>282</xocs:ref-first-fp>
+            <xocs:ref-last-lp>292</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib10">
+            <xocs:ref-normalized-surname>PANDEY</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>525</xocs:ref-first-fp>
+            <xocs:ref-last-lp>533</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib11">
+            <xocs:ref-normalized-surname>PATHAK</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2007</xocs:ref-pub-year>
+            <xocs:ref-first-fp>943</xocs:ref-first-fp>
+            <xocs:ref-last-lp>955</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib12">
+            <xocs:ref-normalized-surname>SANDUR</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>107</xocs:ref-first-fp>
+            <xocs:ref-last-lp>118</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib13">
+            <xocs:ref-normalized-surname>AHN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2008</xocs:ref-pub-year>
+            <xocs:ref-first-fp>4406</xocs:ref-first-fp>
+            <xocs:ref-last-lp>4415</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib14">
+            <xocs:ref-normalized-surname>BLECHACZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1861</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1870</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>B</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib15">
+            <xocs:ref-normalized-surname>YANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>953</xocs:ref-first-fp>
+            <xocs:ref-last-lp>962</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>F</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib16">
+            <xocs:ref-normalized-surname>WAN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>855</xocs:ref-first-fp>
+            <xocs:ref-last-lp>867</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib17">
+            <xocs:ref-normalized-surname>NOURRY</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1964</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1978</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib18">
+            <xocs:ref-normalized-surname>GU</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>671</xocs:ref-first-fp>
+            <xocs:ref-last-lp>676</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>F</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+      </xocs:references>
+      <xocs:refkeys>
+         <xocs:refkey3>CHENX2011X2845</xocs:refkey3>
+         <xocs:refkey4lp>CHENX2011X2845X2851</xocs:refkey4lp>
+         <xocs:refkey4ai>CHENX2011X2845XK</xocs:refkey4ai>
+         <xocs:refkey5>CHENX2011X2845X2851XK</xocs:refkey5>
+      </xocs:refkeys>
+      <xocs:open-access>
+         <xocs:oa-article-status is-open-access="0" is-open-archive="0"/></xocs:oa-article-status>
+      </xocs:open-access>
+      <xocs:attachment-metadata-doc>
+         <xocs:attachment-set-type>item</xocs:attachment-set-type>
+         <xocs:pii-formatted>S0223-5234(11)00292-3</xocs:pii-formatted>
+         <xocs:pii-unformatted>S0223523411002923</xocs:pii-unformatted>
+         <xocs:eid>1-s2.0-S0223523411002923</xocs:eid>
+         <xocs:doi>10.1016/j.ejmech.2011.04.007</xocs:doi>
+         <xocs:cid>271932</xocs:cid>
+         <xocs:timestamp>2011-05-21T08:56:54.120374-04:00</xocs:timestamp>
+         <xocs:cover-date-start>2011-07-01</xocs:cover-date-start>
+         <xocs:cover-date-end>2011-07-31</xocs:cover-date-end>
+         <xocs:attachments>
+            <xocs:web-pdf>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-main.pdf</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/MAIN/application/pdf/8b6c565d24a0a4dcc29ab20a007910fa/main.pdf</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/MAIN/application/pdf/8b6c565d24a0a4dcc29ab20a007910fa/main.pdf</xocs:ucs-locator>
+               <xocs:filename>main.pdf</xocs:filename>
+               <xocs:extension>pdf</xocs:extension>
+               <xocs:pdf-optimized>true</xocs:pdf-optimized>
+               <xocs:filesize>558114</xocs:filesize>
+               <xocs:web-pdf-purpose>MAIN</xocs:web-pdf-purpose>
+               <xocs:web-pdf-page-count>7</xocs:web-pdf-page-count>
+               <xocs:web-pdf-images>
+                  <xocs:web-pdf-image>
+                     <xocs:attachment-eid>1-s2.0-S0223523411002923-main_1.png</xocs:attachment-eid>
+                     <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/PREVIEW/image/png/6aef405759bcc45c07aedc95c2808689/main_1.png</xocs:ucs-locator>
+                     <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/PREVIEW/image/png/6aef405759bcc45c07aedc95c2808689/main_1.png</xocs:ucs-locator>
+                     <xocs:filename>main_1.png</xocs:filename>
+                     <xocs:extension>png</xocs:extension>
+                     <xocs:filesize>58130</xocs:filesize>
+                     <xocs:pixel-height>849</xocs:pixel-height>
+                     <xocs:pixel-width>656</xocs:pixel-width>
+                     <xocs:attachment-type>IMAGE-WEB-PDF</xocs:attachment-type>
+                     <xocs:pdf-page-num>1</xocs:pdf-page-num>
+                  </xocs:web-pdf-image>
+               </xocs:web-pdf-images>
+            </xocs:web-pdf>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr5.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr5/DOWNSAMPLED/image/jpeg/e1ea9e32c694dd2bde4cac3f2bcf6a73/gr5.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr5/DOWNSAMPLED/image/jpeg/e1ea9e32c694dd2bde4cac3f2bcf6a73/gr5.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr5</xocs:file-basename>
+               <xocs:filename>gr5.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>41694</xocs:filesize>
+               <xocs:pixel-height>407</xocs:pixel-height>
+               <xocs:pixel-width>556</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr5.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr5/THUMBNAIL/image/gif/af75c698c6cf58790a4cb1fe3be532ac/gr5.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr5/THUMBNAIL/image/gif/af75c698c6cf58790a4cb1fe3be532ac/gr5.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr5</xocs:file-basename>
+               <xocs:filename>gr5.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>5700</xocs:filesize>
+               <xocs:pixel-height>160</xocs:pixel-height>
+               <xocs:pixel-width>219</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr1.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr1/DOWNSAMPLED/image/jpeg/244d5d1aed6a31b00376c8e79b8cb455/gr1.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr1/DOWNSAMPLED/image/jpeg/244d5d1aed6a31b00376c8e79b8cb455/gr1.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>10258</xocs:filesize>
+               <xocs:pixel-height>87</xocs:pixel-height>
+               <xocs:pixel-width>378</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr1.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr1/THUMBNAIL/image/gif/74b2126277c3168083f855a8e3fdb782/gr1.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr1/THUMBNAIL/image/gif/74b2126277c3168083f855a8e3fdb782/gr1.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>2126</xocs:filesize>
+               <xocs:pixel-height>50</xocs:pixel-height>
+               <xocs:pixel-width>219</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr6.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr6/DOWNSAMPLED/image/jpeg/77d070326a80200ca041ef13ccf3e600/gr6.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr6/DOWNSAMPLED/image/jpeg/77d070326a80200ca041ef13ccf3e600/gr6.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr6</xocs:file-basename>
+               <xocs:filename>gr6.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>18781</xocs:filesize>
+               <xocs:pixel-height>186</xocs:pixel-height>
+               <xocs:pixel-width>224</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr6.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr6/THUMBNAIL/image/gif/ec8a0af175a43b5338813c9752b74a31/gr6.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr6/THUMBNAIL/image/gif/ec8a0af175a43b5338813c9752b74a31/gr6.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr6</xocs:file-basename>
+               <xocs:filename>gr6.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>5211</xocs:filesize>
+               <xocs:pixel-height>163</xocs:pixel-height>
+               <xocs:pixel-width>197</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr2.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr2/DOWNSAMPLED/image/jpeg/6328a34f4351bfb7a0e16152128213fb/gr2.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr2/DOWNSAMPLED/image/jpeg/6328a34f4351bfb7a0e16152128213fb/gr2.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>27892</xocs:filesize>
+               <xocs:pixel-height>384</xocs:pixel-height>
+               <xocs:pixel-width>384</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr2.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr2/THUMBNAIL/image/gif/0faf8e4de78e1ef88cb5d34225272bf7/gr2.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr2/THUMBNAIL/image/gif/0faf8e4de78e1ef88cb5d34225272bf7/gr2.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr2</xocs:file-basename>
+               <xocs:filename>gr2.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>3218</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>164</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr7.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr7/DOWNSAMPLED/image/jpeg/e8807697c06e46549fe6965ebb2f1133/gr7.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr7/DOWNSAMPLED/image/jpeg/e8807697c06e46549fe6965ebb2f1133/gr7.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr7</xocs:file-basename>
+               <xocs:filename>gr7.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>20500</xocs:filesize>
+               <xocs:pixel-height>200</xocs:pixel-height>
+               <xocs:pixel-width>581</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr7.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr7/THUMBNAIL/image/gif/7a0a10ef3168948e70ffe21dac676e8e/gr7.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr7/THUMBNAIL/image/gif/7a0a10ef3168948e70ffe21dac676e8e/gr7.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr7</xocs:file-basename>
+               <xocs:filename>gr7.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>3552</xocs:filesize>
+               <xocs:pixel-height>75</xocs:pixel-height>
+               <xocs:pixel-width>219</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-fx1.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/fx1/DOWNSAMPLED/image/jpeg/b2f9ffbb45e1947236e1abc76703040e/fx1.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/fx1/DOWNSAMPLED/image/jpeg/b2f9ffbb45e1947236e1abc76703040e/fx1.jpg</xocs:ucs-locator>
+               <xocs:file-basename>fx1</xocs:file-basename>
+               <xocs:abstract-attachment>true</xocs:abstract-attachment>
+               <xocs:filename>fx1.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>7857</xocs:filesize>
+               <xocs:pixel-height>64</xocs:pixel-height>
+               <xocs:pixel-width>207</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-fx1.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/fx1/THUMBNAIL/image/gif/9121ccbcc9ce7110c8ac5bc43cf099b7/fx1.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/fx1/THUMBNAIL/image/gif/9121ccbcc9ce7110c8ac5bc43cf099b7/fx1.sml</xocs:ucs-locator>
+               <xocs:file-basename>fx1</xocs:file-basename>
+               <xocs:abstract-attachment>true</xocs:abstract-attachment>
+               <xocs:filename>fx1.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>2473</xocs:filesize>
+               <xocs:pixel-height>68</xocs:pixel-height>
+               <xocs:pixel-width>219</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr4.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr4/DOWNSAMPLED/image/jpeg/95e6a57e89ebfe30c2032d076882533d/gr4.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr4/DOWNSAMPLED/image/jpeg/95e6a57e89ebfe30c2032d076882533d/gr4.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>60318</xocs:filesize>
+               <xocs:pixel-height>685</xocs:pixel-height>
+               <xocs:pixel-width>800</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr4.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr4/THUMBNAIL/image/gif/5443bfbac44fc01292951b02b5320a59/gr4.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr4/THUMBNAIL/image/gif/5443bfbac44fc01292951b02b5320a59/gr4.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr4</xocs:file-basename>
+               <xocs:filename>gr4.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>3245</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>191</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr3.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr3/DOWNSAMPLED/image/jpeg/0c96d38a3d7547c1daec81beb903f7ea/gr3.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr3/DOWNSAMPLED/image/jpeg/0c96d38a3d7547c1daec81beb903f7ea/gr3.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>16049</xocs:filesize>
+               <xocs:pixel-height>272</xocs:pixel-height>
+               <xocs:pixel-width>352</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S0223523411002923-gr3.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S0223523411002923/gr3/THUMBNAIL/image/gif/efd6a5fe2264bf39cc4a605c7e4b13ab/gr3.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S0223523411002923/gr3/THUMBNAIL/image/gif/efd6a5fe2264bf39cc4a605c7e4b13ab/gr3.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr3</xocs:file-basename>
+               <xocs:filename>gr3.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>3505</xocs:filesize>
+               <xocs:pixel-height>164</xocs:pixel-height>
+               <xocs:pixel-width>212</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+         </xocs:attachments>
+      </xocs:attachment-metadata-doc>
+   </xocs:meta><xocs:serial-item xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <article xmlns="http://www.elsevier.com/xml/ja/dtd" docsubtype="fla" version="5.1" xml:lang="en">
+         <item-info>
+            <jid>EJMECH</jid>
+            <aid>4824</aid>
+            <ce:pii>S0223-5234(11)00292-3</ce:pii>
+            <ce:doi>10.1016/j.ejmech.2011.04.007</ce:doi>
+            <ce:copyright type="full-transfer" year="2011">Elsevier Masson SAS</ce:copyright>
+         </item-info>
+         <ce:floats>
+            <ce:figure id="fig1">
+               <ce:label>Fig. 1</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0010" view="all">Chemical structure of sorafenib and compound 1.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr1"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig2">
+               <ce:label>Fig. 2</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0015" view="all">General synthetic procedure for series A–C compounds: (a), K<ce:inf loc="post">2</ce:inf>CO<ce:inf loc="post">3</ce:inf>, DMF; (b), pyridine, THF.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr2"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig3">
+               <ce:label>Fig. 3</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0020" view="all">Raf-1 activity of sorafenib and compound 1. Huh-7 cells were exposed to sorafenib or compound 1 at 10 μM for 24 h and cell lysates were analyzed for raf-1 activity. <ce:italic>Columns</ce:italic>, mean; <ce:italic>bars</ce:italic>, SD (<ce:italic>n</ce:italic> = 3). ∗<ce:italic>P</ce:italic> < 0.05.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr3"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig4">
+               <ce:label>Fig. 4</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0025" view="all">Chemical structure of compounds <ce:bold>2</ce:bold>–<ce:bold>25</ce:bold> and IC<ce:inf loc="post">50</ce:inf> of growth inhibition in PLC cells.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr4"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig5">
+               <ce:label>Fig. 5</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0030" view="all">Elisa analysis of the inhibitory effects of compounds <ce:bold>1</ce:bold>–<ce:bold>25</ce:bold> versus sorafenib, each at 10 μM, on the IL-6 stimulated P-STAT in PLC5 cells after 24 h of treatment. Columns, mean, bars, SD (<ce:italic>N</ce:italic> = 3).</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr5"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig6">
+               <ce:label>Fig. 6</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0035" view="all">Western blot analysis of the effect of compounds 1 and 12, each at 5 μM and 10 μM on the phosporylation of P-STAT3, STAT3, cyclin D and survivin in PLC5 cells in FBS-containing medium after 24 h of treatment.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr6"/></ce:link>
+            </ce:figure>
+            <ce:figure id="fig7">
+               <ce:label>Fig. 7</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="fspara0040" view="all">(A). Elisa analysis of cell death induced by compound 1 and 12, at 5, and 10 μM, after 24 h of treatment in PLC5 cells (B). Flow cytometry analysis of cell death induced by compound 1 and 12, at 5, and 10 μM, after 24 h of treatment in PLC5 cells.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr7"/></ce:link>
+            </ce:figure>
+         </ce:floats>
+         <head>
+            <ce:dochead>
+               <ce:textfn>Original article</ce:textfn>
+            </ce:dochead>
+            <ce:title>Sorafenib derivatives induce apoptosis through inhibition of STAT3 independent of Raf</ce:title>
+            <ce:author-group>
+               <ce:author id="au1">
+                  <ce:given-name>Kuen-Feng</ce:given-name>
+                  <ce:surname>Chen</ce:surname>
+                  <ce:cross-ref refid="aff1">
+                     <ce:sup loc="post">a</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff2">
+                     <ce:sup loc="post">b</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff3">
+                     <ce:sup loc="post">c</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff4">
+                     <ce:sup loc="post">d</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff5">
+                     <ce:sup loc="post">e</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au2">
+                  <ce:given-name>Wei-Tien</ce:given-name>
+                  <ce:surname>Tai</ce:surname>
+                  <ce:cross-ref refid="aff1">
+                     <ce:sup loc="post">a</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff2">
+                     <ce:sup loc="post">b</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff3">
+                     <ce:sup loc="post">c</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff4">
+                     <ce:sup loc="post">d</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff5">
+                     <ce:sup loc="post">e</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au3">
+                  <ce:given-name>Jui-Wen</ce:given-name>
+                  <ce:surname>Huang</ce:surname>
+                  <ce:cross-ref refid="aff6">
+                     <ce:sup loc="post">f</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au4">
+                  <ce:given-name>Cheng-Yi</ce:given-name>
+                  <ce:surname>Hsu</ce:surname>
+                  <ce:cross-ref refid="aff7">
+                     <ce:sup loc="post">g</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au5">
+                  <ce:given-name>Wei-Lin</ce:given-name>
+                  <ce:surname>Chen</ce:surname>
+                  <ce:cross-ref refid="aff7">
+                     <ce:sup loc="post">g</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au6">
+                  <ce:given-name>Ann-Lii</ce:given-name>
+                  <ce:surname>Cheng</ce:surname>
+                  <ce:cross-ref refid="aff1">
+                     <ce:sup loc="post">a</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff2">
+                     <ce:sup loc="post">b</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff3">
+                     <ce:sup loc="post">c</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff4">
+                     <ce:sup loc="post">d</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff5">
+                     <ce:sup loc="post">e</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au7">
+                  <ce:given-name>Pei-Jer</ce:given-name>
+                  <ce:surname>Chen</ce:surname>
+                  <ce:cross-ref refid="aff1">
+                     <ce:sup loc="post">a</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff2">
+                     <ce:sup loc="post">b</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff3">
+                     <ce:sup loc="post">c</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff4">
+                     <ce:sup loc="post">d</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="aff5">
+                     <ce:sup loc="post">e</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author id="au8">
+                  <ce:given-name>Chung-Wai</ce:given-name>
+                  <ce:surname>Shiau</ce:surname>
+                  <ce:cross-ref refid="aff7">
+                     <ce:sup loc="post">g</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="cor1">
+                     <ce:sup loc="post">∗</ce:sup>
+                  </ce:cross-ref>
+                  
+               </ce:author>
+               <ce:affiliation id="aff1">
+                  <ce:label>a</ce:label>
+                  <ce:textfn>Department of Medical Research, National Taiwan University Hospital, 7, Chung-Shan South Road, Taipei, Taiwan, Republic of China</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff2">
+                  <ce:label>b</ce:label>
+                  <ce:textfn>Department of Oncology, National Taiwan University Hospital, 7, Chung-Shan South Road, Taipei, Taiwan, Republic of China</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff3">
+                  <ce:label>c</ce:label>
+                  <ce:textfn>Department of Internal Medicine, National Taiwan University Hospital, 7, Chung-Shan South Road, Taipei, Taiwan, Republic of China</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff4">
+                  <ce:label>d</ce:label>
+                  <ce:textfn>Graduate Institute of Molecular Medicine, National Taiwan University College of Medicine, Taiwan</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff5">
+                  <ce:label>e</ce:label>
+                  <ce:textfn>National Center of Excellence for Clinical Trial and Research, National Taiwan University Hospital, 7, Chung-Shan South Road, Taipei, Taiwan, Republic of China</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff6">
+                  <ce:label>f</ce:label>
+                  <ce:textfn>Biomedical Engineering Research Laboratories, Industrial Technology Research Institute, 195, Sec. 4, Chung Hsing Rd., Chutung, Hsinchu, Taiwan</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff7">
+                  <ce:label>g</ce:label>
+                  <ce:textfn>Institute of Biopharmaceutical Sciences, National Yang-Ming University, 155, Sec. 2, Linong Street, Taipei, Taiwan, Republic of China</ce:textfn>
+               </ce:affiliation>
+               <ce:correspondence id="cor1">
+                  <ce:label>∗</ce:label>
+                  <ce:text>Corresponding author. Tel.: +886 2 28267930; fax: +886 2 28250883.</ce:text>
+               </ce:correspondence>
+            </ce:author-group>
+            <ce:date-received day="15" month="9" year="2010"/></ce:date-received>
+            <ce:date-revised day="24" month="3" year="2011"/></ce:date-revised>
+            <ce:date-accepted day="3" month="4" year="2011"/></ce:date-accepted>
+            <ce:abstract xml:lang="en" class="author"><ce:abstract-sec>
+                  <ce:simple-para id="abspara0010" view="all">STAT3 is a transcription factor that modulates survival-directed transcription. It is persistently activated in many human cancers. Literature has shown that sorafenib, Raf kinase inhibitor, reduces Phospho-STAT3 and induces cell death. A series of sorafenib derivatives were synthesized as new inhibitors for STAT3. Urea, sulfonamide, and carboxamide linkers brought out different SARs from the end of sorafenib. Urea and carboxamide linked derivatives showed greater inhibition against STAT3 activity than sulfonamide linked derivatives. In particular, 1-(4-chloro-3-(trifluoromethyl)phenyl)-3-(4-(4-cyanophenoxy)phenyl)urea (<ce:bold>1</ce:bold>), a urea linker, was as potent as sorafenib in reducing P-STAT3 level and cell death but no inhibition for Raf activity. Such result provides a new lead for the design of STAT3 inhibitors.</ce:simple-para>
+               </ce:abstract-sec></ce:abstract>
+            <ce:abstract class="graphical">
+               <ce:section-title>Graphical abstract</ce:section-title>
+               <ce:abstract-sec>
+                  <ce:simple-para id="abspara0015" view="all">Sorafenib derivative was synthesized with two steps. It has no inhibition against Raf kinase and contains ability to reduce STAT3 activity. We generated a series of derivatives to test the their ability to reduce P-STAT3.<ce:display>
+                        <ce:figure id="dfig1">
+                           <ce:link locator="fx1"/></ce:link>
+                        </ce:figure>
+                     </ce:display>
+                  </ce:simple-para>
+               </ce:abstract-sec>
+               <ce:abstract-sec>
+                  <ce:section-title>Highlights</ce:section-title>
+                  <ce:simple-para id="abspara0020" view="all">► Sorafenib and sorafenib derivative have the cytotoxicity against HCC. ► Both compounds have inhibition in STAT3. ► The derivative has no inhibition in Raf kinase, a target of sorafenib. ► A series of derivatives were synthesized with two steps and tested for STAT3 inhibition in HCC.</ce:simple-para>
+               </ce:abstract-sec>
+            </ce:abstract>
+            <ce:keywords xml:lang="en" class="keyword">
+               <ce:section-title>Keywords</ce:section-title>
+               <ce:keyword>
+                  <ce:text>Sorafenib</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>STAT3</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>Apoptosis</ce:text>
+               </ce:keyword>
+            </ce:keywords>
+         </head>
+         <body view="all">
+            <ce:sections>
+               <ce:section id="sec1" view="all">
+                  <ce:label>1</ce:label>
+                  <ce:section-title>Introduction</ce:section-title>
+                  <ce:para id="p0010" view="all">Signal transducer and activator of transcription 3 (STAT3) is a transcription factor that regulates cell growth and survival by modulating the expression of target genes <ce:cross-ref refid="bib1">[1]</ce:cross-ref>. It acts as an oncogene which is constitutively active in many cancers including liver, lung, head and neck, prostate, and breast as well as myeloma and leukemia <ce:cross-refs refid="bib2 bib3 bib4 bib5 bib6">[2–6]</ce:cross-refs>. In a xenograft study, inhibition of STAT3 resulted in an increase in mouse survival. A key factor that regulates STAT3 activity is Src homology-2 containing protein tyrosine phosphatase-1(SHP-1). From a mechanistic perspective, SHP-1 exhibits protein phosphatase activity which reduces the level of Phospho-STAT3 (P-STAT) and subsequently blocks the dimerization of P-STAT3. Therefore, expression of target genes, such as cyclin D1 and survivin transcribed by STAT3, is significantly reduced. In addition, extensive studies of SHP-1 protein and SHP-1 mRNA showed that expression level of SHP-1 was low in most cancer cells. Genetic increase in SHP-1 in cancer cells resulted in the suppression of cell growth, suggesting that the SHP-1 gene acts as a tumor suppressor <ce:cross-ref refid="bib7">[7]</ce:cross-ref>. From the drug discovery point of view, development of a small molecule which can reduce P-STAT3 and increase SHP-1 level is a promising direction for cancer therapy.</ce:para>
+                  <ce:para id="p0015" view="all">A number of agents, including the natural products 5-hydroxy-2-methyl-1,4-naphthoquinone (a vitamin K3 analog), betulinic acid and boswellic acid have been reported to inhibit P-STAT3 level and reduces cell proliferation <ce:cross-refs refid="bib8 bib9 bib10 bib11 bib12 bib13">[8–13]</ce:cross-refs>. Although these agents show the ability to inhibit STAT3 activity, the dosage needed is higher than the clinical limitation. In addition, these natural products have the potential for off-target effects and activation or inactivation of other enzyme activity at high concentrations.</ce:para>
+                  <ce:para id="p0020" view="all">Sorafenib (BAY43-9006, Nexavar) is used clinically for renal carcinoma and hepatocellular carcinoma (HCC). It targets the c-Raf and b-Raf kinases and prolongs the survival of renal and HCC patients. Studies have shown that sorafenib was able to reduce the phosphorylation level of STAT3 in medulloblastoma and esophageal carcinoma <ce:cross-refs refid="bib14 bib15">[14,15]</ce:cross-refs>. Further study showed that sorafenib reduced P-STAT3 through activating SHP-1 phosphatase activity in HCC cells. To date, no correlation has been found between inhibition of Raf and activation of SHP-1 by the treatment with sorafenib. In addition, there are no reports showing that sorafenib derivatives inhibit STAT3 activity without affecting Raf activity.</ce:para>
+                  <ce:para id="p0025" view="all">In light of the ability of sorafenib to reduce the P-STAT3 level, here we synthesized novel sorafenib derivatives which retain the ability to reduce cell survival, but do not affect Raf kinase activity. We further provide evidence that these novel sorafenib derivates mediate apoptosis through downregulation of P-STAT3 independent of Raf activity.</ce:para>
+               </ce:section>
+               <ce:section id="sec2" view="all">
+                  <ce:label>2</ce:label>
+                  <ce:section-title>Chemistry</ce:section-title>
+                  <ce:para id="p0030" view="all">According to the X-ray structure of b-Raf and sorafenib, the amide group connected to the pyridine ring of sorafenib provides a hydrogen donor and forms a hydrogen bond with b-Raf in the ATP binding pocket <ce:cross-ref refid="bib16">[16]</ce:cross-ref>. The urea moiety of sorafenib also binds to the allosteric region by hydrogen bonding. To address the relationship between Raf kinase activity and downregulation of P-STAT3, we used a chemical approach to reduce the hydrogen bonding interaction between the amide group of sorafenib with Raf by replacing amido group with a phenylcyano group (<ce:cross-ref refid="fig1">Fig. 1</ce:cross-ref>
+                     <ce:float-anchor refid="fig1"/></ce:float-anchor>). The Raf kinase activity of the resulting sorafenib analog <ce:bold>1</ce:bold> was tested by ELISA. To test the structure activity relationship of the downregulation of P-STAT3, we replaced the urea functional group in the sorafenib backbone with various amide and sulfonamide yielding compounds <ce:bold>2</ce:bold>–<ce:bold>11</ce:bold>. In addition, we replaced the pyridine ring with quinoline and used it as a platform to carry out structural modification, which generated a series of compounds <ce:bold>12</ce:bold>–<ce:bold>19</ce:bold> and <ce:bold>20</ce:bold>–<ce:bold>25</ce:bold>. These sorafenib derivatives were synthesized according to a general procedure described in <ce:cross-ref refid="fig2">Fig. 2</ce:cross-ref>
+                     <ce:float-anchor refid="fig2"/></ce:float-anchor>. The inhibition of STAT3 and the Raf-1 activation by these compounds were tested by ELISA and western blot.</ce:para>
+               </ce:section>
+               <ce:section id="sec3" view="all">
+                  <ce:label>3</ce:label>
+                  <ce:section-title>Biological evaluations</ce:section-title>
+                  <ce:section id="sec3.1" view="all">
+                     <ce:label>3.1</ce:label>
+                     <ce:section-title>Development of sorafenib derivative lacking inhibition of Raf kinase activation</ce:section-title>
+                     <ce:para id="p0035" view="all">We synthesized a sorafenib derivative without providing hydrogen donor ability by replacing the pyridine ring and amide functional group with phenyl cyanide and exploring the ability of sorafenib and compound <ce:bold>1</ce:bold> to inhibit Raf kinase activity in PLC5 cells. Sorafenib was able to inhibit 50% of the Raf-1 kinase activity of the untreated cells in the PLC5 cells at 5 μM (<ce:cross-ref refid="fig3">Fig. 3</ce:cross-ref>
+                        <ce:float-anchor refid="fig3"/></ce:float-anchor>). In contrast, compound <ce:bold>1</ce:bold> treated cells showed the same Raf-1 activity as vehicle control.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec3.2" view="all">
+                     <ce:label>3.2</ce:label>
+                     <ce:section-title>Structure activity relationship of replacement of urea group and pyridine ring in cell death</ce:section-title>
+                     <ce:para id="p0040" view="all">The urea functional group linkage of sorafenib was replaced with various substitutes with sulfonylamide linkage, generating compounds <ce:bold>2</ce:bold>–<ce:bold>6</ce:bold> (<ce:cross-ref refid="fig4">Fig. 4</ce:cross-ref>
+                        <ce:float-anchor refid="fig4"/></ce:float-anchor>). None of these derivatives within the electron donating or electron withdrawing group showed greater cell toxicity than sorafenib and compound <ce:bold>1</ce:bold>. Next, we changed the pyridine to a quinoline ring and amide linker to generate compounds <ce:bold>12</ce:bold>–<ce:bold>25</ce:bold>. The amide linker showed different conformation from the sulfonyl linker, exhibiting better activity than sulfonyl linker compounds. For example, compound <ce:bold>16</ce:bold> showed a better cell toxicity than compound <ce:bold>12</ce:bold>. Compound <ce:bold>25</ce:bold> showed cytotoxicity comparable to sorafenib and <ce:bold>1</ce:bold>. We concluded that the urea and amide linkers exhibited the most potent cell toxicity in PLC5 cells.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec3.3" view="all">
+                     <ce:label>3.3</ce:label>
+                     <ce:section-title>Mechanistic validation of the mode of action of sorafenib derivatives</ce:section-title>
+                     <ce:para id="p0045" view="all">Previously, the sulfonyl linker and amide linker were shown to exhibit low activity against Raf kinase compared with sorafenib <ce:cross-ref refid="bib17">[17]</ce:cross-ref>. However, some of these compounds showed good cytotoxicity in cancer cells. Therefore, we hypothesized that sorafenib derivatives downregulate P-STAT3 and enhance cell apoptosis. The sorafenib derivatives were tested for the inhibition of P-STAT3 by the ELISA. As shown in <ce:cross-ref refid="fig5">Fig. 5</ce:cross-ref>
+                        <ce:float-anchor refid="fig5"/></ce:float-anchor>, sulfonyl linker compounds showed no appreciable change in P-STAT3. Compound <ce:bold>1</ce:bold> and some of the amide linker compounds showed a high degree of dephosphorylation of STAT3. The decreased level of P-STAT3 induced by these derivatives was correlated with cell toxicity. In the other words, these derivatives induced cell death in part through inhibition of STAT3. In addition, we also tested the downstream signal pathway after the inhibition of P-STAT3. Expression levels of the cyclin D1 and survivin, downstream target genes of STAT3, were assessed in compounds <ce:bold>1</ce:bold> and <ce:bold>12</ce:bold>. As shown in <ce:cross-ref refid="fig6">Fig. 6</ce:cross-ref>
+                        <ce:float-anchor refid="fig6"/></ce:float-anchor>, compound <ce:bold>1</ce:bold> with STAT3 inhibitory activity, was able to reduce cyclin D1 and survivin level, but compound <ce:bold>12</ce:bold> had no effect on either protein. DNA fragmentation and flow cytometry analysis of PLC5 cells treated with compound <ce:bold>1</ce:bold> showed that cell death was attributed to the inhibition of STAT3 and further induced the apoptotic signal (<ce:cross-ref refid="fig7">Fig. 7</ce:cross-ref>
+                        <ce:float-anchor refid="fig7"/></ce:float-anchor>).</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section id="sec4" view="all">
+                  <ce:label>4</ce:label>
+                  <ce:section-title>Discussion</ce:section-title>
+                  <ce:para id="p0050" view="all">Recent data suggest that STAT3 serves as a key regulator of cell survival by activating its downstream survival signal pathway. This function is protective for chemotherapy cancer patients and renders STAT3 a good target for drug discovery. For example, a recent study demonstrated that cisplatin resistance in head and neck squamous cell carcinoma was associated with a high expression of STAT3 which played a role in the induction of reprogrammed survival pathways that circumvent cisplatin treatment <ce:cross-ref refid="bib18">[18]</ce:cross-ref>. Thus, this study focuses on the structural modification of sorafenib to develop a novel class of STAT3 inhibitors. Our premise that sorafenib inhibition of Raf and STAT3 could be structurally dissociated was borne out by compound <ce:bold>1</ce:bold>, which, devoid of Raf activity, exhibited the level of downregulation of P-STAT3 as sorafenib. Presumably, the cyanide group of compound <ce:bold>1</ce:bold> reduces its interaction with Raf. Subsequent modifications of sorafenib by changing the linker and pyridine ring to amide and quinoline (compounds <ce:bold>1</ce:bold>, <ce:bold>16</ce:bold>, and <ce:bold>25</ce:bold>, respectively) resulted in a decrease in STAT3-repressing potency.</ce:para>
+               </ce:section>
+               <ce:section id="sec5" view="all">
+                  <ce:label>5</ce:label>
+                  <ce:section-title>Conclusion</ce:section-title>
+                  <ce:para id="p0055" view="all">We synthesized a series of sorafenib derivatives which showed the inhibition of STAT3 activity. In addition, these derivatives showed the cytotoxicity in HCC cells without reducing the Raf activity. Among these compounds, compound <ce:bold>1</ce:bold> demonstrated the potency as sorafenib in inhibition of P-STAT3 and cell growth. From a mechanistic study, compound <ce:bold>1</ce:bold> also showed the reduction expression of survivin and cyclin D1 after blocking the STAT3 signaling cascade. In addition, it provides a useful pharmacological tool with which to study therapeutic relevance in the treatment of HCC with disregulated STAT3 expression and drug resistance. Thus, these data give the potential use of this anti-STAT3 agent in the treatment of HCC. Testing of compound <ce:bold>1</ce:bold> in an in vivo HCC model is currently being pursued.</ce:para>
+               </ce:section>
+               <ce:section id="sec6" view="all">
+                  <ce:label>6</ce:label>
+                  <ce:section-title>Experimental section</ce:section-title>
+                  <ce:section id="sec6.1" view="all">
+                     <ce:label>6.1</ce:label>
+                     <ce:section-title>Material</ce:section-title>
+                     <ce:para id="p0060" view="all">Proton nuclear magnetic resonance (<ce:sup loc="pre">1</ce:sup>H NMR) spectra were recorded on Bruker DPX300 (400 MHz) instruments. Chemical shifts are reported in ppm. Peak multiplicities are expressed as follows: s, singlet; d, doublet; t, triplet; q, quartet; dd, doublet of doublet; ddd, doublet of doublet of doublets; dt, doublet of triplet; brs, broad singlet; m, multiplet. Coupling constants (<ce:italic>J</ce:italic> values) are given in hertz (Hz). Reaction progress was determined by thin layer chromatography (TLC) analysis on silica gel 60 F254 plate (Merck). Chromatographic purification was carried on silica gel columns 60 (0.063–0.200 mm or 0.040–0.063 mm, Merck), basic silica gel. Commercial reagents and solvents were used without additional purification. Abbreviations are used as follows: CDCl<ce:inf loc="post">3</ce:inf>, deuterated chloroform; DMSO-<ce:italic>d</ce:italic>6, dimethyl sulfoxide-<ce:italic>d</ce:italic>6; EtOAc, ethyl acetate; DMF, <ce:italic>N</ce:italic>,<ce:italic>N</ce:italic>-dimethylformamide; MeOH, methanol; THF, tetrahydrofuran; EtOH, ethanol; DMSO, dimethyl sulfoxide; NMP, <ce:italic>N</ce:italic>-methylpyrrolidone. High resolution mass spectra were recorded on a FINNIGAN MAT 95S mass spectrometer.</ce:para>
+                  </ce:section>
+                  <ce:section id="sec6.2" view="all">
+                     <ce:label>6.2</ce:label>
+                     <ce:section-title>Chemical synthesis</ce:section-title>
+                     <ce:section id="sec6.2.1" view="all">
+                        <ce:label>6.2.1</ce:label>
+                        <ce:section-title>Procedures for compound <ce:bold>1</ce:bold>
+                        </ce:section-title>
+                        <ce:para id="p0065" view="all">To a 50 mL THF solution of triphosgen (0.30 g, 1.0 mmol), 4-chloro-3-(trifluoromethyl)aniline (0.21g, 1.1mmol) and 2 equivalent of triethyl amine were added. The mixture was heated to 50 °C for 30 min. After the temperature was back to room temperature, 4-(4-aminophenoxy)benzonitrile in the 10 mL THF solution was added to the mixture and heated to 50 °C for another 30 min. The mixture was evaporated, diluted with water and extracted with EtOAc. The extract was washed with brine, dried over anhydrous magnesium sulfate, and concentrated under reduced pressure to give 1 (0.34 g, 80%).</ce:para>
+                        <ce:section id="sec6.2.1.1" view="all">
+                           <ce:label>6.2.1.1</ce:label>
+                           <ce:section-title>1-(4-Chloro-3-(trifluoromethyl)phenyl)-3-(4-(4-cyanophenoxy)phenyl)urea (<ce:bold>1</ce:bold>)</ce:section-title>
+                           <ce:para id="p0070" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.17 (s, 1H), 8.94 (s, 1H), 8.10 (s, 1H), 7.81 (d, 2H, <ce:italic>J</ce:italic> = 6.8), 7.63–7.59 (m, 2H), 7.54 (d, 2H, <ce:italic>J</ce:italic> = 7.2 Hz), 7.10 (d, 2H, <ce:italic>J</ce:italic> = 6.8 Hz), 7.05 (d, 2H, <ce:italic>J</ce:italic> = 7.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, methanol-<ce:italic>d<ce:inf loc="post">4</ce:inf>
+                              </ce:italic>): <ce:italic>δ</ce:italic> 163.7, 163.6, 154.8, 151.4, 151.2, 140.1, 137.7, 137.4, 135.3, 132.9, 129.7, 129.4, 129.1, 128.8, 128.3, 125.6, 125.5, 125.4, 124.2, 122.9, 122.4, 122.3, 122.1, 120.2, 119.7, 118.8, 118.7, 118.6, 118.6, 106.5, 106.4; HRMS calculated for C<ce:inf loc="post">21</ce:inf>H<ce:inf loc="post">13</ce:inf>ClF<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">2</ce:inf> (M + H): 431.0648. Found: 431.0656.</ce:para>
+                        </ce:section>
+                     </ce:section>
+                     <ce:section id="sec6.2.2" view="all">
+                        <ce:label>6.2.2</ce:label>
+                        <ce:section-title>General procedures for the synthesis of compounds <ce:bold>2</ce:bold>–<ce:bold>25</ce:bold>
+                        </ce:section-title>
+                        <ce:para id="p0075" view="all">In a 25 mL two-necked round flask, aniline derivatives (1 mmol) and catalytic amount of pyridine were placed in anhydrous THF (10 mL) at room temperature. Acyl chloride or sulfonyl chloride compounds were added to the mixture and stirred for 2 h at room temperature. The solvent was removed under vacuum and the crude residue purified by chromatography on a silica gel column using EtOAc/Hexane as eluent (1/10 to 1/2). This procedure afforded the expected coupling product as a white solid from 70% to 95% yield.</ce:para>
+                        <ce:section id="sec6.2.2.1" view="all">
+                           <ce:label>6.2.2.1</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-methyl-4-(4-(phenylsulfonamido)phenoxy)picolinamide (<ce:bold>2</ce:bold>)</ce:section-title>
+                           <ce:para id="p0080" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.36 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.01 (brs, 1H), 7.76 (d, 2H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.59 (s, 1H), 7.54 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.46 (t, 2H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.12 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.94 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.92–6.90 (m, 1H), 3.00 (d, 3H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 166.0, 164.6, 152.1, 151.0, 149.7, 138.9, 134.2, 133.0, 129.0, 127.1, 123.9, 121.6, 114.3, 109.9, 26.1; HRMS calculated for C<ce:inf loc="post">19</ce:inf>H<ce:inf loc="post">17</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf>S (M + H): 383.0940. Found: 383.0941.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.2" view="all">
+                           <ce:label>6.2.2.2</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-methyl-4-(4-(4-nitrophenylsulfonamido)phenoxy)picolinamide (<ce:bold>3</ce:bold>)</ce:section-title>
+                           <ce:para id="p0085" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.39 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.30 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 8.07 (brs, 1H), 7.93 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 7.49 (s, 1H), 7.17 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 7.01–6.98 (m, 3H), 3.00 (d, 3H, <ce:italic>J</ce:italic> = 5.2 Hz); HRMS calculated for C<ce:inf loc="post">19</ce:inf>H<ce:inf loc="post">16</ce:inf>N<ce:inf loc="post">4</ce:inf>O<ce:inf loc="post">6</ce:inf>S (M + H): 428.0791. Found: 428.0798.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.3" view="all">
+                           <ce:label>6.2.2.3</ce:label>
+                           <ce:section-title>4-(4-(4-Fluorophenylsulfonamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>4</ce:bold>)</ce:section-title>
+                           <ce:para id="p0090" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.37 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.00 (brs, 1H), 7.77–7.43 (m, 2H), 7.57 (s, 1H), 7.17–7.09 (m, 4H), 6.99–6.93 (m, 4H), 3.00 (d, 3H, <ce:italic>J</ce:italic> = 4.8 Hz); NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 166.5, 165.9, 164.6, 163.9, 152.1, 151.2, 149.7, 135.0, 134.0, 130.0, 129.9, 124.1, 121.7, 116.4, 116.2, 114.5, 109.8, 26.19; HRMS calculated for C<ce:inf loc="post">19</ce:inf>H<ce:inf loc="post">16</ce:inf>FN<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf>S (M + H): 401.0846. Found: 401.0849.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.4" view="all">
+                           <ce:label>6.2.2.4</ce:label>
+                           <ce:section-title>4-(4-(4-tert-Butylphenylsulfonamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>5</ce:bold>)</ce:section-title>
+                           <ce:para id="p0095" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.33 (d, 1H, <ce:italic>J</ce:italic> = 6.0 Hz), 8.21 (brs, 1H), 7.79 (brs, 1H), 7.69 (d, 2H, <ce:italic>J</ce:italic> = 6.8 Hz), 7.62 (s, 1H), 7.44 (d, 2H, <ce:italic>J</ce:italic> = 6.8 Hz), 7.15 (d, 2H, <ce:italic>J</ce:italic> = 6.8 Hz), 6.91 (s, 2H, <ce:italic>J</ce:italic> = 6.8 Hz), 6.88–6.86 (m, 1H), 2.98 (d, 3H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 166.0, 164.6, 156.8, 152.2, 150.8, 149.7, 136.1, 134.4, 127.0, 126.1, 123.6, 121.6, 114.1, 110.1, 35.1, 30.1, 26.1; HRMS calculated for C<ce:inf loc="post">23</ce:inf>H<ce:inf loc="post">25</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf>S (M + H): 439.1566. Found: 439.1564.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.5" view="all">
+                           <ce:label>6.2.2.5</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-methyl-4-(4-(naphthalene-2-sulfonamido)phenoxy)picolinamide (<ce:bold>6</ce:bold>)</ce:section-title>
+                           <ce:para id="p0100" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.34 (s, 1H), 8.30 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.05–8.02 (m, 1H), 7.89–7.83 (m, 4H), 7.74 (dd, 1H, <ce:italic>J</ce:italic> = 8.4, 1.6 Hz), 7.60–7.52 (m, 3H), 7.16 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.88 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.84–6.82 (m, 1H); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): 165.9, 164.6, 152.1, 151.0, 149.7, 135.9, 134.9, 134.2, 132.0, 129.4, 129.3, 128.9, 128.7, 127.9, 127.5, 123.9, 122.2, 121.6, 114.2, 110.1, 26.2; HRMS calculated for C<ce:inf loc="post">23</ce:inf>H<ce:inf loc="post">19</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf>S (M + H): 433.1096. Found: 433.1079.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.6" view="all">
+                           <ce:label>6.2.2.6</ce:label>
+                           <ce:section-title>4-(4-(2-Bromo-4-(trifluoromethyl)phenylsulfonamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>7</ce:bold>)</ce:section-title>
+                           <ce:para id="p0105" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.35 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.15 (d, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.79 (brs, 1H), 7.96 (s, 1H), 7.67 (d, 2H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.57 (s, 1H), 7.18 (d, 2H, <ce:italic>J</ce:italic> = 9.2 Hz), 6.95 (d, 2H, <ce:italic>J</ce:italic> = 9.2 Hz), 6.90–6.88 (m, 1H), 2.98 (d, 3H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 165.7, 164.5, 152.2, 151.6, 149.8, 141.5, 136.1, 135.8, 135.5, 135.2, 132.7, 132.2 (m), 124.9 (m), 124.1, 123.5, 121.7, 120.8, 120.4114.5, 110.0, 26.1; HRMS calculated for C<ce:inf loc="post">20</ce:inf>H<ce:inf loc="post">15</ce:inf>BrF<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf>S (M + H): 528.9919. Found: 528.9917.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.7" view="all">
+                           <ce:label>6.2.2.7</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-methyl-4-(4-(2-nitrophenylsulfonamido)phenoxy)picolinamide (<ce:bold>8</ce:bold>)</ce:section-title>
+                           <ce:para id="p0110" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.37 (d, 1H, <ce:italic>J</ce:italic> = 6.0 Hz), 7.98 (brs, 1H), 7.86–7.83 (m, 2H), 7.72–7.68 (m, 2H), 7.55 (s, 1H), 7.24 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.98 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.94–6.92 (m, 1H), 2.98 (d, 3H, <ce:italic>J</ce:italic> = 4.8 Hz); HRMS calculated for C<ce:inf loc="post">19</ce:inf>H<ce:inf loc="post">16</ce:inf>N<ce:inf loc="post">4</ce:inf>O<ce:inf loc="post">6</ce:inf>S (M + H): 428.0791. Found: 428.0796.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.8" view="all">
+                           <ce:label>6.2.2.8</ce:label>
+                           <ce:section-title>4-(4-(3,5-Bis(trifluoromethyl)benzamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>9</ce:bold>)</ce:section-title>
+                           <ce:para id="p0115" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.92 (s, 1H), 8.40 (s, 1H), 8.33 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.10 (q, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 7.90 (s, 1H), 7.71 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 7.40 (d, 1H, <ce:italic>J</ce:italic> = 2.8 Hz), 6.99–6.97 (m, 1H), 6.93 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 2.91 (d, 3H, <ce:italic>J</ce:italic> = 4.8 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, methanol-<ce:italic>d<ce:inf loc="post">4</ce:inf>
+                              </ce:italic>): <ce:italic>δ</ce:italic> 167.8, 166.8, 165.1, 153.4, 151.8151.6, 138.6, 137.6, 133.6, 133.3, 133.0, 132.6, 129.4 (d), 126.2 (m), 126.0, 124.2, 123.2, 122.4, 115.2, 110.7, 26.4; HRMS calculated for C<ce:inf loc="post">22</ce:inf>H<ce:inf loc="post">15</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">3</ce:inf> (M + H): 483.1018. Found:483.1017.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.9" view="all">
+                           <ce:label>6.2.2.9</ce:label>
+                           <ce:section-title>4-(4-(5-Fluoro-2-(trifluoromethyl)benzamido)phenoxy)-<ce:italic>N</ce:italic>-methylpicolinamide (<ce:bold>10</ce:bold>)</ce:section-title>
+                           <ce:para id="p0120" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.66 (d, 1H, <ce:italic>J</ce:italic> = 12.4 Hz), 8.31–8.26 (m, 2H), 7.93 (s, 1H), 7.70–7.65 (m, 3H), 7.56 (t, 1H, <ce:italic>J</ce:italic> = 2.4 Hz), 7.24–7.19 (m, 1H), 7.02 (d, 2H, <ce:italic>J</ce:italic> = 6.4 Hz), 6.89–6.87 (m, 1H), 2.90 (d, 3H, <ce:italic>J</ce:italic> = 3.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, methanol-<ce:italic>d<ce:inf loc="post">4</ce:inf>
+                              </ce:italic>): <ce:italic>δ</ce:italic> 166.2, 164.5, 162.9, 160.4, 160.0, 159.9, 152.2, 150.4, 149.7, 135.0, 130.6 (m), 129.8 (m), 128.3, 128.1, 127.7, 127.4, 124.5, 122.5, 122.4, 122.3, 121.8, 121.5, 117.2, 117.0, 114.1, 110.1, 26.1; HRMS calculated for C<ce:inf loc="post">21</ce:inf>H<ce:inf loc="post">15</ce:inf>F<ce:inf loc="post">4</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">3</ce:inf> (M + H): 433.1050. Found: 433.0152.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.10" view="all">
+                           <ce:label>6.2.2.10</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-methyl-4-(4-(4-(trifluoromethyl)benzamido)phenoxy)picolinamide (<ce:bold>11</ce:bold>)</ce:section-title>
+                           <ce:para id="p0125" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.45 (s, 1H), 8.31 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.15 (s, 1H), 8.08 (d, 2H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.71–7.65 (m, 3H), 7.50 (d, 1H, <ce:italic>J</ce:italic> = 2.4 Hz), 7.47 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 6.96–6.91 (m, 3H), 2.92 (d, 3H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 166.4, 164.8, 164.7, 151.8, 149.9149.8, 138.8, 135.5, 131.4, 131.1, 130.8, 130.7, 130.5, 129.1, 128.1, 125.0, 124.3 (m), 122.6, 122.3, 121.2, 114.4, 109.5, 26.1; HRMS calculated for C<ce:inf loc="post">21</ce:inf>H<ce:inf loc="post">16</ce:inf>F<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">3</ce:inf> (M + H): 415.1144. Found: 415.1146.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.11" view="all">
+                           <ce:label>6.2.2.11</ce:label>
+                           <ce:section-title>2-Nitro-<ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>12</ce:bold>)</ce:section-title>
+                           <ce:para id="p0130" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.71 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.28 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.12 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.10 (s, 1H), 8.05 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.89 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.80–7.76 (m, 1H), 7.61–7.57 (m, 1H), 7.31 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 7.13 (d, 1H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.53 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); HRMS calculated for C<ce:inf loc="post">22</ce:inf>H<ce:inf loc="post">14</ce:inf>F<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">5</ce:inf>S (M + H): 489.0606. Found: 489.0610.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.12" view="all">
+                           <ce:label>6.2.2.12</ce:label>
+                           <ce:section-title>2-Nitro-<ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>13</ce:bold>)</ce:section-title>
+                           <ce:para id="p0135" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.78 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.51 (d, 1H, <ce:italic>J</ce:italic> = 8.8 Hz), 8.19 (s, 1H), 8.12–8.02 (m, 3H), 7.89 (t, 1H, <ce:italic>J</ce:italic> = 9.6 Hz), 7.62 (t, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.34 (d, 2H, <ce:italic>J</ce:italic> = 9.6 Hz), 7.15 (d, 2H, <ce:italic>J</ce:italic> = 9.6 Hz), 6.91 (d, 1H, <ce:italic>J</ce:italic> = 6.8 Hz), 6.59 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 6.55 (d, 1H, <ce:italic>J</ce:italic> = 6.8 Hz); HRMS calculated for C<ce:inf loc="post">22</ce:inf>H<ce:inf loc="post">13</ce:inf>F<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">4</ce:inf>O<ce:inf loc="post">7</ce:inf>S (M + H): 534.0457. Found: 534.0423.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.13" view="all">
+                           <ce:label>6.2.2.13</ce:label>
+                           <ce:section-title>2-Bromo-<ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>14</ce:bold>)</ce:section-title>
+                           <ce:para id="p0140" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.65 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.25 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.18 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.07 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.98 (s, 1H), 7.73 (t, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.67 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.54 (t, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.24 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 7.05 (d, 2H, <ce:italic>J</ce:italic> = 8.8 Hz), 6.43 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 161.3, 152.6, 150.9, 149.7, 141.4, 135.9, 135.6, 135.3, 132.7, 132.4, 132.2 (m), 130.3, 129.1, 126.3, 124.9 (m), 124.4, 123.5, 122.1, 122.0, 121.9, 121.6, 121.3, 120.8, 120.4, 116.3, 104.4; HRMS calculated for C<ce:inf loc="post">22</ce:inf>H<ce:inf loc="post">14</ce:inf>BrF<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">2</ce:inf>O<ce:inf loc="post">3</ce:inf>S (M + H): 521.9861. Found: 521.9858.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.14" view="all">
+                           <ce:label>6.2.2.14</ce:label>
+                           <ce:section-title>2-Bromo-<ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-4-(trifluoromethyl)benzenesulfonamide (<ce:bold>15</ce:bold>)</ce:section-title>
+                           <ce:para id="p0145" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.76 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.49 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.18 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.04 (d, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.99 (s, 1H), 7.68 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.60 (t, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.25 (d, 2H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.07 (d, 2H, <ce:italic>J</ce:italic> = 8.4 Hz), 6.53 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); HRMS calculated for C<ce:inf loc="post">22</ce:inf>H<ce:inf loc="post">13</ce:inf>BrF<ce:inf loc="post">3</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">5</ce:inf>S (M + H): 566.9711. Found: 566.9706.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.15" view="all">
+                           <ce:label>6.2.2.15</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>16</ce:bold>)</ce:section-title>
+                           <ce:para id="p0150" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 10.02 (s, 1H), 8.59 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.37 (s, 2H), 8.34 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.99 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.92 (s, 1H), 7.80 (d, 2H, <ce:italic>J</ce:italic> = 9.2 Hz), 7.70 (t, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 6.56 (t, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.14 (d, 2H, <ce:italic>J</ce:italic> = 9.2 Hz), 6.52 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, DMSO-<ce:italic>d<ce:inf loc="post">6</ce:inf>
+                              </ce:italic>): <ce:italic>δ</ce:italic> 162.6, 161.0, 151.5, 150.0, 149.2, 137.0, 136.1, 131.0, 130.7, 130.4, 130.3, 130.0, 128.8, 128.5 (m), 126.4, 125.2 (m), 124.5, 122.5, 121.7, 121.5, 121.3, 120.6, 104.3; HRMS calculated for C<ce:inf loc="post">24</ce:inf>H<ce:inf loc="post">14</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">2</ce:inf>O<ce:inf loc="post">2</ce:inf> (M + H): 476.0959. Found: 476.0958.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.16" view="all">
+                           <ce:label>6.2.2.16</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>17</ce:bold>)</ce:section-title>
+                           <ce:para id="p0155" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.05 (s, 1H), 8.69 (d, 1H, <ce:italic>J</ce:italic> = 5.0 Hz), 8.59 (d, 1H, <ce:italic>J</ce:italic> = 5.0 Hz), 8.35 (s, 2H), 8.06 (d, 1H, <ce:italic>J</ce:italic> = 7.8 Hz), 7.97 (s, 1H), 7.80 (d, 2H, <ce:italic>J</ce:italic> = 9.0 Hz), 7.63 (t, 1H, <ce:italic>J</ce:italic> = 8.6 Hz), 7.16 (d, 2H, <ce:italic>J</ce:italic> = 9.0 Hz), 6.62 (d, 1H, <ce:italic>J</ce:italic> = 5.0 Hz); HRMS calculated for C<ce:inf loc="post">24</ce:inf>H<ce:inf loc="post">13</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf> (M + H): 521.0810. Found: 521.0814.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.17" view="all">
+                           <ce:label>6.2.2.17</ce:label>
+                           <ce:section-title>2-Fluoro-<ce:italic>N</ce:italic>-(4-(quinolin-4-yloxy)phenyl)-5-(trifluoromethyl)benzamide (<ce:bold>18</ce:bold>)</ce:section-title>
+                           <ce:para id="p0160" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.83 (d, 1H, <ce:italic>J</ce:italic> = 12.8 Hz), 8.68 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.39–8.30 (m, 2H), 8.11 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.79–7.67 (m, 4H), 7.58 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.27–7.22 (m, 1H), 7.18(d, 2H, <ce:italic>J</ce:italic> = 9.2 Hz), 6.56 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, methanol-<ce:italic>d<ce:inf loc="post">4</ce:inf>
+                              </ce:italic>): <ce:italic>δ</ce:italic> 164.4, 164.2, 163.8, 161.7, 151.9, 151.8, 149.7, 137.5, 132.1 (m), 131.2 (m), 128.9 (m), 128.3, 128.1, 127.9, 126.5, 126.3, 123.7, 123.6, 123.0, 122.7, 122.6, 119.1, 119.8, 118.7, 118.5, 105.2; HRMS calculated for C<ce:inf loc="post">23</ce:inf>H<ce:inf loc="post">14</ce:inf>F<ce:inf loc="post">4</ce:inf>N<ce:inf loc="post">2</ce:inf>O<ce:inf loc="post">2</ce:inf> (M + H): 426.0991. Found: 426.0991.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.18" view="all">
+                           <ce:label>6.2.2.18</ce:label>
+                           <ce:section-title>2-Fluoro-<ce:italic>N</ce:italic>-(4-(8-nitroquinolin-4-yloxy)phenyl)-5-(trifluoromethyl)benzamide (<ce:bold>19</ce:bold>)</ce:section-title>
+                           <ce:para id="p0165" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.81 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.59 (d, 1H, <ce:italic>J</ce:italic> = 8.8 Hz), 8.53–8.47 (m, 2H), 8.06 (d, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.83–7.77 (m, 3H), 7.64 (t, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.37–7.32 (m, 1H), 7.23–7.20 (m, 2H), 6.68 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); HRMS calculated for C<ce:inf loc="post">23</ce:inf>H<ce:inf loc="post">13</ce:inf>F<ce:inf loc="post">4</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf> (M + H): 471.0842. Found: 471.0850.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.19" view="all">
+                           <ce:label>6.2.2.19</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(2-methyl-4-(8-nitroquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>20</ce:bold>)</ce:section-title>
+                           <ce:para id="p0170" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.86 (s, 1H), 8.45 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.38 (s, 2H), 8.31 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.92 (s, 1H), 7.89 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.69–7.63 (m, 2H), 7.53 (t, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 7.33 (s, 1H), 7.28 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 6.33 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz); HRMS calculated for C<ce:inf loc="post">25</ce:inf>H<ce:inf loc="post">15</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf> (M + H): 535.0967 Found: 535.0956.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.20" view="all">
+                           <ce:label>6.2.2.20</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(4-(8-aminoquinolin-4-yloxy)-2-methylphenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>21</ce:bold>)</ce:section-title>
+                           <ce:para id="p0175" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.49 (d, 1H, <ce:italic>J</ce:italic> = 2.0 Hz), 8.27 (s, 1H), 8.02 (s, 1H), 7.94 (s, 1H), 7.65 (d, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.48–7.45 (m, 2H), 7.37–7.32 (m, 2H), 6.96 (d, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 4.95 (s, 2H), 2.16 (s, 3H); HRMS calculated for C<ce:inf loc="post">25</ce:inf>H<ce:inf loc="post">17</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">2</ce:inf> (M + H): 505.1225. Found: 505.1216.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.21" view="all">
+                           <ce:label>6.2.2.21</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(4-(8-acetamidoquinolin-4-yloxy)-2-methylphenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>22</ce:bold>)</ce:section-title>
+                           <ce:para id="p0180" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.77 (s, 1H), 9.36 (s, 1H), 8.65 (d, 1H, <ce:italic>J</ce:italic> = 7.2 Hz), 8.46 (s, 2H), 8.44 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 7.97 (s, 1H), 7.87 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.72 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.50 (d, 1H, <ce:italic>J</ce:italic> = 2.0 Hz), 7.37 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.28 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 6.41 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 2.26 (s, 3H), 2.10 (s, 3H); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 169.2, 163.0, 161.2, 152.0, 148.8, 139.5, 137.2, 136.7, 133.8, 132.6, 132.3, 132.2, 132.0, 131.6, 127.8, 127.1, 126.3, 125.2 (m), 124.2, 121.5, 120.4, 118.8, 118.3, 116.7, 115.7, 113.8, 25.0, 15.4; HRMS calculated for C<ce:inf loc="post">27</ce:inf>H<ce:inf loc="post">19</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">3</ce:inf> (M + H): 547.1331. Found: 547.1325.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.22" view="all">
+                           <ce:label>6.2.2.22</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(3-(8-nitroquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>23</ce:bold>)</ce:section-title>
+                           <ce:para id="p0185" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.78 (d, 1H, <ce:italic>J</ce:italic> = 5.6 Hz), 8.58 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 8.52 (s, 1H), 8.31 (s, 2H), 8.22 (s, 1H), 8.08–8.04 (m, 2H), 7.71 (s, 1H), 7.64 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.53–7.49 (m, 2H), 7.03 (d, 1H, <ce:italic>J</ce:italic> = 7.2 Hz), 6.71 (d, 1H, <ce:italic>J</ce:italic> = 4.8 Hz); HRMS calculated for C<ce:inf loc="post">24</ce:inf>H<ce:inf loc="post">13</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">4</ce:inf> (M + H): 521.0810. Found: 521.0821.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.23" view="all">
+                           <ce:label>6.2.2.23</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(3-(8-aminoquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>24</ce:bold>)</ce:section-title>
+                           <ce:para id="p0190" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 8.55 (d, 1H, <ce:italic>J</ce:italic> = 4.8 Hz), 8.29 (s, 2H), 8.05 (s, 1H), 7.90 (s, 1H), 7.60 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.55 (s, 1H), 7.70–7.43 (m, 2H), 7.34 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.01 (d, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 6.96 (d, 1H, <ce:italic>J</ce:italic> = 7.9 Hz), 6.63 (d, 1H, <ce:italic>J</ce:italic> = 4.8 Hz); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 163.1, 161.3, 155.3, 147.9, 143.6, 139.9, 138.8, 136.5, 132.7, 132.4, 132.1, 131.7, 130.6, 127.5 (d), 127.0, 126.8, 125.3 (m), 124.1, 122.0, 118.7, 117.4, 117.2, 113.1, 111.1, 110.0, 105.4; HRMS calculated for C<ce:inf loc="post">24</ce:inf>H<ce:inf loc="post">15</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">2</ce:inf> (M + H): 491.1068. Found: 491.1068.</ce:para>
+                        </ce:section>
+                        <ce:section id="sec6.2.2.24" view="all">
+                           <ce:label>6.2.2.24</ce:label>
+                           <ce:section-title>
+                              <ce:italic>N</ce:italic>-(3-(8-acetamidoquinolin-4-yloxy)phenyl)-3,5-bis(trifluoromethyl)benzamide (<ce:bold>25</ce:bold>)</ce:section-title>
+                           <ce:para id="p0195" view="all">
+                              <ce:sup loc="pre">1</ce:sup>H NMR (400 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 9.77 (s, 1H), 8.74 (d, 1H, <ce:italic>J</ce:italic> = 7.6 Hz), 8.54 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 8.48 (s, 1H), 8.39 (s, 2H), 8.04 (s, 1H), 7.87 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 7.67–7.60 (m, 2H), 7.50–7.43 (m, 2H), 7.37 (t, 1H, <ce:italic>J</ce:italic> = 8.0 Hz), 7.00 (d, 1H, <ce:italic>J</ce:italic> = 8.4 Hz), 6.65 (d, 1H, <ce:italic>J</ce:italic> = 5.2 Hz), 2.30 (s, 3H); <ce:sup loc="pre">13</ce:sup>C NMR (100 MHz, CDCl<ce:inf loc="post">3</ce:inf>): <ce:italic>δ</ce:italic> 169.3, 163.1, 161.7, 154.6, 148.7, 139.6, 136.6, 133.8, 132.7, 132.4, 132.1, 131.7, 130.8, 127.8 (d), 126.9, 126.5, 125.3 (m), 124.2, 121.5, 120.8, 117.7, 117.3, 116.8, 115.7, 113.2, 104.9, 25.0; HRMS calculated for C<ce:inf loc="post">26</ce:inf>H<ce:inf loc="post">17</ce:inf>F<ce:inf loc="post">6</ce:inf>N<ce:inf loc="post">3</ce:inf>O<ce:inf loc="post">3</ce:inf> (M + H): 533.1174. Found: 533.1167.</ce:para>
+                        </ce:section>
+                     </ce:section>
+                  </ce:section>
+                  <ce:section id="sec6.3" view="all">
+                     <ce:label>6.3</ce:label>
+                     <ce:section-title>Biological assay</ce:section-title>
+                     <ce:section id="sec6.3.1" view="all">
+                        <ce:label>6.3.1</ce:label>
+                        <ce:section-title>Cell culture</ce:section-title>
+                        <ce:para id="p0200" view="all">The PLC/PRF/5 (PLC5), Sk-Hep-1, Hep3B and Cells were maintained in DMEM supplemented with 10% FBS, 100 units/mL penicillin G, 100 μg/mL streptomycin sulfate and 25 μg/mL amphotericin B in a 37 °C humidified incubator in an atmosphere of 5% CO<ce:inf loc="post">2</ce:inf> in air.</ce:para>
+                     </ce:section>
+                     <ce:section id="sec6.3.2" view="all">
+                        <ce:label>6.3.2</ce:label>
+                        <ce:section-title>Phospho-STAT3-level</ce:section-title>
+                        <ce:para id="p0205" view="all">A PathScan Phospho-Stat3 (Tyr705) Sandwich ELISA Kit was used for the detection of phospho-STAT3 (Cell Signaling, Danvers,MA). PLC5 cells were pre-treated with IL-6 1 ng/mL and then exposed with various compounds at 10 μM for 24 h. After incubation with cell lysates, both non-phospho- and phospho-Stat3 proteins are captured by the coated antibody. The expression of phospho-STAT3 was measured at 450 nm absorbance.</ce:para>
+                     </ce:section>
+                     <ce:section id="sec6.3.3" view="all">
+                        <ce:label>6.3.3</ce:label>
+                        <ce:section-title>Western blot</ce:section-title>
+                        <ce:para id="p0210" view="all">PLC5 cells were treated with compound 1 and 12 at 5 and 10 μM for 24 h. Cell lysates were analyzed by western blot.</ce:para>
+                     </ce:section>
+                     <ce:section id="sec6.3.4" view="all">
+                        <ce:label>6.3.4</ce:label>
+                        <ce:section-title>Cell death detection ELISA</ce:section-title>
+                        <ce:para id="p0215" view="all">The effect of compound 1 and 12 on cell viability was assessed cell death ELISA assay (Roche Applied Science. Mannheim, Germany). PLC5 cells were treated with Compound 1 and 12 at 5 and 10 μM for 24 h. The cells were collected and applied to the standard protocol provided by manufacture.</ce:para>
+                     </ce:section>
+                     <ce:section id="sec6.3.5" view="all">
+                        <ce:label>6.3.5</ce:label>
+                        <ce:section-title>Apoptosis analysis</ce:section-title>
+                        <ce:para id="p0220" view="all">The measurement of apoptotic cells by flow cytometry (sub-G1). After Compound 1 and 12 treatment, cells were trypsinized, collected by centrifugation and resuspended in PBS. After centrifugation, the cells were washed in PBS and resuspended in potassium iodide (PI) staining solution. Specimens were incubated in the dark for 30 min at 37 °C and then analyzed with an EPICS Profile II flow cytometer (Coulter Corp., Hialeah, FL). All experiments were performed in triplicate.</ce:para>
+                     </ce:section>
+                  </ce:section>
+               </ce:section>
+            </ce:sections>
+            <ce:acknowledgment>
+               <ce:section-title>Acknowledgments</ce:section-title>
+               <ce:para id="p0225" view="all">We thank the <ce:grant-sponsor id="gs1" xlink:type="simple" xlink:role="http://www.elsevier.com/xml/linking-roles/grant-sponsor">National Science Council</ce:grant-sponsor>, Taiwan (<ce:grant-number refid="gs1">NSC98-2320-B-010-005-My3</ce:grant-number>) and <ce:grant-sponsor id="gs2" xlink:type="simple" xlink:role="http://www.elsevier.com/xml/linking-roles/grant-sponsor">National Yang Ming University</ce:grant-sponsor>, Taiwan for financial support. C.W. S. also thanks the National Research Institute of Chinese Medicine for NMR support.</ce:para>
+            </ce:acknowledgment>
+         </body>
+         <tail view="all">
+            <ce:bibliography id="cebib0010" view="all">
+               <ce:section-title>References</ce:section-title>
+               <ce:bibliography-sec id="cebibsec0010">
+                  <ce:bib-reference id="bib1">
+                     <ce:label>[1]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.F.</ce:given-name>
+                                 <ce:surname>Bromberg</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.H.</ce:given-name>
+                                 <ce:surname>Wrzeszczynska</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.</ce:given-name>
+                                 <ce:surname>Devgan</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>Y.</ce:given-name>
+                                 <ce:surname>Zhao</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.G.</ce:given-name>
+                                 <ce:surname>Pestell</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Albanese</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>J.E.</ce:given-name>
+                                 <ce:surname>Darnell</ce:surname>
+                                 <ce:suffix>Jr.</ce:suffix>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Stat3 as an oncogene</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>98</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>295</sb:first-page>
+                              <sb:last-page>303</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib2">
+                     <ce:label>[2]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Kortylewski</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Kujawski</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Wang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Wei</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Zhang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Pilon-Thomas</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.</ce:given-name>
+                                 <ce:surname>Niu</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Kay</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Mule</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>W.G.</ce:given-name>
+                                 <ce:surname>Kerr</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Jove</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.</ce:given-name>
+                                 <ce:surname>Pardoll</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Yu</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibiting Stat3 signaling in the hematopoietic system elicits multicomponent antitumor immunity</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Med.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>11</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1314</sb:first-page>
+                              <sb:last-page>1321</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib3">
+                     <ce:label>[3]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Dong</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.J.</ce:given-name>
+                                 <ce:surname>Chen</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.J.</ce:given-name>
+                                 <ce:surname>Tweardy</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Cross-talk between retinoic acid and STAT3 signaling pathways in acute promyelocytic leukemia</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Leuk. Lymphoma</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>44</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2023</sb:first-page>
+                              <sb:last-page>2029</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib4">
+                     <ce:label>[4]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Q.</ce:given-name>
+                                 <ce:surname>Lin</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Lai</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>L.R.</ce:given-name>
+                                 <ce:surname>Chirieac</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Li</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>V.A.</ce:given-name>
+                                 <ce:surname>Thomazy</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>I.</ce:given-name>
+                                 <ce:surname>Grammatikakis</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.Z.</ce:given-name>
+                                 <ce:surname>Rassidakis</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>W.</ce:given-name>
+                                 <ce:surname>Zhang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>Y.</ce:given-name>
+                                 <ce:surname>Fujio</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>K.</ce:given-name>
+                                 <ce:surname>Kunisada</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.R.</ce:given-name>
+                                 <ce:surname>Hamilton</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.M.</ce:given-name>
+                                 <ce:surname>Amin</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Constitutive activation of JAK3/STAT3 in colon carcinoma tumors and cell lines: inhibition of JAK3/STAT3 signaling induces apoptosis and cell cycle arrest of colon carcinoma cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Am. J. Pathol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>167</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>969</sb:first-page>
+                              <sb:last-page>980</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib5">
+                     <ce:label>[5]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.S.</ce:given-name>
+                                 <ce:surname>Redell</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.J.</ce:given-name>
+                                 <ce:surname>Tweardy</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Targeting transcription factors for cancer therapy</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Pharm. Des</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>11</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2873</sb:first-page>
+                              <sb:last-page>2887</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib6">
+                     <ce:label>[6]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Turkson</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Jove</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>STAT proteins: novel molecular targets for cancer drug discovery</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Oncogene</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>19</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>6613</sb:first-page>
+                              <sb:last-page>6626</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib7">
+                     <ce:label>[7]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Wu</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Sun</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Liu</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.W.</ce:given-name>
+                                 <ce:surname>Zhou</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The function of the protein tyrosine phosphatase SHP-1 in cancer</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Gene</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>306</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1</sb:first-page>
+                              <sb:last-page>12</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib8">
+                     <ce:label>[8]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.B.</ce:given-name>
+                                 <ce:surname>Kunnumakkara</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.S.</ce:given-name>
+                                 <ce:surname>Nair</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Sung</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.K.</ce:given-name>
+                                 <ce:surname>Pandey</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.B.</ce:given-name>
+                                 <ce:surname>Aggarwal</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Boswellic acid blocks signal transducers and activators of transcription 3 signaling, proliferation, and survival of multiple myeloma via the protein tyrosine phosphatase SHP-1</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>7</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>118</sb:first-page>
+                              <sb:last-page>128</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib9">
+                     <ce:label>[9]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.K.</ce:given-name>
+                                 <ce:surname>Pandey</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Sung</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.B.</ce:given-name>
+                                 <ce:surname>Aggarwal</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Betulinic acid suppresses STAT3 activation pathway through induction of protein tyrosine phosphatase SHP-1 in human multiple myeloma cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Int. J. Cancer</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>127</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>282</sb:first-page>
+                              <sb:last-page>292</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib10">
+                     <ce:label>[10]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.K.</ce:given-name>
+                                 <ce:surname>Pandey</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Sung</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>K.S.</ce:given-name>
+                                 <ce:surname>Ahn</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.B.</ce:given-name>
+                                 <ce:surname>Aggarwal</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Butein suppresses constitutive and inducible signal transducer and activator of transcription (STAT) 3 activation and STAT3-regulated gene products through the induction of a protein tyrosine phosphatase SHP-1</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Pharmacol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>75</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>525</sb:first-page>
+                              <sb:last-page>533</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib11">
+                     <ce:label>[11]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.K.</ce:given-name>
+                                 <ce:surname>Pathak</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Bhutani</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.S.</ce:given-name>
+                                 <ce:surname>Nair</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>K.S.</ce:given-name>
+                                 <ce:surname>Ahn</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Chakraborty</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Kadara</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Guha</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.</ce:given-name>
+                                 <ce:surname>Sethi</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.B.</ce:given-name>
+                                 <ce:surname>Aggarwal</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Ursolic acid inhibits STAT3 activation pathway leading to suppression of proliferation and chemosensitization of human multiple myeloma cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>5</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2007</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>943</sb:first-page>
+                              <sb:last-page>955</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib12">
+                     <ce:label>[12]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.K.</ce:given-name>
+                                 <ce:surname>Sandur</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.K.</ce:given-name>
+                                 <ce:surname>Pandey</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Sung</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.B.</ce:given-name>
+                                 <ce:surname>Aggarwal</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>5-hydroxy-2-methyl-1,4-naphthoquinone, a vitamin K3 analogue, suppresses STAT3 activation pathway through induction of protein tyrosine phosphatase, SHP-1: potential role in chemosensitization</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>107</sb:first-page>
+                              <sb:last-page>118</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib13">
+                     <ce:label>[13]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.S.</ce:given-name>
+                                 <ce:surname>Ahn</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.</ce:given-name>
+                                 <ce:surname>Sethi</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Sung</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Goel</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Ralhan</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.B.</ce:given-name>
+                                 <ce:surname>Aggarwal</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Guggulsterone, a farnesoid X receptor antagonist, inhibits constitutive and inducible STAT3 activation through induction of a protein tyrosine phosphatase SHP-1</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>68</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2008</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>4406</sb:first-page>
+                              <sb:last-page>4415</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib14">
+                     <ce:label>[14]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>B.R.</ce:given-name>
+                                 <ce:surname>Blechacz</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.L.</ce:given-name>
+                                 <ce:surname>Smoot</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.F.</ce:given-name>
+                                 <ce:surname>Bronk</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>N.W.</ce:given-name>
+                                 <ce:surname>Werneburg</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.E.</ce:given-name>
+                                 <ce:surname>Sirica</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>G.J.</ce:given-name>
+                                 <ce:surname>Gores</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Sorafenib inhibits signal transducer and activator of transcription-3 signaling in cholangiocarcinoma cells by activating the phosphatase shatterproof 2</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Hepatology</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>50</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1861</sb:first-page>
+                              <sb:last-page>1870</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib15">
+                     <ce:label>[15]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>F.</ce:given-name>
+                                 <ce:surname>Yang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Brown</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Buettner</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Hedvat</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Starr</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Scuto</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Schroeder</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Jensen</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Jove</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Sorafenib induces growth arrest and apoptosis of human glioblastoma cells through the dephosphorylation of signal transducers and activators of transcription 3</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cancer Ther.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>9</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>953</sb:first-page>
+                              <sb:last-page>962</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib16">
+                     <ce:label>[16]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>P.T.</ce:given-name>
+                                 <ce:surname>Wan</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.J.</ce:given-name>
+                                 <ce:surname>Garnett</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.M.</ce:given-name>
+                                 <ce:surname>Roe</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Lee</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.</ce:given-name>
+                                 <ce:surname>Niculescu-Duvaz</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>V.M.</ce:given-name>
+                                 <ce:surname>Good</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.M.</ce:given-name>
+                                 <ce:surname>Jones</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.J.</ce:given-name>
+                                 <ce:surname>Marshall</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.J.</ce:given-name>
+                                 <ce:surname>Springer</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.</ce:given-name>
+                                 <ce:surname>Barford</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Marais</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Mechanism of activation of the RAF-ERK signaling pathway by oncogenic mutations of B-RAF</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>116</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>855</sb:first-page>
+                              <sb:last-page>867</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib17">
+                     <ce:label>[17]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Nourry</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Zambon</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Davies</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>I.</ce:given-name>
+                                 <ce:surname>Niculescu-Duvaz</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.P.</ce:given-name>
+                                 <ce:surname>Dijkstra</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.</ce:given-name>
+                                 <ce:surname>Menard</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Gaulon</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>D.</ce:given-name>
+                                 <ce:surname>Niculescu-Duvaz</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.M.</ce:given-name>
+                                 <ce:surname>Suijkerbuijk</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>F.</ce:given-name>
+                                 <ce:surname>Friedlos</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.A.</ce:given-name>
+                                 <ce:surname>Manne</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Kirk</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Whittaker</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Marais</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>C.J.</ce:given-name>
+                                 <ce:surname>Springer</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>BRAF inhibitors based on an imidazo[4,5]pyridin-2-one scaffold and a meta substituted middle ring</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>53</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1964</sb:first-page>
+                              <sb:last-page>1978</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib18">
+                     <ce:label>[18]</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>F.</ce:given-name>
+                                 <ce:surname>Gu</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>Y.</ce:given-name>
+                                 <ce:surname>Ma</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>Z.</ce:given-name>
+                                 <ce:surname>Zhang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Zhao</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Kobayashi</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Zhang</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Fu</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Expression of Stat3 and Notch1 is associated with cisplatin resistance in head and neck squamous cell carcinoma</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Oncol. Rep.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>23</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>671</sb:first-page>
+                              <sb:last-page>676</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+               </ce:bibliography-sec>
+            </ce:bibliography>
+         </tail>
+      </article>
+   </xocs:serial-item></xocs:doc></originaltext></full-text-retrieval-response>

@@ -1,0 +1,2917 @@
+<full-text-retrieval-response xmlns="http://www.elsevier.com/xml/svapi/article/dtd" xmlns:bk="http://www.elsevier.com/xml/bk/dtd" xmlns:cals="http://www.elsevier.com/xml/common/cals/dtd" xmlns:ce="http://www.elsevier.com/xml/common/dtd" xmlns:ja="http://www.elsevier.com/xml/ja/dtd" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:sa="http://www.elsevier.com/xml/common/struct-aff/dtd" xmlns:sb="http://www.elsevier.com/xml/common/struct-bib/dtd" xmlns:tb="http://www.elsevier.com/xml/common/table/dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xocs="http://www.elsevier.com/xml/xocs/dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><coredata><prism:url>https://api.elsevier.com/content/article/pii/S1359644603030149</prism:url><dc:identifier>doi:10.1016/S1359-6446(03)03014-9</dc:identifier><eid>1-s2.0-S1359644603030149</eid><prism:doi>10.1016/S1359-6446(03)03014-9</prism:doi><pii>S1359-6446(03)03014-9</pii><dc:title>Inhibitors of JAKs/STATs and the kinases: a possible new cluster of drugs </dc:title><prism:publicationName>Drug Discovery Today</prism:publicationname><prism:aggregationType>Journal</prism:aggregationtype><pubType>rev</pubtype><prism:issn>13596446</prism:issn><prism:volume>9</prism:volume><prism:issueIdentifier>6</prism:issueidentifier><prism:startingPage>268</prism:startingpage><prism:endingPage>275</prism:endingpage><prism:pageRange>268-275</prism:pagerange><prism:number>6</prism:number><dc:format>text/xml</dc:format><prism:coverDate>2004-03-15</prism:coverdate><prism:coverDisplayDate>15 March 2004</prism:coverdisplaydate><prism:copyright>Copyright © 2004 Elsevier Ltd. All rights reserved.</prism:copyright><prism:publisher>Elsevier Ltd.</prism:publisher><dc:creator>Luo, Cheng</dc:creator><dc:creator>Laaja, Pauliina</dc:creator><dc:description>
+                  JAK(s)/STAT(s) relay cytokine signals through tyrosine site-specific phosphorylation of the proteins involved in cellular responses for the activation and proliferation of bone marrow-derived cells. In recent years, the constitutive or elevated expression of JAK/STAT has been found in cancer cells and oncogene transfected cells, and has been shown to be involved in the immune rejection of allografts and the inflammatory processes of autoimmune diseases. This review discusses the strategies for screening and rational design of selective, potent JAK/STAT and kinase inhibitors that are either ATP-competitive or non-ATP competitive, naturally derived or synthetic, as well as other unique inhibitors and analogues for different therapeutic indications.
+               </dc:description><openaccess>0</openaccess><openaccessArticle>false</openaccessarticle><openaccessType/></openaccesstype><openArchiveArticle>false</openarchivearticle><openaccessSponsorName/></openaccesssponsorname><openaccessSponsorType/></openaccesssponsortype><openaccessUserLicense/></openaccessuserlicense><dcterms:subject>drug design</dcterms:subject><dcterms:subject>T-cells</dcterms:subject><dcterms:subject>ATP-competitive inhibition</dcterms:subject><dcterms:subject>non-ATP competitive inhibition</dcterms:subject><dcterms:subject>tyrosine kinases</dcterms:subject><link href="https://api.elsevier.com/content/article/pii/S1359644603030149" rel="self"/></link><link href="https://www.sciencedirect.com/science/article/pii/S1359644603030149" rel="scidir"/></link></coredata><objects><object ref="gr1" category="thumbnail" type="IMAGE-THUMBNAIL" multimediatype="GIF image file" mimetype="image/gif" width="101" height="94" size="2055">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644603030149-gr1.sml?httpAccept=%2A%2F%2A</object><object ref="gr1" category="standard" type="IMAGE-DOWNSAMPLED" multimediatype="JPEG image file" mimetype="image/jpeg" width="500" height="463" size="37283">https://api.elsevier.com/content/object/eid/1-s2.0-S1359644603030149-gr1.jpg?httpAccept=%2A%2F%2A</object></objects><scopus-id>1542327277</scopus-id><scopus-eid>2-s2.0-1542327277</scopus-eid><pubmed-id>15003245</pubmed-id><link href="https://api.elsevier.com/content/abstract/scopus_id/1542327277" rel="abstract"/></link><originalText><xocs:doc xsi:schemaLocation="http://www.elsevier.com/xml/xocs/dtd http://null/schema/dtds/document/fulltext/xcr/xocs-article.xsd"><xocs:meta xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <xocs:content-family>serial</xocs:content-family>
+      <xocs:content-type>JL</xocs:content-type>
+      <xocs:cid>271275</xocs:cid>
+      <xocs:ssids>
+         <xocs:ssid type="alllist">291210</xocs:ssid>
+         <xocs:ssid type="subj">291727</xocs:ssid>
+         <xocs:ssid type="subj">291850</xocs:ssid>
+         <xocs:ssid type="subj">291928</xocs:ssid>
+         <xocs:ssid type="content">31</xocs:ssid>
+      </xocs:ssids>
+      <xocs:srctitle>Drug Discovery Today</xocs:srctitle>
+      <xocs:normalized-srctitle>DRUGDISCOVERYTODAY</xocs:normalized-srctitle>
+      <xocs:orig-load-date yyyymmdd="20040301">2004-03-01</xocs:orig-load-date>
+      <xocs:available-online-date yyyymmdd="20040301">2004-03-01</xocs:available-online-date>
+      <xocs:ew-transaction-id>2010-03-28T09:12:11</xocs:ew-transaction-id>
+      <xocs:eid>1-s2.0-S1359644603030149</xocs:eid>
+      <xocs:pii-formatted>S1359-6446(03)03014-9</xocs:pii-formatted>
+      <xocs:pii-unformatted>S1359644603030149</xocs:pii-unformatted>
+      <xocs:doi>10.1016/S1359-6446(03)03014-9</xocs:doi>
+      <xocs:item-stage>S300</xocs:item-stage>
+      <xocs:item-version-number>S300.1</xocs:item-version-number>
+      <xocs:item-weight>FULL-TEXT</xocs:item-weight>
+      <xocs:hub-eid>1-s2.0-S1359644600X01134</xocs:hub-eid>
+      <xocs:timestamp yyyymmdd="20150515">2015-05-15T05:43:12.204382-04:00</xocs:timestamp>
+      <xocs:dco>0</xocs:dco>
+      <xocs:tomb>0</xocs:tomb>
+      <xocs:date-search-begin>20040315</xocs:date-search-begin>
+      <xocs:year-nav>2004</xocs:year-nav>
+      <xocs:indexeddate epoch="1078099200">2004-03-01T00:00:00Z</xocs:indexeddate>
+      <xocs:articleinfo>articleinfo crossmark dco dateupdated tomb dateloaded datesearch indexeddate issuelist volumelist yearnav articletitlenorm authfirstinitialnorm authfirstsurnamenorm cid cids contenttype copyright dateloadedtxt docsubtype doctype doi eid ewtransactionid hubeid issfirst issn issnnorm itemstage itemtransactionid itemweight openaccess openarchive pg pgfirst pglast pii piinorm pubdatestart pubdatetxt pubyr sortorder srctitle srctitlenorm srctype subheadings volfirst volissue webpdf webpdfpagecount figure table body acknowledge affil articletitle auth authfirstini authfull authkeywords authlast doctopic otherkwds primabst pubtype ref teaserabst alllist content subj ssids</xocs:articleinfo>
+      <xocs:issns>
+         <xocs:issn-primary-formatted>1359-6446</xocs:issn-primary-formatted>
+         <xocs:issn-primary-unformatted>13596446</xocs:issn-primary-unformatted>
+      </xocs:issns>
+      <xocs:crossmark is-crossmark="0"/></xocs:crossmark>
+      <xocs:vol-first>9</xocs:vol-first>
+      <xocs:volume-list>
+         <xocs:volume>9</xocs:volume>
+      </xocs:volume-list>
+      <xocs:iss-first>6</xocs:iss-first>
+      <xocs:issue-list>
+         <xocs:issue>6</xocs:issue>
+      </xocs:issue-list>
+      <xocs:vol-iss-suppl-text>Volume 9, Issue 6</xocs:vol-iss-suppl-text>
+      <xocs:sort-order>10</xocs:sort-order>
+      <xocs:first-fp>268</xocs:first-fp>
+      <xocs:last-lp>275</xocs:last-lp>
+      <xocs:pages>
+         <xocs:first-page>268</xocs:first-page>
+         <xocs:last-page>275</xocs:last-page>
+      </xocs:pages>
+      <xocs:cover-date-orig>
+         <xocs:start-date>20040315</xocs:start-date>
+      </xocs:cover-date-orig>
+      <xocs:cover-date-text>15 March 2004</xocs:cover-date-text>
+      <xocs:cover-date-start>2004-03-15</xocs:cover-date-start>
+      <xocs:cover-date-year>2004</xocs:cover-date-year>
+      <xocs:document-type>converted-article</xocs:document-type>
+      <xocs:document-subtype>rev</xocs:document-subtype>
+      <xocs:copyright-line>Copyright © 2004 Elsevier Ltd. All rights reserved.</xocs:copyright-line>
+      <xocs:normalized-article-title>INHIBITORSJAKSSTATSKINASESAPOSSIBLENEWCLUSTERDRUGS</xocs:normalized-article-title>
+      <xocs:normalized-first-auth-surname>LUO</xocs:normalized-first-auth-surname>
+      <xocs:normalized-first-auth-initial>C</xocs:normalized-first-auth-initial>
+      <xocs:item-toc>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Src homology domains</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>JAK/STAT coordination</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Negative regulation of JAK/STAT</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Inhibition mechanisms of JAKs/STATs</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Physiological and pathological roles of JAKs/STATs</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>JAK/STAT and lymphocyte differentiation</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>JAK/STAT and immune rejection of allografts</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Inhibitors of JAK/STAT and tyrosine kinases</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Identification of random small molecule inhibitors of kinases by high throughput screening</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Rational design of small molecule inhibitors of kinases by virtual screening</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Pharmacophore perception drug design from pseudo-substrate-based peptide inhibitors</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Modes of action of potential therapeutic kinase inhibitors</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Non-ATP competitive inhibition of kinases</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>ATP-competitive inhibition of kinases</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Perspectives: rewards and remaining challenges</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:acknowledgment">
+            <xocs:item-toc-section-title>Acknowledgements</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:bibliography">
+            <xocs:item-toc-section-title>References</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+      </xocs:item-toc>
+      <xocs:references>
+         <xocs:ref-info refid="BIB1">
+            <xocs:ref-normalized-surname>SILVENNOINEN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1993</xocs:ref-pub-year>
+            <xocs:ref-first-fp>583</xocs:ref-first-fp>
+            <xocs:ref-last-lp>585</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>O</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB2">
+            <xocs:ref-normalized-surname>OSHEA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>S121</xocs:ref-first-fp>
+            <xocs:ref-last-lp>S131</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB3">
+            <xocs:ref-normalized-surname>SCHINDLER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1133</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1137</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB4">
+            <xocs:ref-normalized-surname>CHEN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>361</xocs:ref-first-fp>
+            <xocs:ref-last-lp>365</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>X</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB5">
+            <xocs:ref-normalized-surname>KISSELEVA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1</xocs:ref-first-fp>
+            <xocs:ref-last-lp>24</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB6">
+            <xocs:ref-normalized-surname>RODGERS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>173</xocs:ref-first-fp>
+            <xocs:ref-last-lp>183</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>W</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB7">
+            <xocs:ref-normalized-surname>KAPLAN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1988</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2435</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2441</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB8">
+            <xocs:ref-normalized-surname>DIEHL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>531</xocs:ref-first-fp>
+            <xocs:ref-last-lp>536</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB9">
+            <xocs:ref-normalized-surname>ROTTAPEL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>4351</xocs:ref-first-fp>
+            <xocs:ref-last-lp>4362</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB10">
+            <xocs:ref-normalized-surname>SAHARINEN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1448</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1459</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB11">
+            <xocs:ref-normalized-surname>SHUAI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>900</xocs:ref-first-fp>
+            <xocs:ref-last-lp>911</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB12">
+            <xocs:ref-normalized-surname>RODIG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1998</xocs:ref-pub-year>
+            <xocs:ref-first-fp>373</xocs:ref-first-fp>
+            <xocs:ref-last-lp>383</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB13">
+            <xocs:ref-normalized-surname>RUSSELL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1995</xocs:ref-pub-year>
+            <xocs:ref-first-fp>797</xocs:ref-first-fp>
+            <xocs:ref-last-lp>800</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB14">
+            <xocs:ref-normalized-surname>CETKOVICCVRLJE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>213</xocs:ref-first-fp>
+            <xocs:ref-last-lp>225</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB15">
+            <xocs:ref-normalized-surname>SETO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1077</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1083</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Y</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB16">
+            <xocs:ref-normalized-surname>ALAS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>316</xocs:ref-first-fp>
+            <xocs:ref-last-lp>326</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB17">
+            <xocs:ref-normalized-surname>CAMPBELL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1997</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2591</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2594</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>G</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB18">
+            <xocs:ref-normalized-surname>GARCIA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1997</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1267</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1276</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB19">
+            <xocs:ref-normalized-surname>BROMBERG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1139</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1142</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB20">
+            <xocs:ref-normalized-surname>MIGONE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1995</xocs:ref-pub-year>
+            <xocs:ref-first-fp>79</xocs:ref-first-fp>
+            <xocs:ref-last-lp>81</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB21">
+            <xocs:ref-normalized-surname>TURKSON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1998</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2545</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2552</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB22">
+            <xocs:ref-normalized-surname>PERNIS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1279</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1283</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB23">
+            <xocs:ref-normalized-surname>LUO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>169</xocs:ref-first-fp>
+            <xocs:ref-last-lp>175</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB24">
+            <xocs:ref-normalized-surname>HANKE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1996</xocs:ref-pub-year>
+            <xocs:ref-first-fp>695</xocs:ref-first-fp>
+            <xocs:ref-last-lp>701</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB25">
+            <xocs:ref-normalized-surname>GIMSA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>208</xocs:ref-first-fp>
+            <xocs:ref-last-lp>215</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>U</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB26">
+            <xocs:ref-normalized-surname>HOLDORF</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>259</xocs:ref-first-fp>
+            <xocs:ref-last-lp>264</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB27">
+            <xocs:ref-normalized-surname>TKACZUK</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>31</xocs:ref-first-fp>
+            <xocs:ref-last-lp>40</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB28">
+            <xocs:ref-normalized-surname>STEPKOWSKI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>680</xocs:ref-first-fp>
+            <xocs:ref-last-lp>689</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB29">
+            <xocs:ref-normalized-surname>VINCENTI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>898</xocs:ref-first-fp>
+            <xocs:ref-last-lp>903</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>F</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB30">
+            <xocs:ref-normalized-surname>BAJORATH</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>882</xocs:ref-first-fp>
+            <xocs:ref-last-lp>894</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB31">
+            <xocs:ref-normalized-surname>GUO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2042</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2045</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Z</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB32">
+            <xocs:ref-normalized-surname>MEYDAN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1996</xocs:ref-pub-year>
+            <xocs:ref-first-fp>645</xocs:ref-first-fp>
+            <xocs:ref-last-lp>648</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>N</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB33">
+            <xocs:ref-normalized-surname>DUHE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>23</xocs:ref-first-fp>
+            <xocs:ref-last-lp>35</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB34">
+            <xocs:ref-normalized-surname>DRUKER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1</xocs:ref-first-fp>
+            <xocs:ref-last-lp>3</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>B</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB35">
+            <xocs:ref-normalized-surname>BUCHDUNGER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>139</xocs:ref-first-fp>
+            <xocs:ref-last-lp>145</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>E</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB36">
+            <xocs:ref-normalized-surname>UCKUN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>59</xocs:ref-first-fp>
+            <xocs:ref-last-lp>71</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>F</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB37">
+            <xocs:ref-normalized-surname>SIMON</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1296</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1304</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB38">
+            <xocs:ref-normalized-surname>BLUNDELL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>45</xocs:ref-first-fp>
+            <xocs:ref-last-lp>54</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB39">
+            <xocs:ref-normalized-surname>SCHINDLER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1938</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1942</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>T</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB40">
+            <xocs:ref-normalized-surname>CAPDEVILLE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>493</xocs:ref-first-fp>
+            <xocs:ref-last-lp>502</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB41">
+            <xocs:ref-normalized-surname>YAMAGUCHI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1996</xocs:ref-pub-year>
+            <xocs:ref-first-fp>484</xocs:ref-first-fp>
+            <xocs:ref-last-lp>489</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>H</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB42">
+            <xocs:ref-normalized-surname>LAM</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>370</xocs:ref-first-fp>
+            <xocs:ref-last-lp>377</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB43">
+            <xocs:ref-normalized-surname>KANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>664</xocs:ref-first-fp>
+            <xocs:ref-last-lp>666</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB44">
+            <xocs:ref-normalized-surname>WALTENBERGER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>12</xocs:ref-first-fp>
+            <xocs:ref-last-lp>22</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB45">
+            <xocs:ref-normalized-surname>PARANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>37</xocs:ref-first-fp>
+            <xocs:ref-last-lp>41</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB46">
+            <xocs:ref-normalized-surname>MARTINEZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1292</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1299</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB47">
+            <xocs:ref-normalized-surname>KARNI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>47</xocs:ref-first-fp>
+            <xocs:ref-last-lp>52</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB48">
+            <xocs:ref-normalized-surname>HALAZY</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>349</xocs:ref-first-fp>
+            <xocs:ref-last-lp>358</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB49">
+            <xocs:ref-normalized-surname>BROWN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>575</xocs:ref-first-fp>
+            <xocs:ref-last-lp>579</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>G</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB50">
+            <xocs:ref-normalized-surname>HUBBARD</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1997</xocs:ref-pub-year>
+            <xocs:ref-first-fp>5572</xocs:ref-first-fp>
+            <xocs:ref-last-lp>5581</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB51">
+            <xocs:ref-normalized-surname>MAO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2001</xocs:ref-pub-year>
+            <xocs:ref-first-fp>41435</xocs:ref-first-fp>
+            <xocs:ref-last-lp>41443</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB52">
+            <xocs:ref-normalized-surname>ARRIS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2797</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2804</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB53">
+            <xocs:ref-normalized-surname>FRYE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>R3</xocs:ref-first-fp>
+            <xocs:ref-last-lp>R7</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB54">
+            <xocs:ref-normalized-surname>MARTIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>4350</xocs:ref-first-fp>
+            <xocs:ref-last-lp>4358</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Y</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB55">
+            <xocs:ref-normalized-surname>GAZIT</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1989</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2344</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2352</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB56">
+            <xocs:ref-normalized-surname>HUANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1995</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2423</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2428</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="BIB57">
+            <xocs:ref-normalized-surname>MILKIEWICZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2000</xocs:ref-pub-year>
+            <xocs:ref-first-fp>483</xocs:ref-first-fp>
+            <xocs:ref-last-lp>486</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+      </xocs:references>
+      <xocs:refkeys>
+         <xocs:refkey3>LUOX2004X268</xocs:refkey3>
+         <xocs:refkey4lp>LUOX2004X268X275</xocs:refkey4lp>
+         <xocs:refkey4ai>LUOX2004X268XC</xocs:refkey4ai>
+         <xocs:refkey5>LUOX2004X268X275XC</xocs:refkey5>
+      </xocs:refkeys>
+      <xocs:open-access>
+         <xocs:oa-article-status is-open-access="0" is-open-archive="0"/></xocs:oa-article-status>
+      </xocs:open-access>
+      <xocs:attachment-metadata-doc>
+         <xocs:attachment-set-type>item</xocs:attachment-set-type>
+         <xocs:pii-formatted>S1359-6446(03)03014-9</xocs:pii-formatted>
+         <xocs:pii-unformatted>S1359644603030149</xocs:pii-unformatted>
+         <xocs:eid>1-s2.0-S1359644603030149</xocs:eid>
+         <xocs:doi>10.1016/S1359-6446(03)03014-9</xocs:doi>
+         <xocs:cid>271275</xocs:cid>
+         <xocs:timestamp>2010-10-09T10:46:18.811833-04:00</xocs:timestamp>
+         <xocs:cover-date-start>2004-03-15</xocs:cover-date-start>
+         <xocs:attachments>
+            <xocs:web-pdf>
+               <xocs:attachment-eid>1-s2.0-S1359644603030149-main.pdf</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S1359644603030149/MAIN/application/pdf/de0b0d602ab4c12e2abe339632095e01/main.pdf</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644603030149/MAIN/application/pdf/de0b0d602ab4c12e2abe339632095e01/main.pdf</xocs:ucs-locator>
+               <xocs:filename>main.pdf</xocs:filename>
+               <xocs:extension>pdf</xocs:extension>
+               <xocs:pdf-optimized>true</xocs:pdf-optimized>
+               <xocs:filesize>72772</xocs:filesize>
+               <xocs:web-pdf-purpose>MAIN</xocs:web-pdf-purpose>
+               <xocs:web-pdf-page-count>8</xocs:web-pdf-page-count>
+               <xocs:web-pdf-images>
+                  <xocs:web-pdf-image>
+                     <xocs:attachment-eid>1-s2.0-S1359644603030149-main_1.png</xocs:attachment-eid>
+                     <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S1359644603030149/PREVIEW/image/png/ef1e9fbe4c6e67e37fd7d3ea28c0e24a/main_1.png</xocs:ucs-locator>
+                     <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644603030149/PREVIEW/image/png/ef1e9fbe4c6e67e37fd7d3ea28c0e24a/main_1.png</xocs:ucs-locator>
+                     <xocs:filename>main_1.png</xocs:filename>
+                     <xocs:extension>png</xocs:extension>
+                     <xocs:filesize>78583</xocs:filesize>
+                     <xocs:pixel-height>849</xocs:pixel-height>
+                     <xocs:pixel-width>656</xocs:pixel-width>
+                     <xocs:attachment-type>IMAGE-WEB-PDF</xocs:attachment-type>
+                     <xocs:pdf-page-num>1</xocs:pdf-page-num>
+                  </xocs:web-pdf-image>
+               </xocs:web-pdf-images>
+            </xocs:web-pdf>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644603030149-gr1.sml</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S1359644603030149/gr1/THUMBNAIL/image/gif/682b0cd1db9e0a455c37c01dd4adb1b0/gr1.sml</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644603030149/gr1/THUMBNAIL/image/gif/682b0cd1db9e0a455c37c01dd4adb1b0/gr1.sml</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.sml</xocs:filename>
+               <xocs:extension>sml</xocs:extension>
+               <xocs:filesize>2055</xocs:filesize>
+               <xocs:pixel-height>94</xocs:pixel-height>
+               <xocs:pixel-width>101</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-THUMBNAIL</xocs:attachment-type>
+            </xocs:attachment>
+            <xocs:attachment>
+               <xocs:attachment-eid>1-s2.0-S1359644603030149-gr1.jpg</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S1359644603030149/gr1/DOWNSAMPLED/image/jpeg/f32961d59bc3995f5ef476d671ff8653/gr1.jpg</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1359644603030149/gr1/DOWNSAMPLED/image/jpeg/f32961d59bc3995f5ef476d671ff8653/gr1.jpg</xocs:ucs-locator>
+               <xocs:file-basename>gr1</xocs:file-basename>
+               <xocs:filename>gr1.jpg</xocs:filename>
+               <xocs:extension>jpg</xocs:extension>
+               <xocs:filesize>37283</xocs:filesize>
+               <xocs:pixel-height>463</xocs:pixel-height>
+               <xocs:pixel-width>500</xocs:pixel-width>
+               <xocs:attachment-type>IMAGE-DOWNSAMPLED</xocs:attachment-type>
+            </xocs:attachment>
+         </xocs:attachments>
+      </xocs:attachment-metadata-doc>
+   </xocs:meta><xocs:serial-item xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <converted-article xmlns="http://www.elsevier.com/xml/ja/dtd" version="4.5.2" docsubtype="rev" xml:lang="en">
+         <item-info>
+            <jid>DRUDIS</jid>
+            <aid>3014</aid>
+            <ce:pii>S1359-6446(03)03014-9</ce:pii>
+            <ce:doi>10.1016/S1359-6446(03)03014-9</ce:doi>
+            <ce:copyright type="full-transfer" year="2004">Elsevier Ltd</ce:copyright>
+            <ce:doctopics>
+               <ce:doctopic>
+                  <ce:text>Research focus</ce:text>
+               </ce:doctopic>
+            </ce:doctopics>
+         </item-info>
+         <ce:floats>
+            <ce:figure id="FIG1">
+               <ce:label>Figure 1</ce:label>
+               <ce:caption>
+                  <ce:simple-para view="all">Small molecules that inhibit JAK and other kinases in <ce:italic>in vivo</ce:italic> and <ce:italic>in vitro</ce:italic> assays.</ce:simple-para>
+               </ce:caption>
+               <ce:link locator="gr1"/></ce:link>
+            </ce:figure>
+            <ce:table xmlns="http://www.elsevier.com/xml/common/cals/dtd" id="TBL1" colsep="0" rowsep="0" frame="topbot">
+               <ce:label>Table 1</ce:label>
+               <ce:caption>
+                  <ce:simple-para view="all">Effector molecules and the STATs involved in signalling of JAKs</ce:simple-para>
+               </ce:caption>
+               <tgroup cols="3">
+                  <colspec colname="col1" colsep="0"/></colspec>
+                  <colspec colname="col2" colsep="0"/></colspec>
+                  <colspec colname="col3" colsep="0"/></colspec>
+                  <thead>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Effector molecule</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Signalling component</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>JAK that relays the signal</bold>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-2, -7, -9, -15</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT3, STAT 5a and STAT5b</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and JAK3</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-3</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-4</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT5a, STAT5b and STAT6</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and JAK3</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-6, -11, LIF</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1 and STAT3</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and JAK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-10</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT3</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and TYK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-12</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT4</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK2 and TYK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-13</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT3 and STAT6</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1, JAK2 and TYK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-21</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1, STAT3 and STAT5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and JAK3</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IL-22</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1, STAT3 and STAT5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and TYK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Angiotensin II</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1 and STAT2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK2 and TYK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Growth hormone</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT3 and STAT5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">EGF</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1, STAT3 and STAT5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and JAK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">EPO</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT5a and STAT5b</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IFN-α, -β</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1-STAT6</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and TYK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">IFN-γ</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT1 and STAT2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK1 and JAK2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Leptin</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">STAT3</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">JAK2</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+               <ce:legend>
+                  <ce:simple-para view="all">Adapted from Refs <ce:cross-refs refid="BIB2 BIB3 BIB5">[2,3,5]</ce:cross-refs>. Abbreviations: EGF, epidermal growth factor; EPO, erythropoietin; IFN, interferon; IL, interleukin; JAK, Janus kinase; LIF, leukaemia inhibitory factor; STAT, signal transduction and activation of transcription; TYK, tyrosine kinase.</ce:simple-para>
+               </ce:legend>
+            </ce:table>
+            <ce:table xmlns="http://www.elsevier.com/xml/common/cals/dtd" id="TBL2" colsep="0" rowsep="0" frame="none">
+               <ce:label>Table 2</ce:label>
+               <ce:caption>
+                  <ce:simple-para view="all">IC<ce:inf loc="post">50</ce:inf> (μM) of ATP-competitive kinase inhibitors</ce:simple-para>
+               </ce:caption>
+               <tgroup cols="6">
+                  <colspec colname="col1" colsep="0"/></colspec>
+                  <colspec colname="col2" colsep="0"/></colspec>
+                  <colspec colname="col3" colsep="0"/></colspec>
+                  <colspec colname="col4" colsep="0"/></colspec>
+                  <colspec colname="col5" colsep="0"/></colspec>
+                  <colspec colname="col6" colsep="0"/></colspec>
+                  <thead>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Inhibitor</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Kinase or receptor</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd"/></entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd"/></entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd"/></entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd"/></entry>
+                     </row>
+                  </thead>
+                  <tbody>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd"/></entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>JAK1</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>JAK2</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>JAK3</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>EGFR</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Lck</bold>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">PP1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">>50</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">>0.25</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.005</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">ZM39923.HCl</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">4.40</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">7.10</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">5.60</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">ZM449829</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">4.70</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">6.80</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">5.00</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">AG490 (Tyrphostin B42)</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.10</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">4.30</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.10</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">AG1295 (Tyrphostin)</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.30–0.50</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">WHI-P131</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">9.10</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Glivec™ (Imatinib)</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">>100 <cross-ref refid="BIB40">[40]</cross-ref>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">na</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+               <ce:legend>
+                  <ce:simple-para view="all">Adapted from Ref <ce:cross-ref refid="BIB49">[49]</ce:cross-ref>. Abbreviations: EGFR, epidermal growth factor receptor; JAK, Janus kinase; na, not available; PP, pyrazolo-pyrimidine.</ce:simple-para>
+               </ce:legend>
+            </ce:table>
+            <ce:table xmlns="http://www.elsevier.com/xml/common/cals/dtd" id="TBL3" colsep="0" rowsep="0" frame="topbot">
+               <ce:label>Table 3</ce:label>
+               <ce:caption>
+                  <ce:simple-para view="all">IC<ce:inf loc="post">50</ce:inf> (μM) of non-ATP competitive kinase inhibitors</ce:simple-para>
+               </ce:caption>
+               <tgroup cols="4">
+                  <colspec colname="col1" colsep="0"/></colspec>
+                  <colspec colname="col2" colsep="0"/></colspec>
+                  <colspec colname="col3" colsep="0"/></colspec>
+                  <colspec colname="col4" colsep="0"/></colspec>
+                  <thead>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Inhibitor</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Target</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>IC</bold>
+                           <inf loc="post">
+                              <bold>50</bold>
+                           </inf> 
+                           <bold>(μM)</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <bold>Refs</bold>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">TDZD-8</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">GSK-3β</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">2.00</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB46">[46]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">PP1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">pp60<sup loc="post">c-src</sup>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.05</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB47">[47]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">AS701173</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">MEK-1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.03</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB48">[48]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Tyrphostin A47 (AG213)</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">EGFR-k</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">2.40</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB55">[55]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Piceatannol (ST-638)</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">PTK</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">50.00</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB56">[56]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd"/></entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">EGFR-k</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">2.10</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB56">[56]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Iminochromene 9TA</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">pp60<sup loc="post">c-src</sup>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">0.12</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB56">[56]</cross-ref>
+                        </entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">Meta-hydroxybenzyl amide indole (2k)</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">pp60<sup loc="post">c-src</sup>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">38.00</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd">
+                           <cross-ref refid="BIB57">[57]</cross-ref>
+                        </entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+               <ce:legend>
+                  <ce:simple-para view="all">Abbreviations: AG213, 3,4-dihydroxy-α-cyanothiocinnamamide; EGFR-k, epidermal growth factor receptor-kinase; GSK, glycogen synthase kinase; MEK, mitogen-activated protein kinase kinase; PP, pyrazolo-pyrimidine; PTK, protein tyrosine kinase; ST-638, α-cyano-3-ethoxy-4-hydroxy-5-phenylthiomethylcinnamamide.</ce:simple-para>
+               </ce:legend>
+            </ce:table>
+         </ce:floats>
+         <head>
+            <ce:dochead>
+               <ce:textfn>Review</ce:textfn>
+            </ce:dochead>
+            <ce:title>Inhibitors of JAKs/STATs and the kinases: a possible new cluster of drugs</ce:title>
+            <ce:author-group>
+               <ce:author>
+                  <ce:given-name>Cheng</ce:given-name>
+                  <ce:surname>Luo</ce:surname>
+                  <ce:cross-ref refid="AFF1">
+                     <ce:sup loc="post">a</ce:sup>
+                  </ce:cross-ref>
+                  
+               </ce:author>
+               <ce:author>
+                  <ce:given-name>Pauliina</ce:given-name>
+                  <ce:surname>Laaja</ce:surname>
+                  <ce:cross-ref refid="AFF2">
+                     <ce:sup loc="post">b</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:affiliation id="AFF1">
+                  <ce:label>a</ce:label>
+                  <ce:textfn>Oklahoma Medical Research Foundation Oklahoma City OK 73104, USA</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="AFF2">
+                  <ce:label>b</ce:label>
+                  <ce:textfn>Turku Center for Biotechnology University of Turku and Åbo Academy University PO Box 123 20520 Turku, Finland</ce:textfn>
+               </ce:affiliation>
+            </ce:author-group>
+            <ce:abstract class="author"><ce:abstract-sec>
+                  <ce:simple-para view="all">JAK(s)/STAT(s) relay cytokine signals through tyrosine site-specific phosphorylation of the proteins involved in cellular responses for the activation and proliferation of bone marrow-derived cells. In recent years, the constitutive or elevated expression of JAK/STAT has been found in cancer cells and oncogene transfected cells, and has been shown to be involved in the immune rejection of allografts and the inflammatory processes of autoimmune diseases. This review discusses the strategies for screening and rational design of selective, potent JAK/STAT and kinase inhibitors that are either ATP-competitive or non-ATP competitive, naturally derived or synthetic, as well as other unique inhibitors and analogues for different therapeutic indications.</ce:simple-para>
+               </ce:abstract-sec></ce:abstract>
+            <ce:abstract class="teaser">
+               <ce:abstract-sec>
+                  <ce:simple-para view="all">The inhibition and modulation of JAKs/STATs and their coupled signalling pathways by naturally derived or synthetic low molecular weight compounds shows promise as a therapeutic strategy for correcting abnormalities in human immune systems.</ce:simple-para>
+               </ce:abstract-sec>
+            </ce:abstract>
+            <ce:keywords class="idt">
+               <ce:section-title>Keywords</ce:section-title>
+               <ce:keyword>
+                  <ce:text>Drug Discovery</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>Pharmaceutical Science</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>Molecular Medicine</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>Cell biology</ce:text>
+               </ce:keyword>
+            </ce:keywords>
+            <ce:keywords class="keyword">
+               <ce:section-title>Keywords</ce:section-title>
+               <ce:keyword>
+                  <ce:text>drug design</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>T-cells</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>ATP-competitive inhibition</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>non-ATP competitive inhibition</ce:text>
+               </ce:keyword>
+               <ce:keyword>
+                  <ce:text>tyrosine kinases</ce:text>
+               </ce:keyword>
+            </ce:keywords>
+         </head>
+         <body>
+            <ce:sections>
+               <ce:para view="all">▾ Janus kinases (JAKs), which have an apparent molecular weight of ∼130 kDa, are associated with the intracellular domains of receptors and are bound to endoplasmic membranes by myristoylated N-terminal lipids. They are crucial signal transducers for a variety of cytokines, growth factors and interferons <ce:cross-refs refid="BIB1 BIB2 BIB3">[1–3]</ce:cross-refs>. JAKS comprise seven distinct structural domains that are numbered from the C-terminus. JAK homology (JH) 1 is the kinase domain. The more proximal kinase-like domain is JH2, which functions as a negative regulator. There are five other N-terminal regions (JH3–JH7) that predominantly participate in the binding of the receptor. JAK was identified initially in the process of erythropoietin (EPO) -mediated haematopoiesis, which promotes the conversion of bone marrow cells to red blood cells. EPO, a glycoprotein hormone that is produced in the kidney, has long been used for treating anaemia in end-stage renal disease, which suggested that JAK might participate in the activation and proliferation of marrow-derived cells. From this observation, it was hypothesized that inhibition of JAK kinases might prove to be a possible therapy for leukaemia. JAKs relay the signals initiated by extracellular stimuli via corresponding receptors that comprise two heterosubunits: α and β. The heterodimerization of these receptor subunits induces the signalling cascade, which consists of autophosphorylation of the receptor, followed by phosphorylation of JAK. Either the receptor and/or JAK can alternatively recruit the STAT (signal transduction and activation of transcription) protein via recognition of the SH2 domain near the phosphorylated sites <ce:cross-ref refid="BIB4">[4]</ce:cross-ref>. STAT, an unbound, cytosolic, soluble protein (77–80 kDa) that dimerizes upon phosphorylation, subsequently translocates to the nucleus where it binds to the enhancer regions of DNA for transcription of cytokine-responsive genes. JAKs/STATs represent a large family; together they integrate the signal transduction of cytokines in haematopoietic cells, lymphocytes and other bone-derived mammalian cells.</ce:para>
+               <ce:section view="all">
+                  <ce:section-title>Src homology domains</ce:section-title>
+                  <ce:para view="all">The Src homology (SH) domain has phosphorylation sites in kinases and docking sites in STATs. The tyrosine kinases typically include SH1, SH2, SH3 and SH4 domains. SH1 is the kinase domain and is ∼350 amino acid (aa) residues in length. The SH2 domain is 80–120 aa in length and functions in binding phosphotyrosine (p-Y) residues. The SH3 domain is involved in interactions with proline-rich regions and is ∼60 aa in length. The SH4 domain is a small region (15–17 aa) that is located near the N-terminus and contains the signal for fatty acylation <ce:cross-ref refid="BIB5">[5]</ce:cross-ref>. Src kinases, for example, lyn kinase and Bruton's tyrosine kinase (BTK), have a unique domain (UD) and a domain sequence of SH4-UD-SH3-SH2-kinase. The domain sequence of protein tyrosine phosphatases is typically SH2-SH2-kinase. In JAK proteins, SH2 is located between the JH2 and FERM (4.1, ezrin, radixin, moesin) domains, whereas in STAT, SH2 is located between the transcriptional activation domain (TAD) and the DNA binding linker in the C-terminus <ce:cross-ref refid="BIB2">[2]</ce:cross-ref>. Non-myristoylated Src molecules do not bind to membranes, but some Src kinases carrying this modification can be found in the cytosol. Myristoylation probably does not guarantee association of the protein with the membrane, which could indicate the function of Src – for example, the recruitment of Lck kinase in assembled glycolipid-enriched membrane (GEM) domains or lipid rafts and its subsequent translocation into the immune synapse in T-cell receptor (TCR) signalling <ce:cross-ref refid="BIB6">[6]</ce:cross-ref>. Palmitoylation is a reversible process, but myristoylation is irreversible. Depalmitoylation and repalmitoylation are thought to be mechanisms for modifying the localization of the Src family kinases in response to different stimuli <ce:cross-ref refid="BIB7">[7]</ce:cross-ref>.</ce:para>
+               </ce:section>
+               <ce:section view="all">
+                  <ce:section-title>JAK/STAT coordination</ce:section-title>
+                  <ce:para view="all">The JAK family includes JAK1, JAK2, JAK3 and tyrosine kinase 2 (TYK2), and subsequent signalling components, STAT1–STAT5, STAT5a, STAT5b and STAT6. They are structurally and functionally similar to each other, but have a different gene map locus, which is illustrated by the location of the human <ce:italic>JAK</ce:italic>s. <ce:italic>JAK1</ce:italic> is located in 1p31.3, whereas <ce:italic>JAK2</ce:italic> is in 9p24. Conversely, <ce:italic>JAK3</ce:italic> (19p13.1) and <ce:italic>TYK2</ce:italic> (19p13.2) are located close to one another. STATs are also distributed on different chromosomes and in different gene map loci. In contrast with the large number of cytokines and their superfamily of receptors in mammalian cells, JAKs/STATs coordinate to different receptor complexes. Interferon (IFN)-γ signalling is relayed by JAK1 and JAK2, and IFN-α or IFN-β by JAK1 and TYK2 (<ce:cross-ref refid="TBL1">Table 1</ce:cross-ref>
+                     <ce:float-anchor refid="TBL1"/></ce:float-anchor>). The combination of JAKs and STATs represent efficiency and economy in cell regulation. STATs typically contain the following domains: the N-terminus, coiled-coil, SH2, linker, DNA binding, and TAD in the C-terminus <ce:cross-ref refid="BIB5">[5]</ce:cross-ref>. JAK3 has been found to be more restrictive in its coordination with ligands, receptors and STATs (<ce:cross-ref refid="TBL1">Table 1</ce:cross-ref>). JAK3 is primarily expressed in haematopoietic cells and is an important pharmaceutical target (<ce:cross-ref refid="TBL2">Table 2</ce:cross-ref>
+                     <ce:float-anchor refid="TBL2"/></ce:float-anchor>).</ce:para>
+               </ce:section>
+               <ce:section view="all">
+                  <ce:section-title>Negative regulation of JAK/STAT</ce:section-title>
+                  <ce:para view="all">Suppressor of cytokine signalling (SOCS) proteins are widely present in cytokine-stimulated cells. Cytokine regulation can occur in three ways, massive, transitive and coordinative. SOCS-1 is a commonly detectable negative regulator of JAK. It has been shown that the knockout of SOCS-1 is lethal in mice because myeloproliferative disorders are driven by excessive IFN-γ signalling. Interleukin (IL) -6 upregulates the expression of SOCS-1, which results in the inhibition of JAK/STAT activity and, therefore, downregulates IFN-γ expression in lymphocytes. <ce:cross-ref refid="BIB8">[8]</ce:cross-ref>. SOCS efficiently inhibit proliferation signals induced by a variety of oncogenes or other abnormal signals <ce:cross-ref refid="BIB9">[9]</ce:cross-ref>. The second inhibitor of the JAK/STAT pathway is Bcl-6, which normally functions as a transcriptional repressor by binding to STAT6. Bcl-6 knockout mice develop an inflammatory disease characterized by increased levels of IgE, which is analogous to human atopic skin disease. The third negative regulation point is the pseudo-kinase, JH2 domain, of the JAK protein. Recently, negative regulation of JH2 was demonstrated in an <ce:italic>Escherichia coli</ce:italic> expression system in which the kinase neoprotein had a higher level of autophosphorylation when it contained JH1 alone, compared with the construct that expressed JH1–JH2 together. The kinase assay used in the <ce:italic>E. coli</ce:italic> expression system avoided possible interference from other similar kinases that are always present in mammalian cells <ce:cross-ref refid="BIB10">[10]</ce:cross-ref>. JAK/STATs are also negatively regulated by protein tyrosine phosphatases (PTPs), for example, the SH2-domain-containing PTP1 (SHP1, SHP2) and CD45, as well as the nuclear protein inhibitor of activated STAT (PIAS), through distinct mechanisms <ce:cross-ref refid="BIB11">[11]</ce:cross-ref>.</ce:para>
+               </ce:section>
+               <ce:section view="all">
+                  <ce:section-title>Inhibition mechanisms of JAKs/STATs</ce:section-title>
+                  <ce:section view="all">
+                     <ce:section-title>Physiological and pathological roles of JAKs/STATs</ce:section-title>
+                     <ce:para view="all">Understanding the accurate inhibition mechanism in physiological and pathological conditions has helped to identify high-quality prospective targets for precise inhibition. <ce:italic>Jak1</ce:italic>-/- mice are runted at birth and die perinatally or neonatally, which indicates multiple, obligatory roles for JAK1 in biological responses <ce:cross-ref refid="BIB12">[12]</ce:cross-ref>. <ce:italic>Jak2</ce:italic>-/- mice do not respond to IFN-γ, but develop a form of acute myeloid leukaemia. <ce:italic>Jak3</ce:italic> knockout mice present a severe combined immune deficiency (SCID) phenotype <ce:cross-ref refid="BIB13">[13]</ce:cross-ref>. Mutations that lead to SCID have been found in several domains of JAK3, but the majority of spontaneous mutations that result in truncation or rearrangements of the JAK3 protein occur in the pseudokinase domain. In these mutants, JAK3 kinase activity remains normal but the function is eventually impaired because the enzyme cannot effectively bind to its substrate(s) <ce:cross-ref refid="BIB14">[14]</ce:cross-ref>. <ce:italic>Tyk2</ce:italic>-/- mice are viable and fertile, but TYK2 is involved in IL-13R–JAK/STAT signalling in goblet cell hyperplasia of the airways. Furthermore, <ce:italic>Tyk2</ce:italic>-/- mice have enhanced T-helper (Th) cell 2-mediated antibody production and allergic inflammation, which would suggest that TYK2 plays a role in the downregulation of allergic inflammation. TYK2 could also balance Th1 and Th2 through a bilateral role in the regulation of allergic inflammation <ce:cross-ref refid="BIB15">[15]</ce:cross-ref>. Interestingly, as yet no TYK2 inhibitor has been reported, which could indicate that TYK2 has a suppressive role with respect to the abnormal expression of other genes. Involvement of aberrant JAK activation in human cancers is typically linked to a chromosomal abnormality because the translocation of the short arm of chromosome 9, which contains the kinase domain of JAK2, into the short arm of chromosome 12 forms a fusion protein called TEL–JAK2. This recombinant protein possesses constitutive kinase activity in β-progenitors and is associated with T-cell childhood acute lymphoblastic leukaemia (ALL). JAK1 in cells transformed by either v-Abl or Epstein–Barr virus might participate in the malignant processes. JAK2, TEL-JAK2 fusion protein and STAT3 have been frequently shown to be constitutively activated in human cancers <ce:cross-refs refid="BIB16 BIB17 BIB18">[16–18]</ce:cross-refs>, including breast, prostate and ovarian cancer, as well as leukaemia and other haematopoietic malignancies. Constitutive STAT activation is even more strongly associated with carcinogenesis. For example, STAT1, STAT3 and STAT5 have been detected in almost all types of cancers <ce:cross-ref refid="BIB19">[19]</ce:cross-ref>. The T-cell transformation from IL-2 dependent to independent has been shown to be correlated with the activation of a group of JAK/STAT kinases <ce:cross-ref refid="BIB20">[20]</ce:cross-ref>. The dominant negative form of STAT3, broadly equivalent to the defect phenotype, was able to prevent Src-induced transformation of NIH3T3 cells <ce:cross-ref refid="BIB21">[21]</ce:cross-ref>. In addition to carcinogenesis, JAKs/STATs are strongly implicated in the pathology of asthma as regulators of the high proliferation and differentiation rates of B-lymphocytes. Imbalanced T-helper cells produce abnormal cytokine profiles that significantly contribute to IgE secretion by B-cells. They eventually provoke mast cell degranulation with the subsequent release of a variety of mediators that trigger early and late inflammatory asthmatic responses <ce:cross-ref refid="BIB22">[22]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section view="all">
+                     <ce:section-title>JAK/STAT and lymphocyte differentiation</ce:section-title>
+                     <ce:para view="all">Receptor-mediated activation of JAK/STAT leads to T-cell differentiation in the thymus, or at sites of inflammation. For example, IL-2 classically converts naive T-cells (Th0) into subsets Th1 and Th2. In a similar fashion, IL-4 and IL-6 effect preferential conversion to Th2, whereas IL-12 effects preferential conversion to Th1. In addition, IL-6 can convert monocytes into macrophages. The imbalance of cytokines frequently initiates and establishes inflammatory processes in many types of immune or autoimmune disease, for example, type 1 diabetes, allergy, inflammatory bowel disease, rheumatoid arthritis, multiple sclerosis and immune rejection of transplantation. The over population of Th1 (versus Th2) in pancreatic islets is normally regarded as a precursor to insulitis as a result of the breakdown of mucosal tolerance, which eventually leads to pancreatic β-cell destruction by T-cell-mediated cytosol porin draining, or apoptosis <ce:cross-ref refid="BIB23">[23]</ce:cross-ref>. A potent pyrazolo-pyrimidine (PP) inhibitor, PP1 (<ce:cross-ref refid="FIG1">Figure 1</ce:cross-ref>
+                        <ce:float-anchor refid="FIG1"/></ce:float-anchor>), increases IL-4 production, but reduces IL-2 and interferon production in cultures of splenocytes from ovalbumin-specific T-cell receptor (TCR)-transgenic BALB/c mice. PP1 favours Th2 subset differentiation, even though it strongly blocks the activation of lymphocytes <ce:cross-ref refid="BIB24">[24]</ce:cross-ref>, thus reducing the risk of insulitis in type 1 diabetes <ce:cross-ref refid="BIB25">[25]</ce:cross-ref>. PP1 is thought to act by direct inhibition of the kinases Lck, Fyn or Hck, which are involved in TCR signalling and subsequently T-cell activation. PP1 inhibits JAK1 kinase <ce:italic>in vitro</ce:italic>, but it is a much more potent inhibitor of the cytosolic soluble tyrosine kinase Lck (<ce:cross-ref refid="TBL2">Table 2</ce:cross-ref>), which phosphorylates intracellular domains of multiple components in co-stimulation of T-cell activation with antigen-presenting cells (APC) <ce:cross-ref refid="BIB26">[26]</ce:cross-ref>. Thus PP1, its analogues and molecules with similar activity are potential therapeutic agents in autoimmune diseases.</ce:para>
+                  </ce:section>
+                  <ce:section view="all">
+                     <ce:section-title>JAK/STAT and immune rejection of allografts</ce:section-title>
+                     <ce:para view="all">T-cells respond to allografts by trafficking to specific locations including, the graft itself, secondary lymphoid organs and other lymphoid tissues. Recent studies <ce:italic>in vitro</ce:italic> have shown that proper trafficking is important in developing tolerance to allografts. Lymphocyte trafficking is controlled by a complex interaction of a variety of receptors and ligands including adhesion molecules and chemokines and their receptors. Acute allograft rejection is driven by cytokines (e.g. IL-2) that activate and expand alloreactive T-cells. Alloantigen tolerance was demonstrated by a complete signalling blockade as a result of administration of anti-IL-2Rα monoclonal antibody <ce:cross-ref refid="BIB27">[27]</ce:cross-ref>. However, IL-10 is a highly immunosuppressive ligand that influences T-cell, B-cell and APC function. In general, IL-10 downregulates immune response in a manner similar to IL-6 via JAK/STAT and a variety of SOCS molecules, which commence important downstream effects on cellular quiescence and alleviate immune rejection. Recently, a variant of the undecylprodigiosin family of antibiotics, PNU156804, was found to prolong allograft survival synergistically with the inhibitor cyclosporine A, and additively with rapamycin, by blocking allograft rejection through the targeting of JAK3 <ce:cross-ref refid="BIB28">[28]</ce:cross-ref>. Furthermore, FK778 alone extends allograft survival by inhibiting JAK3 <ce:cross-ref refid="BIB29">[29]</ce:cross-ref>. Although it is clear that cytokines and JAKs are involved in immune rejection, the range of inhibition, specific targeting sites, and accurate roles of individual JAKs needs to be studied further.</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section view="all">
+                  <ce:section-title>Inhibitors of JAK/STAT and tyrosine kinases</ce:section-title>
+                  <ce:para view="all">Precise inhibition of abnormally expressed or activated kinases, or antagonism of receptors might represent strategies for the development of chemotherapies. Through random or selectively sorted screening, several recognized candidates of inhibitors of JAKs/STATs are under further investigation (<ce:cross-ref refid="FIG1">Figure 1</ce:cross-ref>). High-throughput screening (HTS) methods using ELISA and virtual screening (VS) methods have been developed to identify inhibitor candidates. Although advantages and disadvantages have been identified for ELISA and VS, these two techniques complement each other in the early stages of drug discovery <ce:cross-ref refid="BIB30">[30]</ce:cross-ref>.</ce:para>
+                  <ce:section view="all">
+                     <ce:section-title>Identification of random small molecule inhibitors of kinases by high throughput screening</ce:section-title>
+                     <ce:para view="all">The purification and crystallization of membrane proteins, or membrane-associated proteins, is still an issue for modern drug discovery. Small molecule receptor antagonists could potentially change the affinity of other ligands and receptors via protein–protein and protein–nucleic acid interactions <ce:cross-ref refid="BIB31">[31]</ce:cross-ref>. At present, several inhibitors of JAK/STAT kinase have been identified by different HTS methods. For example, the screening of a 50<ce:hsp sp="0.25"/></ce:hsp>000 compound library led to the identification of a few positives for kinase inhibition, including AS701173, which was further characterized as a potent non-ATP competitive inhibitor (<ce:cross-ref refid="TBL3">Table 3</ce:cross-ref>
+                        <ce:float-anchor refid="TBL3"/></ce:float-anchor>). At present, several recognized, non-selective inhibitors of JAK kinase have been identified by HTS. AG490 (tyrphostin B42) was identified from kinase assays and was found to inhibit ErbB1 and ErbB2 autophosphorylation with an IC<ce:inf loc="post">50</ce:inf> of 0.5 and 12.0 μM, respectively. In addition, AG490, and its analogue A25, inhibit JAK2 and JAK3 (<ce:cross-ref refid="TBL2">Table 2</ce:cross-ref>), which blocks the downstream counterpart substrates including STAT1, STAT3, STAT5a and STAT5b <ce:cross-ref refid="BIB32">[32]</ce:cross-ref>. Initially, AG490 was regarded as a specific JAK2 kinase inhibitor because JAK2 was found abundantly expressed and constitutively phosphorylated in acute lymphoblastic leukaemia cells <ce:cross-ref refid="BIB33">[33]</ce:cross-ref>. However, AG490 actually suppresses IL-2-induced T-cell proliferation by inhibiting JAK3 in a dose-dependent manner in D10 and CTLL-2 T-cell lines <ce:cross-ref refid="BIB34">[34]</ce:cross-ref>. Dimethoxyquinazoline derivatives, WHI-P154 and WHI-P131, inhibit JAK3 (<ce:cross-ref refid="TBL2">Table 2</ce:cross-ref>), but not JAK1 or JAK2. Interestingly, WHI-P131 induces apoptosis in JAK3 expressing human leukaemia cell lines NALM-6. In cell-based assays, STI571 selectively inhibits chronic myeloid leukaemia (CML)-related kinases. Recently, STI571 was shown to inhibit the receptor for the platelet-derived growth factor (PDGF-R) and c-kit, a receptor tyrosine kinase, which consequently blocks stem cell factor-mediated cellular signalling, including downstream effects of ligand-stimulated receptor autophosphorylation, inositol phosphate formation, and mitogen-activated protein (MAP) kinase activation <ce:cross-ref refid="BIB35">[35]</ce:cross-ref>. STI571 is currently in clinical trials as an adjuvant therapeutic agent for the treatment of non-small cell lung cancers because it inhibits lung cancer cell growth, probably by inhibiting PDGF-R-α phosphorylation <ce:cross-ref refid="BIB36">[36]</ce:cross-ref>. Similarly, AG490, PP1 and their analogues inhibit the JAK-STAT pathway involved in PDGF-stimulated proliferation of human airway smooth muscle cells, an important pathway in the airway remodelling observed in some asthmatic patients <ce:cross-ref refid="BIB37">[37]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+                  <ce:section view="all">
+                     <ce:section-title>Rational design of small molecule inhibitors of kinases by virtual screening</ce:section-title>
+                     <ce:para view="all">High-resolution 3D protein structure determination by X-ray crystallography is frequently the starting point for the design of selective and reversible inhibitors using docking software <ce:cross-ref refid="BIB38">[38]</ce:cross-ref>. In most cases, it is preferable for docking to be reversible and for the inhibitor to have a high affinity of binding to the enzyme or receptor. Internal coordinated mechanics (ICM) is one of the approaches used in VS that can perform atom and charge assignment, and recognition of rotatable bonds in each unique structure. These methods enable parts of ligands to be automatically constrained to a pre-defined position during docking. Furthermore, these approaches generate multiple conformations of the receptor or the enzyme that is free to dock with small molecules. The simulation can display potential binding pockets on the protein surface and other interaction properties. Docking scripts under a grid framework modify flexible side chains to encompass induced fits. A classic example of the utility of molecular modelling in the development of compounds is that of the kinase inhibitor Glivec™ [also known as Gleevec™; STI571; Imatinib (Novartis; <ce:inter-ref xlink:href="http://www.novartis.com" xlink:type="simple">http://www.novartis.com</ce:inter-ref>)]. Inadvertent activation of the Abelson tyrosine kinase (Abl) causes CML. In nearly all cases of CML, the reciprocal translocation between chromosome 9 and 22 results in the fusion of Abl to the breakpoint cluster region (BCR). Glivec™ acts by ATP-competitive inhibition of the BCR–Abl tyrosine kinase and its chemical structure was designed with reference to the crystal structure of the kinase domain of c-Abl <ce:cross-ref refid="BIB39">[39]</ce:cross-ref> and docking studies <ce:cross-ref refid="BIB40">[40]</ce:cross-ref>. It effectively stopped CML <ce:italic>in vivo,</ce:italic> and gave excellent effects in clinical trials and, in May 2001, Glivec™ became the first drug on the market to inhibit protein kinases, a landmark in modern precision drug development. Another attractive lymphocyte-specific target for designing novel T-cell immunosuppressants is Lck, a decisive kinase in TCR-APC-mediated T-cell activation. The crystal structure of the SH2-SH3 domains of Lck was determined in monomeric and multimeric forms. Furthermore, the structure of the kinase domain was resolved in its activated state at 1.7 Å resolution <ce:cross-ref refid="BIB41">[41]</ce:cross-ref>. The structure revealed a phosphoryl group at Tyr394 that generates a competent active loop, but phosphorylation at Tyr505 results in inactivation. Comparisons with other kinase structures have indicated that tyrosine phosphorylation and ligand binding could typically elicit two distinct hinge-like movements between the kinase subdomains. WHI-P131 and WHI-P154 were designed with the aid of a 3D homology model of the JAK3 kinase domain <ce:cross-ref refid="BIB33">[33]</ce:cross-ref>. It is generally believed that the structure–activity relationships (SAR) and the 3D homology model can be used for drug design. Many challenges still remain, for example, the 3D structures of JAKs or the individual domains (including the kinase domain) are currently unresolved, and it will remain a substantial challenge to perform computer-aided drug design in the absence of a high-resolution structure.</ce:para>
+                  </ce:section>
+                  <ce:section view="all">
+                     <ce:section-title>Pharmacophore perception drug design from pseudo-substrate-based peptide inhibitors</ce:section-title>
+                     <ce:para view="all">In addition to common rational drug design methods, pseudo-substrate-based peptide inhibitors have been used for pharmacophore mapping studies. These studies will eventually impact on inhibitor design. Such rational design is possible because many kinase sequences are known and the ATP binding domains are relatively conserved. Peptidomimetic strategies are difficult, but the approach can be used to obtain information for small molecular drug design, which is exemplified by the use of conformationally and topographically constrained combinatorial chemistry libraries generated by the'split-mix synthesis' method <ce:cross-ref refid="BIB42">[42]</ce:cross-ref>. Although the ATP binding domain has been used for drug design in the past, the SH2 domain plays a crucial role in organizing coherent signal transduction complexes that are essential for the appropriate intracellular response to extracellular stimuli. Blocking or inactivating SH2 domain-dependent signalling has been a useful strategy in developing therapeutic agents. Because of their similarity to the substrate of the binding domain of the kinase, tripeptides and tetrapeptides are the optimum size to mimic the interactions formed between the substrate and the surface of the SH2 domains, including the pY pocket. From peptide inhibitor studies on the SH2 domain of Src and Lck, it has been shown that these domains exhibit a marked preference for the sequence pYEEIE. Short peptides incorporating this sequence exhibit a reasonably high affinity for Src family SH2 domains. Interestingly, rosmarinic acid (RosA), which can be extracted from <ce:italic>Prunella vulgaris</ce:italic>, strongly inhibits the Lck SH2-pYEEIE interaction, which has been shown using ELISA, indicating that RosA is an inhibitor of the Lck SH2 domain. A threefold increase in the inhibitory effect was observed when a negatively charged amino acid was appended to RosA, for example, Asp or Glu. These analogues, which are specific for SH2 domains of Src family protein tyrosine kinases, are unique novel non-phosphopeptide SH2 inhibitors <ce:cross-ref refid="BIB43">[43]</ce:cross-ref>. RosA inhibited TCR-induced-Ca<ce:sup loc="post">2+</ce:sup> mobilization and IL-2 promoter activation, but not phorbol 12-myristate 13-acetate (PMA) induced IL-2 promoter activation, which indicates that its point of inhibition is at the membrane proximal site of TCR signalling. Therefore, RosA inhibits TCR-induced splenocyte proliferation by targeting the SH2 domain of Lck.</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section view="all">
+                  <ce:section-title>Modes of action of potential therapeutic kinase inhibitors</ce:section-title>
+                  <ce:para view="all">All kinases share certain structural similarities, for example, the presence of three disulfide bonds and similar ATP-binding clefts. The design of inhibitors for kinases is further complicated by their conformational flexibility, or plasticity, and interactions with other ligands and receptors <ce:cross-ref refid="BIB44">[44]</ce:cross-ref>. Here we focus on two significant aspects related to ATP-binding inhibition.</ce:para>
+                  <ce:section view="all">
+                     <ce:section-title>Non-ATP competitive inhibition of kinases</ce:section-title>
+                     <ce:para view="all">In non-ATP competitive inhibition, the inhibitor binds to a loop or pocket outside the ATP-binding cleft of the kinase. It has been estimated that there are 2000 kinases and between 300 and 500 phosphatases in the human genome that use ATP as the second substrate when the concentration of ATP is high. Non-ATP competitive inhibition creates the possibility for high selectivity and potency, because these inhibitors compete with only nM concentrations of protein substrates, rather than μM or mM levels of ATP in the case of ATP-competitive inhibition. The small heterocyclic thiadiazolidinones (TDZD; <ce:cross-ref refid="FIG1">Figure 1</ce:cross-ref>) are the first non-ATP competitive inhibitors for glycogen synthase kinase (GSK)-3β. They are relatively potent inhibitors with <ce:italic>in vitro</ce:italic> IC<ce:inf loc="post">50</ce:inf> values in the μM range, independent of ATP concentration <ce:cross-ref refid="BIB45">[45]</ce:cross-ref>. GSK-3β is involved in glycogen metabolism, but is also now known to regulate a diverse array of cell functions. The structure of GSK-3β contains a loop binding site for a pre-phosphorylated substrate, which is referred to as a priming phosphorylation site. This creates opportunities for the development of non-ATP competitive inhibitors that would selectively inhibit some functions of GSK-3β, but not others. TDZD has been suggested for therapeutic use in neurodegenerative diseases, type II diabetes, bipolar disorder, stroke, cancer and chronic inflammatory disease <ce:cross-ref refid="BIB46">[46]</ce:cross-ref>. Although PP1 binds to the ATP pocket in Lck, as revealed by its co-crystal structure, PP1 is characteristic of non-ATP and ATP-competitive kinase inhibitors. However, reducing the ATP concentration in the assay did not improve the affinity between PP1 and Src kinases. Examination of the homology in the kinase domains of Src, Hck and Lck revealed significant differences outside the ATP binding pocket, whereas they are identical within the ATP binding domain. This indicates that an inhibitor must bind outside of the ATP-binding cleft to enable selective inhibition. Because activated Src is the hallmark of numerous cancers, understanding the mechanism of PP1 inhibition of activated Src should facilitate the discovery of potent and selective Src kinase inhibitors <ce:cross-ref refid="BIB47">[47]</ce:cross-ref>. There have been several ATP-competitive inhibitors for MEK-1 (mitogen-activated protein kinase kinase-1), but recently Serono (<ce:inter-ref xlink:href="http://www.serono.com/index.jsp" xlink:type="simple">http://www.serono.com/index.jsp</ce:inter-ref>) found that the inhibitory activity of AS701173 was independent of ATP concentration at the ranges used in the MEK-1 assay <ce:cross-ref refid="BIB48">[48]</ce:cross-ref>. Similarly, PP1 inhibits Lck ATP-competitively, but inhibits pp60<ce:sup loc="post">c-src</ce:sup> non-ATP competitively. Screening for non-ATP competitive kinase inhibitors is particularly challenging because the mechanism by which these molecules bind is unclear, which makes rational design difficult. Interestingly, some naturally derived compounds that have recently been shown to be non-ATP competitive inhibitors are being used for analogue development (<ce:cross-ref refid="TBL3">Table 3</ce:cross-ref>).</ce:para>
+                  </ce:section>
+                  <ce:section view="all">
+                     <ce:section-title>ATP-competitive inhibition of kinases</ce:section-title>
+                     <ce:para view="all">In contrast with sequence variation in non-ATP binding sites, the active sites are highly conserved in kinases. With respect to the substrate binding site, tyrosine kinases have a deeper loop and fewer consensus regions than serine/threonine kinases. Thus far, the majority of kinase inhibitors are based on ATP-competitive inhibition interfering with substrate binding. They are relatively non-selective ATP mimicking molecules or ubiquitous kinase inhibitors. One of the known ATP-competitive JAK3 inhibitors, ZM449829 (<ce:cross-ref refid="FIG1">Figure 1</ce:cross-ref>), functionally inhibits T-cell proliferation, even though it also inhibits other tyrosine kinases to some extent <ce:cross-ref refid="BIB49">[49]</ce:cross-ref>. Interestingly, ZM39923 (<ce:cross-ref refid="FIG1">Figure 1</ce:cross-ref>), breaks down to form the JAK3 inhibitor ZM449829 and the compounds exhibit similar IC<ce:inf loc="post">50</ce:inf> values (2 Table). At present, there is no structural information available for the ATP-binding site of JAK kinase. The ATP-binding sites of some kinases, including insulin receptor kinase (IRK) <ce:cross-ref refid="BIB50">[50]</ce:cross-ref> and BTK <ce:cross-ref refid="BIB51">[51]</ce:cross-ref>, have been resolved. These structures show that the crucial components are associated with the active state conformation and include the closure of two lobes and the position of a c-helix relative to the N-terminal lobe. The two lobes in the BTK structure adopt a closed conformation in the ATP-binding domain. The distance of the c-helix from the active site is larger in BTK than in the IRK ternary complex structure, whereas the distance between Glu445 and Lys430 is 10.2 Å in BTK, but in IRK the corresponding distance is 3.0 Å <ce:cross-ref refid="BIB52">[52]</ce:cross-ref>.</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section view="all">
+                  <ce:section-title>Perspectives: rewards and remaining challenges</ce:section-title>
+                  <ce:para view="all">JAK/STAT and the tyrosine kinases play important roles in relaying the signals of cytokines. Cytokines are produced in abnormal amounts in cancer cells and lymphocytes under inflammatory conditions. Inhibition of JAK/STAT has advanced the basic and clinical studies of tyrosine kinase inhibitors as anti-cancer, anti-inflammation and anti-allograft rejection agents. At present, several tyrosine kinase inhibitors, but no JAK kinase inhibitors, have entered clinical trials. Some promising inhibitors, such as the JAK3 inhibitor FK778 (a leflunomide analogue) are in a highly advanced stage of preclinical development for the prevention of acute heart and kidney allograft rejection <ce:cross-ref refid="BIB28">[28]</ce:cross-ref>. CP-690,550, another orally active, low molecular weight inhibitor of JAK3, has tripled survival time following kidney transplant in animal models, and is being developed by Pfizer (<ce:inter-ref xlink:href="http://www.pfizer.com/main.html" xlink:type="simple">http://www.pfizer.com/main.html</ce:inter-ref>) to prevent the rejection of transplanted organs. Today, alternative strategies for 3D structural determination could also provide the means of translating the information from genome sequencing into knowledge that can aid the discovery of drugs based on common cross correlations <ce:cross-ref refid="BIB53">[53]</ce:cross-ref>. This is an extremely complex system, but it can be more reliable than the simple theory of structure similarity versus biological activity in terms of drug screening strategy. There is almost no correlation of structure and function between inhibitors and targets. These similar compounds do not necessarily interact with the targeted macromolecule in similar ways <ce:cross-ref refid="BIB54">[54]</ce:cross-ref>. However, it can be expected that the current environment of rapidly advancing structural information will greatly contribute to the theoretical and experimental 3D elucidation of target protein structure, which will hopefully result in greater ease of drug design.</ce:para>
+               </ce:section>
+            </ce:sections>
+            <ce:acknowledgment>
+               <ce:section-title>Acknowledgements</ce:section-title>
+               <ce:para view="all">We thank Olli Silvennoinen, Institute of Medical Technology, University of Tampere (<ce:inter-ref xlink:href="http://www.uta.fi/imt" xlink:type="simple">http://www.uta.fi/imt</ce:inter-ref>) for the discussion about JAK proteins, Risto Santti, Department of Anatomy, University of Turku (<ce:inter-ref xlink:href="http://www.utu.fi" xlink:type="simple">http://www.utu.fi</ce:inter-ref>) for comments on the manuscript and Kenneth Smith, Oklahoma Medical Research Foundation (<ce:inter-ref xlink:href="http://www.omrf.org" xlink:type="simple">http://www.omrf.org</ce:inter-ref>) for language correction. The figure for the non-ATP inhibitor meta-hydroxybenzyl amide indole (2k) was provided by David Hangauer, Department of Chemistry, The State University of New York at Buffalo (<ce:inter-ref xlink:href="http://www.suny.edu" xlink:type="simple">http://www.suny.edu</ce:inter-ref>).</ce:para>
+            </ce:acknowledgment>
+         </body>
+         <tail>
+            <ce:bibliography view="all">
+               <ce:section-title>References</ce:section-title>
+               <ce:bibliography-sec>
+                  <ce:bib-reference id="BIB1">
+                     <ce:label>1</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>O.</ce:given-name>
+                                 <ce:surname>Silvennoinen</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Interferon-induced nuclear signaling by Jak protein tyrosine kinases</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nature</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>366</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1993</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>583</sb:first-page>
+                              <sb:last-page>585</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB2">
+                     <ce:label>2</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.J.</ce:given-name>
+                                 <ce:surname>O'Shea</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Cytokine signaling in 2002: new surprises in the JAK/STAT pathway</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>109</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>S121</sb:first-page>
+                              <sb:last-page>S131</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB3">
+                     <ce:label>3</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.W.</ce:given-name>
+                                 <ce:surname>Schindler</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>JAK-STAT signaling in human disease</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Clin. Invest.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>109</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1133</sb:first-page>
+                              <sb:last-page>1137</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB4">
+                     <ce:label>4</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>X.</ce:given-name>
+                                 <ce:surname>Chen</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A reinterpretation of the dimerization interface of the N-terminal domains of STATs</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Protein Sci.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>12</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>361</sb:first-page>
+                              <sb:last-page>365</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB5">
+                     <ce:label>5</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Kisseleva</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Signaling through the JAK/STAT pathway, recent advances and future challenges</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Gene</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>285</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1</sb:first-page>
+                              <sb:last-page>24</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB6">
+                     <ce:label>6</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>W.</ce:given-name>
+                                 <ce:surname>Rodgers</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Zavzavadjian</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Glycolipid-enriched membrane domains are assembled into membrane patches by associating with the actin cytoskeleton</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Exp. Cell Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>267</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>173</sb:first-page>
+                              <sb:last-page>183</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB7">
+                     <ce:label>7</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.M.</ce:given-name>
+                                 <ce:surname>Kaplan</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The first seven amino acids encoded by the v-src oncogene act as a myristylation signal: lysine 7 is a critical determinant</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cell. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1988</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2435</sb:first-page>
+                              <sb:last-page>2441</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB8">
+                     <ce:label>8</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Diehl</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Rincon</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The two faces of IL-6 on Th1/Th2 differentiation</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Immunol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>39</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>531</sb:first-page>
+                              <sb:last-page>536</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB9">
+                     <ce:label>9</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Rottapel</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The tumor suppressor activity of SOCS-1</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Oncogene</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>21</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>4351</sb:first-page>
+                              <sb:last-page>4362</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB10">
+                     <ce:label>10</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>P.</ce:given-name>
+                                 <ce:surname>Saharinen</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Autoinhibition of Jak2 tyrosine kinase is dependent on specific regions in its pseudokinase domain</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Biol. Cell</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>14</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1448</sb:first-page>
+                              <sb:last-page>1459</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB11">
+                     <ce:label>11</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.</ce:given-name>
+                                 <ce:surname>Shuai</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Liu</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Regulation of JAK–STAT signalling in the immune system</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Rev. Immunol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>3</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>900</sb:first-page>
+                              <sb:last-page>911</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB12">
+                     <ce:label>12</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.J.</ce:given-name>
+                                 <ce:surname>Rodig</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Disruption of the <ce:italic>Jak1</ce:italic> gene demonstrates obligatory and nonredundant roles of the Jaks in cytokine-induced biologic responses</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>93</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1998</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>373</sb:first-page>
+                              <sb:last-page>383</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB13">
+                     <ce:label>13</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.M.</ce:given-name>
+                                 <ce:surname>Russell</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Mutation of Jak3 in a patient with SCID: essential role of Jak3 in lymphoid development</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>270</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1995</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>797</sb:first-page>
+                              <sb:last-page>800</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB14">
+                     <ce:label>14</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Cetkovic-Cvrlje</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Targeting Jak3 with JANEX-1 for prevention of autoimmune type 1 diabetes in NOD mice</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Clin. Immunol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>106</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>213</sb:first-page>
+                              <sb:last-page>225</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB15">
+                     <ce:label>15</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Y.</ce:given-name>
+                                 <ce:surname>Seto</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Enhanced Th2 cell-mediated allergic inflammation in Tyk2-deficient mice</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Immunol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>170</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1077</sb:first-page>
+                              <sb:last-page>1083</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB16">
+                     <ce:label>16</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Alas</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Bonavida</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibition of constitutive STAT3 activity sensitizes resistant non-Hodgkin's lymphoma and multiple myeloma to chemotherapeutic drug-mediated apoptosis</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Clin. Cancer Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>9</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>316</sb:first-page>
+                              <sb:last-page>326</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB17">
+                     <ce:label>17</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>G.S.</ce:given-name>
+                                 <ce:surname>Campbell</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Constitutive activation of Jak1 in Src-transformed cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>272</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1997</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2591</sb:first-page>
+                              <sb:last-page>2594</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB18">
+                     <ce:label>18</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Garcia</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Constitutive activation of STAT3 in fibroblasts transformed by diverse oncoproteins and in breast carcinoma cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell Growth Differ.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1997</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1267</sb:first-page>
+                              <sb:last-page>1276</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB19">
+                     <ce:label>19</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Bromberg</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Stat proteins and oncogenesis</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Clin. Invest.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>109</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1139</sb:first-page>
+                              <sb:last-page>1142</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB20">
+                     <ce:label>20</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>T.S.</ce:given-name>
+                                 <ce:surname>Migone</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Constitutively activated Jak–STAT pathway in T cells transformed with HTLV-I</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>269</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1995</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>79</sb:first-page>
+                              <sb:last-page>81</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB21">
+                     <ce:label>21</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Turkson</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>STAT3 activation by Src induces specific gene regulation and is required for cell transformation</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cell. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>18</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1998</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2545</sb:first-page>
+                              <sb:last-page>2552</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB22">
+                     <ce:label>22</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.B.</ce:given-name>
+                                 <ce:surname>Pernis</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>P.B.</ce:given-name>
+                                 <ce:surname>Rothman</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>JAK-STAT signaling in asthma</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Clin. Invest.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>109</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1279</sb:first-page>
+                              <sb:last-page>1283</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB23">
+                     <ce:label>23</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Luo</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Cellular distribution and contribution of cyclooxygenase COX-2 to diabetogenesis in NOD mouse</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cell Tissue Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>310</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>169</sb:first-page>
+                              <sb:last-page>175</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB24">
+                     <ce:label>24</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.H.</ce:given-name>
+                                 <ce:surname>Hanke</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Discovery of a novel, potent, and Src family-selective tyrosine kinase inhibitor</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>271</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1996</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>695</sb:first-page>
+                              <sb:last-page>701</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB25">
+                     <ce:label>25</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>U.</ce:given-name>
+                                 <ce:surname>Gimsa</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibitors of Src-family tyrosine kinases favour Th2 differentiation</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Cytokine</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>11</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>208</sb:first-page>
+                              <sb:last-page>215</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB26">
+                     <ce:label>26</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.D.</ce:given-name>
+                                 <ce:surname>Holdorf</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Regulation of Lck activity by CD4 and CD28 in the immunological synapse</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Immunol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>3</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>259</sb:first-page>
+                              <sb:last-page>264</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB27">
+                     <ce:label>27</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Tkaczuk</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Effect of anti-IL-2Rα antibody on IL-2-induced Jak/STAT signaling</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Am. J. Transplant.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>2</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>31</sb:first-page>
+                              <sb:last-page>40</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB28">
+                     <ce:label>28</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.M.</ce:given-name>
+                                 <ce:surname>Stepkowski</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Selective inhibitor of Janus tyrosine kinase 3, PNU156804, prolongs allograft survival and acts synergistically with cyclosporine but additively with rapamycin</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Blood</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>99</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>680</sb:first-page>
+                              <sb:last-page>689</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB29">
+                     <ce:label>29</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>F.</ce:given-name>
+                                 <ce:surname>Vincenti</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>What's new – what's hot, what's in the pipeline? New immunosuppressive drugs in transplantation</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Am. J. Transplant.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>2</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>898</sb:first-page>
+                              <sb:last-page>903</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB30">
+                     <ce:label>30</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Bajorath</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Integration of virtual and high-throughput screening</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Rev. Drug Discov.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>1</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>882</sb:first-page>
+                              <sb:last-page>894</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB31">
+                     <ce:label>31</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Z.</ce:given-name>
+                                 <ce:surname>Guo</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Designing small-molecule switches for protein–protein interactions</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>288</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2042</sb:first-page>
+                              <sb:last-page>2045</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB32">
+                     <ce:label>32</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>N.</ce:given-name>
+                                 <ce:surname>Meydan</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibition of acute lymphoblastic leukaemia by a Jak-2 inhibitor</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nature</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>379</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1996</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>645</sb:first-page>
+                              <sb:last-page>648</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB33">
+                     <ce:label>33</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.J.</ce:given-name>
+                                 <ce:surname>Duhe</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Characterization of the <ce:italic>in vitro</ce:italic> kinase activity of a partially purified soluble GST/JAK2 fusion protein</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Mol. Cell. Biochem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>236</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>23</sb:first-page>
+                              <sb:last-page>35</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB34">
+                     <ce:label>34</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>B.J.</ce:given-name>
+                                 <ce:surname>Druker</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Chronic myeloid leukemia in the imatinib era</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Semin. Hematol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>40</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1</sb:first-page>
+                              <sb:last-page>3</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB35">
+                     <ce:label>35</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>E.</ce:given-name>
+                                 <ce:surname>Buchdunger</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Abl protein-tyrosine kinase inhibitor STI571 inhibits <ce:italic>in vitro</ce:italic> signal transduction mediated by c-kit and platelet-derived growth factor receptors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Pharmacol. Exp. Ther.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>295</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>139</sb:first-page>
+                              <sb:last-page>145</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB36">
+                     <ce:label>36</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>F.M.</ce:given-name>
+                                 <ce:surname>Uckun</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structure-based design of novel anticancer agents</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Cancer Drug Targets</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>1</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>59</sb:first-page>
+                              <sb:last-page>71</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB37">
+                     <ce:label>37</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.R.</ce:given-name>
+                                 <ce:surname>Simon</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Role of the JAK–STAT pathway in PDGF-stimulated proliferation of human airway smooth muscle cells</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Am. J. Physiol. Lung Cell. Mol. Physiol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>282</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1296</sb:first-page>
+                              <sb:last-page>1304</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB38">
+                     <ce:label>38</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Blundell</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>High-throughput crystallography for lead discovery in drug design</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Rev. Drug Discov.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>1</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>45</sb:first-page>
+                              <sb:last-page>54</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB39">
+                     <ce:label>39</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Schindler</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structural mechanism for STI-571 inhibition of Abelson tyrosine kinase</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>289</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1938</sb:first-page>
+                              <sb:last-page>1942</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB40">
+                     <ce:label>40</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Capdeville</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Glivec (STI571, imatinib), a rationally developed, targeted anticancer drug</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Rev. Drug Discov.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>1</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>493</sb:first-page>
+                              <sb:last-page>502</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB41">
+                     <ce:label>41</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>H.</ce:given-name>
+                                 <ce:surname>Yamaguchi</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>W.A.</ce:given-name>
+                                 <ce:surname>Hendrickson</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structural basis for activation of human lymphocyte kinase Lck upon tyrosine phosphorylation</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nature</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>384</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1996</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>484</sb:first-page>
+                              <sb:last-page>489</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB42">
+                     <ce:label>42</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.S.</ce:given-name>
+                                 <ce:surname>Lam</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Applications of one-bead one-compound combinatorial libraries and chemical microarrays in signal transduction research</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Acc. Chem. Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>36</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>370</sb:first-page>
+                              <sb:last-page>377</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB43">
+                     <ce:label>43</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.H.</ce:given-name>
+                                 <ce:surname>Kang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Non-phosphopeptide inhibitor for lck sh2 domain: solid-phase synthesis and structure–activity relationship of rosmarinic acid analogs</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bull. Korean Chem. Soc.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>24</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>664</sb:first-page>
+                              <sb:last-page>666</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB44">
+                     <ce:label>44</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Waltenberger</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Dual inhibitor of platelet-derived growth factor β-receptor and src kinase activity potently interferes with motogenic and mitogenic responses to PDGF in vascular smooth muscle cells, a novel candidate for prevention of vascular remodeling</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Circ. Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>85</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>12</sb:first-page>
+                              <sb:last-page>22</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB45">
+                     <ce:label>45</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.</ce:given-name>
+                                 <ce:surname>Parang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Mechanism-based design of a protein kinase inhibitor</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Struct. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>37</sb:first-page>
+                              <sb:last-page>41</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB46">
+                     <ce:label>46</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Martinez</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>First non-ATP competitive glycogen synthase kinase 3, (GSK-3) inhibitors: thiadiazolidinones (TDZD) as potential drugs for the treatment of Alzheimer's disease</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>45</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1292</sb:first-page>
+                              <sb:last-page>1299</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB47">
+                     <ce:label>47</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Karni</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The pp60c-Src inhibitor PP1 is non-competitive against ATP</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>FEBS Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>537</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>47</sb:first-page>
+                              <sb:last-page>52</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB48">
+                     <ce:label>48</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Halazy</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Signal transduction: an exciting field of investigation for small molecule drug discovery</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Molecules.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>349</sb:first-page>
+                              <sb:last-page>358</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB49">
+                     <ce:label>49</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>G.R.</ce:given-name>
+                                 <ce:surname>Brown</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Naphthyl ketones: a new class of Janus kinase 3 inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>10</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>575</sb:first-page>
+                              <sb:last-page>579</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB50">
+                     <ce:label>50</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.R.</ce:given-name>
+                                 <ce:surname>Hubbard</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Crystal structure of the activated insulin receptor tyrosine kinase in complex with peptide substrate and ATP analog</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>EMBO J.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>16</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1997</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>5572</sb:first-page>
+                              <sb:last-page>5581</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB51">
+                     <ce:label>51</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Mao</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Crystal structure of Bruton's tyrosine kinase domain suggests a novel pathway for activation and provides insights into the molecular basis of x-linked agammaglobulinemia</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>276</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2001</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>41435</sb:first-page>
+                              <sb:last-page>41443</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB52">
+                     <ce:label>52</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.E.</ce:given-name>
+                                 <ce:surname>Arris</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Identification of novel purine and pyrimidine cyclin-dependent kinase inhibitors with distinct molecular interactions and tumor cell growth inhibition profiles</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>43</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2797</sb:first-page>
+                              <sb:last-page>2804</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB53">
+                     <ce:label>53</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.V.</ce:given-name>
+                                 <ce:surname>Frye</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Structure-activity relationship homology (SARAH): a conceptual framework for drug discovery in the genomic era</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Chem. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>6</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>R3</sb:first-page>
+                              <sb:last-page>R7</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB54">
+                     <ce:label>54</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Y.C.</ce:given-name>
+                                 <ce:surname>Martin</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Do structurally similar molecules have similar biological activity?</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>45</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>4350</sb:first-page>
+                              <sb:last-page>4358</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB55">
+                     <ce:label>55</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Gazit</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Tyrphostins I: synthesis and biological activity of protein tyrosine kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>32</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1989</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2344</sb:first-page>
+                              <sb:last-page>2352</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB56">
+                     <ce:label>56</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.K.</ce:given-name>
+                                 <ce:surname>Huang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Polyhydroxylated 3-(N-phenyl) carbamoyl-2-iminochromene derivatives as potent inhibitors of tyrosine kinase pp60c-src</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>5</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1995</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2423</sb:first-page>
+                              <sb:last-page>2428</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="BIB57">
+                     <ce:label>57</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.L.</ce:given-name>
+                                 <ce:surname>Milkiewicz</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The design, synthesis, and activity of non-ATP competitive inhibitors of the pp60c-src tyrosine kinase 2. Hydroxyindole derivatives</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Bioorg. Med. Chem. Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>10</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2000</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>483</sb:first-page>
+                              <sb:last-page>486</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+               </ce:bibliography-sec>
+            </ce:bibliography>
+         </tail>
+      </converted-article>
+   </xocs:serial-item></xocs:doc></originaltext></full-text-retrieval-response>

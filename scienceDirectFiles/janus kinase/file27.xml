@@ -1,0 +1,1764 @@
+<full-text-retrieval-response xmlns="http://www.elsevier.com/xml/svapi/article/dtd" xmlns:bk="http://www.elsevier.com/xml/bk/dtd" xmlns:cals="http://www.elsevier.com/xml/common/cals/dtd" xmlns:ce="http://www.elsevier.com/xml/common/dtd" xmlns:ja="http://www.elsevier.com/xml/ja/dtd" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:sa="http://www.elsevier.com/xml/common/struct-aff/dtd" xmlns:sb="http://www.elsevier.com/xml/common/struct-bib/dtd" xmlns:tb="http://www.elsevier.com/xml/common/table/dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xocs="http://www.elsevier.com/xml/xocs/dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><coredata><prism:url>https://api.elsevier.com/content/article/pii/S1740676510000167</prism:url><dc:identifier>doi:10.1016/j.ddmec.2010.07.006</dc:identifier><eid>1-s2.0-S1740676510000167</eid><prism:doi>10.1016/j.ddmec.2010.07.006</prism:doi><pii>S1740-6765(10)00016-7</pii><dc:title>Developing small molecules to inhibit kinases unkind to the heart: p38 MAPK as a case in point </dc:title><prism:publicationName>Drug Discovery Today: Disease Mechanisms</prism:publicationname><prism:aggregationType>Journal</prism:aggregationtype><pubType>rev</pubtype><prism:issn>17406765</prism:issn><prism:volume>7</prism:volume><prism:issueIdentifier>2</prism:issueidentifier><prism:startingPage>e123</prism:startingpage><prism:endingPage>e127</prism:endingpage><prism:pageRange>e123-e127</prism:pagerange><prism:number>2</prism:number><dc:format>text/xml</dc:format><prism:coverDate>2010-08-31</prism:coverdate><prism:coverDisplayDate>Summer 2010</prism:coverdisplaydate><prism:copyright>Copyright © 2010 Elsevier Ltd. All rights reserved.</prism:copyright><prism:publisher>Elsevier Ltd.</prism:publisher><prism:issueName>Cardiology - Mechanisms underlying heart failure</prism:issuename><dc:creator>Marber, Michael S.</dc:creator><dc:creator>Molkentin, Jeffery D.</dc:creator><dc:creator>Force, Thomas</dc:creator><dc:description>
+                  Over the past 40 years targeting G-protein-coupled receptors and their ligands has had a major impact on the treatment of cardiovascular disease. However, the past decade has seen little progress and focus has shifted, particularly in the field of cancer biology, to downstream kinases. This review focuses on the kinases within the heart that become active during myocardial infarction and heart failure and contribute to cardiac dysfunction, with a special emphasis on p38 mitogen-activated protein kinase (MAPK).
+               </dc:description><openaccess>0</openaccess><openaccessArticle>false</openaccessarticle><openaccessType/></openaccesstype><openArchiveArticle>false</openarchivearticle><openaccessSponsorName/></openaccesssponsorname><openaccessSponsorType/></openaccesssponsortype><openaccessUserLicense/></openaccessuserlicense><link href="https://api.elsevier.com/content/article/pii/S1740676510000167" rel="self"/></link><link href="https://www.sciencedirect.com/science/article/pii/S1740676510000167" rel="scidir"/></link></coredata><scopus-id>78649334956</scopus-id><scopus-eid>2-s2.0-78649334956</scopus-eid><link href="https://api.elsevier.com/content/abstract/scopus_id/78649334956" rel="abstract"/></link><originalText><xocs:doc xsi:schemaLocation="http://www.elsevier.com/xml/xocs/dtd http://null/schema/dtds/document/fulltext/xcr/xocs-article.xsd"><xocs:meta xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <xocs:content-family>serial</xocs:content-family>
+      <xocs:content-type>JL</xocs:content-type>
+      <xocs:cid>273196</xocs:cid>
+      <xocs:ssids>
+         <xocs:ssid type="alllist">291210</xocs:ssid>
+         <xocs:ssid type="subj">291727</xocs:ssid>
+         <xocs:ssid type="subj">291850</xocs:ssid>
+         <xocs:ssid type="subj">291928</xocs:ssid>
+         <xocs:ssid type="content">31</xocs:ssid>
+      </xocs:ssids>
+      <xocs:srctitle>Drug Discovery Today: Disease Mechanisms</xocs:srctitle>
+      <xocs:normalized-srctitle>DRUGDISCOVERYTODAYDISEASEMECHANISMS</xocs:normalized-srctitle>
+      <xocs:orig-load-date yyyymmdd="20100816">2010-08-16</xocs:orig-load-date>
+      <xocs:available-online-date yyyymmdd="20100816">2010-08-16</xocs:available-online-date>
+      <xocs:ew-transaction-id>2010-11-18T22:11:02</xocs:ew-transaction-id>
+      <xocs:eid>1-s2.0-S1740676510000167</xocs:eid>
+      <xocs:pii-formatted>S1740-6765(10)00016-7</xocs:pii-formatted>
+      <xocs:pii-unformatted>S1740676510000167</xocs:pii-unformatted>
+      <xocs:doi>10.1016/j.ddmec.2010.07.006</xocs:doi>
+      <xocs:item-stage>S300</xocs:item-stage>
+      <xocs:item-version-number>S300.1</xocs:item-version-number>
+      <xocs:item-weight>FULL-TEXT</xocs:item-weight>
+      <xocs:hub-eid>1-s2.0-S1740676510X00049</xocs:hub-eid>
+      <xocs:timestamp yyyymmdd="20150515">2015-05-15T07:05:33.928974-04:00</xocs:timestamp>
+      <xocs:dco>0</xocs:dco>
+      <xocs:tomb>0</xocs:tomb>
+      <xocs:date-search-begin>20100601</xocs:date-search-begin>
+      <xocs:date-search-end>20100831</xocs:date-search-end>
+      <xocs:year-nav>2010</xocs:year-nav>
+      <xocs:indexeddate epoch="1281916800">2010-08-16T00:00:00Z</xocs:indexeddate>
+      <xocs:articleinfo>articleinfo crossmark dco dateupdated tomb dateloaded datesearch indexeddate issuelist volumelist yearnav articletitlenorm authfirstinitialnorm authfirstsurnamenorm cid cids confeditor contenttype copyright dateloadedtxt docsubtype doctype doi eid ewtransactionid hubeid issfirst issn issnnorm itemstage itemtransactionid itemweight openaccess openarchive pg pgfirst pglast pii piinorm pubdateend pubdatestart pubdatetxt pubyr sectiontitle sortorder srctitle srctitlenorm srctype subheadings vol volfirst volissue webpdf webpdfpagecount table body affil articletitle auth authfirstini authfull authlast misctext primabst pubtype ref alllist content subj ssids</xocs:articleinfo>
+      <xocs:issns>
+         <xocs:issn-primary-formatted>1740-6765</xocs:issn-primary-formatted>
+         <xocs:issn-primary-unformatted>17406765</xocs:issn-primary-unformatted>
+      </xocs:issns>
+      <xocs:crossmark is-crossmark="0"/></xocs:crossmark>
+      <xocs:vol-first>7</xocs:vol-first>
+      <xocs:volume-list>
+         <xocs:volume>7</xocs:volume>
+      </xocs:volume-list>
+      <xocs:iss-first>2</xocs:iss-first>
+      <xocs:issue-list>
+         <xocs:issue>2</xocs:issue>
+      </xocs:issue-list>
+      <xocs:vol-iss-suppl-text>Volume 7, Issue 2</xocs:vol-iss-suppl-text>
+      <xocs:sort-order>8</xocs:sort-order>
+      <xocs:first-fp>e123</xocs:first-fp>
+      <xocs:last-lp>e127</xocs:last-lp>
+      <xocs:pages>
+         <xocs:first-page>e123</xocs:first-page>
+         <xocs:last-page>e127</xocs:last-page>
+      </xocs:pages>
+      <xocs:cover-date-orig>
+         <xocs:start-date>201022</xocs:start-date>
+      </xocs:cover-date-orig>
+      <xocs:cover-date-text>Summer 2010</xocs:cover-date-text>
+      <xocs:cover-date-start>2010-06-01</xocs:cover-date-start>
+      <xocs:cover-date-end>2010-08-31</xocs:cover-date-end>
+      <xocs:cover-date-year>2010</xocs:cover-date-year>
+      <xocs:title-editors-groups>
+         <xocs:title-editors-group>
+            <ce:title>Cardiology - Mechanisms underlying heart failure</ce:title>
+            <ce:editors>
+               <ce:author-group>
+                  <ce:author>
+                     <ce:given-name>Mark</ce:given-name>
+                     <ce:surname>Anderson</ce:surname>
+                  </ce:author>
+               </ce:author-group>
+            </ce:editors>
+         </xocs:title-editors-group>
+      </xocs:title-editors-groups>
+      <xocs:hub-sec>
+         <xocs:hub-sec-title>Reviews</xocs:hub-sec-title>
+      </xocs:hub-sec>
+      <xocs:document-type>article</xocs:document-type>
+      <xocs:document-subtype>rev</xocs:document-subtype>
+      <xocs:copyright-line>Copyright © 2010 Elsevier Ltd. All rights reserved.</xocs:copyright-line>
+      <xocs:normalized-article-title>DEVELOPINGSMALLMOLECULESINHIBITKINASESUNKINDHEARTP38MAPKACASEINPOINT</xocs:normalized-article-title>
+      <xocs:normalized-first-auth-surname>MARBER</xocs:normalized-first-auth-surname>
+      <xocs:normalized-first-auth-initial>M</xocs:normalized-first-auth-initial>
+      <xocs:item-toc>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Introduction</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>What causes heart failure?</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Structural determinants of p38 utilized by inhibitors</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Optimizing p38 inhibitors</xocs:item-toc-section-title>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>ATP-competitive agents</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+            <xocs:item-toc-entry ref-elem="ce:sections">
+               <xocs:item-toc-section-title>Targeting other regions of the kinase</xocs:item-toc-section-title>
+            </xocs:item-toc-entry>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Other strategies to inhibit p38</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Adverse events with p38 inhibition</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Early phase clinical trials with p38 inhibitors</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:sections">
+            <xocs:item-toc-section-title>Conclusions</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+         <xocs:item-toc-entry ref-elem="ce:bibliography">
+            <xocs:item-toc-section-title>References</xocs:item-toc-section-title>
+         </xocs:item-toc-entry>
+      </xocs:item-toc>
+      <xocs:references>
+         <xocs:ref-info refid="bib0005">
+            <xocs:ref-normalized-surname>CLARK</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2007</xocs:ref-pub-year>
+            <xocs:ref-first-fp>192</xocs:ref-first-fp>
+            <xocs:ref-last-lp>206</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0010">
+            <xocs:ref-normalized-surname>KERKELA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2006</xocs:ref-pub-year>
+            <xocs:ref-first-fp>556</xocs:ref-first-fp>
+            <xocs:ref-last-lp>558</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0015">
+            <xocs:ref-normalized-surname>KAISER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2004</xocs:ref-pub-year>
+            <xocs:ref-first-fp>15524</xocs:ref-first-fp>
+            <xocs:ref-last-lp>15530</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0020">
+            <xocs:ref-normalized-surname>KUMPHUNE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2968</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2975</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0025">
+            <xocs:ref-normalized-surname>KARCHER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>655</xocs:ref-first-fp>
+            <xocs:ref-last-lp>676</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0030">
+            <xocs:ref-normalized-surname>ZHANG</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2007</xocs:ref-pub-year>
+            <xocs:ref-first-fp>286</xocs:ref-first-fp>
+            <xocs:ref-last-lp>295</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0035">
+            <xocs:ref-normalized-surname>COULTHARD</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>369</xocs:ref-first-fp>
+            <xocs:ref-last-lp>379</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>L</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0040">
+            <xocs:ref-normalized-surname>GOLDSTEIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>2345</xocs:ref-first-fp>
+            <xocs:ref-last-lp>2353</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>D</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0045">
+            <xocs:ref-normalized-surname>GUM</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1998</xocs:ref-pub-year>
+            <xocs:ref-first-fp>15605</xocs:ref-first-fp>
+            <xocs:ref-last-lp>15610</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0050">
+            <xocs:ref-normalized-surname>PARGELLIS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>268</xocs:ref-first-fp>
+            <xocs:ref-last-lp>272</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0055">
+            <xocs:ref-normalized-surname>VOGTHERR</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2006</xocs:ref-pub-year>
+            <xocs:ref-first-fp>993</xocs:ref-first-fp>
+            <xocs:ref-last-lp>997</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0060">
+            <xocs:ref-normalized-surname>KUMA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>19472</xocs:ref-first-fp>
+            <xocs:ref-last-lp>19479</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>Y</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0065">
+            <xocs:ref-normalized-surname>NOEL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2008</xocs:ref-pub-year>
+            <xocs:ref-first-fp>323</xocs:ref-first-fp>
+            <xocs:ref-last-lp>330</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0070">
+            <xocs:ref-normalized-surname>GODL</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>15434</xocs:ref-first-fp>
+            <xocs:ref-last-lp>15439</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>K</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0075">
+            <xocs:ref-normalized-surname>JACQUET</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2008</xocs:ref-pub-year>
+            <xocs:ref-first-fp>11964</xocs:ref-first-fp>
+            <xocs:ref-last-lp>11971</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0080">
+            <xocs:ref-normalized-surname>BAIN</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2007</xocs:ref-pub-year>
+            <xocs:ref-first-fp>297</xocs:ref-first-fp>
+            <xocs:ref-last-lp>315</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0085">
+            <xocs:ref-normalized-surname>EYERS</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>1999</xocs:ref-pub-year>
+            <xocs:ref-first-fp>191</xocs:ref-first-fp>
+            <xocs:ref-last-lp>196</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0090">
+            <xocs:ref-normalized-surname>OKEEFE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2007</xocs:ref-pub-year>
+            <xocs:ref-first-fp>34663</xocs:ref-first-fp>
+            <xocs:ref-last-lp>34671</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>S</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0095">
+            <xocs:ref-normalized-surname>DOMINGUEZ</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>421</xocs:ref-first-fp>
+            <xocs:ref-last-lp>430</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>C</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0100">
+            <xocs:ref-normalized-surname>GE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2002</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1291</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1294</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>B</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0105">
+            <xocs:ref-normalized-surname>TANNO</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2003</xocs:ref-pub-year>
+            <xocs:ref-first-fp>254</xocs:ref-first-fp>
+            <xocs:ref-last-lp>261</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0110">
+            <xocs:ref-normalized-surname>LI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>872</xocs:ref-first-fp>
+            <xocs:ref-last-lp>879</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0115">
+            <xocs:ref-normalized-surname>FIEDLER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2006</xocs:ref-pub-year>
+            <xocs:ref-first-fp>32831</xocs:ref-first-fp>
+            <xocs:ref-last-lp>32840</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>B</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0120">
+            <xocs:ref-normalized-surname>SHI</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>4188</xocs:ref-first-fp>
+            <xocs:ref-last-lp>4193</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0125">
+            <xocs:ref-normalized-surname>OTA</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1404</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1412</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>A</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0130">
+            <xocs:ref-normalized-surname>SALVADOR</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-first-fp>390</xocs:ref-first-fp>
+            <xocs:ref-last-lp>395</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>J</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0135">
+            <xocs:ref-normalized-surname>SICARD</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2010</xocs:ref-pub-year>
+            <xocs:ref-first-fp>1324</xocs:ref-first-fp>
+            <xocs:ref-last-lp>1328</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>P</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0140">
+            <xocs:ref-normalized-surname>GENOVESE</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>317</xocs:ref-first-fp>
+            <xocs:ref-last-lp>320</xocs:ref-last-lp>
+            <xocs:ref-normalized-initial>M</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0145">
+            <xocs:ref-normalized-surname>DEWINTER</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2005</xocs:ref-pub-year>
+            <xocs:ref-normalized-initial>R</xocs:ref-normalized-initial>
+            <xocs:ref-normalized-srctitle>AHASCIENTIFICSESSIONSEPOSTERSARCHIVE2005POSTER606</xocs:ref-normalized-srctitle>
+            <xocs:ref-normalized-article-title>AMAJORDETERMINANTCRPPRODUCTIONINPATIENTSACSUNDERGOINGPCIP38MAPKSIGNALINGPATHWAY</xocs:ref-normalized-article-title>
+         </xocs:ref-info>
+         <xocs:ref-info refid="bib0150">
+            <xocs:ref-normalized-surname>SAROVBLAT</xocs:ref-normalized-surname>
+            <xocs:ref-pub-year>2009</xocs:ref-pub-year>
+            <xocs:ref-first-fp>A422</xocs:ref-first-fp>
+            <xocs:ref-normalized-initial>L</xocs:ref-normalized-initial>
+         </xocs:ref-info>
+      </xocs:references>
+      <xocs:refkeys>
+         <xocs:refkey3>MARBERX2010Xe123</xocs:refkey3>
+         <xocs:refkey4lp>MARBERX2010Xe123Xe127</xocs:refkey4lp>
+         <xocs:refkey4ai>MARBERX2010Xe123XM</xocs:refkey4ai>
+         <xocs:refkey5>MARBERX2010Xe123Xe127XM</xocs:refkey5>
+      </xocs:refkeys>
+      <xocs:open-access>
+         <xocs:oa-article-status is-open-access="0" is-open-archive="0"/></xocs:oa-article-status>
+      </xocs:open-access>
+      <xocs:attachment-metadata-doc>
+         <xocs:attachment-set-type>item</xocs:attachment-set-type>
+         <xocs:pii-formatted>S1740-6765(10)00016-7</xocs:pii-formatted>
+         <xocs:pii-unformatted>S1740676510000167</xocs:pii-unformatted>
+         <xocs:eid>1-s2.0-S1740676510000167</xocs:eid>
+         <xocs:doi>10.1016/j.ddmec.2010.07.006</xocs:doi>
+         <xocs:cid>273196</xocs:cid>
+         <xocs:timestamp>2010-11-23T22:33:36.721006-05:00</xocs:timestamp>
+         <xocs:cover-date-start>2010-06-01</xocs:cover-date-start>
+         <xocs:cover-date-end>2010-08-31</xocs:cover-date-end>
+         <xocs:attachments>
+            <xocs:web-pdf>
+               <xocs:attachment-eid>1-s2.0-S1740676510000167-main.pdf</xocs:attachment-eid>
+               <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S1740676510000167/MAIN/application/pdf/72b1d158c1b6ea8978c62f812fdb4dae/main.pdf</xocs:ucs-locator>
+               <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1740676510000167/MAIN/application/pdf/72b1d158c1b6ea8978c62f812fdb4dae/main.pdf</xocs:ucs-locator>
+               <xocs:filename>main.pdf</xocs:filename>
+               <xocs:extension>pdf</xocs:extension>
+               <xocs:pdf-optimized>true</xocs:pdf-optimized>
+               <xocs:filesize>113898</xocs:filesize>
+               <xocs:web-pdf-purpose>MAIN</xocs:web-pdf-purpose>
+               <xocs:web-pdf-page-count>5</xocs:web-pdf-page-count>
+               <xocs:web-pdf-images>
+                  <xocs:web-pdf-image>
+                     <xocs:attachment-eid>1-s2.0-S1740676510000167-main_1.png</xocs:attachment-eid>
+                     <xocs:ucs-locator>https://s3-eu-west-1.amazonaws.com/prod-ucs-content-store-eu-west/content/pii:S1740676510000167/PREVIEW/image/png/6f6543c3566fc3aa937629f99905fab8/main_1.png</xocs:ucs-locator>
+                     <xocs:ucs-locator>https://s3.amazonaws.com/prod-ucs-content-store-us-east/content/pii:S1740676510000167/PREVIEW/image/png/6f6543c3566fc3aa937629f99905fab8/main_1.png</xocs:ucs-locator>
+                     <xocs:filename>main_1.png</xocs:filename>
+                     <xocs:extension>png</xocs:extension>
+                     <xocs:filesize>88208</xocs:filesize>
+                     <xocs:pixel-height>849</xocs:pixel-height>
+                     <xocs:pixel-width>656</xocs:pixel-width>
+                     <xocs:attachment-type>IMAGE-WEB-PDF</xocs:attachment-type>
+                     <xocs:pdf-page-num>1</xocs:pdf-page-num>
+                  </xocs:web-pdf-image>
+               </xocs:web-pdf-images>
+            </xocs:web-pdf>
+         </xocs:attachments>
+      </xocs:attachment-metadata-doc>
+   </xocs:meta><xocs:serial-item xmlns:xoe="http://www.elsevier.com/xml/xoe/dtd">
+      <article xmlns="http://www.elsevier.com/xml/ja/dtd" version="5.1" xml:lang="en" docsubtype="rev">
+         <item-info>
+            <jid>DDMEC</jid>
+            <aid>318</aid>
+            <ce:pii>S1740-6765(10)00016-7</ce:pii>
+            <ce:doi>10.1016/j.ddmec.2010.07.006</ce:doi>
+            <ce:copyright type="full-transfer" year="2010">Elsevier Ltd</ce:copyright>
+         </item-info>
+         <ce:floats>
+            <ce:table xmlns="http://www.elsevier.com/xml/common/cals/dtd" id="tbl0005" frame="topbot" rowsep="1" colsep="0">
+               <ce:label>Table 1</ce:label>
+               <ce:caption>
+                  <ce:simple-para id="spar0010" view="all">Additional protein kinases (non-receptor) implicated in heart disease</ce:simple-para>
+               </ce:caption>
+               <tgroup cols="3">
+                  <colspec colname="col1"/></colspec>
+                  <colspec colname="col2"/></colspec>
+                  <colspec colname="col3"/></colspec>
+                  <thead valign="top">
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>#</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>Abbreviation</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>Long name or secondary name</bold>
+                        </entry>
+                     </row>
+                  </thead>
+                  <tbody>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>1</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Akt1/2/3</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">A.K.A. Protein kinase B (PKB)</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>2</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">ASK1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Apoptosis signal-regulating kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>3</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">AMPK</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">AMP-activated protein kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>4</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Bmx</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">A.K.A. Etk (Tec family member)</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>5</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">CaMKII</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Camodulin-dependent kinase II</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>6</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Cdk9</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Cyclin-dependent kinase 9</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>7</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">DYRK1A</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">DYRK1A</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>8</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">ERK1/2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Extracellular signal-regulated kinase genes 1 and 2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>9</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">ERK5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Extracellular signal-regulated kinase 5 (A.K.A. BMK1)</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>10</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">FAK</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Focal adhesion kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>11</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">GRK2/5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">G-protein-coupled receptor kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>12</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">GSK-3α/β</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Glycogen synthase kinase 3 α and β genes</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>13</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">JNK1/2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">c-jun N-terminal kinase 1 and 2 genes</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>14</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Jak1/2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Janus kinase 1 and 2 genes</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>15</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">ILK-1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Integrin-linked kinase 1</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>16</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Lats2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Lats2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>17</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">LKB1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">LKB1</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>18</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MEK1/2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mitogen-activated protein kinase kinase 1 and 2 genes</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>19</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MEK4</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mitogen-activated protein kinase kinase 4</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>20</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MEK5</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mitogen-activated protein kinase kinase 5</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>21</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MEK3/6</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mitogen-activated protein kinase kinase 3 and 6 genes</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>22</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MEK7</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mitogen-activated protein kinase kinase 7</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>23</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MK2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">MAPK-activated protein kinase 2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>24</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">mTOR</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">mTOR</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>25</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mst1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Mammalian sterile 20-like kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>26</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">p70S6K</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">70-kDa ribosomal protein S6 kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>27</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">p90RSK</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">90-kDa ribosomal S6 kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>28</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Pak1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">p21-activated kinase</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>29</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">PDK1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Phosphoinositide-dependent protein kinase 1</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>30</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">PKGI</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">cGMP-dependent protein kinase type I</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>31</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">PKA</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Protein kinase A</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>32</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">PKCα/β/γ</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Protein kinase C (conventional isoforms α/β/γ genes)</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>33</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">PKCδ/ɛ</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Protein kinase C (novel isoforms δ/e genes)</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>34</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">PKD</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Protein kinase D</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>35</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Pyk2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Pyk2</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>36</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Raf-1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Raf-1</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>37</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">ROCK1/2</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Rho-kinase 1 and 2 genes</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>38</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">SGK1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Serum and glucocorticoid-inducible kinase 1</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>39</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Src</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">Src</entry>
+                     </row>
+                     <row>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">
+                           <bold>40</bold>
+                        </entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">TAK1</entry>
+                        <entry xmlns="http://www.elsevier.com/xml/common/dtd" align="left">TGFβ-activated protein kinase</entry>
+                     </row>
+                  </tbody>
+               </tgroup>
+            </ce:table>
+         </ce:floats>
+         <head>
+            <ce:dochead>
+               <ce:textfn>Cardiology – Mechanisms underlying heart failure</ce:textfn>
+            </ce:dochead>
+            <ce:title>Developing small molecules to inhibit kinases unkind to the heart: p38 MAPK as a case in point</ce:title>
+            <ce:author-group>
+               <ce:author>
+                  <ce:given-name>Michael S.</ce:given-name>
+                  <ce:surname>Marber</ce:surname>
+                  <ce:cross-ref refid="aff0005">
+                     <ce:sup loc="post">1</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author>
+                  <ce:given-name>Jeffery D.</ce:given-name>
+                  <ce:surname>Molkentin</ce:surname>
+                  <ce:cross-ref refid="aff0010">
+                     <ce:sup loc="post">2</ce:sup>
+                  </ce:cross-ref>
+               </ce:author>
+               <ce:author>
+                  <ce:given-name>Thomas</ce:given-name>
+                  <ce:surname>Force</ce:surname>
+                  <ce:cross-ref refid="aff0015">
+                     <ce:sup loc="post">3</ce:sup>
+                  </ce:cross-ref>
+                  <ce:cross-ref refid="cor0005">
+                     <ce:sup loc="post">⁎</ce:sup>
+                  </ce:cross-ref>
+                  
+               </ce:author>
+               <ce:affiliation id="aff0005">
+                  <ce:label>1</ce:label>
+                  <ce:textfn>King's Health Partners, St Thomas’ Hospital Campus, London SE1 7EH, UK</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff0010">
+                  <ce:label>2</ce:label>
+                  <ce:textfn>Children's Hospital Medical Center, Howard Hughes Medical Institute, 240 Albert Sabin Way, MLC7020, Cincinnati, OH 45229-3039, USA</ce:textfn>
+               </ce:affiliation>
+               <ce:affiliation id="aff0015">
+                  <ce:label>3</ce:label>
+                  <ce:textfn>Thomas Jefferson University, 1025 Walnut Street, 316 College Building, Philadelphia, PA 19107, USA</ce:textfn>
+               </ce:affiliation>
+               <ce:correspondence id="cor0005">
+                  <ce:label>⁎</ce:label>
+                  <ce:text>Corresponding author.</ce:text>
+               </ce:correspondence>
+            </ce:author-group>
+            <ce:miscellaneous>
+               <ce:bold>Section editor</ce:bold>: Mark Anderson – University of Iowa, Carver College of Medicine, Molecular Physiology; Biophysics, Iowa City, USA</ce:miscellaneous>
+            <ce:abstract class="author"><ce:abstract-sec>
+                  <ce:simple-para id="spar0005" view="all">Over the past 40 years targeting G-protein-coupled receptors and their ligands has had a major impact on the treatment of cardiovascular disease. However, the past decade has seen little progress and focus has shifted, particularly in the field of cancer biology, to downstream kinases. This review focuses on the kinases within the heart that become active during myocardial infarction and heart failure and contribute to cardiac dysfunction, with a special emphasis on p38 mitogen-activated protein kinase (MAPK).</ce:simple-para>
+               </ce:abstract-sec></ce:abstract>
+         </head>
+         <body view="all">
+            <ce:sections>
+               <ce:section id="sec0005" view="all">
+                  <ce:section-title>Introduction</ce:section-title>
+                  <ce:para id="par0005" view="all">Heart failure is a leading cause of morbidity and mortality and is extremely expensive to treat. The targeting of ‘proximal’ G-protein-coupled receptors has been the major focus of the pharmaceutical industry over the past four decades. Although this research has delivered drugs that improve heart failure mortality, outlook still remains dismal with up to 40% of newly diagnosed patients being hospitalized or dying within 12 months despite blockade οf β- and α-adrenoceptors and the renin–angiotensin–aldosterone system. The targeting of ‘downstream’ protein kinases has now become the primary focus of industry and is having a major impact in cancer treatment. The benefit has so far been restricted to oncology because it is the field in which the biological role of kinases was first investigated, is best understood and therefore rational translation of findings is possible. In this review we highlight those kinases that have been implicated in the aggravation of heart failure and illustrate the pathway to developing pharmacological inhibitors by focusing on the p38 mitogen-activated protein kinases.</ce:para>
+               </ce:section>
+               <ce:section id="sec0010" view="all">
+                  <ce:section-title>What causes heart failure?</ce:section-title>
+                  <ce:para id="par0010" view="all">As hypertension is treated more aggressively, the etiology underlying chronic heart failure has shifted from being primarily hypertensive to being primarily ischemic. After myocardial infarction (MI) a series of events occur which ultimately lead to progressive left ventricular dilatation and heart failure. Surprisingly, the process of progressive dilatation of the left ventricle is most usually independent of further episodes of MI and may become autonomous through varied mechanisms. A simplified framework to describe the complex pathophysiology is to divide the process into a stage of acute myocardial death as a result of infarction, expansion of the area of infarction as a result of poor healing and secondary changes in the remote myocardium away from the area of infarction that lead to hypertrophy, myocyte death and fibrosis. A multitude of kinases are activated during each of these processes and their inhibition by pharmacological or genetic means benefits one or more stages of the pathophysiological process leading to heart failure (see <ce:cross-ref refid="tbl0005">Table 1</ce:cross-ref>
+                     <ce:float-anchor refid="tbl0005"/></ce:float-anchor> for review). Among this plethora of kinases implicated in the pathophysiology of heart disease are the p38 mitogen-activated protein kinases (p38s) [<ce:cross-refs refid="bib0005 bib0010 bib0015">1–3</ce:cross-refs>].</ce:para>
+               </ce:section>
+               <ce:section id="sec0015" view="all">
+                  <ce:section-title>Structural determinants of p38 utilized by inhibitors</ce:section-title>
+                  <ce:para id="par0015" view="all">Th p38 family comprises four isoforms α, β, γ and δ of which α and γ are most highly expressed within the heart. The α and β isoforms share a gatekeeper threonine residue at position 106 (Thr 106) in both human and murine isoforms [<ce:cross-ref refid="bib0020">4</ce:cross-ref>]. This gatekeeper guards a hydrophobic (back)pocket(I) probed by the classic pyridinylimidazole inhibitors discovered to have anti-inflammatory activity through inhibition of this pathway almost two decades ago [<ce:cross-ref refid="bib0025">5</ce:cross-ref>]. The terms in parenthesis apply to the nomenclature adopted to describe the 5 subregions of ATP-binding site used in the design of ATP-competitive inhibitors [<ce:cross-ref refid="bib0025">5</ce:cross-ref>]. Several other scaffolds that also rely on this gatekeeper have also been developed (see [<ce:cross-refs refid="bib0025 bib0030 bib0035 bib0040">5–8</ce:cross-refs>] for reviews). In common with the pyridinylimidazoles these molecules do not avidly bind the ATP pocket of the γ and δ isoforms which have a bulkier methionine as the gatekeeper at the equivalent position. The gatekeeper residue is crucial to the selectivity of the ATP-competitive inhibitors [<ce:cross-ref refid="bib0045">9</ce:cross-ref>] and kinases such as ERK2, p38γ and p38δ exhibit a 4–5-fold order of magnitude reduction in the IC<ce:inf loc="post">50</ce:inf> of pyridinylimidazoles when their gatekeepers are mutated to Thr.</ce:para>
+                  <ce:para id="par0020" view="all">The non-ATP-competitive inhibitors of p38 bind in addition to the Asp-Phe-Gly (DFG) motif at the base of the activation loop which is common to all isoforms [<ce:cross-refs refid="bib0025 bib0050">5,10</ce:cross-refs>]. Such binding exerts an allosteric effect such that the kinase adopts and maintains a conformation that is resistant to activation by dual phosphorylation [<ce:cross-ref refid="bib0055">11</ce:cross-ref>]. Consequently the allosteric inhibitors such as BIRB796 are able to inhibit all four p38 isoforms. However, because binding occurs only when p38s adopt a relatively rare conformation [<ce:cross-ref refid="bib0055">11</ce:cross-ref>], the IC<ce:inf loc="post">50</ce:inf>s and on/off rates between isoforms vary, enabling differential inhibition [<ce:cross-ref refid="bib0060">12</ce:cross-ref>].</ce:para>
+                  <ce:para id="par0025" view="all">The use and optimization of these two principal types of inhibitors are further discussed below. In addition to these direct p38 inhibitors there exist a range of other molecules that inhibit p38s indirectly by interacting with and modulating upstream pathways often through ill-defined mechanisms. These have been reviewed elsewhere [<ce:cross-ref refid="bib0065">13</ce:cross-ref>] and will not be discussed further.</ce:para>
+               </ce:section>
+               <ce:section id="sec0020" view="all">
+                  <ce:section-title>Optimizing p38 inhibitors</ce:section-title>
+                  <ce:section id="sec0025" view="all">
+                     <ce:section-title>ATP-competitive agents</ce:section-title>
+                     <ce:para id="par0030" view="all">The p38 inhibitors were initially selected for their anti-inflammatory effect without the knowledge of their intracellular target. Once this was identified and structure–activity relationships became better understood it was realized the ATP-competitive inhibitors were not selective. Unbiased screens have identified several kinases that will bind pyridinylimidazole inhibitors similar to SB203580 [<ce:cross-ref refid="bib0070">14</ce:cross-ref>]. Furthermore some of these kinases lie within an inflammatory signaling cascade and probably contribute to the biological activity of the small molecule. Furthermore, the IC<ce:inf loc="post">50</ce:inf>s for these ‘off-target’ kinases, such as RIP2 [<ce:cross-refs refid="bib0070 bib0075">14,15</ce:cross-refs>], can be below that for p38α. In such cases these non-selective actions may be beneficial. Given the necessary conservation of key aspects of the ATP-binding pocket among the kinome it is inevitable that ATP-competitive inhibitors lack selectivity. Nonetheless, it is acknowledged that such inhibitors targeting p38 are often more selective than many ATP-competitive inhibitors developed for other targets [<ce:cross-ref refid="bib0080">16</ce:cross-ref>].</ce:para>
+                     <ce:para id="par0035" view="all">Ensuring that a particular biological property of a small molecule inhibitor is truly the result of inhibition of a specific kinase can be achieved by using a chemical genetic approach. Following the crystallization of p38α in complex with a pyridinylimidizole or with ATP, it became apparent that the gatekeeper region made intimate contact with the inhibitor but not ATP [<ce:cross-ref refid="bib0045">9</ce:cross-ref>]. This differential dependence on the gatekeeper and its surrounding hydrophobic pocket meant that it was possible to substitute key residues without altering the kinetics of the kinase [<ce:cross-ref refid="bib0085">17</ce:cross-ref>]. However, such substitutions increased the IC<ce:inf loc="post">50</ce:inf> of pyridinylimidazole inhibitors by 4 orders of magnitude. This observation presaged one of the earliest examples of the use of chemical genetics to identify the molecular target of small molecule kinase inhibitors [<ce:cross-ref refid="bib0085">17</ce:cross-ref>]. More recently a substitution of Thr106 for Met has been ‘knocked-in’ to the murine p38α or p38β alleles [<ce:cross-ref refid="bib0090">18</ce:cross-ref>]. This allows an <ce:italic>in vivo</ce:italic> assessment of the target of ATP-competitive antagonists because if the biological action is lost in the knock-in mouse it is the direct result of inhibition of the targeted p38 isoform; while if the action is not lost it is likely to be due to the inhibition of another kinase. These mice have been used to show that the ability of SB203580 to reduce MI size or inflammatory arthritis is the result of the inhibition of p38α [<ce:cross-refs refid="bib0020 bib0090">4,18</ce:cross-refs>].</ce:para>
+                  </ce:section>
+                  <ce:section id="sec0030" view="all">
+                     <ce:section-title>Targeting other regions of the kinase</ce:section-title>
+                     <ce:para id="par0040" view="all">Given that the constraints of ATP-binding and hydrolysis limit diversity within the ATP-binding pocket of competent kinases, greater selectivity is often sought by targeting additional features at the edge of this pocket. One such feature is the Asp-Phe-Gly (DFG) motif where the side chain of the Phe169 residue is usually deeply buried in a groove formed between the two lobes of the kinase. One face of the Phe side chain binds to BIRB796, the first in a class of allosteric inhibitors that stabilizes a ‘DFG out’ conformation that is catalytically inactive [<ce:cross-ref refid="bib0050">10</ce:cross-ref>]. In kinase screens BIRB796 is more selective than classic ATP-competitive inhibitors and has a different repertoire of off-target kinases [<ce:cross-ref refid="bib0080">16</ce:cross-ref>]. Consequently, it has been suggested the biological actions of BIRB796 and SB203580 can be compared to confirm p38 as the relevant target [<ce:cross-ref refid="bib0080">16</ce:cross-ref>]. The design of p38 inhibitors continues to evolve in search of greater potency and selectivity. The key features utilized in design are DFG binding, largely to increase potency because this motif is highly conserved among kinases; the small Thr106 gatekeeper, which also confers selectivity because it is found in less than 20% of kinases and Gly110 adjacent to the linker Met109, which also confers selectivity occurring in less than 10% of kinases and can alter its orientation (see [<ce:cross-ref refid="bib0025">5</ce:cross-ref>] for a review).</ce:para>
+                  </ce:section>
+               </ce:section>
+               <ce:section id="sec0035" view="all">
+                  <ce:section-title>Other strategies to inhibit p38</ce:section-title>
+                  <ce:para id="par0045" view="all">As outlined below the ATP-competitive antagonists and the allosteric inhibitors have been examined in clinical trials but as yet none has progressed beyond phase 2 [<ce:cross-ref refid="bib0095">19</ce:cross-ref>]. Although only a portion of the data are in the public domain most programs seem to have been terminated by an adverse side-effect profile. It is possible that these effects are the result of inhibition of p38 catalytic activity and that optimization requires knowledge of the diverse mechanisms of p38 activation under varied circumstances. Such knowledge may then enable circumstance-specific inhibition. The archetypal mode of p38 activation is through a canonical cascade of kinases that terminate in the dual specificity kinases capable of phosphorylating both Thr180 and Tyr182 within the ‘TGY’ activation motif. While these upstream kinases could be targeted, perhaps of greater interest are the varied substrates downstream of p38 and more recherché mechanisms of activation.</ce:para>
+                  <ce:para id="par0050" view="all">Interestingly there is now widespread evidence that p38 can autophosphorylate the TGY motif under defined circumstances [<ce:cross-ref refid="bib0100">20</ce:cross-ref>]. During myocardial ischemia and some other stresses this is the result of its binding a scaffold protein known as TAB1 [<ce:cross-refs refid="bib0105 bib0110 bib0115 bib0120">21–24</ce:cross-refs>]. One strategy that would result in greater selectivity than blanket inhibition of p38 kinase activity would be to disrupt the recognition between p38 and TAB1. This could be achieved by mapping the key features responsible for the interaction or by understanding the natural mechanisms responsible for its regulation [<ce:cross-ref refid="bib0125">25</ce:cross-ref>]. Another mechanism that leads to autoactivation is by transphosphorylation of Tyr 323 [<ce:cross-ref refid="bib0130">26</ce:cross-ref>]. At present it is unclear whether this mechanism, initially identified in lymphocytes, is relevant to the heart.</ce:para>
+               </ce:section>
+               <ce:section id="sec0040" view="all">
+                  <ce:section-title>Adverse events with p38 inhibition</ce:section-title>
+                  <ce:para id="par0055" view="all">The difficulty in making a complete assessment of the toxicology of p38 inhibitors is the lack of information in the public domain. Nonetheless this topic has been reviewed extensively [<ce:cross-refs refid="bib0030 bib0035 bib0040">6–8</ce:cross-refs>]. Despite diverse structural backbones and at least two different mechanisms of inhibition, skin, liver and neurological side-effects have curtailed the progression of several programs [<ce:cross-refs refid="bib0030 bib0035 bib0040">6–8</ce:cross-refs>]. It is not clear if these effects are the result of off- or on-target actions. However, there seems little doubt that p38 function is of importance to normal cellular homeostasis because it is ubiquitously expressed, highly evolutionary conserved and ablation of the α isoform alone results in early embryonic lethality. Furthermore, circumstances undoubtedly exist where p38 activation benefits the heart [<ce:cross-ref refid="bib0135">27</ce:cross-ref>].</ce:para>
+               </ce:section>
+               <ce:section id="sec0045" view="all">
+                  <ce:section-title>Early phase clinical trials with p38 inhibitors</ce:section-title>
+                  <ce:para id="par0060" view="all">Interrogation of <ce:inter-ref xlink:href="http://www.clinicaltrials.gov/" xlink:type="simple">ClinicalTrials.gov</ce:inter-ref> with ‘p38’ as the keyword reveals approximately 30 trials that are ongoing or recently completed. The majority of these are for rheumatoid arthritis, neuropathic pain or multiple myeloma. The inhibitors have been most extensively investigated in rheumatoid arthritis where they have so far demonstrated inferior efficacy, and perhaps poorer tolerability, than established therapies [<ce:cross-ref refid="bib0140">28</ce:cross-ref>].</ce:para>
+                  <ce:para id="par0065" view="all">In terms of trials of p38 inhibition in the cardiovascular arena these have been limited to small detailed pathophysiological studies thus far only published as preliminary abstracts. Vertex's compound VX-702 was used in a dose-escalation study in 45 patients undergoing planned coronary artery angioplasty (PCI) [<ce:cross-ref refid="bib0145">29</ce:cross-ref>]. The salient finding was a suppression of the elevation in CRP and other inflammatory markers (monocytes, neutrophils and total white blood cell count) for three to four days post-procedure. Oral dosing with the inhibitor (5–40<ce:hsp sp="0.25"/></ce:hsp>mg, once per day) was for five days starting the day before the procedure and was well tolerated [<ce:cross-ref refid="bib0145">29</ce:cross-ref>]. In a study of a similar design SB681323 at a dose of 7.5<ce:hsp sp="0.25"/></ce:hsp>mg twice per day was compared to placebo in 74 patients with 1:1 randomization (identifier <ce:inter-ref xlink:href="ctgov:NCT00291902" xlink:type="simple">NCT00291902</ce:inter-ref>). Dosing in this double-blind study was for 28 days starting 3 days before planned PCI. SB681323 was associated with a reduction in CRP at day 5 and day 28 post-procedure [<ce:cross-ref refid="bib0150">30</ce:cross-ref>]. There were also reductions in other inflammatory markers such as myeloperoxidase, IL6 and IL8. The study was not powered to look at clinical endpoints but there was a significant reduction in episodes of angina albeit on a post hoc analysis [<ce:cross-ref refid="bib0150">30</ce:cross-ref>].</ce:para>
+                  <ce:para id="par0070" view="all">On the basis of <ce:inter-ref xlink:href="http://www.clinicaltrials.gov/" xlink:type="simple">ClinicalTrials.gov</ce:inter-ref> both GlaxoSmithKline (with GW85655 also known as Losmapimod, identifier <ce:inter-ref xlink:href="ctgov:NCT00633022" xlink:type="simple">NCT00633022</ce:inter-ref>) and Bristol-Myers Squibb (with BMS582949, identifier <ce:inter-ref xlink:href="ctgov:NCT00570752" xlink:type="simple">NCT00570752</ce:inter-ref>) have active programs examining the effects of p38 inhibition on inflammation within atherosclerotic plaques as assessed by <ce:sup loc="pre">18</ce:sup>F-Flurodeoxyglucose (FDG) uptake on PET/CT. The GSK study with over 100 patients has completed recently but not reported and examined 2 dosing regimens with Losmapimod at 7.5<ce:hsp sp="0.25"/></ce:hsp>mg daily or 7.5<ce:hsp sp="0.25"/></ce:hsp>mg twice daily compared with placebo. The BMS study is ongoing with a target of 70 patients dosed with BMS582949 at 100<ce:hsp sp="0.25"/></ce:hsp>mg daily against placebo. Completion is expected in January 2011. In both studies dosing is for three months with a presumed primary endpoint of change in FDG uptake at baseline compared with 12 weeks.</ce:para>
+                  <ce:para id="par0075" view="all">Perhaps the most interesting and ambitious study is in the setting of non-ST Elevation Myocardial Infarction (NSTEMI) by GlaxoSmithKline (with Losmapimod at 7.5<ce:hsp sp="0.25"/></ce:hsp>mg twice daily with or without a 15<ce:hsp sp="0.25"/></ce:hsp>mg loading dose for 12 weeks compared to placebo, <ce:inter-ref xlink:href="ctgov:NCT00910962" xlink:type="simple">NCT00910962</ce:inter-ref>). In this study 500 patients with NSTEMI will be randomized. The primary endpoints relate principally to safety in this high-risk population. However, there are measures of efficacy such as alterations in CRP and measures of infarct size based on biomarkers. In addition there is a substudy in which changes in infarction and cardiac function will be analyzed by MRI. The study is due to complete in early 2011.</ce:para>
+               </ce:section>
+               <ce:section id="sec0050" view="all">
+                  <ce:section-title>Conclusions</ce:section-title>
+                  <ce:para id="par0080" view="all">The activity of a large number of kinases adversely affects the injured heart (<ce:cross-ref refid="tbl0005">Table 1</ce:cross-ref>). In many cases bioavailable molecules with favorable pharmacodynamic/kinetic properties that selectively inhibit these kinases are not available. However such molecules targeting p38α and p38β have been widely available for the past ten years and are beginning to be examined in patients with ischemic heart disease. As the small molecules to inhibit these additional candidate kinases develop, we look forward to them following the p38 inhibitors as first-in-class.</ce:para>
+               </ce:section>
+            </ce:sections>
+         </body>
+         <tail view="all">
+            <ce:bibliography id="bibl0005" view="all">
+               <ce:section-title>References</ce:section-title>
+               <ce:bibliography-sec id="bibs0005">
+                  <ce:bib-reference id="bib0005">
+                     <ce:label>1</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.E.</ce:given-name>
+                                 <ce:surname>Clark</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Potential of p38-MAPK inhibitors in the treatment of ischaemic heart disease</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Pharmacol. Ther.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>116</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2007</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>192</sb:first-page>
+                              <sb:last-page>206</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0010">
+                     <ce:label>2</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.</ce:given-name>
+                                 <ce:surname>Kerkela</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>T.</ce:given-name>
+                                 <ce:surname>Force</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>p38 mitogen-activated protein kinase: a future target for heart failure therapy?</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Am. Coll. Cardiol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>48</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2006</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>556</sb:first-page>
+                              <sb:last-page>558</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0015">
+                     <ce:label>3</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.A</ce:given-name>
+                                 <ce:surname>Kaiser</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Targeted inhibition of p38 mitogen-activated protein kinase antagonizes cardiac injury and cell death following ischemia-reperfusion in vivo</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>279</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2004</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>15524</sb:first-page>
+                              <sb:last-page>15530</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0020">
+                     <ce:label>4</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Kumphune</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A chemical genetic approach reveals that p38alpha MAPK activation by diphosphorylation aggravates myocardial infarction and is prevented by the direct binding of SB203580</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>285</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2968</sb:first-page>
+                              <sb:last-page>2975</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0025">
+                     <ce:label>5</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.C.</ce:given-name>
+                                 <ce:surname>Karcher</ce:surname>
+                              </sb:author>
+                              <sb:author>
+                                 <ce:given-name>S.A.</ce:given-name>
+                                 <ce:surname>Laufer</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Successful structure-based design of recent p38 MAP kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Top. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>9</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>655</sb:first-page>
+                              <sb:last-page>676</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0030">
+                     <ce:label>6</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Zhang</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Novel strategies for inhibition of the p38 MAPK pathway</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Trends Pharmacol. Sci.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>28</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2007</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>286</sb:first-page>
+                              <sb:last-page>295</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0035">
+                     <ce:label>7</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>L.R.</ce:given-name>
+                                 <ce:surname>Coulthard</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>p38(MAPK): stress responses from molecular mechanisms to therapeutics</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Trends Mol. Med.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>15</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>369</sb:first-page>
+                              <sb:last-page>379</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0040">
+                     <ce:label>8</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>D.M.</ce:given-name>
+                                 <ce:surname>Goldstein</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Selective p38alpha inhibitors clinically evaluated for the treatment of chronic inflammatory disorders</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Med. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>53</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>2345</sb:first-page>
+                              <sb:last-page>2353</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0045">
+                     <ce:label>9</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.J.</ce:given-name>
+                                 <ce:surname>Gum</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Acquisition of sensitivity of stress-activated protein kinases to the p38 inhibitor, SB 203580, by alteration of one or more amino acids within the ATP binding pocket</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>273</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1998</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>15605</sb:first-page>
+                              <sb:last-page>15610</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0050">
+                     <ce:label>10</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C</ce:given-name>
+                                 <ce:surname>Pargellis</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibition of p38 MAP kinase by utilizing a novel allosteric binding site</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Struct. Biol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>9</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>268</sb:first-page>
+                              <sb:last-page>272</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0055">
+                     <ce:label>11</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Vogtherr</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>NMR characterization of kinase p38 dynamics in free and ligand-bound forms</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Angew. Chem. Int. Ed. Engl.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>45</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2006</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>993</sb:first-page>
+                              <sb:last-page>997</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0060">
+                     <ce:label>12</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>Y.</ce:given-name>
+                                 <ce:surname>Kuma</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>BIRB796 inhibits all p38 MAPK isoforms in vitro and in vivo</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>280</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>19472</sb:first-page>
+                              <sb:last-page>19479</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0065">
+                     <ce:label>13</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.K.</ce:given-name>
+                                 <ce:surname>Noel</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Systematic review to establish the safety profiles for direct and indirect inhibitors of p38 mitogen-activated protein kinases for treatment of cancer. A systematic review of the literature</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Med. Oncol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>25</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2008</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>323</sb:first-page>
+                              <sb:last-page>330</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0070">
+                     <ce:label>14</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>K.</ce:given-name>
+                                 <ce:surname>Godl</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>An efficient proteomics method to identify the cellular targets of protein kinase inhibitors</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Proc Natl Acad Sci U. S. A.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>100</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>15434</sb:first-page>
+                              <sb:last-page>15439</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0075">
+                     <ce:label>15</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.</ce:given-name>
+                                 <ce:surname>Jacquet</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The role of RIP2 in p38 MAPK activation in the stressed heart</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>283</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2008</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>11964</sb:first-page>
+                              <sb:last-page>11971</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0080">
+                     <ce:label>16</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Bain</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The selectivity of protein kinase inhibitors: a further update</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Biochem. J.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>408</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2007</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>297</sb:first-page>
+                              <sb:last-page>315</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0085">
+                     <ce:label>17</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>P.A.</ce:given-name>
+                                 <ce:surname>Eyers</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Use of a drug-resistant mutant of stress-activated protein kinase 2a/p38 to validate the in vivo specificity of SB203580</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>FEBS Lett.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>451</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>1999</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>191</sb:first-page>
+                              <sb:last-page>196</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0090">
+                     <ce:label>18</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>S.J.</ce:given-name>
+                                 <ce:surname>O’Keefe</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Chemical genetics define the roles of p38alpha and p38beta in acute and chronic inflammation</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>282</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2007</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>34663</sb:first-page>
+                              <sb:last-page>34671</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0095">
+                     <ce:label>19</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>C.</ce:given-name>
+                                 <ce:surname>Dominguez</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>p38 MAP kinase inhibitors: many are made, but few are chosen</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Curr. Opin. Drug Discov. Devel.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>8</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>421</sb:first-page>
+                              <sb:last-page>430</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0100">
+                     <ce:label>20</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Ge</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>MAPKK-independent activation of p38alpha mediated by TAB1-dependent autophosphorylation of p38alpha</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Science</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>295</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2002</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1291</sb:first-page>
+                              <sb:last-page>1294</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0105">
+                     <ce:label>21</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.</ce:given-name>
+                                 <ce:surname>Tanno</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Diverse mechanisms of myocardial p38 mitogen-activated protein kinase activation: evidence for MKK-independent activation by a TAB1-associated mechanism contributing to injury during myocardial ischemia</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Circ. Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>93</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2003</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>254</sb:first-page>
+                              <sb:last-page>261</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0110">
+                     <ce:label>22</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Li</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>AMP-activated protein kinase activates p38 mitogen-activated protein kinase by increasing its recruitment to TAB1 in the ischemic heart</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Circ. Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>97</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>872</sb:first-page>
+                              <sb:last-page>879</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0115">
+                     <ce:label>23</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>B.</ce:given-name>
+                                 <ce:surname>Fiedler</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>cGMP-dependent protein kinase type I inhibits TAB1-p38 mitogen-activated protein kinase apoptosis signaling in cardiac myocytes</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Biol. Chem.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>281</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2006</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>32831</sb:first-page>
+                              <sb:last-page>32840</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0120">
+                     <ce:label>24</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.</ce:given-name>
+                                 <ce:surname>Shi</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Amyloidogenic light chains induce cardiomyocyte contractile dysfunction and apoptosis via a non-canonical p38alpha MAPK pathway</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Proc. Natl. Acad. Sci. U. S. A.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>107</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>4188</sb:first-page>
+                              <sb:last-page>4193</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0125">
+                     <ce:label>25</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>A.</ce:given-name>
+                                 <ce:surname>Ota</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Specific regulation of noncanonical p38{alpha} activation by Hsp90–Cdc37 chaperone complex in cardiomyocyte</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Circ. Res.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>106</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1404</sb:first-page>
+                              <sb:last-page>1412</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0130">
+                     <ce:label>26</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>J.M.</ce:given-name>
+                                 <ce:surname>Salvador</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Alternative p38 activation pathway mediated by T cell receptor-proximal tyrosine kinases</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Nat. Immunol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>6</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2005</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>390</sb:first-page>
+                              <sb:last-page>395</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0135">
+                     <ce:label>27</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>P.</ce:given-name>
+                                 <ce:surname>Sicard</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>The activation of p38alpha, and not p38beta, mitogen-activated protein kinase is required for ischemic preconditioning</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Mol. Cell. Cardiol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>48</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2010</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>1324</sb:first-page>
+                              <sb:last-page>1328</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0140">
+                     <ce:label>28</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>M.C.</ce:given-name>
+                                 <ce:surname>Genovese</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibition of p38: has the fat lady sung?</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>Arthritis Rheum.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>60</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>317</sb:first-page>
+                              <sb:last-page>320</sb:last-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0145">
+                     <ce:label>29</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>R.J.</ce:given-name>
+                                 <ce:surname>de Winter</ce:surname>
+                              </sb:author>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>A major determinant of CRP production in patients with ACS undergoing PCI. The p38–MAPK signaling pathway</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:edited-book>
+                              <sb:title>
+                                 <sb:maintitle>AHA Scientific Sessions ePosters Archive 2005 poster 606</sb:maintitle>
+                              </sb:title>
+                              <sb:date>2005</sb:date>
+                           </sb:edited-book>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+                  <ce:bib-reference id="bib0150">
+                     <ce:label>30</ce:label>
+                     <sb:reference>
+                        <sb:contribution langtype="en">
+                           <sb:authors>
+                              <sb:author>
+                                 <ce:given-name>L.</ce:given-name>
+                                 <ce:surname>Sarov-blat</ce:surname>
+                              </sb:author>
+                              <sb:et-al/></sb:et-al>
+                           </sb:authors>
+                           <sb:title>
+                              <sb:maintitle>Inhibition of p38MAPK reduces inflammatory burden in subjects undergoing elective PCI</sb:maintitle>
+                           </sb:title>
+                        </sb:contribution>
+                        <sb:host>
+                           <sb:issue>
+                              <sb:series>
+                                 <sb:title>
+                                    <sb:maintitle>J. Am. Coll. Cardiol.</sb:maintitle>
+                                 </sb:title>
+                                 <sb:volume-nr>53</sb:volume-nr>
+                              </sb:series>
+                              <sb:date>2009</sb:date>
+                           </sb:issue>
+                           <sb:pages>
+                              <sb:first-page>A422</sb:first-page>
+                           </sb:pages>
+                        </sb:host>
+                     </sb:reference>
+                  </ce:bib-reference>
+               </ce:bibliography-sec>
+            </ce:bibliography>
+         </tail>
+      </article>
+   </xocs:serial-item></xocs:doc></originaltext></full-text-retrieval-response>
