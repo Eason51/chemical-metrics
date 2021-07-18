@@ -6,7 +6,7 @@ import easyocr
 
 
 TARGET = "janus kinase"
-fileId = 6
+fileId = 9
 DOMAIN = "https://pubs.acs.org"
 
 
@@ -15,7 +15,7 @@ DOMAIN = "https://pubs.acs.org"
 FULLNAME = ""
 # stores the abbreviation of the target gene, omit number, e.g. if target is "jak1", abbreviation is "jak"
 ABBREVIATION = ""
-
+# Target name of the article's focus
 focusedTarget = ""
 
 
@@ -40,6 +40,7 @@ compound = ""
 # hold the ic50 value
 ic50Value = ""
 
+
 # Arr variables provide additional and alternative information, in case the identified molecule, compound, ic50value are incorrect
 
 # hold all identified molecule names
@@ -48,6 +49,7 @@ moleculeArr = []
 compoundArr = []
 # hold all identified ic50 values
 ic50Arr = []
+
 
 
 # Classes for holding the content and structure of body text and tables
@@ -60,6 +62,7 @@ class BodyText:
             def __init__(self, header = ""):
                 self.header = header
                 self.contents = [] # list[str]
+                self.boldContents = []
         
         def __init__(self, title):
             self.title = title
@@ -119,6 +122,9 @@ def compoundName(string):
     if(string == ""):
         return False
     string = string.lower().strip()
+    for c in string:
+        if(c.isspace()):
+            return False
     if(string.isdigit()):
         return True
     if(len(string) >= 2 and string[0].isdigit()):
@@ -296,6 +302,8 @@ class TableParser(HTMLParser):
         self.paragraphHeaderFound = False
         # hold the title for the currently parsed paragraph (could be empty)
         self.paragraphHeader = ""
+        self.paragraphBoldFound = False
+        self.paragraphBoldText = ""
 
         # hold all the Table objects contained in the current article
         self.tables = [] # list[Table]
@@ -367,6 +375,9 @@ class TableParser(HTMLParser):
             for attr in attrs:
                 if(attr[0] == "class" and attr[1] == "article-section__title"):
                     self.paragraphHeaderFound = True
+        if(self.paragraphFound and tag == "b"):
+            self.paragraphBoldFound = True
+            self.paragraphBoldText += "<b>"
 
         # handle table caption
         
@@ -464,6 +475,7 @@ class TableParser(HTMLParser):
                 exitParser(self)
         if(self.paragraphFound):
             self.paragraphText += data
+            self.paragraphBoldText += data
         if(self.paragraphHeaderFound):
             self.paragraphHeader += data
 
@@ -519,6 +531,10 @@ class TableParser(HTMLParser):
             newParagraph = BodyText.Section.Paragraph(self.paragraphHeader)
             self.bodyText.sections[-1].paragraphs.append(newParagraph)
             self.paragraphHeader = ""
+        if(self.paragraphBoldFound and tag == "b"):
+            self.paragraphBoldText += "</b>"
+            self.paragraphBoldText = ""
+            self.paragraphBoldFound = False
         
         # handle table caption
 
@@ -724,8 +740,8 @@ for element in elements:
         break
     
     localCenterX = (element[0][0][0] + element[0][1][0] + element[0][2][0] + element[0][3][0]) / 4
-    for range in xrangeArr:
-        if(localCenterX >= range[0] and localCenterX <= range[1] and element[1] != range[2]):
+    for xrange in xrangeArr:
+        if(localCenterX >= xrange[0] and localCenterX <= xrange[1] and element[1] != xrange[2]):
             needTarget = True
             break
     if(localCenterX > centerX):
@@ -834,9 +850,12 @@ if((not ic50Value) and focusedTarget):
 
             # if the value is already contained in the token
             if(":" in targetElement[1] or "=" in targetElement[1]):
+                index = targetElement[1].find(":")
+                if(index == -1):
+                    index = targetElement[1].find("=")
                 hasDigit = False
-                for c in targetElement[1]:
-                    if(c.isdigit()):
+                for c in range(index, len(targetElement[1])):
+                    if(targetElement[1][c].isdigit()):
                         hasDigit = True
                         break
                 if(hasDigit):
@@ -1016,6 +1035,8 @@ if(len(compoundArr) > 0):
     
     tempArr.sort(reverse=True)
     compoundArr = tempArr.copy()
+    if(not compound and len(compoundArr) > 0):
+        compound = compoundArr[0][1]
 
 
 
@@ -1034,13 +1055,160 @@ for word in abstractText.split():
             ic50Found = False
 
 
+
+
+# identfy ki, kd values
+# --------------------------------------------------------------------------------------------------------------
+
+
+enzymeKeywords = [ABBREVIATION, FULLNAME, "enzyme", "enzymatic"]
+cellKeywords = ["cell", "cellar"]
+compoundKeywords = ["compound", "no", "id", "compd", "cpd", "cmp"]
+
+# ki and kd values have similar patterns, hence they are generalized here
+# valueName: ki or kd
+def kikd(valueName): 
+    enzymeValue = []
+    cellValue = []
+
+    tableNum = 0
+    for table in tables:
+        tableNum += 1
+        enzymeFound = False
+        cellFound = False
+        valueNameFound = False
+        
+        caption = table.caption.lower()
+        descriptions = table.descriptions
+        grid = table.grid
+
+        # check if valueName is contained in the table title
+        valueNameIndex = 0
+        while(valueNameIndex != -1 and valueNameIndex < len(caption)):
+            valueNameIndex = caption.find(valueName, valueNameIndex)
+            if(valueNameIndex != -1):
+                # the character following the valueName cannot be a letter or a number
+                if(valueNameIndex + len(valueName) < len(caption) 
+                    and not caption[valueNameIndex + len(valueName)].isalpha()
+                    and not caption[valueNameIndex + len(valueName)].isdigit()):
+
+                    valueNameFound = True
+                    break
+
+        
+        # Identify the column number of header that contains the valueName and the "compound" keyword
+        valueColNum = -1
+        compoundColNum = -1
+        for row in grid.header:
+            colNum = 0
+            for cell in row.cells:
+                if(valueColNum != -1 and compoundColNum != -1):
+                    break
+                # different rules apply to ki and kd, sometimes "kinact/ki" appears in a cell, needs to eliminate
+                if(valueName == "ki"):
+                    if("ki " in cell.lower() and "kinact" not in cell.lower()):
+                        valueColNum = colNum
+                elif(valueName == "kd"):
+                    if("kd " in cell.lower()):
+                        valueColNum = colNum
+                for compoundName in compoundKeywords:
+                    if(compoundName in cell.lower()):
+                        compoundColNum = colNum
+
+                colNum += 1
+        
+        # if valueName is not found in the title and not in the header, skip the current table
+        if(valueColNum == -1 and not valueNameFound):
+            continue
+
+        # try to identify whether the table is about enzyme or about cell from the title
+        for enzymeName in enzymeKeywords:
+            if(enzymeName in caption):
+                enzymeFound = True
+                break
+        if(not enzymeFound):
+            for cellName in cellKeywords:
+                if(cellName in caption):
+                    cellFound = True
+        
+        # if the table is not about cell, try to found the header column that contains the target name
+        targetColNum = -1
+        if(not cellFound and focusedTarget):
+            for row in grid.header:
+                colNum = 0
+                for cell in row.cells:
+                    if(focusedTarget in cell.lower()):
+                        targetColNum = colNum
+                        break
+                    colNum += 1
+        
+        # if the "compound" keyword is not found in the header, use the leftmost column as the compound column
+        # try to find the name of the compound from the compound column and record the row number
+        if(compoundColNum == -1):
+            compoundColNum = 0
+        compoundRowNum = -1
+        rowNum = 0
+        for row in grid.body:
+            for cell in row.cells:
+                if(cell.lower() == compound):
+                    compoundRowNum = rowNum
+                    break
+            rowNum += 1
+    
+
+        if(not enzymeFound):        
+            if(compoundRowNum != -1):
+                cellValue.append(grid.body[compoundRowNum].cells[valueColNum])
+        
+        elif(enzymeFound and targetColNum != -1):
+            if(compoundRowNum != -1):
+                enzymeValue.append(grid.body[compoundRowNum].cells[targetColNum])
+        
+        elif(enzymeFound and targetColNum == -1 and valueColNum != -1):
+            if(compoundRowNum != -1):
+                enzymeValue.append(grid.body[compoundRowNum].cells[valueColNum])
+        
+        # if neither enzyme keyword nor target name is found, only the title contains the valueName,
+        # select one value from the compound row as its value
+        elif(valueNameFound):
+            if(compoundRowNum != -1):
+                colNum = 0
+                for cell in grid.body[compoundRowNum].cells:
+                    if(colNum != compoundColNum):
+                        if(enzymeFound):
+                            enzymeValue.append(cell)
+                        else:
+                            cellValue.append(cell)
+                        break
+                    colNum += 1
+    
+    return [enzymeValue, cellValue]
+
+
+# if molecule, compound, ic50Value is empty, there may be result restored in moleculeArr, copoundArr, ic50Arr, but it's less reliable
+print("molecule: ")
 print(molecule)
 print(moleculeArr)
+print("compound: ")
 print(compound)
 print(compoundArr)
+print("ic50: ")
 print(ic50Value)
 print(ic50Arr)
+print("ki: ")
+[enzymeValue, cellValue] = kikd("ki")
+print(enzymeValue)
+print(cellValue)
+print("kd: ")
+[enzymeValue, cellValue] = kikd("kd")
+print(enzymeValue)
+print(cellValue)
+
+            
+    
 
 
 
+
+    
 
