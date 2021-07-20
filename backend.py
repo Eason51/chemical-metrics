@@ -1,8 +1,16 @@
+from ScienceDirect import TableParser
 from re import L
 import requests
 from html.parser import HTMLParser
 from chemdataextractor import Document
 import easyocr
+import json
+from elsapy.elsclient import ElsClient
+from elsapy.elsdoc import FullDoc
+
+
+
+
 
 
 
@@ -197,6 +205,11 @@ class ACS:
             
             self.titleFound = False
 
+            self.abstractFound = False
+            self.figureFound = False
+            self.figureLinkFound = False
+
+
 
         def handle_starttag(self, tag, attrs):
             if (self.complete):
@@ -209,6 +222,24 @@ class ACS:
                 self.dateFound = True
             elif (tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
                 self.titleFound = True
+            if(tag == "div" and len(attrs) >= 1):
+                for attr in attrs:
+                    if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
+                        self.abstractFound = True
+                        break
+            if(self.figureFound and tag == "figure"):
+                self.figureFound = True
+            if(self.figureFound and tag == "a" and len(attrs) >= 2):
+                title = link = ""
+                for attr in attrs:
+                    if(attr[0] == "title"):
+                        title = attr[1]
+                if(title == "High Resolution Image"):
+                    self.figureLinkFound = True
+            if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
+                if(not self.figureLinkFound):
+                    exitParser(self)
+            
 
         
         def handle_data(self, data):
@@ -749,6 +780,8 @@ class ACS:
             self.cellKeywords = ["cell", "cellar"]
             self.compoundKeywords = ["compound", "no", "id", "compd", "cpd", "cmp"]
 
+            self.enzymeIc50 = ""
+            self.cellIc50 = ""
             self.enzymeKi = ""
             self.cellKi = ""
             self.enzymeKd = ""
@@ -762,26 +795,17 @@ class ACS:
 
         def retrieve_values(self):
 
-            print("get_FULLNAME_ABBREVIATION")
             self.get_FULLNAME_ABBREVIATION()
-            print("retrieve_article_information")
             self.retrieve_article_information()
-            print("retrieve_target")
             self.retrieve_target()
 
-            print("retrieve_image_text")
             positionResult = self.retrieve_image_text()
-            print("get_ic50_from_image")
             self.get_ic50_from_image(positionResult)
-            print("get_compound_from_image")
             self.get_compound_from_image(positionResult)
-            print("get_molecule_from_title_abstract")
             self.get_molecule_from_title_abstract()
-            print("get_compound_from_abstract")
             self.get_compound_from_abstract()
-            print("get_ic50_from_abstract")
             self.get_ic50_from_abstract()
-            print("get_kikd_from_body")
+            self.get_ic50_from_body()
             self.get_kikd_from_body()
         
 
@@ -959,10 +983,16 @@ class ACS:
 
 
         def retrieve_image_text(self):
-            # TODO: 
-            # 
+            image = requests.get().content
+            with open("abstract_image/image.jpeg", "wb") as handler:
+                handler.write(image)
 
-            return []
+            # identify all text within the abstract image
+            reader = easyocr.Reader(["en"], gpu = False)
+            # retrieve picture through http request
+            positionResult = reader.readtext("abstract_image/image.jpeg", "wb")
+
+            return positionResult
         
 
         def get_ic50_from_image(self, positionResult):
@@ -1302,7 +1332,7 @@ class ACS:
 
         # ki and kd values have similar patterns, hence they are generalized here
         # valueName: ki or kd
-        def kikd(self, valueName): 
+        def find_value_in_table(self, valueName): 
             enzymeValue = []
             cellValue = []
 
@@ -1345,6 +1375,9 @@ class ACS:
                                 valueColNum = colNum
                         elif(valueName == "kd"):
                             if("kd " in cell.lower()):
+                                valueColNum = colNum
+                        elif(valueName == "ic50"):
+                            if("ic50 " in cell.lower()):
                                 valueColNum = colNum
                         for compoundName in self.compoundKeywords:
                             if(compoundName in cell.lower()):
@@ -1428,20 +1461,466 @@ class ACS:
             return [enzymeValue, cellValue]
 
 
+        def get_ic50_from_body(self):
+            [enzymeValue, cellValue] = self.find_value_in_table("ic50")
+            if(not self.ic50Value):
+                self.enzymeIc50 = enzymeValue
+            else:
+                self.enzymeIc50 = self.ic50Value
+            self.cellIc50 = cellValue
+
 
         def get_kikd_from_body(self):
-            [enzymeValue, cellValue] = self.kikd("ki")
+            [enzymeValue, cellValue] = self.find_value_in_table("ki")
             self.enzymeKi = enzymeValue
             self.cellKi = cellValue
-            [enzymeValue, cellValue] = self.kikd("kd")
+            [enzymeValue, cellValue] = self.find_value_in_table("kd")
             self.enzymeKd = enzymeValue
-            self.cellkd = cellValue
+            self.cellKd = cellValue
 
 
 
 
 
 
+
+class ScienceDirect:
+    
+    ## Load configuration
+    con_file = open("config.json")
+    config = json.load(con_file)
+    con_file.close()
+    APIKEY = config['apikey']
+
+    ## Initialize client
+    client = ElsClient(APIKEY)
+
+    JOURNAL1 = "European Journal of Medicinal Chemistry"
+    JOURNAL2 = "Drug Discovery Today"
+    TARGET = ""
+    conditions = []
+
+
+
+    def initialize_conditions(targetName):
+        TARGET = targetName
+        ScienceDirect.conditions.append(TARGET, ScienceDirect.JOURNAL1)
+        ScienceDirect.conditions.append(TARGET, ScienceDirect.JOURNAL2)
+    
+
+
+    def retrieve_article_amount_and_doi():
+        
+        for condition in ScienceDirect.conditions:
+
+            AMOUNT1 = 0
+            AMOUNT2 = 0
+            DOIArr = []
+            dateArr = []
+
+            url = "https://api.elsevier.com/content/search/sciencedirect"
+            header = {"x-els-apikey": "7f59af901d2d86f78a1fd60c1bf9426a", "Accept": "application/json", "Content-Type": "application/json"}
+            payload = {
+            "qs": f"{condition[0]}",
+            "pub": f"\"{condition[1]}\"",
+            }
+
+            response = requests.put(url, headers=header, json=payload)
+            result = json.loads(response.text)
+            AMOUNT1 = result["resultsFound"]
+
+            if ("results" in result):
+                for article in result["results"]:
+                    if (article["doi"]):
+                        doc = FullDoc(doi = article["doi"])
+                        stringList = ["ic50", "ec50", "ki", "kd", "ed50"]
+                        if(doc.read(ScienceDirect.client) and any(substring in doc.data["originalText"].lower() for substring in stringList)):
+                            AMOUNT2 += 1
+                            DOIArr.append(article["doi"])
+
+                            date = article["publicationDate"][:4]
+                            found = False
+                            for yearOccur in dateArr:
+                                if(yearOccur[0] == date):
+                                    yearOccur[1] += 1
+                                    found = True
+                                    break
+                            if(not found):
+                                dateArr.append([date, 1])
+                            continue
+
+        dateArr.sort()
+        return(((AMOUNT1, AMOUNT2), DOIArr, dateArr))
+
+    
+
+    class ScienceDirectArticle:
+
+
+
+        # parse a ScienceDirect xml file
+        class TableParser(HTMLParser):
+
+            def __init__(self):
+                HTMLParser.__init__(self)
+
+                self.skipParsing = False
+                
+                self.titleFound = False
+                self.titleText = ""
+                self.imgRef = ""
+                self.boldAbstractTextArr = []
+
+                self.abstractTextFound = False
+                self.abstractTextContent = False
+                self.abstractText = ""
+                self.abstractImageFound = False
+                self.boldTextFound = False
+                
+                self.bodyTextFound = False
+                self.bodyText = BodyText()
+                self.sectionCount = 0
+                self.newSectionFound = False
+                self.newSubsection = False
+                self.newSectionTitle = False
+                self.newSubsectionTitle = False
+                self.newParagraphFound = False
+
+                self.tables = []
+                self.tableFound = False
+                self.tableCaptionFound = False
+                self.tableCaptionContent = False
+
+                self.tableGridFound = False
+                self.tableHeaderFound = False
+                self.headerRowFound = False
+                self.headerCellFound = False
+
+                self.tableContentFound = False
+                self.contentRowFound = False
+                self.contentCellFound = False
+
+            def handle_starttag(self, tag, attrs):
+                if(tag == "ce:title"):
+                    self.titleFound = True
+                if(tag == "ce:abstract"):
+                    for attr in attrs:
+                        if(attr[0] == "class" and attr[1] == "author"):
+                            self.abstractTextFound = True
+                            return
+                        elif(attr[0] == "class" and attr[1] == "graphical"):
+                            self.abstractImageFound = True
+                            return
+                if(self.abstractTextFound and tag == "ce:simple-para"):
+                    self.abstractTextContent = True
+                if(self.abstractImageFound and tag == "ce:link"):
+                    for attr in attrs:
+                        if(attr[0] == "xlink:href"):
+                            self.imgRef = attr[1]
+                if(self.abstractTextContent and tag == "ce:bold"):
+                    self.boldTextFound = True
+
+                if(tag == "ce:sections"):
+                    self.bodyTextFound = True
+                if(self.bodyTextFound and tag == "ce:section" and self.sectionCount == 0):
+                    self.newSectionFound = True
+                    self.sectionCount += 1
+                    return
+                if(self.newSectionFound and tag == "ce:section" and self.sectionCount > 0):
+                    self.newSubsection = True
+                    self.sectionCount += 1
+                if(self.newSectionFound and tag == "ce:section-title" and self.sectionCount == 1):    
+                    self.newSectionTitle = True
+                if(self.newSectionFound and tag == "ce:section-title" and self.sectionCount > 1):
+                    self.newSubsectionTitle = True
+                if(self.newSectionFound and tag == "ce:para"):
+                    self.newParagraphFound = True
+                    if(len(self.bodyText.sections[-1].paragraphs) > 0 and self.bodyText.sections[-1].paragraphs[-1].header != ""):
+                        return
+                    newParagraph = BodyText.Section.Paragraph("")
+                    self.bodyText.sections[-1].paragraphs.append(newParagraph)
+                if(tag == "ce:table"):
+                    self.tableFound = True
+                    newTable = Table()
+                    self.tables.append(newTable)
+                if(self.tableFound and tag == "ce:caption"):
+                    self.tableCaptionFound = True
+                if(self.tableCaptionFound and tag == "ce:simple-para"):
+                    self.tableCaptionContent = True
+
+                if(self.tableFound and tag == "tgroup"):
+                    self.tableGridFound = True
+                    newGrid = Table.Grid()
+                    for attr in attrs:
+                        if(attr[0] == "cols"):
+                            newGrid.columnNum = attr[1]
+                    self.tables[-1].grid = newGrid
+                if(self.tableGridFound and tag == "thead"):
+                    self.tableHeaderFound = True
+                if(self.tableHeaderFound and tag == "row"):
+                    self.headerRowFound = True
+                    newRow = Table.Grid.Row()
+                    self.tables[-1].grid.header.append(newRow)
+                if(self.headerRowFound and tag == "entry"):
+                    self.headerCellFound = True
+                
+                if(self.tableGridFound and tag == "tbody"):
+                    self.tableContentFound = True
+                if(self.tableContentFound and tag == "row"):
+                    self.contentRowFound = True
+                    newRow = Table.Grid.Row()
+                    self.tables[-1].grid.body.append(newRow)
+                if(self.contentRowFound and tag == "entry"):
+                    self.contentCellFound = True
+                
+
+
+            def handle_data(self, data):
+
+                if(self.skipParsing):
+                    self.skipParsing = True
+                    return
+                if(self.boldTextFound):
+                    self.boldAbstractTextArr.append(data)
+                    self.boldTextFound = False
+                
+                if(self.titleFound):
+                    self.titleText = data
+                if(self.abstractTextContent):
+                    self.abstractText = data
+                
+                if(self.newSectionTitle):
+                    newSection = BodyText.Section(data)
+                    self.bodyText.sections.append(newSection)
+                if(self.newSubsectionTitle):
+                    newParagraph = BodyText.Section.Paragraph(data)
+                    self.bodyText.sections[-1].paragraphs.append(newParagraph)
+                if(self.newParagraphFound):
+                    if(len(self.bodyText.sections[-1].paragraphs) == 0):
+                        newParagraph = BodyText.Section.Paragraph("")
+                        self.bodyText.sections[-1].paragraphs.append(newParagraph)
+                    if(len(self.bodyText.sections[-1].paragraphs[-1].contents) == 0):
+                        self.bodyText.sections[-1].paragraphs[-1].contents.append(data) 
+                        return 
+                    else:
+                        self.bodyText.sections[-1].paragraphs[-1].contents[-1] += (data)
+                
+                if(self.tableCaptionContent):
+                    self.tables[-1].caption = data
+                if(self.headerCellFound):
+                    self.tables[-1].grid.header[-1].cells.append(data)
+                if(self.contentCellFound):
+                    self.tables[-1].grid.body[-1].cells.append(data)
+
+
+
+            def handle_endtag(self, tag):
+
+                if(self.titleFound and tag == "ce:title"):
+                    self.titleFound = False
+                if(self.abstractTextFound and tag == "ce:abstract"):
+                    self.abstractTextFound = False
+                if(self.abstractImageFound and tag == "ce:abstract"):
+                    self.abstractImageFound = False
+                if(self.abstractTextContent and tag == "ce:simple-para"):
+                    self.abstractTextContent = False
+                
+                if(self.bodyTextFound and tag == "ce:sections"):
+                    self.bodyTextFound = False
+                if(self.newSectionFound and tag == "ce:section" and self.sectionCount == 1):
+                    self.newSectionFound = False
+                    self.sectionCount -= 1
+                if(self.newSubsection and tag == "ce:section" and self.sectionCount > 1):
+                    self.sectionCount -= 1
+                    if(self.sectionCount == 1):
+                        self.newSubsection = False
+                if(self.newSectionTitle and tag == "ce:section-title"):
+                    self.newSectionTitle = False
+                if(self.newSubsectionTitle and tag == "ce:section-title"):
+                    self.newSubsectionTitle = False
+                if(self.newParagraphFound and tag == "ce:para"):
+                    self.newParagraphFound = False
+                
+                if(self.tableFound and tag == "ce:table"):
+                    self.tableFound = False
+                if(self.tableCaptionFound and tag == "ce:caption"):
+                    self.tableCaptionFound = False
+                if(self.tableCaptionContent and tag == "ce:simple-para"):
+                    self.tableCaptionContent = False
+                
+                if(self.tableGridFound and tag == "tgroup"):
+                    self.tableGridFound = False
+                if(self.tableHeaderFound and tag == "thead"):
+                    self.tableHeaderFound = False
+                if(self.headerRowFound and tag == "row"):
+                    self.headerRowFound = False
+                if(self.headerCellFound and tag == "entry"):
+                    self.headerCellFound = False
+                
+                if(self.tableContentFound and tag == "tbody"):
+                    self.tableContentFound = False
+                if(self.contentRowFound and tag == "row"):
+                    self.contentRowFound = False
+                if(self.contentCellFound and tag == "entry"):
+                    self.contentCellFound = False
+
+
+
+        # parse to find the link to abstract image
+        class ReferenceParser(HTMLParser):
+
+            def __init__(self, ref):
+                HTMLParser.__init__(self)
+
+                self.isRequired = False
+                self.isHighRes = False
+                self.imageFound = False
+
+                self.ref = ref
+                self.eid = ""
+
+                self.attachmentFound = False
+                self.eidFound = False
+                self.locatorFound = False
+                self.resolutionFound = False
+
+
+
+            def handle_starttag(self, tag, attrs):
+                if(tag == "xocs:attachment"):
+                    self.attachmentFound = True
+                if(self.attachmentFound == True and tag == "xocs:attachment-eid"):
+                    self.eidFound = True
+                if(self.attachmentFound and tag == "xocs:ucs-locator"):
+                    self.locatorFound = True
+                if(self.attachmentFound and tag == "xocs:attachment-type"):
+                    self.resolutionFound = True
+
+
+
+            def handle_data(self, data):
+                if(self.eidFound):
+                    self.eid = data
+                if(self.locatorFound):
+                    if(self.ref in data):
+                        self.isRequired = True
+                    else:
+                        self.isRequired = False
+                if(self.resolutionFound):
+                    if(self.isRequired and data == "IMAGE-HIGH-RES"):
+                        self.imageFound = True
+                        exitParser(self)
+                        
+                        
+
+            def handle_endtag(self, tag):
+                
+                if(self.attachmentFound and tag == "xocs:attachment"):
+                    self.attachmentFound = False
+                if(self.eidFound and tag == "xocs:attachment-eid"):
+                    self.eidFound = False
+                if(self.locatorFound and tag == "xocs:ucs-locator"):
+                    self.locatorFound = False
+                if(self.resolutionFound and tag == "xocs:attachment-type"):
+                    self.resolutionFound = False
+        
+
+
+        def __init__(self, articleDOI):
+
+            self.articleDOI = articleDOI
+            
+            # fullname and abbreviation is used in ic50 extraction in abstract image
+            # stores the fullname of the target gene, omit number, e.g. if target is "jak1", fullname is "janus kinase"
+            self.FULLNAME = ""
+            # stores the abbreviation of the target gene, omit number, e.g. if target is "jak1", abbreviation is "jak"
+            self.ABBREVIATION = ""
+            # Target name of the article's focus
+            self.focusedTarget = ""
+
+
+            self.tableParser = None            
+            # hold title content after parsing html file
+            self.titleText = ""
+            # hold links to abstract images after parsing html file
+            self.imgURL = ""
+            # hold abstract content after parsing html file
+            self.abstractText = ""
+
+            # BodyText object for holding body text
+            self.bodyText = None
+            # Table object for holding tables
+            self.tables = None
+
+
+
+            # hold the molecule name
+            self.molecule = ""
+            # hold the compound name
+            self.compound = ""
+            # hold the ic50 value
+            self.ic50Value = ""
+
+
+            # Arr variables provide additional and alternative information, in case the identified molecule, compound, ic50value are incorrect
+
+            # hold all identified molecule names
+            self.moleculeArr = []
+            # hold all identified compound names
+            self.compoundArr = []
+            # hold all identified ic50 values
+            self.ic50Arr = []
+
+            self.enzymeKeywords = [self.ABBREVIATION, self.FULLNAME, "enzyme", "enzymatic"]
+            self.cellKeywords = ["cell", "cellar"]
+            self.compoundKeywords = ["compound", "no", "id", "compd", "cpd", "cmp"]
+
+            self.enzymeIc50 = ""
+            self.cellIc50 = ""
+            self.enzymeKi = ""
+            self.cellKi = ""
+            self.enzymeKd = ""
+            self.cellKd = ""
+
+            self.retrieve_values()
+        
+
+        def retrieve_values(self):
+            
+            self.retrieve_article_information()
+
+
+
+        def retrieve_article_information(self):
+            
+            QUERY_URL = "https://api.elsevier.com/content/article/doi/"
+            header = {"X-ELS-APIKey": ScienceDirect.APIKEY, "Accept": "text/xml"}
+            response = requests.get(QUERY_URL + self.articleDOI, headers=header)
+
+            tableParser = ScienceDirect.ScienceDirectArticle.TableParser()
+            try:
+                tableParser.feed(response.text)
+            except AssertionError as ae:
+                pass
+
+            imgRef = tableParser.imgRef
+            imageParser = ScienceDirect.ScienceDirectArticle.ReferenceParser(imgRef)
+            try:
+                imageParser.feed(response.text)
+            except AssertionError as ae:
+                pass
+            
+            IMAGE_QUERY_URL = "https://api.elsevier.com/content/object/eid/"
+            self.imgURL = IMAGE_QUERY_URL + imageParser.eid
+            self.titleText = tableParser.titleText
+            self.abstractText = tableParser.abstractText
+            self.bodyText = tableParser.bodyText
+            self.tables = tableParser.tables
+            self.tableParser = tableParser
+
+
+
+    
 
 
 
@@ -1474,8 +1953,6 @@ def all_to_json(targetName):
 
 
         article = ACS.ACSArticle(articleURL)
-        if(len(article.imgArr) == 0):
-            continue
         
         articleDict = {}
         articleDict["paper_id"] = i
@@ -1484,11 +1961,13 @@ def all_to_json(targetName):
         articleDict["compound_name"] = article.compound
 
         medicinalDict = {}
-        medicinalDict["ki"] = article.enzymeKi
-        medicinalDict["kd"] = article.enzymeKd
+        medicinalDict["Ki"] = article.enzymeKi
+        medicinalDict["Kd"] = article.enzymeKd
+        medicinalDict["IC50"] = article.enzymeIc50
         pharmDict = {}
-        pharmDict["ki"] = article.cellKi
-        pharmDict["kd"] = article.cellkd
+        pharmDict["Ki"] = article.cellKi
+        pharmDict["Kd"] = article.cellKd
+        pharmDict["IC50"] = article.cellIc50
 
         articleDict["medicinal_chemistry_metrics"] = medicinalDict
         articleDict["pharm_metrics_vitro"] = pharmDict
@@ -1496,8 +1975,49 @@ def all_to_json(targetName):
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
-    
-    return result
+
+
+
+    ScienceDirect.initialize_conditions(targetName)
+
+    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
+
+
+    result["paper_count"] += paper_count
+    # result["paper_count_year"] = dateArr TODO: merge dateArr
+    result["drug_molecule_count"] += drug_molecule_count
+    result["drug_molecule_paper"] = []
+
+    for articleDOI in doiArr:
+
+        article = ScienceDirect.ScienceDirectArticle(articleDOI)
+        
+        articleDict = {}
+        articleDict["paper_id"] = i
+        articleDict["paper_title"] = article.titleText
+        articleDict["paper_abstract_image"] = article.imgURL
+        articleDict["compound_name"] = article.compound
+
+        medicinalDict = {}
+        medicinalDict["Ki"] = article.enzymeKi
+        medicinalDict["Kd"] = article.enzymeKd
+        medicinalDict["IC50"] = article.enzymeIc50
+        pharmDict = {}
+        pharmDict["Ki"] = article.cellKi
+        pharmDict["Kd"] = article.cellKd
+        pharmDict["IC50"] = article.cellIc50
+
+        articleDict["medicinal_chemistry_metrics"] = medicinalDict
+        articleDict["pharm_metrics_vitro"] = pharmDict
+
+        result["drug_molecule_paper"].append(articleDict)
+
+        i += 1
+
+
+
+
+
 
 
 all_to_json("janus kinase")
