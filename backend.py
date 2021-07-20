@@ -1,3 +1,5 @@
+from torch.nn.functional import fractional_max_pool2d_with_indices
+from ScienceDirect import DOI
 from re import L
 from numpy.core.arrayprint import format_float_scientific
 import requests
@@ -1676,6 +1678,20 @@ class ScienceDirect:
                 HTMLParser.__init__(self)
 
                 self.skipParsing = False
+
+                self.authorArr = []
+                self.year = -1
+                self.institution = []
+                self.paperCited = -1
+                self.doi = ""
+                self.journal = ""
+
+                self.authorFound = False
+                self.authorName = False
+                self.yearFound = False
+                self.institutionFound = False
+                self.institutionName = False
+                self.journalFound = False
                 
                 self.titleFound = False
                 self.titleText = ""
@@ -1713,7 +1729,29 @@ class ScienceDirect:
                 self.contentCellFound = False
                 self.spaceContentCell = False
 
+                citedByURL = f"http://api.elsevier.com/content/search/scopus?query=DOI({self.doi})&field=citedby-count"
+                header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
+                response = requests.get(citedByURL, headers=header)
+                responseDict = json.loads(response.text)
+                self.paperCited = int(responseDict["search-results"]["entry"][0]["citedby-count"])
+
+
             def handle_starttag(self, tag, attrs):
+
+                if(tag == "ce:author"):
+                    self.authorFound = True
+                    self.authorArr.append("")
+                if(self.authorFound and (tag == "ce:given-name" or tag == "ce:surname")):
+                    self.authorName = True
+                if(tag == "xocs:cover-date-year"):
+                    self.yearFound = True
+                if(tag == "ce:affiliation"):
+                    self.institutionFound = True
+                if(self.institutionFound and tag == "ce:textfn"):
+                    self.institutionName = True
+                if(tag == "xocs:srctitle"):
+                    self.journalFound = True
+
                 if(tag == "ce:title"):
                     self.titleFound = True
                 if(tag == "ce:abstract"):
@@ -1795,6 +1833,18 @@ class ScienceDirect:
 
 
             def handle_data(self, data):
+
+                if(self.authorName):
+                    if(len(self.authorArr[-1]) == 0):
+                        self.authorArr[-1] += (data + " ")
+                    else:
+                        self.authorArr[-1] += data
+                if(self.yearFound):
+                    self.year = int(data)
+                if(self.institutionName):
+                    self.institution.append(data)
+                if(self.journalFound):
+                    self.journal = data
                 
                 if(self.spaceHeaderCell):
                     if(len(self.tables[-1].grid.header[-1].cells) != 0):
@@ -1844,6 +1894,19 @@ class ScienceDirect:
 
 
             def handle_endtag(self, tag):
+
+                if(self.authorFound and tag == "ce:author"):
+                    self.authorFound = False
+                if(self.authorName and (tag == "ce:given-name" or tag == "ce:surname")):
+                    self.authorName = False
+                if(self.yearFound and tag == "xocs:cover-date-year"):
+                    self.yearFound = False
+                if(self.institutionFound and tag == "ce:affiliation"):
+                    self.institutionFound = False
+                if(self.institutionName and tag == "textfn"):
+                    self.institutionName = False
+                if(self.journalFound and tag == "xocs:srctitle"):
+                    self.journalFound = False
 
                 if(self.titleFound and tag == "ce:title"):
                     self.titleFound = False
@@ -1963,6 +2026,13 @@ class ScienceDirect:
         def __init__(self, articleDOI):
 
             self.articleDOI = articleDOI
+
+            self.authorArr = []
+            self.year = -1
+            self.institution = []
+            self.paperCited = -1
+            self.doi = ""
+            self.journal = ""
             
             # fullname and abbreviation is used in ic50 extraction in abstract image
             # stores the fullname of the target gene, omit number, e.g. if target is "jak1", fullname is "janus kinase"
@@ -2017,6 +2087,8 @@ class ScienceDirect:
             self.cellKd = ""
 
             self.retrieve_values()
+
+
         
 
         def retrieve_values(self):
@@ -2111,6 +2183,13 @@ class ScienceDirect:
             self.bodyText = tableParser.bodyText
             self.tables = tableParser.tables
             self.tableParser = tableParser
+
+            self.authorArr = tableParser.authorArr
+            self.year = tableParser.year
+            self.institution = tableParser.institution
+            self.paperCited = tableParser.paperCited
+            self.doi = tableParser.doi
+            self.journal = tableParser.journal
 
 
         #unmodified
@@ -2800,10 +2879,17 @@ def all_to_json(targetName):
     for articleDOI in doiArr:
 
         article = ScienceDirect.ScienceDirectArticle(articleDOI)
-        
+
+
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
+        articleDict["paper_author"] = article.authorArr
+        articleDict["paper_year"] = article.year
+        articleDict["paper_institution"] = article.institution
+        articleDict["paper_cited"] = article.paperCited
+        articleDict["doi"] = article.doi
+        articleDict["paper_journal"] = article.journal
         articleDict["paper_abstract_image"] = article.imgURL
         articleDict["compound_name"] = article.compound
 
