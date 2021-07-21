@@ -1,7 +1,3 @@
-from torch.nn.functional import fractional_max_pool2d_with_indices
-from ScienceDirect import DOI
-from re import L
-from numpy.core.arrayprint import format_float_scientific
 import requests
 from html.parser import HTMLParser
 from chemdataextractor import Document
@@ -364,7 +360,7 @@ class ACS:
 
         # Parse the reponse from online enquiry and store useful information
         class TargetParser(HTMLParser):
-            def __init__(self, outer):
+            def __init__(self):
                 HTMLParser.__init__(self)
 
                 self.tableFound = False
@@ -417,12 +413,9 @@ class ACS:
 
 # parsing a html file
 # --------------------------------------------------------------------------------------------------------------
-
         class TableParser(HTMLParser):
-            def __init__(self, outer):
+            def __init__(self):
                 HTMLParser.__init__(self)
-                
-                self.outer = outer
 
                 self.authorArr = []
                 self.year = -1
@@ -452,6 +445,7 @@ class ACS:
                 self.imgArr = []
                 # complete abstract text content
                 self.abstractText = ""
+                self.abstractBoldText = ""
                 # all elements in abstract text in bold (<b></b>)
                 self.boldAbstractTextArr = []
 
@@ -463,6 +457,7 @@ class ACS:
 
                 self.titleFound = False
                 self.titleText = False
+                self.title = ""
 
                 # a BodyText object to hold the content of body text
                 self.bodyText = BodyText()
@@ -524,10 +519,15 @@ class ACS:
                     self.doiFound = True
                 if(self.doiFound and tag == "a"):
                     self.doiLink = True
-                if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "aJhp_link"):
-                    self.journalFound = True
-                if(self.journalFound and tag == "a"):
-                    self.journalName = True
+                if(not self.journalFound and tag == "input" and len(attrs) > 0):
+                    value = ""
+                    for attr in attrs:
+                        if(attr[0] == "name" and attr[1] == "journalNameForjhpLink"):
+                            self.journalFound = True
+                        elif(attr[0] == "value"):
+                            value = attr[1]
+                    if(self.journalFound and value):
+                        self.journal = value
 
 
 
@@ -540,6 +540,7 @@ class ACS:
                             break
                 if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
                     self.abstractText += " . "
+                    self.abstractBoldText += " . "
                     self.abstractFound = False
                 if(self.abstractFound and tag == "figure"):
                     self.figureFound = True
@@ -560,6 +561,7 @@ class ACS:
                     self.titleText = True
                 if(self.textFound and tag == "b"):
                     self.boldTextFound = True
+                    self.abstractBoldText += "<b>"
 
                 #handle body text
                 
@@ -665,17 +667,16 @@ class ACS:
                 if(self.doiLink):
                     index = data.find("https://doi.org/")
                     if(index != -1):
-                        self.doi = data[16]
-                if(self.journalName):
-                    self.journal = data
+                        self.doi = data[16:]
 
 
                 # handle title and abstract
 
                 if(self.textFound):
                     self.abstractText += data
+                    self.abstractBoldText += data
                 if(self.titleText):
-                    self.outer.titleText += data
+                    self.title += data
                 if(self.boldTextFound):
                     self.boldAbstractTextArr.append(data)
                 
@@ -728,10 +729,6 @@ class ACS:
                     self.doiFound = False
                 if(self.doiLink and tag == "a"):
                     self.doiLink = False
-                if(self.journalFound and tag == "div"):
-                    self.journalFound = False
-                if(self.journalName and tag == "a"):
-                    self.journalName = False
 
 
                 # handle title and abstract
@@ -750,6 +747,7 @@ class ACS:
                     self.titleText = False
                 if(self.boldTextFound and tag == "b"):
                     self.boldTextFound = False
+                    self.abstractBoldText += "</b>"
                 
                 # handle body text
                 
@@ -820,6 +818,9 @@ class ACS:
                     self.tableDescriptionDivCount -= 1
                 if(self.tableFootnoteFound and tag == "div"):
                     self.tableFootnoteFound = False
+
+
+
 
 
 # --------------------------------------------------------------------------------------------------------------
@@ -931,8 +932,8 @@ class ACS:
             longResponse = requests.get(queryLongUrl)
             shortReponse = requests.get(queryShortUrl)
 
-            longParser = ACS.ACSArticle.TargetParser(self)
-            shortParser = ACS.ACSArticle.TargetParser(self)
+            longParser = ACS.ACSArticle.TargetParser()
+            shortParser = ACS.ACSArticle.TargetParser()
             try:
                 longParser.feed(longResponse.text)    
             except AssertionError as ae:
@@ -959,7 +960,7 @@ class ACS:
 
 
         def retrieve_article_information(self):
-            self.tableParser = ACS.ACSArticle.TableParser(self)
+            self.tableParser = ACS.ACSArticle.TableParser()
             # open a file locally, should be retrieved through http request in real programs
             response = requests.get(self.articleURL)
 
@@ -968,7 +969,8 @@ class ACS:
                 self.tableParser.feed(response.text)
             except AssertionError as ae:
                 pass
-
+            
+            self.titleText = self.tableParser.title
             self.imgArr = self.tableParser.imgArr
             self.abstractText = self.tableParser.abstractText
             self.bodyText = self.tableParser.bodyText
@@ -1496,9 +1498,16 @@ class ACS:
 
                         colNum += 1
                 
-                # if valueName is not found in the title and not in the header, skip the current table
+                # if valueName is not found in the title and not in the header or description, skip the current table
+                foundInDescription = False
                 if(valueColNum == -1 and not valueNameFound):
-                    continue
+                    for description in table.descriptions:
+                        if(valueName in description.lower()):
+                            foundInDescription = True
+                            break
+                    if(not foundInDescription):
+                        continue
+
 
                 # try to identify whether the table is about enzyme or about cell from the title
                 for enzymeName in self.enzymeKeywords:
@@ -1534,7 +1543,14 @@ class ACS:
                             break
                     rowNum += 1
             
-                if(not enzymeFound):        
+                if(not valueNameFound and valueColNum == -1 and foundInDescription and targetColNum != -1):
+                    if(compoundRowNum != -1):
+                        if(enzymeFound):
+                            enzymeValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
+                        else:
+                            cellValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
+
+                elif(not enzymeFound):        
                     if(compoundRowNum != -1):
                         cellValue.append(grid.body[compoundRowNum].cells[valueColNum].strip())
                 
@@ -1682,8 +1698,6 @@ class ScienceDirect:
                 self.authorArr = []
                 self.year = -1
                 self.institution = []
-                self.paperCited = -1
-                self.doi = ""
                 self.journal = ""
 
                 self.authorFound = False
@@ -1696,6 +1710,7 @@ class ScienceDirect:
                 self.titleFound = False
                 self.titleText = ""
                 self.imgRef = ""
+                self.abstractBoldText = ""
                 self.boldAbstractTextArr = []
 
                 self.abstractTextFound = False
@@ -1729,11 +1744,7 @@ class ScienceDirect:
                 self.contentCellFound = False
                 self.spaceContentCell = False
 
-                citedByURL = f"http://api.elsevier.com/content/search/scopus?query=DOI({self.doi})&field=citedby-count"
-                header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
-                response = requests.get(citedByURL, headers=header)
-                responseDict = json.loads(response.text)
-                self.paperCited = int(responseDict["search-results"]["entry"][0]["citedby-count"])
+
 
 
             def handle_starttag(self, tag, attrs):
@@ -1749,6 +1760,7 @@ class ScienceDirect:
                     self.institutionFound = True
                 if(self.institutionFound and tag == "ce:textfn"):
                     self.institutionName = True
+                    self.institution.append("")
                 if(tag == "xocs:srctitle"):
                     self.journalFound = True
 
@@ -1770,6 +1782,7 @@ class ScienceDirect:
                             self.imgRef = attr[1]
                 if(self.abstractTextContent and tag == "ce:bold"):
                     self.boldTextFound = True
+                    self.abstractBoldText += "<b>"
 
                 if(tag == "ce:sections"):
                     self.bodyTextFound = True
@@ -1836,13 +1849,13 @@ class ScienceDirect:
 
                 if(self.authorName):
                     if(len(self.authorArr[-1]) == 0):
-                        self.authorArr[-1] += (data + " ")
+                        self.authorArr[-1] += (data.strip() + " ")
                     else:
-                        self.authorArr[-1] += data
+                        self.authorArr[-1] += data.strip()
                 if(self.yearFound):
                     self.year = int(data)
                 if(self.institutionName):
-                    self.institution.append(data)
+                    self.institution[-1] += (data.strip())
                 if(self.journalFound):
                     self.journal = data
                 
@@ -1861,12 +1874,12 @@ class ScienceDirect:
                     return
                 if(self.boldTextFound):
                     self.boldAbstractTextArr.append(data)
-                    self.boldTextFound = False
                 
                 if(self.titleFound):
                     self.titleText = data
                 if(self.abstractTextContent):
-                    self.abstractText = data
+                    self.abstractText += data
+                    self.abstractBoldText += data
                 
                 if(self.newSectionTitle):
                     newSection = BodyText.Section(data)
@@ -1903,7 +1916,7 @@ class ScienceDirect:
                     self.yearFound = False
                 if(self.institutionFound and tag == "ce:affiliation"):
                     self.institutionFound = False
-                if(self.institutionName and tag == "textfn"):
+                if(self.institutionName and tag == "ce:textfn"):
                     self.institutionName = False
                 if(self.journalFound and tag == "xocs:srctitle"):
                     self.journalFound = False
@@ -1916,6 +1929,9 @@ class ScienceDirect:
                     self.abstractImageFound = False
                 if(self.abstractTextContent and tag == "ce:simple-para"):
                     self.abstractTextContent = False
+                if(self.boldTextFound and tag == "ce:bold"):
+                    self.boldTextFound = False
+                    self.abstractBoldText += "</b>"
                 
                 if(self.bodyTextFound and tag == "ce:sections"):
                     self.bodyTextFound = False
@@ -2031,7 +2047,7 @@ class ScienceDirect:
             self.year = -1
             self.institution = []
             self.paperCited = -1
-            self.doi = ""
+            self.doi = self.articleDOI
             self.journal = ""
             
             # fullname and abbreviation is used in ic50 extraction in abstract image
@@ -2187,9 +2203,15 @@ class ScienceDirect:
             self.authorArr = tableParser.authorArr
             self.year = tableParser.year
             self.institution = tableParser.institution
-            self.paperCited = tableParser.paperCited
-            self.doi = tableParser.doi
             self.journal = tableParser.journal
+
+            citedByURL = f"http://api.elsevier.com/content/search/scopus?query=DOI({self.doi})&field=citedby-count"
+            header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
+            response = requests.get(citedByURL, headers=header)
+            responseDict = json.loads(response.text)
+            self.paperCited = int(responseDict["search-results"]["entry"][0]["citedby-count"])
+
+
 
 
         #unmodified
@@ -2874,7 +2896,7 @@ def all_to_json(targetName):
     result["paper_count"] += paper_count
     # result["paper_count_year"] = dateArr TODO: merge dateArr
     result["drug_molecule_count"] += drug_molecule_count
-    result["drug_molecule_paper"] = []
+    # result["drug_molecule_paper"] = []
 
     for articleDOI in doiArr:
 
