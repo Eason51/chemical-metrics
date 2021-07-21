@@ -3170,5 +3170,5 @@ def all_to_json(targetName):
 
 
 
-
-all_to_json("janus kinase")
+if __name__ == '__main__':
+    all_to_json("janus kinase")
