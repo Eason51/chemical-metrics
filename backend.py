@@ -1,4 +1,3 @@
-from chemdataextractor.doc.text import Caption
 import requests
 from html.parser import HTMLParser
 from chemdataextractor import Document
@@ -245,13 +244,27 @@ class ACS:
             if (self.complete):
                 return
             
-            global AMOUNT2
             if(self.contentFound):
-                stringList = ["ic50", "ec50", "ki", "kd", "ed50"]            
-                if(any(substring in data.lower() for substring in stringList)):
+                stringList = ["IC50", "EC50", "ED50"]            
+                if(any(substring in data for substring in stringList)):
                     ACS.ContentParser.drugPaperCount += 1
                     exitParser(self)
                     self.complete = True
+                elif(any(substring in data for substring in stringList)):
+                    index = data.find("Ki")
+                    if(index == -1):
+                        index = data.find("Kd")
+                    if(index == -1):
+                        return
+                    keywordFound = False
+                    if((index + 2) >= len(data)):
+                        keywordFound = True
+                    else:
+                        if(not data[index + 2].isalpha()):
+                            keywordFound = True
+                    if(keywordFound):
+                        ACS.ContentParser.drugPaperCount += 1
+                        exitParser(self)
                 elif(self.ICFound):
                     if(len(data) >= 2 and data[:2] == "50"):
                         ACS.ContentParser.drugPaperCount += 1
@@ -259,7 +272,7 @@ class ACS:
                         self.complete = True
                     else:
                         self.ICFound = False
-                elif(len(data) >= 2 and (data.lower()[-2:] in ["ic", "ec", "ed"])):
+                elif(len(data) >= 2 and (data[-2:] in ["IC", "EC", "ED"])):
                     self.ICFound = True
             
             elif(self.dateFound):
@@ -1760,8 +1773,24 @@ class ScienceDirect:
                 for article in result["results"]:
                     if (article["doi"]):
                         doc = FullDoc(doi = article["doi"])
-                        stringList = ["ic50", "ec50", "ki", "kd", "ed50"]
-                        if(doc.read(ScienceDirect.client) and any(substring in doc.data["originalText"].lower() for substring in stringList)):
+                        stringList = ["IC50", "EC50", "ED50"]
+                        keywordFound = False
+                        if(doc.read(ScienceDirect.client)):
+                            if(any(substring in doc.data["originalText"] for substring in stringList)):
+                                keywordFound = True
+                            if(not keywordFound):
+                                index = doc.data["originalText"].find("Ki")
+                                if(index == -1):
+                                    index = doc.data["originalText"].find("Kd")
+                                if(index == -1):
+                                    continue
+                                if((index + 2) >= len(doc.data["originalText"])):
+                                    keywordFound = True
+                                else:
+                                    if(not doc.data["originalText"][index + 2].isalpha()):
+                                        keywordFound = True
+                                                        
+                        if(keywordFound):    
                             AMOUNT2 += 1
                             DOIArr.append(article["doi"])
 
