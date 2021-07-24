@@ -244,13 +244,27 @@ class ACS:
             if (self.complete):
                 return
             
-            global AMOUNT2
             if(self.contentFound):
-                stringList = ["ic50", "ec50", "ki", "kd", "ed50"]            
-                if(any(substring in data.lower() for substring in stringList)):
+                stringList = ["IC50", "EC50", "ED50"]            
+                if(any(substring in data for substring in stringList)):
                     ACS.ContentParser.drugPaperCount += 1
                     exitParser(self)
                     self.complete = True
+                elif(any(substring in data for substring in stringList)):
+                    index = data.find("Ki")
+                    if(index == -1):
+                        index = data.find("Kd")
+                    if(index == -1):
+                        return
+                    keywordFound = False
+                    if((index + 2) >= len(data)):
+                        keywordFound = True
+                    else:
+                        if(not data[index + 2].isalpha()):
+                            keywordFound = True
+                    if(keywordFound):
+                        ACS.ContentParser.drugPaperCount += 1
+                        exitParser(self)
                 elif(self.ICFound):
                     if(len(data) >= 2 and data[:2] == "50"):
                         ACS.ContentParser.drugPaperCount += 1
@@ -258,7 +272,7 @@ class ACS:
                         self.complete = True
                     else:
                         self.ICFound = False
-                elif(len(data) >= 2 and (data.lower()[-2:] in ["ic", "ec", "ed"])):
+                elif(len(data) >= 2 and (data[-2:] in ["IC", "EC", "ED"])):
                     self.ICFound = True
             
             elif(self.dateFound):
@@ -882,6 +896,10 @@ class ACS:
             self.cellKi = ""
             self.enzymeKd = ""
             self.cellKd = ""
+            self.enzymeSelectivity = ""
+            self.cellSelectivity = ""
+            self.cellSolubility = ""
+            self.vivoSolubility = ""
             self.ec50 = ""
             self.ed50 = ""
             self.auc = ""
@@ -1438,159 +1456,318 @@ class ACS:
         
 
 
-        # ki and kd values have similar patterns, hence they are generalized here
-        # valueName: ki or kd
-        def find_enzyme_cell_value_in_table(self, valueName): 
+        # # ki and kd values have similar patterns, hence they are generalized here
+        # # valueName: ki or kd
+        # def find_enzyme_cell_value_in_table(self, valueName): 
             
-            if(not self.compound):
-                return ["", ""]
+        #     if(not self.compound):
+        #         return ["", ""]
             
-            enzymeValue = []
-            cellValue = []
+        #     enzymeValue = []
+        #     cellValue = []
 
-            tableNum = 0
-            for table in self.tables:
-                tableNum += 1
-                enzymeFound = False
-                cellFound = False
-                valueNameFound = False
+        #     tableNum = 0
+        #     for table in self.tables:
+        #         tableNum += 1
+        #         enzymeFound = False
+        #         cellFound = False
+        #         valueNameFound = False
                 
-                caption = table.caption.lower()
-                descriptions = table.descriptions
-                grid = table.grid
-                # check if valueName is contained in the table title
-                valueNameIndex = 0
-                while(valueNameIndex != -1 and valueNameIndex < len(caption)):
-                    valueNameIndex = caption.find(valueName, valueNameIndex)
-                    if(valueNameIndex != -1):
-                        # the character following the valueName cannot be a letter or a number
-                        if(valueNameIndex + len(valueName) < len(caption) 
-                            and not caption[valueNameIndex + len(valueName)].isalpha()
-                            and not caption[valueNameIndex + len(valueName)].isdigit()):
+        #         caption = table.caption.lower()
+        #         descriptions = table.descriptions
+        #         grid = table.grid
+        #         # check if valueName is contained in the table title
+        #         valueNameIndex = 0
+        #         while(valueNameIndex != -1 and valueNameIndex < len(caption)):
+        #             valueNameIndex = caption.find(valueName, valueNameIndex)
+        #             if(valueNameIndex != -1):
+        #                 # the character following the valueName cannot be a letter or a number
+        #                 if(valueNameIndex + len(valueName) < len(caption) 
+        #                     and not caption[valueNameIndex + len(valueName)].isalpha()
+        #                     and not caption[valueNameIndex + len(valueName)].isdigit()):
 
-                            valueNameFound = True
-                            break
+        #                     valueNameFound = True
+        #                     break
+        #                 else:
+        #                     valueNameIndex += 1
+
+        #         # Identify the column number of header that contains the valueName and the "compound" keyword
+        #         valueColNum = -1
+        #         compoundColNum = -1
+        #         for row in grid.header:
+        #             colNum = 0
+        #             for cell in row.cells:
+        #                 if(valueColNum != -1 and compoundColNum != -1):
+        #                     break
+        #                 # different rules apply to ki and kd, sometimes "kinact/ki" appears in a cell, needs to eliminate
+        #                 if(valueName == "ki"):
+        #                     if("ki" in cell.lower() and "kinact" not in cell.lower()):
+        #                         index = cell.lower().find("ki")
+        #                         if(index + 2 < len(cell) and cell[index + 2].isspace()):
+        #                             valueColNum = colNum
+        #                 elif(valueName == "kd"):
+        #                     if("kd" in cell.lower()):
+        #                         index = cell.lower().find("kd")
+        #                         if(index + 2 < len(cell) and cell[index + 2].isspace()):
+        #                             valueColNum = colNum
+        #                 elif(valueName == "ic50"):
+        #                     if("ic50" in cell.lower()):
+        #                         index = cell.lower().find("ic50")
+        #                         if(index + 4 < len(cell) and cell[index + 4].isspace()):
+        #                             valueColNum = colNum
+        #                 for compoundName in self.compoundKeywords:
+        #                     if(compoundName in cell.lower()):
+        #                         compoundColNum = colNum
+
+        #                 colNum += 1
+                
+        #         # if valueName is not found in the title and not in the header or description, skip the current table
+        #         foundInDescription = False
+        #         if(valueColNum == -1 and not valueNameFound):
+        #             for description in table.descriptions:
+        #                 if(valueName in description.lower()):
+        #                     foundInDescription = True
+        #                     break
+        #             if(not foundInDescription):
+        #                 continue
+
+
+        #         # try to identify whether the table is about enzyme or about cell from the title
+        #         for enzymeName in self.enzymeKeywords:
+        #             if(enzymeName in caption):
+        #                 enzymeFound = True
+        #                 break
+        #         if(not enzymeFound):
+        #             for cellName in self.cellKeywords:
+        #                 if(cellName in caption):
+        #                     cellFound = True
+                
+        #         # if the table is not about cell, try to found the header column that contains the target name
+        #         targetColNum = -1
+        #         if(not cellFound and self.focusedTarget):
+        #             for row in grid.header:
+        #                 colNum = 0
+        #                 for cell in row.cells:
+        #                     if(self.focusedTarget in cell.lower()):
+        #                         targetColNum = colNum
+        #                         break
+        #                     colNum += 1
+                
+        #         # if the "compound" keyword is not found in the header, use the leftmost column as the compound column
+        #         # try to find the name of the compound from the compound column and record the row number
+        #         if(compoundColNum == -1):
+        #             compoundColNum = 0
+        #         compoundRowNum = -1
+        #         rowNum = 0
+        #         for row in grid.body:
+        #             for cell in row.cells:
+        #                 if(cell.lower().strip() == self.compound):
+        #                     compoundRowNum = rowNum
+        #                     break
+        #             rowNum += 1
+            
+        #         if(not valueNameFound and valueColNum == -1 and foundInDescription and targetColNum != -1):
+        #             if(compoundRowNum != -1):
+        #                 if(enzymeFound):
+        #                     enzymeValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
+        #                 else:
+        #                     cellValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
+
+        #         elif(not enzymeFound):        
+        #             if(compoundRowNum != -1):
+        #                 cellValue.append(grid.body[compoundRowNum].cells[valueColNum].strip())
+                
+        #         elif(enzymeFound and targetColNum != -1):
+        #             if(compoundRowNum != -1):
+        #                 enzymeValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
+                
+        #         elif(enzymeFound and targetColNum == -1 and valueColNum != -1):
+        #             if(compoundRowNum != -1):
+        #                 enzymeValue.append(grid.body[compoundRowNum].cells[valueColNum].strip())
+                
+        #         # if neither enzyme keyword nor target name is found, only the title contains the valueName,
+        #         # select one value from the compound row as its value
+        #         elif(valueNameFound):
+        #             if(compoundRowNum != -1):
+        #                 colNum = 0
+        #                 for cell in grid.body[compoundRowNum].cells:
+        #                     if(colNum != compoundColNum):
+        #                         if(enzymeFound):
+        #                             enzymeValue.append(cell.strip())
+        #                         else:
+        #                             cellValue.append(cell.strip())
+        #                         break
+        #                     colNum += 1
+            
+        #     if(len(enzymeValue) > 0):
+        #         enzymeValue = enzymeValue[0]
+        #     else:
+        #         enzymeValue = ""
+        #     if(len(cellValue) > 0):
+        #         cellValue = cellValue[0]
+        #     else:
+        #         cellValue = ""
+        #     return [enzymeValue, cellValue]
+        
+
+
+        def find_values_in_table(self, valueName):
+
+            if(not self.compound):
+                return ""
+            
+            mediValue = ""
+            vitroValue = ""
+            vivoValue = ""
+
+
+            for table in self.tables:
+                
+               
+                titleFound = False
+                index = table.caption.find(valueName)
+                if(index != -1):
+                    if((index + len(valueName)) >= len(table.caption)):
+                        titleFound = True
+                    else:
+                        if(valueName[-1].isdigit()):
+                            titleFound = True
                         else:
-                            valueNameIndex += 1
+                            if(not table.caption[index + len(valueName)].isalpha()):
+                                titleFound = True
+                
 
-                # Identify the column number of header that contains the valueName and the "compound" keyword
                 valueColNum = -1
-                compoundColNum = -1
-                for row in grid.header:
+                for row in table.grid.header:
+                    
+                    if(valueColNum != -1):
+                        break
+                    
                     colNum = 0
                     for cell in row.cells:
-                        if(valueColNum != -1 and compoundColNum != -1):
-                            break
-                        # different rules apply to ki and kd, sometimes "kinact/ki" appears in a cell, needs to eliminate
-                        if(valueName == "ki"):
-                            if("ki" in cell.lower() and "kinact" not in cell.lower()):
-                                index = cell.lower().find("ki")
-                                if(index + 2 < len(cell) and cell[index + 2].isspace()):
+                        
+                        index = cell.find(valueName)
+                        if(index != -1):
+                            if(valueName[-1].isdigit() or (index + len(valueName)) >= len(cell)):
+                                valueColNum = colNum
+                                break
+                            else:
+                                if(not cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
-                        elif(valueName == "kd"):
-                            if("kd" in cell.lower()):
-                                index = cell.lower().find("kd")
-                                if(index + 2 < len(cell) and cell[index + 2].isspace()):
-                                    valueColNum = colNum
-                        elif(valueName == "ic50"):
-                            if("ic50" in cell.lower()):
-                                index = cell.lower().find("ic50")
-                                if(index + 4 < len(cell) and cell[index + 4].isspace()):
-                                    valueColNum = colNum
-                        for compoundName in self.compoundKeywords:
-                            if(compoundName in cell.lower()):
-                                compoundColNum = colNum
+                                    break
 
                         colNum += 1
                 
-                # if valueName is not found in the title and not in the header or description, skip the current table
-                foundInDescription = False
-                if(valueColNum == -1 and not valueNameFound):
-                    for description in table.descriptions:
-                        if(valueName in description.lower()):
-                            foundInDescription = True
-                            break
-                    if(not foundInDescription):
-                        continue
 
+                if(not titleFound and valueColNum == -1):
+                    continue
 
-                # try to identify whether the table is about enzyme or about cell from the title
-                for enzymeName in self.enzymeKeywords:
-                    if(enzymeName in caption):
-                        enzymeFound = True
+                
+                compoundColNum = -1
+                for row in table.grid.header:
+
+                    if(compoundColNum != -1):
                         break
-                if(not enzymeFound):
-                    for cellName in self.cellKeywords:
-                        if(cellName in caption):
-                            cellFound = True
-                
-                # if the table is not about cell, try to found the header column that contains the target name
-                targetColNum = -1
-                if(not cellFound and self.focusedTarget):
-                    for row in grid.header:
-                        colNum = 0
-                        for cell in row.cells:
-                            if(self.focusedTarget in cell.lower()):
-                                targetColNum = colNum
+
+                    colNum = 0
+                    for cell in row.cells:
+                        
+                        if(compoundColNum != -1):
+                            break
+
+                        for keyword in self.compoundKeywords:
+                            if(keyword in cell.lower()):
+                                compoundColNum = colNum
                                 break
-                            colNum += 1
+                        
+                        colNum += 1
                 
-                # if the "compound" keyword is not found in the header, use the leftmost column as the compound column
-                # try to find the name of the compound from the compound column and record the row number
+
+                compoundRowNum = -1
                 if(compoundColNum == -1):
                     compoundColNum = 0
-                compoundRowNum = -1
                 rowNum = 0
-                for row in grid.body:
+                for row in table.grid.body:
+                    
+                    if(compoundRowNum != -1):
+                        break
+                    
+                    colNum = 0
                     for cell in row.cells:
+                        
+                        if(colNum != compoundColNum):
+                            continue
+                        
                         if(cell.lower().strip() == self.compound):
                             compoundRowNum = rowNum
                             break
-                    rowNum += 1
-            
-                if(not valueNameFound and valueColNum == -1 and foundInDescription and targetColNum != -1):
-                    if(compoundRowNum != -1):
-                        if(enzymeFound):
-                            enzymeValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
-                        else:
-                            cellValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
 
-                elif(not enzymeFound):        
-                    if(compoundRowNum != -1):
-                        cellValue.append(grid.body[compoundRowNum].cells[valueColNum].strip())
+                        colNum += 1
+                    rowNum += 1
                 
-                elif(enzymeFound and targetColNum != -1):
-                    if(compoundRowNum != -1):
-                        enzymeValue.append(grid.body[compoundRowNum].cells[targetColNum].strip())
+
+                if(compoundRowNum == -1):
+                    continue
+
                 
-                elif(enzymeFound and targetColNum == -1 and valueColNum != -1):
-                    if(compoundRowNum != -1):
-                        enzymeValue.append(grid.body[compoundRowNum].cells[valueColNum].strip())
+                mediFound = False
+                vitroFound = False
+                vivoFound = False
+                if("enzyme" in table.caption.lower() or "enzymatic" in table.caption.lower()):
+                    mediFound = True
+                elif("cell" in table.caption.lower() or "cellular" in table.caption.lower() 
+                or "vitro" in table.caption.lower()):
+                    vitroFound = True
+                elif("pharmacokinetic" in table.caption.lower() or "preliminary" in table.caption.lower()
+                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
+                    vivoFound = True
                 
-                # if neither enzyme keyword nor target name is found, only the title contains the valueName,
-                # select one value from the compound row as its value
-                elif(valueNameFound):
-                    if(compoundRowNum != -1):
+
+                if(not mediFound and not vitroFound and not vivoFound):
+                    continue
+
+
+                targetColNum = -1
+                if(self.focusedTarget):
+
+                    for row in table.grid.header:
+                        
+                        if(targetColNum != -1):
+                            break
+                        
                         colNum = 0
-                        for cell in grid.body[compoundRowNum].cells:
-                            if(colNum != compoundColNum):
-                                if(enzymeFound):
-                                    enzymeValue.append(cell.strip())
-                                else:
-                                    cellValue.append(cell.strip())
+                        for cell in row.cells:
+                            
+                            if(self.focusedTarget in cell.lower()):
+                                targetColNum = colNum
                                 break
+
                             colNum += 1
-            
-            if(len(enzymeValue) > 0):
-                enzymeValue = enzymeValue[0]
-            else:
-                enzymeValue = ""
-            if(len(cellValue) > 0):
-                cellValue = cellValue[0]
-            else:
-                cellValue = ""
-            return [enzymeValue, cellValue]
-        
+
+
+                if(valueColNum == -1 and targetColNum == -1):
+                    continue
+
+                value = ""
+                if(titleFound):
+                    if(targetColNum != -1):
+                        value = table.grid.body[compoundRowNum].cells[targetColNum]
+                    else:
+                        value = table.grid.body[compoundRowNum].cells[valueColNum]
+                else:
+                    value = table.grid.body[compoundRowNum].cells[valueColNum]
+                
+                
+                if(mediFound):
+                    mediValue = value
+                elif(vitroFound):
+                    vitroValue = value
+                else:
+                    vivoValue = value
+
+
+            return[mediValue, vitroValue, vivoValue]
+
 
 
         def find_single_value_in_table(self, valueName):
@@ -1680,23 +1857,27 @@ class ACS:
 
 
 
-        def get_ic50_from_body(self):
-            [enzymeValue, cellValue] = self.find_enzyme_cell_value_in_table("ic50")
+        def get_multiple_values_from_body(self):
+            [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
             if(not self.ic50Value):
                 self.enzymeIc50 = enzymeValue
             else:
                 self.enzymeIc50 = self.ic50Value
             self.cellIc50 = cellValue
-
-
-        def get_kikd_from_body(self):
-            [enzymeValue, cellValue] = self.find_enzyme_cell_value_in_table("ki")
+            [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
             self.enzymeKi = enzymeValue
             self.cellKi = cellValue
-            [enzymeValue, cellValue] = self.find_enzyme_cell_value_in_table("kd")
+            [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
             self.enzymeKd = enzymeValue
             self.cellKd = cellValue
-        
+            [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
+            self.enzymeSelectivity = enzymeValue
+            self.cellSelectivity = cellValue
+            [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
+            self.cellSolubility = cellValue
+            self.vivoSolubility = vivoValue
+
+
         
         def get_single_value_from_body(self):
             self.ec50 = self.find_single_value_in_table("ec50")
@@ -1759,8 +1940,24 @@ class ScienceDirect:
                 for article in result["results"]:
                     if (article["doi"]):
                         doc = FullDoc(doi = article["doi"])
-                        stringList = ["ic50", "ec50", "ki", "kd", "ed50"]
-                        if(doc.read(ScienceDirect.client) and any(substring in doc.data["originalText"].lower() for substring in stringList)):
+                        stringList = ["IC50", "EC50", "ED50"]
+                        keywordFound = False
+                        if(doc.read(ScienceDirect.client)):
+                            if(any(substring in doc.data["originalText"] for substring in stringList)):
+                                keywordFound = True
+                            if(not keywordFound):
+                                index = doc.data["originalText"].find("Ki")
+                                if(index == -1):
+                                    index = doc.data["originalText"].find("Kd")
+                                if(index == -1):
+                                    continue
+                                if((index + 2) >= len(doc.data["originalText"])):
+                                    keywordFound = True
+                                else:
+                                    if(not doc.data["originalText"][index + 2].isalpha()):
+                                        keywordFound = True
+                                                        
+                        if(keywordFound):    
                             AMOUNT2 += 1
                             DOIArr.append(article["doi"])
 
@@ -3085,15 +3282,19 @@ def all_to_json(targetName):
         medicinalDict["Ki"] = article.enzymeKi
         medicinalDict["Kd"] = article.enzymeKd
         medicinalDict["IC50"] = article.enzymeIc50
+        medicinalDict["selectivity"] = article.enzymeSelectivity
         vitroDict = {}
         vitroDict["Ki"] = article.cellKi
         vitroDict["Kd"] = article.cellKd
         vitroDict["IC50"] = article.cellIc50
         vitroDict["ec50"] = article.ec50
+        vitroDict["selectivity"] = article.cellSelectivity
         vitroDict["hERG"] = article.herg
+        vitroDict["solubility"] = article.cellSolubility
         vivoDict = {}
         vivoDict["ed50"] = article.ed50
         vivoDict["AUC"] = article.auc
+        vivoDict["solubility"] = article.vivoSolubility
 
         articleDict["medicinal_chemistry_metrics"] = medicinalDict
         articleDict["pharm_metrics_vitro"] = vitroDict
@@ -3169,5 +3370,5 @@ def all_to_json(targetName):
 
 
 
-
-all_to_json("janus kinase")
+if __name__ == '__main__':
+    all_to_json("janus kinase")
