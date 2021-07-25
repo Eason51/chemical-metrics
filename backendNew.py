@@ -2428,14 +2428,22 @@ class ScienceDirect:
         def retrieve_image_text(self):
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
-            with open(f"abstract_image/{self.doi.replace('/', '_')}.jpeg", "wb") as handler:
+            
+            fileName = ""
+            for c in self.doi.strip():
+                if(c.isalpha() or c.isdigit()):
+                    fileName += c
+                else:
+                    fileName += "_"
+            
+            with open(f"abstract_image/{fileName}.jpeg", "wb") as handler:
                 handler.write(image)
 
             simles = ""
             positionResult = []
 
             try:
-                (simles, positionResult) = molecularSimles(f"abstract_image/{self.doi.replace('/', '_')}.jpeg")
+                (simles, positionResult) = molecularSimles(f"abstract_image/{fileName}.jpeg")
             except:
                 self.valid = False
             if(not simles):
@@ -3439,7 +3447,11 @@ def all_to_json(targetName):
 
     print(3)
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
+    print(f"result[drug_molecule_paper]: {result['drug_molecule_paper']}")
     for i in combine:
+        print("combine elment: ")
+        print(i)
+        print()
         item = {}
         item['source'] = i[0]["paper_id"]
         item['target'] = i[1]["paper_id"]
