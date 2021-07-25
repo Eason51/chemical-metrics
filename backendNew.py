@@ -1,3 +1,4 @@
+import molecular_Structure_Similarity as similarity
 from torch.nn.functional import fractional_max_pool2d_with_indices
 from re import L
 from numpy.core.arrayprint import format_float_scientific
@@ -11,7 +12,6 @@ from elsapy.elsdoc import FullDoc
 import chemschematicresolver as csr
 import Clinical_View as clinical
 import itertools
-import molecular_Structure_Similarity as similarity
 from molecular_Structure_Similarity import molecularSimles
 import os
 
@@ -2282,6 +2282,8 @@ class ScienceDirect:
         def __init__(self, articleDOI):
 
             self.articleDOI = articleDOI
+            self.valid = True
+            self.simles = ""
 
             self.authorArr = []
             self.year = -1
@@ -2364,6 +2366,8 @@ class ScienceDirect:
             self.retrieve_target()
 
             positionResult = self.retrieve_image_text()
+            if(not self.valid):
+                return
             self.get_ic50_from_image(positionResult)
             self.get_compound_from_image(positionResult)
             self.get_molecule_from_title_abstract()
@@ -2418,14 +2422,23 @@ class ScienceDirect:
         def retrieve_image_text(self):
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
-            with open("abstract_image/image.jpeg", "wb") as handler:
+            with open(f"abstract_image/{self.doi}.jpeg", "wb") as handler:
                 handler.write(image)
 
+            simles = ""
+            positionResult = []
 
-            # identify all text within the abstract image
-            reader = easyocr.Reader(["en"], gpu = False)
-            # retrieve picture through http request
-            positionResult = reader.readtext("abstract_image/image.jpeg")
+            try:
+                (simles, positionResult) = molecularSimles(f"abstract_image/{self.doi}.jpeg")
+            except SyntaxError as se:
+                self.valid = False
+            if(not simles):
+                self.valid = False
+            
+            if(not self.valid):
+                return
+            
+            self.simles = simles
 
             return positionResult
 
@@ -3351,10 +3364,12 @@ def all_to_json(targetName):
     for articleDOI in doiArr:
 
         article = ScienceDirect.ScienceDirectArticle(articleDOI)
-
+        if(not article.valid):
+            result["drug_molecule_count"] -= 1
+            continue
 
         articleDict = {}
-        articleDict["paper_id"] = id
+        articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
         articleDict["paper_author"] = article.authorArr
         articleDict["paper_year"] = article.year
@@ -3364,7 +3379,7 @@ def all_to_json(targetName):
         articleDict["paper_journal"] = article.journal
         articleDict["paper_abstract_image"] = article.imgURL
         articleDict["compound_name"] = article.compound
-        # articleDict["compound_smiles"] = simlesArr[i] TODO
+        articleDict["compound_smiles"] = article.simles
 
         medicinalDict = {}
         medicinalDict["Ki"] = article.enzymeKi
