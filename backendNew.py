@@ -376,9 +376,14 @@ class ACS:
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
                 print("test")
-                (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
+                try:
+                    (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
+                except:
+                    print("error inside")
+                    simles = ""
+                print(f"simles: {simles}")
+
             
-            print(f"simles: {simles}")
             if(simles):
                 
                 # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
@@ -2431,7 +2436,7 @@ class ScienceDirect:
 
             try:
                 (simles, positionResult) = molecularSimles(f"abstract_image/{self.doi.replace('/', '_')}.jpeg")
-            except SyntaxError as se:
+            except:
                 self.valid = False
             if(not simles):
                 self.valid = False
