@@ -3446,6 +3446,8 @@ def all_to_json(targetName):
         print(f"S7: {i}")
 
     print(3)
+
+    result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
     print(f"result[drug_molecule_paper]: {result['drug_molecule_paper']}")
     for i in combine:
@@ -3454,8 +3456,12 @@ def all_to_json(targetName):
         print()
         item = {}
         item['source'] = i[0]["paper_id"]
+        print("i1")
         item['target'] = i[1]["paper_id"]
+        print("i2")
         item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
+        print("i3")
+        result["medicinal_chemistry_similarity"].append(item)
     
     print(4)
     with open("output.json", "w") as outputFile:
