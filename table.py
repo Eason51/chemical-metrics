@@ -12,6 +12,8 @@ def exitParser(parser):
     parser.reset()
 
 
+
+
 class BodyText:
     
     class Section:
@@ -20,6 +22,7 @@ class BodyText:
             def __init__(self, header = ""):
                 self.header = header
                 self.contents = [] # list[str]
+                self.boldContents = []
         
         def __init__(self, title):
             self.title = title
@@ -51,9 +54,33 @@ class Table:
 
 
 
-class TableParser(HTMLParser):
+
+ACSDOMAIN = "https://pubs.acs.org/"
+
+
+class ACSTableParser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
+
+        self.authorArr = []
+        self.year = -1
+        self.institution = []
+        self.paperCited = -1
+        self.doi = ""
+        self.journal = ""
+
+        self.authorFound = False
+        self.dateFound = False
+        self.institutionFound = False
+        self.citationFound = False
+        self.citationDivCount = 0
+        self.citationNumber = False
+        self.doiFound = False
+        self.doiLink = False
+        self.journalFound = False
+        self.journalName = False
+
+
 
         # enable this flag to skip handle_data for the next element
         self.disableRead = False
@@ -62,6 +89,7 @@ class TableParser(HTMLParser):
         self.imgArr = []
         # complete abstract text content
         self.abstractText = ""
+        self.abstractBoldText = ""
         # all elements in abstract text in bold (<b></b>)
         self.boldAbstractTextArr = []
 
@@ -73,6 +101,7 @@ class TableParser(HTMLParser):
 
         self.titleFound = False
         self.titleText = False
+        self.title = ""
 
         # a BodyText object to hold the content of body text
         self.bodyText = BodyText()
@@ -82,9 +111,13 @@ class TableParser(HTMLParser):
         self.paragraphDivCount = 0
         # hold the content of the paragraph currently being parsed
         self.paragraphText = ""
+        self.boldParagraphText = ""
+        self.boldParagraphFound = False
         self.paragraphHeaderFound = False
         # hold the title for the currently parsed paragraph (could be empty)
         self.paragraphHeader = ""
+        self.paragraphBoldFound = False
+        self.paragraphBoldText = ""
 
         # hold all the Table objects contained in the current article
         self.tables = [] # list[Table]
@@ -111,7 +144,37 @@ class TableParser(HTMLParser):
 
 
     def handle_starttag(self, tag, attrs):
-        
+
+        if(tag == "span" and len(attrs) == 1 and attrs[0][1] == "hlFld-ContribAuthor"):
+            self.authorFound = True
+        if(tag == "span" and len(attrs) == 1 and attrs[0][1] == "pub-date-value"):
+            self.dateFound = True
+        if(tag == "span" and len(attrs) == 1 and attrs[0][1] == "aff-text"):
+            self.institutionFound = True
+            self.institution.append("")
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "articleMetrics_count"):
+            self.citationFound = True
+            self.citationDivCount += 1
+        elif(self.citationFound and tag == "div"):
+            self.citationDivCount += 1
+        if(self.citationFound and tag == "a"):
+            self.citationNumber = True
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_header-doiurl"):
+            self.doiFound = True
+        if(self.doiFound and tag == "a"):
+            self.doiLink = True
+        if(not self.journalFound and tag == "input" and len(attrs) > 0):
+            value = ""
+            for attr in attrs:
+                if(attr[0] == "name" and attr[1] == "journalNameForjhpLink"):
+                    self.journalFound = True
+                elif(attr[0] == "value"):
+                    value = attr[1]
+            if(self.journalFound and value):
+                self.journal = value
+
+
+
         # handle title, abstract image and abstract text
 
         if(tag == "div" and len(attrs) >= 1):
@@ -121,6 +184,7 @@ class TableParser(HTMLParser):
                     break
         if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
             self.abstractText += " . "
+            self.abstractBoldText += " . "
             self.abstractFound = False
         if(self.abstractFound and tag == "figure"):
             self.figureFound = True
@@ -130,7 +194,8 @@ class TableParser(HTMLParser):
                 if(attr[0] == "title"):
                     title = attr[1]
                 elif(attr[0] == "href"):
-                    link = DOMAIN + attr[1]
+                    global ACSDOMAIN
+                    link = ACSDOMAIN + attr[1]
             if(title == "High Resolution Image"):
                 self.imgArr.append(link)
         if(self.abstractFound and tag == "p" and len(attrs) == 1 and attrs[0][1] == "articleBody_abstractText"):
@@ -141,6 +206,7 @@ class TableParser(HTMLParser):
             self.titleText = True
         if(self.textFound and tag == "b"):
             self.boldTextFound = True
+            self.abstractBoldText += "<b>"
 
         #handle body text
         
@@ -156,6 +222,9 @@ class TableParser(HTMLParser):
             for attr in attrs:
                 if(attr[0] == "class" and attr[1] == "article-section__title"):
                     self.paragraphHeaderFound = True
+        if(self.paragraphFound and tag == "b"):
+            self.boldParagraphFound = True
+            self.boldParagraphText += "<b> "
 
         # handle table caption
         
@@ -230,14 +299,29 @@ class TableParser(HTMLParser):
         if(self.cellSpace):
             self.cell += " "
             return
+        
+        if(self.authorFound):
+            self.authorArr.append(data)
+        if(self.dateFound):
+            index = data.find(",")
+            self.year = int(data[index + 1 :].strip())
+        if(self.institutionFound):
+            self.institution[-1] += data
+        if(self.citationNumber):
+            self.paperCited = int(data)
+        if(self.doiLink):
+            index = data.find("https://doi.org/")
+            if(index != -1):
+                self.doi = data[16:]
+
 
         # handle title and abstract
 
         if(self.textFound):
             self.abstractText += data
+            self.abstractBoldText += data
         if(self.titleText):
-            global titleText
-            titleText += data
+            self.title += data
         if(self.boldTextFound):
             self.boldAbstractTextArr.append(data)
         
@@ -253,6 +337,7 @@ class TableParser(HTMLParser):
                 exitParser(self)
         if(self.paragraphFound):
             self.paragraphText += data
+            self.boldParagraphText += data
         if(self.paragraphHeaderFound):
             self.paragraphHeader += data
 
@@ -269,7 +354,26 @@ class TableParser(HTMLParser):
 
     
     def handle_endtag(self, tag):
-       
+
+        if(self.authorFound and tag == "span"):
+            self.authorFound = False
+        if(self.dateFound and tag == "span"):
+            self.dateFound = False
+        if(self.institutionFound and tag == "span"):
+            self.institutionFound = False
+        if(self.citationFound and tag == "div" and self.citationDivCount == 1):
+            self.citationDivCount -= 1
+            self.citationFound = False
+        elif(self.citationFound and tag == "div" and self.citationDivCount > 1):
+            self.citationDivCount -= 1
+        if(self.citationNumber and tag == "a"):
+            self.citationNumber = False
+        if(self.doiFound and tag == "div"):
+            self.doiFound = False
+        if(self.doiLink and tag == "a"):
+            self.doiLink = False
+
+
         # handle title and abstract
         
         if(self.disableRead):
@@ -286,18 +390,27 @@ class TableParser(HTMLParser):
             self.titleText = False
         if(self.boldTextFound and tag == "b"):
             self.boldTextFound = False
+            self.abstractBoldText += "</b>"
         
         # handle body text
         
+        if(self.boldParagraphFound and tag == "b"):
+            self.boldParagraphText += " </b>"
+            self.boldParagraphFound = False
         if(self.sectionTitleFound and tag == "div"):
             self.sectionTitleFound = False
         # found the end of a paragraph, append the content to the last section
         if(self.paragraphFound and tag == "div" and self.paragraphDivCount == 1):
+            if(len(self.bodyText.sections) == 0):
+                newSection = BodyText.Section("")
+                self.bodyText.sections.append(newSection)
             if(len(self.bodyText.sections[-1].paragraphs) == 0):
                 newParagraph = BodyText.Section.Paragraph()
                 self.bodyText.sections[-1].paragraphs.append(newParagraph)
             self.bodyText.sections[-1].paragraphs[-1].contents.append(self.paragraphText)
+            self.bodyText.sections[-1].paragraphs[-1].boldContents.append(self.boldParagraphText)
             self.paragraphText = ""
+            self.boldParagraphText = ""
             self.paragraphFound = False
             self.paragraphDivCount -= 1
         elif(self.paragraphFound and tag == "div" and self.paragraphDivCount > 1):
@@ -308,6 +421,10 @@ class TableParser(HTMLParser):
             newParagraph = BodyText.Section.Paragraph(self.paragraphHeader)
             self.bodyText.sections[-1].paragraphs.append(newParagraph)
             self.paragraphHeader = ""
+        if(self.paragraphBoldFound and tag == "b"):
+            self.paragraphBoldText += "</b>"
+            self.paragraphBoldText = ""
+            self.paragraphBoldFound = False
         
         # handle table caption
 
@@ -352,18 +469,333 @@ class TableParser(HTMLParser):
             self.tableDescriptionDivCount -= 1
         if(self.tableFootnoteFound and tag == "div"):
             self.tableFootnoteFound = False
-        
-    
 
-tableParser = TableParser()
+
+
+
+
+
+
+
+# parse a ScienceDirect xml file
+class ScienceDirectTableParser(HTMLParser):
+
+    def __init__(self):
+        HTMLParser.__init__(self)
+
+        self.skipParsing = False
+
+        self.authorArr = []
+        self.year = -1
+        self.institution = []
+        self.journal = ""
+
+        self.authorFound = False
+        self.authorName = False
+        self.yearFound = False
+        self.institutionFound = False
+        self.institutionName = False
+        self.journalFound = False
+        
+        self.titleFound = False
+        self.titleText = ""
+        self.imgRef = ""
+        self.abstractBoldText = ""
+        self.boldAbstractTextArr = []
+
+        self.abstractTextFound = False
+        self.abstractTextContent = False
+        self.abstractText = ""
+        self.abstractImageFound = False
+        self.boldTextFound = False
+        
+        self.bodyTextFound = False
+        self.bodyText = BodyText()
+        self.sectionCount = 0
+        self.newSectionFound = False
+        self.newSubsection = False
+        self.newSectionTitle = False
+        self.newSubsectionTitle = False
+        self.newParagraphFound = False
+        self.boldParagraphFound = False
+
+        self.tables = []
+        self.tableFound = False
+        self.tableCaptionFound = False
+        self.tableCaptionContent = False
+
+        self.tableGridFound = False
+        self.tableHeaderFound = False
+        self.headerRowFound = False
+        self.headerCellFound = False
+        self.spaceHeaderCell = False
+
+        self.tableContentFound = False
+        self.contentRowFound = False
+        self.contentCellFound = False
+        self.spaceContentCell = False
+
+
+
+
+    def handle_starttag(self, tag, attrs):
+
+        if(tag == "ce:author"):
+            self.authorFound = True
+            self.authorArr.append("")
+        if(self.authorFound and (tag == "ce:given-name" or tag == "ce:surname")):
+            self.authorName = True
+        if(tag == "xocs:cover-date-year"):
+            self.yearFound = True
+        if(tag == "ce:affiliation"):
+            self.institutionFound = True
+        if(self.institutionFound and tag == "ce:textfn"):
+            self.institutionName = True
+            self.institution.append("")
+        if(tag == "xocs:srctitle"):
+            self.journalFound = True
+
+        if(tag == "ce:title"):
+            self.titleFound = True
+        if(tag == "ce:abstract"):
+            for attr in attrs:
+                if(attr[0] == "class" and attr[1] == "author"):
+                    self.abstractTextFound = True
+                    return
+                elif(attr[0] == "class" and attr[1] == "graphical"):
+                    self.abstractImageFound = True
+                    return
+        if(self.abstractTextFound and tag == "ce:simple-para"):
+            self.abstractTextContent = True
+        if(self.abstractImageFound and tag == "ce:link"):
+            for attr in attrs:
+                if(attr[0] == "xlink:href"):
+                    self.imgRef = attr[1]
+        if(self.abstractTextContent and tag == "ce:bold"):
+            self.boldTextFound = True
+            self.abstractBoldText += "<b>"
+
+        if(tag == "ce:sections"):
+            self.bodyTextFound = True
+        if(self.bodyTextFound and tag == "ce:section" and self.sectionCount == 0):
+            self.newSectionFound = True
+            self.sectionCount += 1
+            return
+        if(self.newSectionFound and tag == "ce:section" and self.sectionCount > 0):
+            self.newSubsection = True
+            self.sectionCount += 1
+        if(self.newSectionFound and tag == "ce:section-title" and self.sectionCount == 1):    
+            self.newSectionTitle = True
+        if(self.newSectionFound and tag == "ce:section-title" and self.sectionCount > 1):
+            self.newSubsectionTitle = True
+        if(self.newSectionFound and tag == "ce:para"):
+            self.newParagraphFound = True
+            if(len(self.bodyText.sections[-1].paragraphs) > 0 and self.bodyText.sections[-1].paragraphs[-1].header != ""):
+                return
+            newParagraph = BodyText.Section.Paragraph("")
+            self.bodyText.sections[-1].paragraphs.append(newParagraph)
+        if(self.newParagraphFound and tag == "ce:bold"):
+            self.boldParagraphFound = True
+        if(tag == "ce:table"):
+            self.tableFound = True
+            newTable = Table()
+            self.tables.append(newTable)
+        if(self.tableFound and tag == "ce:caption"):
+            self.tableCaptionFound = True
+        if(self.tableCaptionFound and tag == "ce:simple-para"):
+            self.tableCaptionContent = True
+
+        if(self.tableFound and tag == "tgroup"):
+            self.tableGridFound = True
+            newGrid = Table.Grid()
+            for attr in attrs:
+                if(attr[0] == "cols"):
+                    newGrid.columnNum = int(attr[1])
+            self.tables[-1].grid = newGrid
+        if(self.tableGridFound and tag == "thead"):
+            self.tableHeaderFound = True
+        if(self.tableHeaderFound and tag == "row"):
+            self.headerRowFound = True
+            newRow = Table.Grid.Row()
+            self.tables[-1].grid.header.append(newRow)
+        if(self.headerRowFound and tag == "entry"):
+            self.headerCellFound = True
+            self.tables[-1].grid.header[-1].cells.append("")
+        if(self.headerCellFound and tag == "cross-ref"):
+            self.spaceHeaderCell = True
+        
+        if(self.tableGridFound and tag == "tbody"):
+            self.tableContentFound = True
+        if(self.tableContentFound and tag == "row"):
+            self.contentRowFound = True
+            newRow = Table.Grid.Row()
+            self.tables[-1].grid.body.append(newRow)
+        if(self.contentRowFound and tag == "entry"):
+            self.contentCellFound = True
+            self.tables[-1].grid.body[-1].cells.append("")
+        if(self.contentCellFound and tag == "cross-ref"):
+            self.spaceContentCell = True
+        
+
+
+    def handle_data(self, data):
+
+        if(self.authorName):
+            if(len(self.authorArr[-1]) == 0):
+                self.authorArr[-1] += (data.strip() + " ")
+            else:
+                self.authorArr[-1] += data.strip()
+        if(self.yearFound):
+            self.year = int(data)
+        if(self.institutionName):
+            self.institution[-1] += (data.strip())
+        if(self.journalFound):
+            self.journal = data
+        
+        if(self.spaceHeaderCell):
+            if(len(self.tables[-1].grid.header[-1].cells) != 0):
+                self.tables[-1].grid.header[-1].cells[-1] += " "
+            return
+        if(self.spaceContentCell):
+            if(len(self.tables[-1].grid.body[-1].cells) != 0):
+                self.tables[-1].grid.body[-1].cells[-1] += " " 
+            return
+
+
+        if(self.skipParsing):
+            self.skipParsing = True
+            return
+        if(self.boldTextFound):
+            self.boldAbstractTextArr.append(data)
+        
+        if(self.titleFound):
+            self.titleText = data
+        if(self.abstractTextContent):
+            self.abstractText += data
+            self.abstractBoldText += data
+        
+        if(self.newSectionTitle):
+            newSection = BodyText.Section(data)
+            self.bodyText.sections.append(newSection)
+        if(self.newSubsectionTitle):
+            newParagraph = BodyText.Section.Paragraph(data)
+            self.bodyText.sections[-1].paragraphs.append(newParagraph)
+        if(self.newParagraphFound):
+            boldData = data
+            if(self.boldParagraphFound):
+                boldData = "<b> " + boldData + " </b>"
+            if(len(self.bodyText.sections[-1].paragraphs) == 0):
+                newParagraph = BodyText.Section.Paragraph("")
+                self.bodyText.sections[-1].paragraphs.append(newParagraph)
+            if(len(self.bodyText.sections[-1].paragraphs[-1].contents) == 0):
+                self.bodyText.sections[-1].paragraphs[-1].contents.append(data)
+                self.bodyText.sections[-1].paragraphs[-1].boldContents.append(boldData)
+                return 
+            else:
+                self.bodyText.sections[-1].paragraphs[-1].contents[-1] += (data)
+                self.bodyText.sections[-1].paragraphs[-1].boldContents[-1] += (boldData)
+
+        
+        if(self.tableCaptionContent):
+            self.tables[-1].caption += data
+        if(self.headerCellFound):
+            self.tables[-1].grid.header[-1].cells[-1] += data.strip()
+        if(self.contentCellFound):
+            self.tables[-1].grid.body[-1].cells[-1] += data.strip()
+
+
+
+    def handle_endtag(self, tag):
+
+        if(self.authorFound and tag == "ce:author"):
+            self.authorFound = False
+        if(self.authorName and (tag == "ce:given-name" or tag == "ce:surname")):
+            self.authorName = False
+        if(self.yearFound and tag == "xocs:cover-date-year"):
+            self.yearFound = False
+        if(self.institutionFound and tag == "ce:affiliation"):
+            self.institutionFound = False
+        if(self.institutionName and tag == "ce:textfn"):
+            self.institutionName = False
+        if(self.journalFound and tag == "xocs:srctitle"):
+            self.journalFound = False
+
+        if(self.titleFound and tag == "ce:title"):
+            self.titleFound = False
+        if(self.abstractTextFound and tag == "ce:abstract"):
+            self.abstractTextFound = False
+        if(self.abstractImageFound and tag == "ce:abstract"):
+            self.abstractImageFound = False
+        if(self.abstractTextContent and tag == "ce:simple-para"):
+            self.abstractTextContent = False
+        if(self.boldTextFound and tag == "ce:bold"):
+            self.boldTextFound = False
+            self.abstractBoldText += "</b>"
+        
+        if(self.bodyTextFound and tag == "ce:sections"):
+            self.bodyTextFound = False
+        if(self.newSectionFound and tag == "ce:section" and self.sectionCount == 1):
+            self.newSectionFound = False
+            self.sectionCount -= 1
+        if(self.newSubsection and tag == "ce:section" and self.sectionCount > 1):
+            self.sectionCount -= 1
+            if(self.sectionCount == 1):
+                self.newSubsection = False
+        if(self.newSectionTitle and tag == "ce:section-title"):
+            self.newSectionTitle = False
+        if(self.newSubsectionTitle and tag == "ce:section-title"):
+            self.newSubsectionTitle = False
+        if(self.newParagraphFound and tag == "ce:para"):
+            self.newParagraphFound = False
+        if(self.boldParagraphFound and tag == "ce:bold"):
+            self.boldParagraphFound = False
+        
+        if(self.tableFound and tag == "ce:table"):
+            self.tableFound = False
+        if(self.tableCaptionFound and tag == "ce:caption"):
+            self.tableCaptionFound = False
+        if(self.tableCaptionContent and tag == "ce:simple-para"):
+            self.tableCaptionContent = False
+        
+        if(self.tableGridFound and tag == "tgroup"):
+            self.tableGridFound = False
+        if(self.tableHeaderFound and tag == "thead"):
+            self.tableHeaderFound = False
+        if(self.headerRowFound and tag == "row"):
+            self.headerRowFound = False
+        if(self.headerCellFound and tag == "entry"):
+            self.headerCellFound = False
+        if(self.spaceHeaderCell and tag == "cross-ref"):
+            self.spaceHeaderCell = False
+        
+        if(self.tableContentFound and tag == "tbody"):
+            self.tableContentFound = False
+        if(self.contentRowFound and tag == "row"):
+            self.contentRowFound = False
+        if(self.contentCellFound and tag == "entry"):
+            self.contentCellFound = False
+        if(self.spaceContentCell and tag == "cross-ref"):
+            self.spaceContentCell = False
+
+
+
+
+
+
+
+
+
+        
+
+fileId = 1
+tableParser = ACSTableParser()
 # open a file locally, should be retrieved through http request in real programs
-with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
+with open(f"files/janus kinase/file{fileId}.html", encoding="utf-8") as inputFile:
 
     try: 
         tableParser.feed(inputFile.read())
     except AssertionError as ae:
         pass
-    imgArr = tableParser.imgArr
     abstractText = tableParser.abstractText
     
     bodyText = tableParser.bodyText
@@ -374,6 +806,10 @@ with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
             print(f"sub header: {paragraph.header}")
             print()
             for content in paragraph.contents:
+                print(content)
+                print()
+            print()
+            for content in paragraph.boldContents:
                 print(content)
                 print()
 
@@ -407,4 +843,13 @@ with open(f"files/{TARGET}/file{fileId}.html", encoding="utf-8") as inputFile:
             for cell in row.cells:
                 print(cell, end="   ")
             print()
+
+
+
+
+
+
+
+
+
 
