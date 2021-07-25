@@ -372,11 +372,13 @@ class ACS:
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
             except AssertionError as ae:
-                if(contentParser.keywordFound and contentParser.imgURL):
-                    # image = requests.get(contentParser.imgURL).content
-                    # with open("abstract_image/image.jpeg", "wb") as handler:
-                    #     handler.write(image)
-                    (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
+                pass
+            
+            if(contentParser.keywordFound and contentParser.imgURL):
+                # image = requests.get(contentParser.imgURL).content
+                # with open("abstract_image/image.jpeg", "wb") as handler:
+                #     handler.write(image)
+                (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
 
             if(simles):
                 
@@ -3269,6 +3271,7 @@ def all_to_json(targetName):
     addressArr = list(range(306))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
+    print(1)
 
     result = {}
     result["target_name"] = targetName
@@ -3280,9 +3283,9 @@ def all_to_json(targetName):
     i = 0
     for articleURL in tableAddressArr:
 
-
+        print(f"A1: {i}")
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
-        
+        print(f"A2: {i}")        
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3320,7 +3323,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
-        
+        print(f"A3: {i}")        
         if L.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
@@ -3331,19 +3334,21 @@ def all_to_json(targetName):
             articleDict["clinical_statistics"] = {}
 
 
-
+        print(f"A4: {i}")
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
+        print(f"A5: {i}")
 
 
+    print(2)
 
     ScienceDirect.TARGET = targetName
     ScienceDirect.initialize_conditions(targetName)
 
     ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
 
-
+    print(f"S1: {i}")
     result["paper_count"] += paper_count
     result["drug_molecule_count"] += drug_molecule_count
     for SDYearCount in paper_count_year:
@@ -3360,14 +3365,14 @@ def all_to_json(targetName):
         if(not yearFound):
             result["paper_count_year"].append(SDYearCount)
         
-
+    print(f"S2: {i}")
     for articleDOI in doiArr:
-
+        print(f"S3: {i}")
         article = ScienceDirect.ScienceDirectArticle(articleDOI)
         if(not article.valid):
             result["drug_molecule_count"] -= 1
             continue
-
+        print(f"S4: {i}")
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3405,7 +3410,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
-        
+        print(f"S5: {i}")        
         if L.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
@@ -3416,11 +3421,14 @@ def all_to_json(targetName):
             articleDict["clinical_statistics"] = {}
 
 
-
+        print(f"S6: {i}")
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
 
+        print(f"S7: {i}")
+
+    print(3)
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
     for i in combine:
         item = {}
@@ -3428,11 +3436,12 @@ def all_to_json(targetName):
         item['target'] = i[1]["paper_id"]
         item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
     
-
+    print(4)
     with open("output.json", "w") as outputFile:
         jsonString = json.dumps(result)
         outputFile.write(jsonString)
 
 
 if __name__ == '__main__':
+    print(0)
     all_to_json("janus kinase")
