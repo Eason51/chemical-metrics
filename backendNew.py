@@ -1,6 +1,6 @@
 import molecular_Structure_Similarity as similarity
 from torch.nn.functional import fractional_max_pool2d_with_indices
-from re import L
+import re
 from numpy.core.arrayprint import format_float_scientific
 import requests
 from html.parser import HTMLParser
@@ -3289,6 +3289,10 @@ def all_to_json(targetName):
 
         print(f"A1: {i}")
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        if(not article.compound):
+            print("not valid")
+            result["drug_molecule_count"] -= 1
+            continue
         print(f"A2: {i}")        
         articleDict = {}
         articleDict["paper_id"] = i
@@ -3328,7 +3332,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vivo"] = vivoDict
 
         print(f"A3: {i}")        
-        if L.search('[A-Z]', articleDict["compound_name"]):
+        if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
@@ -3373,7 +3377,8 @@ def all_to_json(targetName):
     for articleDOI in doiArr:
         print(f"S3: {i}")
         article = ScienceDirect.ScienceDirectArticle(articleDOI)
-        if(not article.valid):
+        if(not article.valid or not article.compound):
+            print("not valid")
             result["drug_molecule_count"] -= 1
             continue
         print(f"S4: {i}")
@@ -3415,7 +3420,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vivo"] = vivoDict
 
         print(f"S5: {i}")        
-        if L.search('[A-Z]', articleDict["compound_name"]):
+        if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
