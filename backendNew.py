@@ -222,6 +222,9 @@ class ACS:
 
 
         def handle_starttag(self, tag, attrs):
+            if(self.keywordFound and self.imgURL):
+                exitParser(self)
+
             if (self.complete):
                 return
             elif (tag == "div" and len(attrs) == 1 and attrs[0][1] == "NLM_p"):
@@ -263,7 +266,6 @@ class ACS:
                 stringList = ["IC50", "EC50", "ED50"]            
                 if(any(substring in data for substring in stringList)):
                     self.keywordFound = True
-                    exitParser(self)
                     self.complete = True
                 elif(any(substring in data for substring in stringList)):
                     index = data.find("Ki")
@@ -279,11 +281,9 @@ class ACS:
                             keywordFound = True
                     if(keywordFound):
                         self.keywordFound = True
-                        exitParser(self)
                 elif(self.ICFound):
                     if(len(data) >= 2 and data[:2] == "50"):
                         self.keywordFound = True
-                        exitParser(self)
                         self.complete = True
                     else:
                         self.ICFound = False
