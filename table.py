@@ -787,62 +787,62 @@ class ScienceDirectTableParser(HTMLParser):
 
         
 
-fileId = 1
-tableParser = ACSTableParser()
-# open a file locally, should be retrieved through http request in real programs
-with open(f"files/janus kinase/file{fileId}.html", encoding="utf-8") as inputFile:
+# fileId = 1
+# tableParser = ACSTableParser()
+# # open a file locally, should be retrieved through http request in real programs
+# with open(f"files/janus kinase/file{fileId}.html", encoding="utf-8") as inputFile:
 
-    try: 
-        tableParser.feed(inputFile.read())
-    except AssertionError as ae:
-        pass
-    abstractText = tableParser.abstractText
+#     try: 
+#         tableParser.feed(inputFile.read())
+#     except AssertionError as ae:
+#         pass
+#     abstractText = tableParser.abstractText
     
-    bodyText = tableParser.bodyText
-    for section in bodyText.sections:
-        print("\n\n\n")
-        print(f"section header: {section.title}")
-        for paragraph in section.paragraphs:
-            print(f"sub header: {paragraph.header}")
-            print()
-            for content in paragraph.contents:
-                print(content)
-                print()
-            print()
-            for content in paragraph.boldContents:
-                print(content)
-                print()
+#     bodyText = tableParser.bodyText
+#     for section in bodyText.sections:
+#         print("\n\n\n")
+#         print(f"section header: {section.title}")
+#         for paragraph in section.paragraphs:
+#             print(f"sub header: {paragraph.header}")
+#             print()
+#             for content in paragraph.contents:
+#                 print(content)
+#                 print()
+#             print()
+#             for content in paragraph.boldContents:
+#                 print(content)
+#                 print()
 
-    tables = tableParser.tables
-    for table in tables:
-        print("\n\n\n")
-        print(f"table caption: {table.caption}")
+#     tables = tableParser.tables
+#     for table in tables:
+#         print("\n\n\n")
+#         print(f"table caption: {table.caption}")
         
-        print()
-        print("table descriptions: ")
-        for description in table.descriptions:
-            print(description)
-            print()
+#         print()
+#         print("table descriptions: ")
+#         for description in table.descriptions:
+#             print(description)
+#             print()
         
-        print()
-        print("table grid: ")
-        print(f"column number: {table.grid.columnNum}")
+#         print()
+#         print("table grid: ")
+#         print(f"column number: {table.grid.columnNum}")
         
-        print()
-        print("grid header: ")
-        for row in table.grid.header:
-            print("row: ", end="   ")
-            for cell in row.cells:
-                print(cell, end="   ")
-            print()
+#         print()
+#         print("grid header: ")
+#         for row in table.grid.header:
+#             print("row: ", end="   ")
+#             for cell in row.cells:
+#                 print(cell, end="   ")
+#             print()
         
-        print()
-        print("grid body: ")
-        for row in table.grid.body:
-            print("row: ", end="   ")
-            for cell in row.cells:
-                print(cell, end="   ")
-            print()
+#         print()
+#         print("grid body: ")
+#         for row in table.grid.body:
+#             print("row: ", end="   ")
+#             for cell in row.cells:
+#                 print(cell, end="   ")
+#             print()
 
 
 
