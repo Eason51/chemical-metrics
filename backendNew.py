@@ -223,6 +223,7 @@ class ACS:
 
         def handle_starttag(self, tag, attrs):
             if(self.keywordFound and self.imgURL):
+                print("true")
                 exitParser(self)
 
             if (self.complete):
@@ -240,7 +241,9 @@ class ACS:
                     if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
                         self.abstractFound = True
                         break
-            if(self.figureFound and tag == "figure"):
+            if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
+                self.abstractFound = False
+            if(self.abstractFound and tag == "figure"):
                 self.figureFound = True
             if(self.figureFound and tag == "a" and len(attrs) >= 2):
                 title = link = ""
@@ -248,13 +251,9 @@ class ACS:
                     if(attr[0] == "title"):
                         title = attr[1]
                     elif(attr[0] == "href"):
-                        link = attr[1]
+                        link = ACS.DOMAIN + attr[1]
                 if(title == "High Resolution Image"):
-                    self.figureLinkFound = True
                     self.imgURL = ACS.DOMAIN + link
-            if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
-                if(not self.figureLinkFound):
-                    exitParser(self)
             
 
         
@@ -266,7 +265,6 @@ class ACS:
                 stringList = ["IC50", "EC50", "ED50"]            
                 if(any(substring in data for substring in stringList)):
                     self.keywordFound = True
-                    self.complete = True
                 elif(any(substring in data for substring in stringList)):
                     index = data.find("Ki")
                     if(index == -1):
@@ -284,7 +282,6 @@ class ACS:
                 elif(self.ICFound):
                     if(len(data) >= 2 and data[:2] == "50"):
                         self.keywordFound = True
-                        self.complete = True
                     else:
                         self.ICFound = False
                 elif(len(data) >= 2 and (data[-2:] in ["IC", "EC", "ED"])):
@@ -292,9 +289,7 @@ class ACS:
             
             elif(self.dateFound):
                 self.date = data.split()[-1]
-            elif(self.titleFound):
-                if(data.lower() in "references"):
-                    exitParser(self)
+
 
         
         def handle_endtag(self, tag):
