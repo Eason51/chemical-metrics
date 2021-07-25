@@ -1,5 +1,4 @@
 from torch.nn.functional import fractional_max_pool2d_with_indices
-from ScienceDirect import DOI
 from re import L
 from numpy.core.arrayprint import format_float_scientific
 import requests
@@ -12,7 +11,7 @@ from elsapy.elsdoc import FullDoc
 import chemschematicresolver as csr
 import Clinical_View as clinical
 import itertools
-import  molecular_Structure_Similarity as similarity
+import molecular_Structure_Similarity as similarity
 from molecular_Structure_Similarity import molecularSimles
 import os
 
@@ -2930,7 +2929,7 @@ class ScienceDirect:
         def find_values_in_table(self, valueName):
 
             if(not self.compound):
-                return ""
+                return ["", "", ""]
             
             mediValue = ""
             vitroValue = ""
