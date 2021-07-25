@@ -358,6 +358,7 @@ class ACS:
         positionResultDict = {}
 
         for address in addressArr:
+            print(f"address: {address}")
             contentParser = ACS.ContentParser()
             simles = ""
             positionResult = []
@@ -367,17 +368,20 @@ class ACS:
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
             except AssertionError as ae:
-                pass
+                print("early")
+            print("late")
             
             if(contentParser.keywordFound and contentParser.imgURL):
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
+                print("test")
                 (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
-
+            
+            print(f"simles: {simles}")
             if(simles):
                 
-                os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
+                # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
                 drugPaperCount += 1
                 tableAddressArr.append(address)
                 simlesDict[address] = simles
