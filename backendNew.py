@@ -2422,14 +2422,14 @@ class ScienceDirect:
         def retrieve_image_text(self):
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
-            with open(f"abstract_image/{self.doi}.jpeg", "wb") as handler:
+            with open(f"abstract_image/{self.doi.replace('/', '_')}.jpeg", "wb") as handler:
                 handler.write(image)
 
             simles = ""
             positionResult = []
 
             try:
-                (simles, positionResult) = molecularSimles(f"abstract_image/{self.doi}.jpeg")
+                (simles, positionResult) = molecularSimles(f"abstract_image/{self.doi.replace('/', '_')}.jpeg")
             except SyntaxError as se:
                 self.valid = False
             if(not simles):
