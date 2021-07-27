@@ -223,7 +223,6 @@ class ACS:
 
         def handle_starttag(self, tag, attrs):
             if(self.keywordFound and self.imgURL):
-                print("true")
                 exitParser(self)
 
             if (self.complete):
@@ -358,7 +357,6 @@ class ACS:
         positionResultDict = {}
 
         for address in addressArr:
-            print(f"address: {address}")
             contentParser = ACS.ContentParser()
             simles = ""
             positionResult = []
@@ -368,20 +366,17 @@ class ACS:
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
             except AssertionError as ae:
-                print("early")
-            print("late")
+                pass
             
             if(contentParser.keywordFound and contentParser.imgURL):
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
-                print("test")
+                
                 try:
                     (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
                 except:
-                    print("error inside")
                     simles = ""
-                print(f"simles: {simles}")
 
             
             if(simles):
@@ -1057,6 +1052,57 @@ class ACS:
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
+
+
+
+
+            for section in self.bodyText.sections:
+                print("\n\n\n")
+                print(f"section header: {section.title}")
+                for paragraph in section.paragraphs:
+                    print(f"sub header: {paragraph.header}")
+                    print()
+                    for content in paragraph.contents:
+                        print(content)
+                        content = content.encode("ascii", "ignore").decode()
+                        print()
+                    print()
+                    for content in paragraph.boldContents:
+                        print(content)
+                        content = content.encode("ascii", "ignore").decode()
+                        print()
+
+            for table in self.tables:
+                print("\n\n\n")
+                print(f"table caption: {table.caption}")
+                
+                print()
+                print("table descriptions: ")
+                for description in table.descriptions:
+                    print(description)
+                    print()
+                
+                print()
+                print("table grid: ")
+                print(f"column number: {table.grid.columnNum}")
+                
+                print()
+                print("grid header: ")
+                for row in table.grid.header:
+                    print("row: ", end="   ")
+                    for cell in row.cells:
+                        print(cell, end="   ")
+                        cell = cell.encode("ascii", "ignore").decode()
+                    print()
+                
+                print()
+                print("grid body: ")
+                for row in table.grid.body:
+                    print("row: ", end="   ")
+                    for cell in row.cells:
+                        print(cell, end="   ")
+                        cell = cell.encode("ascii", "ignore").decode()
+                    print()
 
 
 # retrieve target information
@@ -3285,8 +3331,6 @@ def all_to_json(targetName):
     addressArr = list(range(306))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
-    print(1)
-
     result = {}
     result["target_name"] = targetName
     result["paper_count"] = paper_count
@@ -3297,13 +3341,10 @@ def all_to_json(targetName):
     i = 0
     for articleURL in tableAddressArr:
 
-        print(f"A1: {i}")
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
         if(not article.compound):
-            print("not valid")
             result["drug_molecule_count"] -= 1
-            continue
-        print(f"A2: {i}")        
+            continue        
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3341,7 +3382,6 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
-        print(f"A3: {i}")        
         if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
@@ -3352,134 +3392,117 @@ def all_to_json(targetName):
             articleDict["clinical_statistics"] = {}
 
 
-        print(f"A4: {i}")
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
-        print(f"A5: {i}")
 
 
-    print(2)
+    ScienceDirect.TARGET = targetName
+    ScienceDirect.initialize_conditions(targetName)
 
-    # ScienceDirect.TARGET = targetName
-    # ScienceDirect.initialize_conditions(targetName)
+    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
 
-    # ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
-
-    # print(f"S1: {i}")
-    # result["paper_count"] += paper_count
-    # result["drug_molecule_count"] += drug_molecule_count
-    # for SDYearCount in paper_count_year:
-    #     yearFound = False
-    #     for ACSyearCount in result["paper_count_year"]:
-    #         if(ACSyearCount[0] > SDYearCount[0]):
-    #             break
-    #         elif(ACSyearCount[0] < SDYearCount[0]):
-    #             continue
-    #         else:
-    #             ACSyearCount[1] += SDYearCount[1]
-    #             yearFound = True
+    print(f"S1: {i}")
+    result["paper_count"] += paper_count
+    result["drug_molecule_count"] += drug_molecule_count
+    for SDYearCount in paper_count_year:
+        yearFound = False
+        for ACSyearCount in result["paper_count_year"]:
+            if(ACSyearCount[0] > SDYearCount[0]):
+                break
+            elif(ACSyearCount[0] < SDYearCount[0]):
+                continue
+            else:
+                ACSyearCount[1] += SDYearCount[1]
+                yearFound = True
         
-    #     if(not yearFound):
-    #         result["paper_count_year"].append(SDYearCount)
+        if(not yearFound):
+            result["paper_count_year"].append(SDYearCount)
         
-    # print(f"S2: {i}")
-    # for articleDOI in doiArr:
-    #     print(f"S3: {i}") #TODO
-    #     article = ScienceDirect.ScienceDirectArticle(articleDOI)
-    #     print(f"articleDOI: {articleDOI}")
-    #     print(f"valid: {article.valid}")
-    #     print(f"compound: {article.compound}")
-    #     if(not article.valid or not article.compound):
-    #         print("not valid")
-    #         result["drug_molecule_count"] -= 1
-    #         continue
-    #     print(f"S4: {i}")
-    #     articleDict = {}
-    #     articleDict["paper_id"] = i
-    #     articleDict["paper_title"] = article.titleText
-    #     articleDict["paper_author"] = article.authorArr
-    #     articleDict["paper_year"] = article.year
-    #     articleDict["paper_institution"] = article.institution
-    #     articleDict["paper_cited"] = article.paperCited
-    #     articleDict["doi"] = article.doi
-    #     articleDict["paper_journal"] = article.journal
-    #     articleDict["paper_abstract_image"] = article.imgURL
-    #     articleDict["compound_name"] = article.compound
-    #     articleDict["compound_smiles"] = article.simles
 
-    #     medicinalDict = {}
-    #     medicinalDict["Ki"] = article.enzymeKi
-    #     medicinalDict["Kd"] = article.enzymeKd
-    #     medicinalDict["IC50"] = article.enzymeIc50
-    #     medicinalDict["selectivity"] = article.enzymeSelectivity
-    #     vitroDict = {}
-    #     vitroDict["Ki"] = article.cellKi
-    #     vitroDict["Kd"] = article.cellKd
-    #     vitroDict["IC50"] = article.cellIc50
-    #     vitroDict["EC50"] = article.ec50
-    #     vitroDict["selectivity"] = article.cellSelectivity
-    #     vitroDict["hERG"] = article.herg
-    #     vitroDict["solubility"] = article.cellSolubility
-    #     vivoDict = {}
-    #     vivoDict["ED50"] = article.ed50
-    #     vivoDict["AUC"] = article.auc
-    #     vivoDict["solubility"] = article.vivoSolubility
-    #     vivoDict["t_half"] = article.tHalf
-    #     vivoDict["bioavailability"] = article.bioavailability
+    for articleDOI in doiArr:
 
-    #     articleDict["medicinal_chemistry_metrics"] = medicinalDict
-    #     articleDict["pharm_metrics_vitro"] = vitroDict
-    #     articleDict["pharm_metrics_vivo"] = vivoDict
+        article = ScienceDirect.ScienceDirectArticle(articleDOI)
 
-    #     print(f"S5: {i}")        
-    #     if re.search('[A-Z]', articleDict["compound_name"]):
-    #         r = clinical.getloadClinicalData(articleDict["compound_name"])
-    #         if 'StudyFields' in r:
-    #             articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
-    #         else:
-    #             articleDict["clinical_statistics"] = {}
-    #     else:
-    #         articleDict["clinical_statistics"] = {}
+        if(not article.valid or not article.compound):
 
+            result["drug_molecule_count"] -= 1
+            continue
 
-    #     print(f"S6: {i}")
-    #     result["drug_molecule_paper"].append(articleDict)
+        articleDict = {}
+        articleDict["paper_id"] = i
+        articleDict["paper_title"] = article.titleText
+        articleDict["paper_author"] = article.authorArr
+        articleDict["paper_year"] = article.year
+        articleDict["paper_institution"] = article.institution
+        articleDict["paper_cited"] = article.paperCited
+        articleDict["doi"] = article.doi
+        articleDict["paper_journal"] = article.journal
+        articleDict["paper_abstract_image"] = article.imgURL
+        articleDict["compound_name"] = article.compound
+        articleDict["compound_smiles"] = article.simles
 
-    #     i += 1
+        medicinalDict = {}
+        medicinalDict["Ki"] = article.enzymeKi
+        medicinalDict["Kd"] = article.enzymeKd
+        medicinalDict["IC50"] = article.enzymeIc50
+        medicinalDict["selectivity"] = article.enzymeSelectivity
+        vitroDict = {}
+        vitroDict["Ki"] = article.cellKi
+        vitroDict["Kd"] = article.cellKd
+        vitroDict["IC50"] = article.cellIc50
+        vitroDict["EC50"] = article.ec50
+        vitroDict["selectivity"] = article.cellSelectivity
+        vitroDict["hERG"] = article.herg
+        vitroDict["solubility"] = article.cellSolubility
+        vivoDict = {}
+        vivoDict["ED50"] = article.ed50
+        vivoDict["AUC"] = article.auc
+        vivoDict["solubility"] = article.vivoSolubility
+        vivoDict["t_half"] = article.tHalf
+        vivoDict["bioavailability"] = article.bioavailability
 
-    #     print(f"S7: {i}")
+        articleDict["medicinal_chemistry_metrics"] = medicinalDict
+        articleDict["pharm_metrics_vitro"] = vitroDict
+        articleDict["pharm_metrics_vivo"] = vivoDict
 
-    print(3)
+     
+        if re.search('[A-Z]', articleDict["compound_name"]):
+            r = clinical.getloadClinicalData(articleDict["compound_name"])
+            if 'StudyFields' in r:
+                articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+            else:
+                articleDict["clinical_statistics"] = {}
+        else:
+            articleDict["clinical_statistics"] = {}
+
+        result["drug_molecule_paper"].append(articleDict)
+
+        i += 1
+
 
     result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
-    print(f"result[drug_molecule_paper]: {result['drug_molecule_paper']}")
+
     for i in combine:
-        print("combine elment: ")
-        print(i)
-        print()
+
         item = {}
         item['source'] = i[0]["paper_id"]
-        print("i1")
+
         item['target'] = i[1]["paper_id"]
-        print("i2")
+
         item["value"] = None
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
             errorCount += 1
-        print("i3")
+
         result["medicinal_chemistry_similarity"].append(item)
-    
-    print(4)
+
     with open("output.json", "w") as outputFile:
         jsonString = json.dumps(result)
         outputFile.write(jsonString)
-    
-    print(f"errorCount: {errorCount}")
 
 
 if __name__ == '__main__':
-    print(0)
     all_to_json("janus kinase")
