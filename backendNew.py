@@ -351,25 +351,36 @@ class ACS:
         
         global FILEID
 
+        print("2.1")
         drugPaperCount = 0
         tableAddressArr = []
         dateArr = []
         simlesDict = {}
         positionResultDict = {}
+        print("2.2")
+
 
         for address in addressArr:
+
+
+            print(f"address: {address}")
+            print("2.3")
             contentParser = ACS.ContentParser()
+            print("2.4")
             simles = ""
             positionResult = []
             try:                
                 # articleResponse = requests.get(address, headers = {"User-Agent": "Mozilla/5.0"})
                 # contentParser.feed(articleResponse.text)
+                print("2.5")
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
+                    print("2.6")
             except AssertionError as ae:
                 pass
+                print("2.7")
 
-            
+            print("2.8")
             found = False
             for yearOccur in dateArr:
                 if (yearOccur[0] == contentParser.date):
@@ -378,21 +389,24 @@ class ACS:
                     break
             if(not found):
                 dateArr.append([contentParser.date, 1]) 
-                
+            print("2.9")    
             
             if(contentParser.keywordFound and contentParser.imgURL):
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
-                
+                print("2.10")
                 try:
                     (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
                 except:
                     simles = ""
+                    print("2.11")
+                print("2.12")
 
-            
+            print("2.13")
             if(simles):
                 
+                print("2.14")
                 # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
                 drugPaperCount += 1
                 tableAddressArr.append(address)
@@ -402,6 +416,7 @@ class ACS:
                 
                 FILEID += 1
         
+        print("2.15")
         dateArr.sort()
         return (dateArr, tableAddressArr, drugPaperCount, simlesDict, positionResultDict)
 
@@ -960,7 +975,7 @@ class ACS:
             self.tHalf = ""
             self.bioavailability = ""
 
-
+            print("3.1.1")
             self.retrieve_values()
 
 
@@ -968,18 +983,29 @@ class ACS:
 
         def retrieve_values(self):
 
+            print("3.1.2")
             self.get_FULLNAME_ABBREVIATION()
+            print("3.1.3")
             self.retrieve_article_information()
+            print("3.1.4")
             self.retrieve_target()
 
             # positionResult = self.retrieve_image_text()
+            print("3.1.5")
             self.get_ic50_from_image(self.positionResult)
+            print("3.1.6")
             self.get_compound_from_image(self.positionResult)
+            print("3.1.7")
             self.get_molecule_from_title_abstract()
+            print("3.1.8")
             self.get_compound_from_abstract()
+            print("3.1.9")
             self.get_ic50_from_abstract()
+            print("3.1.10")
             self.get_multiple_values_from_body()
+            print("3.1.11")
             self.get_single_value_from_body()
+            print("3.1.12")
         
 
 
@@ -1684,6 +1710,22 @@ class ACS:
                         value = table.grid.body[compoundRowNum].cells[colNum]
                         break
 
+                
+                
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
 
                 
                 if(mediFound):
@@ -1702,6 +1744,9 @@ class ACS:
             
             if(not self.compound):
                 return ""
+            
+            value = ""
+    
 
             for table in self.tables:
                 
@@ -1791,12 +1836,33 @@ class ACS:
                 if(compoundRowNum == -1):
                     continue
                 
+                
+                value = ""
                 if(valueColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[valueColNum]
+                    value = table.grid.body[compoundRowNum].cells[valueColNum]
                 elif(valueNameFound and targetColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[targetColNum]
+                    value = table.grid.body[compoundRowNum].cells[targetColNum]
+
+
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
+
+                    return value
+
             
-            return ""
+            return value
 
 
 
@@ -3277,17 +3343,139 @@ class ScienceDirect:
 
 
 
+
+
+def convertToInt(num):
+
+    if(not num):
+        return 0
+    if(type(num) is int):
+        return num
+
+    if(num.strip().isdigit()):
+        return int(num.strip())
+    
+    digitStr = ""
+    digitFound = False
+    for c in num.strip():
+        if(not digitFound and c.isdigit()):
+            digitFound = True
+        if(digitFound and not c.isdigit()):
+            break
+        if(digitFound and c.isdigit()):
+            digitStr += c
+    
+    if(digitStr):
+        try:
+            return int(digitStr)
+        except ValueError:
+            print(f"conversion error: {num}")
+            return 0
+    else:
+        return 0
+
+
+def convertToFloat(num):
+
+    num = num.strip()
+
+    if(not num):
+        return 0.0
+    if(type(num) is float):
+        return num
+
+    try:
+        return float(num)
+    except ValueError:
+        pass
+
+    numStr = ""
+    digitFound = False
+    decimalFound = False
+    for c in num:
+        if(not digitFound and c.isdigit()):
+            digitFound = True
+        if(digitFound and (c.isdigit() or c == ".")):
+            break
+        if(digitFound and (c.isdigit() or c == ".")):
+            if(c == "."):
+                if(not decimalFound):
+                    decimalFound = True
+                else:
+                    break
+            
+            numStr += c
+    
+    if(numStr):
+        try:
+            return float(numStr)
+        except ValueError:
+            print(f"conversion error: {numStr}")
+            return 0.0
+    else:
+        return 0.0
+
+
+def convert_value(valueDict, key, convertFunc, checkMicro):
+
+    if(not checkMicro):
+        if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
+            valueDict[key] = valueDict[key][2:]
+        valueDict[key] = convertFunc(valueDict[key])
+    else:
+        isMicro = False
+        if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
+            isMicro = True
+            valueDict[key] = valueDict[key][2:]
+        value = convertFunc(valueDict[key])
+        
+        if(isMicro and value):
+            value *= 1000
+        
+        valueDict[key] = value
+
+
 def check_json_value_format(articleDict):
 
-    pass
+    mediDict = articleDict["medicinal_chemistry_metrics"]
+    convert_value(mediDict, "IC50", convertToFloat, True)
+    convert_value(mediDict, "Ki", convertToFloat, True)
+    convert_value(mediDict, "Kd", convertToFloat, True)
+    convert_value(mediDict, "selectivity", convertToInt, False)
 
+    vitroDict = articleDict["pharm_metrics_vitro"]
+    convert_value(vitroDict, "IC50", convertToFloat, True)
+    convert_value(vitroDict, "Ki", convertToFloat, True)
+    convert_value(vitroDict, "Kd", convertToFloat, True)
+    convert_value(vitroDict, "EC50", convertToFloat, True)
+    convert_value(vitroDict, "selectivity", convertToInt, False)
+    convert_value(vitroDict, "hERG", convertToFloat, False)
+    convert_value(vitroDict, "solubility", convertToFloat, False)
+
+    vivoDict = articleDict["pharm_metrics_vivo"]
+    convert_value(vivoDict, "ED50", convertToFloat, False)
+    convert_value(vivoDict, "t_half", convertToFloat, False)
+    convert_value(vivoDict, "AUC", convertToFloat, False)
+    convert_value(vivoDict, "bioavailability", convertToFloat, False)
+    convert_value(vivoDict, "solubility", convertToFloat, False)
+
+    checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
+    dictArr = [mediDict, vitroDict]
+    for valueDict in dictArr:
+        for key in checkUnitkeyArr:
+            
+            if(key in valueDict):
+                
+                value = valueDict[key]
+                if(value > 0 and value < 1):
+                    value *= 1000
+                    valueDict[key] = value
 
 
 
 def all_to_json(targetName):
-
-    errorCount = 0
-
+    
+    print(1)
     ACS.TARGET = targetName
     
     # ACSUrl = ACS.prepare_query_url(targetName)
@@ -3295,7 +3483,8 @@ def all_to_json(targetName):
     # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
     paper_count = 306
     # addressArr =  ACS.get_article_URLs(queryResponse)
-
+    
+    print(2)
     addressArr = list(range(306))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
@@ -3306,13 +3495,20 @@ def all_to_json(targetName):
     result["drug_molecule_count"] = drug_molecule_count
     result["drug_molecule_paper"] = []
     
+    print(3)
     i = 0
     for articleURL in tableAddressArr:
-
+        
+        print(f"articleURL: {articleURL}")
+        print(3.1)
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        print(3.2)
         if(not article.compound):
             result["drug_molecule_count"] -= 1
-            continue        
+            print(3.3)
+            continue
+        
+        print(3.4)
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3350,6 +3546,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
+        print(3.5)
         if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
@@ -3359,7 +3556,14 @@ def all_to_json(targetName):
         else:
             articleDict["clinical_statistics"] = {}
 
-        check_json_value_format(articleDict)
+        print("start")
+        try:    
+            check_json_value_format(articleDict)
+        except Exception as e:
+            print(articleDict)
+            print(e)
+            raise Exception("exception occured")
+        print("end")
 
         result["drug_molecule_paper"].append(articleDict)
 
@@ -3482,14 +3686,15 @@ def all_to_json(targetName):
 
         item['target'] = i[1]["paper_id"]
 
-        item["value"] = None
+        item["value"] = 0.0
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
-            errorCount += 1
+            print(f"source: {item['source']}   target: {item['target']}")
 
         result["medicinal_chemistry_similarity"].append(item)
 
+    print("output")
     with open("output.json", "w", encoding="utf-8") as outputFile:
         jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
