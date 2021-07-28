@@ -1,4 +1,5 @@
 import molecular_Structure_Similarity as similarity
+import paper_count_per_year
 from torch.nn.functional import fractional_max_pool2d_with_indices
 import re
 from numpy.core.arrayprint import format_float_scientific
@@ -223,7 +224,6 @@ class ACS:
 
         def handle_starttag(self, tag, attrs):
             if(self.keywordFound and self.imgURL):
-                print("true")
                 exitParser(self)
 
             if (self.complete):
@@ -351,58 +351,75 @@ class ACS:
         
         global FILEID
 
+        print("2.1")
         drugPaperCount = 0
         tableAddressArr = []
         dateArr = []
         simlesDict = {}
         positionResultDict = {}
+        print("2.2")
 
+        i = 0
         for address in addressArr:
+
+            i += 1
+            if(i >= 10):
+                break
+
             print(f"address: {address}")
+            print("2.3")
             contentParser = ACS.ContentParser()
+            print("2.4")
             simles = ""
             positionResult = []
             try:                
                 # articleResponse = requests.get(address, headers = {"User-Agent": "Mozilla/5.0"})
                 # contentParser.feed(articleResponse.text)
+                print("2.5")
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
+                    print("2.6")
             except AssertionError as ae:
-                print("early")
-            print("late")
+                pass
+                print("2.7")
+
+            print("2.8")
+            found = False
+            for yearOccur in dateArr:
+                if (yearOccur[0] == contentParser.date):
+                    found = True
+                    yearOccur[1] += 1
+                    break
+            if(not found):
+                dateArr.append([contentParser.date, 1]) 
+            print("2.9")    
             
             if(contentParser.keywordFound and contentParser.imgURL):
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
-                print("test")
+                print("2.10")
                 try:
                     (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
                 except:
-                    print("error inside")
                     simles = ""
-                print(f"simles: {simles}")
+                    print("2.11")
+                print("2.12")
 
-            
+            print("2.13")
             if(simles):
                 
+                print("2.14")
                 # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
                 drugPaperCount += 1
                 tableAddressArr.append(address)
                 simlesDict[address] = simles
                 positionResultDict[address] = positionResult
-
-                found = False
-                for yearOccur in dateArr:
-                    if (yearOccur[0] == contentParser.date):
-                        found = True
-                        yearOccur[1] += 1
-                        break
-                if(not found):
-                    dateArr.append([contentParser.date, 1])  
+ 
                 
                 FILEID += 1
         
+        print("2.15")
         dateArr.sort()
         return (dateArr, tableAddressArr, drugPaperCount, simlesDict, positionResultDict)
 
@@ -1053,10 +1070,16 @@ class ACS:
             self.tables = self.tableParser.tables
             self.authorArr = self.tableParser.authorArr
             self.year = self.tableParser.year
-            self.instituition = self.tableParser.institution
+
+            if(len(self.tableParser.institution) == 0):
+                self.instituition = ""
+            else:
+                self.instituition = self.tableParser.institution[0]
+            
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
+
 
 
 # retrieve target information
@@ -1679,6 +1702,22 @@ class ACS:
                         value = table.grid.body[compoundRowNum].cells[colNum]
                         break
 
+                
+                
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
 
                 
                 if(mediFound):
@@ -1786,12 +1825,31 @@ class ACS:
                 if(compoundRowNum == -1):
                     continue
                 
+                
+                value = ""
                 if(valueColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[valueColNum]
+                    value = table.grid.body[compoundRowNum].cells[valueColNum]
                 elif(valueNameFound and targetColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[targetColNum]
+                    value = table.grid.body[compoundRowNum].cells[targetColNum]
+
+
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
+
             
-            return ""
+            return value
 
 
 
@@ -1879,6 +1937,17 @@ class ScienceDirect:
 
             if ("results" in result):
                 for article in result["results"]:
+
+                    date = article["publicationDate"][:4]
+                    found = False
+                    for yearOccur in dateArr:
+                        if(yearOccur[0] == date):
+                            yearOccur[1] += 1
+                            found = True
+                            break
+                    if(not found):
+                        dateArr.append([date, 1])
+
                     if (article["doi"]):
                         doc = FullDoc(doi = article["doi"])
                         stringList = ["IC50", "EC50", "ED50"]
@@ -1902,15 +1971,6 @@ class ScienceDirect:
                             AMOUNT2 += 1
                             DOIArr.append(article["doi"])
 
-                            date = article["publicationDate"][:4]
-                            found = False
-                            for yearOccur in dateArr:
-                                if(yearOccur[0] == date):
-                                    yearOccur[1] += 1
-                                    found = True
-                                    break
-                            if(not found):
-                                dateArr.append([date, 1])
                             continue
 
         dateArr.sort()
@@ -2414,7 +2474,12 @@ class ScienceDirect:
 
             self.authorArr = tableParser.authorArr
             self.year = tableParser.year
-            self.institution = tableParser.institution
+
+            if(len(tableParser.institution) == 0):
+                self.institution = ""
+            else:
+                self.institution = tableParser.institution[0]
+
             self.journal = tableParser.journal
 
             citedByURL = f"http://api.elsevier.com/content/search/scopus?query=DOI({self.doi})&field=citedby-count"
@@ -3267,13 +3332,137 @@ class ScienceDirect:
 
 
 
+def convertToInt(num):
+
+    if(not num):
+        return 0
+    if(type(num) is int):
+        return num
+
+    if(num.strip().isdigit()):
+        return int(num.strip())
+    
+    digitStr = ""
+    digitFound = False
+    for c in num.strip():
+        if(not digitFound and c.isdigit()):
+            digitFound = True
+        if(digitFound and not c.isdigit()):
+            break
+        if(digitFound and c.isdigit()):
+            digitStr += c
+    
+    if(digitStr):
+        try:
+            return int(digitStr)
+        except ValueError:
+            print(f"conversion error: {num}")
+            return 0
+    else:
+        return 0
+
+
+def convertToFloat(num):
+
+    num = num.strip()
+
+    if(not num):
+        return 0.0
+    if(type(num) is float):
+        return num
+
+    try:
+        return float(num)
+    except ValueError:
+        pass
+
+    numStr = ""
+    digitFound = False
+    decimalFound = False
+    for c in num:
+        if(not digitFound and c.isdigit()):
+            digitFound = True
+        if(digitFound and (c.isdigit() or c == ".")):
+            break
+        if(digitFound and (c.isdigit() or c == ".")):
+            if(c == "."):
+                if(not decimalFound):
+                    decimalFound = True
+                else:
+                    break
+            
+            numStr += c
+    
+    if(numStr):
+        try:
+            return float(numStr)
+        except ValueError:
+            print(f"conversion error: {numStr}")
+            return 0.0
+    else:
+        return 0.0
+
+
+def convert_value(valueDict, key, convertFunc, checkMicro):
+
+    if(not checkMicro):
+        if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
+            valueDict[key] = valueDict[key][2:]
+        valueDict[key] = convertFunc(valueDict[key])
+    else:
+        isMicro = False
+        if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
+            isMicro = True
+            valueDict[key] = valueDict[key][2:]
+        value = convertFunc(valueDict[key])
+        
+        if(isMicro and value):
+            value *= 1000
+        
+        valueDict[key] = value
+
+
+def check_json_value_format(articleDict):
+
+    mediDict = articleDict["medicinal_chemistry_metrics"]
+    convert_value(mediDict, "IC50", convertToFloat, True)
+    convert_value(mediDict, "Ki", convertToFloat, True)
+    convert_value(mediDict, "Kd", convertToFloat, True)
+    convert_value(mediDict, "selectivity", convertToInt, False)
+
+    vitroDict = articleDict["pharm_metrics_vitro"]
+    convert_value(vitroDict, "IC50", convertToFloat, True)
+    convert_value(vitroDict, "Ki", convertToFloat, True)
+    convert_value(vitroDict, "Kd", convertToFloat, True)
+    convert_value(vitroDict, "EC50", convertToFloat, True)
+    convert_value(vitroDict, "selectivity", convertToInt, False)
+    convert_value(vitroDict, "hERG", convertToFloat, False)
+    convert_value(vitroDict, "solubility", convertToFloat, False)
+
+    vivoDict = articleDict["pharm_metrics_vivo"]
+    convert_value(vivoDict, "ED50", convertToFloat, False)
+    convert_value(vivoDict, "t_half", convertToFloat, False)
+    convert_value(vivoDict, "AUC", convertToFloat, False)
+    convert_value(vivoDict, "bioavailability", convertToFloat, False)
+    convert_value(vivoDict, "solubility", convertToFloat, False)
+
+    checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
+    dictArr = [mediDict, vitroDict]
+    for valueDict in dictArr:
+        for key in checkUnitkeyArr:
+            
+            if(key in valueDict):
+                
+                value = valueDict[key]
+                if(value > 0 and value < 1):
+                    value *= 1000
+                    valueDict[key] = value
 
 
 
 def all_to_json(targetName):
-
-    errorCount = 0
-
+    
+    print(1)
     ACS.TARGET = targetName
     
     # ACSUrl = ACS.prepare_query_url(targetName)
@@ -3281,11 +3470,10 @@ def all_to_json(targetName):
     # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
     paper_count = 306
     # addressArr =  ACS.get_article_URLs(queryResponse)
-
+    
+    print(2)
     addressArr = list(range(306))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
-
-    print(1)
 
     result = {}
     result["target_name"] = targetName
@@ -3294,16 +3482,20 @@ def all_to_json(targetName):
     result["drug_molecule_count"] = drug_molecule_count
     result["drug_molecule_paper"] = []
     
+    print(3)
     i = 0
     for articleURL in tableAddressArr:
-
-        print(f"A1: {i}")
+        
+        print(f"articleURL: {articleURL}")
+        print(3.1)
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        print(3.2)
         if(not article.compound):
-            print("not valid")
             result["drug_molecule_count"] -= 1
+            print(3.3)
             continue
-        print(f"A2: {i}")        
+        
+        print(3.4)
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3341,7 +3533,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
-        print(f"A3: {i}")        
+        print(3.5)
         if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
@@ -3351,15 +3543,19 @@ def all_to_json(targetName):
         else:
             articleDict["clinical_statistics"] = {}
 
+        print("start")
+        try:    
+            check_json_value_format(articleDict)
+        except Exception as e:
+            print(articleDict)
+            print(e)
+            raise Exception("exception occured")
+        print("end")
 
-        print(f"A4: {i}")
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
-        print(f"A5: {i}")
 
-
-    print(2)
 
     # ScienceDirect.TARGET = targetName
     # ScienceDirect.initialize_conditions(targetName)
@@ -3383,18 +3579,36 @@ def all_to_json(targetName):
     #     if(not yearFound):
     #         result["paper_count_year"].append(SDYearCount)
         
-    # print(f"S2: {i}")
+    yearCountDict = {}
+    for yearCount in result["paper_count_year"]:
+        yearCountDict[yearCount[0]] = [yearCount[1], 0, 0]
+
+    [secondValueArr, thirdValueArr] = paper_count_per_year.get_paper_count_per_year(targetName)
+    
+    for yearCount in secondValueArr:
+        if(yearCount[0] in yearCountDict):
+            yearCountDict[yearCount[0]][1] = yearCount[1]
+        else:
+            yearCountDict[yearCount[0]] = [0, yearCount[1], 0]
+    
+    for yearCount in thirdValueArr:
+        if(yearCount[0] in yearCountDict):
+            yearCountDict[yearCount[0]][2] = yearCount[1]
+        else:
+            yearCountDict[yearCount[0]] = [0, 0, yearCount[1]]
+
+    result["paper_count_year"] = yearCountDict 
+    
+
     # for articleDOI in doiArr:
-    #     print(f"S3: {i}") #TODO
+
     #     article = ScienceDirect.ScienceDirectArticle(articleDOI)
-    #     print(f"articleDOI: {articleDOI}")
-    #     print(f"valid: {article.valid}")
-    #     print(f"compound: {article.compound}")
+
     #     if(not article.valid or not article.compound):
-    #         print("not valid")
+
     #         result["drug_molecule_count"] -= 1
     #         continue
-    #     print(f"S4: {i}")
+
     #     articleDict = {}
     #     articleDict["paper_id"] = i
     #     articleDict["paper_title"] = article.titleText
@@ -3432,7 +3646,7 @@ def all_to_json(targetName):
     #     articleDict["pharm_metrics_vitro"] = vitroDict
     #     articleDict["pharm_metrics_vivo"] = vivoDict
 
-    #     print(f"S5: {i}")        
+     
     #     if re.search('[A-Z]', articleDict["compound_name"]):
     #         r = clinical.getloadClinicalData(articleDict["compound_name"])
     #         if 'StudyFields' in r:
@@ -3442,44 +3656,36 @@ def all_to_json(targetName):
     #     else:
     #         articleDict["clinical_statistics"] = {}
 
+    #     check_json_value_format(articleDict)
 
-    #     print(f"S6: {i}")
     #     result["drug_molecule_paper"].append(articleDict)
 
     #     i += 1
 
-    #     print(f"S7: {i}")
-
-    print(3)
 
     result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
-    print(f"result[drug_molecule_paper]: {result['drug_molecule_paper']}")
+
     for i in combine:
-        print("combine elment: ")
-        print(i)
-        print()
+
         item = {}
         item['source'] = i[0]["paper_id"]
-        print("i1")
+
         item['target'] = i[1]["paper_id"]
-        print("i2")
-        item["value"] = None
+
+        item["value"] = 0.0
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
-            errorCount += 1
-        print("i3")
+            print(f"source: {item['source']}   target: {item['target']}")
+
         result["medicinal_chemistry_similarity"].append(item)
-    
-    print(4)
-    with open("output.json", "w") as outputFile:
-        jsonString = json.dumps(result)
+
+    print("output")
+    with open("output.json", "w", encoding="utf-8") as outputFile:
+        jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
-    
-    print(f"errorCount: {errorCount}")
 
 
 if __name__ == '__main__':
-    print(0)
     all_to_json("janus kinase")
