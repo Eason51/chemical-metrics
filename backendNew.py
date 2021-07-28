@@ -3277,16 +3277,109 @@ class ScienceDirect:
 
 
 
+
+
+def convertToInt(num):
+
+    if(not num):
+        return 0
+    if(type(num) is int):
+        return num
+
+    if(num.strip().isdigit()):
+        return int(num.strip())
+    
+    digitStr = ""
+    digitFound = False
+    for c in num.strip():
+        if(not digitFound and c.isdigit()):
+            digitFound = True
+        if(digitFound and not c.isdigit()):
+            break
+        if(digitFound and c.isdigit()):
+            digitStr += c
+    
+    if(digitStr):
+        try:
+            return int(digitStr)
+        except ValueError:
+            print(f"conversion error: {num}")
+            return 0
+    else:
+        return 0
+
+
+def convertToFloat(num):
+
+    num = num.strip()
+
+    if(not num):
+        return 0.0
+    if(type(num) is float):
+        return num
+
+    try:
+        return float(num)
+    except ValueError:
+        pass
+
+    numStr = ""
+    digitFound = False
+    decimalFound = False
+    for c in num:
+        if(not digitFound and c.isdigit()):
+            digitFound = True
+        if(digitFound and (c.isdigit() or c == ".")):
+            break
+        if(digitFound and (c.isdigit() or c == ".")):
+            if(c == "."):
+                if(not decimalFound):
+                    decimalFound = True
+                else:
+                    break
+            
+            numStr += c
+    
+    if(numStr):
+        try:
+            return float(numStr)
+        except ValueError:
+            print(f"conversion error: {numStr}")
+            return 0.0
+    else:
+        return 0.0
+
+
+
+
 def check_json_value_format(articleDict):
 
-    pass
+    mediDict = articleDict["medicinal_chemistry_metrics"]
+    mediDict["IC50"] = convertToFloat(mediDict["IC50"])
+    mediDict["Ki"] = convertToFloat(mediDict["Ki"])
+    mediDict["Kd"] = convertToFloat(mediDict["Kd"])
+    mediDict["selectivity"] = convertToInt(mediDict["selectivity"])
+
+    vitroDict = articleDict["pharm_metrics_vitro"]
+    vitroDict["IC50"] = convertToFloat(vitroDict["IC50"])
+    vitroDict["Ki"] = convertToFloat(vitroDict["Ki"])
+    vitroDict["Kd"] = convertToFloat(vitroDict["Kd"])
+    vitroDict["EC50"] = convertToFloat(vitroDict["EC50"])
+    vitroDict["selectivity"] = convertToInt(vitroDict["selectivity"])
+    vitroDict["hERG"] = convertToFloat(vitroDict["hERG"])
+    vitroDict["solubility"] = convertToFloat(vitroDict["solubility"])
+
+    vivoDict = articleDict["pharm_metrics_vivo"]
+    vivoDict["ED50"] = convertToFloat(vivoDict["ED50"])
+    vivoDict["t_half"] = convertToFloat(vivoDict["t_half"])
+    vivoDict["AUC"] = convertToFloat(vivoDict["AUC"])
+    vivoDict["bioavailability"] = convertToFloat(vivoDict["bioavailability"])
+    vivoDict["solubility"] = convertToFloat(vivoDict["solubility"])
 
 
 
 
 def all_to_json(targetName):
-
-    errorCount = 0
 
     ACS.TARGET = targetName
     
@@ -3475,6 +3568,8 @@ def all_to_json(targetName):
     result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
 
+    errorArticleSet = set()
+
     for i in combine:
 
         item = {}
@@ -3482,13 +3577,17 @@ def all_to_json(targetName):
 
         item['target'] = i[1]["paper_id"]
 
-        item["value"] = None
+        item["value"] = 0.0
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
-            errorCount += 1
+            errorArticleSet.add([item["source"], [item["target"]]])
 
         result["medicinal_chemistry_similarity"].append(item)
+
+    print("smiles error articles: ")
+    for articlePair in errorArticleSet:
+        print(f"source: {articlePair[0]}, target: {articlePair[1]}")
 
     with open("output.json", "w", encoding="utf-8") as outputFile:
         jsonString = json.dumps(result, ensure_ascii=False)
