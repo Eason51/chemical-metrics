@@ -351,25 +351,39 @@ class ACS:
         
         global FILEID
 
+        print("2.1")
         drugPaperCount = 0
         tableAddressArr = []
         dateArr = []
         simlesDict = {}
         positionResultDict = {}
+        print("2.2")
 
+        i = 0
         for address in addressArr:
+
+            i += 1
+            if(i >= 10):
+                break
+
+            print(f"address: {address}")
+            print("2.3")
             contentParser = ACS.ContentParser()
+            print("2.4")
             simles = ""
             positionResult = []
             try:                
                 # articleResponse = requests.get(address, headers = {"User-Agent": "Mozilla/5.0"})
                 # contentParser.feed(articleResponse.text)
+                print("2.5")
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
+                    print("2.6")
             except AssertionError as ae:
                 pass
+                print("2.7")
 
-            
+            print("2.8")
             found = False
             for yearOccur in dateArr:
                 if (yearOccur[0] == contentParser.date):
@@ -378,21 +392,24 @@ class ACS:
                     break
             if(not found):
                 dateArr.append([contentParser.date, 1]) 
-                
+            print("2.9")    
             
             if(contentParser.keywordFound and contentParser.imgURL):
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
-                
+                print("2.10")
                 try:
                     (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
                 except:
                     simles = ""
+                    print("2.11")
+                print("2.12")
 
-            
+            print("2.13")
             if(simles):
                 
+                print("2.14")
                 # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
                 drugPaperCount += 1
                 tableAddressArr.append(address)
@@ -402,6 +419,7 @@ class ACS:
                 
                 FILEID += 1
         
+        print("2.15")
         dateArr.sort()
         return (dateArr, tableAddressArr, drugPaperCount, simlesDict, positionResultDict)
 
@@ -960,7 +978,7 @@ class ACS:
             self.tHalf = ""
             self.bioavailability = ""
 
-
+            print("3.1.1")
             self.retrieve_values()
 
 
@@ -968,18 +986,29 @@ class ACS:
 
         def retrieve_values(self):
 
+            print("3.1.2")
             self.get_FULLNAME_ABBREVIATION()
+            print("3.1.3")
             self.retrieve_article_information()
+            print("3.1.4")
             self.retrieve_target()
 
             # positionResult = self.retrieve_image_text()
+            print("3.1.5")
             self.get_ic50_from_image(self.positionResult)
+            print("3.1.6")
             self.get_compound_from_image(self.positionResult)
+            print("3.1.7")
             self.get_molecule_from_title_abstract()
+            print("3.1.8")
             self.get_compound_from_abstract()
+            print("3.1.9")
             self.get_ic50_from_abstract()
+            print("3.1.10")
             self.get_multiple_values_from_body()
+            print("3.1.11")
             self.get_single_value_from_body()
+            print("3.1.12")
         
 
 
@@ -3443,7 +3472,8 @@ def check_json_value_format(articleDict):
 
 
 def all_to_json(targetName):
-
+    
+    print(1)
     ACS.TARGET = targetName
     
     # ACSUrl = ACS.prepare_query_url(targetName)
@@ -3451,7 +3481,8 @@ def all_to_json(targetName):
     # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
     paper_count = 306
     # addressArr =  ACS.get_article_URLs(queryResponse)
-
+    
+    print(2)
     addressArr = list(range(306))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
@@ -3462,13 +3493,20 @@ def all_to_json(targetName):
     result["drug_molecule_count"] = drug_molecule_count
     result["drug_molecule_paper"] = []
     
+    print(3)
     i = 0
     for articleURL in tableAddressArr:
-
+        
+        print(f"articleURL: {articleURL}")
+        print(3.1)
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        print(3.2)
         if(not article.compound):
             result["drug_molecule_count"] -= 1
-            continue        
+            print(3.3)
+            continue
+        
+        print(3.4)
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3506,6 +3544,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
+        print(3.5)
         if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
@@ -3653,6 +3692,7 @@ def all_to_json(targetName):
 
         result["medicinal_chemistry_similarity"].append(item)
 
+    print("output")
     with open("output.json", "w", encoding="utf-8") as outputFile:
         jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
