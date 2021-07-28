@@ -1,6 +1,7 @@
+import molecular_Structure_Similarity as similarity
+import paper_count_per_year
 from torch.nn.functional import fractional_max_pool2d_with_indices
-from ScienceDirect import DOI
-from re import L
+import re
 from numpy.core.arrayprint import format_float_scientific
 import requests
 from html.parser import HTMLParser
@@ -12,7 +13,6 @@ from elsapy.elsdoc import FullDoc
 import chemschematicresolver as csr
 import Clinical_View as clinical
 import itertools
-import  molecular_Structure_Similarity as similarity
 from molecular_Structure_Similarity import molecularSimles
 import os
 
@@ -223,6 +223,9 @@ class ACS:
 
 
         def handle_starttag(self, tag, attrs):
+            if(self.keywordFound and self.imgURL):
+                exitParser(self)
+
             if (self.complete):
                 return
             elif (tag == "div" and len(attrs) == 1 and attrs[0][1] == "NLM_p"):
@@ -238,7 +241,9 @@ class ACS:
                     if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
                         self.abstractFound = True
                         break
-            if(self.figureFound and tag == "figure"):
+            if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
+                self.abstractFound = False
+            if(self.abstractFound and tag == "figure"):
                 self.figureFound = True
             if(self.figureFound and tag == "a" and len(attrs) >= 2):
                 title = link = ""
@@ -246,13 +251,9 @@ class ACS:
                     if(attr[0] == "title"):
                         title = attr[1]
                     elif(attr[0] == "href"):
-                        link = attr[1]
+                        link = ACS.DOMAIN + attr[1]
                 if(title == "High Resolution Image"):
-                    self.figureLinkFound = True
                     self.imgURL = ACS.DOMAIN + link
-            if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
-                if(not self.figureLinkFound):
-                    exitParser(self)
             
 
         
@@ -264,8 +265,6 @@ class ACS:
                 stringList = ["IC50", "EC50", "ED50"]            
                 if(any(substring in data for substring in stringList)):
                     self.keywordFound = True
-                    exitParser(self)
-                    self.complete = True
                 elif(any(substring in data for substring in stringList)):
                     index = data.find("Ki")
                     if(index == -1):
@@ -280,12 +279,9 @@ class ACS:
                             keywordFound = True
                     if(keywordFound):
                         self.keywordFound = True
-                        exitParser(self)
                 elif(self.ICFound):
                     if(len(data) >= 2 and data[:2] == "50"):
                         self.keywordFound = True
-                        exitParser(self)
-                        self.complete = True
                     else:
                         self.ICFound = False
                 elif(len(data) >= 2 and (data[-2:] in ["IC", "EC", "ED"])):
@@ -293,9 +289,7 @@ class ACS:
             
             elif(self.dateFound):
                 self.date = data.split()[-1]
-            elif(self.titleFound):
-                if(data.lower() in "references"):
-                    exitParser(self)
+
 
         
         def handle_endtag(self, tag):
@@ -373,28 +367,38 @@ class ACS:
                 with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
             except AssertionError as ae:
-                if(contentParser.keywordFound and contentParser.imgURL):
-                    # image = requests.get(contentParser.imgURL).content
-                    # with open("abstract_image/image.jpeg", "wb") as handler:
-                    #     handler.write(image)
-                    (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
+                pass
 
+            
+            found = False
+            for yearOccur in dateArr:
+                if (yearOccur[0] == contentParser.date):
+                    found = True
+                    yearOccur[1] += 1
+                    break
+            if(not found):
+                dateArr.append([contentParser.date, 1]) 
+                
+            
+            if(contentParser.keywordFound and contentParser.imgURL):
+                # image = requests.get(contentParser.imgURL).content
+                # with open("abstract_image/image.jpeg", "wb") as handler:
+                #     handler.write(image)
+                
+                try:
+                    (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
+                except:
+                    simles = ""
+
+            
             if(simles):
                 
-                os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
+                # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
                 drugPaperCount += 1
                 tableAddressArr.append(address)
                 simlesDict[address] = simles
                 positionResultDict[address] = positionResult
-
-                found = False
-                for yearOccur in dateArr:
-                    if (yearOccur[0] == contentParser.date):
-                        found = True
-                        yearOccur[1] += 1
-                        break
-                if(not found):
-                    dateArr.append([contentParser.date, 1])  
+ 
                 
                 FILEID += 1
         
@@ -1048,10 +1052,16 @@ class ACS:
             self.tables = self.tableParser.tables
             self.authorArr = self.tableParser.authorArr
             self.year = self.tableParser.year
-            self.instituition = self.tableParser.institution
+
+            if(len(self.tableParser.institution) == 0):
+                self.instituition = ""
+            else:
+                self.instituition = self.tableParser.institution[0]
+            
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
+
 
 
 # retrieve target information
@@ -1874,6 +1884,17 @@ class ScienceDirect:
 
             if ("results" in result):
                 for article in result["results"]:
+
+                    date = article["publicationDate"][:4]
+                    found = False
+                    for yearOccur in dateArr:
+                        if(yearOccur[0] == date):
+                            yearOccur[1] += 1
+                            found = True
+                            break
+                    if(not found):
+                        dateArr.append([date, 1])
+
                     if (article["doi"]):
                         doc = FullDoc(doi = article["doi"])
                         stringList = ["IC50", "EC50", "ED50"]
@@ -1897,15 +1918,6 @@ class ScienceDirect:
                             AMOUNT2 += 1
                             DOIArr.append(article["doi"])
 
-                            date = article["publicationDate"][:4]
-                            found = False
-                            for yearOccur in dateArr:
-                                if(yearOccur[0] == date):
-                                    yearOccur[1] += 1
-                                    found = True
-                                    break
-                            if(not found):
-                                dateArr.append([date, 1])
                             continue
 
         dateArr.sort()
@@ -2283,6 +2295,8 @@ class ScienceDirect:
         def __init__(self, articleDOI):
 
             self.articleDOI = articleDOI
+            self.valid = True
+            self.simles = ""
 
             self.authorArr = []
             self.year = -1
@@ -2365,6 +2379,8 @@ class ScienceDirect:
             self.retrieve_target()
 
             positionResult = self.retrieve_image_text()
+            if(not self.valid):
+                return
             self.get_ic50_from_image(positionResult)
             self.get_compound_from_image(positionResult)
             self.get_molecule_from_title_abstract()
@@ -2405,7 +2421,12 @@ class ScienceDirect:
 
             self.authorArr = tableParser.authorArr
             self.year = tableParser.year
-            self.institution = tableParser.institution
+
+            if(len(tableParser.institution) == 0):
+                self.institution = ""
+            else:
+                self.institution = tableParser.institution[0]
+
             self.journal = tableParser.journal
 
             citedByURL = f"http://api.elsevier.com/content/search/scopus?query=DOI({self.doi})&field=citedby-count"
@@ -2419,14 +2440,31 @@ class ScienceDirect:
         def retrieve_image_text(self):
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
-            with open("abstract_image/image.jpeg", "wb") as handler:
+            
+            fileName = ""
+            for c in self.doi.strip():
+                if(c.isalpha() or c.isdigit()):
+                    fileName += c
+                else:
+                    fileName += "_"
+            
+            with open(f"abstract_image/{fileName}.jpeg", "wb") as handler:
                 handler.write(image)
 
+            simles = ""
+            positionResult = []
 
-            # identify all text within the abstract image
-            reader = easyocr.Reader(["en"], gpu = False)
-            # retrieve picture through http request
-            positionResult = reader.readtext("abstract_image/image.jpeg")
+            try:
+                (simles, positionResult) = molecularSimles(f"abstract_image/{fileName}.jpeg")
+            except:
+                self.valid = False
+            if(not simles):
+                self.valid = False
+            
+            if(not self.valid):
+                return
+            
+            self.simles = simles
 
             return positionResult
 
@@ -2436,13 +2474,13 @@ class ScienceDirect:
         def get_FULLNAME_ABBREVIATION(self):
             
             # trim the number at the end of TARGET
-            i = len(ACS.TARGET) - 1
+            i = len(ScienceDirect.TARGET) - 1
             while(i >= 0):
-                if(not ACS.TARGET[i].isalpha()):
+                if(not ScienceDirect.TARGET[i].isalpha()):
                     i -= 1
                 else:
                     break
-            queryTarget = ACS.TARGET[:i + 1]
+            queryTarget = ScienceDirect.TARGET[:i + 1]
 
             # target name identification is performed through an online database: http://allie.dbcls.jp/
             # at this point, the user might input a fullname or an abbreviation, so it needs to be queried twice
@@ -2930,7 +2968,7 @@ class ScienceDirect:
         def find_values_in_table(self, valueName):
 
             if(not self.compound):
-                return ""
+                return ["", "", ""]
             
             mediValue = ""
             vitroValue = ""
@@ -3239,12 +3277,16 @@ class ScienceDirect:
 
 
 
+def check_json_value_format(articleDict):
 
+    pass
 
 
 
 
 def all_to_json(targetName):
+
+    errorCount = 0
 
     ACS.TARGET = targetName
     
@@ -3257,7 +3299,6 @@ def all_to_json(targetName):
     addressArr = list(range(306))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
-
     result = {}
     result["target_name"] = targetName
     result["paper_count"] = paper_count
@@ -3268,9 +3309,10 @@ def all_to_json(targetName):
     i = 0
     for articleURL in tableAddressArr:
 
-
         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
-        
+        if(not article.compound):
+            result["drug_molecule_count"] -= 1
+            continue        
         articleDict = {}
         articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
@@ -3308,8 +3350,7 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
-        
-        if L.search('[A-Z]', articleDict["compound_name"]):
+        if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
@@ -3318,12 +3359,11 @@ def all_to_json(targetName):
         else:
             articleDict["clinical_statistics"] = {}
 
-
+        check_json_value_format(articleDict)
 
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
-
 
 
     ScienceDirect.TARGET = targetName
@@ -3331,7 +3371,7 @@ def all_to_json(targetName):
 
     ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
 
-
+    print(f"S1: {i}")
     result["paper_count"] += paper_count
     result["drug_molecule_count"] += drug_molecule_count
     for SDYearCount in paper_count_year:
@@ -3348,14 +3388,38 @@ def all_to_json(targetName):
         if(not yearFound):
             result["paper_count_year"].append(SDYearCount)
         
+    yearCountDict = {}
+    for yearCount in result["paper_count_year"]:
+        yearCountDict[yearCount[0]] = [yearCount[1], 0, 0]
+
+    [secondValueArr, thirdValueArr] = paper_count_per_year.get_paper_count_per_year(targetName)
+    
+    for yearCount in secondValueArr:
+        if(yearCount[0] in yearCountDict):
+            yearCountDict[yearCount[0]][1] = yearCount[1]
+        else:
+            yearCountDict[yearCount[0]] = [0, yearCount[1], 0]
+    
+    for yearCount in thirdValueArr:
+        if(yearCount[0] in yearCountDict):
+            yearCountDict[yearCount[0]][2] = yearCount[1]
+        else:
+            yearCountDict[yearCount[0]] = [0, 0, yearCount[1]]
+
+    result["paper_count_year"] = yearCountDict 
+    
 
     for articleDOI in doiArr:
 
         article = ScienceDirect.ScienceDirectArticle(articleDOI)
 
+        if(not article.valid or not article.compound):
+
+            result["drug_molecule_count"] -= 1
+            continue
 
         articleDict = {}
-        articleDict["paper_id"] = id
+        articleDict["paper_id"] = i
         articleDict["paper_title"] = article.titleText
         articleDict["paper_author"] = article.authorArr
         articleDict["paper_year"] = article.year
@@ -3365,7 +3429,7 @@ def all_to_json(targetName):
         articleDict["paper_journal"] = article.journal
         articleDict["paper_abstract_image"] = article.imgURL
         articleDict["compound_name"] = article.compound
-        # articleDict["compound_smiles"] = simlesArr[i] TODO
+        articleDict["compound_smiles"] = article.simles
 
         medicinalDict = {}
         medicinalDict["Ki"] = article.enzymeKi
@@ -3391,8 +3455,8 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vitro"] = vitroDict
         articleDict["pharm_metrics_vivo"] = vivoDict
 
-        
-        if L.search('[A-Z]', articleDict["compound_name"]):
+     
+        if re.search('[A-Z]', articleDict["compound_name"]):
             r = clinical.getloadClinicalData(articleDict["compound_name"])
             if 'StudyFields' in r:
                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
@@ -3401,22 +3465,33 @@ def all_to_json(targetName):
         else:
             articleDict["clinical_statistics"] = {}
 
-
+        check_json_value_format(articleDict)
 
         result["drug_molecule_paper"].append(articleDict)
 
         i += 1
 
+
+    result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
+
     for i in combine:
+
         item = {}
         item['source'] = i[0]["paper_id"]
-        item['target'] = i[1]["paper_id"]
-        item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
-    
 
-    with open("output.json", "w") as outputFile:
-        jsonString = json.dumps(result)
+        item['target'] = i[1]["paper_id"]
+
+        item["value"] = None
+        try:
+            item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
+        except:
+            errorCount += 1
+
+        result["medicinal_chemistry_similarity"].append(item)
+
+    with open("output.json", "w", encoding="utf-8") as outputFile:
+        jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
 
 
