@@ -978,7 +978,7 @@ class ACS:
             self.tHalf = ""
             self.bioavailability = ""
 
-
+            print("3.1.1")
             self.retrieve_values()
 
 
@@ -986,18 +986,29 @@ class ACS:
 
         def retrieve_values(self):
 
+            print("3.1.2")
             self.get_FULLNAME_ABBREVIATION()
+            print("3.1.3")
             self.retrieve_article_information()
+            print("3.1.4")
             self.retrieve_target()
 
             # positionResult = self.retrieve_image_text()
+            print("3.1.5")
             self.get_ic50_from_image(self.positionResult)
+            print("3.1.6")
             self.get_compound_from_image(self.positionResult)
+            print("3.1.7")
             self.get_molecule_from_title_abstract()
+            print("3.1.8")
             self.get_compound_from_abstract()
+            print("3.1.9")
             self.get_ic50_from_abstract()
+            print("3.1.10")
             self.get_multiple_values_from_body()
+            print("3.1.11")
             self.get_single_value_from_body()
+            print("3.1.12")
         
 
 
