@@ -1684,6 +1684,22 @@ class ACS:
                         value = table.grid.body[compoundRowNum].cells[colNum]
                         break
 
+                
+                
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
 
                 
                 if(mediFound):
@@ -1791,12 +1807,31 @@ class ACS:
                 if(compoundRowNum == -1):
                     continue
                 
+                
+                value = ""
                 if(valueColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[valueColNum]
+                    value = table.grid.body[compoundRowNum].cells[valueColNum]
                 elif(valueNameFound and targetColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[targetColNum]
+                    value = table.grid.body[compoundRowNum].cells[targetColNum]
+
+
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
+
             
-            return ""
+            return value
 
 
 
@@ -3350,32 +3385,60 @@ def convertToFloat(num):
         return 0.0
 
 
+def convert_value(valueDict, key, convertFunc, checkMicro):
+
+    if(not checkMicro):
+        if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
+            valueDict[key] = valueDict[key][2:]
+        valueDict[key] = convertFunc(valueDict[key])
+    else:
+        isMicro = False
+        if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
+            isMicro = True
+            valueDict[key] = valueDict[key][2:]
+        value = convertFunc(valueDict[key])
+        
+        if(isMicro and value):
+            value *= 1000
+        
+        valueDict[key] = value
 
 
 def check_json_value_format(articleDict):
 
     mediDict = articleDict["medicinal_chemistry_metrics"]
-    mediDict["IC50"] = convertToFloat(mediDict["IC50"])
-    mediDict["Ki"] = convertToFloat(mediDict["Ki"])
-    mediDict["Kd"] = convertToFloat(mediDict["Kd"])
-    mediDict["selectivity"] = convertToInt(mediDict["selectivity"])
+    convert_value(mediDict, "IC50", convertToFloat, True)
+    convert_value(mediDict, "Ki", convertToFloat, True)
+    convert_value(mediDict, "Kd", convertToFloat, True)
+    convert_value(mediDict, "selectivity", convertToInt, False)
 
     vitroDict = articleDict["pharm_metrics_vitro"]
-    vitroDict["IC50"] = convertToFloat(vitroDict["IC50"])
-    vitroDict["Ki"] = convertToFloat(vitroDict["Ki"])
-    vitroDict["Kd"] = convertToFloat(vitroDict["Kd"])
-    vitroDict["EC50"] = convertToFloat(vitroDict["EC50"])
-    vitroDict["selectivity"] = convertToInt(vitroDict["selectivity"])
-    vitroDict["hERG"] = convertToFloat(vitroDict["hERG"])
-    vitroDict["solubility"] = convertToFloat(vitroDict["solubility"])
+    convert_value(vitroDict, "IC50", convertToFloat, True)
+    convert_value(vitroDict, "Ki", convertToFloat, True)
+    convert_value(vitroDict, "Kd", convertToFloat, True)
+    convert_value(vitroDict, "EC50", convertToFloat, True)
+    convert_value(vitroDict, "selectivity", convertToInt, False)
+    convert_value(vitroDict, "hERG", convertToFloat, False)
+    convert_value(vitroDict, "solubility", convertToFloat, False)
 
     vivoDict = articleDict["pharm_metrics_vivo"]
-    vivoDict["ED50"] = convertToFloat(vivoDict["ED50"])
-    vivoDict["t_half"] = convertToFloat(vivoDict["t_half"])
-    vivoDict["AUC"] = convertToFloat(vivoDict["AUC"])
-    vivoDict["bioavailability"] = convertToFloat(vivoDict["bioavailability"])
-    vivoDict["solubility"] = convertToFloat(vivoDict["solubility"])
+    convert_value(vivoDict, "ED50", convertToFloat, False)
+    convert_value(vivoDict, "t_half", convertToFloat, False)
+    convert_value(vivoDict, "AUC", convertToFloat, False)
+    convert_value(vivoDict, "bioavailability", convertToFloat, False)
+    convert_value(vivoDict, "solubility", convertToFloat, False)
 
+    checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
+    dictArr = [mediDict, vitroDict]
+    for valueDict in dictArr:
+        for key in checkUnitkeyArr:
+            
+            if(key in valueDict):
+                
+                value = valueDict[key]
+                if(value > 0 and value < 1):
+                    value *= 1000
+                    valueDict[key] = value
 
 
 
@@ -3452,7 +3515,14 @@ def all_to_json(targetName):
         else:
             articleDict["clinical_statistics"] = {}
 
-        check_json_value_format(articleDict)
+        print("start")
+        try:    
+            check_json_value_format(articleDict)
+        except Exception as e:
+            print(articleDict)
+            print(e)
+            raise Exception("exception occured")
+        print("end")
 
         result["drug_molecule_paper"].append(articleDict)
 
@@ -3568,8 +3638,6 @@ def all_to_json(targetName):
     result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
 
-    errorArticleSet = set()
-
     for i in combine:
 
         item = {}
@@ -3581,13 +3649,9 @@ def all_to_json(targetName):
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
-            errorArticleSet.add([item["source"], [item["target"]]])
+            print(f"source: {item['source']}   target: {item['target']}")
 
         result["medicinal_chemistry_similarity"].append(item)
-
-    print("smiles error articles: ")
-    for articlePair in errorArticleSet:
-        print(f"source: {articlePair[0]}, target: {articlePair[1]}")
 
     with open("output.json", "w", encoding="utf-8") as outputFile:
         jsonString = json.dumps(result, ensure_ascii=False)
