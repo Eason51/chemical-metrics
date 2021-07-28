@@ -3366,27 +3366,27 @@ def all_to_json(targetName):
         i += 1
 
 
-    ScienceDirect.TARGET = targetName
-    ScienceDirect.initialize_conditions(targetName)
+    # ScienceDirect.TARGET = targetName
+    # ScienceDirect.initialize_conditions(targetName)
 
-    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
+    # ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
 
-    print(f"S1: {i}")
-    result["paper_count"] += paper_count
-    result["drug_molecule_count"] += drug_molecule_count
-    for SDYearCount in paper_count_year:
-        yearFound = False
-        for ACSyearCount in result["paper_count_year"]:
-            if(ACSyearCount[0] > SDYearCount[0]):
-                break
-            elif(ACSyearCount[0] < SDYearCount[0]):
-                continue
-            else:
-                ACSyearCount[1] += SDYearCount[1]
-                yearFound = True
+    # print(f"S1: {i}")
+    # result["paper_count"] += paper_count
+    # result["drug_molecule_count"] += drug_molecule_count
+    # for SDYearCount in paper_count_year:
+    #     yearFound = False
+    #     for ACSyearCount in result["paper_count_year"]:
+    #         if(ACSyearCount[0] > SDYearCount[0]):
+    #             break
+    #         elif(ACSyearCount[0] < SDYearCount[0]):
+    #             continue
+    #         else:
+    #             ACSyearCount[1] += SDYearCount[1]
+    #             yearFound = True
         
-        if(not yearFound):
-            result["paper_count_year"].append(SDYearCount)
+    #     if(not yearFound):
+    #         result["paper_count_year"].append(SDYearCount)
         
     yearCountDict = {}
     for yearCount in result["paper_count_year"]:
@@ -3409,67 +3409,67 @@ def all_to_json(targetName):
     result["paper_count_year"] = yearCountDict 
     
 
-    for articleDOI in doiArr:
+    # for articleDOI in doiArr:
 
-        article = ScienceDirect.ScienceDirectArticle(articleDOI)
+    #     article = ScienceDirect.ScienceDirectArticle(articleDOI)
 
-        if(not article.valid or not article.compound):
+    #     if(not article.valid or not article.compound):
 
-            result["drug_molecule_count"] -= 1
-            continue
+    #         result["drug_molecule_count"] -= 1
+    #         continue
 
-        articleDict = {}
-        articleDict["paper_id"] = i
-        articleDict["paper_title"] = article.titleText
-        articleDict["paper_author"] = article.authorArr
-        articleDict["paper_year"] = article.year
-        articleDict["paper_institution"] = article.institution
-        articleDict["paper_cited"] = article.paperCited
-        articleDict["doi"] = article.doi
-        articleDict["paper_journal"] = article.journal
-        articleDict["paper_abstract_image"] = article.imgURL
-        articleDict["compound_name"] = article.compound
-        articleDict["compound_smiles"] = article.simles
+    #     articleDict = {}
+    #     articleDict["paper_id"] = i
+    #     articleDict["paper_title"] = article.titleText
+    #     articleDict["paper_author"] = article.authorArr
+    #     articleDict["paper_year"] = article.year
+    #     articleDict["paper_institution"] = article.institution
+    #     articleDict["paper_cited"] = article.paperCited
+    #     articleDict["doi"] = article.doi
+    #     articleDict["paper_journal"] = article.journal
+    #     articleDict["paper_abstract_image"] = article.imgURL
+    #     articleDict["compound_name"] = article.compound
+    #     articleDict["compound_smiles"] = article.simles
 
-        medicinalDict = {}
-        medicinalDict["Ki"] = article.enzymeKi
-        medicinalDict["Kd"] = article.enzymeKd
-        medicinalDict["IC50"] = article.enzymeIc50
-        medicinalDict["selectivity"] = article.enzymeSelectivity
-        vitroDict = {}
-        vitroDict["Ki"] = article.cellKi
-        vitroDict["Kd"] = article.cellKd
-        vitroDict["IC50"] = article.cellIc50
-        vitroDict["EC50"] = article.ec50
-        vitroDict["selectivity"] = article.cellSelectivity
-        vitroDict["hERG"] = article.herg
-        vitroDict["solubility"] = article.cellSolubility
-        vivoDict = {}
-        vivoDict["ED50"] = article.ed50
-        vivoDict["AUC"] = article.auc
-        vivoDict["solubility"] = article.vivoSolubility
-        vivoDict["t_half"] = article.tHalf
-        vivoDict["bioavailability"] = article.bioavailability
+    #     medicinalDict = {}
+    #     medicinalDict["Ki"] = article.enzymeKi
+    #     medicinalDict["Kd"] = article.enzymeKd
+    #     medicinalDict["IC50"] = article.enzymeIc50
+    #     medicinalDict["selectivity"] = article.enzymeSelectivity
+    #     vitroDict = {}
+    #     vitroDict["Ki"] = article.cellKi
+    #     vitroDict["Kd"] = article.cellKd
+    #     vitroDict["IC50"] = article.cellIc50
+    #     vitroDict["EC50"] = article.ec50
+    #     vitroDict["selectivity"] = article.cellSelectivity
+    #     vitroDict["hERG"] = article.herg
+    #     vitroDict["solubility"] = article.cellSolubility
+    #     vivoDict = {}
+    #     vivoDict["ED50"] = article.ed50
+    #     vivoDict["AUC"] = article.auc
+    #     vivoDict["solubility"] = article.vivoSolubility
+    #     vivoDict["t_half"] = article.tHalf
+    #     vivoDict["bioavailability"] = article.bioavailability
 
-        articleDict["medicinal_chemistry_metrics"] = medicinalDict
-        articleDict["pharm_metrics_vitro"] = vitroDict
-        articleDict["pharm_metrics_vivo"] = vivoDict
+    #     articleDict["medicinal_chemistry_metrics"] = medicinalDict
+    #     articleDict["pharm_metrics_vitro"] = vitroDict
+    #     articleDict["pharm_metrics_vivo"] = vivoDict
 
      
-        if re.search('[A-Z]', articleDict["compound_name"]):
-            r = clinical.getloadClinicalData(articleDict["compound_name"])
-            if 'StudyFields' in r:
-                articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
-            else:
-                articleDict["clinical_statistics"] = {}
-        else:
-            articleDict["clinical_statistics"] = {}
+    #     if re.search('[A-Z]', articleDict["compound_name"]):
+    #         r = clinical.getloadClinicalData(articleDict["compound_name"])
+    #         if 'StudyFields' in r:
+    #             articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+    #         else:
+    #             articleDict["clinical_statistics"] = {}
+    #     else:
+    #         articleDict["clinical_statistics"] = {}
 
-        check_json_value_format(articleDict)
+    #     check_json_value_format(articleDict)
 
-        result["drug_molecule_paper"].append(articleDict)
+    #     result["drug_molecule_paper"].append(articleDict)
 
-        i += 1
+    #     i += 1
 
 
     result["medicinal_chemistry_similarity"] = []
