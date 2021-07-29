@@ -1453,7 +1453,10 @@ class ACS:
                 if(digitFound and c.isalpha()):
                     return False
             
-            return True
+            if(letterFound and digitFound):
+                return True
+            else:
+                return False
 
 
 
