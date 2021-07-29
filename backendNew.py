@@ -359,7 +359,6 @@ class ACS:
         positionResultDict = {}
         print("2.2")
 
-
         for address in addressArr:
 
 
@@ -936,6 +935,7 @@ class ACS:
             self.tables = None
 
 
+            self.compoundNameDrug = ""
 
             # hold the molecule name
             self.molecule = ""
@@ -1437,13 +1437,34 @@ class ACS:
             self.compoundArr.clear()
         
 # --------------------------------------------------------------------------------------------------------------
-      
+        def is_compound_name_drug(self, name):
+
+            if(not name):
+                return False
+            
+            name = name.strip()
+            letterFound = False
+            digitFound = False
+            for c in name:
+                if(not digitFound and c.isalpha()):
+                    letterFound = True
+                elif(c.isdigit()):
+                    digitFound = True
+                if(digitFound and c.isalpha()):
+                    return False
+            
+            return True
+
+
 
         def get_molecule_from_title_abstract(self):
             # find all identified molecule names inside of title
             doc = Document(self.titleText)
             for NR in doc.cems:
                 self.moleculeArr.append(NR.text)
+                if(self.is_compound_name_drug(NR.text)):
+                    self.compoundNameDrug = NR.text.strip()
+            
             tempArr = []
             for name in self.moleculeArr:
                 if(moleculeName(name)):
@@ -1744,9 +1765,8 @@ class ACS:
             
             if(not self.compound):
                 return ""
-            
+
             value = ""
-    
 
             for table in self.tables:
                 
@@ -3520,6 +3540,7 @@ def all_to_json(targetName):
         articleDict["paper_journal"] = article.journal
         articleDict["paper_abstract_image"] = article.imgArr[0]
         articleDict["compound_name"] = article.compound
+        articleDict["compound_name_drug"] = article.compoundNameDrug
         articleDict["compound_smiles"] = simlesDict[articleURL]
 
         medicinalDict = {}
@@ -3562,11 +3583,12 @@ def all_to_json(targetName):
         except Exception as e:
             print(articleDict)
             print(e)
-            raise Exception("exception occured")
+            # raise Exception("exception occured")
         print("end")
 
         result["drug_molecule_paper"].append(articleDict)
-
+        
+        print("3.6")
         i += 1
 
 
@@ -3591,25 +3613,30 @@ def all_to_json(targetName):
         
     #     if(not yearFound):
     #         result["paper_count_year"].append(SDYearCount)
-        
+
+    print(4)    
     yearCountDict = {}
     for yearCount in result["paper_count_year"]:
         yearCountDict[yearCount[0]] = [yearCount[1], 0, 0]
 
+    print(5)
     [secondValueArr, thirdValueArr] = paper_count_per_year.get_paper_count_per_year(targetName)
     
+    print(6)
     for yearCount in secondValueArr:
         if(yearCount[0] in yearCountDict):
             yearCountDict[yearCount[0]][1] = yearCount[1]
         else:
             yearCountDict[yearCount[0]] = [0, yearCount[1], 0]
     
+    print(7)
     for yearCount in thirdValueArr:
         if(yearCount[0] in yearCountDict):
             yearCountDict[yearCount[0]][2] = yearCount[1]
         else:
             yearCountDict[yearCount[0]] = [0, 0, yearCount[1]]
 
+    print(8)
     result["paper_count_year"] = yearCountDict 
     
 
@@ -3675,18 +3702,22 @@ def all_to_json(targetName):
 
     #     i += 1
 
-
+    print(9)
     result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
 
+    print(10)
     for i in combine:
 
+        print(10.1)
         item = {}
         item['source'] = i[0]["paper_id"]
 
         item['target'] = i[1]["paper_id"]
 
         item["value"] = 0.0
+
+        print(10.2)
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
