@@ -3583,11 +3583,12 @@ def all_to_json(targetName):
         except Exception as e:
             print(articleDict)
             print(e)
-            raise Exception("exception occured")
+            # raise Exception("exception occured")
         print("end")
 
         result["drug_molecule_paper"].append(articleDict)
-
+        
+        print("3.6")
         i += 1
 
 
@@ -3612,25 +3613,30 @@ def all_to_json(targetName):
         
     #     if(not yearFound):
     #         result["paper_count_year"].append(SDYearCount)
-        
+
+    print(4)    
     yearCountDict = {}
     for yearCount in result["paper_count_year"]:
         yearCountDict[yearCount[0]] = [yearCount[1], 0, 0]
 
+    print(5)
     [secondValueArr, thirdValueArr] = paper_count_per_year.get_paper_count_per_year(targetName)
     
+    print(6)
     for yearCount in secondValueArr:
         if(yearCount[0] in yearCountDict):
             yearCountDict[yearCount[0]][1] = yearCount[1]
         else:
             yearCountDict[yearCount[0]] = [0, yearCount[1], 0]
     
+    print(7)
     for yearCount in thirdValueArr:
         if(yearCount[0] in yearCountDict):
             yearCountDict[yearCount[0]][2] = yearCount[1]
         else:
             yearCountDict[yearCount[0]] = [0, 0, yearCount[1]]
 
+    print(8)
     result["paper_count_year"] = yearCountDict 
     
 
@@ -3696,18 +3702,22 @@ def all_to_json(targetName):
 
     #     i += 1
 
-
+    print(9)
     result["medicinal_chemistry_similarity"] = []
     combine = list(itertools.combinations(result["drug_molecule_paper"], 2))
 
+    print(10)
     for i in combine:
 
+        print(10.1)
         item = {}
         item['source'] = i[0]["paper_id"]
 
         item['target'] = i[1]["paper_id"]
 
         item["value"] = 0.0
+
+        print(10.2)
         try:
             item['value'] = similarity.molecularSimilaritybySmiles(i[0]['compound_smiles'], i[1]['compound_smiles'])
         except:
