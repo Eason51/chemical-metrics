@@ -3568,8 +3568,8 @@ def all_to_json(targetName):
         articleDict["pharm_metrics_vivo"] = vivoDict
 
         print(3.5)
-        if re.search('[A-Z]', articleDict["compound_name"]):
-            r = clinical.getloadClinicalData(articleDict["compound_name"])
+        if re.search('[A-Z]', articleDict["compound_name_drug"]):
+            r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
             if 'StudyFields' in r:
                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
             else:
