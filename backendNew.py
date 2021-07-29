@@ -1,4 +1,3 @@
-from try3 import is_compound_name_drug
 import molecular_Structure_Similarity as similarity
 import paper_count_per_year
 from torch.nn.functional import fractional_max_pool2d_with_indices
@@ -1438,7 +1437,7 @@ class ACS:
             self.compoundArr.clear()
         
 # --------------------------------------------------------------------------------------------------------------
-        def is_compound_name_drug(name):
+        def is_compound_name_drug(self, name):
 
             if(not name):
                 return False
@@ -1463,7 +1462,7 @@ class ACS:
             doc = Document(self.titleText)
             for NR in doc.cems:
                 self.moleculeArr.append(NR.text)
-                if(is_compound_name_drug(NR.text)):
+                if(self.is_compound_name_drug(NR.text)):
                     self.compoundNameDrug = NR.text.strip()
             
             tempArr = []
