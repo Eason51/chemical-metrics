@@ -46,7 +46,7 @@ def getNearstDate(pn_statn_company):
         if len(list(pn_statn_company.values())[i])>1:
             # 只保留最近的date
             key = list(pn_statn_company.keys())[i]
-            pn_statn_company[key] = max(list(pn_statn_company.values()[i]))
+            pn_statn_company[key] = max(list(pn_statn_company.values())[i])
         else:
             key = list(pn_statn_company.keys())[i]
             pn_statn_company[key] = list(pn_statn_company.values())[i][0]
