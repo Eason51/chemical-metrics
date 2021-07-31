@@ -14,6 +14,7 @@ import chemschematicresolver as csr
 import Clinical_View as clinical
 import itertools
 from molecular_Structure_Similarity import molecularSimles
+import nlp_implementation as nlp
 import os
 
 
@@ -372,7 +373,7 @@ class ACS:
                 # articleResponse = requests.get(address, headers = {"User-Agent": "Mozilla/5.0"})
                 # contentParser.feed(articleResponse.text)
                 print("2.5")
-                with open(f"files/janus kinase/file{address}.html", encoding="utf-8") as inputFile:
+                with open(f"files/{ACS.TARGET}/file{address}.html", encoding="utf-8") as inputFile:
                     contentParser.feed(inputFile.read())
                     print("2.6")
             except AssertionError as ae:
@@ -396,7 +397,7 @@ class ACS:
                 #     handler.write(image)
                 print("2.10")
                 try:
-                    (simles, positionResult) = molecularSimles(f"images/janus kinase/image{address}.jpeg")
+                    (simles, positionResult) = molecularSimles(f"images/{ACS.TARGET}/image{address}.jpeg")
                 except:
                     simles = ""
                     print("2.11")
@@ -987,20 +988,27 @@ class ACS:
             self.get_FULLNAME_ABBREVIATION()
             print("3.1.3")
             self.retrieve_article_information()
+            print("3.1.3.1")
+            self.retrieve_nlp_data()
             print("3.1.4")
-            self.retrieve_target()
+            if(not self.focusedTarget):
+                self.retrieve_target()
 
             # positionResult = self.retrieve_image_text()
             print("3.1.5")
-            self.get_ic50_from_image(self.positionResult)
+            if(not self.enzymeIc50 and not self.cellIc50):
+                self.get_ic50_from_image(self.positionResult)
             print("3.1.6")
-            self.get_compound_from_image(self.positionResult)
+            if(not self.compound):
+                self.get_compound_from_image(self.positionResult)
             print("3.1.7")
             self.get_molecule_from_title_abstract()
             print("3.1.8")
-            self.get_compound_from_abstract()
+            if(not self.compound):
+                self.get_compound_from_abstract()
             print("3.1.9")
-            self.get_ic50_from_abstract()
+            if(not self.enzymeIc50 and not self.cellIc50):
+                self.get_ic50_from_abstract()
             print("3.1.10")
             self.get_multiple_values_from_body()
             print("3.1.11")
@@ -1065,7 +1073,7 @@ class ACS:
 
             # parse the given html file with TableParser()
             try:
-                with open(f"files/janus kinase/file{self.articleURL}.html", encoding="utf-8") as inputFile:
+                with open(f"files/{ACS.TARGET}/file{self.articleURL}.html", encoding="utf-8") as inputFile:
                     self.tableParser.feed(inputFile.read())
                 # self.tableParser.feed(response.text)
             except AssertionError as ae:
@@ -1087,6 +1095,256 @@ class ACS:
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
+
+
+
+
+        def retrieve_nlp_data(self):
+            
+            nlpDict = nlp.get_nlp_results(self.tableParser)
+            
+            if("compound" in nlpDict):
+                
+                compound = ""
+                for token in nlp.def_tokenizer(nlpDict["compound"]):
+                    
+                    if(token == "<b>"):
+                        continue
+                    if(token == "</b>"):
+                        break
+                    compound += token
+                
+                if(compound and compoundName(compound)):
+                    self.compound = compound
+            
+            
+            if("compound_drug" in nlpDict):
+
+                compound_drug = ""
+                for token in nlp.def_tokenizer(nlpDict["compound"]):
+
+                    if(token == "<b>" or token == "</b>"):
+                        continue
+                    compound_drug += token
+                
+                if(compound_drug and self.is_compound_name_drug(compound_drug)):
+                    self.compoundNameDrug = compound_drug
+
+            
+            if("target" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["target"])
+                if(len(tokenArr) == 1):
+                    
+                    target = tokenArr[0].strip()
+                    letterFound = False
+                    digitFound = False
+                    isTargetName = True
+                    for c in target:
+                        if(not digitFound and c.isalpha()):
+                            letterFound = True
+                        elif(letterFound and c.isdigit()):
+                            digitFound = True
+                        else:
+                            isTargetName = False
+                            break
+                    
+                    if(not letterFound or not digitFound):
+                        isTargetName = False
+
+                    if(isTargetName):
+                        self.focusedTarget = target.lower().strip()
+
+            
+            nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
+
+            for key in nmKeyArr:
+                if(key in nlpDict):
+
+                    value = ""
+                    unit = ""
+
+                    for token in nlp.def_tokenizer(nlpDict[key]):
+
+                        if(token.isdigit() or token == "."):
+                            value += token
+                        elif(not unit and value and not token.isdigit()):
+                            unit = token
+                        else:
+                            value = ""
+                            unit = ""
+                            break
+                    
+                    if(value):
+                        try:
+                            value = float(value)
+                        except ValueError:
+                            value = -1
+                        
+                        if(value != -1):
+                            if(unit and unit.lower().strip() == "μm"):
+                                value *= 1000
+
+                            if(key == "IC50_MC"):
+                                self.enzymeIc50 = value
+                            elif(key == "Ki_MC"):
+                                self.enzymeKi = value
+                            elif(key == "Kd_MC"):
+                                self.enzymeKd = value
+                            elif(key == "IC50_Ce"):
+                                self.cellIc50 = value
+                            elif(key == "Ki_Ce"):
+                                self.cellKi = value
+                            elif(key == "Kd_Ce"):
+                                self.cellKd = value
+                            elif(key == "EC50_Ce"):
+                                self.ec50 = value
+            
+
+            selectivityKeyArr = ["selectivity_MC", "selectivity_Ce"]
+
+            for key in selectivityKeyArr:
+                if(key in nlpDict):
+                    
+                    tokenArr = nlp.def_tokenizer(nlpDict[key])
+
+                    digits = ""
+                    for token in tokenArr:
+                        if(not token.isdigit()):
+                            break
+                        if(token == "."):
+                            digits = ""
+                            break
+                        digits += token
+                    
+                    if(digits):
+
+                        try:
+                            digits = int(digits)
+                        except ValueError:
+                            digits = -1
+
+                        if(digits != -1):
+                            if(key == "selectivity_MC"):
+                                self.enzymeSelectivity = digits
+                            elif(key == "selectivity_Ce"):
+                                self.cellSelectivity = digits
+
+            
+            microUnitArr = ["hERG_Ce", "solubility_Ce", "ED50_An", "solubility_An"]
+            
+            for key in microUnitArr:
+                if(key in nlpDict):
+
+                    value = ""
+                    unit = ""
+                    tokenArr = nlp.def_tokenizer(nlpDict[key])
+                    for token in tokenArr:
+                        if(token.isdigit() or token == "."):
+                            value += token
+                        elif(value and not unit and not token.isdigit()):
+                            unit = token
+                        else:
+                            value = ""
+                            unit = ""
+                            break
+                    
+                    if(value):
+                        try:
+                            value = float(value)
+                        except ValueError:
+                            value = -1
+                        
+                        if(value != -1):
+                            if(unit and ("nm" in unit.lower() or "ng" in unit.lower())):
+                                value /= 1000
+                            if(unit and ("mm" in unit.lower() or "mg" in unit.lower())):
+                                value *= 1000
+                            
+                            if(key == "hERG_Ce"):
+                                self.herg = value
+                            elif(key == "solubility_Ce"):
+                                self.cellSolubility = value
+                            elif(key == "ED50_An"):
+                                self.ed50 = value
+                            elif(key == "solubility_An"):
+                                self.vivoSolubility = value
+            
+
+            if("t1/2_An" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["2_An"])
+                value = ""
+                unit = ""
+                for token in tokenArr:
+                    if(token.isdigit() or token == "."):
+                        value += token
+                    elif(value and not unit and not token.isdigit()):
+                        unit = token
+                    else:
+                        value = ""
+                        unit = ""
+                        break
+                        
+                if(value):
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = -1
+                    
+                    if(value != -1):
+                        if(unit and unit.lower() == "min"):
+                            value /= 60
+                        
+                        self.tHalf = value
+            
+
+            if("AUC_An" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["AUC_An"])
+                value = ""
+                unit = ""
+                for token in tokenArr:
+                    if(token.isdigit() or token == "."):
+                        value += token
+                    elif(value and not token.isdigit()):
+                        unit += (token + " ")
+
+                if(value):
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = -1
+
+                    if(value != -1):
+                        if(unit):
+                            if("μg" in unit.lower()):
+                                value *= 1000
+                            if("ml" not in unit.lower() and "l" in unit.lower()):
+                                value /= 1000
+                        
+                        self.auc = value
+
+
+            if("bioavailability_An" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_An"])
+
+                value = ""
+                for token in tokenArr:
+                    if(token .isdigit() or token == "."):
+                        value += token
+                
+                if(value):
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = -1
+                    
+                    if(value != -1):
+                        self.bioavailability = value            
+
+
 
 
 
@@ -1465,7 +1723,7 @@ class ACS:
             doc = Document(self.titleText)
             for NR in doc.cems:
                 self.moleculeArr.append(NR.text)
-                if(self.is_compound_name_drug(NR.text)):
+                if(not self.compoundNameDrug and self.is_compound_name_drug(NR.text)):
                     self.compoundNameDrug = NR.text.strip()
             
             tempArr = []
@@ -1890,34 +2148,55 @@ class ACS:
 
 
         def get_multiple_values_from_body(self):
+            
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
-            if(not self.ic50Value):
-                self.enzymeIc50 = enzymeValue
-            else:
-                self.enzymeIc50 = self.ic50Value
-            self.cellIc50 = cellValue
+            if(not self.enzymeIc50):
+                if(not self.ic50Value):
+                    self.enzymeIc50 = enzymeValue
+                else:
+                    self.enzymeIc50 = self.ic50Value
+            if(not self.cellIc50):
+                self.cellIc50 = cellValue
+            
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
-            self.enzymeKi = enzymeValue
-            self.cellKi = cellValue
+            if(not self.enzymeKi):
+                self.enzymeKi = enzymeValue
+            if(not self.cellKi):    
+                self.cellKi = cellValue
+            
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
-            self.enzymeKd = enzymeValue
-            self.cellKd = cellValue
+            if(not self.enzymeKd):    
+                self.enzymeKd = enzymeValue
+            if(not self.cellKd):
+                self.cellKd = cellValue
+            
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
-            self.enzymeSelectivity = enzymeValue
-            self.cellSelectivity = cellValue
+            if(not self.enzymeSelectivity):
+                self.enzymeSelectivity = enzymeValue
+            if(not self.cellSelectivity):    
+                self.cellSelectivity = cellValue
+            
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
-            self.cellSolubility = cellValue
-            self.vivoSolubility = vivoValue
+            if(not self.cellSolubility):
+                self.cellSolubility = cellValue
+            if(not self.vivoSolubility):    
+                self.vivoSolubility = vivoValue
 
 
         
         def get_single_value_from_body(self):
-            self.ec50 = self.find_single_value_in_table("EC50")
-            self.ed50 = self.find_single_value_in_table("ED50")
-            self.auc = self.find_single_value_in_table("AUC")
-            self.herg = self.find_single_value_in_table("hERG")
-            self.tHalf = self.find_single_value_in_table("t_half")
-            self.bioavailability = self.find_single_value_in_table("bioavailability")
+            if(not self.ec50):    
+                self.ec50 = self.find_single_value_in_table("EC50")
+            if(not self.ed50):
+                self.ed50 = self.find_single_value_in_table("ED50")
+            if(not self.auc):
+                self.auc = self.find_single_value_in_table("AUC")
+            if(not self.herg):
+                self.herg = self.find_single_value_in_table("hERG")
+            if(not self.tHalf):
+                self.tHalf = self.find_single_value_in_table("t_half")
+            if(not self.bioavailability):
+                self.bioavailability = self.find_single_value_in_table("bioavailability")
 
 
 
