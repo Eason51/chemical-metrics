@@ -1110,8 +1110,10 @@ class ACS:
 
         def retrieve_nlp_data(self):
             
+            print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             
+            print("3.1.3.3")
             if("compound" in nlpDict):
                 
                 compound = ""
@@ -1126,7 +1128,7 @@ class ACS:
                 if(compound and compoundName(compound)):
                     self.compound = compound
             
-            
+            print("3.1.3.4")
             if("compound_drug" in nlpDict):
 
                 compound_drug = ""
@@ -1139,7 +1141,7 @@ class ACS:
                 if(compound_drug and self.is_compound_name_drug(compound_drug)):
                     self.compoundNameDrug = compound_drug
 
-            
+            print("3.1.3.5")
             if("target" in nlpDict):
 
                 tokenArr = nlp.def_tokenizer(nlpDict["target"])
@@ -1164,9 +1166,12 @@ class ACS:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
+            self.focusedTarget = "kras"
+
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
-
+            
+            print("3.1.3.6")
             for key in nmKeyArr:
                 if(key in nlpDict):
 
@@ -1212,6 +1217,7 @@ class ACS:
 
             selectivityKeyArr = ["selectivity_MC", "selectivity_Ce"]
 
+            print("3.1.3.7")
             for key in selectivityKeyArr:
                 if(key in nlpDict):
                     
@@ -1241,6 +1247,7 @@ class ACS:
             
             microUnitArr = ["hERG_Ce", "solubility_Ce", "ED50_An", "solubility_An"]
             
+            print("3.1.3.8")
             for key in microUnitArr:
                 if(key in nlpDict):
 
@@ -1278,7 +1285,7 @@ class ACS:
                             elif(key == "solubility_An"):
                                 self.vivoSolubility = value
             
-
+            print("3.1.3.9")
             if("t1/2_An" in nlpDict):
 
                 tokenArr = nlp.def_tokenizer(nlpDict["t1/2_An"])
@@ -1306,7 +1313,7 @@ class ACS:
                         
                         self.tHalf = value
             
-
+            print("3.1.3.10")
             if("AUC_An" in nlpDict):
 
                 tokenArr = nlp.def_tokenizer(nlpDict["AUC_An"])
@@ -1333,7 +1340,7 @@ class ACS:
                         
                         self.auc = value
 
-
+            print("3.1.3.11")
             if("bioavailability_An" in nlpDict):
 
                 tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_An"])
@@ -4056,4 +4063,4 @@ def all_to_json(targetName):
 
 
 if __name__ == '__main__':
-    all_to_json("janus kinase")
+    all_to_json("kras")
