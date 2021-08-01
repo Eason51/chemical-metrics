@@ -59,6 +59,17 @@ for i in drug_molecule_paper:
     if i['pharm_metrics_vivo']['solubility']!=0.0:
         metrics_paper_count['solubility_Cl'] = metrics_paper_count['solubility_Cl']+1
         metrics_distribution['solubility'].append(i['pharm_metrics_vivo']['solubility'])
+    if i['clinical_statistics']:
+        metrics_paper_count['adverse_1'] = metrics_paper_count['adverse_1']+ i['clinical_statistics']['p1_company_num']
+        for j in list(i['clinical_statistics']['p1_adverse_event'].values()):
+            metrics_distribution['adverse_1'].append(j)
+        metrics_paper_count['adverse_2'] = metrics_paper_count['adverse_2'] + i['clinical_statistics']['p2_company_num']
+        for j in list(i['clinical_statistics']['p2_adverse_event'].values()):
+            metrics_distribution['adverse_2'].append(j)
+        metrics_paper_count['adverse_3'] = metrics_paper_count['adverse_3'] + i['clinical_statistics']['p3_company_num']
+        for j in list(i['clinical_statistics']['p3_adverse_event'].values()):
+            metrics_distribution['adverse_3'].append(j)
+
 
 json_data['metrics_paper_count'] = metrics_paper_count
 json_data['metrics_distribution'] = metrics_distribution

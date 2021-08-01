@@ -340,9 +340,13 @@ class ACS:
 
         queryParser = ACS.QueryParser()
         queryParser.feed(response.text)
+        if(not ACS.QueryParser.nextPageURL):
+            ACS.QueryParser.hasNextPage = False
         while(ACS.QueryParser.hasNextPage):
             response = requests.get(ACS.QueryParser.nextPageURL, headers = {"User-Agent": "Mozilla/5.0"})
             queryParser.feed(response.text)
+            if(not ACS.QueryParser.nextPageURL):
+                ACS.QueryParser.hasNextPage = False
 
         return queryParser.addressArr
 
@@ -1214,7 +1218,6 @@ class ACS:
                             break
                         if(token == "."):
                             digits = ""
-                            break
                         digits += token
                     
                     if(digits):
@@ -3852,7 +3855,7 @@ def all_to_json(targetName):
         print(3.5)
         if re.search('[A-Z]', articleDict["compound_name_drug"]):
             r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
-            if 'StudyFields' in r:
+            if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
             else:
                 articleDict["clinical_statistics"] = {}
