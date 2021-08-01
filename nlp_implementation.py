@@ -172,7 +172,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
         if len(compound) == 0:
             compound = '<unk>'
 
-    label_result = {'target': target, 'compound': compound}
+    label_result = {'target': [target], 'compound': [compound]}
     for section in body_text.sections:
         required = ['result']
         if any([r in section.title.lower() for r in required]):
@@ -205,7 +205,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
     label_result_counter = {k: Counter() for k in label_result.keys()}
     for k, v in label_result.items():
         for vv in v:
-            label_result_counter[k].update(vv)
+            label_result_counter[k].update([vv])
     label_result = {k: label_result_counter[k].most_common()[0][0] for k in label_result.keys()}
 
     return label_result
