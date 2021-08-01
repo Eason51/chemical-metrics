@@ -4063,4 +4063,7 @@ def all_to_json(targetName):
 
 
 if __name__ == '__main__':
-    all_to_json("kras")
+    
+    targetName = "kras"
+    fileAmount = 139   
+    all_to_json(targetName, fileAmount)
