@@ -18,7 +18,7 @@ import nlp_implementation as nlp
 import os
 
 
-
+modelDict = nlp.load_pre_trained_nlp_model()
 
 FILEID = 0
 
@@ -991,7 +991,8 @@ class ACS:
         def retrieve_values(self):
 
             print("3.1.2")
-            self.get_FULLNAME_ABBREVIATION()
+            if(not self.ABBREVIATION or not self.FULLNAME):
+                self.get_FULLNAME_ABBREVIATION()
             print("3.1.3")
             self.retrieve_article_information()
             print("3.1.3.1")
@@ -1109,7 +1110,7 @@ class ACS:
 
         def retrieve_nlp_data(self):
             
-            nlpDict = nlp.get_nlp_results(self.tableParser)
+            nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             
             if("compound" in nlpDict):
                 
@@ -1189,7 +1190,7 @@ class ACS:
                         except ValueError:
                             value = -1
                         
-                        if(value != -1):
+                        if(value != -1 and (not unit or (unit and "m" in unit.lower()))):
                             if(unit and unit.lower().strip() == "μm"):
                                 value *= 1000
 
@@ -1280,7 +1281,7 @@ class ACS:
 
             if("t1/2_An" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["2_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_An"])
                 value = ""
                 unit = ""
                 for token in tokenArr:
