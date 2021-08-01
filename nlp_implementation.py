@@ -110,7 +110,7 @@ def load_pre_trained_nlp_model(
     return result_dict
 
 
-def get_nlp_results_test(table_parser: Union[ACSTableParser, ScienceDirectTableParser], **kwargs) -> dict:
+def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser], **kwargs) -> dict:
     assert all([k in kwargs for k in ['headers', 'model', 'id_with_title_dict',
                                       'source_vocab', 'qa_data_set', 'device']])
 
