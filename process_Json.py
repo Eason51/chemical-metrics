@@ -1,6 +1,6 @@
 import json
 
-with open('','r',encoding='utf8')as fp:
+with open('output.json','r',encoding='utf-8')as fp:
     json_data = json.load(fp)
 
 drug_molecule_paper = json_data["drug_molecule_paper"]
@@ -63,5 +63,5 @@ for i in drug_molecule_paper:
 json_data['metrics_paper_count'] = metrics_paper_count
 json_data['metrics_distribution'] = metrics_distribution
 
-with open('','w')as fp:
+with open('processedOutput.json','w')as fp:
     json.dump(json_data,fp)
