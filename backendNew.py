@@ -1500,7 +1500,7 @@ class ACS:
                     continue
                 
                 for row in table.grid.body:
-                    if(compoundColNum > len(row.cells)):
+                    if(compoundColNum >= len(row.cells)):
                         continue
                     if(compoundName(row.cells[compoundColNum])):
                         self.compoundSet.add(row.cells[compoundColNum])
