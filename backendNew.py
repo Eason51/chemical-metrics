@@ -1167,7 +1167,8 @@ class ACS:
                         self.focusedTarget = target.lower().strip()
 
             self.focusedTarget = "kras"
-
+            self.ABBREVIATION = "kras"
+            self.FULLNAME = "kras"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -1225,11 +1226,17 @@ class ACS:
 
                     digits = ""
                     for token in tokenArr:
+                        for c in token:
+                            if(not c.isdigit() and c != "."):
+                                break
+                            if(c == "."):
+                                digits = ""
+                            
+                            digits += c
+                        
                         if(not token.isdigit()):
                             break
-                        if(token == "."):
-                            digits = ""
-                        digits += token
+                    
                     
                     if(digits):
 
@@ -3767,6 +3774,9 @@ def convertToFloat(num):
 
 
 def convert_value(valueDict, key, convertFunc, checkMicro):
+
+    if(type(valueDict[key]) != str):
+        return
 
     if(not checkMicro):
         if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
