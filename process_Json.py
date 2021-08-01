@@ -1,15 +1,15 @@
 import json
 
-with open('output.json','r',encoding='utf-8')as fp:
+with open('clinicalOutput.json','r',encoding='utf-8')as fp:
     json_data = json.load(fp)
 
 drug_molecule_paper = json_data["drug_molecule_paper"]
 metrics_paper_count={'IC50_MC':0, 'Ki_MC':0, 'Kd_MC':0, 'Selectivity_MC':0, 'IC50_Ph':0, 'Ki_Ph':0, 'Kd_Ph':0, 'EC50_Ph':0,
                      'Selectivity_Ph':0, 'hERG_Ph':0, 'solubility_Ph':0, 'ED50_Cl':0, 'thalf_Cl':0, 'AUC_Cl':0, 'bio_Cl':0,
-                     'solubility_Cl':0}
+                     'solubility_Cl':0,'adverse_1': 0, 'adverse_2': 0, 'adverse_3': 0}
 metrics_distribution={'IC50_MC':[], 'Ki_MC':[], 'Kd_MC':[], 'Selectivity_MC':[], 'IC50_Ph':[], 'Ki_Ph':[], 'Kd_Ph':[], 'EC50_Ph':[],
                      'Selectivity_Ph':[], 'hERG_Ph':[], 'solubility_Ph':[], 'ED50_Cl':[], 'thalf_Cl':[], 'AUC_Cl':[], 'bio_Cl':[],
-                     'solubility_Cl':[]}
+                     'solubility_Cl':[], 'adverse_1': [], 'adverse_2': [], 'adverse_3': []}
 for i in drug_molecule_paper:
     if i['medicinal_chemistry_metrics']['IC50']!=0.0:
         metrics_paper_count['IC50_MC'] = metrics_paper_count['IC50_MC']+1
