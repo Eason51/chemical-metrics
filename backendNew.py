@@ -925,6 +925,8 @@ class ACS:
             # Target name of the article's focus
             self.focusedTarget = ""
 
+            self.compoundSet = set()
+
 
             self.tableParser = None            
             # hold title content after parsing html file
@@ -998,6 +1000,8 @@ class ACS:
             if(not self.focusedTarget):
                 self.retrieve_target()
 
+            print("3.1.4.1")
+            self.retrieve_compound_amount()
             # positionResult = self.retrieve_image_text()
             print("3.1.5")
             if(not self.enzymeIc50 and not self.cellIc50):
@@ -1469,6 +1473,37 @@ class ACS:
 
         #     return positionResult
         
+        def retrieve_compound_amount(self):
+
+            for table in self.tables:
+                
+                compoundColNum = -1
+                for row in table.grid.header:
+
+                    if(compoundColNum != -1):
+                        break
+
+                    colNum = 0
+                    for cell in row.cells:
+
+                        if(compoundColNum != -1):
+                            break
+
+                        for keyword in self.compoundKeywords:
+                            if(keyword in cell.lower()):
+                                compoundColNum = colNum
+                                break
+                        
+                        colNum += 1
+                    
+                if(compoundColNum == -1):
+                    continue
+                
+                for row in table.grid.body:
+                    if(compoundName(row.cells[compoundColNum])):
+                        self.compoundSet.add(row.cells[compoundColNum])
+
+
 
         def get_ic50_from_image(self, positionResult):
             
@@ -3824,6 +3859,7 @@ def all_to_json(targetName):
         articleDict["doi"] = article.doi
         articleDict["paper_journal"] = article.journal
         articleDict["paper_abstract_image"] = article.imgArr[0]
+        articleDict["compound_count"] = len(article.compoundSet)
         articleDict["compound_name"] = article.compound
         articleDict["compound_name_drug"] = article.compoundNameDrug
         articleDict["compound_smiles"] = simlesDict[articleURL]
