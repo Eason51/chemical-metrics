@@ -272,7 +272,7 @@ class JPETParser(HTMLParser):
     def handle_data(self, data):
 
         if(self.dateFound):
-            index = data.find(",")
+            index = data.rfind(",")
             if(index != -1):
                 date = data[:index]
                 year = date.split()[-1].strip()
@@ -474,6 +474,19 @@ def get_paper_count_per_year(keyword):
     thirdValueArr2 = get_Amount(response, JAMAParser)
 
     thirdValueArr3 = get_ScienceDirect_amount("The Lancet", keyword)
+
+    print(1)
+    print(secondValueArr1)
+    print(2)
+    print(secondValueArr2)
+    print(3)
+    print(secondValueArr3)
+    print(1)
+    print(thirdValueArr1)
+    print(2)
+    print(thirdValueArr2)
+    print(3)
+    print(thirdValueArr3)
     
     mergedSecondValueArr = merge_three_year_count_arrs(secondValueArr1, secondValueArr2, secondValueArr3)
     mergedThirdValueArr = merge_three_year_count_arrs(thirdValueArr1, thirdValueArr2, thirdValueArr3)
