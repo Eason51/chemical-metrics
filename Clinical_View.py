@@ -91,6 +91,10 @@ def study_num_Phase(results):
     p3_stat9_company = {}
 
     for i in results['StudyFieldsResponse']['StudyFields']:
+
+        if("CompletionDate" not in i or len(i["CompletionDate"]) == 0):
+            continue
+
         if 'Phase 1' in i['Phase'] and 'Phase 2' in i['Phase']:
             if i['OverallStatus'][0] == 'Not yet recruiting':
                 if i['OverallOfficialAffiliation']:
@@ -151,7 +155,7 @@ def study_num_Phase(results):
                 if i['OverallOfficialAffiliation']:
                     company = i['OverallOfficialAffiliation'][0]
                     if company not in list(p2_stat8_company.keys()):
-                        p2_stat8_company[company] = []
+                        p2_stat8_company[company] = []  
                         try:
                             p2_stat8_company[company].append(datetime.datetime.strptime(i['CompletionDate'][0], '%B %d, %Y'))
                         except:
