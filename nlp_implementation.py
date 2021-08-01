@@ -1,5 +1,6 @@
 
 from typing import Union
+from collections import Counter
 
 import fastNLP
 import torch
@@ -200,7 +201,12 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                                 label_result[label] = []
                             label_result[label].append(query_result)
 
-    label_result = {k: list(set(v)) for k, v in label_result.items()}
+    # label_result = {k: list(set(v)) for k, v in label_result.items()}
+    label_result_counter = {k: Counter() for k in label_result.keys()}
+    for k, v in label_result.items():
+        for vv in v:
+            label_result_counter[k].update(vv)
+    label_result = {k: label_result_counter[k].most_common()[0][0] for k in label_result.keys()}
 
     return label_result
 
