@@ -3823,7 +3823,7 @@ def check_json_value_format(articleDict):
 
 
 
-def all_to_json(targetName):
+def all_to_json(targetName, fileAmount):
     
     print(1)
     ACS.TARGET = targetName
@@ -3835,7 +3835,7 @@ def all_to_json(targetName):
     # addressArr =  ACS.get_article_URLs(queryResponse)
     
     print(2)
-    addressArr = list(range(306))
+    addressArr = list(range(fileAmount))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
     result = {}
