@@ -4366,101 +4366,103 @@ def all_to_json(targetName, fileAmount):
     print(1)
     ACS.TARGET = targetName
     
-    # ACSUrl = ACS.prepare_query_url(targetName)
+    # # ACSUrl = ACS.prepare_query_url(targetName)
 
-    # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
+    # # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
 
-    # addressArr =  ACS.get_article_URLs(queryResponse)
+    # # addressArr =  ACS.get_article_URLs(queryResponse)
     
-    print(2)
-    addressArr = list(range(fileAmount))
-    (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
+    # print(2)
+    # addressArr = list(range(fileAmount))
+    # (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
-    dateArr.sort()
-    result = {}
-    result["target_name"] = targetName
-    result["paper_count"] = fileAmount
-    result["paper_count_year"] = dateArr
-    result["drug_molecule_count"] = drug_molecule_count
-    result["drug_molecule_paper"] = []
+    # dateArr.sort()
+    # result = {}
+    # result["target_name"] = targetName
+    # result["paper_count"] = fileAmount
+    # result["paper_count_year"] = dateArr
+    # result["drug_molecule_count"] = drug_molecule_count
+    # result["drug_molecule_paper"] = []
     
-    print(3)
+    # print(3)
+    # i = 0
+    # for articleURL in tableAddressArr:
+        
+    #     print(f"articleURL: {articleURL}")
+    #     print(3.1)
+    #     article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+    #     print(3.2)
+    #     if(not article.compound):
+    #         result["drug_molecule_count"] -= 1
+    #         print(3.3)
+    #         continue
+        
+    #     print(3.4)
+    #     articleDict = {}
+    #     articleDict["paper_id"] = i
+    #     articleDict["paper_title"] = article.titleText
+    #     articleDict["paper_author"] = article.authorArr
+    #     articleDict["paper_year"] = article.year
+    #     articleDict["paper_institution"] = article.instituition
+    #     articleDict["paper_cited"] = article.paperCited
+    #     articleDict["doi"] = article.doi
+    #     articleDict["paper_journal"] = article.journal
+    #     articleDict["paper_abstract_image"] = article.imgArr[0]
+    #     articleDict["compound_count"] = len(article.compoundSet)
+    #     articleDict["compound_name"] = article.compound
+    #     articleDict["compound_name_drug"] = article.compoundNameDrug
+    #     articleDict["compound_smiles"] = simlesDict[articleURL]
+
+    #     medicinalDict = {}
+    #     medicinalDict["Ki"] = article.enzymeKi
+    #     medicinalDict["Kd"] = article.enzymeKd
+    #     medicinalDict["IC50"] = article.enzymeIc50
+    #     medicinalDict["selectivity"] = article.enzymeSelectivity
+    #     vitroDict = {}
+    #     vitroDict["Ki"] = article.cellKi
+    #     vitroDict["Kd"] = article.cellKd
+    #     vitroDict["IC50"] = article.cellIc50
+    #     vitroDict["EC50"] = article.ec50
+    #     vitroDict["selectivity"] = article.cellSelectivity
+    #     vitroDict["hERG"] = article.herg
+    #     vitroDict["solubility"] = article.cellSolubility
+    #     vivoDict = {}
+    #     vivoDict["ED50"] = article.ed50
+    #     vivoDict["AUC"] = article.auc
+    #     vivoDict["solubility"] = article.vivoSolubility
+    #     vivoDict["t_half"] = article.tHalf
+    #     vivoDict["bioavailability"] = article.bioavailability
+
+    #     articleDict["medicinal_chemistry_metrics"] = medicinalDict
+    #     articleDict["pharm_metrics_vitro"] = vitroDict
+    #     articleDict["pharm_metrics_vivo"] = vivoDict
+
+    #     print(3.5)
+    #     if re.search('[A-Z]', articleDict["compound_name_drug"]):
+    #         r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
+    #         if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
+    #             articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+    #         else:
+    #             articleDict["clinical_statistics"] = {}
+    #     else:
+    #         articleDict["clinical_statistics"] = {}
+
+    #     print("start")
+    #     try:    
+    #         check_json_value_format(articleDict)
+    #     except Exception as e:
+    #         print(articleDict)
+    #         print(e)
+    #         # raise Exception("exception occured")
+    #     print("end")
+
+    #     result["drug_molecule_paper"].append(articleDict)
+        
+    #     print("3.6")
+    #     i += 1
+
     i = 0
-    for articleURL in tableAddressArr:
-        
-        print(f"articleURL: {articleURL}")
-        print(3.1)
-        article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
-        print(3.2)
-        if(not article.compound):
-            result["drug_molecule_count"] -= 1
-            print(3.3)
-            continue
-        
-        print(3.4)
-        articleDict = {}
-        articleDict["paper_id"] = i
-        articleDict["paper_title"] = article.titleText
-        articleDict["paper_author"] = article.authorArr
-        articleDict["paper_year"] = article.year
-        articleDict["paper_institution"] = article.instituition
-        articleDict["paper_cited"] = article.paperCited
-        articleDict["doi"] = article.doi
-        articleDict["paper_journal"] = article.journal
-        articleDict["paper_abstract_image"] = article.imgArr[0]
-        articleDict["compound_count"] = len(article.compoundSet)
-        articleDict["compound_name"] = article.compound
-        articleDict["compound_name_drug"] = article.compoundNameDrug
-        articleDict["compound_smiles"] = simlesDict[articleURL]
-
-        medicinalDict = {}
-        medicinalDict["Ki"] = article.enzymeKi
-        medicinalDict["Kd"] = article.enzymeKd
-        medicinalDict["IC50"] = article.enzymeIc50
-        medicinalDict["selectivity"] = article.enzymeSelectivity
-        vitroDict = {}
-        vitroDict["Ki"] = article.cellKi
-        vitroDict["Kd"] = article.cellKd
-        vitroDict["IC50"] = article.cellIc50
-        vitroDict["EC50"] = article.ec50
-        vitroDict["selectivity"] = article.cellSelectivity
-        vitroDict["hERG"] = article.herg
-        vitroDict["solubility"] = article.cellSolubility
-        vivoDict = {}
-        vivoDict["ED50"] = article.ed50
-        vivoDict["AUC"] = article.auc
-        vivoDict["solubility"] = article.vivoSolubility
-        vivoDict["t_half"] = article.tHalf
-        vivoDict["bioavailability"] = article.bioavailability
-
-        articleDict["medicinal_chemistry_metrics"] = medicinalDict
-        articleDict["pharm_metrics_vitro"] = vitroDict
-        articleDict["pharm_metrics_vivo"] = vivoDict
-
-        print(3.5)
-        if re.search('[A-Z]', articleDict["compound_name_drug"]):
-            r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
-            if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
-                articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
-            else:
-                articleDict["clinical_statistics"] = {}
-        else:
-            articleDict["clinical_statistics"] = {}
-
-        print("start")
-        try:    
-            check_json_value_format(articleDict)
-        except Exception as e:
-            print(articleDict)
-            print(e)
-            # raise Exception("exception occured")
-        print("end")
-
-        result["drug_molecule_paper"].append(articleDict)
-        
-        print("3.6")
-        i += 1
-
+    result = {}
 
 
     print("a")
@@ -4471,24 +4473,26 @@ def all_to_json(targetName, fileAmount):
     ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
 
     print("c")
-    result["paper_count"] += paper_count
-    result["drug_molecule_count"] += drug_molecule_count
-    for SDYearCount in paper_count_year:
-        yearFound = False
-        for ACSyearCount in result["paper_count_year"]:
-            if(ACSyearCount[0] > SDYearCount[0]):
-                break
-            elif(ACSyearCount[0] < SDYearCount[0]):
-                continue
-            else:
-                ACSyearCount[1] += SDYearCount[1]
-                yearFound = True
+    result["paper_count"] = paper_count
+    result["drug_molecule_count"] = drug_molecule_count
+    # for SDYearCount in paper_count_year:
+    #     yearFound = False
+    #     for ACSyearCount in result["paper_count_year"]:
+    #         if(ACSyearCount[0] > SDYearCount[0]):
+    #             break
+    #         elif(ACSyearCount[0] < SDYearCount[0]):
+    #             continue
+    #         else:
+    #             ACSyearCount[1] += SDYearCount[1]
+    #             yearFound = True
         
-        if(not yearFound):
-            result["paper_count_year"].append(SDYearCount)
-
-
+    #     if(not yearFound):
+    #         result["paper_count_year"].append(SDYearCount)
+    result["paper_count_year"] = paper_count_year
+    result["drug_molecule_count"] = drug_molecule_count
+    result["drug_molecule_paper"] = []
     
+
     print("d")
     for articleDOI in doiArr:
 
