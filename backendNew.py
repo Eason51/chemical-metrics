@@ -2499,6 +2499,8 @@ class ScienceDirect:
                 self.contentCellFound = False
                 self.spaceContentCell = False
 
+                self.title = ""
+
 
 
 
@@ -2634,6 +2636,7 @@ class ScienceDirect:
                 
                 if(self.titleFound):
                     self.titleText = data
+                    self.title = data
                 if(self.abstractTextContent):
                     self.abstractText += data
                     self.abstractBoldText += data

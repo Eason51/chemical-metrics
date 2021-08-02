@@ -2463,6 +2463,7 @@ class ScienceDirect:
                 
                 self.titleFound = False
                 self.titleText = ""
+                self.title = ""
                 self.imgRef = ""
                 self.abstractBoldText = ""
                 self.boldAbstractTextArr = []
@@ -2634,6 +2635,7 @@ class ScienceDirect:
                 
                 if(self.titleFound):
                     self.titleText = data
+                    self.title = data
                 if(self.abstractTextContent):
                     self.abstractText += data
                     self.abstractBoldText += data
@@ -3080,6 +3082,7 @@ class ScienceDirect:
             
             print("e4.1")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            print(f"nlpDict: {nlpDict}")
             
             print("e4.2")
             if("compound" in nlpDict):
