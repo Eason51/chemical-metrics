@@ -221,6 +221,8 @@ class ACS:
             self.imgURL = ""
             self.keywordFound = False
 
+            self.kFound = False
+
 
 
         def handle_starttag(self, tag, attrs):
@@ -229,7 +231,7 @@ class ACS:
 
             if (self.complete):
                 return
-            elif (tag == "div" and len(attrs) == 1 and attrs[0][1] == "NLM_p"):
+            elif (tag == "div" and len(attrs) == 1 and "NLM_p" in attrs[0][1]):
                 self.contentFound = True
             elif (tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_header-epubdate"):
                 self.dateRowFound = True
@@ -287,9 +289,17 @@ class ACS:
                         self.ICFound = False
                 elif(len(data) >= 2 and (data[-2:] in ["IC", "EC", "ED"])):
                     self.ICFound = True
-            
-            elif(self.dateFound):
-                self.date = data.split()[-1]
+                if(len(data) >= 1 and (data[-1].lower() == "k")):
+                    self.kFound = True
+                elif(self.kFound):
+                    if(len(data) >= 1 and (data[0].lower() == "i" or data[0].lower() == "d")):
+                        self.kFound = False
+                        self.keywordFound = True
+                    else:
+                        self.kFound = False
+                
+                elif(self.dateFound):
+                    self.date = data.split()[-1]
 
 
         
@@ -410,7 +420,7 @@ class ACS:
                     print("2.11")
                 print("2.12")
 
-            print(bool(simles))
+            print(f"smiles: {bool(simles)}")
             print("2.13")
             if(simles):
                 
