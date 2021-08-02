@@ -2307,55 +2307,130 @@ class ScienceDirect:
         
         for condition in ScienceDirect.conditions:
 
+            offset = 0
 
             url = "https://api.elsevier.com/content/search/sciencedirect"
             header = {"x-els-apikey": "7f59af901d2d86f78a1fd60c1bf9426a", "Accept": "application/json", "Content-Type": "application/json"}
             payload = {
             "qs": f"{condition[0]}",
             "pub": f"\"{condition[1]}\"",
+            "display": {
+                    "offset": offset,
+                    "show": 100
+                }   
             }
 
             response = requests.put(url, headers=header, json=payload)
             result = json.loads(response.text)
-            AMOUNT1 = result["resultsFound"]
+            AMOUNT1 += result["resultsFound"]
 
-            if ("results" in result):
-                for article in result["results"]:
+            while(True):
+                if ("results" in result and len(result["results"]) > 0):
+                    for article in result["results"]:
 
-                    date = article["publicationDate"][:4]
-                    found = False
-                    for yearOccur in dateArr:
-                        if(yearOccur[0] == date):
-                            yearOccur[1] += 1
-                            found = True
-                            break
-                    if(not found):
-                        dateArr.append([date, 1])
+                        date = article["publicationDate"][:4]
+                        found = False
+                        for yearOccur in dateArr:
+                            if(yearOccur[0] == date):
+                                yearOccur[1] += 1
+                                found = True
+                                break
+                        if(not found):
+                            dateArr.append([date, 1])
 
-                    if (article["doi"]):
-                        doc = FullDoc(doi = article["doi"])
-                        stringList = ["IC50", "EC50", "ED50"]
-                        keywordFound = False
-                        if(doc.read(ScienceDirect.client)):
-                            if(any(substring in doc.data["originalText"] for substring in stringList)):
-                                keywordFound = True
-                            if(not keywordFound):
-                                index = doc.data["originalText"].find("Ki")
-                                if(index == -1):
-                                    index = doc.data["originalText"].find("Kd")
-                                if(index == -1):
+                        if (article["doi"]):
+
+                            doc = FullDoc(doi = article["doi"])
+                            stringList = ["IC50", "EC50", "ED50", "IC 50", "EC 50", "ED 50"]
+                            keywordFound = False
+                            if(doc.read(ScienceDirect.client)):
+
+                                if(type(doc.data["originalText"]) != str):
                                     continue
-                                if((index + 2) >= len(doc.data["originalText"])):
+                                if(any(substring in doc.data["originalText"] for substring in stringList)):
                                     keywordFound = True
-                                else:
-                                    if(not doc.data["originalText"][index + 2].isalpha()):
-                                        keywordFound = True
-                                                        
-                        if(keywordFound):    
-                            AMOUNT2 += 1
-                            DOIArr.append(article["doi"])
+                                
+                                index1 = 0
+                                index2 = 0
+                                index3 = 0
+                                index4 = 0
+                                while(not keywordFound and 
+                                    (index1 < len(doc.data["originalText"]) or 
+                                    index2 < len(doc.data["originalText"]) or
+                                    index3 < len(doc.data["originalText"]) or
+                                    index4 < len(doc.data["originalText"]))):
+                                    
+                                    if(not keywordFound):
 
-                            continue
+                                        index1 = doc.data["originalText"].find("Ki", index1)
+                                        index2 = doc.data["originalText"].find("Kd", index2)
+                                        index3 = doc.data["originalText"].find("K d", index3)
+                                        index4 = doc.data["originalText"].find("K d", index4)
+                                        if(index1 != -1 and index1 < len(doc.data["originalText"])):
+                                            if((index1 + 2) >= len(doc.data["originalText"])):
+                                                keywordFound = True
+                                            else:
+                                                if(not doc.data["originalText"][index1 + 2].isalpha()):
+                                                    keywordFound = True
+                                        if(not keywordFound and index2 != -1 and index2 < len(doc.data["originalText"])):
+                                            if((index2 + 2) >= len(doc.data["originalText"])):
+                                                keywordFound = True
+                                            else:
+                                                if(not doc.data["originalText"][index2 + 2].isalpha()):
+                                                    keywordFound = True 
+                                        if(not keywordFound and index3 != -1 and index3 < len(doc.data["originalText"])):
+                                            if((index3 + 3) >= len(doc.data["originalText"])):
+                                                keywordFound = True
+                                            else:
+                                                if(not doc.data["originalText"][index3 + 3].isalpha()):
+                                                    keywordFound = True
+                                        if(not keywordFound and index4 != -1 and index4 < len(doc.data["originalText"])):
+                                            if((index4 + 3) >= len(doc.data["originalText"])):
+                                                keywordFound = True
+                                            else:
+                                                if(not doc.data["originalText"][index4 + 3].isalpha()):
+                                                    keywordFound = True  
+
+                                    
+                                    if(not keywordFound):
+                                        if(index1 == -1):
+                                            index1 = len(doc.data["originalText"])
+                                        else:    
+                                            index1 = index1 + 2
+                                        if(index2 == -1):
+                                            index2 = len(doc.data["originalText"])
+                                        else:
+                                            index2 = index2 + 2
+                                        if(index3 == -1):
+                                            index3 = len(doc.data["originalText"])
+                                        else:
+                                            index3 = index3 + 3
+                                        if(index4 == -1):
+                                            index4 = len(doc.data["originalText"])
+                                        else:
+                                            index4 = index4 + 3
+
+                                                            
+                            if(keywordFound):    
+                                AMOUNT2 += 1
+                                DOIArr.append(article["doi"])
+
+                else:
+                    break
+
+                offset += 100
+                display = {
+                    "offset": offset,
+                    "show": 100
+                }
+                payload = {
+                "qs": f"{condition[0]}",
+                "pub": f"\"{condition[1]}\"",
+                "display": display
+                }
+                response = requests.put(url, headers=header, json=payload)
+                result = json.loads(response.text)
+
 
         dateArr.sort()
         return(((AMOUNT1, AMOUNT2), DOIArr, dateArr))
@@ -2750,6 +2825,7 @@ class ScienceDirect:
             # Target name of the article's focus
             self.focusedTarget = ""
 
+            self.compoundSet = set()
 
             self.tableParser = None            
             # hold title content after parsing html file
@@ -2787,6 +2863,8 @@ class ScienceDirect:
             self.cellKeywords = ["cell", "cellar"]
             self.compoundKeywords = ["compound", "no", "id", "compd", "cpd", "cmp"]
 
+            self.compoundNameDrug
+
             self.enzymeIc50 = ""
             self.cellIc50 = ""
             self.enzymeKi = ""
@@ -2804,6 +2882,9 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
+            self.focusedTarget = "kras"
+            self.ABBREVIATION = "kras"
+            self.FULLNAME = "kras"
             self.retrieve_values()
 
 
@@ -2811,19 +2892,44 @@ class ScienceDirect:
 
         def retrieve_values(self):
             
-            self.get_FULLNAME_ABBREVIATION()
+            print("e1")
+            if(not self.ABBREVIATION or not self.FULLNAME):
+                self.get_FULLNAME_ABBREVIATION()
+            print("e2")
             self.retrieve_article_information()
-            self.retrieve_target()
-
+            if(not self.valid):
+                return
+            print("e3")
             positionResult = self.retrieve_image_text()
             if(not self.valid):
                 return
-            self.get_ic50_from_image(positionResult)
-            self.get_compound_from_image(positionResult)
+            print("e4")
+            self.retrieve_nlp_data()
+
+            print("e5")
+            if(not self.focusedTarget):
+                self.retrieve_target()
+
+            print("e6")
+            self.retrieve_compound_amount()
+            print("e7")
+            if(not self.enzymeIc50 and not self.cellIc50):
+                self.get_ic50_from_image(positionResult)
+            print("e8")
+            if(not self.compound):
+                self.get_compound_from_image(positionResult)
+            print("e9")
             self.get_molecule_from_title_abstract()
-            self.get_compound_from_abstract()
-            self.get_ic50_from_abstract()
+            print("e10")
+            if(not self.compound):
+                self.get_compound_from_abstract()
+            print("e11")
+            if(not self.enzymeIc50 and not self.cellIc50):
+                self.get_ic50_from_abstract()
+            
+            print("e12")
             self.get_multiple_values_from_body()
+            print("e13")
             self.get_single_value_from_body()
 
 
@@ -2842,11 +2948,19 @@ class ScienceDirect:
                 pass
 
             imgRef = tableParser.imgRef
+            if(not imgRef):
+                self.valid = False
+                return
+
             imageParser = ScienceDirect.ScienceDirectArticle.ReferenceParser(imgRef)
             try:
                 imageParser.feed(response.text)
             except AssertionError as ae:
                 pass
+
+            if(not imageParser.eid):
+                self.valid = False
+                return
             
             IMAGE_QUERY_URL = "https://api.elsevier.com/content/object/eid/"
             self.imgURL = IMAGE_QUERY_URL + imageParser.eid
@@ -2885,8 +2999,12 @@ class ScienceDirect:
                 else:
                     fileName += "_"
             
-            with open(f"abstract_image/{fileName}.jpeg", "wb") as handler:
-                handler.write(image)
+            try:
+                with open(f"abstract_image/{fileName}.jpeg", "wb") as handler:
+                    handler.write(image)
+            except:
+                self.valid = False
+                return
 
             simles = ""
             positionResult = []
@@ -2954,6 +3072,269 @@ class ScienceDirect:
             else:
                 self.FULLNAME = longForm
                 self.ABBREVIATION = queryTarget
+
+
+
+
+        def retrieve_nlp_data(self):
+            
+            print("e4.1")
+            nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            
+            print("e4.2")
+            if("compound" in nlpDict):
+                
+                compound = ""
+                for token in nlp.def_tokenizer(nlpDict["compound"]):
+                    
+                    if(token == "<b>"):
+                        continue
+                    if(token == "</b>"):
+                        break
+                    compound += token
+                
+                if(compound and compoundName(compound)):
+                    self.compound = compound
+            
+            print("e4.3")
+            if("compound_drug" in nlpDict):
+
+                compound_drug = ""
+                for token in nlp.def_tokenizer(nlpDict["compound"]):
+
+                    if(token == "<b>" or token == "</b>"):
+                        continue
+                    compound_drug += token
+                
+                if(compound_drug and self.is_compound_name_drug(compound_drug)):
+                    self.compoundNameDrug = compound_drug
+
+            print("e4.4")
+            if("target" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["target"])
+                if(len(tokenArr) == 1):
+                    
+                    target = tokenArr[0].strip()
+                    letterFound = False
+                    digitFound = False
+                    isTargetName = True
+                    for c in target:
+                        if(not digitFound and c.isalpha()):
+                            letterFound = True
+                        elif(letterFound and c.isdigit()):
+                            digitFound = True
+                        else:
+                            isTargetName = False
+                            break
+                    
+                    if(not letterFound or not digitFound):
+                        isTargetName = False
+
+                    if(isTargetName):
+                        self.focusedTarget = target.lower().strip()
+
+            self.focusedTarget = "kras"
+            self.ABBREVIATION = "kras"
+            self.FULLNAME = "kras"
+            
+            nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
+            
+            print("e4.5")
+            for key in nmKeyArr:
+                if(key in nlpDict):
+
+                    value = ""
+                    unit = ""
+
+                    for token in nlp.def_tokenizer(nlpDict[key]):
+
+                        if(token.isdigit() or token == "."):
+                            value += token
+                        elif(not unit and value and not token.isdigit()):
+                            unit = token
+                        else:
+                            value = ""
+                            unit = ""
+                            break
+                    
+                    if(value):
+                        try:
+                            value = float(value)
+                        except ValueError:
+                            value = -1
+                        
+                        if(value != -1 and (not unit or (unit and "m" in unit.lower()))):
+                            if(unit and unit.lower().strip() == "μm"):
+                                value *= 1000
+
+                            if(key == "IC50_MC"):
+                                self.enzymeIc50 = value
+                            elif(key == "Ki_MC"):
+                                self.enzymeKi = value
+                            elif(key == "Kd_MC"):
+                                self.enzymeKd = value
+                            elif(key == "IC50_Ce"):
+                                self.cellIc50 = value
+                            elif(key == "Ki_Ce"):
+                                self.cellKi = value
+                            elif(key == "Kd_Ce"):
+                                self.cellKd = value
+                            elif(key == "EC50_Ce"):
+                                self.ec50 = value
+            
+
+            selectivityKeyArr = ["selectivity_MC", "selectivity_Ce"]
+
+            print("e4.6")
+            for key in selectivityKeyArr:
+                if(key in nlpDict):
+                    
+                    tokenArr = nlp.def_tokenizer(nlpDict[key])
+
+                    digits = ""
+                    for token in tokenArr:
+                        for c in token:
+                            if(not c.isdigit() and c != "."):
+                                break
+                            if(c == "."):
+                                digits = ""
+                            
+                            digits += c
+                        
+                        if(not token.isdigit()):
+                            break
+                    
+                    
+                    if(digits):
+
+                        try:
+                            digits = int(digits)
+                        except ValueError:
+                            digits = -1
+
+                        if(digits != -1):
+                            if(key == "selectivity_MC"):
+                                self.enzymeSelectivity = digits
+                            elif(key == "selectivity_Ce"):
+                                self.cellSelectivity = digits
+
+            
+            microUnitArr = ["hERG_Ce", "solubility_Ce", "ED50_An", "solubility_An"]
+            
+            print("e4.7")
+            for key in microUnitArr:
+                if(key in nlpDict):
+
+                    value = ""
+                    unit = ""
+                    tokenArr = nlp.def_tokenizer(nlpDict[key])
+                    for token in tokenArr:
+                        if(token.isdigit() or token == "."):
+                            value += token
+                        elif(value and not unit and not token.isdigit()):
+                            unit = token
+                        else:
+                            value = ""
+                            unit = ""
+                            break
+                    
+                    if(value):
+                        try:
+                            value = float(value)
+                        except ValueError:
+                            value = -1
+                        
+                        if(value != -1):
+                            if(unit and ("nm" in unit.lower() or "ng" in unit.lower())):
+                                value /= 1000
+                            if(unit and ("mm" in unit.lower() or "mg" in unit.lower())):
+                                value *= 1000
+                            
+                            if(key == "hERG_Ce"):
+                                self.herg = value
+                            elif(key == "solubility_Ce"):
+                                self.cellSolubility = value
+                            elif(key == "ED50_An"):
+                                self.ed50 = value
+                            elif(key == "solubility_An"):
+                                self.vivoSolubility = value
+            
+            print("e4.8")
+            if("t1/2_An" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_An"])
+                value = ""
+                unit = ""
+                for token in tokenArr:
+                    if(token.isdigit() or token == "."):
+                        value += token
+                    elif(value and not unit and not token.isdigit()):
+                        unit = token
+                    else:
+                        value = ""
+                        unit = ""
+                        break
+                        
+                if(value):
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = -1
+                    
+                    if(value != -1):
+                        if(unit and unit.lower() == "min"):
+                            value /= 60
+                        
+                        self.tHalf = value
+            
+            print("e4.9")
+            if("AUC_An" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["AUC_An"])
+                value = ""
+                unit = ""
+                for token in tokenArr:
+                    if(token.isdigit() or token == "."):
+                        value += token
+                    elif(value and not token.isdigit()):
+                        unit += (token + " ")
+
+                if(value):
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = -1
+
+                    if(value != -1):
+                        if(unit):
+                            if("μg" in unit.lower()):
+                                value *= 1000
+                            if("ml" not in unit.lower() and "l" in unit.lower()):
+                                value /= 1000
+                        
+                        self.auc = value
+
+            print("e4.10")
+            if("bioavailability_An" in nlpDict):
+
+                tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_An"])
+
+                value = ""
+                for token in tokenArr:
+                    if(token .isdigit() or token == "."):
+                        value += token
+                
+                if(value):
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = -1
+                    
+                    if(value != -1):
+                        self.bioavailability = value   
+
+
 
 
 
@@ -3062,6 +3443,42 @@ class ScienceDirect:
                 if(len(targetArr) > 0):
                     targetArr.sort(reverse=True)
                     self.focusedTarget = targetArr[0][2]   
+
+
+
+
+        def retrieve_compound_amount(self):
+
+            for table in self.tables:
+                
+                compoundColNum = -1
+                for row in table.grid.header:
+
+                    if(compoundColNum != -1):
+                        break
+
+                    colNum = 0
+                    for cell in row.cells:
+
+                        if(compoundColNum != -1):
+                            break
+
+                        for keyword in self.compoundKeywords:
+                            if(keyword in cell.lower()):
+                                compoundColNum = colNum
+                                break
+                        
+                        colNum += 1
+                    
+                if(compoundColNum == -1):
+                    continue
+                
+                for row in table.grid.body:
+                    if(compoundColNum >= len(row.cells)):
+                        continue
+                    if(compoundName(row.cells[compoundColNum])):
+                        self.compoundSet.add(row.cells[compoundColNum])
+
 
 
         
@@ -3296,11 +3713,37 @@ class ScienceDirect:
 # --------------------------------------------------------------------------------------------------------------
       
 
+        def is_compound_name_drug(self, name):
+
+            if(not name):
+                return False
+            
+            name = name.strip()
+            letterFound = False
+            digitFound = False
+            for c in name:
+                if(not digitFound and c.isalpha()):
+                    letterFound = True
+                elif(c.isdigit()):
+                    digitFound = True
+                if(digitFound and c.isalpha()):
+                    return False
+            
+            if(letterFound and digitFound):
+                return True
+            else:
+                return False
+
+
+
         def get_molecule_from_title_abstract(self):
             # find all identified molecule names inside of title
             doc = Document(self.titleText)
             for NR in doc.cems:
                 self.moleculeArr.append(NR.text)
+                if(not self.compoundNameDrug and self.is_compound_name_drug(NR.text)):
+                    self.compoundNameDrug = NR.text.strip()
+ 
             tempArr = []
             for name in self.moleculeArr:
                 if(moleculeName(name)):
@@ -3568,6 +4011,21 @@ class ScienceDirect:
                         break
 
 
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
+
                 
                 if(mediFound):
                     mediValue = value
@@ -3673,44 +4131,100 @@ class ScienceDirect:
                 if(compoundRowNum == -1):
                     continue
                 
+                
+                value = ""
                 if(valueColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[valueColNum]
+                    value = table.grid.body[compoundRowNum].cells[valueColNum]
                 elif(valueNameFound and targetColNum != -1):
-                    return table.grid.body[compoundRowNum].cells[targetColNum]
+                    value = table.grid.body[compoundRowNum].cells[targetColNum]
+
+
+                if(value):
+                    microFound = False
+                    for row in table.grid.header:
+
+                        if(microFound):
+                            break
+
+                        for cell in row.cells:
+                            if("μm" in cell.lower()):
+                                microFound = True
+                                break
+                    
+                    if(microFound):
+                        value = "μm" + value
+
+                    return value
+
             
-            return ""
+            return value
+
+
 
 
 
         def get_multiple_values_from_body(self):
+            
+            print("e12.1")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
-            if(not self.ic50Value):
-                self.enzymeIc50 = enzymeValue
-            else:
-                self.enzymeIc50 = self.ic50Value
-            self.cellIc50 = cellValue
+            if(not self.enzymeIc50):
+                if(not self.ic50Value):
+                    self.enzymeIc50 = enzymeValue
+                else:
+                    self.enzymeIc50 = self.ic50Value
+            if(not self.cellIc50):
+                self.cellIc50 = cellValue
+            
+            print("e12.2")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
-            self.enzymeKi = enzymeValue
-            self.cellKi = cellValue
+            if(not self.enzymeKi):    
+                self.enzymeKi = enzymeValue
+            if(not self.cellKi):
+                self.cellKi = cellValue
+            
+            print("e12.3")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
-            self.enzymeKd = enzymeValue
-            self.cellKd = cellValue
+            if(not self.enzymeKd):
+                self.enzymeKd = enzymeValue
+            if(not self.cellKd):
+                self.cellKd = cellValue
+            
+            print("e12.4")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
-            self.enzymeSelectivity = enzymeValue
-            self.cellSelectivity = cellValue
+            if(not self.enzymeSelectivity):
+                self.enzymeSelectivity = enzymeValue
+            if(not self.cellSelectivity):
+                self.cellSelectivity = cellValue
+            
+            print("e12.5")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
-            self.cellSolubility = cellValue
-            self.vivoSolubility = vivoValue
+            if(not self.cellSolubility):
+                self.cellSolubility = cellValue
+            if(not self.vivoSolubility):
+                self.vivoSolubility = vivoValue
 
 
         
         def get_single_value_from_body(self):
-            self.ec50 = self.find_single_value_in_table("EC50")
-            self.ed50 = self.find_single_value_in_table("ED50")
-            self.auc = self.find_single_value_in_table("AUC")
-            self.herg = self.find_single_value_in_table("hERG")
-            self.tHalf = self.find_single_value_in_table("t_half")
-            self.bioavailability = self.find_single_value_in_table("bioavailability")
+            
+            print("e13.1")
+            if(not self.ec50):
+                self.ec50 = self.find_single_value_in_table("EC50")
+            print("e13.2")
+            if(not self.ed50):
+                self.ed50 = self.find_single_value_in_table("ED50")
+            print("e13.3")
+            if(not self.auc):
+                self.auc = self.find_single_value_in_table("AUC")
+            print("e13.4")
+            if(not self.herg):
+                self.herg = self.find_single_value_in_table("hERG")
+            print("e13.5")
+            if(not self.tHalf):
+                self.tHalf = self.find_single_value_in_table("t_half")
+            print("e13.6")
+            if(not self.bioavailability):
+                self.bioavailability = self.find_single_value_in_table("bioavailability")
 
 
 
@@ -3855,16 +4369,17 @@ def all_to_json(targetName, fileAmount):
     # ACSUrl = ACS.prepare_query_url(targetName)
 
     # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
-    paper_count = 306
+
     # addressArr =  ACS.get_article_URLs(queryResponse)
     
     print(2)
     addressArr = list(range(fileAmount))
     (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
+    dateArr.sort()
     result = {}
     result["target_name"] = targetName
-    result["paper_count"] = paper_count
+    result["paper_count"] = fileAmount
     result["paper_count_year"] = dateArr
     result["drug_molecule_count"] = drug_molecule_count
     result["drug_molecule_paper"] = []
@@ -3947,27 +4462,119 @@ def all_to_json(targetName, fileAmount):
         i += 1
 
 
-    # ScienceDirect.TARGET = targetName
-    # ScienceDirect.initialize_conditions(targetName)
 
-    # ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
+    print("a")
+    ScienceDirect.TARGET = targetName
+    ScienceDirect.initialize_conditions(targetName)
 
-    # print(f"S1: {i}")
-    # result["paper_count"] += paper_count
-    # result["drug_molecule_count"] += drug_molecule_count
-    # for SDYearCount in paper_count_year:
-    #     yearFound = False
-    #     for ACSyearCount in result["paper_count_year"]:
-    #         if(ACSyearCount[0] > SDYearCount[0]):
-    #             break
-    #         elif(ACSyearCount[0] < SDYearCount[0]):
-    #             continue
-    #         else:
-    #             ACSyearCount[1] += SDYearCount[1]
-    #             yearFound = True
+    print("b")
+    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
+
+    print("c")
+    result["paper_count"] += paper_count
+    result["drug_molecule_count"] += drug_molecule_count
+    for SDYearCount in paper_count_year:
+        yearFound = False
+        for ACSyearCount in result["paper_count_year"]:
+            if(ACSyearCount[0] > SDYearCount[0]):
+                break
+            elif(ACSyearCount[0] < SDYearCount[0]):
+                continue
+            else:
+                ACSyearCount[1] += SDYearCount[1]
+                yearFound = True
         
-    #     if(not yearFound):
-    #         result["paper_count_year"].append(SDYearCount)
+        if(not yearFound):
+            result["paper_count_year"].append(SDYearCount)
+
+
+    
+    print("d")
+    for articleDOI in doiArr:
+
+        print(f"articleDOI: {articleDOI}")
+        try:
+            print("e")
+            article = ScienceDirect.ScienceDirectArticle(articleDOI)
+        except Exception as e:
+            print("exception: ")
+            print(e)
+
+        print("f")
+        if(not article.valid or not article.compound):
+
+            result["drug_molecule_count"] -= 1
+            continue
+
+        print("g")
+        articleDict = {}
+        articleDict["paper_id"] = i
+        articleDict["paper_title"] = article.titleText
+        articleDict["paper_author"] = article.authorArr
+        articleDict["paper_year"] = article.year
+        articleDict["paper_institution"] = article.institution
+        articleDict["paper_cited"] = article.paperCited
+        articleDict["doi"] = article.doi
+        articleDict["paper_journal"] = article.journal
+        articleDict["paper_abstract_image"] = article.imgURL
+        articleDict["compound_count"] = len(article.compoundSet)
+        articleDict["compound_name"] = article.compound
+        articleDict["compound_name_drug"] = article.compoundNameDrug
+        articleDict["compound_smiles"] = article.simles
+
+        medicinalDict = {}
+        medicinalDict["Ki"] = article.enzymeKi
+        medicinalDict["Kd"] = article.enzymeKd
+        medicinalDict["IC50"] = article.enzymeIc50
+        medicinalDict["selectivity"] = article.enzymeSelectivity
+        vitroDict = {}
+        vitroDict["Ki"] = article.cellKi
+        vitroDict["Kd"] = article.cellKd
+        vitroDict["IC50"] = article.cellIc50
+        vitroDict["EC50"] = article.ec50
+        vitroDict["selectivity"] = article.cellSelectivity
+        vitroDict["hERG"] = article.herg
+        vitroDict["solubility"] = article.cellSolubility
+        vivoDict = {}
+        vivoDict["ED50"] = article.ed50
+        vivoDict["AUC"] = article.auc
+        vivoDict["solubility"] = article.vivoSolubility
+        vivoDict["t_half"] = article.tHalf
+        vivoDict["bioavailability"] = article.bioavailability
+
+        articleDict["medicinal_chemistry_metrics"] = medicinalDict
+        articleDict["pharm_metrics_vitro"] = vitroDict
+        articleDict["pharm_metrics_vivo"] = vivoDict
+
+        print("h")
+        if re.search('[A-Z]', articleDict["compound_name"]):
+            print("i")
+            r = clinical.getloadClinicalData(articleDict["compound_name"])
+            print("j")
+            if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
+                print("k")
+                articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+            else:
+                articleDict["clinical_statistics"] = {}
+        else:
+            articleDict["clinical_statistics"] = {}
+
+        print("l")
+        try:
+            check_json_value_format(articleDict)
+        except Exception as e:
+            print(articleDict)
+            print(e)
+
+        print("m")
+        result["drug_molecule_paper"].append(articleDict)
+
+        i += 1
+
+
+
+
+
 
     print(4)    
     yearCountDict = {}
@@ -3992,70 +4599,12 @@ def all_to_json(targetName, fileAmount):
             yearCountDict[yearCount[0]] = [0, 0, yearCount[1]]
 
     print(8)
-    result["paper_count_year"] = yearCountDict 
-    
+    result["paper_count_year"] = yearCountDict
 
-    # for articleDOI in doiArr:
 
-    #     article = ScienceDirect.ScienceDirectArticle(articleDOI)
 
-    #     if(not article.valid or not article.compound):
 
-    #         result["drug_molecule_count"] -= 1
-    #         continue
 
-    #     articleDict = {}
-    #     articleDict["paper_id"] = i
-    #     articleDict["paper_title"] = article.titleText
-    #     articleDict["paper_author"] = article.authorArr
-    #     articleDict["paper_year"] = article.year
-    #     articleDict["paper_institution"] = article.institution
-    #     articleDict["paper_cited"] = article.paperCited
-    #     articleDict["doi"] = article.doi
-    #     articleDict["paper_journal"] = article.journal
-    #     articleDict["paper_abstract_image"] = article.imgURL
-    #     articleDict["compound_name"] = article.compound
-    #     articleDict["compound_smiles"] = article.simles
-
-    #     medicinalDict = {}
-    #     medicinalDict["Ki"] = article.enzymeKi
-    #     medicinalDict["Kd"] = article.enzymeKd
-    #     medicinalDict["IC50"] = article.enzymeIc50
-    #     medicinalDict["selectivity"] = article.enzymeSelectivity
-    #     vitroDict = {}
-    #     vitroDict["Ki"] = article.cellKi
-    #     vitroDict["Kd"] = article.cellKd
-    #     vitroDict["IC50"] = article.cellIc50
-    #     vitroDict["EC50"] = article.ec50
-    #     vitroDict["selectivity"] = article.cellSelectivity
-    #     vitroDict["hERG"] = article.herg
-    #     vitroDict["solubility"] = article.cellSolubility
-    #     vivoDict = {}
-    #     vivoDict["ED50"] = article.ed50
-    #     vivoDict["AUC"] = article.auc
-    #     vivoDict["solubility"] = article.vivoSolubility
-    #     vivoDict["t_half"] = article.tHalf
-    #     vivoDict["bioavailability"] = article.bioavailability
-
-    #     articleDict["medicinal_chemistry_metrics"] = medicinalDict
-    #     articleDict["pharm_metrics_vitro"] = vitroDict
-    #     articleDict["pharm_metrics_vivo"] = vivoDict
-
-     
-    #     if re.search('[A-Z]', articleDict["compound_name"]):
-    #         r = clinical.getloadClinicalData(articleDict["compound_name"])
-    #         if 'StudyFields' in r:
-    #             articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
-    #         else:
-    #             articleDict["clinical_statistics"] = {}
-    #     else:
-    #         articleDict["clinical_statistics"] = {}
-
-    #     check_json_value_format(articleDict)
-
-    #     result["drug_molecule_paper"].append(articleDict)
-
-    #     i += 1
 
     print(9)
     result["medicinal_chemistry_similarity"] = []
