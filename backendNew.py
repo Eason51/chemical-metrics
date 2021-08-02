@@ -362,6 +362,7 @@ class ACS:
         dateArr = []
         simlesDict = {}
         positionResultDict = {}
+        
         print("2.2")
 
         for address in addressArr:
@@ -395,9 +396,10 @@ class ACS:
                 dateArr.append([contentParser.date, 1]) 
             print("2.9")    
             
+            print(f"keywordFound: {contentParser.keywordFound}")
+            print(f"imgURL: {bool(contentParser.imgURL)}")
             if(contentParser.keywordFound and contentParser.imgURL):
-                print(f"keywordFound: {contentParser.keywordFound}")
-                print(f"imgURL: {bool(contentParser.imgURL)}")
+
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
@@ -1114,7 +1116,7 @@ class ACS:
         def retrieve_nlp_data(self):
             
             print("3.1.3.2")
-            nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            nlpDict = 
             
             print("3.1.3.3")
             if("compound" in nlpDict):
