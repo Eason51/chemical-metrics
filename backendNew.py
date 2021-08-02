@@ -396,6 +396,8 @@ class ACS:
             print("2.9")    
             
             if(contentParser.keywordFound and contentParser.imgURL):
+                print(f"keywordFound: {contentParser.keywordFound}")
+                print(f"imgURL: {bool(contentParser.imgURL)}")
                 # image = requests.get(contentParser.imgURL).content
                 # with open("abstract_image/image.jpeg", "wb") as handler:
                 #     handler.write(image)
@@ -407,6 +409,7 @@ class ACS:
                     print("2.11")
                 print("2.12")
 
+            print(bool(simles))
             print("2.13")
             if(simles):
                 
