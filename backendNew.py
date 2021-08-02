@@ -362,7 +362,6 @@ class ACS:
         dateArr = []
         simlesDict = {}
         positionResultDict = {}
-        
         print("2.2")
 
         for address in addressArr:
@@ -1116,7 +1115,7 @@ class ACS:
         def retrieve_nlp_data(self):
             
             print("3.1.3.2")
-            nlpDict = 
+            nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             
             print("3.1.3.3")
             if("compound" in nlpDict):
