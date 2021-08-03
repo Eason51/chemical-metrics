@@ -4512,7 +4512,8 @@ def all_to_json(targetName, fileAmount):
         except Exception as e:
             print(e)
             traceback.print_tb(e.__traceback__)
-            raise Exception("error occured")
+            # raise Exception("error occured")
+            articleDict["clinical_statistics"] = {}
         
 
         print("start")
