@@ -1,6 +1,6 @@
 import json
 
-with open('clinicalOutput.json','r',encoding='utf-8')as fp:
+with open('output.json','r',encoding='utf-8')as fp:
     json_data = json.load(fp)
 
 drug_molecule_paper = json_data["drug_molecule_paper"]
