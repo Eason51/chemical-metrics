@@ -3,7 +3,7 @@ import nlp_implementation as nlp
 
 
 
-fileId = 108
+fileId = 107
 tableParser = ACSTableParser()
 # open a file locally, should be retrieved through http request in real programs
 with open(f"files/kras/file{fileId}.html", encoding="utf-8") as inputFile:
