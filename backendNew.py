@@ -2784,7 +2784,14 @@ class ScienceDirect:
                     self.eid = data
                 if(self.locatorFound):
                     if(self.ref in data):
-                        self.isRequired = True
+                        index = data.find(self.ref)
+                        if((index + len(self.ref)) < len(data)):
+                            if(not data[index + len(self.ref)].isdigit()):
+                                self.isRequired = True
+                            else:
+                                self.isRequired = False
+                        else:
+                            self.isRequired = False
                     else:
                         self.isRequired = False
                 if(self.resolutionFound):
