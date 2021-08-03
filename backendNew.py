@@ -4047,6 +4047,8 @@ class ScienceDirect:
             if(not self.compound):
                 return ""
 
+            value = ""
+
             for table in self.tables:
                 
                 valueNameFound = False

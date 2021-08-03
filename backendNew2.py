@@ -17,6 +17,7 @@ from molecular_Structure_Similarity import molecularSimles
 import nlp_implementation as nlp
 import os
 
+nlpDicts = []
 
 modelDict = nlp.load_pre_trained_nlp_model()
 
@@ -3080,9 +3081,10 @@ class ScienceDirect:
 
         def retrieve_nlp_data(self):
             
+            global nlpDicts
             print("e4.1")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
-            print(f"nlpDict: {nlpDict}")
+            nlpDicts.append([self.doi, nlpDict])
             
             print("e4.2")
             if("compound" in nlpDict):
@@ -4047,6 +4049,8 @@ class ScienceDirect:
             if(not self.compound):
                 return ""
 
+            value = ""
+
             for table in self.tables:
                 
                 valueNameFound = False
@@ -4640,6 +4644,10 @@ def all_to_json(targetName, fileAmount):
     with open("output.json", "w", encoding="utf-8") as outputFile:
         jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
+    
+    global nlpDicts
+    for nlpDict in nlpDicts:
+        print(nlpDict)
 
 
 if __name__ == '__main__':
