@@ -2301,6 +2301,7 @@ class ScienceDirect:
 
     def retrieve_article_amount_and_doi():
 
+        global nlpDicts
         AMOUNT1 = 0
         AMOUNT2 = 0
         DOIArr = []
@@ -2941,6 +2942,8 @@ class ScienceDirect:
 
 
         def retrieve_article_information(self):
+
+            global nlpDicts
             
             QUERY_URL = "https://api.elsevier.com/content/article/doi/"
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY, "Accept": "text/xml"}
@@ -2996,6 +2999,8 @@ class ScienceDirect:
 
 
         def retrieve_image_text(self):
+            global nlpDicts
+
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
             
@@ -4379,6 +4384,8 @@ def all_to_json(targetName, fileAmount):
     
     print(1)
     ACS.TARGET = targetName
+
+    global nlpDicts
     
     # # ACSUrl = ACS.prepare_query_url(targetName)
 
@@ -4656,7 +4663,7 @@ def all_to_json(targetName, fileAmount):
         jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
     
-    global nlpDicts
+
     print("\n\n\nnlpDicts")
     for element in nlpDicts:
         print(element)
