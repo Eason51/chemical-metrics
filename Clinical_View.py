@@ -129,7 +129,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p2_terminate_reason']):
                         statistics['p2_terminate_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
                         statistics['p2_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p2_stat6_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Completed':
@@ -148,7 +148,7 @@ def study_num_Phase(results):
                         except:
                             p2_stat7_company[company].append(
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
                         statistics['p2_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p2_stat7_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Withdrawn':
@@ -169,7 +169,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p2_withdraw_reason']):
                         statistics['p2_withdraw_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
                         statistics['p2_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p2_stat8_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Unknown status':
@@ -223,7 +223,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p3_terminate_reason']):
                         statistics['p3_terminate_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
                         statistics['p3_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p3_stat6_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Completed':
@@ -242,7 +242,7 @@ def study_num_Phase(results):
                         except:
                             p3_stat7_company[company].append(
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
-                        if i['EventGroupSeriousNumAffected'] and i[
+                        if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i[
                             'EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
                             statistics['p3_adverse_event'][company] = float(
                                 i['EventGroupSeriousNumAffected'][0]) / float(i['EventGroupSeriousNumAtRisk'][0])
@@ -265,7 +265,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p3_withdraw_reason']):
                         statistics['p3_withdraw_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
                         statistics['p3_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p3_stat8_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Unknown status':
@@ -319,7 +319,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p1_terminate_reason']):
                         statistics['p1_terminate_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p1_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p1_adverse_event']):
                         statistics['p1_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p1_stat6_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Completed':
@@ -338,7 +338,7 @@ def study_num_Phase(results):
                         except:
                             p1_stat7_company[company].append(
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
-                        if i['EventGroupSeriousNumAffected'] and i[
+                        if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i[
                             'EventGroupSeriousNumAtRisk'] and company not in list(statistics['p1_adverse_event']):
                             statistics['p1_adverse_event'][company] = float(
                                 i['EventGroupSeriousNumAffected'][0]) / float(i['EventGroupSeriousNumAtRisk'][0])
@@ -361,7 +361,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p1_withdraw_reason']):
                         statistics['p1_withdraw_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p1_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p1_adverse_event']):
                         statistics['p1_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p1_stat8_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Unknown status':
@@ -415,7 +415,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p2_terminate_reason']):
                         statistics['p2_terminate_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
                         statistics['p2_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p2_stat6_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Completed':
@@ -434,7 +434,7 @@ def study_num_Phase(results):
                         except:
                             p2_stat7_company[company].append(
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
                         statistics['p2_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p2_stat7_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Withdrawn':
@@ -455,7 +455,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p2_withdraw_reason']):
                         statistics['p2_withdraw_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p2_adverse_event']):
                         statistics['p2_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p2_stat8_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Unknown status':
@@ -509,7 +509,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p3_terminate_reason']):
                         statistics['p3_terminate_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
                         statistics['p3_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p3_stat6_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Completed':
@@ -528,7 +528,7 @@ def study_num_Phase(results):
                         except:
                             p3_stat7_company[company].append(
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
-                        if i['EventGroupSeriousNumAffected'] and i[
+                        if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i[
                             'EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
                             statistics['p3_adverse_event'][company] = float(
                                 i['EventGroupSeriousNumAffected'][0]) / float(i['EventGroupSeriousNumAtRisk'][0])
@@ -551,7 +551,7 @@ def study_num_Phase(results):
                                 datetime.datetime.strptime(i['CompletionDate'][0], '%B %Y'))
                     if i['FlowDropWithdrawType'] and company not in list(statistics['p3_withdraw_reason']):
                         statistics['p3_withdraw_reason'][company] = i['FlowDropWithdrawType'][0]
-                    if i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
+                    if i['EventGroupSeriousNumAtRisk'][0] != 0 and i['EventGroupSeriousNumAffected'] and i['EventGroupSeriousNumAtRisk'] and company not in list(statistics['p3_adverse_event']):
                         statistics['p3_adverse_event'][company] = float(i['EventGroupSeriousNumAffected'][0])/float(i['EventGroupSeriousNumAtRisk'][0])
                     # p3_stat8_company.append(i['OverallOfficialAffiliation'][0])
             elif i['OverallStatus'][0] == 'Unknown status':

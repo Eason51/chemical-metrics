@@ -16,6 +16,7 @@ import itertools
 from molecular_Structure_Similarity import molecularSimles
 import nlp_implementation as nlp
 import os
+import traceback
 
 
 modelDict = nlp.load_pre_trained_nlp_model()
@@ -4443,7 +4444,14 @@ def all_to_json(targetName, fileAmount):
         
         print(f"articleURL: {articleURL}")
         print(3.1)
-        article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        article = None
+        try:
+            article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        except Exception as e:
+            print(e)
+            traceback.print_tb(e.__traceback__)
+            raise Exception("error occured")
+
         print(3.2)
         if(not article.compound):
             result["drug_molecule_count"] -= 1
@@ -4453,7 +4461,7 @@ def all_to_json(targetName, fileAmount):
         
         print(3.4)
         articleDict = {}
-        articleDict["paper_id"] = i
+        articleDict["id"] = i
         articleDict["paper_title"] = article.titleText
         articleDict["paper_author"] = article.authorArr
         articleDict["paper_year"] = article.year
@@ -4492,14 +4500,20 @@ def all_to_json(targetName, fileAmount):
         articleDict["pharm_metrics_vivo"] = vivoDict
 
         print(3.5)
-        if re.search('[A-Z]', articleDict["compound_name_drug"]):
-            r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
-            if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
-                articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+        try:
+            if re.search('[A-Z]', articleDict["compound_name_drug"]):
+                r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
+                if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
+                    articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+                else:
+                    articleDict["clinical_statistics"] = {}
             else:
                 articleDict["clinical_statistics"] = {}
-        else:
-            articleDict["clinical_statistics"] = {}
+        except Exception as e:
+            print(e)
+            traceback.print_tb(e.__traceback__)
+            raise Exception("error occured")
+        
 
         print("start")
         try:    
@@ -4607,17 +4621,22 @@ def all_to_json(targetName, fileAmount):
         articleDict["pharm_metrics_vivo"] = vivoDict
 
         print("h")
-        if re.search('[A-Z]', articleDict["compound_name"]):
-            print("i")
-            r = clinical.getloadClinicalData(articleDict["compound_name"])
-            print("j")
-            if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
-                print("k")
-                articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+        try:
+            if re.search('[A-Z]', articleDict["compound_name"]):
+                print("i")
+                r = clinical.getloadClinicalData(articleDict["compound_name"])
+                print("j")
+                if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
+                    print("k")
+                    articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+                else:
+                    articleDict["clinical_statistics"] = {}
             else:
                 articleDict["clinical_statistics"] = {}
-        else:
-            articleDict["clinical_statistics"] = {}
+        except Exception as e:
+            print(e)
+            traceback.print_tb(e)
+            raise Exception("error occured")
 
         print("l")
         try:
@@ -4703,4 +4722,8 @@ if __name__ == '__main__':
     
     targetName = "egfr"
     fileAmount = 746 
-    all_to_json(targetName, fileAmount)
+    try:
+        all_to_json(targetName, fileAmount)
+    except Exception as e:
+        print(e)
+        traceback.print_tb(e.__traceback__)
