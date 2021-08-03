@@ -649,7 +649,7 @@ class ACS:
                     self.titleText = True
                 if(self.textFound and tag == "b"):
                     self.boldTextFound = True
-                    self.abstractBoldText += "<b>"
+                    self.abstractBoldText += "<b> "
 
                 #handle body text
                 
@@ -833,7 +833,7 @@ class ACS:
                     self.titleText = False
                 if(self.boldTextFound and tag == "b"):
                     self.boldTextFound = False
-                    self.abstractBoldText += "</b>"
+                    self.abstractBoldText += " </b>"
                 
                 # handle body text
                 
@@ -865,7 +865,7 @@ class ACS:
                     self.bodyText.sections[-1].paragraphs.append(newParagraph)
                     self.paragraphHeader = ""
                 if(self.paragraphBoldFound and tag == "b"):
-                    self.paragraphBoldText += "</b>"
+                    self.paragraphBoldText += " </b>"
                     self.paragraphBoldText = ""
                     self.paragraphBoldFound = False
                 
@@ -2539,7 +2539,7 @@ class ScienceDirect:
                             self.imgRef = attr[1]
                 if(self.abstractTextContent and tag == "ce:bold"):
                     self.boldTextFound = True
-                    self.abstractBoldText += "<b>"
+                    self.abstractBoldText += "<b> "
 
                 if(tag == "ce:sections"):
                     self.bodyTextFound = True
@@ -2697,7 +2697,7 @@ class ScienceDirect:
                     self.abstractTextContent = False
                 if(self.boldTextFound and tag == "ce:bold"):
                     self.boldTextFound = False
-                    self.abstractBoldText += "</b>"
+                    self.abstractBoldText += " </b>"
                 
                 if(self.bodyTextFound and tag == "ce:sections"):
                     self.bodyTextFound = False
@@ -4353,6 +4353,8 @@ if(True):
 
     acsDict = nlp.get_nlp_results(acsTableParser, **modelDict)
     print(acsDict)
+
+    acsTableParser.abstractBoldText
 
 
 if(False):
