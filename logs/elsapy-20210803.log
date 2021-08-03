@@ -2549,3 +2549,462 @@
 2021-08-03 09:21:30,684 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.06.013
 2021-08-03 09:21:31,683 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(97)01157-4
 2021-08-03 09:21:33,292 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(97)01157-4
+2021-08-03 11:09:57,346 - elsapy.elsclient - INFO - Module loaded.
+2021-08-03 11:09:57,347 - elsapy.elsentity - INFO - Module loaded.
+2021-08-03 11:09:57,347 - elsapy.elsdoc - INFO - Module loaded.
+2021-08-03 11:10:04,094 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113381
+2021-08-03 11:10:06,429 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113381
+2021-08-03 11:10:07,427 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113006
+2021-08-03 11:10:09,462 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113006
+2021-08-03 11:10:10,460 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113082
+2021-08-03 11:10:12,447 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113082
+2021-08-03 11:10:13,445 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111844
+2021-08-03 11:10:14,405 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111844
+2021-08-03 11:10:15,404 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111807
+2021-08-03 11:10:17,193 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111807
+2021-08-03 11:10:18,192 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.12.098
+2021-08-03 11:10:19,938 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.12.098
+2021-08-03 11:10:20,936 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.025
+2021-08-03 11:10:22,539 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.025
+2021-08-03 11:10:23,538 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.040
+2021-08-03 11:10:25,219 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.040
+2021-08-03 11:10:26,217 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113579
+2021-08-03 11:10:28,159 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113579
+2021-08-03 11:10:29,158 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112993
+2021-08-03 11:10:31,131 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112993
+2021-08-03 11:10:32,130 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.06.048
+2021-08-03 11:10:34,131 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.06.048
+2021-08-03 11:10:35,128 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111627
+2021-08-03 11:10:36,809 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111627
+2021-08-03 11:10:37,808 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113264
+2021-08-03 11:10:39,750 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113264
+2021-08-03 11:10:40,749 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113428
+2021-08-03 11:10:42,457 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113428
+2021-08-03 11:10:43,456 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113555
+2021-08-03 11:10:45,814 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113555
+2021-08-03 11:10:46,810 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113026
+2021-08-03 11:10:48,240 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113026
+2021-08-03 11:10:49,240 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.018
+2021-08-03 11:10:51,187 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.018
+2021-08-03 11:10:52,185 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112299
+2021-08-03 11:10:53,378 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112299
+2021-08-03 11:10:54,379 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112981
+2021-08-03 11:10:55,618 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112981
+2021-08-03 11:10:56,615 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112271
+2021-08-03 11:10:58,313 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112271
+2021-08-03 11:10:59,312 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112675
+2021-08-03 11:11:01,495 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112675
+2021-08-03 11:11:02,493 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111885
+2021-08-03 11:11:04,543 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111885
+2021-08-03 11:11:05,541 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(21)00029-5
+2021-08-03 11:11:06,768 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(21)00029-5
+2021-08-03 11:11:07,768 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113479
+2021-08-03 11:11:09,045 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113479
+2021-08-03 11:11:10,046 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112498
+2021-08-03 11:11:12,049 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112498
+2021-08-03 11:11:13,048 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112269
+2021-08-03 11:11:14,967 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112269
+2021-08-03 11:11:15,966 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.04.053
+2021-08-03 11:11:17,995 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.04.053
+2021-08-03 11:11:18,993 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111853
+2021-08-03 11:11:21,074 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111853
+2021-08-03 11:11:22,072 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113350
+2021-08-03 11:11:22,608 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113350
+2021-08-03 11:11:23,609 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113626
+2021-08-03 11:11:25,294 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113626
+2021-08-03 11:11:26,293 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112534
+2021-08-03 11:11:27,511 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112534
+2021-08-03 11:11:28,512 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111786
+2021-08-03 11:11:30,284 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111786
+2021-08-03 11:11:31,283 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112657
+2021-08-03 11:11:32,326 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112657
+2021-08-03 11:11:33,325 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112531
+2021-08-03 11:11:35,217 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112531
+2021-08-03 11:11:36,216 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112840
+2021-08-03 11:11:37,498 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112840
+2021-08-03 11:11:38,498 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112185
+2021-08-03 11:11:40,149 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112185
+2021-08-03 11:11:41,148 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113137
+2021-08-03 11:11:43,098 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113137
+2021-08-03 11:11:44,097 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(16)30380-4
+2021-08-03 11:11:45,360 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(16)30380-4
+2021-08-03 11:11:46,360 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113312
+2021-08-03 11:11:47,974 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113312
+2021-08-03 11:11:48,974 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.11.066
+2021-08-03 11:11:49,810 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.11.066
+2021-08-03 11:11:50,809 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113386
+2021-08-03 11:11:52,478 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113386
+2021-08-03 11:11:53,477 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(20)30560-2
+2021-08-03 11:11:54,980 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(20)30560-2
+2021-08-03 11:11:55,980 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.03.046
+2021-08-03 11:11:58,206 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.03.046
+2021-08-03 11:11:59,205 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111775
+2021-08-03 11:12:00,417 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111775
+2021-08-03 11:12:01,417 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.05.027
+2021-08-03 11:12:03,288 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.05.027
+2021-08-03 11:12:04,287 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(19)30847-5
+2021-08-03 11:12:05,525 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(19)30847-5
+2021-08-03 11:12:06,525 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113420
+2021-08-03 11:12:08,591 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113420
+2021-08-03 11:12:09,589 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.04.030
+2021-08-03 11:12:11,249 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.04.030
+2021-08-03 11:12:12,249 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112922
+2021-08-03 11:12:13,405 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112922
+2021-08-03 11:12:14,402 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(12)00166-3
+2021-08-03 11:12:16,661 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(12)00166-3
+2021-08-03 11:12:17,661 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(11)00176-0
+2021-08-03 11:12:19,094 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(11)00176-0
+2021-08-03 11:12:20,094 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113519
+2021-08-03 11:12:20,816 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113519
+2021-08-03 11:12:21,815 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.08.063
+2021-08-03 11:12:22,790 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.08.063
+2021-08-03 11:12:23,789 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112917
+2021-08-03 11:12:25,500 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112917
+2021-08-03 11:12:26,499 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.06.052
+2021-08-03 11:12:28,121 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.06.052
+2021-08-03 11:12:29,121 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(17)30168-X
+2021-08-03 11:12:30,339 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(17)30168-X
+2021-08-03 11:12:31,339 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111855
+2021-08-03 11:12:32,299 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111855
+2021-08-03 11:12:33,299 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.06.043
+2021-08-03 11:12:36,799 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.06.043
+2021-08-03 11:12:37,798 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.10.035
+2021-08-03 11:12:39,433 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.10.035
+2021-08-03 11:12:40,431 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.02.059
+2021-08-03 11:12:41,541 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.02.059
+2021-08-03 11:12:42,540 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.07.015
+2021-08-03 11:12:44,753 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.07.015
+2021-08-03 11:12:45,750 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.051
+2021-08-03 11:12:46,708 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.051
+2021-08-03 11:12:47,707 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.09.023
+2021-08-03 11:12:49,377 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.09.023
+2021-08-03 11:12:50,376 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112738
+2021-08-03 11:12:52,289 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112738
+2021-08-03 11:12:53,288 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.03.061
+2021-08-03 11:12:54,948 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.03.061
+2021-08-03 11:12:55,947 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.04.001
+2021-08-03 11:12:57,678 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.04.001
+2021-08-03 11:12:58,678 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.01.034
+2021-08-03 11:13:00,609 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.01.034
+2021-08-03 11:13:01,608 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.057
+2021-08-03 11:13:02,508 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.12.057
+2021-08-03 11:13:03,508 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2009.04.022
+2021-08-03 11:13:05,205 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2009.04.022
+2021-08-03 11:13:06,205 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113356
+2021-08-03 11:13:09,407 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113356
+2021-08-03 11:13:10,405 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.11.049
+2021-08-03 11:13:11,453 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.11.049
+2021-08-03 11:13:12,452 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(09)00569-8
+2021-08-03 11:13:13,309 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(09)00569-8
+2021-08-03 11:13:14,308 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/0223-5234(89)90106-2
+2021-08-03 11:13:16,208 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/0223-5234(89)90106-2
+2021-08-03 11:13:17,209 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/0223-5234(91)90150-L
+2021-08-03 11:13:17,822 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/0223-5234(91)90150-L
+2021-08-03 11:13:18,822 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.01.012
+2021-08-03 11:13:19,832 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.01.012
+2021-08-03 11:13:20,831 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113341
+2021-08-03 11:13:21,799 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113341
+2021-08-03 11:13:22,798 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.11.021
+2021-08-03 11:13:24,482 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.11.021
+2021-08-03 11:13:25,481 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113711
+2021-08-03 11:13:26,401 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2021.113711
+2021-08-03 11:13:27,399 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113149
+2021-08-03 11:13:29,436 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113149
+2021-08-03 11:13:30,436 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.03.004
+2021-08-03 11:13:32,427 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.03.004
+2021-08-03 11:13:33,426 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.12.018
+2021-08-03 11:13:35,026 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2016.12.018
+2021-08-03 11:13:36,026 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.11.058
+2021-08-03 11:13:37,750 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.11.058
+2021-08-03 11:13:38,749 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111587
+2021-08-03 11:13:39,868 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111587
+2021-08-03 11:13:40,866 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(15)00103-8
+2021-08-03 11:13:41,390 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(15)00103-8
+2021-08-03 11:13:42,390 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.05.071
+2021-08-03 11:13:43,074 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.05.071
+2021-08-03 11:13:44,074 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.03.021
+2021-08-03 11:13:45,679 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.03.021
+2021-08-03 11:13:46,678 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.05.042
+2021-08-03 11:13:47,428 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.05.042
+2021-08-03 11:13:48,425 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112583
+2021-08-03 11:13:50,510 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112583
+2021-08-03 11:13:51,509 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.10.021
+2021-08-03 11:13:53,580 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.10.021
+2021-08-03 11:13:54,578 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.05.013
+2021-08-03 11:13:55,911 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.05.013
+2021-08-03 11:13:56,910 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/0223-5234(93)90139-6
+2021-08-03 11:13:57,491 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/0223-5234(93)90139-6
+2021-08-03 11:13:58,492 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.10.003
+2021-08-03 11:14:00,449 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.10.003
+2021-08-03 11:14:01,448 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.01.091
+2021-08-03 11:14:02,226 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.01.091
+2021-08-03 11:14:03,225 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112061
+2021-08-03 11:14:04,939 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112061
+2021-08-03 11:14:05,937 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112750
+2021-08-03 11:14:07,289 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112750
+2021-08-03 11:14:08,287 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(13)00704-6
+2021-08-03 11:14:08,921 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(13)00704-6
+2021-08-03 11:14:09,921 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(13)00756-3
+2021-08-03 11:14:11,377 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(13)00756-3
+2021-08-03 11:14:12,376 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.07.041
+2021-08-03 11:14:14,382 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.07.041
+2021-08-03 11:14:15,380 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.12.024
+2021-08-03 11:14:17,235 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.12.024
+2021-08-03 11:14:18,233 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113043
+2021-08-03 11:14:20,469 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.113043
+2021-08-03 11:14:21,535 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.05.048
+2021-08-03 11:14:22,509 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.05.048
+2021-08-03 11:14:23,507 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.08.044
+2021-08-03 11:14:25,824 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.08.044
+2021-08-03 11:14:26,820 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.03.076
+2021-08-03 11:14:29,537 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.03.076
+2021-08-03 11:14:30,532 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112086
+2021-08-03 11:14:31,508 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112086
+2021-08-03 11:14:32,508 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.08.051
+2021-08-03 11:14:34,573 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2018.08.051
+2021-08-03 11:14:35,571 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112356
+2021-08-03 11:14:37,547 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112356
+2021-08-03 11:14:38,543 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2011.03.001
+2021-08-03 11:14:40,488 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2011.03.001
+2021-08-03 11:14:41,488 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(97)88913-1
+2021-08-03 11:14:45,043 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S0223-5234(97)88913-1
+2021-08-03 11:14:46,043 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.08.018
+2021-08-03 11:14:47,985 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.08.018
+2021-08-03 11:14:48,984 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.07.018
+2021-08-03 11:14:50,617 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2014.07.018
+2021-08-03 11:14:51,616 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.06.004
+2021-08-03 11:14:53,612 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.06.004
+2021-08-03 11:14:54,609 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.06.034
+2021-08-03 11:14:55,760 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.06.034
+2021-08-03 11:14:56,757 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112712
+2021-08-03 11:14:58,740 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2020.112712
+2021-08-03 11:14:59,737 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.02.063
+2021-08-03 11:15:01,431 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.02.063
+2021-08-03 11:15:02,429 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.02.051
+2021-08-03 11:15:04,106 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2017.02.051
+2021-08-03 11:15:05,105 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111739
+2021-08-03 11:15:07,180 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111739
+2021-08-03 11:15:08,177 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111716
+2021-08-03 11:15:09,030 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111716
+2021-08-03 11:15:10,027 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/0223-5234(88)90166-3
+2021-08-03 11:15:10,591 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/0223-5234(88)90166-3
+2021-08-03 11:15:11,591 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.10.005
+2021-08-03 11:15:13,615 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2015.10.005
+2021-08-03 11:15:14,613 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111826
+2021-08-03 11:15:16,361 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ejmech.2019.111826
+2021-08-03 11:15:18,293 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2013.11.018
+2021-08-03 11:15:18,900 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2013.11.018
+2021-08-03 11:15:19,900 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2006.05.008
+2021-08-03 11:15:21,461 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2006.05.008
+2021-08-03 11:15:22,461 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2010.05.012
+2021-08-03 11:15:23,200 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2010.05.012
+2021-08-03 11:15:24,199 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.08.002
+2021-08-03 11:15:25,807 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.08.002
+2021-08-03 11:15:26,807 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.02.011
+2021-08-03 11:15:28,747 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.02.011
+2021-08-03 11:15:29,746 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.05.016
+2021-08-03 11:15:30,726 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.05.016
+2021-08-03 11:15:31,725 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.07.014
+2021-08-03 11:15:33,354 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.07.014
+2021-08-03 11:15:34,353 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.11.014
+2021-08-03 11:15:35,344 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.11.014
+2021-08-03 11:15:36,343 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.04.013
+2021-08-03 11:15:38,036 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.04.013
+2021-08-03 11:15:39,035 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.09.008
+2021-08-03 11:15:40,701 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.09.008
+2021-08-03 11:15:41,700 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.09.037
+2021-08-03 11:15:43,306 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.09.037
+2021-08-03 11:15:44,305 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.12.001
+2021-08-03 11:15:44,980 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.12.001
+2021-08-03 11:15:45,980 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.03.003
+2021-08-03 11:15:46,635 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.03.003
+2021-08-03 11:15:47,635 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2018.12.003
+2021-08-03 11:15:50,286 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2018.12.003
+2021-08-03 11:15:51,286 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.09.022
+2021-08-03 11:15:52,193 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.09.022
+2021-08-03 11:15:53,192 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.11.017
+2021-08-03 11:15:54,770 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.11.017
+2021-08-03 11:15:55,770 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2011.05.003
+2021-08-03 11:15:56,388 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2011.05.003
+2021-08-03 11:15:57,389 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.08.010
+2021-08-03 11:15:58,919 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.08.010
+2021-08-03 11:15:59,919 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.01.023
+2021-08-03 11:16:00,451 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.01.023
+2021-08-03 11:16:01,451 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.02.006
+2021-08-03 11:16:03,085 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.02.006
+2021-08-03 11:16:04,085 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.01.014
+2021-08-03 11:16:05,725 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.01.014
+2021-08-03 11:16:06,725 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2013.12.002
+2021-08-03 11:16:08,216 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2013.12.002
+2021-08-03 11:16:09,216 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.12.012
+2021-08-03 11:16:09,816 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.12.012
+2021-08-03 11:16:10,816 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.07.001
+2021-08-03 11:16:12,350 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.07.001
+2021-08-03 11:16:13,351 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.12.006
+2021-08-03 11:16:14,897 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.12.006
+2021-08-03 11:16:15,896 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.05.028
+2021-08-03 11:16:16,468 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.05.028
+2021-08-03 11:16:17,468 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.02.003
+2021-08-03 11:16:18,641 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.02.003
+2021-08-03 11:16:19,640 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.01.023
+2021-08-03 11:16:20,323 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.01.023
+2021-08-03 11:16:21,323 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.12.006
+2021-08-03 11:16:21,952 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.12.006
+2021-08-03 11:16:22,953 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.12.011
+2021-08-03 11:16:24,574 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.12.011
+2021-08-03 11:16:25,574 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmec.2006.10.005
+2021-08-03 11:16:26,208 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmec.2006.10.005
+2021-08-03 11:16:27,208 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2018.11.001
+2021-08-03 11:16:28,108 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2018.11.001
+2021-08-03 11:16:29,108 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.05.013
+2021-08-03 11:16:29,779 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.05.013
+2021-08-03 11:16:30,779 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2017.07.002
+2021-08-03 11:16:31,428 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2017.07.002
+2021-08-03 11:16:32,428 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2007.10.016
+2021-08-03 11:16:33,051 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2007.10.016
+2021-08-03 11:16:34,051 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2007.06.004
+2021-08-03 11:16:34,891 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2007.06.004
+2021-08-03 11:16:35,891 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.06.010
+2021-08-03 11:16:36,803 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.06.010
+2021-08-03 11:16:37,803 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.11.001
+2021-08-03 11:16:38,375 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.11.001
+2021-08-03 11:16:39,375 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.01.005
+2021-08-03 11:16:40,233 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.01.005
+2021-08-03 11:16:41,233 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(13)00073-1
+2021-08-03 11:16:44,671 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(13)00073-1
+2021-08-03 11:16:45,671 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.03.014
+2021-08-03 11:16:47,295 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.03.014
+2021-08-03 11:16:48,294 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.11.001
+2021-08-03 11:16:50,051 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.11.001
+2021-08-03 11:16:51,051 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(14)00096-8
+2021-08-03 11:16:52,299 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(14)00096-8
+2021-08-03 11:16:53,300 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.008
+2021-08-03 11:16:53,948 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.008
+2021-08-03 11:16:54,948 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.09.010
+2021-08-03 11:16:56,471 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.09.010
+2021-08-03 11:16:57,471 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddstr.2013.05.002
+2021-08-03 11:16:59,104 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddstr.2013.05.002
+2021-08-03 11:17:00,104 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.04.008
+2021-08-03 11:17:01,755 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.04.008
+2021-08-03 11:17:02,754 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(10)00203-5
+2021-08-03 11:17:03,247 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(10)00203-5
+2021-08-03 11:17:04,248 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(12)00241-3
+2021-08-03 11:17:06,277 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(12)00241-3
+2021-08-03 11:17:07,277 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.09.019
+2021-08-03 11:17:07,884 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.09.019
+2021-08-03 11:17:08,884 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2012.04.006
+2021-08-03 11:17:10,893 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2012.04.006
+2021-08-03 11:17:11,893 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.06.001
+2021-08-03 11:17:13,463 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.06.001
+2021-08-03 11:17:14,463 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(13)00046-9
+2021-08-03 11:17:14,960 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(13)00046-9
+2021-08-03 11:17:15,961 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmec.2011.11.005
+2021-08-03 11:17:16,923 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmec.2011.11.005
+2021-08-03 11:17:17,923 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.06.005
+2021-08-03 11:17:18,595 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.06.005
+2021-08-03 11:17:19,595 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2010.07.003
+2021-08-03 11:17:20,217 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2010.07.003
+2021-08-03 11:17:21,217 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1740-6757(06)00037-5
+2021-08-03 11:17:21,700 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1740-6757(06)00037-5
+2021-08-03 11:17:22,700 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.09.003
+2021-08-03 11:17:24,314 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.09.003
+2021-08-03 11:17:25,313 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.09.007
+2021-08-03 11:17:26,871 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.09.007
+2021-08-03 11:17:27,871 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.12.003
+2021-08-03 11:17:29,475 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.12.003
+2021-08-03 11:17:30,475 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.02.004
+2021-08-03 11:17:31,065 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.02.004
+2021-08-03 11:17:32,065 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddstr.2011.04.002
+2021-08-03 11:17:34,193 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddstr.2011.04.002
+2021-08-03 11:17:35,193 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.12.016
+2021-08-03 11:17:36,759 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.12.016
+2021-08-03 11:17:37,759 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2020.10.002
+2021-08-03 11:17:39,266 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2020.10.002
+2021-08-03 11:17:40,266 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.10.002
+2021-08-03 11:17:41,906 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.10.002
+2021-08-03 11:17:42,905 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.10.006
+2021-08-03 11:17:43,634 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.10.006
+2021-08-03 11:17:44,633 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.017
+2021-08-03 11:17:46,233 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.017
+2021-08-03 11:17:47,232 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.07.008
+2021-08-03 11:17:49,359 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.07.008
+2021-08-03 11:17:50,358 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.01.003
+2021-08-03 11:17:51,833 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.01.003
+2021-08-03 11:17:52,833 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.12.021
+2021-08-03 11:17:54,051 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.12.021
+2021-08-03 11:17:55,051 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.11.006
+2021-08-03 11:17:55,779 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.11.006
+2021-08-03 11:17:56,778 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.009
+2021-08-03 11:17:57,343 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.009
+2021-08-03 11:17:58,344 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.11.006
+2021-08-03 11:17:59,947 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2009.11.006
+2021-08-03 11:18:00,947 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.10.004
+2021-08-03 11:18:02,572 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.10.004
+2021-08-03 11:18:03,572 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.02.013
+2021-08-03 11:18:04,574 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.02.013
+2021-08-03 11:18:05,573 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2013.07.006
+2021-08-03 11:18:06,170 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2013.07.006
+2021-08-03 11:18:07,170 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2011.11.001
+2021-08-03 11:18:07,771 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2011.11.001
+2021-08-03 11:18:08,771 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.06.005
+2021-08-03 11:18:09,479 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.06.005
+2021-08-03 11:18:10,479 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.02.003
+2021-08-03 11:18:11,115 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2018.02.003
+2021-08-03 11:18:12,115 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.10.004
+2021-08-03 11:18:13,713 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.10.004
+2021-08-03 11:18:14,713 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.11.003
+2021-08-03 11:18:16,345 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.11.003
+2021-08-03 11:18:17,345 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.06.010
+2021-08-03 11:18:18,280 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.06.010
+2021-08-03 11:18:19,279 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.01.015
+2021-08-03 11:18:20,945 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.01.015
+2021-08-03 11:18:21,945 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.07.006
+2021-08-03 11:18:23,527 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.07.006
+2021-08-03 11:18:24,527 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.10.001
+2021-08-03 11:18:25,235 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.10.001
+2021-08-03 11:18:26,235 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2019.01.002
+2021-08-03 11:18:27,807 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2019.01.002
+2021-08-03 11:18:28,806 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2012.01.003
+2021-08-03 11:18:29,408 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2012.01.003
+2021-08-03 11:18:30,408 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.02.009
+2021-08-03 11:18:32,039 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2019.02.009
+2021-08-03 11:18:33,038 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.08.005
+2021-08-03 11:18:33,761 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2014.08.005
+2021-08-03 11:18:34,760 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.09.007
+2021-08-03 11:18:35,693 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.09.007
+2021-08-03 11:18:36,693 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.12.009
+2021-08-03 11:18:37,420 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.12.009
+2021-08-03 11:18:38,419 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2005.05.003
+2021-08-03 11:18:39,063 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2005.05.003
+2021-08-03 11:18:40,063 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmec.2008.05.003
+2021-08-03 11:18:40,685 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmec.2008.05.003
+2021-08-03 11:18:41,685 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.08.006
+2021-08-03 11:18:43,282 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2011.08.006
+2021-08-03 11:18:44,281 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.07.015
+2021-08-03 11:18:44,930 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2012.07.015
+2021-08-03 11:18:45,930 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.03.006
+2021-08-03 11:18:46,646 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.03.006
+2021-08-03 11:18:47,646 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2019.08.002
+2021-08-03 11:18:49,632 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddmod.2019.08.002
+2021-08-03 11:18:50,631 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2012.12.005
+2021-08-03 11:18:51,234 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2012.12.005
+2021-08-03 11:18:52,234 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.01.002
+2021-08-03 11:18:53,058 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2021.01.002
+2021-08-03 11:18:54,057 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.05.001
+2021-08-03 11:18:55,056 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.05.001
+2021-08-03 11:18:56,054 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.005
+2021-08-03 11:18:56,654 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.10.005
+2021-08-03 11:18:57,653 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.11.028
+2021-08-03 11:18:58,388 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2020.11.028
+2021-08-03 11:18:59,387 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.10.009
+2021-08-03 11:19:01,063 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.10.009
+2021-08-03 11:19:02,063 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.10.016
+2021-08-03 11:19:03,039 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2017.10.016
+2021-08-03 11:19:04,038 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.02.008
+2021-08-03 11:19:05,812 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2016.02.008
+2021-08-03 11:19:06,812 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.07.001
+2021-08-03 11:19:07,584 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.ddtec.2016.07.001
+2021-08-03 11:19:08,584 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.06.013
+2021-08-03 11:19:09,376 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/j.drudis.2015.06.013
+2021-08-03 11:19:10,376 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(97)01157-4
+2021-08-03 11:19:11,058 - elsapy.elsentity - INFO - Data loaded for https://api.elsevier.com/content/article/doi/10.1016/S1359-6446(97)01157-4
