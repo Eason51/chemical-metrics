@@ -20,6 +20,8 @@ import os
 
 modelDict = nlp.load_pre_trained_nlp_model()
 
+outputArr = []
+
 FILEID = 0
 
 
@@ -365,6 +367,7 @@ class ACS:
     def get_drug_molecule_paper(addressArr):
         
         global FILEID
+        global outputArr
 
         print("2.1")
         drugPaperCount = 0
@@ -374,8 +377,12 @@ class ACS:
         positionResultDict = {}
         print("2.2")
 
+
+        outputArr.append("all acs articles")
+
         for address in addressArr:
 
+            outputArr.append(f"fileId: {address}")
 
             print(f"address: {address}")
             print("2.3")
@@ -421,6 +428,7 @@ class ACS:
                 print("2.12")
 
             print(f"smiles: {bool(simles)}")
+            outputArr.append(f"smiles: {bool(simles)}")
             print("2.13")
             if(simles):
                 
@@ -1090,6 +1098,9 @@ class ACS:
 
 
         def retrieve_article_information(self):
+
+            global outputArr
+
             self.tableParser = ACS.ACSArticle.TableParser()
             # open a file locally, should be retrieved through http request in real programs
             # response = requests.get(self.articleURL)
@@ -1102,6 +1113,7 @@ class ACS:
             except AssertionError as ae:
                 pass
             
+
             self.titleText = self.tableParser.title
             self.imgArr = self.tableParser.imgArr
             self.abstractText = self.tableParser.abstractText
@@ -1119,13 +1131,18 @@ class ACS:
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
 
+            outputArr.append(f"title: {self.titleText}")
+
 
 
 
         def retrieve_nlp_data(self):
+
+            global outputArr
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            outputArr.append(nlpDict)
             
             print("3.1.3.3")
             if("compound" in nlpDict):
@@ -1180,9 +1197,9 @@ class ACS:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "kras"
-            self.ABBREVIATION = "kras"
-            self.FULLNAME = "kras"
+            self.focusedTarget = "egfr"
+            self.ABBREVIATION = "egfr"
+            self.FULLNAME = "egfr"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -2305,6 +2322,9 @@ class ScienceDirect:
         DOIArr = []
         dateArr = []
         
+        global outputArr
+        outputArr.append("find keywords: ")
+
         for condition in ScienceDirect.conditions:
 
             offset = 0
@@ -2414,6 +2434,7 @@ class ScienceDirect:
                             if(keywordFound):    
                                 AMOUNT2 += 1
                                 DOIArr.append(article["doi"])
+                                outputArr.append(f"doi: {article['doi']}")
 
                 else:
                     break
@@ -2892,9 +2913,9 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
-            self.focusedTarget = "kras"
-            self.ABBREVIATION = "kras"
-            self.FULLNAME = "kras"
+            self.focusedTarget = "egfr"
+            self.ABBREVIATION = "egfr"
+            self.FULLNAME = "egfr"
             self.retrieve_values()
 
 
@@ -2946,6 +2967,8 @@ class ScienceDirect:
 
 
         def retrieve_article_information(self):
+
+            global outputArr
             
             QUERY_URL = "https://api.elsevier.com/content/article/doi/"
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY, "Accept": "text/xml"}
@@ -2958,6 +2981,7 @@ class ScienceDirect:
                 pass
 
             imgRef = tableParser.imgRef
+            outputArr.append(f"imgRef: {imgRef}")
             if(not imgRef):
                 self.valid = False
                 return
@@ -3002,6 +3026,9 @@ class ScienceDirect:
 
 
         def retrieve_image_text(self):
+
+            global outputArr
+
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
             
@@ -3026,6 +3053,7 @@ class ScienceDirect:
                 (simles, positionResult) = molecularSimles(f"abstract_image/{fileName}.jpeg")
             except:
                 self.valid = False
+            outputArr.append(f"simles: {bool(simles)}")
             if(not simles):
                 self.valid = False
             
@@ -3090,10 +3118,14 @@ class ScienceDirect:
 
 
         def retrieve_nlp_data(self):
+
+            global outputArr
             
             print("e4.1")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             
+            outputArr.append(nlpDict)
+
             print("e4.2")
             if("compound" in nlpDict):
                 
@@ -3147,9 +3179,9 @@ class ScienceDirect:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "kras"
-            self.ABBREVIATION = "kras"
-            self.FULLNAME = "kras"
+            self.focusedTarget = "egfr"
+            self.ABBREVIATION = "egfr"
+            self.FULLNAME = "egfr"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -4377,6 +4409,8 @@ def check_json_value_format(articleDict):
 
 
 def all_to_json(targetName, fileAmount):
+
+    global outputArr
     
     print(1)
     ACS.TARGET = targetName
@@ -4398,10 +4432,14 @@ def all_to_json(targetName, fileAmount):
     result["paper_count_year"] = dateArr
     result["drug_molecule_count"] = drug_molecule_count
     result["drug_molecule_paper"] = []
+
+    outputArr.append(f"ACS.drug_molecule_count: {drug_molecule_count}")
     
     print(3)
     i = 0
     for articleURL in tableAddressArr:
+
+        outputArr.append(f"articleURL: {articleURL}")
         
         print(f"articleURL: {articleURL}")
         print(3.1)
@@ -4409,6 +4447,7 @@ def all_to_json(targetName, fileAmount):
         print(3.2)
         if(not article.compound):
             result["drug_molecule_count"] -= 1
+            outputArr.append("no compound")
             print(3.3)
             continue
         
@@ -4478,6 +4517,8 @@ def all_to_json(targetName, fileAmount):
 
 
 
+    outputArr.append("ScienceDirect: ")
+
     print("a")
     ScienceDirect.TARGET = targetName
     ScienceDirect.initialize_conditions(targetName)
@@ -4503,9 +4544,11 @@ def all_to_json(targetName, fileAmount):
             result["paper_count_year"].append(SDYearCount)
 
 
-    
+    outputArr.append("check simles and compound: ")
     print("d")
     for articleDOI in doiArr:
+        
+        outputArr.append(f"articleDOI: {articleDOI}")
 
         print(f"articleDOI: {articleDOI}")
         try:
@@ -4518,12 +4561,14 @@ def all_to_json(targetName, fileAmount):
         print("f")
         if(not article.valid or not article.compound):
 
+            outputArr.append(f"compound: {bool(article.compound)}")
+
             result["drug_molecule_count"] -= 1
             continue
 
         print("g")
         articleDict = {}
-        articleDict["paper_id"] = i
+        articleDict["id"] = i
         articleDict["paper_title"] = article.titleText
         articleDict["paper_author"] = article.authorArr
         articleDict["paper_year"] = article.year
@@ -4648,10 +4693,14 @@ def all_to_json(targetName, fileAmount):
     with open("output.json", "w", encoding="utf-8") as outputFile:
         jsonString = json.dumps(result, ensure_ascii=False)
         outputFile.write(jsonString)
+    
+    print("\n\n\n\n\n outputArr: ")
+    for element in outputArr:
+        print(element)
 
 
 if __name__ == '__main__':
     
-    targetName = "kras"
-    fileAmount = 139   
+    targetName = "egfr"
+    fileAmount = 746 
     all_to_json(targetName, fileAmount)
