@@ -3041,7 +3041,7 @@ class ScienceDirect:
                     fileName += "_"
             
             try:
-                with open(f"abstract_image/{fileName}.jpeg", "wb") as handler:
+                with open(f"ScienceDirectImage/{ScienceDirect.TARGET}/abstract_image/{fileName}.jpeg", "wb") as handler:
                     handler.write(image)
             except:
                 self.valid = False
@@ -3051,7 +3051,7 @@ class ScienceDirect:
             positionResult = []
 
             try:
-                (simles, positionResult) = molecularSimles(f"abstract_image/{fileName}.jpeg")
+                (simles, positionResult) = molecularSimles(f"ScienceDirectImage/{ScienceDirect.TARGET}/abstract_image/{fileName}.jpeg")
             except:
                 self.valid = False
             outputArr.append(f"simles: {bool(simles)}")
