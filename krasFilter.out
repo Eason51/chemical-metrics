@@ -1,0 +1,1800 @@
+Read cache from /data4/chuhan/github-code/chemical-metrics/saved_pickle/train_data_set_qa.pkl.
+Read cache from /data4/chuhan/github-code/chemical-metrics/saved_pickle/title_id_new.pkl.
+loading vocabulary file /data4/chuhan/github-code/chemical-metrics/nlp-pre-trained-weight/bert-base-uncased/vocab.txt
+Load pre-trained BERT parameters from file /data4/chuhan/github-code/chemical-metrics/nlp-pre-trained-weight/bert-base-uncased/pytorch_model.bin.
+1
+2
+2.1
+2.2
+address: 0
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 1
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 2
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 3
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 4
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 5
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 6
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 7
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 8
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 9
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 10
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 11
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 12
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 13
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 14
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 15
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 16
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 17
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 18
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 19
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 20
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 21
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 22
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 23
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 24
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 25
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 26
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 27
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 28
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 29
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 30
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 31
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 32
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 33
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 34
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 35
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 36
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 37
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 38
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 39
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 40
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 41
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 42
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 43
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 44
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 45
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 46
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 47
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 48
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 49
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 50
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 51
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 52
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 53
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 54
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 55
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 56
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 57
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 58
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 59
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 60
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 61
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 62
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 63
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 64
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 65
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 66
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 67
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 68
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 69
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 70
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 71
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 72
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 73
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 74
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 75
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 76
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 77
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 78
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 79
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 80
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 81
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 82
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 83
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 84
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 85
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 86
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 87
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 88
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 89
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 90
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 91
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 92
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 93
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 94
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 95
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 96
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 97
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 98
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 99
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 100
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 101
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 102
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 103
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 104
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 105
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 106
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 107
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: True
+imgURL: False
+smiles: False
+2.13
+address: 108
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 109
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 110
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 111
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 112
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 113
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 114
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 115
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 116
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 117
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 118
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: True
+smiles: False
+2.13
+address: 119
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 120
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 121
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 122
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 123
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 124
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 125
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 126
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 127
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: False
+2.13
+address: 128
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 129
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: True
+imgURL: False
+smiles: False
+2.13
+address: 130
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 131
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 132
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 133
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 134
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 135
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 136
+2.3
+2.4
+2.5
+2.7
+2.8
+2.9
+keywordFound: True
+imgURL: True
+2.10
+2.12
+smiles: True
+2.13
+2.14
+address: 137
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+address: 138
+2.3
+2.4
+2.5
+2.6
+2.8
+2.9
+keywordFound: False
+imgURL: False
+smiles: False
+2.13
+2.15
+drug_molecule_count: 29

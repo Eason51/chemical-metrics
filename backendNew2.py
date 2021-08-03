@@ -2415,6 +2415,8 @@ class ScienceDirect:
                             if(keywordFound):    
                                 AMOUNT2 += 1
                                 DOIArr.append(article["doi"])
+                            else:
+                                nlpDicts.append(article["doi"])
 
                 else:
                     break
@@ -2952,6 +2954,7 @@ class ScienceDirect:
 
             imgRef = tableParser.imgRef
             if(not imgRef):
+                nlpDicts.append("no imgRef")
                 self.valid = False
                 return
 
@@ -2962,6 +2965,7 @@ class ScienceDirect:
                 pass
 
             if(not imageParser.eid):
+                nlpDicts.append("no img eid")
                 self.valid = False
                 return
             
@@ -3006,6 +3010,7 @@ class ScienceDirect:
                 with open(f"abstract_image/{fileName}.jpeg", "wb") as handler:
                     handler.write(image)
             except:
+                nlpDicts.append(f"cannot write image: {self.imgURL}")
                 self.valid = False
                 return
 
@@ -3015,8 +3020,10 @@ class ScienceDirect:
             try:
                 (simles, positionResult) = molecularSimles(f"abstract_image/{fileName}.jpeg")
             except:
+                nlpDicts.append("smiles Exception")
                 self.valid = False
             if(not simles):
+                nlpDicts.append("empty smiles")
                 self.valid = False
             
             if(not self.valid):
@@ -3084,7 +3091,7 @@ class ScienceDirect:
             global nlpDicts
             print("e4.1")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
-            nlpDicts.append([self.doi, nlpDict])
+            nlpDicts.append(nlpDict)
             
             print("e4.2")
             if("compound" in nlpDict):
@@ -4477,6 +4484,7 @@ def all_to_json(targetName, fileAmount):
     ScienceDirect.initialize_conditions(targetName)
 
     print("b")
+    nlpDicts.append("doi no keyword")
     ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
 
     print("c")
@@ -4499,10 +4507,13 @@ def all_to_json(targetName, fileAmount):
     result["drug_molecule_count"] = drug_molecule_count
     result["drug_molecule_paper"] = []
     
-
+    nlpDicts.append("")
+    nlpDicts.append("DOI with keywoerds: ")
     print("d")
     for articleDOI in doiArr:
 
+        nlpDicts.append("")
+        nlpDicts.append(articleDOI)
         print(f"articleDOI: {articleDOI}")
         try:
             print("e")
@@ -4646,8 +4657,9 @@ def all_to_json(targetName, fileAmount):
         outputFile.write(jsonString)
     
     global nlpDicts
-    for nlpDict in nlpDicts:
-        print(nlpDict)
+    print("\n\n\nnlpDicts")
+    for element in nlpDicts:
+        print(element)
 
 
 if __name__ == '__main__':
