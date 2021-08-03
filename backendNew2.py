@@ -3001,7 +3001,10 @@ class ScienceDirect:
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             response = requests.get(citedByURL, headers=header)
             responseDict = json.loads(response.text)
-            self.paperCited = int(responseDict["search-results"]["entry"][0]["citedby-count"])
+            try:
+                self.paperCited = int(responseDict["search-results"]["entry"][0]["citedby-count"])
+            except:
+                self.paperCited = 0
 
 
 
@@ -3029,6 +3032,7 @@ class ScienceDirect:
             simles = ""
             positionResult = []
 
+            nlpDicts.append(f"image doi: {fileName}")
             try:
                 (simles, positionResult) = molecularSimles(f"abstract_image/{fileName}.jpeg")
             except:
