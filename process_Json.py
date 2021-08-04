@@ -76,4 +76,4 @@ json_data['metrics_distribution'] = metrics_distribution
 
 with open('processedOutput.json','w', encoding="utf-8")as fp:
     jsonString = json.dumps(json_data, ensure_ascii=False)
-    json.dump(jsonString,fp)
+    fp.write(jsonString)
