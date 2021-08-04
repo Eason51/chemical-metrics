@@ -439,15 +439,20 @@ class ACS:
                 
             print("2.14")
             # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
-            drugPaperCount += 1
-            tableAddressArr.append(address)
-            simlesDict[address] = simles
 
+            hasImage = True
             if(len(positionResult) == 0):
                 reader = easyocr.Reader(["en"], gpu=False)
-                positionResult = reader.readtext(f"images/{ACS.TARGET}/image{address}.jpeg")
-
-            positionResultDict[address] = positionResult
+                try:
+                    positionResult = reader.readtext(f"images/{ACS.TARGET}/image{address}.jpeg")
+                except:
+                    hasImage = False
+            
+            if(hasImage):
+                drugPaperCount += 1
+                tableAddressArr.append(address)
+                simlesDict[address] = simles
+                positionResultDict[address] = positionResult
 
             
             FILEID += 1
