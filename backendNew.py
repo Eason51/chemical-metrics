@@ -4695,9 +4695,9 @@ def all_to_json(targetName, fileAmount):
 
         print(10.1)
         item = {}
-        item['source'] = i[0]["paper_id"]
+        item['source'] = i[0]["id"]
 
-        item['target'] = i[1]["paper_id"]
+        item['target'] = i[1]["id"]
 
         item["value"] = 0.0
 

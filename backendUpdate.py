@@ -4750,12 +4750,12 @@ def all_to_json(targetName, fileAmount):
 
     with open("emptySmilesACS.txt", encoding="utf-8") as outputFile:
         for element in acsSmilesArr:
-            outputFile.write(element)
+            outputFile.write(str(element))
             outputFile.write("\n")
     
     with open("emptySmilesSD.txt", encoding="utf-8") as outputFile:
         for element in sdSmilesArr:
-            outputFile.write(element)
+            outputFile.write(str(element))
             outputFile.write("\n")
 
 
