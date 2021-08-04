@@ -24,6 +24,9 @@ modelDict = nlp.load_pre_trained_nlp_model()
 
 outputArr = []
 
+acsSmilesArr = []
+sdSmilesArr = []
+
 FILEID = 0
 
 
@@ -432,17 +435,22 @@ class ACS:
             print(f"smiles: {bool(simles)}")
             outputArr.append(f"smiles: {bool(simles)}")
             print("2.13")
-            if(simles):
+            # if(simles):
                 
-                print("2.14")
-                # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
-                drugPaperCount += 1
-                tableAddressArr.append(address)
-                simlesDict[address] = simles
-                positionResultDict[address] = positionResult
- 
-                
-                FILEID += 1
+            print("2.14")
+            # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
+            drugPaperCount += 1
+            tableAddressArr.append(address)
+            simlesDict[address] = simles
+
+            if(len(positionResult) == 0):
+                reader = easyocr.Reader(["en"], gpu=False)
+                positionResult = reader.readtext(f"images/{ACS.TARGET}/image{address}.jpeg")
+
+            positionResultDict[address] = positionResult
+
+            
+            FILEID += 1
         
         print("2.15")
         dateArr.sort()
@@ -1199,9 +1207,9 @@ class ACS:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            self.focusedTarget = "kras"
+            self.ABBREVIATION = "kras"
+            self.FULLNAME = "kras"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -2918,9 +2926,9 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            self.focusedTarget = "kras"
+            self.ABBREVIATION = "kras"
+            self.FULLNAME = "kras"
             self.retrieve_values()
 
 
@@ -3057,15 +3065,20 @@ class ScienceDirect:
             try:
                 (simles, positionResult) = molecularSimles(f"ScienceDirectImage/{ScienceDirect.TARGET}/abstract_image/{fileName}.jpeg")
             except:
-                self.valid = False
+                # self.valid = False
+                pass
             outputArr.append(f"simles: {bool(simles)}")
-            if(not simles):
-                self.valid = False
+            # if(not simles):
+            #     self.valid = False
             
-            if(not self.valid):
-                return
+            # if(not self.valid):
+            #     return
             
             self.simles = simles
+
+            if(len(positionResult) == 0):
+                reader = easyocr.Reader(["en"], gpu=False)
+                positionResult = reader.readtext(f"ScienceDirectImage/{ScienceDirect.TARGET}/abstract_image/{fileName}.jpeg")
 
             return positionResult
 
@@ -3184,9 +3197,9 @@ class ScienceDirect:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            self.focusedTarget = "kras"
+            self.ABBREVIATION = "kras"
+            self.FULLNAME = "kras"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -4416,6 +4429,8 @@ def check_json_value_format(articleDict):
 def all_to_json(targetName, fileAmount):
 
     global outputArr
+    global acsSmilesArr
+    global sdSmilesArr
     
     print(1)
     ACS.TARGET = targetName.lower()
@@ -4478,6 +4493,9 @@ def all_to_json(targetName, fileAmount):
         articleDict["compound_name"] = article.compound
         articleDict["compound_name_drug"] = article.compoundNameDrug
         articleDict["compound_smiles"] = simlesDict[articleURL]
+
+        if(not simlesDict[articleURL]):
+            acsSmilesArr.append([article.doi, articleURL])
 
         medicinalDict = {}
         medicinalDict["Ki"] = article.enzymeKi
@@ -4600,6 +4618,9 @@ def all_to_json(targetName, fileAmount):
         articleDict["compound_name_drug"] = article.compoundNameDrug
         articleDict["compound_smiles"] = article.simles
 
+        if(not article.simles):
+            sdSmilesArr.append([article.doi])
+
         medicinalDict = {}
         medicinalDict["Ki"] = article.enzymeKi
         medicinalDict["Kd"] = article.enzymeKd
@@ -4721,11 +4742,21 @@ def all_to_json(targetName, fileAmount):
     for element in outputArr:
         print(element)
 
+    with open("emptySmilesACS.txt", encoding="utf-8") as outputFile:
+        for element in acsSmilesArr:
+            outputFile.write(element)
+            outputFile.write("\n")
+    
+    with open("emptySmilesSD.txt", encoding="utf-8") as outputFile:
+        for element in sdSmilesArr:
+            outputFile.write(element)
+            outputFile.write("\n")
+
 
 if __name__ == '__main__':
     
-    targetName = "EGFR"
-    fileAmount = 746 
+    targetName = "KRAS"
+    fileAmount = 139
     try:
         all_to_json(targetName, fileAmount)
     except Exception as e:
