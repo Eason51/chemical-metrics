@@ -1212,9 +1212,9 @@ class ACS:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "kras"
-            self.ABBREVIATION = "kras"
-            self.FULLNAME = "kras"
+            self.focusedTarget = "egfr"
+            self.ABBREVIATION = "egfr"
+            self.FULLNAME = "egfr"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -2932,9 +2932,9 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
-            self.focusedTarget = "kras"
-            self.ABBREVIATION = "kras"
-            self.FULLNAME = "kras"
+            self.focusedTarget = "egfr"
+            self.ABBREVIATION = "egfr"
+            self.FULLNAME = "egfr"
             self.retrieve_values()
 
 
@@ -3203,9 +3203,9 @@ class ScienceDirect:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "kras"
-            self.ABBREVIATION = "kras"
-            self.FULLNAME = "kras"
+            self.focusedTarget = "egfr"
+            self.ABBREVIATION = "egfr"
+            self.FULLNAME = "egfr"
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -4761,8 +4761,8 @@ def all_to_json(targetName, fileAmount):
 
 if __name__ == '__main__':
     
-    targetName = "KRAS"
-    fileAmount = 139
+    targetName = "EGFR"
+    fileAmount = 746
     try:
         all_to_json(targetName, fileAmount)
     except Exception as e:
