@@ -4346,21 +4346,11 @@ def convertToFloat(num):
         pass
 
     numStr = ""
-    digitFound = False
-    decimalFound = False
-    for c in num:
-        if(not digitFound and c.isdigit()):
-            digitFound = True
-        if(digitFound and (c.isdigit() or c == ".")):
-            break
-        if(digitFound and (c.isdigit() or c == ".")):
-            if(c == "."):
-                if(not decimalFound):
-                    decimalFound = True
-                else:
-                    break
-            
+    for c in num.strip():
+        if(c.isdigit() or c == "."):
             numStr += c
+        else:
+            break
     
     if(numStr):
         try:
