@@ -17,11 +17,15 @@ from molecular_Structure_Similarity import molecularSimles
 import nlp_implementation as nlp
 import os
 import traceback
+import find_index
 
 
 modelDict = nlp.load_pre_trained_nlp_model()
 
 outputArr = []
+
+acsSmilesArr = []
+sdSmilesArr = []
 
 FILEID = 0
 
@@ -431,17 +435,27 @@ class ACS:
             print(f"smiles: {bool(simles)}")
             outputArr.append(f"smiles: {bool(simles)}")
             print("2.13")
-            if(simles):
+            # if(simles):
                 
-                print("2.14")
-                # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
+            print("2.14")
+            # os.rename("abstract_image/image.jpeg", f"abstract_image/image{FILEID}.jpeg")
+
+            hasImage = True
+            if(len(positionResult) == 0):
+                reader = easyocr.Reader(["en"], gpu=False)
+                try:
+                    positionResult = reader.readtext(f"images/{ACS.TARGET}/image{address}.jpeg")
+                except:
+                    hasImage = False
+            
+            if(hasImage):
                 drugPaperCount += 1
                 tableAddressArr.append(address)
                 simlesDict[address] = simles
                 positionResultDict[address] = positionResult
- 
-                
-                FILEID += 1
+
+            
+            FILEID += 1
         
         print("2.15")
         dateArr.sort()
@@ -1143,6 +1157,7 @@ class ACS:
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            print(nlpDict)
             outputArr.append(nlpDict)
             
             print("3.1.3.3")
@@ -2316,7 +2331,7 @@ class ScienceDirect:
     
 
 
-    def retrieve_article_amount_and_doi():
+    def retrieve_article_amount_and_doi(targetFullName):
 
         AMOUNT1 = 0
         AMOUNT2 = 0
@@ -2361,6 +2376,10 @@ class ScienceDirect:
 
                         if (article["doi"]):
 
+                            if(not find_index.check_sciencedirect_article(article["doi"], targetFullName)):
+                                AMOUNT1 -= 1
+                                continue 
+                            
                             doc = FullDoc(doi = article["doi"])
                             stringList = ["IC50", "EC50", "ED50", "IC 50", "EC 50", "ED 50"]
                             keywordFound = False
@@ -2432,7 +2451,7 @@ class ScienceDirect:
                                             index4 = index4 + 3
 
                                                             
-                            if(keywordFound):    
+                            if(keywordFound):   
                                 AMOUNT2 += 1
                                 DOIArr.append(article["doi"])
                                 outputArr.append(f"doi: {article['doi']}")
@@ -3053,15 +3072,20 @@ class ScienceDirect:
             try:
                 (simles, positionResult) = molecularSimles(f"ScienceDirectImage/{ScienceDirect.TARGET}/abstract_image/{fileName}.jpeg")
             except:
-                self.valid = False
+                # self.valid = False
+                pass
             outputArr.append(f"simles: {bool(simles)}")
-            if(not simles):
-                self.valid = False
+            # if(not simles):
+            #     self.valid = False
             
-            if(not self.valid):
-                return
+            # if(not self.valid):
+            #     return
             
             self.simles = simles
+
+            if(len(positionResult) == 0):
+                reader = easyocr.Reader(["en"], gpu=False)
+                positionResult = reader.readtext(f"ScienceDirectImage/{ScienceDirect.TARGET}/abstract_image/{fileName}.jpeg")
 
             return positionResult
 
@@ -4409,9 +4433,13 @@ def check_json_value_format(articleDict):
 
 
 
+ACS.TARGET = "egfr"
 
-doi = "10.1016/j.ejmech.2015.12.033"
-try:
-    parser = ScienceDirect.ScienceDirectArticle(doi)
-except Exception as e:
-    print(e)
+articleURL = 15
+
+reader = easyocr.Reader(["en"], gpu=False)
+positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
+
+article = ACS.ACSArticle(articleURL, positionResult)
+print(f"enzymeIC50: {article.enzymeIc50}")
+print(f"cellIc50: {article.cellIc50}")
