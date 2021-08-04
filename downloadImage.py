@@ -1,5 +1,7 @@
 import requests
 from html.parser import HTMLParser
+import sys
+import glob
 
 def exitParser(parser):
     parser.reset()
@@ -29,9 +31,9 @@ class ImageParser(HTMLParser):
             if(title == "High Resolution Image"):
                 self.imgURL = "https://pubs.acs.org/" + link
 
-target = "egfr"
+target = sys.argv[1]
 
-for i in range(4):
+for i in range(len(glob.glob(f"files/{target}/*"))):
     tableParser = ImageParser()
     with open(f"files/{target}/file{i}.html", encoding="utf-8") as inputFile:
         try:
