@@ -18,6 +18,8 @@ import nlp_implementation as nlp
 import os
 import traceback
 import find_index
+import sys
+import glob
 
 
 modelDict = nlp.load_pre_trained_nlp_model()
@@ -28,6 +30,8 @@ acsSmilesArr = []
 sdSmilesArr = []
 
 FILEID = 0
+
+TARGETNAME = sys.argv[1]
 
 
 # Parsers cannot exit from inside, the reset() method needs to be called from outside
@@ -1212,9 +1216,10 @@ class ACS:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            global TARGETNAME
+            self.focusedTarget = TARGETNAME.lower()
+            self.ABBREVIATION = TARGETNAME.lower()
+            self.FULLNAME = TARGETNAME.lower()
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -2932,9 +2937,10 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            global TARGETNAME
+            self.focusedTarget = TARGETNAME.lower()
+            self.ABBREVIATION = TARGETNAME.lower()
+            self.FULLNAME = TARGETNAME.lower()
             self.retrieve_values()
 
 
@@ -3203,9 +3209,10 @@ class ScienceDirect:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            global TARGETNAME
+            self.focusedTarget = TARGETNAME
+            self.ABBREVIATION = TARGETNAME
+            self.FULLNAME = TARGETNAME
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -4751,8 +4758,8 @@ def all_to_json(targetName, fileAmount):
 
 if __name__ == '__main__':
     
-    targetName = "EGFR"
-    fileAmount = 746
+    targetName = TARGETNAME
+    fileAmount = len(glob.glob(f"files/{targetName.lower()}/*"))
     try:
         all_to_json(targetName, fileAmount)
     except Exception as e:
