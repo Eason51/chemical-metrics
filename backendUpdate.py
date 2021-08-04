@@ -4565,7 +4565,7 @@ def all_to_json(targetName, fileAmount):
     ScienceDirect.initialize_conditions(targetName.lower())
 
     print("b")
-    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi()
+    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi(targetName)
 
     print("c")
     result["paper_count"] += paper_count
