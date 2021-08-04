@@ -2376,6 +2376,7 @@ class ScienceDirect:
                         if (article["doi"]):
 
                             if(not find_index.check_sciencedirect_article(article["doi"], targetFullName)):
+                                AMOUNT1 -= 1
                                 continue 
                             
                             doc = FullDoc(doi = article["doi"])
