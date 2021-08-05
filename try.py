@@ -18,10 +18,11 @@ import nlp_implementation as nlp
 import os
 import traceback
 import find_index
+import sys
+import glob
 
 
 modelDict = nlp.load_pre_trained_nlp_model()
-TARGETNAME = ""
 
 outputArr = []
 
@@ -29,6 +30,8 @@ acsSmilesArr = []
 sdSmilesArr = []
 
 FILEID = 0
+
+TARGETNAME = sys.argv[1]
 
 
 # Parsers cannot exit from inside, the reset() method needs to be called from outside
@@ -71,8 +74,10 @@ def compoundName(string):
         for c in string:
             if(not onlyDigit and not c.isalpha()):
                 return False
-            if(onlyDigit and not c.isdigit()):
+            if(onlyDigit and c.isalpha()):
                 onlyDigit = False
+            if(not c.isdigit() and not c.isalpha()):
+                return False
         return True
     return False
 
@@ -1158,7 +1163,6 @@ class ACS:
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
-            print(nlpDict)
             outputArr.append(nlpDict)
             
             print("3.1.3.3")
@@ -1215,9 +1219,9 @@ class ACS:
                         self.focusedTarget = target.lower().strip()
 
             global TARGETNAME
-            self.focusedTarget = TARGETNAME
-            self.ABBREVIATION = TARGETNAME
-            self.FULLNAME = TARGETNAME
+            self.focusedTarget = TARGETNAME.lower()
+            self.ABBREVIATION = TARGETNAME.lower()
+            self.FULLNAME = TARGETNAME.lower()
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -2936,9 +2940,9 @@ class ScienceDirect:
             self.bioavailability = ""
 
             global TARGETNAME
-            self.focusedTarget = TARGETNAME
-            self.ABBREVIATION = TARGETNAME
-            self.FULLNAME = TARGETNAME
+            self.focusedTarget = TARGETNAME.lower()
+            self.ABBREVIATION = TARGETNAME.lower()
+            self.FULLNAME = TARGETNAME.lower()
             self.retrieve_values()
 
 
@@ -3151,7 +3155,6 @@ class ScienceDirect:
             
             print("e4.1")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
-            print(nlpDict)
             
             outputArr.append(nlpDict)
 
@@ -4352,21 +4355,11 @@ def convertToFloat(num):
         pass
 
     numStr = ""
-    digitFound = False
-    decimalFound = False
-    for c in num:
-        if(not digitFound and c.isdigit()):
-            digitFound = True
-        if(digitFound and (c.isdigit() or c == ".")):
-            break
-        if(digitFound and (c.isdigit() or c == ".")):
-            if(c == "."):
-                if(not decimalFound):
-                    decimalFound = True
-                else:
-                    break
-            
+    for c in num.strip():
+        if(c.isdigit() or c == "."):
             numStr += c
+        else:
+            break
     
     if(numStr):
         try:
@@ -4437,17 +4430,25 @@ def check_json_value_format(articleDict):
                     valueDict[key] = value
 
 
-if(False):
+
+if(True):
     ACS.TARGET = TARGETNAME
 
-    articleURL = 15
+    articleURL = 56
 
     reader = easyocr.Reader(["en"], gpu=False)
     positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
 
     article = ACS.ACSArticle(articleURL, positionResult)
+    print(article.titleText)
+    valueDict = {"enzyme": article.enzymeIc50, "cell": article.cellIc50}
+    print(valueDict)
+    convert_value(valueDict, "enzyme", convertToFloat, True)
+    convert_value(valueDict, "cell", convertToFloat, True)
+    print(valueDict)
 
-if(True):
+
+if(False):
     ScienceDirect.TARGET = TARGETNAME
 
     doi = "10.1016/j.ejmech.2019.111770"
@@ -4455,5 +4456,6 @@ if(True):
         article = ScienceDirect.ScienceDirectArticle(doi)
     except Exception as e:
         print(e)
-    
+
     print(article.compound)
+ 
