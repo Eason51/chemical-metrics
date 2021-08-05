@@ -74,8 +74,10 @@ def compoundName(string):
         for c in string:
             if(not onlyDigit and not c.isalpha()):
                 return False
-            if(onlyDigit and not c.isdigit()):
+            if(onlyDigit and c.isalpha()):
                 onlyDigit = False
+            if(not c.isdigit() and not c.isalpha()):
+                return False
         return True
     return False
 
@@ -4351,6 +4353,15 @@ def convertToFloat(num):
         return float(num)
     except ValueError:
         pass
+
+    num = num.strip()
+    if(num and not num[0].isdigit()):
+        index = num.find(":")
+        if(index != -1):
+            num = num[index + 1:].strip()
+        index = num.find("=")
+        if(index != -1):
+            num = num[index + 1:].strip()
 
     numStr = ""
     for c in num.strip():

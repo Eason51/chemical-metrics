@@ -4354,6 +4354,15 @@ def convertToFloat(num):
     except ValueError:
         pass
 
+    num = num.strip()
+    if(num and not num[0].isdigit()):
+        index = num.find(":")
+        if(index != -1):
+            num = num[index + 1:].strip()
+        index = num.find("=")
+        if(index != -1):
+            num = num[index + 1:].strip()
+
     numStr = ""
     for c in num.strip():
         if(c.isdigit() or c == "."):
