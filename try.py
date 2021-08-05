@@ -21,6 +21,7 @@ import find_index
 
 
 modelDict = nlp.load_pre_trained_nlp_model()
+TARGETNAME = ""
 
 outputArr = []
 
@@ -1213,9 +1214,10 @@ class ACS:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            global TARGETNAME
+            self.focusedTarget = TARGETNAME
+            self.ABBREVIATION = TARGETNAME
+            self.FULLNAME = TARGETNAME
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -2933,9 +2935,10 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            global TARGETNAME
+            self.focusedTarget = TARGETNAME
+            self.ABBREVIATION = TARGETNAME
+            self.FULLNAME = TARGETNAME
             self.retrieve_values()
 
 
@@ -3148,6 +3151,7 @@ class ScienceDirect:
             
             print("e4.1")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            print(nlpDict)
             
             outputArr.append(nlpDict)
 
@@ -3204,9 +3208,10 @@ class ScienceDirect:
                     if(isTargetName):
                         self.focusedTarget = target.lower().strip()
 
-            self.focusedTarget = "egfr"
-            self.ABBREVIATION = "egfr"
-            self.FULLNAME = "egfr"
+            global TARGETNAME
+            self.focusedTarget = TARGETNAME
+            self.ABBREVIATION = TARGETNAME
+            self.FULLNAME = TARGETNAME
             
             nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
             
@@ -4432,14 +4437,23 @@ def check_json_value_format(articleDict):
                     valueDict[key] = value
 
 
+if(False):
+    ACS.TARGET = TARGETNAME
 
-ACS.TARGET = "egfr"
+    articleURL = 15
 
-articleURL = 15
+    reader = easyocr.Reader(["en"], gpu=False)
+    positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
 
-reader = easyocr.Reader(["en"], gpu=False)
-positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
+    article = ACS.ACSArticle(articleURL, positionResult)
 
-article = ACS.ACSArticle(articleURL, positionResult)
-print(f"enzymeIC50: {article.enzymeIc50}")
-print(f"cellIc50: {article.cellIc50}")
+if(True):
+    ScienceDirect.TARGET = TARGETNAME
+
+    doi = "10.1016/j.ejmech.2019.111770"
+    try:
+        article = ScienceDirect.ScienceDirectArticle(doi)
+    except Exception as e:
+        print(e)
+    
+    print(article.compound)
