@@ -1,4 +1,4 @@
-
+import os
 from typing import Union
 from collections import Counter
 
@@ -46,8 +46,8 @@ def def_tokenizer(input_str: str):
 
 
 def load_pre_trained_nlp_model(
-        data_set_filename: str='/data4/chuhan/github-code/chemical-metrics/saved_pickle/train_data_set_qa.pkl',
-        model_filename: str='/data4/chuhan/github-code/chemical-metrics/train_nlp/saved_model/qa_model_210729.bin',
+        data_set_filename: str='/data4/chuhan/github-code/chemical-metrics/saved_pickle/train_data_set_qa_split.pkl',
+        model_dir: str='/data4/chuhan/github-code/chemical-metrics/train_nlp/saved_model/split_model',
         device: str='cuda:0'
 ):
 
@@ -59,30 +59,15 @@ def load_pre_trained_nlp_model(
     def load_id_with_title():
         raise NotImplementedError
 
-    has_answer_qa_data_set, no_answer_qa_data_set, title_selected_paper_list = load_data_set()
-    has_answer_qa_data_set.apply(lambda x: len(x['words']), new_field_name='seq_len')
-    no_answer_qa_data_set.apply(lambda x: len(x['words']), new_field_name='seq_len')
-
-    qa_data_set = fastNLP.DataSet()
-    for instance in has_answer_qa_data_set:
-        qa_data_set.append(instance)
-        qa_data_set.append(instance)
-        qa_data_set.append(instance)
-        qa_data_set.append(instance)
-        qa_data_set.append(instance)
-    for instance in no_answer_qa_data_set:
-        qa_data_set.append(instance)
+    split_data_set, title_selected_paper_list = load_data_set()
+    split_data_set.pop('train-ki_ce')
 
     source_vocab = fastNLP.Vocabulary()
-    source_vocab.from_dataset(qa_data_set, field_name='words', no_create_entry_dataset=None)
-    source_vocab.index_dataset(qa_data_set, field_name='words', new_field_name='words')
-    qa_data_set.set_input('words')
-    qa_data_set.set_target('start_span_idx', 'end_span_idx')
+    source_vocab.from_dataset(*split_data_set.values(), field_name='words')
+    source_vocab.index_dataset(*split_data_set.values(), field_name='words')
 
     id_with_title_dict = load_id_with_title()
     assert isinstance(id_with_title_dict, dict)
-
-    static_dict = torch.load(model_filename, map_location='cpu')
 
     embed = fastNLP.embeddings.BertEmbedding(
         source_vocab,
@@ -91,21 +76,20 @@ def load_pre_trained_nlp_model(
     )
 
     model = fastNLP.models.BertForQuestionAnswering(embed)
-    model.load_state_dict(static_dict)
-    model.eval()
-    model.to(device)
 
     with open('/data4/chuhan/github-code/chemical-metrics/files/nlp_data/MedChemPaperData(2).tsv', 'r') as f:
         lines = f.readlines()
         headers = [s.strip() for s in lines[0].strip().split('\t')][5:]
+        headers.append('compound_drug')
 
     result_dict = {
         'headers': headers,
         'model': model,
         'id_with_title_dict': id_with_title_dict,
         'source_vocab': source_vocab,
-        'qa_data_set': qa_data_set,
-        'device': device
+        'split_data_set': split_data_set,
+        'device': device,
+        'model_dir': model_dir
     }
 
     return result_dict
@@ -113,7 +97,8 @@ def load_pre_trained_nlp_model(
 
 def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser], **kwargs) -> dict:
     assert all([k in kwargs for k in ['headers', 'model', 'id_with_title_dict',
-                                      'source_vocab', 'qa_data_set', 'device']])
+                                      'source_vocab', 'split_data_set', 'device',
+                                      'model_dir']])
 
     def get_query_str(prompt_label: str, prompt_target: str = '<unk>', prompt_compound: str = '<unk>'):
         return f'what is the {prompt_label.lower()} of target ' \
@@ -125,6 +110,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
     source_vocab = kwargs.pop('source_vocab')
     # qa_data_set = kwargs.pop('qa_data_set')
     device = kwargs.pop('device')
+    model_dir = kwargs.pop('model_dir')
 
     tokenizer = def_tokenizer
     title = table_parser.title.lower()
@@ -149,7 +135,18 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
     compound_inputs = torch.tensor([[source_vocab.to_index(w) for w in compound_words]]).to(device)
 
     # print(target_inputs.size())
+    target_file_name = os.path.join(model_dir, 'target_qa_model_210805_new.bin')
+    state_dict = torch.load(target_file_name, map_location='cpu')
+    model.load_state_dict(state_dict)
+    model.eval()
+    model.to(device)
     target_results = model(target_inputs)
+
+    compound_file_name = os.path.join(model_dir, 'compound_qa_model_210805_new.bin')
+    state_dict = torch.load(compound_file_name, map_location='cpu')
+    model.load_state_dict(state_dict)
+    model.eval()
+    model.to(device)
     compound_results = model(compound_inputs)
 
     target_start_span = target_results['pred_start'].argmax(dim=-1).item()
@@ -182,6 +179,18 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                     tokenize_paper_content = tokenizer(paper_content)
 
                     for label in headers:
+                        try:
+                            file_name = os.path.join(model_dir, f'{label.lower()}_qa_model_210805_new.bin')
+                            state_dict = torch.load(file_name, map_location='cpu')
+                            model.load_state_dict(state_dict)
+                            model.eval()
+                            model.to(device)
+                        except Exception as e:
+                            if isinstance(e, FileNotFoundError):
+                                continue
+                            else:
+                                raise e
+
                         query = get_query_str(label.lower(), target, compound)
                         tokenize_query = tokenizer(query)
                         query_words = ['[CLS]'] + tokenize_query + ['[SEP]'] + tokenize_paper_content + ['[SEP]']
