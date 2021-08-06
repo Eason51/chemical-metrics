@@ -955,7 +955,7 @@ class ACS:
 
             self.authorArr = []
             self.year = -1
-            self.instituition = ""
+            self.institution = ""
             self.paperCited = -1
             self.doi = ""
             self.journal = ""
@@ -1025,6 +1025,8 @@ class ACS:
             self.tHalf = ""
             self.bioavailability = ""
 
+            self.nlpCompound = False
+
             print("3.1.1")
             self.retrieve_values()
 
@@ -1056,8 +1058,7 @@ class ACS:
             print("3.1.7")
             self.get_molecule_from_title_abstract()
             print("3.1.8")
-            if(not self.compound):
-                self.get_compound_from_abstract()
+            self.get_compound_from_abstract()
             print("3.1.9")
             if(not self.enzymeIc50 and not self.cellIc50):
                 self.get_ic50_from_abstract()
@@ -1144,9 +1145,9 @@ class ACS:
             self.year = self.tableParser.year
 
             if(len(self.tableParser.institution) == 0):
-                self.instituition = ""
+                self.institution = ""
             else:
-                self.instituition = self.tableParser.institution[0]
+                self.institution = self.tableParser.institution[0]
             
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
@@ -1163,6 +1164,7 @@ class ACS:
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            
             outputArr.append(nlpDict)
             
             print("3.1.3.3")
@@ -1179,6 +1181,7 @@ class ACS:
                 
                 if(compound and compoundName(compound)):
                     self.compound = compound
+                    self.nlpCompound = True
             
             print("3.1.3.4")
             if("compound_drug" in nlpDict):
@@ -1543,35 +1546,52 @@ class ACS:
         
         def retrieve_compound_amount(self):
 
-            for table in self.tables:
+            boldContentSet = set()
+
+            abstractBoldArr = re.findall("<b>.*?</b>", self.tableParser.abstractBoldText)
+            for token in abstractBoldArr:
+                index = token.find("</b>")
+                boldContentSet.add(token[:index].strip())
+            
+            for section in self.bodyText.sections:
+                for paragraph in section.paragraphs:
+                    for token in paragraph.boldContents:
+                        abstractBoldArr = re.findall("<b>.*?</b>", token)
+                        for item in abstractBoldArr:
+                            index = item.find("<\b>")
+                            boldContentSet.add(item[:index].strip())
+
+            self.compoundSet = boldContentSet
+
+            # for table in self.tables:
                 
-                compoundColNum = -1
-                for row in table.grid.header:
+            #     compoundColNum = -1
+            #     for row in table.grid.header:
 
-                    if(compoundColNum != -1):
-                        break
+            #         if(compoundColNum != -1):
+            #             break
 
-                    colNum = 0
-                    for cell in row.cells:
+            #         colNum = 0
+            #         for cell in row.cells:
 
-                        if(compoundColNum != -1):
-                            break
+            #             if(compoundColNum != -1):
+            #                 break
 
-                        for keyword in self.compoundKeywords:
-                            if(keyword in cell.lower()):
-                                compoundColNum = colNum
-                                break
+            #             for keyword in self.compoundKeywords:
+            #                 if(keyword in cell.lower()):
+            #                     compoundColNum = colNum
+            #                     break
                         
-                        colNum += 1
+            #             colNum += 1
                     
-                if(compoundColNum == -1):
-                    continue
+            #     if(compoundColNum == -1):
+            #         continue
                 
-                for row in table.grid.body:
-                    if(compoundColNum >= len(row.cells)):
-                        continue
-                    if(compoundName(row.cells[compoundColNum])):
-                        self.compoundSet.add(row.cells[compoundColNum])
+            #     for row in table.grid.body:
+            #         if(compoundColNum >= len(row.cells)):
+            #             continue
+            #         if(compoundName(row.cells[compoundColNum])):
+            #             self.compoundSet.add(row.cells[compoundColNum])
 
 
 
@@ -1872,6 +1892,10 @@ class ACS:
 
         
         def get_compound_from_abstract(self):
+
+            if(self.nlpCompound):
+                return
+
             # identify compound name from abstract text, compound names are always in bold ( <b>keyword</b> )
             self.compoundArr = self.tableParser.boldAbstractTextArr.copy()
             # find all keywords in the form of compound name
@@ -1879,6 +1903,20 @@ class ACS:
             for name in self.compoundArr:
                 if(compoundName(name)):
                     tempArr.append(name)
+
+            if(self.compound and len(tempArr) == 0):
+                return
+
+            compoundFound = False
+            if(self.compound):
+                for name in tempArr:
+                    if(self.compound in name):
+                        compoundFound = True
+                        break
+            
+            if(not compoundFound):
+                self.compound = ""            
+
 
             # find the frequency of occurrence of each keyword in abstract text
             self.compoundArr.clear()
@@ -2939,6 +2977,8 @@ class ScienceDirect:
             self.tHalf = ""
             self.bioavailability = ""
 
+            self.nlpCompound = False
+
             global TARGETNAME
             self.focusedTarget = TARGETNAME.lower()
             self.ABBREVIATION = TARGETNAME.lower()
@@ -3172,6 +3212,7 @@ class ScienceDirect:
                 
                 if(compound and compoundName(compound)):
                     self.compound = compound
+                    self.nlpCompound = True
             
             print("e4.3")
             if("compound_drug" in nlpDict):
@@ -3527,35 +3568,52 @@ class ScienceDirect:
 
         def retrieve_compound_amount(self):
 
-            for table in self.tables:
+            boldContentSet = set()
+
+            abstractBoldArr = re.findall("<b>.*?</b>", self.tableParser.abstractBoldText)
+            for token in abstractBoldArr:
+                index = token.find("</b>")
+                boldContentSet.add(token[:index].strip())
+            
+            for section in self.bodyText.sections:
+                for paragraph in section.paragraphs:
+                    for token in paragraph.boldContents:
+                        abstractBoldArr = re.findall("<b>.*?</b>", token)
+                        for item in abstractBoldArr:
+                            index = item.find("<\b>")
+                            boldContentSet.add(item[:index].strip())
+
+            self.compoundSet = boldContentSet
+
+            # for table in self.tables:
                 
-                compoundColNum = -1
-                for row in table.grid.header:
+            #     compoundColNum = -1
+            #     for row in table.grid.header:
 
-                    if(compoundColNum != -1):
-                        break
+            #         if(compoundColNum != -1):
+            #             break
 
-                    colNum = 0
-                    for cell in row.cells:
+            #         colNum = 0
+            #         for cell in row.cells:
 
-                        if(compoundColNum != -1):
-                            break
+            #             if(compoundColNum != -1):
+            #                 break
 
-                        for keyword in self.compoundKeywords:
-                            if(keyword in cell.lower()):
-                                compoundColNum = colNum
-                                break
+            #             for keyword in self.compoundKeywords:
+            #                 if(keyword in cell.lower()):
+            #                     compoundColNum = colNum
+            #                     break
                         
-                        colNum += 1
+            #             colNum += 1
                     
-                if(compoundColNum == -1):
-                    continue
+            #     if(compoundColNum == -1):
+            #         continue
                 
-                for row in table.grid.body:
-                    if(compoundColNum >= len(row.cells)):
-                        continue
-                    if(compoundName(row.cells[compoundColNum])):
-                        self.compoundSet.add(row.cells[compoundColNum])
+            #     for row in table.grid.body:
+            #         if(compoundColNum >= len(row.cells)):
+            #             continue
+            #         if(compoundName(row.cells[compoundColNum])):
+            #             self.compoundSet.add(row.cells[compoundColNum])
 
 
 
@@ -3860,6 +3918,10 @@ class ScienceDirect:
 
         
         def get_compound_from_abstract(self):
+            
+            if(self.nlpCompound):
+                return
+
             # identify compound name from abstract text, compound names are always in bold ( <b>keyword</b> )
             self.compoundArr = self.tableParser.boldAbstractTextArr.copy()
             # find all keywords in the form of compound name
@@ -3867,6 +3929,19 @@ class ScienceDirect:
             for name in self.compoundArr:
                 if(compoundName(name)):
                     tempArr.append(name)
+
+            if(self.compound and len(tempArr) == 0):
+                return
+
+            compoundFound = False
+            if(self.compound):
+                for name in tempArr:
+                    if(self.compound in name):
+                        compoundFound = True
+                        break
+            
+            if(not compoundFound):
+                self.compound = "" 
 
             # find the frequency of occurrence of each keyword in abstract text
             self.compoundArr.clear()
@@ -4439,32 +4514,32 @@ def check_json_value_format(articleDict):
                     valueDict[key] = value
 
 
-
 if(True):
     ACS.TARGET = TARGETNAME
 
-    articleURL = 56
+    articleURL = 3
 
     reader = easyocr.Reader(["en"], gpu=False)
     positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
 
     article = ACS.ACSArticle(articleURL, positionResult)
     print(article.titleText)
-    valueDict = {"enzyme": article.enzymeIc50, "cell": article.cellIc50}
+    valueDict = {"enzyme": article.enzymeIc50, "cell": article.cellIc50, "compound": article.compound}
     print(valueDict)
-    convert_value(valueDict, "enzyme", convertToFloat, True)
-    convert_value(valueDict, "cell", convertToFloat, True)
-    print(valueDict)
-
+    print(f"compound: {article.compound}")
+    print(f"institution: {article.instituition}")
+    print(f"paperCited: {article.paperCited}")
+    print(f"drug_count: {article.compoundSet}")
 
 if(False):
     ScienceDirect.TARGET = TARGETNAME
 
-    doi = "10.1016/j.ejmech.2019.111770"
+    doi = "10.1016/j.ejmech.2021.113711"
     try:
         article = ScienceDirect.ScienceDirectArticle(doi)
     except Exception as e:
         print(e)
 
     print(article.compound)
- 
+
+                                
