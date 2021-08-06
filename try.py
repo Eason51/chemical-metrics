@@ -1164,6 +1164,7 @@ class ACS:
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            print(f"nlpDict: {nlpDict}")
             
             outputArr.append(nlpDict)
             
@@ -1560,6 +1561,8 @@ class ACS:
                     for token in paragraph.boldContents:
                         abstractBoldArr = re.findall("<b>.*?</b>", token)
                         for item in abstractBoldArr:
+                            item = item.replace("(", " ")
+                            item = item.replace(")", " ")
                             index = item.find("</b>")
                             boldContentSet.add(item[3:index].strip())
 
@@ -2002,6 +2005,7 @@ class ACS:
                 
 
                 valueColNum = -1
+                valueUnit = ""
                 for row in table.grid.header:
                     
                     if(valueColNum != -1):
@@ -2015,10 +2019,23 @@ class ACS:
 
                             if(valueName[-1].isdigit() or (index + len(valueName)) >= len(cell)):
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                             else:
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
 
 
@@ -2142,7 +2159,7 @@ class ACS:
 
                 
                 
-                if(value):
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -2155,6 +2172,11 @@ class ACS:
                                 break
                     
                     if(microFound):
+                        value = "μm" + value
+
+                
+                if(valueUnit):
+                    if(valueUnit == "micro"):
                         value = "μm" + value
 
                 
@@ -2193,8 +2215,13 @@ class ACS:
                             break
                         index += 1
                 
+                valueUnit = ""
                 valueColNum = -1
                 for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
                     colNum = 0
                     for cell in row.cells:
                         index = cell.find(valueName)
@@ -2202,13 +2229,26 @@ class ACS:
                             if((index + len(valueName)) < len(cell)):
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
                                 elif(valueName == "AUC"):
                                     valueColNum = colNum
                                     break
                             else:
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                         if(index == -1 and valueName == "bioavailability"):
                             index1 = cell.find("F")
                             index2 = cell.find("(%)")
@@ -2273,7 +2313,7 @@ class ACS:
                     value = table.grid.body[compoundRowNum].cells[targetColNum]
 
 
-                if(value):
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -2288,6 +2328,13 @@ class ACS:
                     if(microFound):
                         value = "μm" + value
 
+                    return value
+
+                
+                if(valueUnit):
+                    if(valueUnit == "micro"):
+                        value = "μm" + value
+                    
                     return value
 
             
@@ -2317,6 +2364,13 @@ class ACS:
                 self.enzymeKd = enzymeValue
             if(not self.cellKd):
                 self.cellKd = cellValue
+
+            if(not self.enzymeKd or not self.cellKd):
+                [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+                if(not self.enzymeKd):    
+                    self.enzymeKd = enzymeValue
+                if(not self.cellKd):
+                    self.cellKd = cellValue                
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
             if(not self.enzymeSelectivity):
@@ -3021,8 +3075,7 @@ class ScienceDirect:
             print("e9")
             self.get_molecule_from_title_abstract()
             print("e10")
-            if(not self.compound):
-                self.get_compound_from_abstract()
+            self.get_compound_from_abstract()
             print("e11")
             if(not self.enzymeIc50 and not self.cellIc50):
                 self.get_ic50_from_abstract()
@@ -4031,6 +4084,7 @@ class ScienceDirect:
                 
 
                 valueColNum = -1
+                valueUnit = ""
                 for row in table.grid.header:
                     
                     if(valueColNum != -1):
@@ -4044,10 +4098,23 @@ class ScienceDirect:
 
                             if(valueName[-1].isdigit() or (index + len(valueName)) >= len(cell)):
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                             else:
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
 
 
@@ -4169,8 +4236,9 @@ class ScienceDirect:
                         value = table.grid.body[compoundRowNum].cells[colNum]
                         break
 
-
-                if(value):
+                
+                
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -4186,6 +4254,11 @@ class ScienceDirect:
                         value = "μm" + value
 
                 
+                if(valueUnit):
+                    if(valueUnit == "micro"):
+                        value = "μm" + value
+
+                
                 if(mediFound):
                     mediValue = value
                 elif(vitroFound):
@@ -4195,6 +4268,7 @@ class ScienceDirect:
 
 
             return[mediValue, vitroValue, vivoValue]
+
 
 
 
@@ -4221,8 +4295,13 @@ class ScienceDirect:
                             break
                         index += 1
                 
+                valueUnit = ""
                 valueColNum = -1
                 for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
                     colNum = 0
                     for cell in row.cells:
                         index = cell.find(valueName)
@@ -4230,13 +4309,26 @@ class ScienceDirect:
                             if((index + len(valueName)) < len(cell)):
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
                                 elif(valueName == "AUC"):
                                     valueColNum = colNum
                                     break
                             else:
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                         if(index == -1 and valueName == "bioavailability"):
                             index1 = cell.find("F")
                             index2 = cell.find("(%)")
@@ -4246,8 +4338,9 @@ class ScienceDirect:
                         elif(index == -1 and valueName == "t_half"):
                             index1 = cell.lower().find("t")
                             index2 = cell.find("1/2")
-                            if(index1 != -1 and index2 != -1
-                            and index1 < index2):
+                            index3 = cell.find("(h)")
+                            if(index1 != -1 and index2 != -1 and index3 != -1
+                            and index1 < index2 and index2 < index3):
                                 valueColNum = colNum
                                 break
                         
@@ -4300,7 +4393,7 @@ class ScienceDirect:
                     value = table.grid.body[compoundRowNum].cells[targetColNum]
 
 
-                if(value):
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -4315,6 +4408,13 @@ class ScienceDirect:
                     if(microFound):
                         value = "μm" + value
 
+                    return value
+
+                
+                if(valueUnit):
+                    if(valueUnit == "micro"):
+                        value = "μm" + value
+                    
                     return value
 
             
@@ -4349,6 +4449,14 @@ class ScienceDirect:
                 self.enzymeKd = enzymeValue
             if(not self.cellKd):
                 self.cellKd = cellValue
+
+            if(not self.enzymeKd or not self.cellKd):
+                [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+                if(not self.enzymeKd):
+                    self.enzymeKd = enzymeValue
+                if(not self.cellKd):
+                    self.cellKd = cellValue
+
             
             print("e12.4")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
@@ -4520,22 +4628,61 @@ def check_json_value_format(articleDict):
                     valueDict[key] = value
 
 
+
+
+
+
 if(True):
     ACS.TARGET = TARGETNAME
 
-    articleURL = 3
+    articleURL = 6
 
     reader = easyocr.Reader(["en"], gpu=False)
     positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
 
     article = ACS.ACSArticle(articleURL, positionResult)
-    print(article.titleText)
-    valueDict = {"enzyme": article.enzymeIc50, "cell": article.cellIc50, "compound": article.compound}
-    print(valueDict)
-    print(f"compound: {article.compound}")
-    print(f"institution: {article.instituition}")
-    print(f"paperCited: {article.paperCited}")
-    print(f"drug_count: {article.compoundSet}")
+    articleDict = {}
+    articleDict["paper_title"] = article.titleText
+    articleDict["paper_author"] = article.authorArr
+    articleDict["paper_year"] = article.year
+    articleDict["paper_institution"] = article.institution
+    articleDict["paper_cited"] = article.paperCited
+    articleDict["doi"] = article.doi
+    articleDict["paper_journal"] = article.journal
+    articleDict["paper_abstract_image"] = article.imgArr[0]
+    articleDict["compound_count"] = len(article.compoundSet)
+    articleDict["compound_name"] = article.compound
+    articleDict["compound_name_drug"] = article.compoundNameDrug
+
+    medicinalDict = {}
+    medicinalDict["Ki"] = article.enzymeKi
+    medicinalDict["Kd"] = article.enzymeKd
+    medicinalDict["IC50"] = article.enzymeIc50
+    medicinalDict["selectivity"] = article.enzymeSelectivity
+    vitroDict = {}
+    vitroDict["Ki"] = article.cellKi
+    vitroDict["Kd"] = article.cellKd
+    vitroDict["IC50"] = article.cellIc50
+    vitroDict["EC50"] = article.ec50
+    vitroDict["selectivity"] = article.cellSelectivity
+    vitroDict["hERG"] = article.herg
+    vitroDict["solubility"] = article.cellSolubility
+    vivoDict = {}
+    vivoDict["ED50"] = article.ed50
+    vivoDict["AUC"] = article.auc
+    vivoDict["solubility"] = article.vivoSolubility
+    vivoDict["t_half"] = article.tHalf
+    vivoDict["bioavailability"] = article.bioavailability
+
+    articleDict["medicinal_chemistry_metrics"] = medicinalDict
+    articleDict["pharm_metrics_vitro"] = vitroDict
+    articleDict["pharm_metrics_vivo"] = vivoDict
+
+    print(articleDict)
+    check_json_value_format(articleDict)
+    print(articleDict)
+
+
 
 if(False):
     ScienceDirect.TARGET = TARGETNAME
@@ -4548,4 +4695,5 @@ if(False):
 
     print(article.compound)
 
-                                
+
+ 

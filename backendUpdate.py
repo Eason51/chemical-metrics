@@ -2004,6 +2004,7 @@ class ACS:
                 
 
                 valueColNum = -1
+                valueUnit = ""
                 for row in table.grid.header:
                     
                     if(valueColNum != -1):
@@ -2017,10 +2018,23 @@ class ACS:
 
                             if(valueName[-1].isdigit() or (index + len(valueName)) >= len(cell)):
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                             else:
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
 
 
@@ -2144,7 +2158,7 @@ class ACS:
 
                 
                 
-                if(value):
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -2157,6 +2171,11 @@ class ACS:
                                 break
                     
                     if(microFound):
+                        value = "μm" + value
+
+                
+                if(valueUnit):
+                    if(valueUnit == "micro"):
                         value = "μm" + value
 
                 
@@ -2195,8 +2214,13 @@ class ACS:
                             break
                         index += 1
                 
+                valueUnit = ""
                 valueColNum = -1
                 for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
                     colNum = 0
                     for cell in row.cells:
                         index = cell.find(valueName)
@@ -2204,13 +2228,26 @@ class ACS:
                             if((index + len(valueName)) < len(cell)):
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
                                 elif(valueName == "AUC"):
                                     valueColNum = colNum
                                     break
                             else:
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                         if(index == -1 and valueName == "bioavailability"):
                             index1 = cell.find("F")
                             index2 = cell.find("(%)")
@@ -2275,7 +2312,7 @@ class ACS:
                     value = table.grid.body[compoundRowNum].cells[targetColNum]
 
 
-                if(value):
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -2290,6 +2327,13 @@ class ACS:
                     if(microFound):
                         value = "μm" + value
 
+                    return value
+
+                
+                if(valueUnit):
+                    if(valueUnit == "micro"):
+                        value = "μm" + value
+                    
                     return value
 
             
@@ -2319,6 +2363,13 @@ class ACS:
                 self.enzymeKd = enzymeValue
             if(not self.cellKd):
                 self.cellKd = cellValue
+
+            if(not self.enzymeKd or not self.cellKd):
+                [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+                if(not self.enzymeKd):    
+                    self.enzymeKd = enzymeValue
+                if(not self.cellKd):
+                    self.cellKd = cellValue                
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
             if(not self.enzymeSelectivity):
@@ -4032,6 +4083,7 @@ class ScienceDirect:
                 
 
                 valueColNum = -1
+                valueUnit = ""
                 for row in table.grid.header:
                     
                     if(valueColNum != -1):
@@ -4045,10 +4097,23 @@ class ScienceDirect:
 
                             if(valueName[-1].isdigit() or (index + len(valueName)) >= len(cell)):
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                             else:
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
 
 
@@ -4170,8 +4235,9 @@ class ScienceDirect:
                         value = table.grid.body[compoundRowNum].cells[colNum]
                         break
 
-
-                if(value):
+                
+                
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -4187,6 +4253,11 @@ class ScienceDirect:
                         value = "μm" + value
 
                 
+                if(valueUnit):
+                    if(valueUnit == "micro"):
+                        value = "μm" + value
+
+                
                 if(mediFound):
                     mediValue = value
                 elif(vitroFound):
@@ -4196,6 +4267,7 @@ class ScienceDirect:
 
 
             return[mediValue, vitroValue, vivoValue]
+
 
 
 
@@ -4222,8 +4294,13 @@ class ScienceDirect:
                             break
                         index += 1
                 
+                valueUnit = ""
                 valueColNum = -1
                 for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
                     colNum = 0
                     for cell in row.cells:
                         index = cell.find(valueName)
@@ -4231,13 +4308,26 @@ class ScienceDirect:
                             if((index + len(valueName)) < len(cell)):
                                 if(cell[index + len(valueName)].isspace()):
                                     valueColNum = colNum
+
+                                    if("nm" in cell.lower()):
+                                        valueUnit = "nano"
+                                    elif("μm" in cell.lower()):
+                                        valueUnit = "micro"
+
                                     break
                                 elif(valueName == "AUC"):
                                     valueColNum = colNum
                                     break
                             else:
                                 valueColNum = colNum
+
+                                if("nm" in cell.lower()):
+                                    valueUnit = "nano"
+                                elif("μm" in cell.lower()):
+                                    valueUnit = "micro"
+
                                 break
+
                         if(index == -1 and valueName == "bioavailability"):
                             index1 = cell.find("F")
                             index2 = cell.find("(%)")
@@ -4247,8 +4337,9 @@ class ScienceDirect:
                         elif(index == -1 and valueName == "t_half"):
                             index1 = cell.lower().find("t")
                             index2 = cell.find("1/2")
-                            if(index1 != -1 and index2 != -1
-                            and index1 < index2):
+                            index3 = cell.find("(h)")
+                            if(index1 != -1 and index2 != -1 and index3 != -1
+                            and index1 < index2 and index2 < index3):
                                 valueColNum = colNum
                                 break
                         
@@ -4301,7 +4392,7 @@ class ScienceDirect:
                     value = table.grid.body[compoundRowNum].cells[targetColNum]
 
 
-                if(value):
+                if(value and not valueUnit):
                     microFound = False
                     for row in table.grid.header:
 
@@ -4316,6 +4407,13 @@ class ScienceDirect:
                     if(microFound):
                         value = "μm" + value
 
+                    return value
+
+                
+                if(valueUnit):
+                    if(valueUnit == "micro"):
+                        value = "μm" + value
+                    
                     return value
 
             
@@ -4350,6 +4448,14 @@ class ScienceDirect:
                 self.enzymeKd = enzymeValue
             if(not self.cellKd):
                 self.cellKd = cellValue
+
+            if(not self.enzymeKd or not self.cellKd):
+                [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+                if(not self.enzymeKd):
+                    self.enzymeKd = enzymeValue
+                if(not self.cellKd):
+                    self.cellKd = cellValue
+
             
             print("e12.4")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
