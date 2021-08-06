@@ -1550,16 +1550,18 @@ class ACS:
 
             abstractBoldArr = re.findall("<b>.*?</b>", self.tableParser.abstractBoldText)
             for token in abstractBoldArr:
+                token = token.replace("(", " ")
+                token = token.replace(")", " ")
                 index = token.find("</b>")
-                boldContentSet.add(token[:index].strip())
+                boldContentSet.add(token[3:index].strip())
             
             for section in self.bodyText.sections:
                 for paragraph in section.paragraphs:
                     for token in paragraph.boldContents:
                         abstractBoldArr = re.findall("<b>.*?</b>", token)
                         for item in abstractBoldArr:
-                            index = item.find("<\b>")
-                            boldContentSet.add(item[:index].strip())
+                            index = item.find("</b>")
+                            boldContentSet.add(item[3:index].strip())
 
             self.compoundSet = boldContentSet
 
@@ -3572,16 +3574,20 @@ class ScienceDirect:
 
             abstractBoldArr = re.findall("<b>.*?</b>", self.tableParser.abstractBoldText)
             for token in abstractBoldArr:
+                token = token.replace("(", " ")
+                token = token.replace(")", " ")
                 index = token.find("</b>")
-                boldContentSet.add(token[:index].strip())
+                boldContentSet.add(token[3:index].strip())
             
             for section in self.bodyText.sections:
                 for paragraph in section.paragraphs:
                     for token in paragraph.boldContents:
                         abstractBoldArr = re.findall("<b>.*?</b>", token)
                         for item in abstractBoldArr:
-                            index = item.find("<\b>")
-                            boldContentSet.add(item[:index].strip())
+                            item = item.replace("(", " ")
+                            item = item.replace(")", " ")
+                            index = item.find("</b>")
+                            boldContentSet.add(item[3:index].strip())
 
             self.compoundSet = boldContentSet
 
