@@ -955,7 +955,7 @@ class ACS:
 
             self.authorArr = []
             self.year = -1
-            self.instituition = ""
+            self.institution = ""
             self.paperCited = -1
             self.doi = ""
             self.journal = ""
@@ -1144,9 +1144,9 @@ class ACS:
             self.year = self.tableParser.year
 
             if(len(self.tableParser.institution) == 0):
-                self.instituition = ""
+                self.institution = ""
             else:
-                self.instituition = self.tableParser.institution[0]
+                self.institution = self.tableParser.institution[0]
             
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
@@ -4515,7 +4515,7 @@ def all_to_json(targetName, fileAmount):
         articleDict["paper_title"] = article.titleText
         articleDict["paper_author"] = article.authorArr
         articleDict["paper_year"] = article.year
-        articleDict["paper_institution"] = article.instituition
+        articleDict["paper_institution"] = article.institution
         articleDict["paper_cited"] = article.paperCited
         articleDict["doi"] = article.doi
         articleDict["paper_journal"] = article.journal
