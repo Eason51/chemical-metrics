@@ -1543,35 +1543,52 @@ class ACS:
         
         def retrieve_compound_amount(self):
 
-            for table in self.tables:
+            boldContentSet = set()
+
+            abstractBoldArr = re.findall("<b>.*?</b>", self.tableParser.abstractBoldText)
+            for token in abstractBoldArr:
+                index = token.find("</b>")
+                boldContentSet.add(token[:index].strip())
+            
+            for section in self.bodyText.sections:
+                for paragraph in section.paragraphs:
+                    for token in paragraph.boldContents:
+                        abstractBoldArr = re.findall("<b>.*?</b>", token)
+                        for item in abstractBoldArr:
+                            index = item.find("<\b>")
+                            boldContentSet.add(item[:index].strip())
+
+            self.compoundSet = boldContentSet
+
+            # for table in self.tables:
                 
-                compoundColNum = -1
-                for row in table.grid.header:
+            #     compoundColNum = -1
+            #     for row in table.grid.header:
 
-                    if(compoundColNum != -1):
-                        break
+            #         if(compoundColNum != -1):
+            #             break
 
-                    colNum = 0
-                    for cell in row.cells:
+            #         colNum = 0
+            #         for cell in row.cells:
 
-                        if(compoundColNum != -1):
-                            break
+            #             if(compoundColNum != -1):
+            #                 break
 
-                        for keyword in self.compoundKeywords:
-                            if(keyword in cell.lower()):
-                                compoundColNum = colNum
-                                break
+            #             for keyword in self.compoundKeywords:
+            #                 if(keyword in cell.lower()):
+            #                     compoundColNum = colNum
+            #                     break
                         
-                        colNum += 1
+            #             colNum += 1
                     
-                if(compoundColNum == -1):
-                    continue
+            #     if(compoundColNum == -1):
+            #         continue
                 
-                for row in table.grid.body:
-                    if(compoundColNum >= len(row.cells)):
-                        continue
-                    if(compoundName(row.cells[compoundColNum])):
-                        self.compoundSet.add(row.cells[compoundColNum])
+            #     for row in table.grid.body:
+            #         if(compoundColNum >= len(row.cells)):
+            #             continue
+            #         if(compoundName(row.cells[compoundColNum])):
+            #             self.compoundSet.add(row.cells[compoundColNum])
 
 
 
@@ -4717,6 +4734,8 @@ def all_to_json(targetName, fileAmount):
             yearCountDict[yearCount[0]] = [0, 0, yearCount[1]]
 
     print(8)
+    if("" in yearCountDict):
+        del yearCountDict[""]
     result["paper_count_year"] = yearCountDict
 
 
