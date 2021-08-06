@@ -969,6 +969,7 @@ class ACS:
             self.focusedTarget = ""
 
             self.compoundSet = set()
+            self.compoundDict = {}
 
 
             self.tableParser = None            
@@ -1553,7 +1554,12 @@ class ACS:
                 token = token.replace("(", " ")
                 token = token.replace(")", " ")
                 index = token.find("</b>")
-                boldContentSet.add(token[3:index].strip())
+                name = token[3:index].strip()
+                boldContentSet.add(name)
+                if(name in self.compoundDict):
+                    self.compoundDict[name] += 1
+                else:
+                    self.compoundDict[name] = 1
             
             for section in self.bodyText.sections:
                 for paragraph in section.paragraphs:
@@ -1563,7 +1569,12 @@ class ACS:
                             item = item.replace("(", " ")
                             item = item.replace(")", " ")
                             index = item.find("</b>")
-                            boldContentSet.add(item[3:index].strip())
+                            name = item[3:index].strip()
+                            boldContentSet.add(name)
+                            if(name in self.compoundDict):
+                                self.compoundDict[name] += 1
+                            else:
+                                self.compoundDict[name] = 1
 
             self.compoundSet = boldContentSet
 
@@ -1908,8 +1919,19 @@ class ACS:
                 if(compoundName(name)):
                     tempArr.append(name)
 
-            if(self.compound and len(tempArr) == 0):
-                return
+            if(len(tempArr) == 0):
+                if(len(self.compoundDict) == 0 or self.compound in self.compoundDict):
+                    return
+                else:
+                    name = ""
+                    maxFreq = -1
+                    for key in self.compoundDict.keys():
+                        if(self.compoundDict[key] > maxFreq):
+                            maxFreq = self.compoundDict[key]
+                            name = key
+                    self.compound = name.strip()
+                    return
+
 
             compoundFound = False
             if(self.compound):
@@ -2976,6 +2998,7 @@ class ScienceDirect:
             self.focusedTarget = ""
 
             self.compoundSet = set()
+            self.compoundDict = {}
 
             self.tableParser = None            
             # hold title content after parsing html file
@@ -3629,7 +3652,12 @@ class ScienceDirect:
                 token = token.replace("(", " ")
                 token = token.replace(")", " ")
                 index = token.find("</b>")
-                boldContentSet.add(token[3:index].strip())
+                name = token[3:index].strip()
+                boldContentSet.add(name)
+                if(name in self.compoundDict):
+                    self.compoundDict[name] += 1
+                else:
+                    self.compoundDict[name] = 1
             
             for section in self.bodyText.sections:
                 for paragraph in section.paragraphs:
@@ -3639,7 +3667,12 @@ class ScienceDirect:
                             item = item.replace("(", " ")
                             item = item.replace(")", " ")
                             index = item.find("</b>")
-                            boldContentSet.add(item[3:index].strip())
+                            name = item[3:index].strip()
+                            boldContentSet.add(name)
+                            if(name in self.compoundDict):
+                                self.compoundDict[name] += 1
+                            else:
+                                self.compoundDict[name] = 1
 
             self.compoundSet = boldContentSet
 
@@ -3988,8 +4021,18 @@ class ScienceDirect:
                 if(compoundName(name)):
                     tempArr.append(name)
 
-            if(self.compound and len(tempArr) == 0):
-                return
+            if(len(tempArr) == 0):
+                if(len(self.compoundDict) == 0 or self.compound in self.compoundDict):
+                    return
+                else:
+                    name = ""
+                    maxFreq = -1
+                    for key in self.compoundDict.keys():
+                        if(self.compoundDict[key] > maxFreq):
+                            maxFreq = self.compoundDict[key]
+                            name = key
+                    self.compound = name.strip()
+                    return
 
             compoundFound = False
             if(self.compound):
