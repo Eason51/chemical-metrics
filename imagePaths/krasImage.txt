@@ -1,0 +1,17 @@
+0, images/kras/image1.jpeg
+1, images/kras/image2.jpeg
+2, images/kras/image3.jpeg
+3, images/kras/image6.jpeg
+4, images/kras/image9.jpeg
+5, images/kras/image10.jpeg
+6, images/kras/image13.jpeg
+7, images/kras/image14.jpeg
+8, images/kras/image15.jpeg
+9, images/kras/image16.jpeg
+10, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2021_113381.jpeg
+11, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2020_113082.jpeg
+12, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2017_12_098.jpeg
+13, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2018_12_025.jpeg
+14, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2018_12_040.jpeg
+15, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2018_06_048.jpeg
+16, ScienceDirectImage/kras/abstract_image/10_1016_j_ejmech_2021_113428.jpeg
