@@ -1,0 +1,10 @@
+0, images/comt/image0.jpeg
+1, images/comt/image1.jpeg
+2, images/comt/image2.jpeg
+3, images/comt/image3.jpeg
+4, images/comt/image4.jpeg
+5, images/comt/image5.jpeg
+6, images/comt/image6.jpeg
+7, images/comt/image7.jpeg
+8, images/comt/image8.jpeg
+9, images/comt/image9.jpeg
