@@ -48,27 +48,33 @@ def def_tokenizer(input_str: str):
 
 def load_pre_trained_nlp_model(
         data_set_filename: str='/data4/chuhan/github-code/chemical-metrics/saved_pickle/train_data_set_qa_split.pkl',
-        model_dir: str='/data4/chuhan/github-code/chemical-metrics/train_nlp/saved_model/split_model',
+        model_dir: str='/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved/model',
         device: str='cuda:0'
 ):
 
-    @fastNLP.cache_results(f'{data_set_filename}')
-    def load_data_set():
-        raise NotImplementedError
-
+    # @fastNLP.cache_results(f'{data_set_filename}')
+    # def load_data_set():
+    #     raise NotImplementedError
+    #
     @fastNLP.cache_results(f'/data4/chuhan/github-code/chemical-metrics/saved_pickle/title_id_new.pkl')
     def load_id_with_title():
         raise NotImplementedError
-
-    split_data_set, title_selected_paper_list = load_data_set()
-    split_data_set.pop('train-ki_ce')
-
-    source_vocab = fastNLP.Vocabulary()
-    source_vocab.from_dataset(*split_data_set.values(), field_name='words')
-    source_vocab.index_dataset(*split_data_set.values(), field_name='words')
-
+    #
+    # split_data_set, title_selected_paper_list = load_data_set()
+    # split_data_set.pop('train-ki_ce')
+    #
+    # source_vocab = fastNLP.Vocabulary()
+    # source_vocab.from_dataset(*split_data_set.values(), field_name='words')
+    # source_vocab.index_dataset(*split_data_set.values(), field_name='words')
+    #
     id_with_title_dict = load_id_with_title()
     assert isinstance(id_with_title_dict, dict)
+
+    @fastNLP.cache_results('/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved/data_set.pkl')
+    def load_and_process_data():
+        raise NotImplementedError
+
+    final_data_set_dict, source_vocab = load_and_process_data()
 
     embed = fastNLP.embeddings.BertEmbedding(
         source_vocab,
@@ -88,7 +94,6 @@ def load_pre_trained_nlp_model(
         'model': model,
         'id_with_title_dict': id_with_title_dict,
         'source_vocab': source_vocab,
-        'split_data_set': split_data_set,
         'device': device,
         'model_dir': model_dir
     }
@@ -98,12 +103,18 @@ def load_pre_trained_nlp_model(
 
 def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser], **kwargs) -> dict:
     assert all([k in kwargs for k in ['headers', 'model', 'id_with_title_dict',
-                                      'source_vocab', 'split_data_set', 'device',
+                                      'source_vocab', 'device',
                                       'model_dir']])
 
-    def get_query_str(prompt_label: str, prompt_target: str = '<unk>', prompt_compound: str = '<unk>'):
-        return f'what is the {prompt_label.lower()} of target ' \
-               f'{prompt_target.lower()} and compound {prompt_compound.lower()}?'
+    def get_query_str(label: str, title: str, compound: str = '<unk>'):
+        q_st = f'this paper is about {title}.' \
+               f'the main compound is {compound}.' \
+               f'in this paragraph, can you find out the result of {label.lower()}?'
+        return q_st
+
+    def get_compound_query_str():
+        q_st = 'what is the compound in this paper?'
+        return q_st
 
     headers = kwargs.pop('headers')
     model = kwargs.pop('model')
@@ -114,63 +125,39 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
     model_dir = kwargs.pop('model_dir')
 
     tokenizer = def_tokenizer
-    title = table_parser.title.lower()
+
     abstract_text = table_parser.abstractBoldText.lower()
     body_text = table_parser.bodyText
+    title_text = table_parser.title.lower()
 
-    query_target = get_query_str('target')
-    query_compound = get_query_str('compound')
+    tokenize_abstract_text = tokenizer(abstract_text)
+    tokenize_title_text = tokenizer(title_text)
 
-    tokenize_title = tokenizer(title)
-    tokenize_abstract = tokenizer(abstract_text)
-    tokenize_query_target = tokenizer(query_target)
-    tokenize_query_compound = tokenizer(query_compound)
+    compound_str = '<unk>'
 
-    target_words = ['[CLS]'] + tokenize_query_target + ['[SEP]'] + tokenize_title + tokenize_abstract + ['[SEP]']
-    compound_words = ['[CLS]'] + tokenize_query_compound + ['[SEP]'] + tokenize_title + tokenize_abstract + ['[SEP]']
+    tokenize_title_with_abstract = ['[CLS]'] + tokenizer(get_compound_query_str()) + \
+                                   ['[SEP]'] + tokenize_title_text + tokenize_abstract_text + ['[SEP]']
 
-    # print(' '.join(target_words))
-    # print(len(target_words))
-
-    target_inputs = torch.tensor([[source_vocab.to_index(w) for w in target_words]]).to(device)
-    compound_inputs = torch.tensor([[source_vocab.to_index(w) for w in compound_words]]).to(device)
-
-    # print(target_inputs.size())
-    target_file_name = os.path.join(model_dir, 'target_qa_model_210805_new.bin')
-    state_dict = torch.load(target_file_name, map_location='cpu')
-    model.load_state_dict(state_dict)
+    compound_model_file_name = '/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved' \
+                               '/model/compound_model_210811_new.bin'
+    compound_state_dict = torch.load(compound_model_file_name, map_location='cpu')
+    model.load_state_dict(compound_state_dict)
     model.eval()
     model.to(device)
-    target_results = model(target_inputs)
 
-    compound_file_name = os.path.join(model_dir, 'compound_qa_model_210805_new.bin')
-    state_dict = torch.load(compound_file_name, map_location='cpu')
-    model.load_state_dict(state_dict)
-    model.eval()
-    model.to(device)
-    compound_results = model(compound_inputs)
+    words = [source_vocab.to_index(w) for w in tokenize_title_with_abstract]
+    pred_dict = model.predict(torch.tensor([words]).to(device))
+    start_span_idx = pred_dict['pred_start'].argmax(dim=-1).item()
+    end_span_idx = pred_dict['pred_end'].argmax(dim=-1).item()
 
-    target_start_span = target_results['pred_start'].argmax(dim=-1).item()
-    target_end_span = target_results['pred_end'].argmax(dim=-1).item()
-    compound_start_span = compound_results['pred_start'].argmax(dim=-1).item()
-    compound_end_span = compound_results['pred_end'].argmax(dim=-1).item()
-
-    # if target_start_span == 0 and target_end_span == 1:
-    if target_start_span == 0:
-        target = '<unk>'
+    if start_span_idx != 0 and end_span_idx != 1:
+        predict_compound = ' '.join(tokenize_title_with_abstract[start_span_idx: end_span_idx])
     else:
-        target = ' '.join(target_words[target_start_span: target_end_span])
-        if len(target) == 0:
-            target = '<unk>'
-    #  if compound_start_span == 0 and compound_end_span == 1:
-    if compound_start_span == 0:
-        compound = '<unk>'
-    else:
-        compound = ' '.join(compound_words[compound_start_span: compound_end_span])
-        if len(compound) == 0:
-            compound = '<unk>'
+        predict_compound = '<unk>'
 
-    label_result = {'target': [target], 'compound': [compound]}
+    result_dict = {'compound': predict_compound}
+
+    tokenize_content_list = [tokenize_title_with_abstract]
     for section in body_text.sections:
         required = ['result']
         if any([r in section.title.lower() for r in required]):
@@ -178,47 +165,59 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                 for c in p.contents:
                     paper_content = section.title.lower() + ' ' + p.header.lower() + ' ' + c.lower()
                     tokenize_paper_content = tokenizer(paper_content)
+                    content_idx = 0
+                    while True:
+                        tokenize_content_list.append(
+                            tokenize_paper_content[content_idx: content_idx + 250])
+                        content_idx += 200
+                        if content_idx >= len(tokenize_paper_content):
+                            break
 
-                    for label in headers:
-                        try:
-                            file_name = os.path.join(model_dir, f'{label.lower()}_qa_model_210805_new.bin')
-                            state_dict = torch.load(file_name, map_location='cpu')
-                            model.load_state_dict(state_dict)
-                            model.eval()
-                            model.to(device)
-                        except Exception as e:
-                            if isinstance(e, FileNotFoundError):
-                                continue
-                            else:
-                                raise e
+    for u_metric in headers:
+        metric = u_metric.lower()
+        if metric == 'compound':
+            continue
 
-                        query = get_query_str(label.lower(), target, compound)
-                        tokenize_query = tokenizer(query)
-                        query_words = ['[CLS]'] + tokenize_query + ['[SEP]'] + tokenize_paper_content + ['[SEP]']
-                        query_inputs = torch.tensor([[source_vocab.to_index(w) for w in query_words]]).to(device)
+        metric_vote = Counter()
 
-                        query_results = model(query_inputs)
-                        query_start_span = query_results['pred_start'].argmax(dim=-1).item()
-                        query_end_span = query_results['pred_end'].argmax(dim=-1).item()
+        try:
+            metric_model_file_name = f'/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved' \
+                                     f'/model/{metric.lower()}_model_210811_new2.bin'
+            metric_state_dict = torch.load(metric_model_file_name, map_location='cpu')
+        except FileNotFoundError:
+            # warnings.warn(f'{metric} not found!')
+            continue
 
-                        if query_start_span != 0:
-                            query_result = ' '.join(query_words[query_start_span: query_end_span])
-                        else:
-                            query_result = ''
+        model.load_state_dict(metric_state_dict)
+        model.eval()
+        model.to(device)
 
-                        if len(query_result) > 0:
-                            if label not in label_result:
-                                label_result[label] = []
-                            label_result[label].append(query_result)
+        for idx, tokenize_content in enumerate(tokenize_content_list):
+            tokenize_query = tokenizer(get_query_str(metric.lower(), title_text, compound_str))
+            new_tokenize_content = ['[CLS]'] + tokenize_query + ['[SEP]'] + tokenize_content + ['[SEP]']
 
-    # label_result = {k: list(set(v)) for k, v in label_result.items()}
-    label_result_counter = {k: Counter() for k in label_result.keys()}
-    for k, v in label_result.items():
-        for vv in v:
-            label_result_counter[k].update([vv])
-    label_result = {k: label_result_counter[k].most_common()[0][0] for k in label_result.keys()}
+            words = [source_vocab.to_index(w) for w in new_tokenize_content]
+            pred_dict = model.predict(torch.tensor([words]).to(device))
+            start_span_idx = pred_dict['pred_start'].argmax(dim=-1).item()
+            end_span_idx = pred_dict['pred_end'].argmax(dim=-1).item()
 
-    return label_result
+            if start_span_idx != 0 and end_span_idx != 1:
+                predict_metric = ' '.join(new_tokenize_content[start_span_idx: end_span_idx])
+            else:
+                predict_metric = '<unk>'
+
+            if predict_metric != '<unk>' and predict_metric != predict_compound:
+                metric_vote.update([predict_metric] * (1 if idx == 0 else 2))
+
+        if len(metric_vote) > 0:
+            metric_result = metric_vote.most_common(1)[0][0]
+        else:
+            metric_result = ''
+
+        if len(metric_result) > 0:
+            result_dict[metric] = metric_result
+
+    return result_dict
 
 
 def get_nlp_results_test(table_parser: Union[ACSTableParser, ScienceDirectTableParser], **kwargs) -> dict:
