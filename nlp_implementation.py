@@ -1,5 +1,6 @@
 
 import os
+import warnings
 from typing import Union
 from collections import Counter
 
@@ -185,7 +186,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                                      f'/model/{metric.lower()}_model_210811_new2.bin'
             metric_state_dict = torch.load(metric_model_file_name, map_location='cpu')
         except FileNotFoundError:
-            # warnings.warn(f'{metric} not found!')
+            warnings.warn(f'{metric} not found!')
             continue
 
         model.load_state_dict(metric_state_dict)
