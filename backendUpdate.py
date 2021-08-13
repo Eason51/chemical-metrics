@@ -1253,7 +1253,7 @@ class ACS:
                     valueFound = False
                     for token in nlp.def_tokenizer(nlpDict[key]):
 
-                        if(not valueFound and token.isdigit()):
+                        if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True                        
                         elif(valueFound and token.isdigit() or token == "."):
@@ -1337,7 +1337,7 @@ class ACS:
                     tokenArr = nlp.def_tokenizer(nlpDict[key])
                     for token in tokenArr:
 
-                        if(not valueFound and token.isdigit()):
+                        if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
                         elif(valueFound and token.isdigit() or token == "."):
@@ -1380,7 +1380,7 @@ class ACS:
                 unit = ""
                 valueFound = False
                 for token in tokenArr:
-                        if(not valueFound and token.isdigit()):
+                        if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
                         elif(valueFound and token.isdigit() or token == "."):
@@ -1412,7 +1412,7 @@ class ACS:
                 unit = ""
                 valueFound = False
                 for token in tokenArr:
-                    if(not valueFound and token.isdigit()):
+                    if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
                     elif(valueFound and token.isdigit() or token == "."):
@@ -1447,7 +1447,7 @@ class ACS:
                 value = ""
                 valueFound = False
                 for token in tokenArr:
-                    if(not valueFound and token.isdigit()):
+                    if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
                     elif(valueFound and token.isdigit() or token == "."):
@@ -3389,7 +3389,7 @@ class ScienceDirect:
                     valueFound = False
                     for token in nlp.def_tokenizer(nlpDict[key]):
 
-                        if(not valueFound and token.isdigit()):
+                        if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True                        
                         elif(valueFound and token.isdigit() or token == "."):
@@ -3473,7 +3473,7 @@ class ScienceDirect:
                     tokenArr = nlp.def_tokenizer(nlpDict[key])
                     for token in tokenArr:
 
-                        if(not valueFound and token.isdigit()):
+                        if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
                         elif(valueFound and token.isdigit() or token == "."):
@@ -3516,7 +3516,7 @@ class ScienceDirect:
                 unit = ""
                 valueFound = False
                 for token in tokenArr:
-                        if(not valueFound and token.isdigit()):
+                        if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
                         elif(valueFound and token.isdigit() or token == "."):
@@ -3548,7 +3548,7 @@ class ScienceDirect:
                 unit = ""
                 valueFound = False
                 for token in tokenArr:
-                    if(not valueFound and token.isdigit()):
+                    if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
                     elif(valueFound and token.isdigit() or token == "."):
@@ -3583,7 +3583,7 @@ class ScienceDirect:
                 value = ""
                 valueFound = False
                 for token in tokenArr:
-                    if(not valueFound and token.isdigit()):
+                    if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
                     elif(valueFound and token.isdigit() or token == "."):
