@@ -2797,8 +2797,8 @@ class ScienceDirect:
                     self.boldAbstractTextArr.append(data)
                 
                 if(self.titleFound):
-                    self.titleText = data
-                    self.title = data
+                    self.titleText += data
+                    self.title += data
                 if(self.abstractTextContent):
                     self.abstractText += data
                     self.abstractBoldText += data
