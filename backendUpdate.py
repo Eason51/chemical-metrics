@@ -1,3 +1,4 @@
+from six import b
 import molecular_Structure_Similarity as similarity
 import paper_count_per_year
 from torch.nn.functional import fractional_max_pool2d_with_indices
@@ -72,11 +73,25 @@ def compoundName(string):
     if(len(string) >= 2 and string[0].isdigit()):
         onlyDigit = True
         for c in string:
+            if(c == "-"):
+                continue
             if(not onlyDigit and not c.isalpha()):
                 return False
             if(onlyDigit and c.isalpha()):
                 onlyDigit = False
             if(not c.isdigit() and not c.isalpha()):
+                return False
+        return True
+    if(len(string) >= 2 and string[0].isalpha()):
+        onlyLetter = True
+        for c in string:
+            if(c == "-"):
+                continue
+            if(not onlyLetter and not c.isdigit()):
+                return False
+            if(onlyLetter and c.isdigit()):
+                onlyLetter = False
+            if(not c.isalpha() and not c.isdigit()):
                 return False
         return True
     return False
@@ -1227,7 +1242,7 @@ class ACS:
             self.ABBREVIATION = TARGETNAME.lower()
             self.FULLNAME = TARGETNAME.lower()
             
-            nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
+            nmKeyArr = ["ic50_mc", "ki_mc", "kd_mc", "ic50_ce", "ki_ce", "kd_ce", "ec50_ce"]            
             
             print("3.1.3.6")
             for key in nmKeyArr:
@@ -1235,16 +1250,19 @@ class ACS:
 
                     value = ""
                     unit = ""
-
+                    valueFound = False
                     for token in nlp.def_tokenizer(nlpDict[key]):
 
-                        if(token.isdigit() or token == "."):
+                        if(not valueFound and token.isdigit()):
                             value += token
-                        elif(not unit and value and not token.isdigit()):
+                            valueFound = True                        
+                        elif(valueFound and token.isdigit() or token == "."):
+                            value += token
+                        elif(valueFound and not token.isdigit()):
+                            valueFound = False
+                        if("nm" in token.lower() or "μm" in token.lower()):
                             unit = token
-                        else:
-                            value = ""
-                            unit = ""
+                        if(value and unit and not valueFound):
                             break
                     
                     if(value):
@@ -1257,23 +1275,23 @@ class ACS:
                             if(unit and unit.lower().strip() == "μm"):
                                 value *= 1000
 
-                            if(key == "IC50_MC"):
+                            if(key == "ic50_mc"):
                                 self.enzymeIc50 = value
-                            elif(key == "Ki_MC"):
+                            elif(key == "ki_mc"):
                                 self.enzymeKi = value
-                            elif(key == "Kd_MC"):
+                            elif(key == "kd_mc"):
                                 self.enzymeKd = value
-                            elif(key == "IC50_Ce"):
+                            elif(key == "ic50_ce"):
                                 self.cellIc50 = value
-                            elif(key == "Ki_Ce"):
+                            elif(key == "ki_ce"):
                                 self.cellKi = value
-                            elif(key == "Kd_Ce"):
+                            elif(key == "kd_ce"):
                                 self.cellKd = value
-                            elif(key == "EC50_Ce"):
+                            elif(key == "ec50_ce"):
                                 self.ec50 = value
             
 
-            selectivityKeyArr = ["selectivity_MC", "selectivity_Ce"]
+            selectivityKeyArr = ["selectivity_mc", "selectivity_ce"]
 
             print("3.1.3.7")
             for key in selectivityKeyArr:
@@ -1283,16 +1301,14 @@ class ACS:
 
                     digits = ""
                     for token in tokenArr:
-                        for c in token:
-                            if(not c.isdigit() and c != "."):
-                                break
-                            if(c == "."):
-                                digits = ""
-                            
-                            digits += c
-                        
-                        if(not token.isdigit()):
+
+                        if(digits):
                             break
+
+                        if("fold" in token):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    digits += c
                     
                     
                     if(digits):
@@ -1303,13 +1319,13 @@ class ACS:
                             digits = -1
 
                         if(digits != -1):
-                            if(key == "selectivity_MC"):
+                            if(key == "selectivity_ce"):
                                 self.enzymeSelectivity = digits
-                            elif(key == "selectivity_Ce"):
+                            elif(key == "selectivity_ce"):
                                 self.cellSelectivity = digits
 
             
-            microUnitArr = ["hERG_Ce", "solubility_Ce", "ED50_An", "solubility_An"]
+            microUnitArr = ["herg_ce", "solubility_ce", "ed50_an", "solubility_an"]
             
             print("3.1.3.8")
             for key in microUnitArr:
@@ -1317,16 +1333,23 @@ class ACS:
 
                     value = ""
                     unit = ""
+                    valueFound = False
                     tokenArr = nlp.def_tokenizer(nlpDict[key])
                     for token in tokenArr:
-                        if(token.isdigit() or token == "."):
+
+                        if(not valueFound and token.isdigit()):
                             value += token
-                        elif(value and not unit and not token.isdigit()):
+                            valueFound = True
+                        elif(valueFound and token.isdigit() or token == "."):
+                            value += token
+                        elif(valueFound and not token.isdigit()):
+                            valueFound = False
+                        if("nm" in token.lower() or "μm" in token.lower() or "mm" in token.lower()
+                            or "ng" in token.lower() or "μg" in token.lower() or "mg" in token.lower()):
                             unit = token
-                        else:
-                            value = ""
-                            unit = ""
+                        if(value and unit and not valueFound):
                             break
+
                     
                     if(value):
                         try:
@@ -1340,30 +1363,34 @@ class ACS:
                             if(unit and ("mm" in unit.lower() or "mg" in unit.lower())):
                                 value *= 1000
                             
-                            if(key == "hERG_Ce"):
+                            if(key == "herg_ce"):
                                 self.herg = value
-                            elif(key == "solubility_Ce"):
+                            elif(key == "solubility_ce"):
                                 self.cellSolubility = value
-                            elif(key == "ED50_An"):
+                            elif(key == "ed50_an"):
                                 self.ed50 = value
-                            elif(key == "solubility_An"):
+                            elif(key == "solubility_an"):
                                 self.vivoSolubility = value
             
             print("3.1.3.9")
-            if("t1/2_An" in nlpDict):
+            if("t1/2_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_an"])
                 value = ""
                 unit = ""
+                valueFound = False
                 for token in tokenArr:
-                    if(token.isdigit() or token == "."):
-                        value += token
-                    elif(value and not unit and not token.isdigit()):
-                        unit = token
-                    else:
-                        value = ""
-                        unit = ""
-                        break
+                        if(not valueFound and token.isdigit()):
+                            value += token
+                            valueFound = True
+                        elif(valueFound and token.isdigit() or token == "."):
+                            value += token
+                        elif(valueFound and not token.isdigit()):
+                            valueFound = False
+                        if("min" in token.lower() or "h" in token.lower()):
+                            unit = token
+                        if(value and unit and not valueFound):
+                            break
                         
                 if(value):
                     try:
@@ -1378,16 +1405,24 @@ class ACS:
                         self.tHalf = value
             
             print("3.1.3.10")
-            if("AUC_An" in nlpDict):
+            if("auc_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["AUC_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["auc_an"])
                 value = ""
                 unit = ""
+                valueFound = False
                 for token in tokenArr:
-                    if(token.isdigit() or token == "."):
+                    if(not valueFound and token.isdigit()):
                         value += token
-                    elif(value and not token.isdigit()):
-                        unit += (token + " ")
+                        valueFound = True
+                    elif(valueFound and token.isdigit() or token == "."):
+                        value += token
+                    elif(valueFound and not token.isdigit()):
+                        valueFound = False
+                    if("g" in token.lower() and "l" in token.lower() and "/" in token.lower()):
+                        unit = token
+                    if(value and unit and not valueFound):
+                        break
 
                 if(value):
                     try:
@@ -1405,14 +1440,22 @@ class ACS:
                         self.auc = value
 
             print("3.1.3.11")
-            if("bioavailability_An" in nlpDict):
+            if("bioavailability_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_an"])
 
                 value = ""
+                valueFound = False
                 for token in tokenArr:
-                    if(token .isdigit() or token == "."):
+                    if(not valueFound and token.isdigit()):
                         value += token
+                        valueFound = True
+                    elif(valueFound and token.isdigit() or token == "."):
+                        value += token
+                    elif(valueFound and not token.isdigit()):
+                        valueFound = False
+                        break
+ 
                 
                 if(value):
                     try:
@@ -3266,16 +3309,17 @@ class ScienceDirect:
 
 
 
+
         def retrieve_nlp_data(self):
 
             global outputArr
             
-            print("e4.1")
+            print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             
             outputArr.append(nlpDict)
-
-            print("e4.2")
+            
+            print("3.1.3.3")
             if("compound" in nlpDict):
                 
                 compound = ""
@@ -3291,7 +3335,7 @@ class ScienceDirect:
                     self.compound = compound
                     self.nlpCompound = True
             
-            print("e4.3")
+            print("3.1.3.4")
             if("compound_drug" in nlpDict):
 
                 compound_drug = ""
@@ -3304,7 +3348,7 @@ class ScienceDirect:
                 if(compound_drug and self.is_compound_name_drug(compound_drug)):
                     self.compoundNameDrug = compound_drug
 
-            print("e4.4")
+            print("3.1.3.5")
             if("target" in nlpDict):
 
                 tokenArr = nlp.def_tokenizer(nlpDict["target"])
@@ -3330,28 +3374,31 @@ class ScienceDirect:
                         self.focusedTarget = target.lower().strip()
 
             global TARGETNAME
-            self.focusedTarget = TARGETNAME
-            self.ABBREVIATION = TARGETNAME
-            self.FULLNAME = TARGETNAME
+            self.focusedTarget = TARGETNAME.lower()
+            self.ABBREVIATION = TARGETNAME.lower()
+            self.FULLNAME = TARGETNAME.lower()
             
-            nmKeyArr = ["IC50_MC", "Ki_MC", "Kd_MC", "IC50_Ce", "Ki_Ce", "Kd_Ce", "EC50_Ce"]            
+            nmKeyArr = ["ic50_mc", "ki_mc", "kd_mc", "ic50_ce", "ki_ce", "kd_ce", "ec50_ce"]            
             
-            print("e4.5")
+            print("3.1.3.6")
             for key in nmKeyArr:
                 if(key in nlpDict):
 
                     value = ""
                     unit = ""
-
+                    valueFound = False
                     for token in nlp.def_tokenizer(nlpDict[key]):
 
-                        if(token.isdigit() or token == "."):
+                        if(not valueFound and token.isdigit()):
                             value += token
-                        elif(not unit and value and not token.isdigit()):
+                            valueFound = True                        
+                        elif(valueFound and token.isdigit() or token == "."):
+                            value += token
+                        elif(valueFound and not token.isdigit()):
+                            valueFound = False
+                        if("nm" in token.lower() or "μm" in token.lower()):
                             unit = token
-                        else:
-                            value = ""
-                            unit = ""
+                        if(value and unit and not valueFound):
                             break
                     
                     if(value):
@@ -3364,25 +3411,25 @@ class ScienceDirect:
                             if(unit and unit.lower().strip() == "μm"):
                                 value *= 1000
 
-                            if(key == "IC50_MC"):
+                            if(key == "ic50_mc"):
                                 self.enzymeIc50 = value
-                            elif(key == "Ki_MC"):
+                            elif(key == "ki_mc"):
                                 self.enzymeKi = value
-                            elif(key == "Kd_MC"):
+                            elif(key == "kd_mc"):
                                 self.enzymeKd = value
-                            elif(key == "IC50_Ce"):
+                            elif(key == "ic50_ce"):
                                 self.cellIc50 = value
-                            elif(key == "Ki_Ce"):
+                            elif(key == "ki_ce"):
                                 self.cellKi = value
-                            elif(key == "Kd_Ce"):
+                            elif(key == "kd_ce"):
                                 self.cellKd = value
-                            elif(key == "EC50_Ce"):
+                            elif(key == "ec50_ce"):
                                 self.ec50 = value
             
 
-            selectivityKeyArr = ["selectivity_MC", "selectivity_Ce"]
+            selectivityKeyArr = ["selectivity_mc", "selectivity_ce"]
 
-            print("e4.6")
+            print("3.1.3.7")
             for key in selectivityKeyArr:
                 if(key in nlpDict):
                     
@@ -3390,16 +3437,14 @@ class ScienceDirect:
 
                     digits = ""
                     for token in tokenArr:
-                        for c in token:
-                            if(not c.isdigit() and c != "."):
-                                break
-                            if(c == "."):
-                                digits = ""
-                            
-                            digits += c
-                        
-                        if(not token.isdigit()):
+
+                        if(digits):
                             break
+
+                        if("fold" in token):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    digits += c
                     
                     
                     if(digits):
@@ -3410,30 +3455,37 @@ class ScienceDirect:
                             digits = -1
 
                         if(digits != -1):
-                            if(key == "selectivity_MC"):
+                            if(key == "selectivity_ce"):
                                 self.enzymeSelectivity = digits
-                            elif(key == "selectivity_Ce"):
+                            elif(key == "selectivity_ce"):
                                 self.cellSelectivity = digits
 
             
-            microUnitArr = ["hERG_Ce", "solubility_Ce", "ED50_An", "solubility_An"]
+            microUnitArr = ["herg_ce", "solubility_ce", "ed50_an", "solubility_an"]
             
-            print("e4.7")
+            print("3.1.3.8")
             for key in microUnitArr:
                 if(key in nlpDict):
 
                     value = ""
                     unit = ""
+                    valueFound = False
                     tokenArr = nlp.def_tokenizer(nlpDict[key])
                     for token in tokenArr:
-                        if(token.isdigit() or token == "."):
+
+                        if(not valueFound and token.isdigit()):
                             value += token
-                        elif(value and not unit and not token.isdigit()):
+                            valueFound = True
+                        elif(valueFound and token.isdigit() or token == "."):
+                            value += token
+                        elif(valueFound and not token.isdigit()):
+                            valueFound = False
+                        if("nm" in token.lower() or "μm" in token.lower() or "mm" in token.lower()
+                            or "ng" in token.lower() or "μg" in token.lower() or "mg" in token.lower()):
                             unit = token
-                        else:
-                            value = ""
-                            unit = ""
+                        if(value and unit and not valueFound):
                             break
+
                     
                     if(value):
                         try:
@@ -3447,30 +3499,34 @@ class ScienceDirect:
                             if(unit and ("mm" in unit.lower() or "mg" in unit.lower())):
                                 value *= 1000
                             
-                            if(key == "hERG_Ce"):
+                            if(key == "herg_ce"):
                                 self.herg = value
-                            elif(key == "solubility_Ce"):
+                            elif(key == "solubility_ce"):
                                 self.cellSolubility = value
-                            elif(key == "ED50_An"):
+                            elif(key == "ed50_an"):
                                 self.ed50 = value
-                            elif(key == "solubility_An"):
+                            elif(key == "solubility_an"):
                                 self.vivoSolubility = value
             
-            print("e4.8")
-            if("t1/2_An" in nlpDict):
+            print("3.1.3.9")
+            if("t1/2_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_an"])
                 value = ""
                 unit = ""
+                valueFound = False
                 for token in tokenArr:
-                    if(token.isdigit() or token == "."):
-                        value += token
-                    elif(value and not unit and not token.isdigit()):
-                        unit = token
-                    else:
-                        value = ""
-                        unit = ""
-                        break
+                        if(not valueFound and token.isdigit()):
+                            value += token
+                            valueFound = True
+                        elif(valueFound and token.isdigit() or token == "."):
+                            value += token
+                        elif(valueFound and not token.isdigit()):
+                            valueFound = False
+                        if("min" in token.lower() or "h" in token.lower()):
+                            unit = token
+                        if(value and unit and not valueFound):
+                            break
                         
                 if(value):
                     try:
@@ -3484,17 +3540,25 @@ class ScienceDirect:
                         
                         self.tHalf = value
             
-            print("e4.9")
-            if("AUC_An" in nlpDict):
+            print("3.1.3.10")
+            if("auc_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["AUC_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["auc_an"])
                 value = ""
                 unit = ""
+                valueFound = False
                 for token in tokenArr:
-                    if(token.isdigit() or token == "."):
+                    if(not valueFound and token.isdigit()):
                         value += token
-                    elif(value and not token.isdigit()):
-                        unit += (token + " ")
+                        valueFound = True
+                    elif(valueFound and token.isdigit() or token == "."):
+                        value += token
+                    elif(valueFound and not token.isdigit()):
+                        valueFound = False
+                    if("g" in token.lower() and "l" in token.lower() and "/" in token.lower()):
+                        unit = token
+                    if(value and unit and not valueFound):
+                        break
 
                 if(value):
                     try:
@@ -3511,15 +3575,23 @@ class ScienceDirect:
                         
                         self.auc = value
 
-            print("e4.10")
-            if("bioavailability_An" in nlpDict):
+            print("3.1.3.11")
+            if("bioavailability_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_An"])
+                tokenArr = nlp.def_tokenizer(nlpDict["bioavailability_an"])
 
                 value = ""
+                valueFound = False
                 for token in tokenArr:
-                    if(token .isdigit() or token == "."):
+                    if(not valueFound and token.isdigit()):
                         value += token
+                        valueFound = True
+                    elif(valueFound and token.isdigit() or token == "."):
+                        value += token
+                    elif(valueFound and not token.isdigit()):
+                        valueFound = False
+                        break
+ 
                 
                 if(value):
                     try:
@@ -3528,7 +3600,8 @@ class ScienceDirect:
                         value = -1
                     
                     if(value != -1):
-                        self.bioavailability = value   
+                        self.bioavailability = value            
+ 
 
 
 
