@@ -1320,7 +1320,7 @@ class ACS:
                             digits = -1
 
                         if(digits != -1):
-                            if(key == "selectivity_ce"):
+                            if(key == "selectivity_mc"):
                                 self.enzymeSelectivity = digits
                             elif(key == "selectivity_ce"):
                                 self.cellSelectivity = digits
@@ -3457,7 +3457,7 @@ class ScienceDirect:
                             digits = -1
 
                         if(digits != -1):
-                            if(key == "selectivity_ce"):
+                            if(key == "selectivity_mc"):
                                 self.enzymeSelectivity = digits
                             elif(key == "selectivity_ce"):
                                 self.cellSelectivity = digits
