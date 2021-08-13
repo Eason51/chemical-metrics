@@ -553,6 +553,7 @@ class ACS:
                 self.authorArr = []
                 self.year = -1
                 self.institution = []
+                self.altInstitution = ""
                 self.paperCited = -1
                 self.doi = ""
                 self.journal = ""
@@ -560,6 +561,7 @@ class ACS:
                 self.authorFound = False
                 self.dateFound = False
                 self.institutionFound = False
+                self.altInstitutionFound = False
                 self.citationFound = False
                 self.citationDivCount = 0
                 self.citationNumber = False
@@ -660,6 +662,8 @@ class ACS:
                             value = attr[1]
                     if(self.journalFound and value):
                         self.journal = value
+                if(not self.altInstitution and tag == "div" and len(attrs) == 1 and attrs[0][1] == "loa-info-affiliations-info"):
+                    self.altInstitutionFound = True
 
 
 
@@ -800,6 +804,8 @@ class ACS:
                     index = data.find("https://doi.org/")
                     if(index != -1):
                         self.doi = data[16:]
+                if(self.altInstitutionFound):
+                    self.altInstitution = data
 
 
                 # handle title and abstract
@@ -859,6 +865,8 @@ class ACS:
                     self.doiFound = False
                 if(self.doiLink and tag == "a"):
                     self.doiLink = False
+                if(self.altInstitutionFound and tag == "div"):
+                    self.altInstitutionFound = False
 
 
                 # handle title and abstract
@@ -1165,6 +1173,9 @@ class ACS:
             else:
                 self.institution = self.tableParser.institution[0]
             
+            if(not self.institution):
+                self.institution = self.tableParser.altInstitution
+            
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
@@ -1180,6 +1191,8 @@ class ACS:
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            print(f"doi: {self.doi}")
+            print(nlpDict)
             
             outputArr.append(nlpDict)
             
@@ -1373,9 +1386,9 @@ class ACS:
                                 self.vivoSolubility = value
             
             print("3.1.3.9")
-            if("t1/2_an" in nlpDict):
+            if("t_half_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_an"])
+                tokenArr = nlp.def_tokenizer(nlpDict["t_half_an"])
                 value = ""
                 unit = ""
                 valueFound = False
@@ -3509,9 +3522,9 @@ class ScienceDirect:
                                 self.vivoSolubility = value
             
             print("3.1.3.9")
-            if("t1/2_an" in nlpDict):
+            if("t_half_an" in nlpDict):
 
-                tokenArr = nlp.def_tokenizer(nlpDict["t1/2_an"])
+                tokenArr = nlp.def_tokenizer(nlpDict["t_half_an"])
                 value = ""
                 unit = ""
                 valueFound = False
