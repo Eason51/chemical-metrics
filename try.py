@@ -1269,7 +1269,7 @@ class ACS:
                         if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True                        
-                        elif(valueFound and token.isdigit() or token == "."):
+                        elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
                             valueFound = False
@@ -1353,7 +1353,7 @@ class ACS:
                         if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
-                        elif(valueFound and token.isdigit() or token == "."):
+                        elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
                             valueFound = False
@@ -1396,7 +1396,7 @@ class ACS:
                         if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
-                        elif(valueFound and token.isdigit() or token == "."):
+                        elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
                             valueFound = False
@@ -1428,7 +1428,7 @@ class ACS:
                     if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
-                    elif(valueFound and token.isdigit() or token == "."):
+                    elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
                         valueFound = False
@@ -1463,7 +1463,7 @@ class ACS:
                     if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
-                    elif(valueFound and token.isdigit() or token == "."):
+                    elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
                         valueFound = False
@@ -3405,7 +3405,7 @@ class ScienceDirect:
                         if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True                        
-                        elif(valueFound and token.isdigit() or token == "."):
+                        elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
                             valueFound = False
@@ -3489,7 +3489,7 @@ class ScienceDirect:
                         if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
-                        elif(valueFound and token.isdigit() or token == "."):
+                        elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
                             valueFound = False
@@ -3532,7 +3532,7 @@ class ScienceDirect:
                         if(not value and not valueFound and token.isdigit()):
                             value += token
                             valueFound = True
-                        elif(valueFound and token.isdigit() or token == "."):
+                        elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
                             valueFound = False
@@ -3564,7 +3564,7 @@ class ScienceDirect:
                     if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
-                    elif(valueFound and token.isdigit() or token == "."):
+                    elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
                         valueFound = False
@@ -3599,7 +3599,7 @@ class ScienceDirect:
                     if(not value and not valueFound and token.isdigit()):
                         value += token
                         valueFound = True
-                    elif(valueFound and token.isdigit() or token == "."):
+                    elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
                         valueFound = False
