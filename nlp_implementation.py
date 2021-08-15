@@ -283,7 +283,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                             break
 
     o_idx = target_vocab.to_index('O')
-    decode_result = {k: Counter() for k in headers}
+    decode_result = {k.lower(): Counter() for k in headers}
     decode_result['compound'] = Counter()
     decode_result['compound'].update([predict_compound] * (1 if predict_compound == '<unk>' else 10))
     for tokenize_content in tokenize_content_list:
@@ -306,7 +306,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                         if last_label is not None:
                             decode_result[last_label].update([' '.join(whole_prediction)])
                         whole_prediction = [current_word]
-                        last_label = prediction[2:]
+                        last_label = prediction[2:].lower()
                     else:
                         if last_label is None or prediction[2:] != last_label:
                             raise RuntimeError
@@ -450,3 +450,5 @@ def get_nlp_results_test(table_parser: Union[ACSTableParser, ScienceDirectTableP
         result_dict['selectivity_Ce'] = '1 5 . 7 mg/ml'
         result_dict['solubility_An'] = '1 5 . 7 mg/ml'
     return result_dict
+
+
