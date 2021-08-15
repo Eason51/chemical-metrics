@@ -284,6 +284,8 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
 
     o_idx = target_vocab.to_index('O')
     decode_result = {k: Counter() for k in headers}
+    decode_result['compound'] = Counter()
+    decode_result['compound'].update([predict_compound] * (1 if predict_compound == '<unk>' else 10))
     for tokenize_content in tokenize_content_list:
         last_label = None
 
