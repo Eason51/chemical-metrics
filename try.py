@@ -1199,6 +1199,7 @@ class ACS:
             print(f"doi: {self.doi}")
             print(f"single_dict: {nlpDict['single_dict']}")
             print(f"original_dict: {nlpDict['original_dict']}")
+            nlpDict = nlpDict["single_dict"]
             
             outputArr.append(nlpDict)
             
@@ -3340,6 +3341,7 @@ class ScienceDirect:
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
+            nlpDict = nlpDict["single_dict"]
             
             outputArr.append(nlpDict)
             
