@@ -1175,6 +1175,11 @@ class ACS:
             
             if(not self.institution):
                 self.institution = self.tableParser.altInstitution
+
+            for table in self.tables:
+                if(not table.grid.header and len(table.grid.body) >= 2):
+                    table.grid.header.append(table.grid.body[0])
+                    table.grid.body = table.grid.body[1:]
             
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
@@ -3206,6 +3211,11 @@ class ScienceDirect:
 
             self.authorArr = tableParser.authorArr
             self.year = tableParser.year
+
+            for table in self.tables:
+                if(not table.grid.header and len(table.grid.body) >= 2):
+                    table.grid.header.append(table.grid.body[0])
+                    table.grid.body = table.grid.body[1:]
 
             if(len(tableParser.institution) == 0):
                 self.institution = ""

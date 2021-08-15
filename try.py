@@ -1175,6 +1175,11 @@ class ACS:
             
             if(not self.institution):
                 self.institution = self.tableParser.altInstitution
+
+            for table in self.tables:
+                if(not table.grid.header and len(table.grid.body) >= 2):
+                    table.grid.header.append(table.grid.body[0])
+                    table.grid.body = table.grid.body[1:]
             
             self.paperCited = self.tableParser.paperCited
             self.doi = self.tableParser.doi
@@ -1192,7 +1197,8 @@ class ACS:
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             print(f"doi: {self.doi}")
-            print(nlpDict)
+            print(f"single_dict: {nlpDict['single_dict']}")
+            print(f"original_dict: {nlpDict['original_dict']}")
             
             outputArr.append(nlpDict)
             
@@ -3206,6 +3212,11 @@ class ScienceDirect:
 
             self.authorArr = tableParser.authorArr
             self.year = tableParser.year
+
+            for table in self.tables:
+                if(not table.grid.header and len(table.grid.body) >= 2):
+                    table.grid.header.append(table.grid.body[0])
+                    table.grid.body = table.grid.body[1:]
 
             if(len(tableParser.institution) == 0):
                 self.institution = ""
