@@ -37,6 +37,7 @@ for i in drug_molecule_paper:
     if i['compound_smiles'] == "":
         imageId = i["id"]
         imagePath = f'imagePaths/{TARGET}/{imageId}.jpeg'
+        print(f"imageId: {imageId}")
         print(3)
         if scale(imagePath)[0] >= scale(imagePath)[1]:
             width, height = scale(imagePath, width=1500)
@@ -47,7 +48,10 @@ for i in drug_molecule_paper:
             out.save(tempImagePath)
             # 从resize的图片抽smiles molecularSimles()
             print(5)
-            (simles, positionResult) = molecularSimles(tempImagePath)
+            try:
+                (simles, positionResult) = molecularSimles(tempImagePath)
+            except:
+                simles = ""
             i['compound_smiles'] = simles
             print(6)
             if i['compound_smiles'] == "":
@@ -60,7 +64,10 @@ for i in drug_molecule_paper:
                 out.save(tempImagePath)
                 # 从resize的图片抽smiles
                 print(9)
-                (simles, positionResult) = molecularSimles(tempImagePath)
+                try:
+                    (simles, positionResult) = molecularSimles(tempImagePath)
+                except:
+                    simles = ""
                 i['compound_smiles'] = simles
 
                 print(10)
@@ -73,7 +80,10 @@ for i in drug_molecule_paper:
                     out.save(tempImagePath)
                     # 从resize的图片抽smiles
                     print(12)
-                    (simles, positionResult) = molecularSimles(tempImagePath)
+                    try:
+                        (simles, positionResult) = molecularSimles(tempImagePath)
+                    except:
+                        simles = ""
                     i['compound_smiles'] = simles
                     print(13)
                     if i['compound_smiles'] == "":
@@ -96,7 +106,10 @@ for i in drug_molecule_paper:
             out.save(tempImagePath)
             # 从resize的图片抽smiles
             print(18)
-            (simles, positionResult) = molecularSimles(tempImagePath)
+            try:
+                (simles, positionResult) = molecularSimles(tempImagePath)
+            except:
+                simles = ""
             i['compound_smiles'] = simles
             print(19)
             if i['compound_smiles'] == "":
@@ -108,7 +121,10 @@ for i in drug_molecule_paper:
                 out.save(tempImagePath)
                 # 从resize的图片抽smiles
                 print(21)
-                (simles, positionResult) = molecularSimles(tempImagePath)
+                try:
+                    (simles, positionResult) = molecularSimles(tempImagePath)
+                except:
+                    simles = ""
                 i['compound_smiles'] = simles
 
                 print(22)
@@ -121,7 +137,10 @@ for i in drug_molecule_paper:
                     out.save(tempImagePath)
                     # 从resize的图片抽smiles
                     print(24)
-                    (simles, positionResult) = molecularSimles(tempImagePath)
+                    try:
+                        (simles, positionResult) = molecularSimles(tempImagePath)
+                    except:
+                        simles = ""
                     i['compound_smiles'] = simles
                     print(25)
                     if i['compound_smiles'] == "":
@@ -133,7 +152,10 @@ for i in drug_molecule_paper:
                         out.save(tempImagePath)
                         # 从resize的图片抽smiles
                         print(27)
-                        (simles, positionResult) = molecularSimles(tempImagePath)
+                        try:
+                            (simles, positionResult) = molecularSimles(tempImagePath)
+                        except:
+                            simles = ""
                         i['compound_smiles'] = simles
                         print(28)
 
