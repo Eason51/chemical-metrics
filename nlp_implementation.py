@@ -298,7 +298,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
             for idxx, p in enumerate(predictions):
                 if p != o_idx:
                     prediction = target_vocab.to_word(p)
-                    current_word = source_vocab.to_word(tokenize_content[idxx])
+                    current_word = tokenize_content[idxx]
                     assert isinstance(prediction, str) and isinstance(current_word, str)
                     if prediction.startswith('B'):
                         if last_label is not None:
