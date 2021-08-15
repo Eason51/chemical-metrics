@@ -308,7 +308,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                         whole_prediction = [current_word]
                         last_label = prediction[2:].lower()
                     else:
-                        if last_label is None or prediction[2:] != last_label:
+                        if last_label is None or prediction[2:].lower() != last_label:
                             raise RuntimeError
                         whole_prediction.append(current_word)
                 else:
