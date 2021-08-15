@@ -287,7 +287,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
     for tokenize_content in tokenize_content_list:
         last_label = None
 
-        words = torch.tensor([tokenize_content]).to('cuda:0')
+        words = torch.tensor([[source_vocab.to_index(w) for w in tokenize_content]]).to('cuda:0')
         output_logit = ner_model.predict(words)['pred'][0]
         counts = (output_logit == o_idx).float().sum().item()
 
