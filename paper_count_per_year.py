@@ -475,6 +475,21 @@ def get_paper_count_per_year(keyword):
 
     thirdValueArr3 = get_ScienceDirect_amount("The Lancet", keyword)
 
+    sum1 = 0
+
+    for yearCount in secondValueArr1:
+        sum1 += yearCount[1]
+    for yearCount in secondValueArr2:
+        sum1 += yearCount[1]
+    for yearCount in secondValueArr3:
+        sum1 += yearCount[1]
+    for yearCount in thirdValueArr1:
+        sum1 += yearCount[1]
+    for yearCount in thirdValueArr2:
+        sum1 += yearCount[1]
+    for yearCount in thirdValueArr3:
+        sum1 += yearCount[1]
+
     print(1)
     print(secondValueArr1)
     print(2)
@@ -487,9 +502,20 @@ def get_paper_count_per_year(keyword):
     print(thirdValueArr2)
     print(3)
     print(thirdValueArr3)
+    print()
     
     mergedSecondValueArr = merge_three_year_count_arrs(secondValueArr1, secondValueArr2, secondValueArr3)
     mergedThirdValueArr = merge_three_year_count_arrs(thirdValueArr1, thirdValueArr2, thirdValueArr3)
+
+
+    sum2 = 0
+    for yearCount in mergedSecondValueArr:
+        sum2 += yearCount[1]
+    for yearCount in mergedThirdValueArr:
+        sum2 += yearCount[1]
+
+    print("sum1: ", sum1)
+    print("sum2: ", sum2)
 
     return [mergedSecondValueArr, mergedThirdValueArr]
     
