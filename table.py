@@ -1,52 +1,51 @@
 from html.parser import HTMLParser
 
-TARGET = "janus kinase"
-fileId = 0
-DOMAIN = "https://pubs.acs.org"
 
-titleText = ""
-
-
+# Parsers cannot exit from inside, the reset() method needs to be called from outside
 def exitParser(parser):
     parser.reset()
 
+ACSDOMAIN = "https://pubs.acs.org"
 
 class BodyText:
+    
     class Section:
+        
         class Paragraph:
-            def __init__(self, header=""):
+            def __init__(self, header = ""):
                 self.header = header
-                self.contents = []  # list[str]
+                self.contents = [] # list[str]
                 self.boldContents = []
-
+        
         def __init__(self, title):
             self.title = title
-            self.paragraphs = []  # list[self.Paragraph]
-
+            self.paragraphs = [] # list[self.Paragraph]
+    
     def __init__(self):
-        self.sections = []  # list[self.Section]
+        self.sections = [] # list[self.Section]
 
 
 class Table:
+
     class Grid:
+
         class Row:
 
             def __init__(self):
                 # a cell may hold empty string, if html element is "&nbsp"
-                self.cells = []  # list[str]
+                self.cells = [] # list[str]
 
         def __init__(self):
             self.columnNum = 0
-            self.header = []  # list[self.Row]
-            self.body = []  # list[self.Row]
+            self.header = [] # list[self.Row]
+            self.body = [] # list[self.Row]
 
     def __init__(self):
         self.caption = ""
-        self.descriptions = []  # list[str]
+        self.descriptions = [] # list[str]
         self.grid = self.Grid()
 
 
-ACSDOMAIN = "https://pubs.acs.org/"
 
 
 class ACSTableParser(HTMLParser):
@@ -70,6 +69,8 @@ class ACSTableParser(HTMLParser):
         self.doiLink = False
         self.journalFound = False
         self.journalName = False
+
+
 
         # enable this flag to skip handle_data for the next element
         self.disableRead = False
@@ -109,7 +110,7 @@ class ACSTableParser(HTMLParser):
         self.paragraphBoldText = ""
 
         # hold all the Table objects contained in the current article
-        self.tables = []  # list[Table]
+        self.tables = [] # list[Table]
         self.tableFound = False
         self.tableDivCount = 0
         self.tableCaptionFound = False
@@ -129,263 +130,270 @@ class ACSTableParser(HTMLParser):
         self.tableDescriptionFound = False
         self.tableDescriptionDivCount = 0
         self.tableFootnoteFound = False
+        
+
 
     def handle_starttag(self, tag, attrs):
 
-        if (tag == "span" and len(attrs) == 1 and attrs[0][1] == "hlFld-ContribAuthor"):
+        if(tag == "span" and len(attrs) == 1 and attrs[0][1] == "hlFld-ContribAuthor"):
             self.authorFound = True
-        if (tag == "span" and len(attrs) == 1 and attrs[0][1] == "pub-date-value"):
+        if(tag == "span" and len(attrs) == 1 and attrs[0][1] == "pub-date-value"):
             self.dateFound = True
-        if (tag == "span" and len(attrs) == 1 and attrs[0][1] == "aff-text"):
+        if(tag == "span" and len(attrs) == 1 and attrs[0][1] == "aff-text"):
             self.institutionFound = True
             self.institution.append("")
-        if (tag == "div" and len(attrs) == 1 and attrs[0][1] == "articleMetrics_count"):
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "articleMetrics_count"):
             self.citationFound = True
             self.citationDivCount += 1
-        elif (self.citationFound and tag == "div"):
+        elif(self.citationFound and tag == "div"):
             self.citationDivCount += 1
-        if (self.citationFound and tag == "a"):
+        if(self.citationFound and tag == "a"):
             self.citationNumber = True
-        if (tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_header-doiurl"):
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_header-doiurl"):
             self.doiFound = True
-        if (self.doiFound and tag == "a"):
+        if(self.doiFound and tag == "a"):
             self.doiLink = True
-        if (not self.journalFound and tag == "input" and len(attrs) > 0):
+        if(not self.journalFound and tag == "input" and len(attrs) > 0):
             value = ""
             for attr in attrs:
-                if (attr[0] == "name" and attr[1] == "journalNameForjhpLink"):
+                if(attr[0] == "name" and attr[1] == "journalNameForjhpLink"):
                     self.journalFound = True
-                elif (attr[0] == "value"):
+                elif(attr[0] == "value"):
                     value = attr[1]
-            if (self.journalFound and value):
+            if(self.journalFound and value):
                 self.journal = value
+
+
 
         # handle title, abstract image and abstract text
 
-        if (tag == "div" and len(attrs) >= 1):
+        if(tag == "div" and len(attrs) >= 1):
             for attr in attrs:
                 if (attr[0] == "class" and attr[1] == "article_abstract-content hlFld-Abstract"):
                     self.abstractFound = True
                     break
-        if (tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content"):
             self.abstractText += " . "
             self.abstractBoldText += " . "
             self.abstractFound = False
-        if (self.abstractFound and tag == "figure"):
+        if(self.abstractFound and tag == "figure"):
             self.figureFound = True
-        if (self.figureFound and tag == "a" and len(attrs) >= 2):
+        if(self.figureFound and tag == "a" and len(attrs) >= 2):
             title = link = ""
             for attr in attrs:
-                if (attr[0] == "title"):
+                if(attr[0] == "title"):
                     title = attr[1]
-                elif (attr[0] == "href"):
-                    global ACSDOMAIN
+                elif(attr[0] == "href"):
                     link = ACSDOMAIN + attr[1]
-            if (title == "High Resolution Image"):
+            if(title == "High Resolution Image"):
                 self.imgArr.append(link)
-        if (self.abstractFound and tag == "p" and len(attrs) == 1 and attrs[0][1] == "articleBody_abstractText"):
+        if(self.abstractFound and tag == "p" and len(attrs) == 1 and attrs[0][1] == "articleBody_abstractText"):
             self.textFound = True
-        if (tag == "h1" and len(attrs) == 1 and attrs[0][1] == "article_header-title"):
-            self.titleFound = True
-        if (self.titleFound and tag == "span"):
+        if(tag == "h1" and len(attrs) == 1 and attrs[0][1] == "article_header-title"):
+            self.titleFound =True
+        if(self.titleFound and tag == "span"):
             self.titleText = True
-        if (self.textFound and tag == "b"):
+        if(self.textFound and tag == "b"):
             self.boldTextFound = True
             self.abstractBoldText += "<b> "
 
-        # handle body text
-
-        if (tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
+        #handle body text
+        
+        if(tag == "div" and len(attrs) == 1 and attrs[0][1] == "article_content-title"):
             self.sectionTitleFound = True
             self.newSectionFound = True
-        if (tag == "div" and len(attrs) == 1 and "NLM_p" in attrs[0][1]):
+        if(tag == "div" and len(attrs) == 1 and "NLM_p" in attrs[0][1]):
             self.paragraphFound = True
             self.paragraphDivCount += 1
-        elif (self.paragraphFound and tag == "div"):
+        elif(self.paragraphFound and tag == "div"):
             self.paragraphDivCount += 1
-        if (tag == "h3" and len(attrs) > 0):
+        if(tag == "h3" and len(attrs) > 0):
             for attr in attrs:
-                if (attr[0] == "class" and attr[1] == "article-section__title"):
+                if(attr[0] == "class" and attr[1] == "article-section__title"):
                     self.paragraphHeaderFound = True
-        if (self.paragraphFound and tag == "b"):
+        if(self.paragraphFound and tag == "b"):
             self.boldParagraphFound = True
             self.boldParagraphText += "<b> "
 
         # handle table caption
-
-        if (tag == "div" and len(attrs) > 1):
+        
+        if(tag == "div" and len(attrs) > 1):
             for attr in attrs:
-                if (attr[0] == "class" and attr[1] == "NLM_table-wrap"):
+                if(attr[0] == "class" and attr[1] == "NLM_table-wrap"):
                     self.tableFound = True
                     self.tableDivCount += 1
                     self.tables.append(Table())
                     return
-        if (self.tableFound and tag == "div"):
+        if(self.tableFound and tag == "div"):
             self.tableDivCount += 1
-        if (self.tableFound and tag == "div" and len(attrs) > 0):
+        if(self.tableFound and tag == "div" and len(attrs) > 0):
             for attr in attrs:
-                if (attr[0] == "class" and attr[1] == "NLM_caption"):
+                if(attr[0] == "class" and attr[1] == "NLM_caption"):
                     self.tableCaptionFound = True
                     self.tableCaptionDivCount += 1
                     return
-        if (self.tableCaptionFound and tag == "div"):
+        if(self.tableCaptionFound and tag == "div"):
             self.tableCaptionDivCount += 1
-        if (self.tableCaptionFound and tag == "a"):
+        if(self.tableCaptionFound and tag == "a"):
             self.disableRead = True
-
+        
         # handle table grid
-
-        if (self.tableFound and tag == "table"):
+        
+        if(self.tableFound and tag == "table"):
             self.tableGridFound = True
-        if (self.tableGridFound and tag == "colgroup"):
+        if(self.tableGridFound and tag == "colgroup"):
             self.tableColCountFound = True
-        if (self.tableColCountFound and tag == "col"):
+        if(self.tableColCountFound and tag == "col"):
             self.tables[-1].grid.columnNum += 1
-        if (self.tableGridFound and tag == "thead"):
+        if(self.tableGridFound and tag == "thead"):
             self.gridHeaderFound = True
-        if (self.gridHeaderFound and tag == "tr"):
+        if(self.gridHeaderFound and tag == "tr"):
             self.tables[-1].grid.header.append(Table.Grid.Row())
-        if (self.gridHeaderFound and tag == "th"):
+        if(self.gridHeaderFound and tag == "th"):
             self.cellFound = True
-        if (self.tableGridFound and tag == "tbody"):
+        if(self.tableGridFound and tag == "tbody"):
             self.gridBodyFound = True
-        if (self.gridBodyFound and tag == "tr"):
+        if(self.gridBodyFound and tag == "tr"):
             self.tables[-1].grid.body.append(Table.Grid.Row())
-        if (self.gridBodyFound and tag == "td"):
+        if(self.gridBodyFound and tag == "td"):
             self.cellFound = True
-        if (self.cellFound and tag == "sup"):
+        if(self.cellFound and tag == "sup"):
             self.cellSpace = True
-        if (self.cellFound and tag == "br"):
+        if(self.cellFound and tag == "br"):
             self.cell += " "
-
+        
         # handle table description
-
-        if (self.tableFound and (not self.tableCaptionFound) and (not self.tableGridFound) and tag == "div" and len(
-                attrs) > 0):
+        
+        if(self.tableFound and (not self.tableCaptionFound) and (not self.tableGridFound) and tag == "div" and len(attrs) > 0):
             for attr in attrs:
-                if (attr[0] == "class" and attr[1] == "NLM_table-wrap-foot"):
+                if(attr[0] == "class" and attr[1] == "NLM_table-wrap-foot"):
                     self.tableDescriptionFound = True
                     self.tableDescriptionDivCount += 1
                     return
-        if (self.tableDescriptionFound and tag == "div"):
+        if(self.tableDescriptionFound and tag == "div"):
             self.tableDescriptionDivCount += 1
-        if (self.tableDescriptionFound and tag == "div" and len(attrs) > 0):
+        if(self.tableDescriptionFound and tag == "div" and len(attrs) > 0):
             for attr in attrs:
-                if (attr[0] == "class" and attr[1] == "footnote"):
+                if(attr[0] == "class" and attr[1] == "footnote"):
                     self.tableFootnoteFound = True
                     self.tables[-1].descriptions.append("")
-        if (self.tableFootnoteFound and tag in ["sup", "a"]):
+        if(self.tableFootnoteFound and tag in ["sup", "a"]):
             self.disableRead = True
 
+
+
     def handle_data(self, data):
-        if (self.disableRead):
+        if(self.disableRead):
             return
-        if (self.cellSpace):
+        if(self.cellSpace):
             self.cell += " "
             return
-
-        if (self.authorFound):
+        
+        if(self.authorFound):
             self.authorArr.append(data)
-        if (self.dateFound):
+        if(self.dateFound):
             index = data.find(",")
-            self.year = int(data[index + 1:].strip())
-        if (self.institutionFound):
+            self.year = int(data[index + 1 :].strip())
+        if(self.institutionFound):
             self.institution[-1] += data
-        if (self.citationNumber):
+        if(self.citationNumber):
             self.paperCited = int(data)
-        if (self.doiLink):
+        if(self.doiLink):
             index = data.find("https://doi.org/")
-            if (index != -1):
+            if(index != -1):
                 self.doi = data[16:]
+
 
         # handle title and abstract
 
-        if (self.textFound):
+        if(self.textFound):
             self.abstractText += data
             self.abstractBoldText += data
-        if (self.titleText):
+        if(self.titleText):
             self.title += data
-        if (self.boldTextFound):
+        if(self.boldTextFound):
             self.boldAbstractTextArr.append(data)
-
+        
         # handle body text
 
         # found a new section, append the section to bodyText
-        if (self.newSectionFound):
+        if(self.newSectionFound):
             section = BodyText.Section(data)
             self.bodyText.sections.append(section)
             self.newSectionFound = False
             # ignore any content after references
-            if (data == "References"):
+            if(data == "References"):
                 exitParser(self)
-        if (self.paragraphFound):
+        if(self.paragraphFound):
             self.paragraphText += data
             self.boldParagraphText += data
-        if (self.paragraphHeaderFound):
+        if(self.paragraphHeaderFound):
             self.paragraphHeader += data
 
         # handle Tables
 
-        if (self.tableCaptionFound):
+        if(self.tableCaptionFound):
             self.tableCaption += data
-        if (self.gridHeaderFound and self.cellFound):
+        if(self.gridHeaderFound and self.cellFound):
+            self.cell += data            
+        if(self.gridBodyFound and self.cellFound):
             self.cell += data
-        if (self.gridBodyFound and self.cellFound):
-            self.cell += data
-        if (self.tableFootnoteFound):
+        if(self.tableFootnoteFound):
             self.tables[-1].descriptions[-1] += data
 
+    
     def handle_endtag(self, tag):
 
-        if (self.authorFound and tag == "span"):
+        if(self.authorFound and tag == "span"):
             self.authorFound = False
-        if (self.dateFound and tag == "span"):
+        if(self.dateFound and tag == "span"):
             self.dateFound = False
-        if (self.institutionFound and tag == "span"):
+        if(self.institutionFound and tag == "span"):
             self.institutionFound = False
-        if (self.citationFound and tag == "div" and self.citationDivCount == 1):
+        if(self.citationFound and tag == "div" and self.citationDivCount == 1):
             self.citationDivCount -= 1
             self.citationFound = False
-        elif (self.citationFound and tag == "div" and self.citationDivCount > 1):
+        elif(self.citationFound and tag == "div" and self.citationDivCount > 1):
             self.citationDivCount -= 1
-        if (self.citationNumber and tag == "a"):
+        if(self.citationNumber and tag == "a"):
             self.citationNumber = False
-        if (self.doiFound and tag == "div"):
+        if(self.doiFound and tag == "div"):
             self.doiFound = False
-        if (self.doiLink and tag == "a"):
+        if(self.doiLink and tag == "a"):
             self.doiLink = False
 
-        # handle title and abstract
 
-        if (self.disableRead):
+        # handle title and abstract
+        
+        if(self.disableRead):
             self.disableRead = False
-        if (self.cellSpace):
+        if(self.cellSpace):
             self.cellSpace = False
-        if (self.figureFound and tag == "figure"):
+        if(self.figureFound and tag == "figure"):
             self.figureFound = False
-        if (self.textFound and tag == "p"):
+        if(self.textFound and tag == "p"):
             self.textFound = False
-        if (self.titleFound and tag == "h1"):
+        if(self.titleFound and tag == "h1"):
             self.titleFound = False
-        if (self.titleText and tag == "span"):
+        if(self.titleText and tag == "span"):
             self.titleText = False
-        if (self.boldTextFound and tag == "b"):
+        if(self.boldTextFound and tag == "b"):
             self.boldTextFound = False
             self.abstractBoldText += " </b>"
-
+        
         # handle body text
-
-        if (self.boldParagraphFound and tag == "b"):
+        
+        if(self.boldParagraphFound and tag == "b"):
             self.boldParagraphText += " </b>"
             self.boldParagraphFound = False
-        if (self.sectionTitleFound and tag == "div"):
+        if(self.sectionTitleFound and tag == "div"):
             self.sectionTitleFound = False
         # found the end of a paragraph, append the content to the last section
-        if (self.paragraphFound and tag == "div" and self.paragraphDivCount == 1):
-            if (len(self.bodyText.sections) == 0):
+        if(self.paragraphFound and tag == "div" and self.paragraphDivCount == 1):
+            if(len(self.bodyText.sections) == 0):
                 newSection = BodyText.Section("")
                 self.bodyText.sections.append(newSection)
-            if (len(self.bodyText.sections[-1].paragraphs) == 0):
+            if(len(self.bodyText.sections[-1].paragraphs) == 0):
                 newParagraph = BodyText.Section.Paragraph()
                 self.bodyText.sections[-1].paragraphs.append(newParagraph)
             self.bodyText.sections[-1].paragraphs[-1].contents.append(self.paragraphText)
@@ -394,62 +402,67 @@ class ACSTableParser(HTMLParser):
             self.boldParagraphText = ""
             self.paragraphFound = False
             self.paragraphDivCount -= 1
-        elif (self.paragraphFound and tag == "div" and self.paragraphDivCount > 1):
+        elif(self.paragraphFound and tag == "div" and self.paragraphDivCount > 1):
             self.paragraphDivCount -= 1
         # found a paragraph header, append a new paragraph with header to the last section
-        if (self.paragraphHeaderFound and tag == "h3"):
+        if(self.paragraphHeaderFound and tag == "h3"):
             self.paragraphHeaderFound = False
             newParagraph = BodyText.Section.Paragraph(self.paragraphHeader)
             self.bodyText.sections[-1].paragraphs.append(newParagraph)
             self.paragraphHeader = ""
-        if (self.paragraphBoldFound and tag == "b"):
+        if(self.paragraphBoldFound and tag == "b"):
             self.paragraphBoldText += " </b>"
             self.paragraphBoldText = ""
             self.paragraphBoldFound = False
-
+        
         # handle table caption
 
-        if (self.tableFound and tag == "div" and self.tableDivCount == 1):
+        if(self.tableFound and tag == "div" and self.tableDivCount == 1):
             self.tableFound = False
             self.tableDivCount -= 1
-        elif (self.tableFound and tag == "div" and self.tableDivCount > 1):
+        elif(self.tableFound and tag == "div" and self.tableDivCount > 1):
             self.tableDivCount -= 1
-        if (self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount == 1):
+        if(self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount == 1):
             self.tableCaptionFound = False
             self.tableCaptionDivCount -= 1
             self.tables[-1].caption = self.tableCaption
             self.tableCaption = ""
-        elif (self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount > 1):
+        elif(self.tableCaptionFound and tag == "div" and self.tableCaptionDivCount > 1):
             self.tableCaptionDivCount -= 1
-
+        
         # handle table grip
 
-        if (self.tableGridFound and tag == "table"):
+        if(self.tableGridFound and tag == "table"):
             self.tableGridFound = False
-        if (self.tableColCountFound and tag == "colgroup"):
+        if(self.tableColCountFound and tag == "colgroup"):
             self.tableColCountFound = False
-        if (self.gridHeaderFound and tag == "thead"):
+        if(self.gridHeaderFound and tag == "thead"):
             self.gridHeaderFound = False
-        if (self.gridHeaderFound and tag == "th" and self.cellFound):
+        if(self.gridHeaderFound and tag == "th" and self.cellFound):
             self.tables[-1].grid.header[-1].cells.append(self.cell)
             self.cell = ""
             self.cellFound = False
-        if (self.gridBodyFound and tag == "tbody"):
+        if(self.gridBodyFound and tag == "tbody"):
             self.gridBodyFound = False
-        if (self.gridBodyFound and tag == "td" and self.cellFound):
+        if(self.gridBodyFound and tag == "td" and self.cellFound):
             self.tables[-1].grid.body[-1].cells.append(self.cell)
             self.cell = ""
             self.cellFound = False
 
         # handle table description
 
-        if (self.tableDescriptionFound and self.tableDescriptionDivCount == 1 and tag == "div"):
+        if(self.tableDescriptionFound and self.tableDescriptionDivCount == 1 and tag == "div"):
             self.tableDescriptionDivCount -= 1
             self.tableDescriptionFound = False
-        elif (self.tableDescriptionFound and tag == "div" and self.tableDescriptionDivCount > 1):
+        elif(self.tableDescriptionFound and tag == "div" and self.tableDescriptionDivCount > 1):
             self.tableDescriptionDivCount -= 1
-        if (self.tableFootnoteFound and tag == "div"):
+        if(self.tableFootnoteFound and tag == "div"):
             self.tableFootnoteFound = False
+
+
+
+
+
 
 
 # parse a ScienceDirect xml file
@@ -471,7 +484,7 @@ class ScienceDirectTableParser(HTMLParser):
         self.institutionFound = False
         self.institutionName = False
         self.journalFound = False
-
+        
         self.titleFound = False
         self.titleText = ""
         self.imgRef = ""
@@ -483,7 +496,7 @@ class ScienceDirectTableParser(HTMLParser):
         self.abstractText = ""
         self.abstractImageFound = False
         self.boldTextFound = False
-
+        
         self.bodyTextFound = False
         self.bodyText = BodyText()
         self.sectionCount = 0
@@ -510,296 +523,247 @@ class ScienceDirectTableParser(HTMLParser):
         self.contentCellFound = False
         self.spaceContentCell = False
 
+        self.title = ""
+
+
+
+
     def handle_starttag(self, tag, attrs):
 
-        if (tag == "ce:author"):
+        if(tag == "ce:author"):
             self.authorFound = True
             self.authorArr.append("")
-        if (self.authorFound and (tag == "ce:given-name" or tag == "ce:surname")):
+        if(self.authorFound and (tag == "ce:given-name" or tag == "ce:surname")):
             self.authorName = True
-        if (tag == "xocs:cover-date-year"):
+        if(tag == "xocs:cover-date-year"):
             self.yearFound = True
-        if (tag == "ce:affiliation"):
+        if(tag == "ce:affiliation"):
             self.institutionFound = True
-        if (self.institutionFound and tag == "ce:textfn"):
+        if(self.institutionFound and tag == "ce:textfn"):
             self.institutionName = True
             self.institution.append("")
-        if (tag == "xocs:srctitle"):
+        if(tag == "xocs:srctitle"):
             self.journalFound = True
 
-        if (tag == "ce:title"):
+        if(tag == "ce:title"):
             self.titleFound = True
-        if (tag == "ce:abstract"):
+        if(tag == "ce:abstract"):
             for attr in attrs:
-                if (attr[0] == "class" and attr[1] == "author"):
+                if(attr[0] == "class" and attr[1] == "author"):
                     self.abstractTextFound = True
                     return
-                elif (attr[0] == "class" and attr[1] == "graphical"):
+                elif(attr[0] == "class" and attr[1] == "graphical"):
                     self.abstractImageFound = True
                     return
-        if (self.abstractTextFound and tag == "ce:simple-para"):
+        if(self.abstractTextFound and tag == "ce:simple-para"):
             self.abstractTextContent = True
-        if (self.abstractImageFound and tag == "ce:link"):
+        if(self.abstractImageFound and tag == "ce:link"):
             for attr in attrs:
-                if (attr[0] == "xlink:href"):
+                if(attr[0] == "xlink:href"):
                     self.imgRef = attr[1]
-        if (self.abstractTextContent and tag == "ce:bold"):
+        if(self.abstractTextContent and tag == "ce:bold"):
             self.boldTextFound = True
             self.abstractBoldText += "<b> "
 
-        if (tag == "ce:sections"):
+        if(tag == "ce:sections"):
             self.bodyTextFound = True
-        if (self.bodyTextFound and tag == "ce:section" and self.sectionCount == 0):
+        if(self.bodyTextFound and tag == "ce:section" and self.sectionCount == 0):
             self.newSectionFound = True
             self.sectionCount += 1
             return
-        if (self.newSectionFound and tag == "ce:section" and self.sectionCount > 0):
+        if(self.newSectionFound and tag == "ce:section" and self.sectionCount > 0):
             self.newSubsection = True
             self.sectionCount += 1
-        if (self.newSectionFound and tag == "ce:section-title" and self.sectionCount == 1):
+        if(self.newSectionFound and tag == "ce:section-title" and self.sectionCount == 1):    
             self.newSectionTitle = True
-        if (self.newSectionFound and tag == "ce:section-title" and self.sectionCount > 1):
+        if(self.newSectionFound and tag == "ce:section-title" and self.sectionCount > 1):
             self.newSubsectionTitle = True
-        if (self.newSectionFound and tag == "ce:para"):
+        if(self.newSectionFound and tag == "ce:para"):
             self.newParagraphFound = True
-            if (len(self.bodyText.sections[-1].paragraphs) > 0 and self.bodyText.sections[-1].paragraphs[
-                -1].header != ""):
+            if(len(self.bodyText.sections[-1].paragraphs) > 0 and self.bodyText.sections[-1].paragraphs[-1].header != ""):
                 return
             newParagraph = BodyText.Section.Paragraph("")
             self.bodyText.sections[-1].paragraphs.append(newParagraph)
-        if (self.newParagraphFound and tag == "ce:bold"):
+        if(self.newParagraphFound and tag == "ce:bold"):
             self.boldParagraphFound = True
-        if (tag == "ce:table"):
+        if(tag == "ce:table"):
             self.tableFound = True
             newTable = Table()
             self.tables.append(newTable)
-        if (self.tableFound and tag == "ce:caption"):
+        if(self.tableFound and tag == "ce:caption"):
             self.tableCaptionFound = True
-        if (self.tableCaptionFound and tag == "ce:simple-para"):
+        if(self.tableCaptionFound and tag == "ce:simple-para"):
             self.tableCaptionContent = True
 
-        if (self.tableFound and tag == "tgroup"):
+        if(self.tableFound and tag == "tgroup"):
             self.tableGridFound = True
             newGrid = Table.Grid()
             for attr in attrs:
-                if (attr[0] == "cols"):
+                if(attr[0] == "cols"):
                     newGrid.columnNum = int(attr[1])
             self.tables[-1].grid = newGrid
-        if (self.tableGridFound and tag == "thead"):
+        if(self.tableGridFound and tag == "thead"):
             self.tableHeaderFound = True
-        if (self.tableHeaderFound and tag == "row"):
+        if(self.tableHeaderFound and tag == "row"):
             self.headerRowFound = True
             newRow = Table.Grid.Row()
             self.tables[-1].grid.header.append(newRow)
-        if (self.headerRowFound and tag == "entry"):
+        if(self.headerRowFound and tag == "entry"):
             self.headerCellFound = True
             self.tables[-1].grid.header[-1].cells.append("")
-        if (self.headerCellFound and tag == "cross-ref"):
+        if(self.headerCellFound and tag == "cross-ref"):
             self.spaceHeaderCell = True
-
-        if (self.tableGridFound and tag == "tbody"):
+        
+        if(self.tableGridFound and tag == "tbody"):
             self.tableContentFound = True
-        if (self.tableContentFound and tag == "row"):
+        if(self.tableContentFound and tag == "row"):
             self.contentRowFound = True
             newRow = Table.Grid.Row()
             self.tables[-1].grid.body.append(newRow)
-        if (self.contentRowFound and tag == "entry"):
+        if(self.contentRowFound and tag == "entry"):
             self.contentCellFound = True
             self.tables[-1].grid.body[-1].cells.append("")
-        if (self.contentCellFound and tag == "cross-ref"):
+        if(self.contentCellFound and tag == "cross-ref"):
             self.spaceContentCell = True
+        
+
 
     def handle_data(self, data):
 
-        if (self.authorName):
-            if (len(self.authorArr[-1]) == 0):
+        if(self.authorName):
+            if(len(self.authorArr[-1]) == 0):
                 self.authorArr[-1] += (data.strip() + " ")
             else:
                 self.authorArr[-1] += data.strip()
-        if (self.yearFound):
+        if(self.yearFound):
             self.year = int(data)
-        if (self.institutionName):
+        if(self.institutionName):
             self.institution[-1] += (data.strip())
-        if (self.journalFound):
+        if(self.journalFound):
             self.journal = data
-
-        if (self.spaceHeaderCell):
-            if (len(self.tables[-1].grid.header[-1].cells) != 0):
+        
+        if(self.spaceHeaderCell):
+            if(len(self.tables[-1].grid.header[-1].cells) != 0):
                 self.tables[-1].grid.header[-1].cells[-1] += " "
             return
-        if (self.spaceContentCell):
-            if (len(self.tables[-1].grid.body[-1].cells) != 0):
-                self.tables[-1].grid.body[-1].cells[-1] += " "
+        if(self.spaceContentCell):
+            if(len(self.tables[-1].grid.body[-1].cells) != 0):
+                self.tables[-1].grid.body[-1].cells[-1] += " " 
             return
 
-        if (self.skipParsing):
+
+        if(self.skipParsing):
             self.skipParsing = True
             return
-        if (self.boldTextFound):
+        if(self.boldTextFound):
             self.boldAbstractTextArr.append(data)
-
-        if (self.titleFound):
-            self.titleText = data
-        if (self.abstractTextContent):
+        
+        if(self.titleFound):
+            self.titleText += data
+            self.title += data
+        if(self.abstractTextContent):
             self.abstractText += data
             self.abstractBoldText += data
-
-        if (self.newSectionTitle):
+        
+        if(self.newSectionTitle):
             newSection = BodyText.Section(data)
             self.bodyText.sections.append(newSection)
-        if (self.newSubsectionTitle):
+        if(self.newSubsectionTitle):
             newParagraph = BodyText.Section.Paragraph(data)
             self.bodyText.sections[-1].paragraphs.append(newParagraph)
-        if (self.newParagraphFound):
+        if(self.newParagraphFound):
             boldData = data
-            if (self.boldParagraphFound):
+            if(self.boldParagraphFound):
                 boldData = "<b> " + boldData + " </b>"
-            if (len(self.bodyText.sections[-1].paragraphs) == 0):
+            if(len(self.bodyText.sections[-1].paragraphs) == 0):
                 newParagraph = BodyText.Section.Paragraph("")
                 self.bodyText.sections[-1].paragraphs.append(newParagraph)
-            if (len(self.bodyText.sections[-1].paragraphs[-1].contents) == 0):
+            if(len(self.bodyText.sections[-1].paragraphs[-1].contents) == 0):
                 self.bodyText.sections[-1].paragraphs[-1].contents.append(data)
                 self.bodyText.sections[-1].paragraphs[-1].boldContents.append(boldData)
-                return
+                return 
             else:
                 self.bodyText.sections[-1].paragraphs[-1].contents[-1] += (data)
                 self.bodyText.sections[-1].paragraphs[-1].boldContents[-1] += (boldData)
 
-        if (self.tableCaptionContent):
+        
+        if(self.tableCaptionContent):
             self.tables[-1].caption += data
-        if (self.headerCellFound):
+        if(self.headerCellFound):
             self.tables[-1].grid.header[-1].cells[-1] += data.strip()
-        if (self.contentCellFound):
+        if(self.contentCellFound):
             self.tables[-1].grid.body[-1].cells[-1] += data.strip()
+
+
 
     def handle_endtag(self, tag):
 
-        if (self.authorFound and tag == "ce:author"):
+        if(self.authorFound and tag == "ce:author"):
             self.authorFound = False
-        if (self.authorName and (tag == "ce:given-name" or tag == "ce:surname")):
+        if(self.authorName and (tag == "ce:given-name" or tag == "ce:surname")):
             self.authorName = False
-        if (self.yearFound and tag == "xocs:cover-date-year"):
+        if(self.yearFound and tag == "xocs:cover-date-year"):
             self.yearFound = False
-        if (self.institutionFound and tag == "ce:affiliation"):
+        if(self.institutionFound and tag == "ce:affiliation"):
             self.institutionFound = False
-        if (self.institutionName and tag == "ce:textfn"):
+        if(self.institutionName and tag == "ce:textfn"):
             self.institutionName = False
-        if (self.journalFound and tag == "xocs:srctitle"):
+        if(self.journalFound and tag == "xocs:srctitle"):
             self.journalFound = False
 
-        if (self.titleFound and tag == "ce:title"):
+        if(self.titleFound and tag == "ce:title"):
             self.titleFound = False
-        if (self.abstractTextFound and tag == "ce:abstract"):
+        if(self.abstractTextFound and tag == "ce:abstract"):
             self.abstractTextFound = False
-        if (self.abstractImageFound and tag == "ce:abstract"):
+        if(self.abstractImageFound and tag == "ce:abstract"):
             self.abstractImageFound = False
-        if (self.abstractTextContent and tag == "ce:simple-para"):
+        if(self.abstractTextContent and tag == "ce:simple-para"):
             self.abstractTextContent = False
-        if (self.boldTextFound and tag == "ce:bold"):
+        if(self.boldTextFound and tag == "ce:bold"):
             self.boldTextFound = False
             self.abstractBoldText += " </b>"
-
-        if (self.bodyTextFound and tag == "ce:sections"):
+        
+        if(self.bodyTextFound and tag == "ce:sections"):
             self.bodyTextFound = False
-        if (self.newSectionFound and tag == "ce:section" and self.sectionCount == 1):
+        if(self.newSectionFound and tag == "ce:section" and self.sectionCount == 1):
             self.newSectionFound = False
             self.sectionCount -= 1
-        if (self.newSubsection and tag == "ce:section" and self.sectionCount > 1):
+        if(self.newSubsection and tag == "ce:section" and self.sectionCount > 1):
             self.sectionCount -= 1
-            if (self.sectionCount == 1):
+            if(self.sectionCount == 1):
                 self.newSubsection = False
-        if (self.newSectionTitle and tag == "ce:section-title"):
+        if(self.newSectionTitle and tag == "ce:section-title"):
             self.newSectionTitle = False
-        if (self.newSubsectionTitle and tag == "ce:section-title"):
+        if(self.newSubsectionTitle and tag == "ce:section-title"):
             self.newSubsectionTitle = False
-        if (self.newParagraphFound and tag == "ce:para"):
+        if(self.newParagraphFound and tag == "ce:para"):
             self.newParagraphFound = False
-        if (self.boldParagraphFound and tag == "ce:bold"):
+        if(self.boldParagraphFound and tag == "ce:bold"):
             self.boldParagraphFound = False
-
-        if (self.tableFound and tag == "ce:table"):
+        
+        if(self.tableFound and tag == "ce:table"):
             self.tableFound = False
-        if (self.tableCaptionFound and tag == "ce:caption"):
+        if(self.tableCaptionFound and tag == "ce:caption"):
             self.tableCaptionFound = False
-        if (self.tableCaptionContent and tag == "ce:simple-para"):
+        if(self.tableCaptionContent and tag == "ce:simple-para"):
             self.tableCaptionContent = False
-
-        if (self.tableGridFound and tag == "tgroup"):
+        
+        if(self.tableGridFound and tag == "tgroup"):
             self.tableGridFound = False
-        if (self.tableHeaderFound and tag == "thead"):
+        if(self.tableHeaderFound and tag == "thead"):
             self.tableHeaderFound = False
-        if (self.headerRowFound and tag == "row"):
+        if(self.headerRowFound and tag == "row"):
             self.headerRowFound = False
-        if (self.headerCellFound and tag == "entry"):
+        if(self.headerCellFound and tag == "entry"):
             self.headerCellFound = False
-        if (self.spaceHeaderCell and tag == "cross-ref"):
+        if(self.spaceHeaderCell and tag == "cross-ref"):
             self.spaceHeaderCell = False
-
-        if (self.tableContentFound and tag == "tbody"):
+        
+        if(self.tableContentFound and tag == "tbody"):
             self.tableContentFound = False
-        if (self.contentRowFound and tag == "row"):
+        if(self.contentRowFound and tag == "row"):
             self.contentRowFound = False
-        if (self.contentCellFound and tag == "entry"):
+        if(self.contentCellFound and tag == "entry"):
             self.contentCellFound = False
-        if (self.spaceContentCell and tag == "cross-ref"):
+        if(self.spaceContentCell and tag == "cross-ref"):
             self.spaceContentCell = False
-
-# fileId = 1
-# tableParser = ACSTableParser()
-# # open a file locally, should be retrieved through http request in real programs
-# with open(f"files/janus kinase/file{fileId}.html", encoding="utf-8") as inputFile:
-
-#     try:
-#         tableParser.feed(inputFile.read())
-#     except AssertionError as ae:
-#         pass
-#     abstractText = tableParser.abstractText
-
-#     bodyText = tableParser.bodyText
-#     for section in bodyText.sections:
-#         print("\n\n\n")
-#         print(f"section header: {section.title}")
-#         for paragraph in section.paragraphs:
-#             print(f"sub header: {paragraph.header}")
-#             print()
-#             for content in paragraph.contents:
-#                 print(content)
-#                 print()
-#             print()
-#             for content in paragraph.boldContents:
-#                 print(content)
-#                 print()
-
-#     tables = tableParser.tables
-#     for table in tables:
-#         print("\n\n\n")
-#         print(f"table caption: {table.caption}")
-
-#         print()
-#         print("table descriptions: ")
-#         for description in table.descriptions:
-#             print(description)
-#             print()
-
-#         print()
-#         print("table grid: ")
-#         print(f"column number: {table.grid.columnNum}")
-
-#         print()
-#         print("grid header: ")
-#         for row in table.grid.header:
-#             print("row: ", end="   ")
-#             for cell in row.cells:
-#                 print(cell, end="   ")
-#             print()
-
-#         print()
-#         print("grid body: ")
-#         for row in table.grid.body:
-#             print("row: ", end="   ")
-#             for cell in row.cells:
-#                 print(cell, end="   ")
-#             print()
-
-
-
