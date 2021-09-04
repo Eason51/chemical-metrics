@@ -182,11 +182,11 @@ def load_pre_trained_nlp_model(
 
     target_vocab = fastNLP.Vocabulary(unknown=None, padding=None)
     target_vocab.from_dataset(data_set, field_name='target')
-    ner_model = load_ner_model(source_vocab, target_vocab, device)
-
     target_vocab.add_word_lst(['<unk>'])
     target_vocab.unknown = '<unk>'
     target_vocab.index_dataset(data_set, field_name='target', new_field_name='target')
+
+    ner_model = load_ner_model(source_vocab, target_vocab, device)
 
     result_dict = {
         'headers': headers,
