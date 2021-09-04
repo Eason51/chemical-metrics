@@ -49,27 +49,19 @@ def def_tokenizer(input_str: str):
 
 
 def load_ner_model(source_vocab, target_vocab, device,
-                   file_name='/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved/model/tener_model.bin'):
+                   file_name=
+                   '/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved/model/tener_model_210904.bin'):
     n_heads = 12
     head_dims = 128
     num_layers = 2
-    lr = 0.0001
     attn_type = 'adatrans'
-    optim_type = 'adam'
     trans_dropout = 0.45  # 有可能是0.4
-    batch_size = 24
-
-    char_type = 'adatrans'
 
     pos_embed = None
 
-    model_type = 'elmo'
-    warmup_steps = 0.01
     after_norm = 1
     fc_dropout = 0.4
-    normalize_embed = True
 
-    encoding_type = 'bio'
     d_model = n_heads * head_dims
     dim_feedforward = int(2 * d_model)
 
@@ -190,9 +182,11 @@ def load_pre_trained_nlp_model(
 
     target_vocab = fastNLP.Vocabulary(unknown=None, padding=None)
     target_vocab.from_dataset(data_set, field_name='target')
-    target_vocab.index_dataset(data_set, field_name='target', new_field_name='target')
-
     ner_model = load_ner_model(source_vocab, target_vocab, device)
+
+    target_vocab.add_word_lst(['<unk>'])
+    target_vocab.unknown = '<unk>'
+    target_vocab.index_dataset(data_set, field_name='target', new_field_name='target')
 
     result_dict = {
         'headers': headers,
@@ -248,7 +242,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                                    ['[SEP]'] + tokenize_title_text + tokenize_abstract_text + ['[SEP]']
 
     compound_model_file_name = '/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved' \
-                               '/model/compound_model_210811_new.bin'
+                               '/model/compound_model_210904.bin'
     compound_state_dict = torch.load(compound_model_file_name, map_location='cpu')
     model.load_state_dict(compound_state_dict)
     model.eval()
@@ -329,7 +323,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
 
         try:
             metric_model_file_name = f'/data4/chuhan/github-code/chemical-metrics/train_nlp_new/saved' \
-                                     f'/model/{metric.lower()}_model_210811_new2.bin'
+                                     f'/model/{metric.lower()}_model_210904.bin'
             metric_state_dict = torch.load(metric_model_file_name, map_location='cpu')
         except FileNotFoundError:
             warnings.warn(f'{metric} not found!')
