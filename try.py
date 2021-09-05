@@ -2326,10 +2326,12 @@ class ACS:
                 
                 valueUnit = ""
                 valueColNum = -1
-                for row in table.grid.header:
 
+                for row in table.grid.body:
                     print("row")
                     print(row.cells)
+
+                for row in table.grid.header:
 
                     if(valueColNum != -1):
                         break
@@ -2366,7 +2368,8 @@ class ACS:
                                 valueColNum = colNum
                                 break
                         elif(index == -1 and valueName == "t_half"):
-                            if(("half" in cell and "life" in cell) or ("t" in cell and "1/2" in cell)):
+                            if(("half" in cell.lower() and "life" in cell.lower()) 
+                                or ("t" in cell.lower() and "1/2" in cell.lower())):
                                 valueColNum = colNum
                                 break
                         
