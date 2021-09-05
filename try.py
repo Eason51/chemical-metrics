@@ -2096,10 +2096,10 @@ class ACS:
             vitroValue = ""
             vivoValue = ""
 
-            print(f"valueName: {valueName}")
+            print(f"\n\nvalueName: {valueName}")
             for table in self.tables:
   
-                print(f"title: {table.caption}")
+                print(f"\n\ntitle: {table.caption}")
                 titleFound = False
                 index = table.caption.find(valueName)
                 if(index != -1):
@@ -2202,7 +2202,7 @@ class ACS:
                     rowNum += 1
 
                 
-                print(f"2: compoundColNum: {compoundColNum}")
+                print(f"compounRowNum: {compoundRowNum}")
                 
 
                 if(compoundRowNum == -1):
