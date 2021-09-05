@@ -1213,7 +1213,13 @@ class ACS:
                         break
                     compound += token
                 
-                if(compound and compoundName(compound)):
+                hasDigit = False
+                for c in compound:
+                    if(c.isdigit()):
+                        hasDigit = True
+                        break
+
+                if(compound and compoundName(compound) and hasDigit):
                     self.compound = compound
                     self.nlpCompound = True
             
@@ -1277,6 +1283,11 @@ class ACS:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower()):
                             unit = token
@@ -1361,6 +1372,11 @@ class ACS:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower() or "mm" in token.lower()
                             or "ng" in token.lower() or "μg" in token.lower() or "mg" in token.lower()):
@@ -1404,6 +1420,11 @@ class ACS:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("min" in token.lower() or "h" in token.lower()):
                             unit = token
@@ -1436,6 +1457,11 @@ class ACS:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                     if("g" in token.lower() and "l" in token.lower() and "/" in token.lower()):
                         unit = token
@@ -1471,6 +1497,11 @@ class ACS:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                         break
  
@@ -2332,17 +2363,12 @@ class ACS:
                                 break
 
                         if(index == -1 and valueName == "bioavailability"):
-                            index1 = cell.find("F")
-                            index2 = cell.find("(%)")
-                            if(index1 != -1 and index2 != -1 and index2 > index1):
+                            if("F" in cell and "%" in cell):
                                 valueColNum = colNum
                                 break
                         elif(index == -1 and valueName == "t_half"):
-                            index1 = cell.lower().find("t")
-                            index2 = cell.find("1/2")
-                            index3 = cell.find("(h)")
-                            if(index1 != -1 and index2 != -1 and index3 != -1
-                            and index1 < index2 and index2 < index3):
+                            if(("half" in cell.lower() and "life" in cell.lower()) 
+                                or ("t" in cell.lower() and "1/2" in cell.lower())):
                                 valueColNum = colNum
                                 break
                         
@@ -2378,6 +2404,8 @@ class ACS:
                 compoundRowNum = -1
                 rowNum = 0
                 for row in table.grid.body:
+                    if(compoundRowNum != -1):
+                        break
                     for cell in row.cells:
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
@@ -3347,8 +3375,14 @@ class ScienceDirect:
                     if(token == "</b>"):
                         break
                     compound += token
+
+                hasDigit = False
+                for c in compound:
+                    if(c.isdigit()):
+                        hasDigit = True
+                        break
                 
-                if(compound and compoundName(compound)):
+                if(compound and compoundName(compound) and hasDigit):
                     self.compound = compound
                     self.nlpCompound = True
             
@@ -3412,6 +3446,11 @@ class ScienceDirect:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower()):
                             unit = token
@@ -3496,6 +3535,11 @@ class ScienceDirect:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower() or "mm" in token.lower()
                             or "ng" in token.lower() or "μg" in token.lower() or "mg" in token.lower()):
@@ -3539,6 +3583,11 @@ class ScienceDirect:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("min" in token.lower() or "h" in token.lower()):
                             unit = token
@@ -3571,6 +3620,11 @@ class ScienceDirect:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                     if("g" in token.lower() and "l" in token.lower() and "/" in token.lower()):
                         unit = token
@@ -3606,6 +3660,11 @@ class ScienceDirect:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                         break
  
@@ -4462,17 +4521,12 @@ class ScienceDirect:
                                 break
 
                         if(index == -1 and valueName == "bioavailability"):
-                            index1 = cell.find("F")
-                            index2 = cell.find("(%)")
-                            if(index1 != -1 and index2 != -1 and index2 > index1):
+                            if("F" in cell and "%" in cell):
                                 valueColNum = colNum
                                 break
                         elif(index == -1 and valueName == "t_half"):
-                            index1 = cell.lower().find("t")
-                            index2 = cell.find("1/2")
-                            index3 = cell.find("(h)")
-                            if(index1 != -1 and index2 != -1 and index3 != -1
-                            and index1 < index2 and index2 < index3):
+                            if(("half" in cell.lower() and "life" in cell.lower()) 
+                                or ("t" in cell.lower() and "1/2" in cell.lower())):
                                 valueColNum = colNum
                                 break
                         
@@ -4508,6 +4562,8 @@ class ScienceDirect:
                 compoundRowNum = -1
                 rowNum = 0
                 for row in table.grid.body:
+                    if(compoundRowNum != -1):
+                        break
                     for cell in row.cells:
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
