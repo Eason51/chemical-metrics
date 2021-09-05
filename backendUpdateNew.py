@@ -1194,7 +1194,8 @@ class ACS:
 
             global outputArr
 
-            outputArr.append(nlpDict)
+            jsonString = json.dumps(nlpDict)
+            outputArr.append(jsonString)
 
             print(f"doi: {self.doi}")
             print(nlpDict)
@@ -3333,7 +3334,8 @@ class ScienceDirect:
             nlpDict = nlpDict["single_dict"]
             
             global outputArr
-            outputArr.append(nlpDict)
+            jsonString = json.dumps(nlpDict)
+            outputArr.append(jsonString)
             print("3.1.3.3")
             if("compound" in nlpDict):
                 
@@ -4871,7 +4873,8 @@ def all_to_json(targetName, fileAmount):
 
         print("start")
         outputArr.append("\n")
-        outputArr.append(articleDict)
+        jsonString = json.dumps(articleDict)
+        outputArr.append(jsonString)
         try:    
             check_json_value_format(articleDict)
         except Exception as e:
@@ -4991,7 +4994,8 @@ def all_to_json(targetName, fileAmount):
 
     #     print("l")
     #     outputArr.append("\n")
-    #     outputArr.append(articleDict)
+    #     jsonString = json.dumps(articleDict)
+    #     outputArr.append(jsonString)
     #     try:
     #         check_json_value_format(articleDict)
     #     except Exception as e:
@@ -5090,6 +5094,7 @@ if __name__ == '__main__':
         with open("output.txt", "w", encoding="utf-8") as outputFile:
             for msg in outputArr:
                 outputFile.write(msg)
+                outputFile.write("\n")
 
     except Exception as e:
         print(e)
