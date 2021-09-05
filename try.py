@@ -2220,10 +2220,7 @@ class ACS:
                 or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
                     vivoFound = True
 
-                print(f"medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
-
-                if(not mediFound and not vitroFound and not vivoFound):
-                    mediFound = True
+                print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
 
                 targetColNum = -1
@@ -2256,16 +2253,20 @@ class ACS:
 
 
                 value = ""
+                extractColNum = -1
                 if(titleFound):
                     if(targetColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[targetColNum]
+                        extractColNum = targetColNum
 
                     else:
                         if(valueColNum != -1):
                             value = table.grid.body[compoundRowNum].cells[valueColNum]
+                            extractColNum = valueColNum
                 else:
                     if(valueColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[valueColNum]
+                        extractColNum = valueColNum
                 
                 if(valueColNum == -1 and targetColNum == -1 and vitroFound 
                 and table.grid.columnNum > 1):
@@ -2275,6 +2276,7 @@ class ACS:
                         if(colNum == compoundColNum):
                             continue
                         value = table.grid.body[compoundRowNum].cells[colNum]
+                        extractColNum = colNum
                         break
 
                 
@@ -2298,7 +2300,32 @@ class ACS:
                 if(valueUnit):
                     if(valueUnit == "micro"):
                         value = "μm" + value
+                
+                
+                if(not mediFound and not vitroFound and not vivoFound):
+                    for row in table.grid.header:
+                        cell = ""
+                        if(extractColNum >= len(row.cells)):
+                            cell = row.cells[-1]
+                        else:
+                            cell = row.cells[extractColNum]
+                        
+                        if("enzyme" in cell.lower() or "enzymatic" in cell.lower()):
+                            mediFound = True
+                            break
+                        elif("cell" in cell.lower() or "cellular" in cell.lower() 
+                        or "vitro" in cell.lower()):
+                            vitroFound = True
+                            break
+                        elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                            vivoFound = True
+                            break
+                        
+                print(f"2: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
+                if(not mediFound and not vitroFound and not vivoFound):
+                    mediFound = True
                 
                 if(mediFound):
                     mediValue = value
