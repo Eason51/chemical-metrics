@@ -2328,6 +2328,9 @@ class ACS:
                 valueColNum = -1
                 for row in table.grid.header:
 
+                    print("row")
+                    print(row.cells)
+
                     if(valueColNum != -1):
                         break
 
@@ -2359,17 +2362,11 @@ class ACS:
                                 break
 
                         if(index == -1 and valueName == "bioavailability"):
-                            index1 = cell.find("F")
-                            index2 = cell.find("(%)")
-                            if(index1 != -1 and index2 != -1 and index2 > index1):
+                            if("F" in cell and "%" in cell):
                                 valueColNum = colNum
                                 break
                         elif(index == -1 and valueName == "t_half"):
-                            index1 = cell.lower().find("t")
-                            index2 = cell.find("1/2")
-                            index3 = cell.find("(h)")
-                            if(index1 != -1 and index2 != -1 and index3 != -1
-                            and index1 < index2 and index2 < index3):
+                            if(("half" in cell and "life" in cell) or ("t" in cell and "1/2" in cell)):
                                 valueColNum = colNum
                                 break
                         
