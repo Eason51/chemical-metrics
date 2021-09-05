@@ -2100,10 +2100,10 @@ class ACS:
             vitroValue = ""
             vivoValue = ""
 
-
+            print(f"\n\nvalueName: {valueName}")
             for table in self.tables:
   
-               
+                print(f"\n\ntitle: {table.caption}")
                 titleFound = False
                 index = table.caption.find(valueName)
                 if(index != -1):
@@ -2115,7 +2115,7 @@ class ACS:
                         else:
                             if(not table.caption[index + len(valueName)].isalpha()):
                                 titleFound = True
-                
+                print(f"titleFound: {titleFound}")
 
                 valueColNum = -1
                 valueUnit = ""
@@ -2153,6 +2153,8 @@ class ACS:
 
 
                         colNum += 1
+                
+                print(f"valueColNum: {valueColNum}")
 
 
                 if(not titleFound and valueColNum == -1):
@@ -2178,6 +2180,8 @@ class ACS:
                         
                         colNum += 1
                 
+                print(f"1: compoundColNum: {compoundColNum}")
+                
 
                 compoundRowNum = -1
                 if(compoundColNum == -1):
@@ -2200,6 +2204,9 @@ class ACS:
 
                         colNum += 1
                     rowNum += 1
+
+                
+                print(f"compounRowNum: {compoundRowNum}")
                 
 
                 if(compoundRowNum == -1):
@@ -2217,9 +2224,7 @@ class ACS:
                 or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
                     vivoFound = True
 
-
-                if(not mediFound and not vitroFound and not vivoFound):
-                    mediFound = True
+                print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
 
                 targetColNum = -1
@@ -2239,6 +2244,9 @@ class ACS:
 
                             colNum += 1
 
+                
+                print(f"targetColNum: {targetColNum}")
+
 
                 if(valueColNum == -1 and targetColNum == -1):
                     if(not vitroFound):
@@ -2249,16 +2257,20 @@ class ACS:
 
 
                 value = ""
+                extractColNum = -1
                 if(titleFound):
                     if(targetColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[targetColNum]
+                        extractColNum = targetColNum
 
                     else:
                         if(valueColNum != -1):
                             value = table.grid.body[compoundRowNum].cells[valueColNum]
+                            extractColNum = valueColNum
                 else:
                     if(valueColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[valueColNum]
+                        extractColNum = valueColNum
                 
                 if(valueColNum == -1 and targetColNum == -1 and vitroFound 
                 and table.grid.columnNum > 1):
@@ -2268,6 +2280,7 @@ class ACS:
                         if(colNum == compoundColNum):
                             continue
                         value = table.grid.body[compoundRowNum].cells[colNum]
+                        extractColNum = colNum
                         break
 
                 
@@ -2291,7 +2304,32 @@ class ACS:
                 if(valueUnit):
                     if(valueUnit == "micro"):
                         value = "μm" + value
+                
+                
+                if(not mediFound and not vitroFound and not vivoFound):
+                    for row in table.grid.header:
+                        cell = ""
+                        if(extractColNum >= len(row.cells)):
+                            cell = row.cells[-1]
+                        else:
+                            cell = row.cells[extractColNum]
+                        
+                        if("enzyme" in cell.lower() or "enzymatic" in cell.lower()):
+                            mediFound = True
+                            break
+                        elif("cell" in cell.lower() or "cellular" in cell.lower() 
+                        or "vitro" in cell.lower()):
+                            vitroFound = True
+                            break
+                        elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                            vivoFound = True
+                            break
+                        
+                print(f"2: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
+                if(not mediFound and not vitroFound and not vivoFound):
+                    mediFound = True
                 
                 if(mediFound):
                     mediValue = value
@@ -2302,6 +2340,7 @@ class ACS:
 
 
             return[mediValue, vitroValue, vivoValue]
+
 
 
 
@@ -4257,10 +4296,10 @@ class ScienceDirect:
             vitroValue = ""
             vivoValue = ""
 
-
+            print(f"\n\nvalueName: {valueName}")
             for table in self.tables:
   
-               
+                print(f"\n\ntitle: {table.caption}")
                 titleFound = False
                 index = table.caption.find(valueName)
                 if(index != -1):
@@ -4272,7 +4311,7 @@ class ScienceDirect:
                         else:
                             if(not table.caption[index + len(valueName)].isalpha()):
                                 titleFound = True
-                
+                print(f"titleFound: {titleFound}")
 
                 valueColNum = -1
                 valueUnit = ""
@@ -4310,6 +4349,8 @@ class ScienceDirect:
 
 
                         colNum += 1
+                
+                print(f"valueColNum: {valueColNum}")
 
 
                 if(not titleFound and valueColNum == -1):
@@ -4335,6 +4376,8 @@ class ScienceDirect:
                         
                         colNum += 1
                 
+                print(f"1: compoundColNum: {compoundColNum}")
+                
 
                 compoundRowNum = -1
                 if(compoundColNum == -1):
@@ -4357,6 +4400,9 @@ class ScienceDirect:
 
                         colNum += 1
                     rowNum += 1
+
+                
+                print(f"compounRowNum: {compoundRowNum}")
                 
 
                 if(compoundRowNum == -1):
@@ -4374,9 +4420,7 @@ class ScienceDirect:
                 or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
                     vivoFound = True
 
-
-                if(not mediFound and not vitroFound and not vivoFound):
-                    mediFound = True
+                print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
 
                 targetColNum = -1
@@ -4396,6 +4440,9 @@ class ScienceDirect:
 
                             colNum += 1
 
+                
+                print(f"targetColNum: {targetColNum}")
+
 
                 if(valueColNum == -1 and targetColNum == -1):
                     if(not vitroFound):
@@ -4406,16 +4453,20 @@ class ScienceDirect:
 
 
                 value = ""
+                extractColNum = -1
                 if(titleFound):
                     if(targetColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[targetColNum]
+                        extractColNum = targetColNum
 
                     else:
                         if(valueColNum != -1):
                             value = table.grid.body[compoundRowNum].cells[valueColNum]
+                            extractColNum = valueColNum
                 else:
                     if(valueColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[valueColNum]
+                        extractColNum = valueColNum
                 
                 if(valueColNum == -1 and targetColNum == -1 and vitroFound 
                 and table.grid.columnNum > 1):
@@ -4425,6 +4476,7 @@ class ScienceDirect:
                         if(colNum == compoundColNum):
                             continue
                         value = table.grid.body[compoundRowNum].cells[colNum]
+                        extractColNum = colNum
                         break
 
                 
@@ -4448,7 +4500,32 @@ class ScienceDirect:
                 if(valueUnit):
                     if(valueUnit == "micro"):
                         value = "μm" + value
+                
+                
+                if(not mediFound and not vitroFound and not vivoFound):
+                    for row in table.grid.header:
+                        cell = ""
+                        if(extractColNum >= len(row.cells)):
+                            cell = row.cells[-1]
+                        else:
+                            cell = row.cells[extractColNum]
+                        
+                        if("enzyme" in cell.lower() or "enzymatic" in cell.lower()):
+                            mediFound = True
+                            break
+                        elif("cell" in cell.lower() or "cellular" in cell.lower() 
+                        or "vitro" in cell.lower()):
+                            vitroFound = True
+                            break
+                        elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                            vivoFound = True
+                            break
+                        
+                print(f"2: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
+                if(not mediFound and not vitroFound and not vivoFound):
+                    mediFound = True
                 
                 if(mediFound):
                     mediValue = value
@@ -4833,161 +4910,42 @@ def all_to_json(targetName, fileAmount):
 
     # addressArr =  ACS.get_article_URLs(queryResponse)
     
-    print(2)
-    addressArr = find_index.find_acs_article_list(targetName)
-    (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
+    # print(2)
+    # addressArr = find_index.find_acs_article_list(targetName)
+    # (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
-    dateArr.sort()
-    result = {}
-    result["target_name"] = targetName
-    result["paper_count"] = len(addressArr)
-    result["paper_count_year"] = dateArr
-    result["drug_molecule_count"] = drug_molecule_count
-    result["drug_molecule_paper"] = []
+    # dateArr.sort()
+    # result = {}
+    # result["target_name"] = targetName
+    # result["paper_count"] = len(addressArr)
+    # result["paper_count_year"] = dateArr
+    # result["drug_molecule_count"] = drug_molecule_count
+    # result["drug_molecule_paper"] = []
 
     
-    print(3)
-    i = 0
-    for articleURL in tableAddressArr:
+    # print(3)
+    # i = 0
+    # for articleURL in tableAddressArr:
 
         
-        print(f"\n\nrticleURL: {articleURL}")
-        outputArr.append(f"articleURL: {articleURL}")
-        print(3.1)
-        article = None
-        try:
-            article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
-        except Exception as e:
-            print(e)
-            traceback.print_tb(e.__traceback__)
-            raise Exception("error occured")
-
-        print(3.2)
-        if(not article.compound):
-            result["drug_molecule_count"] -= 1
-            print(3.3)
-            continue
-        
-        print(3.4)
-        articleDict = {}
-        articleDict["id"] = i
-        articleDict["paper_title"] = article.titleText
-        articleDict["paper_author"] = article.authorArr
-        articleDict["paper_year"] = article.year
-        articleDict["paper_institution"] = article.institution
-        articleDict["paper_cited"] = article.paperCited
-        articleDict["doi"] = article.doi
-        articleDict["paper_journal"] = article.journal
-        articleDict["paper_abstract_image"] = article.imgArr[0]
-        articleDict["compound_count"] = len(article.compoundSet)
-        articleDict["compound_name"] = article.compound
-        articleDict["compound_name_drug"] = article.compoundNameDrug
-        articleDict["compound_smiles"] = simlesDict[articleURL]
-
-        if(not simlesDict[articleURL]):
-            acsSmilesArr.append([article.doi, articleURL])
-
-        medicinalDict = {}
-        medicinalDict["Ki"] = article.enzymeKi
-        medicinalDict["Kd"] = article.enzymeKd
-        medicinalDict["IC50"] = article.enzymeIc50
-        medicinalDict["selectivity"] = article.enzymeSelectivity
-        vitroDict = {}
-        vitroDict["Ki"] = article.cellKi
-        vitroDict["Kd"] = article.cellKd
-        vitroDict["IC50"] = article.cellIc50
-        vitroDict["EC50"] = article.ec50
-        vitroDict["selectivity"] = article.cellSelectivity
-        vitroDict["hERG"] = article.herg
-        vitroDict["solubility"] = article.cellSolubility
-        vivoDict = {}
-        vivoDict["ED50"] = article.ed50
-        vivoDict["AUC"] = article.auc
-        vivoDict["solubility"] = article.vivoSolubility
-        vivoDict["t_half"] = article.tHalf
-        vivoDict["bioavailability"] = article.bioavailability
-
-        articleDict["medicinal_chemistry_metrics"] = medicinalDict
-        articleDict["pharm_metrics_vitro"] = vitroDict
-        articleDict["pharm_metrics_vivo"] = vivoDict
-
-        print(3.5)
-        try:
-            if re.search('[A-Z]', articleDict["compound_name_drug"]):
-                r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
-                if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
-                    articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
-                else:
-                    articleDict["clinical_statistics"] = {}
-            else:
-                articleDict["clinical_statistics"] = {}
-        except Exception as e:
-            print(e)
-            traceback.print_tb(e.__traceback__)
-            raise Exception("error occured")
-        
-
-        print("start")
-        outputArr.append("\n")
-        jsonString = json.dumps(articleDict, ensure_ascii=False)
-        outputArr.append(jsonString)
-        try:    
-            check_json_value_format(articleDict)
-        except Exception as e:
-            print(articleDict)
-            print(e)
-            # raise Exception("exception occured")
-        print("end")
-
-        result["drug_molecule_paper"].append(articleDict)
-        
-        print("3.6")
-        i += 1
-
-
-    # print("a")
-    # ScienceDirect.TARGET = targetName.lower()
-    # ScienceDirect.initialize_conditions(targetName.lower())
-
-    # print("b")
-    # ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi(targetName)
-
-    # print("c")
-    # result["paper_count"] += paper_count
-    # result["drug_molecule_count"] += drug_molecule_count
-    # for SDYearCount in paper_count_year:
-    #     yearFound = False
-    #     for ACSyearCount in result["paper_count_year"]:
-    #         if(ACSyearCount[0] > SDYearCount[0]):
-    #             break
-    #         elif(ACSyearCount[0] < SDYearCount[0]):
-    #             continue
-    #         else:
-    #             ACSyearCount[1] += SDYearCount[1]
-    #             yearFound = True
-        
-    #     if(not yearFound):
-    #         result["paper_count_year"].append(SDYearCount)
-
-    # print("d")
-    # for articleDOI in doiArr:
-        
-    #     outputArr.append(f"\n\narticleDOI: {articleDOI}")
-    #     print(f"articleDOI: {articleDOI}")
+    #     print(f"\n\nrticleURL: {articleURL}")
+    #     outputArr.append(f"articleURL: {articleURL}")
+    #     print(3.1)
+    #     article = None
     #     try:
-    #         print("e")
-    #         article = ScienceDirect.ScienceDirectArticle(articleDOI)
+    #         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
     #     except Exception as e:
-    #         print("exception: ")
     #         print(e)
+    #         traceback.print_tb(e.__traceback__)
+    #         raise Exception("error occured")
 
-    #     print("f")
-    #     if(not article.valid or not article.compound):
-
+    #     print(3.2)
+    #     if(not article.compound):
     #         result["drug_molecule_count"] -= 1
+    #         print(3.3)
     #         continue
-
-    #     print("g")
+        
+    #     print(3.4)
     #     articleDict = {}
     #     articleDict["id"] = i
     #     articleDict["paper_title"] = article.titleText
@@ -4997,14 +4955,14 @@ def all_to_json(targetName, fileAmount):
     #     articleDict["paper_cited"] = article.paperCited
     #     articleDict["doi"] = article.doi
     #     articleDict["paper_journal"] = article.journal
-    #     articleDict["paper_abstract_image"] = article.imgURL
+    #     articleDict["paper_abstract_image"] = article.imgArr[0]
     #     articleDict["compound_count"] = len(article.compoundSet)
     #     articleDict["compound_name"] = article.compound
     #     articleDict["compound_name_drug"] = article.compoundNameDrug
-    #     articleDict["compound_smiles"] = article.simles
+    #     articleDict["compound_smiles"] = simlesDict[articleURL]
 
-    #     if(not article.simles):
-    #         sdSmilesArr.append([article.doi])
+    #     if(not simlesDict[articleURL]):
+    #         acsSmilesArr.append([article.doi, articleURL])
 
     #     medicinalDict = {}
     #     medicinalDict["Ki"] = article.enzymeKi
@@ -5030,14 +4988,11 @@ def all_to_json(targetName, fileAmount):
     #     articleDict["pharm_metrics_vitro"] = vitroDict
     #     articleDict["pharm_metrics_vivo"] = vivoDict
 
-    #     print("h")
+    #     print(3.5)
     #     try:
-    #         if re.search('[A-Z]', articleDict["compound_name"]):
-    #             print("i")
-    #             r = clinical.getloadClinicalData(articleDict["compound_name"])
-    #             print("j")
+    #         if re.search('[A-Z]', articleDict["compound_name_drug"]):
+    #             r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
     #             if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
-    #                 print("k")
     #                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
     #             else:
     #                 articleDict["clinical_statistics"] = {}
@@ -5045,23 +5000,145 @@ def all_to_json(targetName, fileAmount):
     #             articleDict["clinical_statistics"] = {}
     #     except Exception as e:
     #         print(e)
-    #         traceback.print_tb(e)
+    #         traceback.print_tb(e.__traceback__)
     #         raise Exception("error occured")
+        
 
-    #     print("l")
+    #     print("start")
     #     outputArr.append("\n")
     #     jsonString = json.dumps(articleDict, ensure_ascii=False)
     #     outputArr.append(jsonString)
-    #     try:
+    #     try:    
     #         check_json_value_format(articleDict)
     #     except Exception as e:
     #         print(articleDict)
     #         print(e)
+    #         # raise Exception("exception occured")
+    #     print("end")
 
-    #     print("m")
     #     result["drug_molecule_paper"].append(articleDict)
-
+        
+    #     print("3.6")
     #     i += 1
+
+
+    print("a")
+    ScienceDirect.TARGET = targetName.lower()
+    ScienceDirect.initialize_conditions(targetName.lower())
+
+    print("b")
+    ((paper_count, drug_molecule_count), doiArr, paper_count_year) = ScienceDirect.retrieve_article_amount_and_doi(targetName)
+
+    print("c")
+    result["paper_count"] += paper_count
+    result["drug_molecule_count"] += drug_molecule_count
+    for SDYearCount in paper_count_year:
+        yearFound = False
+        for ACSyearCount in result["paper_count_year"]:
+            if(ACSyearCount[0] > SDYearCount[0]):
+                break
+            elif(ACSyearCount[0] < SDYearCount[0]):
+                continue
+            else:
+                ACSyearCount[1] += SDYearCount[1]
+                yearFound = True
+        
+        if(not yearFound):
+            result["paper_count_year"].append(SDYearCount)
+
+    print("d")
+    for articleDOI in doiArr:
+        
+        outputArr.append(f"\n\narticleDOI: {articleDOI}")
+        print(f"articleDOI: {articleDOI}")
+        try:
+            print("e")
+            article = ScienceDirect.ScienceDirectArticle(articleDOI)
+        except Exception as e:
+            print("exception: ")
+            print(e)
+
+        print("f")
+        if(not article.valid or not article.compound):
+
+            result["drug_molecule_count"] -= 1
+            continue
+
+        print("g")
+        articleDict = {}
+        articleDict["id"] = i
+        articleDict["paper_title"] = article.titleText
+        articleDict["paper_author"] = article.authorArr
+        articleDict["paper_year"] = article.year
+        articleDict["paper_institution"] = article.institution
+        articleDict["paper_cited"] = article.paperCited
+        articleDict["doi"] = article.doi
+        articleDict["paper_journal"] = article.journal
+        articleDict["paper_abstract_image"] = article.imgURL
+        articleDict["compound_count"] = len(article.compoundSet)
+        articleDict["compound_name"] = article.compound
+        articleDict["compound_name_drug"] = article.compoundNameDrug
+        articleDict["compound_smiles"] = article.simles
+
+        if(not article.simles):
+            sdSmilesArr.append([article.doi])
+
+        medicinalDict = {}
+        medicinalDict["Ki"] = article.enzymeKi
+        medicinalDict["Kd"] = article.enzymeKd
+        medicinalDict["IC50"] = article.enzymeIc50
+        medicinalDict["selectivity"] = article.enzymeSelectivity
+        vitroDict = {}
+        vitroDict["Ki"] = article.cellKi
+        vitroDict["Kd"] = article.cellKd
+        vitroDict["IC50"] = article.cellIc50
+        vitroDict["EC50"] = article.ec50
+        vitroDict["selectivity"] = article.cellSelectivity
+        vitroDict["hERG"] = article.herg
+        vitroDict["solubility"] = article.cellSolubility
+        vivoDict = {}
+        vivoDict["ED50"] = article.ed50
+        vivoDict["AUC"] = article.auc
+        vivoDict["solubility"] = article.vivoSolubility
+        vivoDict["t_half"] = article.tHalf
+        vivoDict["bioavailability"] = article.bioavailability
+
+        articleDict["medicinal_chemistry_metrics"] = medicinalDict
+        articleDict["pharm_metrics_vitro"] = vitroDict
+        articleDict["pharm_metrics_vivo"] = vivoDict
+
+        print("h")
+        try:
+            if re.search('[A-Z]', articleDict["compound_name"]):
+                print("i")
+                r = clinical.getloadClinicalData(articleDict["compound_name"])
+                print("j")
+                if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
+                    print("k")
+                    articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+                else:
+                    articleDict["clinical_statistics"] = {}
+            else:
+                articleDict["clinical_statistics"] = {}
+        except Exception as e:
+            print(e)
+            traceback.print_tb(e)
+            raise Exception("error occured")
+
+        print("l")
+        outputArr.append("\n")
+        jsonString = json.dumps(articleDict, ensure_ascii=False)
+        outputArr.append(jsonString)
+        try:
+            check_json_value_format(articleDict)
+        except Exception as e:
+            print(articleDict)
+            print(e)
+
+        print("m")
+        result["drug_molecule_paper"].append(articleDict)
+
+        i += 1
 
 
 
