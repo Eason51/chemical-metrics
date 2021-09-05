@@ -4773,7 +4773,7 @@ def check_json_value_format(articleDict):
 if(True):
     ACS.TARGET = TARGETNAME
 
-    articleURL = 0
+    articleURL = 1
 
     reader = easyocr.Reader(["en"], gpu=False)
     positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
