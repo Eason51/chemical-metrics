@@ -1194,7 +1194,7 @@ class ACS:
 
             global outputArr
 
-            jsonString = json.dumps(nlpDict)
+            jsonString = json.dumps(nlpDict, ensure_ascii=False)
             outputArr.append(jsonString)
 
             print(f"doi: {self.doi}")
@@ -3334,7 +3334,7 @@ class ScienceDirect:
             nlpDict = nlpDict["single_dict"]
             
             global outputArr
-            jsonString = json.dumps(nlpDict)
+            jsonString = json.dumps(nlpDict, ensure_ascii=False)
             outputArr.append(jsonString)
             print("3.1.3.3")
             if("compound" in nlpDict):
@@ -4873,7 +4873,7 @@ def all_to_json(targetName, fileAmount):
 
         print("start")
         outputArr.append("\n")
-        jsonString = json.dumps(articleDict)
+        jsonString = json.dumps(articleDict, ensure_ascii=False)
         outputArr.append(jsonString)
         try:    
             check_json_value_format(articleDict)
@@ -4994,7 +4994,7 @@ def all_to_json(targetName, fileAmount):
 
     #     print("l")
     #     outputArr.append("\n")
-    #     jsonString = json.dumps(articleDict)
+    #     jsonString = json.dumps(articleDict, ensure_ascii=False)
     #     outputArr.append(jsonString)
     #     try:
     #         check_json_value_format(articleDict)
