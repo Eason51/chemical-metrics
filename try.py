@@ -2096,10 +2096,10 @@ class ACS:
             vitroValue = ""
             vivoValue = ""
 
-
+            print(f"valueName: {valueName}")
             for table in self.tables:
   
-               
+                print(f"title: {table.caption}")
                 titleFound = False
                 index = table.caption.find(valueName)
                 if(index != -1):
@@ -2111,7 +2111,7 @@ class ACS:
                         else:
                             if(not table.caption[index + len(valueName)].isalpha()):
                                 titleFound = True
-                
+                print(f"titleFound: {titleFound}")
 
                 valueColNum = -1
                 valueUnit = ""
@@ -2149,6 +2149,8 @@ class ACS:
 
 
                         colNum += 1
+                
+                print(f"valueColNum: {valueColNum}")
 
 
                 if(not titleFound and valueColNum == -1):
@@ -2174,6 +2176,8 @@ class ACS:
                         
                         colNum += 1
                 
+                print(f"1: compoundColNum: {compoundColNum}")
+                
 
                 compoundRowNum = -1
                 if(compoundColNum == -1):
@@ -2196,6 +2200,9 @@ class ACS:
 
                         colNum += 1
                     rowNum += 1
+
+                
+                print(f"2: compoundColNum: {compoundColNum}")
                 
 
                 if(compoundRowNum == -1):
@@ -2213,6 +2220,7 @@ class ACS:
                 or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
                     vivoFound = True
 
+                print(f"medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
                 if(not mediFound and not vitroFound and not vivoFound):
                     mediFound = True
@@ -2234,6 +2242,9 @@ class ACS:
                                 break
 
                             colNum += 1
+
+                
+                print(f"targetColNum: {targetColNum}")
 
 
                 if(valueColNum == -1 and targetColNum == -1):
