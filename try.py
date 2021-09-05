@@ -2327,10 +2327,6 @@ class ACS:
                 valueUnit = ""
                 valueColNum = -1
 
-                for row in table.grid.body:
-                    print("row")
-                    print(row.cells)
-
                 for row in table.grid.header:
 
                     if(valueColNum != -1):
@@ -2404,7 +2400,11 @@ class ACS:
                 
                 compoundRowNum = -1
                 rowNum = 0
+                print("compound")
+                print(self.compound)
                 for row in table.grid.body:
+                    print("row")
+                    print(row.cells)
                     for cell in row.cells:
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
