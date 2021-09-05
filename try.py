@@ -2092,6 +2092,8 @@ class ACS:
                 valueUnit = ""
                 for row in table.grid.header:
                     
+                    print("row: ")
+                    print(row.cells)
                     if(valueColNum != -1):
                         break
                     
