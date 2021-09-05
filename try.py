@@ -1279,6 +1279,11 @@ class ACS:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower()):
                             unit = token
@@ -1363,6 +1368,11 @@ class ACS:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower() or "mm" in token.lower()
                             or "ng" in token.lower() or "μg" in token.lower() or "mg" in token.lower()):
@@ -1406,6 +1416,11 @@ class ACS:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("min" in token.lower() or "h" in token.lower()):
                             unit = token
@@ -1438,6 +1453,11 @@ class ACS:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                     if("g" in token.lower() and "l" in token.lower() and "/" in token.lower()):
                         unit = token
@@ -1473,6 +1493,11 @@ class ACS:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                         break
  
@@ -2092,8 +2117,6 @@ class ACS:
                 valueUnit = ""
                 for row in table.grid.header:
                     
-                    print("row: ")
-                    print(row.cells)
                     if(valueColNum != -1):
                         break
                     
@@ -3423,6 +3446,11 @@ class ScienceDirect:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower()):
                             unit = token
@@ -3507,6 +3535,11 @@ class ScienceDirect:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("nm" in token.lower() or "μm" in token.lower() or "mm" in token.lower()
                             or "ng" in token.lower() or "μg" in token.lower() or "mg" in token.lower()):
@@ -3550,6 +3583,11 @@ class ScienceDirect:
                         elif(valueFound and (token.isdigit() or token == ".")):
                             value += token
                         elif(valueFound and not token.isdigit()):
+                            for c in token:
+                                if(c.isdigit() or c == "."):
+                                    value += c
+                                else:
+                                    break
                             valueFound = False
                         if("min" in token.lower() or "h" in token.lower()):
                             unit = token
@@ -3582,6 +3620,11 @@ class ScienceDirect:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                     if("g" in token.lower() and "l" in token.lower() and "/" in token.lower()):
                         unit = token
@@ -3617,6 +3660,11 @@ class ScienceDirect:
                     elif(valueFound and (token.isdigit() or token == ".")):
                         value += token
                     elif(valueFound and not token.isdigit()):
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                value += c
+                            else:
+                                break
                         valueFound = False
                         break
  
