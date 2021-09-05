@@ -4293,10 +4293,10 @@ class ScienceDirect:
             vitroValue = ""
             vivoValue = ""
 
-
+            print(f"\n\nvalueName: {valueName}")
             for table in self.tables:
   
-               
+                print(f"\n\ntitle: {table.caption}")
                 titleFound = False
                 index = table.caption.find(valueName)
                 if(index != -1):
@@ -4308,7 +4308,7 @@ class ScienceDirect:
                         else:
                             if(not table.caption[index + len(valueName)].isalpha()):
                                 titleFound = True
-                
+                print(f"titleFound: {titleFound}")
 
                 valueColNum = -1
                 valueUnit = ""
@@ -4346,6 +4346,8 @@ class ScienceDirect:
 
 
                         colNum += 1
+                
+                print(f"valueColNum: {valueColNum}")
 
 
                 if(not titleFound and valueColNum == -1):
@@ -4371,6 +4373,8 @@ class ScienceDirect:
                         
                         colNum += 1
                 
+                print(f"1: compoundColNum: {compoundColNum}")
+                
 
                 compoundRowNum = -1
                 if(compoundColNum == -1):
@@ -4393,6 +4397,9 @@ class ScienceDirect:
 
                         colNum += 1
                     rowNum += 1
+
+                
+                print(f"compounRowNum: {compoundRowNum}")
                 
 
                 if(compoundRowNum == -1):
@@ -4410,9 +4417,7 @@ class ScienceDirect:
                 or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
                     vivoFound = True
 
-
-                if(not mediFound and not vitroFound and not vivoFound):
-                    mediFound = True
+                print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
 
                 targetColNum = -1
@@ -4432,6 +4437,9 @@ class ScienceDirect:
 
                             colNum += 1
 
+                
+                print(f"targetColNum: {targetColNum}")
+
 
                 if(valueColNum == -1 and targetColNum == -1):
                     if(not vitroFound):
@@ -4442,16 +4450,20 @@ class ScienceDirect:
 
 
                 value = ""
+                extractColNum = -1
                 if(titleFound):
                     if(targetColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[targetColNum]
+                        extractColNum = targetColNum
 
                     else:
                         if(valueColNum != -1):
                             value = table.grid.body[compoundRowNum].cells[valueColNum]
+                            extractColNum = valueColNum
                 else:
                     if(valueColNum != -1):
                         value = table.grid.body[compoundRowNum].cells[valueColNum]
+                        extractColNum = valueColNum
                 
                 if(valueColNum == -1 and targetColNum == -1 and vitroFound 
                 and table.grid.columnNum > 1):
@@ -4461,6 +4473,7 @@ class ScienceDirect:
                         if(colNum == compoundColNum):
                             continue
                         value = table.grid.body[compoundRowNum].cells[colNum]
+                        extractColNum = colNum
                         break
 
                 
@@ -4484,7 +4497,32 @@ class ScienceDirect:
                 if(valueUnit):
                     if(valueUnit == "micro"):
                         value = "μm" + value
+                
+                
+                if(not mediFound and not vitroFound and not vivoFound):
+                    for row in table.grid.header:
+                        cell = ""
+                        if(extractColNum >= len(row.cells)):
+                            cell = row.cells[-1]
+                        else:
+                            cell = row.cells[extractColNum]
+                        
+                        if("enzyme" in cell.lower() or "enzymatic" in cell.lower()):
+                            mediFound = True
+                            break
+                        elif("cell" in cell.lower() or "cellular" in cell.lower() 
+                        or "vitro" in cell.lower()):
+                            vitroFound = True
+                            break
+                        elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                            vivoFound = True
+                            break
+                        
+                print(f"2: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
 
+                if(not mediFound and not vitroFound and not vivoFound):
+                    mediFound = True
                 
                 if(mediFound):
                     mediValue = value
@@ -4496,7 +4534,7 @@ class ScienceDirect:
 
             return[mediValue, vitroValue, vivoValue]
 
-
+            
 
 
         def find_single_value_in_table(self, valueName):
@@ -4902,6 +4940,7 @@ if(True):
     print(articleDict)
     check_json_value_format(articleDict)
     print(articleDict)
+    print("end")
 
 
 
