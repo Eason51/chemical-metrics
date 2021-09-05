@@ -2400,11 +2400,9 @@ class ACS:
                 
                 compoundRowNum = -1
                 rowNum = 0
-                print("compound")
-                print(self.compound)
                 for row in table.grid.body:
-                    print("row")
-                    print(row.cells)
+                    if(compoundRowNum != -1):
+                        break
                     for cell in row.cells:
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
@@ -4521,17 +4519,12 @@ class ScienceDirect:
                                 break
 
                         if(index == -1 and valueName == "bioavailability"):
-                            index1 = cell.find("F")
-                            index2 = cell.find("(%)")
-                            if(index1 != -1 and index2 != -1 and index2 > index1):
+                            if("F" in cell and "%" in cell):
                                 valueColNum = colNum
                                 break
                         elif(index == -1 and valueName == "t_half"):
-                            index1 = cell.lower().find("t")
-                            index2 = cell.find("1/2")
-                            index3 = cell.find("(h)")
-                            if(index1 != -1 and index2 != -1 and index3 != -1
-                            and index1 < index2 and index2 < index3):
+                            if(("half" in cell.lower() and "life" in cell.lower()) 
+                                or ("t" in cell.lower() and "1/2" in cell.lower())):
                                 valueColNum = colNum
                                 break
                         
@@ -4567,6 +4560,8 @@ class ScienceDirect:
                 compoundRowNum = -1
                 rowNum = 0
                 for row in table.grid.body:
+                    if(compoundRowNum != -1):
+                        break
                     for cell in row.cells:
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
