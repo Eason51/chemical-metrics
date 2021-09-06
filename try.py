@@ -4893,10 +4893,10 @@ class ScienceDirect:
             #         self.enzymeKd = enzymeValue
             #     if(not self.cellKd):
             #         self.cellKd = cellValue
-            if(not self.enzymekd or not self.cellKd):
+            if(not self.enzymeKd or not self.cellKd):
                 [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
                 if(enzymeValue):
-                    self.enzymekd = enzymeValue
+                    self.enzymeKd = enzymeValue
                 if(not self.cellKd):
                     self.cellKd = cellValue
 
