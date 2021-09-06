@@ -1067,25 +1067,25 @@ class ACS:
             print("3.1.3.1")
             self.retrieve_nlp_data()
             print("3.1.4")
-            if(not self.focusedTarget):
-                self.retrieve_target()
+            # if(not self.focusedTarget):
+            self.retrieve_target()
 
             print("3.1.4.1")
             self.retrieve_compound_amount()
             # positionResult = self.retrieve_image_text()
             print("3.1.5")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_image(self.positionResult)
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_image(self.positionResult)
             print("3.1.6")
-            if(not self.compound):
-                self.get_compound_from_image(self.positionResult)
+            # if(not self.compound):
+            self.get_compound_from_image(self.positionResult)
             print("3.1.7")
             self.get_molecule_from_title_abstract()
             print("3.1.8")
             self.get_compound_from_abstract()
             print("3.1.9")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_abstract()
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_abstract()
             print("3.1.10")
             self.get_multiple_values_from_body()
             print("3.1.11")
@@ -2490,60 +2490,105 @@ class ACS:
         def get_multiple_values_from_body(self):
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
-            if(not self.enzymeIc50):
-                if(not self.ic50Value):
-                    self.enzymeIc50 = enzymeValue
-                else:
-                    self.enzymeIc50 = self.ic50Value
-            if(not self.cellIc50):
+            # if(not self.enzymeIc50):
+            #     if(not self.ic50Value):
+            #         self.enzymeIc50 = enzymeValue
+            #     else:
+            #         self.enzymeIc50 = self.ic50Value
+            # if(not self.cellIc50):
+            #     self.cellIc50 = cellValue
+            if(enzymeValue):
+                self.enzymeIc50 = enzymeValue
+            if(cellValue):
                 self.cellIc50 = cellValue
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
-            if(not self.enzymeKi):
+            # if(not self.enzymeKi):
+            #     self.enzymeKi = enzymeValue
+            # if(not self.cellKi):    
+            #     self.cellKi = cellValue
+            if(enzymeValue):
                 self.enzymeKi = enzymeValue
-            if(not self.cellKi):    
+            if(cellValue):
                 self.cellKi = cellValue
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
-            if(not self.enzymeKd):    
+            # if(not self.enzymeKd):    
+            #     self.enzymeKd = enzymeValue
+            # if(not self.cellKd):
+            #     self.cellKd = cellValue
+            if(enzymeValue):
                 self.enzymeKd = enzymeValue
-            if(not self.cellKd):
+            if(cellValue):
                 self.cellKd = cellValue
 
+            # if(not self.enzymeKd or not self.cellKd):
+            #     [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+            #     if(not self.enzymeKd):    
+            #         self.enzymeKd = enzymeValue
+            #     if(not self.cellKd):
+            #         self.cellKd = cellValue       
             if(not self.enzymeKd or not self.cellKd):
                 [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
-                if(not self.enzymeKd):    
+                if(enzymeValue):
                     self.enzymeKd = enzymeValue
-                if(not self.cellKd):
-                    self.cellKd = cellValue                
+                if(cellValue):
+                    self.cellKd = cellValue         
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
-            if(not self.enzymeSelectivity):
+            # if(not self.enzymeSelectivity):
+            #     self.enzymeSelectivity = enzymeValue
+            # if(not self.cellSelectivity):    
+            #     self.cellSelectivity = cellValue
+            if(enzymeValue):
                 self.enzymeSelectivity = enzymeValue
-            if(not self.cellSelectivity):    
+            if(cellValue):
                 self.cellSelectivity = cellValue
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
-            if(not self.cellSolubility):
+            # if(not self.cellSolubility):
+            #     self.cellSolubility = cellValue
+            # if(not self.vivoSolubility):    
+            #     self.vivoSolubility = vivoValue
+            if(cellValue):
                 self.cellSolubility = cellValue
-            if(not self.vivoSolubility):    
+            if(vivoValue):
                 self.vivoSolubility = vivoValue
+
 
 
         
         def get_single_value_from_body(self):
-            if(not self.ec50):    
-                self.ec50 = self.find_single_value_in_table("EC50")
-            if(not self.ed50):
-                self.ed50 = self.find_single_value_in_table("ED50")
-            if(not self.auc):
-                self.auc = self.find_single_value_in_table("AUC")
-            if(not self.herg):
-                self.herg = self.find_single_value_in_table("hERG")
-            if(not self.tHalf):
-                self.tHalf = self.find_single_value_in_table("t_half")
-            if(not self.bioavailability):
-                self.bioavailability = self.find_single_value_in_table("bioavailability")
+            # if(not self.ec50):    
+            #     self.ec50 = self.find_single_value_in_table("EC50")
+            # if(not self.ed50):
+            #     self.ed50 = self.find_single_value_in_table("ED50")
+            # if(not self.auc):
+            #     self.auc = self.find_single_value_in_table("AUC")
+            # if(not self.herg):
+            #     self.herg = self.find_single_value_in_table("hERG")
+            # if(not self.tHalf):
+            #     self.tHalf = self.find_single_value_in_table("t_half")
+            # if(not self.bioavailability):
+            #     self.bioavailability = self.find_single_value_in_table("bioavailability")
+            ec50 = self.find_single_value_in_table("EC50")
+            if(ec50):
+                self.ec50 = ec50
+            ed50 = self.find_single_value_in_table("ED50")
+            if(ed50):
+                self.ed50 = ed50
+            auc = self.find_single_value_in_table("AUC")
+            if(auc):
+                self.auc = auc
+            herg = self.find_single_value_in_table("hERG")
+            if(herg):
+                self.herg = herg
+            tHalf = self.find_single_value_in_table("t_half")
+            if(tHalf):
+                self.tHalf = tHalf
+            bioavailability = self.find_single_value_in_table("bioavailability")
+            if(bioavailability):
+                self.bioavailability = bioavailability
 
 
 
@@ -3207,24 +3252,24 @@ class ScienceDirect:
             self.retrieve_nlp_data()
 
             print("e5")
-            if(not self.focusedTarget):
-                self.retrieve_target()
+            # if(not self.focusedTarget):
+            self.retrieve_target()
 
             print("e6")
             self.retrieve_compound_amount()
             print("e7")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_image(positionResult)
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_image(positionResult)
             print("e8")
-            if(not self.compound):
-                self.get_compound_from_image(positionResult)
+            # if(not self.compound):
+            self.get_compound_from_image(positionResult)
             print("e9")
             self.get_molecule_from_title_abstract()
             print("e10")
             self.get_compound_from_abstract()
             print("e11")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_abstract()
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_abstract()
             
             print("e12")
             self.get_multiple_values_from_body()
@@ -4690,72 +4735,117 @@ class ScienceDirect:
             
             print("e12.1")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
-            if(not self.enzymeIc50):
-                if(not self.ic50Value):
-                    self.enzymeIc50 = enzymeValue
-                else:
-                    self.enzymeIc50 = self.ic50Value
-            if(not self.cellIc50):
+            # if(not self.enzymeIc50):
+            #     if(not self.ic50Value):
+            #         self.enzymeIc50 = enzymeValue
+            #     else:
+            #         self.enzymeIc50 = self.ic50Value
+            # if(not self.cellIc50):
+            #     self.cellIc50 = cellValue
+            if(enzymeValue):
+                self.enzymeIc50 = enzymeValue
+            if(cellValue):
                 self.cellIc50 = cellValue
             
             print("e12.2")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
-            if(not self.enzymeKi):    
+            # if(not self.enzymeKi):    
+            #     self.enzymeKi = enzymeValue
+            # if(not self.cellKi):
+            #     self.cellKi = cellValue
+            if(enzymeValue):
                 self.enzymeKi = enzymeValue
-            if(not self.cellKi):
+            if(cellValue):
                 self.cellKi = cellValue
             
             print("e12.3")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
-            if(not self.enzymeKd):
+            # if(not self.enzymeKd):
+            #     self.enzymeKd = enzymeValue
+            # if(not self.cellKd):
+            #     self.cellKd = cellValue
+            if(enzymeValue):
                 self.enzymeKd = enzymeValue
-            if(not self.cellKd):
+            if(cellValue):
                 self.cellKd = cellValue
 
-            if(not self.enzymeKd or not self.cellKd):
+            # if(not self.enzymeKd or not self.cellKd):
+            #     [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+            #     if(not self.enzymeKd):
+            #         self.enzymeKd = enzymeValue
+            #     if(not self.cellKd):
+            #         self.cellKd = cellValue
+            if(not self.enzymekd or not self.cellKd):
                 [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
-                if(not self.enzymeKd):
-                    self.enzymeKd = enzymeValue
+                if(enzymeValue):
+                    self.enzymekd = enzymeValue
                 if(not self.cellKd):
                     self.cellKd = cellValue
 
             
             print("e12.4")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
-            if(not self.enzymeSelectivity):
+            # if(not self.enzymeSelectivity):
+            #     self.enzymeSelectivity = enzymeValue
+            # if(not self.cellSelectivity):
+            #     self.cellSelectivity = cellValue
+            if(enzymeValue):
                 self.enzymeSelectivity = enzymeValue
-            if(not self.cellSelectivity):
+            if(cellValue):
                 self.cellSelectivity = cellValue
             
             print("e12.5")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
-            if(not self.cellSolubility):
+            # if(not self.cellSolubility):
+            #     self.cellSolubility = cellValue
+            # if(not self.vivoSolubility):
+            #     self.vivoSolubility = vivoValue
+            if(cellValue):
                 self.cellSolubility = cellValue
-            if(not self.vivoSolubility):
+            if(vivoValue):
                 self.vivoSolubility = vivoValue
 
 
         
         def get_single_value_from_body(self):
             
-            print("e13.1")
-            if(not self.ec50):
-                self.ec50 = self.find_single_value_in_table("EC50")
-            print("e13.2")
-            if(not self.ed50):
-                self.ed50 = self.find_single_value_in_table("ED50")
-            print("e13.3")
-            if(not self.auc):
-                self.auc = self.find_single_value_in_table("AUC")
-            print("e13.4")
-            if(not self.herg):
-                self.herg = self.find_single_value_in_table("hERG")
-            print("e13.5")
-            if(not self.tHalf):
-                self.tHalf = self.find_single_value_in_table("t_half")
-            print("e13.6")
-            if(not self.bioavailability):
-                self.bioavailability = self.find_single_value_in_table("bioavailability")
+            # print("e13.1")
+            # if(not self.ec50):
+            #     self.ec50 = self.find_single_value_in_table("EC50")
+            # print("e13.2")
+            # if(not self.ed50):
+            #     self.ed50 = self.find_single_value_in_table("ED50")
+            # print("e13.3")
+            # if(not self.auc):
+            #     self.auc = self.find_single_value_in_table("AUC")
+            # print("e13.4")
+            # if(not self.herg):
+            #     self.herg = self.find_single_value_in_table("hERG")
+            # print("e13.5")
+            # if(not self.tHalf):
+            #     self.tHalf = self.find_single_value_in_table("t_half")
+            # print("e13.6")
+            # if(not self.bioavailability):
+            #     self.bioavailability = self.find_single_value_in_table("bioavailability")
+            ec50 = self.find_single_value_in_table("EC50")
+            if(ec50):
+                self.ec50 = ec50
+            ed50 = self.find_single_value_in_table("ED50")
+            if(ed50):
+                self.ed50 = ed50
+            auc = self.find_single_value_in_table("AUC")
+            if(auc):
+                self.auc = auc
+            herg = self.find_single_value_in_table("hERG")
+            if(herg):
+                self.herg = herg
+            tHalf = self.find_single_value_in_table("t_half")
+            if(tHalf):
+                self.tHalf = tHalf
+            bioavailability = self.find_single_value_in_table("bioavailability")
+            if(bioavailability):
+                self.bioavailability = bioavailability
+            
 
 
 
