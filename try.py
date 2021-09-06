@@ -5212,7 +5212,7 @@ def check_json_value_format(articleDict):
 
 
 
-if(False):
+if(True):
     ACS.TARGET = TARGETNAME
 
     articleURL = 1
@@ -5265,7 +5265,7 @@ if(False):
 
 
 
-if(True):
+if(False):
     ScienceDirect.TARGET = TARGETNAME
 
     doi = "10.1016/j.ejmech.2021.113711"
