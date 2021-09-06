@@ -4571,7 +4571,7 @@ class ScienceDirect:
                     vitroFound = True
                 elif("pharmacokinetic" in table.caption.lower() or "preliminary" in table.caption.lower()
                 or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()
-                or "pk" in table.caption.lowr()):
+                or "pk" in table.caption.lower()):
                     vivoFound = True
 
                 print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
