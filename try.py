@@ -2289,11 +2289,16 @@ class ACS:
 
                         if(microFound):
                             break
-
+                        
+                        colNum = 0
                         for cell in row.cells:
+                            if(colNum != extractColNum):
+                                colNum += 1
+                                continue
                             if("μm" in cell.lower()):
                                 microFound = True
                                 break
+                            colNum += 1
                     
                     if(microFound):
                         value = "μm" + value
