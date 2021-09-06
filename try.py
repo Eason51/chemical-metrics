@@ -2192,6 +2192,7 @@ class ACS:
                     for cell in row.cells:
                         
                         if(colNum != compoundColNum):
+                            colNum += 1
                             continue
                         
                         if(cell.lower().strip() == self.compound):
@@ -2217,7 +2218,8 @@ class ACS:
                 or "vitro" in table.caption.lower()):
                     vitroFound = True
                 elif("pharmacokinetic" in table.caption.lower() or "preliminary" in table.caption.lower()
-                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
+                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower() 
+                or "pk" in table.caption.lower()):
                     vivoFound = True
 
                 print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
@@ -2318,7 +2320,8 @@ class ACS:
                             vitroFound = True
                             break
                         elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
-                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()
+                        or "pk" in cell.lower()):
                             vivoFound = True
                             break
                         
@@ -2441,10 +2444,16 @@ class ACS:
                 for row in table.grid.body:
                     if(compoundRowNum != -1):
                         break
+
+                    colNum = 0
                     for cell in row.cells:
+                        if(colNum != compoundColNum):
+                            colNum += 1
+                            continue
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
                             break
+                        colNum += 1
                     rowNum += 1
 
                 if(compoundRowNum == -1):
@@ -4434,6 +4443,7 @@ class ScienceDirect:
                     for cell in row.cells:
                         
                         if(colNum != compoundColNum):
+                            colNum += 1
                             continue
                         
                         if(cell.lower().strip() == self.compound):
@@ -4459,7 +4469,8 @@ class ScienceDirect:
                 or "vitro" in table.caption.lower()):
                     vitroFound = True
                 elif("pharmacokinetic" in table.caption.lower() or "preliminary" in table.caption.lower()
-                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
+                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()
+                or "pk" in table.caption.lowr()):
                     vivoFound = True
 
                 print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
@@ -4560,7 +4571,8 @@ class ScienceDirect:
                             vitroFound = True
                             break
                         elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
-                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()
+                        or "pk" in cell.lower()):
                             vivoFound = True
                             break
                         
@@ -4683,10 +4695,16 @@ class ScienceDirect:
                 for row in table.grid.body:
                     if(compoundRowNum != -1):
                         break
+
+                    colNum = 0
                     for cell in row.cells:
+                        if(colNum != compoundColNum):
+                            colNum += 1
+                            continue
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
                             break
+                        colNum += 1
                     rowNum += 1
 
                 if(compoundRowNum == -1):
