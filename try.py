@@ -2565,6 +2565,79 @@ class ACS:
                 self.vivoSolubility = vivoValue
 
 
+        def get_vivo_value_in_table(self, valueName):
+            
+            if(not self.compound):
+                return ""
+            
+            value = ""
+            
+            for table in self.tables:
+
+                if(value):
+                    break
+
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if(word.strip().lower() == valueName):
+                        compoundFound = True
+                        break
+                
+                if(not compoundFound):
+                    continue
+
+                valueColNum = -1
+                for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
+                    colNum = 0
+                    for cell in row.cells:
+
+                        if(valueName.lower() in cell.lower()):
+                            valueColNum = colNum
+                            break
+                        elif(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                            or ("half" in cell.lowr() and "life" in cell.lower())):
+                                valueColNum = colNum
+                                break
+                        elif(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueColNum = colNum
+                                break
+
+                        colNum += 1
+
+                if(valueColNum == -1):
+                    continue
+
+                isColumnTable = True
+                for row in table.grid.header:
+                    if(not isColumnTable):
+                        break
+                    for cell in row.cells:
+                        if(not isColumnTable):
+                            break
+                        for keyword in self.compoundKeywords:
+                            if(keyword in cell.lower()):
+                                isColumnTable = False
+                                break
+
+                if(not isColumnTable):
+                    continue
+                if(len(table.grid.body) == 0):
+                    continue
+                if(len(table.grid.body[0].cells) == 0):
+                    continue
+
+                value = table.grid.body[0].cells[valueColNum]
+
+            return value
+
+
 
         
         def get_single_value_from_body(self):
@@ -2589,15 +2662,31 @@ class ACS:
             auc = self.find_single_value_in_table("AUC")
             if(auc):
                 self.auc = auc
+            else:
+                auc = self.get_vivo_value_in_table("AUC")
+                if(auc):
+                    self.auc = auc
             herg = self.find_single_value_in_table("hERG")
             if(herg):
                 self.herg = herg
+            else:
+                herg = self.get_vivo_value_in_table("hERG")
+                if(herg):
+                    self.herg = herg
             tHalf = self.find_single_value_in_table("t_half")
             if(tHalf):
                 self.tHalf = tHalf
+            else:
+                tHalf = self.get_vivo_value_in_table("t_half")
+                if(tHalf):
+                    self.tHalf = tHalf
             bioavailability = self.find_single_value_in_table("bioavailability")
             if(bioavailability):
                 self.bioavailability = bioavailability
+            else:
+                bioavailability = self.get_vivo_value_in_table("bioavailability")
+                if(bioavailability):
+                    self.bioavailability = bioavailability
 
 
 
