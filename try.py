@@ -2566,6 +2566,9 @@ class ACS:
 
 
         def get_vivo_value_in_table(self, valueName):
+
+            print("\n\nget_vivo_value_in_table")
+            print(valueName)
             
             if(not self.compound):
                 return ""
@@ -2573,6 +2576,8 @@ class ACS:
             value = ""
             
             for table in self.tables:
+
+                print(table.caption)
 
                 if(value):
                     break
@@ -2583,6 +2588,8 @@ class ACS:
                     if(word.strip().lower() == valueName):
                         compoundFound = True
                         break
+
+                print(f"compoundFound: {compoundFound}")
                 
                 if(not compoundFound):
                     continue
@@ -2611,6 +2618,8 @@ class ACS:
 
                         colNum += 1
 
+                print(f"valueColNum: {valueColNum}")
+
                 if(valueColNum == -1):
                     continue
 
@@ -2625,6 +2634,8 @@ class ACS:
                             if(keyword in cell.lower()):
                                 isColumnTable = False
                                 break
+
+                print(f"isColumnTable: {isColumnTable}")
 
                 if(not isColumnTable):
                     continue
