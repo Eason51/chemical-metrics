@@ -5188,17 +5188,17 @@ def check_json_value_format(articleDict):
     convert_value(vivoDict, "bioavailability", convertToFloat, False)
     convert_value(vivoDict, "solubility", convertToFloat, False)
 
-    checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
-    dictArr = [mediDict, vitroDict]
-    for valueDict in dictArr:
-        for key in checkUnitkeyArr:
+    # checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
+    # dictArr = [mediDict, vitroDict]
+    # for valueDict in dictArr:
+    #     for key in checkUnitkeyArr:
             
-            if(key in valueDict):
+    #         if(key in valueDict):
                 
-                value = valueDict[key]
-                if(value > 0 and value < 1):
-                    value *= 1000
-                    valueDict[key] = value
+    #             value = valueDict[key]
+    #             if(value > 0 and value < 1):
+    #                 value *= 1000
+    #                 valueDict[key] = value
 
 
 
