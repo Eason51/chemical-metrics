@@ -3384,6 +3384,7 @@ class ScienceDirect:
             self.get_multiple_values_from_body()
             print("e13")
             self.get_single_value_from_body()
+            print("e14")
 
 
 
@@ -5271,7 +5272,7 @@ if(True):
     articleDict["paper_cited"] = article.paperCited
     articleDict["doi"] = article.doi
     articleDict["paper_journal"] = article.journal
-    articleDict["paper_abstract_image"] = article.imgArr[0]
+    articleDict["paper_abstract_image"] = article.imgURL
     articleDict["compound_count"] = len(article.compoundSet)
     articleDict["compound_name"] = article.compound
     articleDict["compound_name_drug"] = article.compoundNameDrug
