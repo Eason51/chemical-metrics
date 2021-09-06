@@ -5201,7 +5201,7 @@ def check_json_value_format(articleDict):
 
 
 
-if(True):
+if(False):
     ACS.TARGET = TARGETNAME
 
     articleURL = 1
@@ -5254,7 +5254,7 @@ if(True):
 
 
 
-if(False):
+if(True):
     ScienceDirect.TARGET = TARGETNAME
 
     doi = "10.1016/j.ejmech.2021.113711"
@@ -5263,7 +5263,48 @@ if(False):
     except Exception as e:
         print(e)
 
-    print(article.compound)
+    articleDict = {}
+    articleDict["paper_title"] = article.titleText
+    articleDict["paper_author"] = article.authorArr
+    articleDict["paper_year"] = article.year
+    articleDict["paper_institution"] = article.institution
+    articleDict["paper_cited"] = article.paperCited
+    articleDict["doi"] = article.doi
+    articleDict["paper_journal"] = article.journal
+    articleDict["paper_abstract_image"] = article.imgArr[0]
+    articleDict["compound_count"] = len(article.compoundSet)
+    articleDict["compound_name"] = article.compound
+    articleDict["compound_name_drug"] = article.compoundNameDrug
+
+    medicinalDict = {}
+    medicinalDict["Ki"] = article.enzymeKi
+    medicinalDict["Kd"] = article.enzymeKd
+    medicinalDict["IC50"] = article.enzymeIc50
+    medicinalDict["selectivity"] = article.enzymeSelectivity
+    vitroDict = {}
+    vitroDict["Ki"] = article.cellKi
+    vitroDict["Kd"] = article.cellKd
+    vitroDict["IC50"] = article.cellIc50
+    vitroDict["EC50"] = article.ec50
+    vitroDict["selectivity"] = article.cellSelectivity
+    vitroDict["hERG"] = article.herg
+    vitroDict["solubility"] = article.cellSolubility
+    vivoDict = {}
+    vivoDict["ED50"] = article.ed50
+    vivoDict["AUC"] = article.auc
+    vivoDict["solubility"] = article.vivoSolubility
+    vivoDict["t_half"] = article.tHalf
+    vivoDict["bioavailability"] = article.bioavailability
+
+    articleDict["medicinal_chemistry_metrics"] = medicinalDict
+    articleDict["pharm_metrics_vitro"] = vitroDict
+    articleDict["pharm_metrics_vivo"] = vivoDict
+
+    print(articleDict)
+    check_json_value_format(articleDict)
+    print(articleDict)
+    print("end")
+
 
 
  
