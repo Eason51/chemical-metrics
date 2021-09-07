@@ -2734,7 +2734,7 @@ class ACS:
                     continue
 
                 colNum = 0
-                for cell in table.grid.body[valueRowNum]:
+                for cell in table.grid.body[valueRowNum].cells:
                     if(colNum <= valueColNum):
                         colNum += 1
                         continue
@@ -5213,7 +5213,7 @@ class ScienceDirect:
                     continue
 
                 colNum = 0
-                for cell in table.grid.body[valueRowNum]:
+                for cell in table.grid.body[valueRowNum].cells:
                     if(colNum <= valueColNum):
                         colNum += 1
                         continue
