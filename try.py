@@ -2602,7 +2602,7 @@ class ACS:
                 titleWordArr = table.caption.split(" ")
                 compoundFound = False
                 for word in titleWordArr:
-                    if(word.strip().lower() == self.compound):
+                    if(self.compound in word.strip().lower()):
                         compoundFound = True
                         break
 
@@ -4967,7 +4967,7 @@ class ScienceDirect:
                 titleWordArr = table.caption.split(" ")
                 compoundFound = False
                 for word in titleWordArr:
-                    if(word.strip().lower() == self.compound):
+                    if( self.compound in word.strip().lower()):
                         compoundFound = True
                         break
 
