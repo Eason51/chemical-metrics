@@ -5399,6 +5399,9 @@ def convert_value(valueDict, key, convertFunc, checkMicro):
     if(not checkMicro):
         if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
             valueDict[key] = valueDict[key][2:]
+        if(len(valueDict[key]) > 1 and (valueDict[key][0] == ">" or valueDict[key][0] == "<")):
+            valueDict[key] = valueDict[key][1:]
+        
         valueDict[key] = convertFunc(valueDict[key])
     else:
         isMicro = False
