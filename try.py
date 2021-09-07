@@ -761,6 +761,8 @@ class ACS:
                     self.cellFound = True
                 if(self.cellFound and tag == "sup"):
                     self.cellSpace = True
+                if(self.cellFound and tag == "a"):
+                    self.cellSpace = True
                 if(self.cellFound and tag == "br"):
                     self.cell += " "
                 
