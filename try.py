@@ -2349,7 +2349,7 @@ class ACS:
 
         def find_single_value_in_table(self, valueName):
 
-            print(f"valueName: {valueName}")
+            print(f"\n\nvalueName: {valueName}")
             
             if(not self.compound):
                 return ""
@@ -2357,6 +2357,8 @@ class ACS:
             value = ""
 
             for table in self.tables:
+
+                print(f"\n\n{table.caption}")
                 
                 valueNameFound = False
                 index = 0
