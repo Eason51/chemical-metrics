@@ -2716,7 +2716,7 @@ class ACS:
                         hasDigit = True
                         break
                 if(not hasDigit):
-                    self.tHalf = oldtHalf
+                    self.tHalf = oldtHalf 
                 
             bioavailability = self.find_single_value_in_table("bioavailability")
             if(bioavailability):
