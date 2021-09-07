@@ -1078,8 +1078,8 @@ class ACS:
             # if(not self.enzymeIc50 and not self.cellIc50):
             self.get_ic50_from_image(self.positionResult)
             print("3.1.6")
-            # if(not self.compound):
-            self.get_compound_from_image(self.positionResult)
+            if(not self.compound):
+                self.get_compound_from_image(self.positionResult)
             print("3.1.7")
             self.get_molecule_from_title_abstract()
             print("3.1.8")
@@ -3401,8 +3401,8 @@ class ScienceDirect:
             # if(not self.enzymeIc50 and not self.cellIc50):
             self.get_ic50_from_image(positionResult)
             print("e8")
-            # if(not self.compound):
-            self.get_compound_from_image(positionResult)
+            if(not self.compound):
+                self.get_compound_from_image(positionResult)
             print("e9")
             self.get_molecule_from_title_abstract()
             print("e10")
