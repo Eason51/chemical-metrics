@@ -2701,6 +2701,7 @@ class ACS:
                 herg = self.get_vivo_value_in_table("hERG")
                 if(herg):
                     self.herg = herg
+            oldtHalf = self.tHalf
             tHalf = self.find_single_value_in_table("t_half")
             if(tHalf):
                 self.tHalf = tHalf
@@ -2708,6 +2709,15 @@ class ACS:
                 tHalf = self.get_vivo_value_in_table("t_half")
                 if(tHalf):
                     self.tHalf = tHalf
+            if(self.tHalf):
+                hasDigit = False
+                for c in self.tHalf:
+                    if(c.isdigit()):
+                        hasDigit = True
+                        break
+                if(not hasDigit):
+                    self.tHalf = oldtHalf
+                
             bioavailability = self.find_single_value_in_table("bioavailability")
             if(bioavailability):
                 self.bioavailability = bioavailability
