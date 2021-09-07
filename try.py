@@ -1330,10 +1330,9 @@ class ACS:
                         if(digits):
                             break
 
-                        if("fold" in token):
-                            for c in token:
-                                if(c.isdigit() or c == "."):
-                                    digits += c
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                digits += c
                     
                     
                     if(digits):
@@ -3707,10 +3706,9 @@ class ScienceDirect:
                         if(digits):
                             break
 
-                        if("fold" in token):
-                            for c in token:
-                                if(c.isdigit() or c == "."):
-                                    digits += c
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                digits += c
                     
                     
                     if(digits):
