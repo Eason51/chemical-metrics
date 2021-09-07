@@ -2386,28 +2386,28 @@ class ACS:
                     for cell in row.cells:
                         index = cell.find(valueName)
                         if(index != -1):
-                            if((index + len(valueName)) < len(cell)):
-                                if(cell[index + len(valueName)].isspace()):
-                                    valueColNum = colNum
+                            # if((index + len(valueName)) < len(cell)):
+                            #     if(cell[index + len(valueName)].isspace()):
+                            #         valueColNum = colNum
 
-                                    if("nm" in cell.lower()):
-                                        valueUnit = "nano"
-                                    elif("μm" in cell.lower()):
-                                        valueUnit = "micro"
+                            #         if("nm" in cell.lower()):
+                            #             valueUnit = "nano"
+                            #         elif("μm" in cell.lower()):
+                            #             valueUnit = "micro"
 
-                                    break
-                                elif(valueName == "AUC"):
-                                    valueColNum = colNum
-                                    break
-                            else:
-                                valueColNum = colNum
+                            #         break
+                            #     elif(valueName == "AUC" or ):
+                            #         valueColNum = colNum
+                            #         break
+                            # else:
+                            valueColNum = colNum
 
-                                if("nm" in cell.lower()):
-                                    valueUnit = "nano"
-                                elif("μm" in cell.lower()):
-                                    valueUnit = "micro"
+                            if("nm" in cell.lower()):
+                                valueUnit = "nano"
+                            elif("μm" in cell.lower()):
+                                valueUnit = "micro"
 
-                                break
+                            break
 
                         if(index == -1 and valueName == "bioavailability"):
                             if("F" in cell and "%" in cell):
@@ -4753,28 +4753,28 @@ class ScienceDirect:
                     for cell in row.cells:
                         index = cell.find(valueName)
                         if(index != -1):
-                            if((index + len(valueName)) < len(cell)):
-                                if(cell[index + len(valueName)].isspace()):
-                                    valueColNum = colNum
+                            # if((index + len(valueName)) < len(cell)):
+                            #     if(cell[index + len(valueName)].isspace()):
+                            #         valueColNum = colNum
 
-                                    if("nm" in cell.lower()):
-                                        valueUnit = "nano"
-                                    elif("μm" in cell.lower()):
-                                        valueUnit = "micro"
+                            #         if("nm" in cell.lower()):
+                            #             valueUnit = "nano"
+                            #         elif("μm" in cell.lower()):
+                            #             valueUnit = "micro"
 
-                                    break
-                                elif(valueName == "AUC"):
-                                    valueColNum = colNum
-                                    break
-                            else:
-                                valueColNum = colNum
+                            #         break
+                            #     elif(valueName == "AUC"):
+                            #         valueColNum = colNum
+                            #         break
+                            # else:
+                            valueColNum = colNum
 
-                                if("nm" in cell.lower()):
-                                    valueUnit = "nano"
-                                elif("μm" in cell.lower()):
-                                    valueUnit = "micro"
+                            if("nm" in cell.lower()):
+                                valueUnit = "nano"
+                            elif("μm" in cell.lower()):
+                                valueUnit = "micro"
 
-                                break
+                            break
 
                         if(index == -1 and valueName == "bioavailability"):
                             if("F" in cell and "%" in cell):
