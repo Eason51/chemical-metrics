@@ -2671,17 +2671,113 @@ class ACS:
 
 
         
+        def get_vivo_value_in_horizontal_table(self, valueName):
+
+            if(not self.compound):
+                return ""
+
+            value = ""
+
+            for table in self.tables:
+                
+                if(value):
+                    break
+                
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if( self.compound in word.strip().lower()):
+                        compoundFound = True
+                        break
+                
+                if(not compoundFound):
+                    continue
+
+                isVivoTable = False
+                if(("pk" in table.caption.lower()) or ("pharma" in table.caption.lower()) 
+                    or ("vivo" in table.caption.lower()) or ("clini" in table.caption.lower())):
+                    isVivoTable = True
+
+                if(not isVivoTable):
+                    continue
+
+
+                valueColNum = -1
+                valueRowNum = -1
+                rowNum = 0
+                for row in table.grid.body:
+                    if(valueColNum != -1 and valueRowNum != -1):
+                        break
+                    colNum = 0
+                    for cell in row.cells:
+                        valueFound = False
+                        if(valueName.lower() in cell.lower()):
+                            valueFound = True
+                        if(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                                or("half" in cell.lower() and "life" in cell.lower())):
+                                valueFound = True
+                        if(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueFound  = True
+
+                        if(valueFound):
+                            valueColNum = colNum
+                            valueRowNum = rowNum
+                            break
+                        
+                        colNum += 1
+                    rowNum += 1
+
+                
+                if(valueColNum == -1 or valueRowNum == -1):
+                    continue
+
+                colNum = 0
+                for cell in table.grid.body[valueRowNum]:
+                    if(colNum <= valueColNum):
+                        colNum += 1
+                        continue
+
+                    if(len(cell) > 0):
+                        hasDigit = False
+                        for c in cell:
+                            if(c.isdigit()):
+                                hasDigit = True
+                                break
+
+                        if(hasDigit):
+                            value = cell
+                            break
+                    
+                    colNum += 1
+            
+            return value
+
+
+
+
+
+
+        
         def get_single_value_from_body(self):
-            # if(not self.ec50):    
+            
+            # print("e13.1")
+            # if(not self.ec50):
             #     self.ec50 = self.find_single_value_in_table("EC50")
+            # print("e13.2")
             # if(not self.ed50):
             #     self.ed50 = self.find_single_value_in_table("ED50")
+            # print("e13.3")
             # if(not self.auc):
             #     self.auc = self.find_single_value_in_table("AUC")
+            # print("e13.4")
             # if(not self.herg):
             #     self.herg = self.find_single_value_in_table("hERG")
+            # print("e13.5")
             # if(not self.tHalf):
             #     self.tHalf = self.find_single_value_in_table("t_half")
+            # print("e13.6")
             # if(not self.bioavailability):
             #     self.bioavailability = self.find_single_value_in_table("bioavailability")
             ec50 = self.find_single_value_in_table("EC50")
@@ -2697,6 +2793,10 @@ class ACS:
                 auc = self.get_vivo_value_in_table("AUC")
                 if(auc):
                     self.auc = auc
+                else:
+                    auc = self.get_vivo_value_in_horizontal_table("AUC")
+                    if(auc):
+                        self.auc = auc
             herg = self.find_single_value_in_table("hERG")
             if(herg):
                 self.herg = herg
@@ -2704,7 +2804,10 @@ class ACS:
                 herg = self.get_vivo_value_in_table("hERG")
                 if(herg):
                     self.herg = herg
-            oldtHalf = self.tHalf
+                else:
+                    herg = self.get_vivo_value_in_horizontal_table("hERG")
+                    if(herg):
+                        self.herg = herg
             tHalf = self.find_single_value_in_table("t_half")
             if(tHalf):
                 self.tHalf = tHalf
@@ -2712,15 +2815,10 @@ class ACS:
                 tHalf = self.get_vivo_value_in_table("t_half")
                 if(tHalf):
                     self.tHalf = tHalf
-            if(self.tHalf and isinstance(self.tHalf, str)):
-                hasDigit = False
-                for c in self.tHalf:
-                    if(c.isdigit()):
-                        hasDigit = True
-                        break
-                if(not hasDigit):
-                    self.tHalf = oldtHalf 
-                
+                else:
+                    tHalf = self.get_vivo_value_in_horizontal_table("t_half")
+                    if(tHalf):
+                        self.tHalf = tHalf
             bioavailability = self.find_single_value_in_table("bioavailability")
             if(bioavailability):
                 self.bioavailability = bioavailability
@@ -2728,6 +2826,10 @@ class ACS:
                 bioavailability = self.get_vivo_value_in_table("bioavailability")
                 if(bioavailability):
                     self.bioavailability = bioavailability
+                else:
+                    bioavailability = self.get_vivo_value_in_horizontal_table("bioavailability")
+                    if(bioavailability):
+                        self.bioavailability = bioavailability
 
 
 
@@ -5048,6 +5150,93 @@ class ScienceDirect:
 
 
 
+        def get_vivo_value_in_horizontal_table(self, valueName):
+
+            if(not self.compound):
+                return ""
+
+            value = ""
+
+            for table in self.tables:
+                
+                if(value):
+                    break
+                
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if( self.compound in word.strip().lower()):
+                        compoundFound = True
+                        break
+                
+                if(not compoundFound):
+                    continue
+
+                isVivoTable = False
+                if(("pk" in table.caption.lower()) or ("pharma" in table.caption.lower()) 
+                    or ("vivo" in table.caption.lower()) or ("clini" in table.caption.lower())):
+                    isVivoTable = True
+
+                if(not isVivoTable):
+                    continue
+
+
+                valueColNum = -1
+                valueRowNum = -1
+                rowNum = 0
+                for row in table.grid.body:
+                    if(valueColNum != -1 and valueRowNum != -1):
+                        break
+                    colNum = 0
+                    for cell in row.cells:
+                        valueFound = False
+                        if(valueName.lower() in cell.lower()):
+                            valueFound = True
+                        if(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                                or("half" in cell.lower() and "life" in cell.lower())):
+                                valueFound = True
+                        if(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueFound  = True
+
+                        if(valueFound):
+                            valueColNum = colNum
+                            valueRowNum = rowNum
+                            break
+                        
+                        colNum += 1
+                    rowNum += 1
+
+                
+                if(valueColNum == -1 or valueRowNum == -1):
+                    continue
+
+                colNum = 0
+                for cell in table.grid.body[valueRowNum]:
+                    if(colNum <= valueColNum):
+                        colNum += 1
+                        continue
+
+                    if(len(cell) > 0):
+                        hasDigit = False
+                        for c in cell:
+                            if(c.isdigit()):
+                                hasDigit = True
+                                break
+
+                        if(hasDigit):
+                            value = cell
+                            break
+                    
+                    colNum += 1
+            
+            return value
+
+
+
+
+
 
         
         def get_single_value_from_body(self):
@@ -5083,6 +5272,10 @@ class ScienceDirect:
                 auc = self.get_vivo_value_in_table("AUC")
                 if(auc):
                     self.auc = auc
+                else:
+                    auc = self.get_vivo_value_in_horizontal_table("AUC")
+                    if(auc):
+                        self.auc = auc
             herg = self.find_single_value_in_table("hERG")
             if(herg):
                 self.herg = herg
@@ -5090,6 +5283,10 @@ class ScienceDirect:
                 herg = self.get_vivo_value_in_table("hERG")
                 if(herg):
                     self.herg = herg
+                else:
+                    herg = self.get_vivo_value_in_horizontal_table("hERG")
+                    if(herg):
+                        self.herg = herg
             tHalf = self.find_single_value_in_table("t_half")
             if(tHalf):
                 self.tHalf = tHalf
@@ -5097,6 +5294,10 @@ class ScienceDirect:
                 tHalf = self.get_vivo_value_in_table("t_half")
                 if(tHalf):
                     self.tHalf = tHalf
+                else:
+                    tHalf = self.get_vivo_value_in_horizontal_table("t_half")
+                    if(tHalf):
+                        self.tHalf = tHalf
             bioavailability = self.find_single_value_in_table("bioavailability")
             if(bioavailability):
                 self.bioavailability = bioavailability
@@ -5104,6 +5305,10 @@ class ScienceDirect:
                 bioavailability = self.get_vivo_value_in_table("bioavailability")
                 if(bioavailability):
                     self.bioavailability = bioavailability
+                else:
+                    bioavailability = self.get_vivo_value_in_horizontal_table("bioavailability")
+                    if(bioavailability):
+                        self.bioavailability = bioavailability
             
 
 
