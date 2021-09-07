@@ -2709,7 +2709,7 @@ class ACS:
                 tHalf = self.get_vivo_value_in_table("t_half")
                 if(tHalf):
                     self.tHalf = tHalf
-            if(self.tHalf):
+            if(self.tHalf and isinstance(self.tHalf, str)):
                 hasDigit = False
                 for c in self.tHalf:
                     if(c.isdigit()):
