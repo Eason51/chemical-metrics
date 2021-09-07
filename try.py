@@ -2348,6 +2348,8 @@ class ACS:
 
 
         def find_single_value_in_table(self, valueName):
+
+            print(f"valueName: {valueName}")
             
             if(not self.compound):
                 return ""
@@ -2416,6 +2418,8 @@ class ACS:
                                 break
                         
                         colNum += 1
+
+                print(f"valueColNum: {valueColNum}")
                 
                 targetColNum = -1
                 if(self.focusedTarget):
@@ -2426,6 +2430,8 @@ class ACS:
                                 targetColNum = colNum
                         colNum += 1
                 
+
+                print(f"targetColNum: {targetColNum}")
 
                 if((valueColNum == -1 and not valueNameFound) or (valueNameFound and targetColNum == -1)):
                     continue
@@ -2443,6 +2449,8 @@ class ACS:
                 
                 if(compoundColNum == -1):
                     compoundColNum = 0
+
+                print(f"compoundColNum: {compoundColNum}")
                 
                 compoundRowNum = -1
                 rowNum = 0
@@ -2461,8 +2469,11 @@ class ACS:
                         colNum += 1
                     rowNum += 1
 
+                print(f"compoundRowNum: {compoundRowNum}")
+
                 if(compoundRowNum == -1):
                     continue
+
                 
                 
                 value = ""
@@ -3563,6 +3574,7 @@ class ScienceDirect:
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             nlpDict = nlpDict["single_dict"]
+            print(nlpDict)
             
             outputArr.append(nlpDict)
             
@@ -5210,12 +5222,15 @@ def check_json_value_format(articleDict):
     #                 value *= 1000
     #                 valueDict[key] = value
 
+runACS = True
+runSD = False
+fileId = 653
+doi = "10.1016/j.ejmech.2017.06.016"
 
-
-if(True):
+if(runACS):
     ACS.TARGET = TARGETNAME
 
-    articleURL = 1
+    articleURL = fileId
 
     reader = easyocr.Reader(["en"], gpu=False)
     positionResult = reader.readtext(f"images/{ACS.TARGET}/image{articleURL}.jpeg")
@@ -5265,10 +5280,10 @@ if(True):
 
 
 
-if(False):
+if(runSD):
     ScienceDirect.TARGET = TARGETNAME
 
-    doi = "10.1016/j.ejmech.2021.113711"
+    # doi = "10.1016/j.ejmech.2021.113711"
     try:
         article = ScienceDirect.ScienceDirectArticle(doi)
     except Exception as e:
