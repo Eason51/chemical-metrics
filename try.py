@@ -1050,6 +1050,7 @@ class ACS:
             self.bioavailability = ""
 
             self.nlpCompound = False
+            self.nlpDict = {}
 
             print("3.1.1")
             self.retrieve_values()
@@ -1200,6 +1201,8 @@ class ACS:
             print(f"single_dict: {nlpDict['single_dict']}")
             print(f"original_dict: {nlpDict['original_dict']}")
             nlpDict = nlpDict["original_dict"]
+            
+            self.nlpDict = nlpDict
             
             outputArr.append(nlpDict)
             
@@ -3361,6 +3364,7 @@ class ScienceDirect:
             self.bioavailability = ""
 
             self.nlpCompound = False
+            self.nlpDict = {}
 
             global TARGETNAME
             self.focusedTarget = TARGETNAME.lower()
@@ -3586,6 +3590,8 @@ class ScienceDirect:
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
             nlpDict = nlpDict["original_dict"]
             print(nlpDict)
+
+            self.nlpDict = nlpDict
             
             outputArr.append(nlpDict)
             
@@ -5283,7 +5289,12 @@ if(runACS):
     articleDict["pharm_metrics_vitro"] = vitroDict
     articleDict["pharm_metrics_vivo"] = vivoDict
 
+    print()
+    print(article.nlpDict)
+    print()
+
     print(articleDict)
+    print()
     check_json_value_format(articleDict)
     print(articleDict)
     print("end")
@@ -5336,7 +5347,11 @@ if(runSD):
     articleDict["pharm_metrics_vitro"] = vitroDict
     articleDict["pharm_metrics_vivo"] = vivoDict
 
+    print()
+    print(article.nlpDict)
+    print()
     print(articleDict)
+    print()
     check_json_value_format(articleDict)
     print(articleDict)
     print("end")
