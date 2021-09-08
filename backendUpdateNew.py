@@ -393,6 +393,7 @@ class ACS:
     def get_drug_molecule_paper(addressArr):
         
         global FILEID
+        global outputArr
 
         print("2.1")
         drugPaperCount = 0
@@ -403,9 +404,11 @@ class ACS:
         print("2.2")
 
 
+        outputArr.append("all acs articles")
 
         for address in addressArr:
 
+            outputArr.append(f"fileId: {address}")
 
             print(f"address: {address}")
             print("2.3")
@@ -451,6 +454,7 @@ class ACS:
                 print("2.12")
 
             print(f"smiles: {bool(simles)}")
+            outputArr.append(f"smiles: {bool(simles)}")
             print("2.13")
             # if(simles):
                 
@@ -757,6 +761,8 @@ class ACS:
                     self.cellFound = True
                 if(self.cellFound and tag == "sup"):
                     self.cellSpace = True
+                if(self.cellFound and tag == "a"):
+                    self.cellSpace = True
                 if(self.cellFound and tag == "br"):
                     self.cell += " "
                 
@@ -1046,6 +1052,7 @@ class ACS:
             self.bioavailability = ""
 
             self.nlpCompound = False
+            self.nlpDict = {}
 
             print("3.1.1")
             self.retrieve_values()
@@ -1063,15 +1070,15 @@ class ACS:
             print("3.1.3.1")
             self.retrieve_nlp_data()
             print("3.1.4")
-            if(not self.focusedTarget):
-                self.retrieve_target()
+            # if(not self.focusedTarget):
+            self.retrieve_target()
 
             print("3.1.4.1")
             self.retrieve_compound_amount()
             # positionResult = self.retrieve_image_text()
             print("3.1.5")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_image(self.positionResult)
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_image(self.positionResult)
             print("3.1.6")
             if(not self.compound):
                 self.get_compound_from_image(self.positionResult)
@@ -1080,8 +1087,8 @@ class ACS:
             print("3.1.8")
             self.get_compound_from_abstract()
             print("3.1.9")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_abstract()
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_abstract()
             print("3.1.10")
             self.get_multiple_values_from_body()
             print("3.1.11")
@@ -1141,6 +1148,7 @@ class ACS:
 
         def retrieve_article_information(self):
 
+            global outputArr
 
             self.tableParser = ACS.ACSArticle.TableParser()
             # open a file locally, should be retrieved through http request in real programs
@@ -1180,26 +1188,25 @@ class ACS:
             self.doi = self.tableParser.doi
             self.journal = self.tableParser.journal
 
-            global outputArr
-            outputArr.append(self.doi)
+            outputArr.append(f"title: {self.titleText}")
 
 
 
 
         def retrieve_nlp_data(self):
+
+            global outputArr
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
-            nlpDict = nlpDict["single_dict"]
-
-            global outputArr
-
-            jsonString = json.dumps(nlpDict, ensure_ascii=False)
-            outputArr.append(jsonString)
-
             print(f"doi: {self.doi}")
-            print(nlpDict)
+            print(f"single_dict: {nlpDict['single_dict']}")
+            print(f"original_dict: {nlpDict['original_dict']}")
+            nlpDict = nlpDict["original_dict"]
+
+            self.nlpDict = nlpDict
             
+            outputArr.append(nlpDict)
             
             print("3.1.3.3")
             if("compound" in nlpDict):
@@ -1213,13 +1220,7 @@ class ACS:
                         break
                     compound += token
                 
-                hasDigit = False
-                for c in compound:
-                    if(c.isdigit()):
-                        hasDigit = True
-                        break
-
-                if(compound and compoundName(compound) and hasDigit):
+                if(compound and compoundName(compound)):
                     self.compound = compound
                     self.nlpCompound = True
             
@@ -1334,10 +1335,9 @@ class ACS:
                         if(digits):
                             break
 
-                        if("fold" in token):
-                            for c in token:
-                                if(c.isdigit() or c == "."):
-                                    digits += c
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                digits += c
                     
                     
                     if(digits):
@@ -2196,6 +2196,7 @@ class ACS:
                     for cell in row.cells:
                         
                         if(colNum != compoundColNum):
+                            colNum += 1
                             continue
                         
                         if(cell.lower().strip() == self.compound):
@@ -2221,7 +2222,8 @@ class ACS:
                 or "vitro" in table.caption.lower()):
                     vitroFound = True
                 elif("pharmacokinetic" in table.caption.lower() or "preliminary" in table.caption.lower()
-                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
+                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower() 
+                or "pk" in table.caption.lower()):
                     vivoFound = True
 
                 print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
@@ -2291,11 +2293,16 @@ class ACS:
 
                         if(microFound):
                             break
-
+                        
+                        colNum = 0
                         for cell in row.cells:
+                            if(colNum != extractColNum):
+                                colNum += 1
+                                continue
                             if("μm" in cell.lower()):
                                 microFound = True
                                 break
+                            colNum += 1
                     
                     if(microFound):
                         value = "μm" + value
@@ -2322,7 +2329,8 @@ class ACS:
                             vitroFound = True
                             break
                         elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
-                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()
+                        or "pk" in cell.lower()):
                             vivoFound = True
                             break
                         
@@ -2343,8 +2351,9 @@ class ACS:
 
 
 
-
         def find_single_value_in_table(self, valueName):
+
+            print(f"\n\nvalueName: {valueName}")
             
             if(not self.compound):
                 return ""
@@ -2352,6 +2361,8 @@ class ACS:
             value = ""
 
             for table in self.tables:
+
+                print(f"\n\n{table.caption}")
                 
                 valueNameFound = False
                 index = 0
@@ -2369,6 +2380,7 @@ class ACS:
                 
                 valueUnit = ""
                 valueColNum = -1
+
                 for row in table.grid.header:
 
                     if(valueColNum != -1):
@@ -2378,28 +2390,28 @@ class ACS:
                     for cell in row.cells:
                         index = cell.find(valueName)
                         if(index != -1):
-                            if((index + len(valueName)) < len(cell)):
-                                if(cell[index + len(valueName)].isspace()):
-                                    valueColNum = colNum
+                            # if((index + len(valueName)) < len(cell)):
+                            #     if(cell[index + len(valueName)].isspace()):
+                            #         valueColNum = colNum
 
-                                    if("nm" in cell.lower()):
-                                        valueUnit = "nano"
-                                    elif("μm" in cell.lower()):
-                                        valueUnit = "micro"
+                            #         if("nm" in cell.lower()):
+                            #             valueUnit = "nano"
+                            #         elif("μm" in cell.lower()):
+                            #             valueUnit = "micro"
 
-                                    break
-                                elif(valueName == "AUC"):
-                                    valueColNum = colNum
-                                    break
-                            else:
-                                valueColNum = colNum
+                            #         break
+                            #     elif(valueName == "AUC" or ):
+                            #         valueColNum = colNum
+                            #         break
+                            # else:
+                            valueColNum = colNum
 
-                                if("nm" in cell.lower()):
-                                    valueUnit = "nano"
-                                elif("μm" in cell.lower()):
-                                    valueUnit = "micro"
+                            if("nm" in cell.lower()):
+                                valueUnit = "nano"
+                            elif("μm" in cell.lower()):
+                                valueUnit = "micro"
 
-                                break
+                            break
 
                         if(index == -1 and valueName == "bioavailability"):
                             if("F" in cell and "%" in cell):
@@ -2412,6 +2424,8 @@ class ACS:
                                 break
                         
                         colNum += 1
+
+                print(f"valueColNum: {valueColNum}")
                 
                 targetColNum = -1
                 if(self.focusedTarget):
@@ -2422,6 +2436,8 @@ class ACS:
                                 targetColNum = colNum
                         colNum += 1
                 
+
+                print(f"targetColNum: {targetColNum}")
 
                 if((valueColNum == -1 and not valueNameFound) or (valueNameFound and targetColNum == -1)):
                     continue
@@ -2439,20 +2455,31 @@ class ACS:
                 
                 if(compoundColNum == -1):
                     compoundColNum = 0
+
+                print(f"compoundColNum: {compoundColNum}")
                 
                 compoundRowNum = -1
                 rowNum = 0
                 for row in table.grid.body:
                     if(compoundRowNum != -1):
                         break
+
+                    colNum = 0
                     for cell in row.cells:
+                        if(colNum != compoundColNum):
+                            colNum += 1
+                            continue
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
                             break
+                        colNum += 1
                     rowNum += 1
+
+                print(f"compoundRowNum: {compoundRowNum}")
 
                 if(compoundRowNum == -1):
                     continue
+
                 
                 
                 value = ""
@@ -2494,60 +2521,317 @@ class ACS:
         def get_multiple_values_from_body(self):
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
-            if(not self.enzymeIc50):
-                if(not self.ic50Value):
-                    self.enzymeIc50 = enzymeValue
-                else:
-                    self.enzymeIc50 = self.ic50Value
-            if(not self.cellIc50):
+            # if(not self.enzymeIc50):
+            #     if(not self.ic50Value):
+            #         self.enzymeIc50 = enzymeValue
+            #     else:
+            #         self.enzymeIc50 = self.ic50Value
+            # if(not self.cellIc50):
+            #     self.cellIc50 = cellValue
+            if(enzymeValue):
+                self.enzymeIc50 = enzymeValue
+            if(cellValue):
                 self.cellIc50 = cellValue
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
-            if(not self.enzymeKi):
+            # if(not self.enzymeKi):
+            #     self.enzymeKi = enzymeValue
+            # if(not self.cellKi):    
+            #     self.cellKi = cellValue
+            if(enzymeValue):
                 self.enzymeKi = enzymeValue
-            if(not self.cellKi):    
+            if(cellValue):
                 self.cellKi = cellValue
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
-            if(not self.enzymeKd):    
+            # if(not self.enzymeKd):    
+            #     self.enzymeKd = enzymeValue
+            # if(not self.cellKd):
+            #     self.cellKd = cellValue
+            if(enzymeValue):
                 self.enzymeKd = enzymeValue
-            if(not self.cellKd):
+            if(cellValue):
                 self.cellKd = cellValue
 
+            # if(not self.enzymeKd or not self.cellKd):
+            #     [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+            #     if(not self.enzymeKd):    
+            #         self.enzymeKd = enzymeValue
+            #     if(not self.cellKd):
+            #         self.cellKd = cellValue       
             if(not self.enzymeKd or not self.cellKd):
                 [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
-                if(not self.enzymeKd):    
+                if(enzymeValue):
                     self.enzymeKd = enzymeValue
-                if(not self.cellKd):
-                    self.cellKd = cellValue                
+                if(cellValue):
+                    self.cellKd = cellValue         
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
-            if(not self.enzymeSelectivity):
+            # if(not self.enzymeSelectivity):
+            #     self.enzymeSelectivity = enzymeValue
+            # if(not self.cellSelectivity):    
+            #     self.cellSelectivity = cellValue
+            if(enzymeValue):
                 self.enzymeSelectivity = enzymeValue
-            if(not self.cellSelectivity):    
+            if(cellValue):
                 self.cellSelectivity = cellValue
             
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
-            if(not self.cellSolubility):
+            # if(not self.cellSolubility):
+            #     self.cellSolubility = cellValue
+            # if(not self.vivoSolubility):    
+            #     self.vivoSolubility = vivoValue
+            if(cellValue):
                 self.cellSolubility = cellValue
-            if(not self.vivoSolubility):    
+            if(vivoValue):
                 self.vivoSolubility = vivoValue
+
+
+        def get_vivo_value_in_table(self, valueName):
+
+            print("\n\nget_vivo_value_in_table")
+            print(valueName)
+            
+            if(not self.compound):
+                return ""
+            
+            value = ""
+            
+            for table in self.tables:
+
+                print(table.caption)
+
+                if(value):
+                    break
+
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if(self.compound in word.strip().lower()):
+                        compoundFound = True
+                        break
+
+                print(f"compoundFound: {compoundFound}")
+                
+                if(not compoundFound):
+                    continue
+
+                valueColNum = -1
+                for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
+                    colNum = 0
+                    for cell in row.cells:
+
+                        if(valueName.lower() in cell.lower()):
+                            valueColNum = colNum
+                            break
+                        elif(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                            or ("half" in cell.lower() and "life" in cell.lower())):
+                                valueColNum = colNum
+                                break
+                        elif(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueColNum = colNum
+                                break
+
+                        colNum += 1
+
+                print(f"valueColNum: {valueColNum}")
+
+                if(valueColNum == -1):
+                    continue
+
+                isColumnTable = True
+                for row in table.grid.header:
+                    if(not isColumnTable):
+                        break
+                    for cell in row.cells:
+                        if(not isColumnTable):
+                            break
+                        for keyword in self.compoundKeywords:
+                            if(keyword in cell.lower()):
+                                isColumnTable = False
+                                break
+
+                print(f"isColumnTable: {isColumnTable}")
+
+                if(not isColumnTable):
+                    continue
+                if(len(table.grid.body) == 0):
+                    continue
+                if(len(table.grid.body[0].cells) == 0):
+                    continue
+
+                value = table.grid.body[0].cells[valueColNum]
+
+            return value
+
+
+
+        
+        def get_vivo_value_in_horizontal_table(self, valueName):
+
+            if(not self.compound):
+                return ""
+
+            value = ""
+
+            for table in self.tables:
+                
+                if(value):
+                    break
+                
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if( self.compound in word.strip().lower()):
+                        compoundFound = True
+                        break
+                
+                if(not compoundFound):
+                    continue
+
+                isVivoTable = False
+                if(("pk" in table.caption.lower()) or ("pharma" in table.caption.lower()) 
+                    or ("vivo" in table.caption.lower()) or ("clini" in table.caption.lower())):
+                    isVivoTable = True
+
+                if(not isVivoTable):
+                    continue
+
+
+                valueColNum = -1
+                valueRowNum = -1
+                rowNum = 0
+                for row in table.grid.body:
+                    if(valueColNum != -1 and valueRowNum != -1):
+                        break
+                    colNum = 0
+                    for cell in row.cells:
+                        valueFound = False
+                        if(valueName.lower() in cell.lower()):
+                            valueFound = True
+                        if(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                                or("half" in cell.lower() and "life" in cell.lower())):
+                                valueFound = True
+                        if(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueFound  = True
+
+                        if(valueFound):
+                            valueColNum = colNum
+                            valueRowNum = rowNum
+                            break
+                        
+                        colNum += 1
+                    rowNum += 1
+
+                
+                if(valueColNum == -1 or valueRowNum == -1):
+                    continue
+
+                colNum = 0
+                for cell in table.grid.body[valueRowNum].cells:
+                    if(colNum <= valueColNum):
+                        colNum += 1
+                        continue
+
+                    if(len(cell) > 0):
+                        hasDigit = False
+                        for c in cell:
+                            if(c.isdigit()):
+                                hasDigit = True
+                                break
+
+                        if(hasDigit):
+                            value = cell
+                            break
+                    
+                    colNum += 1
+            
+            return value
+
+
+
+
 
 
         
         def get_single_value_from_body(self):
-            if(not self.ec50):    
-                self.ec50 = self.find_single_value_in_table("EC50")
-            if(not self.ed50):
-                self.ed50 = self.find_single_value_in_table("ED50")
-            if(not self.auc):
-                self.auc = self.find_single_value_in_table("AUC")
-            if(not self.herg):
-                self.herg = self.find_single_value_in_table("hERG")
-            if(not self.tHalf):
-                self.tHalf = self.find_single_value_in_table("t_half")
-            if(not self.bioavailability):
-                self.bioavailability = self.find_single_value_in_table("bioavailability")
+            
+            # print("e13.1")
+            # if(not self.ec50):
+            #     self.ec50 = self.find_single_value_in_table("EC50")
+            # print("e13.2")
+            # if(not self.ed50):
+            #     self.ed50 = self.find_single_value_in_table("ED50")
+            # print("e13.3")
+            # if(not self.auc):
+            #     self.auc = self.find_single_value_in_table("AUC")
+            # print("e13.4")
+            # if(not self.herg):
+            #     self.herg = self.find_single_value_in_table("hERG")
+            # print("e13.5")
+            # if(not self.tHalf):
+            #     self.tHalf = self.find_single_value_in_table("t_half")
+            # print("e13.6")
+            # if(not self.bioavailability):
+            #     self.bioavailability = self.find_single_value_in_table("bioavailability")
+            ec50 = self.find_single_value_in_table("EC50")
+            if(ec50):
+                self.ec50 = ec50
+            ed50 = self.find_single_value_in_table("ED50")
+            if(ed50):
+                self.ed50 = ed50
+            auc = self.find_single_value_in_table("AUC")
+            if(auc):
+                self.auc = auc
+            else:
+                auc = self.get_vivo_value_in_table("AUC")
+                if(auc):
+                    self.auc = auc
+                else:
+                    auc = self.get_vivo_value_in_horizontal_table("AUC")
+                    if(auc):
+                        self.auc = auc
+            herg = self.find_single_value_in_table("hERG")
+            if(herg):
+                self.herg = herg
+            else:
+                herg = self.get_vivo_value_in_table("hERG")
+                if(herg):
+                    self.herg = herg
+                else:
+                    herg = self.get_vivo_value_in_horizontal_table("hERG")
+                    if(herg):
+                        self.herg = herg
+            tHalf = self.find_single_value_in_table("t_half")
+            if(tHalf):
+                self.tHalf = tHalf
+            else:
+                tHalf = self.get_vivo_value_in_table("t_half")
+                if(tHalf):
+                    self.tHalf = tHalf
+                else:
+                    tHalf = self.get_vivo_value_in_horizontal_table("t_half")
+                    if(tHalf):
+                        self.tHalf = tHalf
+            bioavailability = self.find_single_value_in_table("bioavailability")
+            if(bioavailability):
+                self.bioavailability = bioavailability
+            else:
+                bioavailability = self.get_vivo_value_in_table("bioavailability")
+                if(bioavailability):
+                    self.bioavailability = bioavailability
+                else:
+                    bioavailability = self.get_vivo_value_in_horizontal_table("bioavailability")
+                    if(bioavailability):
+                        self.bioavailability = bioavailability
 
 
 
@@ -2587,6 +2871,8 @@ class ScienceDirect:
         DOIArr = []
         dateArr = []
         
+        global outputArr
+        outputArr.append("find keywords: ")
 
         for condition in ScienceDirect.conditions:
 
@@ -2701,6 +2987,7 @@ class ScienceDirect:
                             if(keywordFound):   
                                 AMOUNT2 += 1
                                 DOIArr.append(article["doi"])
+                                outputArr.append(f"doi: {article['doi']}")
 
                 else:
                     break
@@ -2716,8 +3003,6 @@ class ScienceDirect:
                 "display": display
                 }
                 response = requests.put(url, headers=header, json=payload)
-                print(f"response: {response}")
-                print(f"offset: {offset}")
                 result = json.loads(response.text)
 
 
@@ -3183,6 +3468,7 @@ class ScienceDirect:
             self.bioavailability = ""
 
             self.nlpCompound = False
+            self.nlpDict = {}
 
             global TARGETNAME
             self.focusedTarget = TARGETNAME.lower()
@@ -3210,14 +3496,14 @@ class ScienceDirect:
             self.retrieve_nlp_data()
 
             print("e5")
-            if(not self.focusedTarget):
-                self.retrieve_target()
+            # if(not self.focusedTarget):
+            self.retrieve_target()
 
             print("e6")
             self.retrieve_compound_amount()
             print("e7")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_image(positionResult)
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_image(positionResult)
             print("e8")
             if(not self.compound):
                 self.get_compound_from_image(positionResult)
@@ -3226,18 +3512,21 @@ class ScienceDirect:
             print("e10")
             self.get_compound_from_abstract()
             print("e11")
-            if(not self.enzymeIc50 and not self.cellIc50):
-                self.get_ic50_from_abstract()
+            # if(not self.enzymeIc50 and not self.cellIc50):
+            self.get_ic50_from_abstract()
             
             print("e12")
             self.get_multiple_values_from_body()
             print("e13")
             self.get_single_value_from_body()
+            print("e14")
 
 
 
 
         def retrieve_article_information(self):
+
+            global outputArr
             
             QUERY_URL = "https://api.elsevier.com/content/article/doi/"
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY, "Accept": "text/xml"}
@@ -3250,6 +3539,7 @@ class ScienceDirect:
                 pass
 
             imgRef = tableParser.imgRef
+            outputArr.append(f"imgRef: {imgRef}")
             if(not imgRef):
                 self.valid = False
                 return
@@ -3300,6 +3590,8 @@ class ScienceDirect:
 
         def retrieve_image_text(self):
 
+            global outputArr
+
             header = {"X-ELS-APIKey": ScienceDirect.APIKEY}
             image = requests.get(self.imgURL, headers=header).content
             
@@ -3325,6 +3617,7 @@ class ScienceDirect:
             except:
                 # self.valid = False
                 pass
+            outputArr.append(f"simles: {bool(simles)}")
             # if(not simles):
             #     self.valid = False
             
@@ -3395,14 +3688,17 @@ class ScienceDirect:
 
         def retrieve_nlp_data(self):
 
+            global outputArr
             
             print("3.1.3.2")
             nlpDict = nlp.get_nlp_results(self.tableParser, **modelDict)
-            nlpDict = nlpDict["single_dict"]
+            nlpDict = nlpDict["original_dict"]
+            print(nlpDict)
+
+            self.nlpDict = nlpDict
             
-            global outputArr
-            jsonString = json.dumps(nlpDict, ensure_ascii=False)
-            outputArr.append(jsonString)
+            outputArr.append(nlpDict)
+            
             print("3.1.3.3")
             if("compound" in nlpDict):
                 
@@ -3414,14 +3710,8 @@ class ScienceDirect:
                     if(token == "</b>"):
                         break
                     compound += token
-
-                hasDigit = False
-                for c in compound:
-                    if(c.isdigit()):
-                        hasDigit = True
-                        break
                 
-                if(compound and compoundName(compound) and hasDigit):
+                if(compound and compoundName(compound)):
                     self.compound = compound
                     self.nlpCompound = True
             
@@ -3536,10 +3826,9 @@ class ScienceDirect:
                         if(digits):
                             break
 
-                        if("fold" in token):
-                            for c in token:
-                                if(c.isdigit() or c == "."):
-                                    digits += c
+                        for c in token:
+                            if(c.isdigit() or c == "."):
+                                digits += c
                     
                     
                     if(digits):
@@ -4392,6 +4681,7 @@ class ScienceDirect:
                     for cell in row.cells:
                         
                         if(colNum != compoundColNum):
+                            colNum += 1
                             continue
                         
                         if(cell.lower().strip() == self.compound):
@@ -4417,7 +4707,8 @@ class ScienceDirect:
                 or "vitro" in table.caption.lower()):
                     vitroFound = True
                 elif("pharmacokinetic" in table.caption.lower() or "preliminary" in table.caption.lower()
-                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()):
+                or "vivo" in table.caption.lower() or "preclinical" in table.caption.lower()
+                or "pk" in table.caption.lower()):
                     vivoFound = True
 
                 print(f"1: medifound: {mediFound}, vitroFound: {vitroFound}, vivoFound: {vivoFound}")
@@ -4487,11 +4778,16 @@ class ScienceDirect:
 
                         if(microFound):
                             break
-
+                        
+                        colNum = 0
                         for cell in row.cells:
+                            if(colNum != extractColNum):
+                                colNum += 1
+                                continue
                             if("μm" in cell.lower()):
                                 microFound = True
                                 break
+                            colNum += 1
                     
                     if(microFound):
                         value = "μm" + value
@@ -4518,7 +4814,8 @@ class ScienceDirect:
                             vitroFound = True
                             break
                         elif("pharmacokinetic" in cell.lower() or "preliminary" in cell.lower()
-                        or "vivo" in cell.lower() or "preclinical" in cell.lower()):
+                        or "vivo" in cell.lower() or "preclinical" in cell.lower()
+                        or "pk" in cell.lower()):
                             vivoFound = True
                             break
                         
@@ -4537,7 +4834,7 @@ class ScienceDirect:
 
             return[mediValue, vitroValue, vivoValue]
 
-
+            
 
 
         def find_single_value_in_table(self, valueName):
@@ -4574,28 +4871,28 @@ class ScienceDirect:
                     for cell in row.cells:
                         index = cell.find(valueName)
                         if(index != -1):
-                            if((index + len(valueName)) < len(cell)):
-                                if(cell[index + len(valueName)].isspace()):
-                                    valueColNum = colNum
+                            # if((index + len(valueName)) < len(cell)):
+                            #     if(cell[index + len(valueName)].isspace()):
+                            #         valueColNum = colNum
 
-                                    if("nm" in cell.lower()):
-                                        valueUnit = "nano"
-                                    elif("μm" in cell.lower()):
-                                        valueUnit = "micro"
+                            #         if("nm" in cell.lower()):
+                            #             valueUnit = "nano"
+                            #         elif("μm" in cell.lower()):
+                            #             valueUnit = "micro"
 
-                                    break
-                                elif(valueName == "AUC"):
-                                    valueColNum = colNum
-                                    break
-                            else:
-                                valueColNum = colNum
+                            #         break
+                            #     elif(valueName == "AUC"):
+                            #         valueColNum = colNum
+                            #         break
+                            # else:
+                            valueColNum = colNum
 
-                                if("nm" in cell.lower()):
-                                    valueUnit = "nano"
-                                elif("μm" in cell.lower()):
-                                    valueUnit = "micro"
+                            if("nm" in cell.lower()):
+                                valueUnit = "nano"
+                            elif("μm" in cell.lower()):
+                                valueUnit = "micro"
 
-                                break
+                            break
 
                         if(index == -1 and valueName == "bioavailability"):
                             if("F" in cell and "%" in cell):
@@ -4641,10 +4938,16 @@ class ScienceDirect:
                 for row in table.grid.body:
                     if(compoundRowNum != -1):
                         break
+
+                    colNum = 0
                     for cell in row.cells:
+                        if(colNum != compoundColNum):
+                            colNum += 1
+                            continue
                         if(cell.strip() == self.compound):
                             compoundRowNum = rowNum
                             break
+                        colNum += 1
                     rowNum += 1
 
                 if(compoundRowNum == -1):
@@ -4693,31 +4996,49 @@ class ScienceDirect:
             
             print("e12.1")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("IC50")
-            if(not self.enzymeIc50):
-                if(not self.ic50Value):
-                    self.enzymeIc50 = enzymeValue
-                else:
-                    self.enzymeIc50 = self.ic50Value
-            if(not self.cellIc50):
+            # if(not self.enzymeIc50):
+            #     if(not self.ic50Value):
+            #         self.enzymeIc50 = enzymeValue
+            #     else:
+            #         self.enzymeIc50 = self.ic50Value
+            # if(not self.cellIc50):
+            #     self.cellIc50 = cellValue
+            if(enzymeValue):
+                self.enzymeIc50 = enzymeValue
+            if(cellValue):
                 self.cellIc50 = cellValue
             
             print("e12.2")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Ki")
-            if(not self.enzymeKi):    
+            # if(not self.enzymeKi):    
+            #     self.enzymeKi = enzymeValue
+            # if(not self.cellKi):
+            #     self.cellKi = cellValue
+            if(enzymeValue):
                 self.enzymeKi = enzymeValue
-            if(not self.cellKi):
+            if(cellValue):
                 self.cellKi = cellValue
             
             print("e12.3")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("Kd")
-            if(not self.enzymeKd):
+            # if(not self.enzymeKd):
+            #     self.enzymeKd = enzymeValue
+            # if(not self.cellKd):
+            #     self.cellKd = cellValue
+            if(enzymeValue):
                 self.enzymeKd = enzymeValue
-            if(not self.cellKd):
+            if(cellValue):
                 self.cellKd = cellValue
 
+            # if(not self.enzymeKd or not self.cellKd):
+            #     [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
+            #     if(not self.enzymeKd):
+            #         self.enzymeKd = enzymeValue
+            #     if(not self.cellKd):
+            #         self.cellKd = cellValue
             if(not self.enzymeKd or not self.cellKd):
                 [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("KD")
-                if(not self.enzymeKd):
+                if(enzymeValue):
                     self.enzymeKd = enzymeValue
                 if(not self.cellKd):
                     self.cellKd = cellValue
@@ -4725,40 +5046,272 @@ class ScienceDirect:
             
             print("e12.4")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("selectivity")
-            if(not self.enzymeSelectivity):
+            # if(not self.enzymeSelectivity):
+            #     self.enzymeSelectivity = enzymeValue
+            # if(not self.cellSelectivity):
+            #     self.cellSelectivity = cellValue
+            if(enzymeValue):
                 self.enzymeSelectivity = enzymeValue
-            if(not self.cellSelectivity):
+            if(cellValue):
                 self.cellSelectivity = cellValue
             
             print("e12.5")
             [enzymeValue, cellValue, vivoValue] = self.find_values_in_table("solubility")
-            if(not self.cellSolubility):
+            # if(not self.cellSolubility):
+            #     self.cellSolubility = cellValue
+            # if(not self.vivoSolubility):
+            #     self.vivoSolubility = vivoValue
+            if(cellValue):
                 self.cellSolubility = cellValue
-            if(not self.vivoSolubility):
+            if(vivoValue):
                 self.vivoSolubility = vivoValue
+
+
+        def get_vivo_value_in_table(self, valueName):
+
+            print("\n\nget_vivo_value_in_table")
+            print(valueName)
+            
+            if(not self.compound):
+                return ""
+            
+            value = ""
+            
+            for table in self.tables:
+
+                print(table.caption)
+
+                if(value):
+                    break
+
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if( self.compound in word.strip().lower()):
+                        compoundFound = True
+                        break
+
+                print(f"compoundFound: {compoundFound}")
+                
+                if(not compoundFound):
+                    continue
+
+                valueColNum = -1
+                for row in table.grid.header:
+
+                    if(valueColNum != -1):
+                        break
+
+                    colNum = 0
+                    for cell in row.cells:
+
+                        if(valueName.lower() in cell.lower()):
+                            valueColNum = colNum
+                            break
+                        elif(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                            or ("half" in cell.lower() and "life" in cell.lower())):
+                                valueColNum = colNum
+                                break
+                        elif(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueColNum = colNum
+                                break
+
+                        colNum += 1
+
+                print(f"valueColNum: {valueColNum}")
+
+                if(valueColNum == -1):
+                    continue
+
+                isColumnTable = True
+                for row in table.grid.header:
+                    if(not isColumnTable):
+                        break
+                    for cell in row.cells:
+                        if(not isColumnTable):
+                            break
+                        for keyword in self.compoundKeywords:
+                            if(keyword in cell.lower()):
+                                isColumnTable = False
+                                break
+
+                print(f"isColumnTable: {isColumnTable}")
+
+                if(not isColumnTable):
+                    continue
+                if(len(table.grid.body) == 0):
+                    continue
+                if(len(table.grid.body[0].cells) == 0):
+                    continue
+
+                value = table.grid.body[0].cells[valueColNum]
+
+            return value
+
+
+
+        def get_vivo_value_in_horizontal_table(self, valueName):
+
+            if(not self.compound):
+                return ""
+
+            value = ""
+
+            for table in self.tables:
+                
+                if(value):
+                    break
+                
+                titleWordArr = table.caption.split(" ")
+                compoundFound = False
+                for word in titleWordArr:
+                    if( self.compound in word.strip().lower()):
+                        compoundFound = True
+                        break
+                
+                if(not compoundFound):
+                    continue
+
+                isVivoTable = False
+                if(("pk" in table.caption.lower()) or ("pharma" in table.caption.lower()) 
+                    or ("vivo" in table.caption.lower()) or ("clini" in table.caption.lower())):
+                    isVivoTable = True
+
+                if(not isVivoTable):
+                    continue
+
+
+                valueColNum = -1
+                valueRowNum = -1
+                rowNum = 0
+                for row in table.grid.body:
+                    if(valueColNum != -1 and valueRowNum != -1):
+                        break
+                    colNum = 0
+                    for cell in row.cells:
+                        valueFound = False
+                        if(valueName.lower() in cell.lower()):
+                            valueFound = True
+                        if(valueName == "t_half"):
+                            if(("t" in cell.lower() and "1/2" in cell.lower())
+                                or("half" in cell.lower() and "life" in cell.lower())):
+                                valueFound = True
+                        if(valueName == "bioavailability"):
+                            if("F" in cell and "%" in cell):
+                                valueFound  = True
+
+                        if(valueFound):
+                            valueColNum = colNum
+                            valueRowNum = rowNum
+                            break
+                        
+                        colNum += 1
+                    rowNum += 1
+
+                
+                if(valueColNum == -1 or valueRowNum == -1):
+                    continue
+
+                colNum = 0
+                for cell in table.grid.body[valueRowNum].cells:
+                    if(colNum <= valueColNum):
+                        colNum += 1
+                        continue
+
+                    if(len(cell) > 0):
+                        hasDigit = False
+                        for c in cell:
+                            if(c.isdigit()):
+                                hasDigit = True
+                                break
+
+                        if(hasDigit):
+                            value = cell
+                            break
+                    
+                    colNum += 1
+            
+            return value
+
+
+
+
 
 
         
         def get_single_value_from_body(self):
             
-            print("e13.1")
-            if(not self.ec50):
-                self.ec50 = self.find_single_value_in_table("EC50")
-            print("e13.2")
-            if(not self.ed50):
-                self.ed50 = self.find_single_value_in_table("ED50")
-            print("e13.3")
-            if(not self.auc):
-                self.auc = self.find_single_value_in_table("AUC")
-            print("e13.4")
-            if(not self.herg):
-                self.herg = self.find_single_value_in_table("hERG")
-            print("e13.5")
-            if(not self.tHalf):
-                self.tHalf = self.find_single_value_in_table("t_half")
-            print("e13.6")
-            if(not self.bioavailability):
-                self.bioavailability = self.find_single_value_in_table("bioavailability")
+            # print("e13.1")
+            # if(not self.ec50):
+            #     self.ec50 = self.find_single_value_in_table("EC50")
+            # print("e13.2")
+            # if(not self.ed50):
+            #     self.ed50 = self.find_single_value_in_table("ED50")
+            # print("e13.3")
+            # if(not self.auc):
+            #     self.auc = self.find_single_value_in_table("AUC")
+            # print("e13.4")
+            # if(not self.herg):
+            #     self.herg = self.find_single_value_in_table("hERG")
+            # print("e13.5")
+            # if(not self.tHalf):
+            #     self.tHalf = self.find_single_value_in_table("t_half")
+            # print("e13.6")
+            # if(not self.bioavailability):
+            #     self.bioavailability = self.find_single_value_in_table("bioavailability")
+            ec50 = self.find_single_value_in_table("EC50")
+            if(ec50):
+                self.ec50 = ec50
+            ed50 = self.find_single_value_in_table("ED50")
+            if(ed50):
+                self.ed50 = ed50
+            auc = self.find_single_value_in_table("AUC")
+            if(auc):
+                self.auc = auc
+            else:
+                auc = self.get_vivo_value_in_table("AUC")
+                if(auc):
+                    self.auc = auc
+                else:
+                    auc = self.get_vivo_value_in_horizontal_table("AUC")
+                    if(auc):
+                        self.auc = auc
+            herg = self.find_single_value_in_table("hERG")
+            if(herg):
+                self.herg = herg
+            else:
+                herg = self.get_vivo_value_in_table("hERG")
+                if(herg):
+                    self.herg = herg
+                else:
+                    herg = self.get_vivo_value_in_horizontal_table("hERG")
+                    if(herg):
+                        self.herg = herg
+            tHalf = self.find_single_value_in_table("t_half")
+            if(tHalf):
+                self.tHalf = tHalf
+            else:
+                tHalf = self.get_vivo_value_in_table("t_half")
+                if(tHalf):
+                    self.tHalf = tHalf
+                else:
+                    tHalf = self.get_vivo_value_in_horizontal_table("t_half")
+                    if(tHalf):
+                        self.tHalf = tHalf
+            bioavailability = self.find_single_value_in_table("bioavailability")
+            if(bioavailability):
+                self.bioavailability = bioavailability
+            else:
+                bioavailability = self.get_vivo_value_in_table("bioavailability")
+                if(bioavailability):
+                    self.bioavailability = bioavailability
+                else:
+                    bioavailability = self.get_vivo_value_in_horizontal_table("bioavailability")
+                    if(bioavailability):
+                        self.bioavailability = bioavailability
+            
 
 
 
@@ -4839,9 +5392,16 @@ def convert_value(valueDict, key, convertFunc, checkMicro):
     if(type(valueDict[key]) != str):
         return
 
+    if(len(valueDict[key]) > 1 and (valueDict[key][0] == ">" or valueDict[key][0] == "<")):
+        valueDict[key] = valueDict[key][1:]
+    
+
     if(not checkMicro):
         if(len(valueDict[key]) >= 2 and valueDict[key][:2] == "μm"):
             valueDict[key] = valueDict[key][2:]
+        if(len(valueDict[key]) > 1 and (valueDict[key][0] == ">" or valueDict[key][0] == "<")):
+            valueDict[key] = valueDict[key][1:]
+        
         valueDict[key] = convertFunc(valueDict[key])
     else:
         isMicro = False
@@ -4880,17 +5440,17 @@ def check_json_value_format(articleDict):
     convert_value(vivoDict, "bioavailability", convertToFloat, False)
     convert_value(vivoDict, "solubility", convertToFloat, False)
 
-    checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
-    dictArr = [mediDict, vitroDict]
-    for valueDict in dictArr:
-        for key in checkUnitkeyArr:
+    # checkUnitkeyArr = ["IC50", "Ki", "Kd", "EC50"]
+    # dictArr = [mediDict, vitroDict]
+    # for valueDict in dictArr:
+    #     for key in checkUnitkeyArr:
             
-            if(key in valueDict):
+    #         if(key in valueDict):
                 
-                value = valueDict[key]
-                if(value > 0 and value < 1):
-                    value *= 1000
-                    valueDict[key] = value
+    #             value = valueDict[key]
+    #             if(value > 0 and value < 1):
+    #                 value *= 1000
+    #                 valueDict[key] = value
 
 
 
@@ -4904,122 +5464,122 @@ def all_to_json(targetName, fileAmount):
     print(1)
     ACS.TARGET = targetName.lower()
     
-    # ACSUrl = ACS.prepare_query_url(targetName)
+    ACSUrl = ACS.prepare_query_url(targetName)
 
-    # (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
+    (paper_count, queryResponse) = ACS.get_article_amount_and_response(ACSUrl)
 
-    # addressArr =  ACS.get_article_URLs(queryResponse)
+    addressArr =  ACS.get_article_URLs(queryResponse)
     
-    # print(2)
-    # addressArr = find_index.find_acs_article_list(targetName)
-    # (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
+    print(2)
+    addressArr = find_index.find_acs_article_list(targetName)
+    (dateArr, tableAddressArr, drug_molecule_count, simlesDict, positionResultDict) = ACS.get_drug_molecule_paper(addressArr)
 
-    # dateArr.sort()
-    # result = {}
-    # result["target_name"] = targetName
-    # result["paper_count"] = len(addressArr)
-    # result["paper_count_year"] = dateArr
-    # result["drug_molecule_count"] = drug_molecule_count
-    # result["drug_molecule_paper"] = []
+    dateArr.sort()
+    result = {}
+    result["target_name"] = targetName
+    result["paper_count"] = len(addressArr)
+    result["paper_count_year"] = dateArr
+    result["drug_molecule_count"] = drug_molecule_count
+    result["drug_molecule_paper"] = []
 
     
-    # print(3)
-    # i = 0
-    # for articleURL in tableAddressArr:
+    print(3)
+    i = 0
+    for articleURL in tableAddressArr:
 
         
-    #     print(f"\n\nrticleURL: {articleURL}")
-    #     outputArr.append(f"articleURL: {articleURL}")
-    #     print(3.1)
-    #     article = None
-    #     try:
-    #         article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
-    #     except Exception as e:
-    #         print(e)
-    #         traceback.print_tb(e.__traceback__)
-    #         raise Exception("error occured")
+        print(f"\n\nrticleURL: {articleURL}")
+        outputArr.append(f"articleURL: {articleURL}")
+        print(3.1)
+        article = None
+        try:
+            article = ACS.ACSArticle(articleURL, positionResultDict[articleURL])
+        except Exception as e:
+            print(e)
+            traceback.print_tb(e.__traceback__)
+            raise Exception("error occured")
 
-    #     print(3.2)
-    #     if(not article.compound):
-    #         result["drug_molecule_count"] -= 1
-    #         print(3.3)
-    #         continue
+        print(3.2)
+        if(not article.compound):
+            result["drug_molecule_count"] -= 1
+            print(3.3)
+            continue
         
-    #     print(3.4)
-    #     articleDict = {}
-    #     articleDict["id"] = i
-    #     articleDict["paper_title"] = article.titleText
-    #     articleDict["paper_author"] = article.authorArr
-    #     articleDict["paper_year"] = article.year
-    #     articleDict["paper_institution"] = article.institution
-    #     articleDict["paper_cited"] = article.paperCited
-    #     articleDict["doi"] = article.doi
-    #     articleDict["paper_journal"] = article.journal
-    #     articleDict["paper_abstract_image"] = article.imgArr[0]
-    #     articleDict["compound_count"] = len(article.compoundSet)
-    #     articleDict["compound_name"] = article.compound
-    #     articleDict["compound_name_drug"] = article.compoundNameDrug
-    #     articleDict["compound_smiles"] = simlesDict[articleURL]
+        print(3.4)
+        articleDict = {}
+        articleDict["id"] = i
+        articleDict["paper_title"] = article.titleText
+        articleDict["paper_author"] = article.authorArr
+        articleDict["paper_year"] = article.year
+        articleDict["paper_institution"] = article.institution
+        articleDict["paper_cited"] = article.paperCited
+        articleDict["doi"] = article.doi
+        articleDict["paper_journal"] = article.journal
+        articleDict["paper_abstract_image"] = article.imgArr[0]
+        articleDict["compound_count"] = len(article.compoundSet)
+        articleDict["compound_name"] = article.compound
+        articleDict["compound_name_drug"] = article.compoundNameDrug
+        articleDict["compound_smiles"] = simlesDict[articleURL]
 
-    #     if(not simlesDict[articleURL]):
-    #         acsSmilesArr.append([article.doi, articleURL])
+        if(not simlesDict[articleURL]):
+            acsSmilesArr.append([article.doi, articleURL])
 
-    #     medicinalDict = {}
-    #     medicinalDict["Ki"] = article.enzymeKi
-    #     medicinalDict["Kd"] = article.enzymeKd
-    #     medicinalDict["IC50"] = article.enzymeIc50
-    #     medicinalDict["selectivity"] = article.enzymeSelectivity
-    #     vitroDict = {}
-    #     vitroDict["Ki"] = article.cellKi
-    #     vitroDict["Kd"] = article.cellKd
-    #     vitroDict["IC50"] = article.cellIc50
-    #     vitroDict["EC50"] = article.ec50
-    #     vitroDict["selectivity"] = article.cellSelectivity
-    #     vitroDict["hERG"] = article.herg
-    #     vitroDict["solubility"] = article.cellSolubility
-    #     vivoDict = {}
-    #     vivoDict["ED50"] = article.ed50
-    #     vivoDict["AUC"] = article.auc
-    #     vivoDict["solubility"] = article.vivoSolubility
-    #     vivoDict["t_half"] = article.tHalf
-    #     vivoDict["bioavailability"] = article.bioavailability
+        medicinalDict = {}
+        medicinalDict["Ki"] = article.enzymeKi
+        medicinalDict["Kd"] = article.enzymeKd
+        medicinalDict["IC50"] = article.enzymeIc50
+        medicinalDict["selectivity"] = article.enzymeSelectivity
+        vitroDict = {}
+        vitroDict["Ki"] = article.cellKi
+        vitroDict["Kd"] = article.cellKd
+        vitroDict["IC50"] = article.cellIc50
+        vitroDict["EC50"] = article.ec50
+        vitroDict["selectivity"] = article.cellSelectivity
+        vitroDict["hERG"] = article.herg
+        vitroDict["solubility"] = article.cellSolubility
+        vivoDict = {}
+        vivoDict["ED50"] = article.ed50
+        vivoDict["AUC"] = article.auc
+        vivoDict["solubility"] = article.vivoSolubility
+        vivoDict["t_half"] = article.tHalf
+        vivoDict["bioavailability"] = article.bioavailability
 
-    #     articleDict["medicinal_chemistry_metrics"] = medicinalDict
-    #     articleDict["pharm_metrics_vitro"] = vitroDict
-    #     articleDict["pharm_metrics_vivo"] = vivoDict
+        articleDict["medicinal_chemistry_metrics"] = medicinalDict
+        articleDict["pharm_metrics_vitro"] = vitroDict
+        articleDict["pharm_metrics_vivo"] = vivoDict
 
-    #     print(3.5)
-    #     try:
-    #         if re.search('[A-Z]', articleDict["compound_name_drug"]):
-    #             r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
-    #             if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
-    #                 articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
-    #             else:
-    #                 articleDict["clinical_statistics"] = {}
-    #         else:
-    #             articleDict["clinical_statistics"] = {}
-    #     except Exception as e:
-    #         print(e)
-    #         traceback.print_tb(e.__traceback__)
-    #         raise Exception("error occured")
+        print(3.5)
+        try:
+            if re.search('[A-Z]', articleDict["compound_name_drug"]):
+                r = clinical.getloadClinicalData(articleDict["compound_name_drug"])
+                if ("StudyFieldsResponse" in r and 'StudyFields' in r["StudyFieldsResponse"]):
+                    articleDict["clinical_statistics"] = clinical.study_num_Phase(r)
+                else:
+                    articleDict["clinical_statistics"] = {}
+            else:
+                articleDict["clinical_statistics"] = {}
+        except Exception as e:
+            print(e)
+            traceback.print_tb(e.__traceback__)
+            raise Exception("error occured")
         
 
-    #     print("start")
-    #     outputArr.append("\n")
-    #     jsonString = json.dumps(articleDict, ensure_ascii=False)
-    #     outputArr.append(jsonString)
-    #     try:    
-    #         check_json_value_format(articleDict)
-    #     except Exception as e:
-    #         print(articleDict)
-    #         print(e)
-    #         # raise Exception("exception occured")
-    #     print("end")
+        print("start")
+        outputArr.append("\n")
+        jsonString = json.dumps(articleDict, ensure_ascii=False)
+        outputArr.append(jsonString)
+        try:    
+            check_json_value_format(articleDict)
+        except Exception as e:
+            print(articleDict)
+            print(e)
+            # raise Exception("exception occured")
+        print("end")
 
-    #     result["drug_molecule_paper"].append(articleDict)
+        result["drug_molecule_paper"].append(articleDict)
         
-    #     print("3.6")
-    #     i += 1
+        print("3.6")
+        i += 1
 
 
     print("a")
