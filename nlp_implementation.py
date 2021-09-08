@@ -229,6 +229,8 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
 
     tokenizer = def_tokenizer
 
+    soft_max = torch.nn.Softmax(dim=-1)
+
     abstract_text = table_parser.abstractBoldText.lower()
     body_text = table_parser.bodyText
     title_text = table_parser.title.lower()
@@ -342,13 +344,19 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
             start_span_idx = pred_dict['pred_start'].argmax(dim=-1).item()
             end_span_idx = pred_dict['pred_end'].argmax(dim=-1).item()
 
-            if start_span_idx != 0 and end_span_idx != 1:
+            if start_span_idx != 0 and end_span_idx != 1 and start_span_idx < end_span_idx:
                 predict_metric = ' '.join(new_tokenize_content[start_span_idx: end_span_idx])
             else:
                 predict_metric = '<unk>'
 
             if predict_metric != '<unk>' and predict_metric != predict_compound:
-                metric_vote.update([predict_metric] * (1 if idx == 0 else 2))
+                if idx == 0:
+                    metric_vote.update([predict_metric] * 100 * len(tokenize_content_list))
+                else:
+                    prob = soft_max(pred_dict['pred_start']).argmax(dim=-1).item() + \
+                           soft_max(pred_dict['pred_end']).argmax(dim=-1).item()
+                    prob = int(prob * 100)
+                    metric_vote.update([predict_metric] * prob)
 
         if len(metric_vote) > 0:
             metric_result = metric_vote.most_common(1)[0][0]
