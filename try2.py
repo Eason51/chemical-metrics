@@ -5584,6 +5584,13 @@ def all_to_json(targetName, fileAmount):
     #     i += 1
 
 
+    result = {}
+    result["target_name"] = targetName
+    result["paper_count"] = 0
+    result["paper_count_year"] = []
+    result["drug_molecule_count"] = 0
+    result["drug_molecule_paper"] = []
+
     print("a")
     ScienceDirect.TARGET = targetName.lower()
     ScienceDirect.initialize_conditions(targetName.lower())
