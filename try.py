@@ -1203,7 +1203,7 @@ class ACS:
             print(f"single_dict: {nlpDict['single_dict']}")
             print(f"original_dict: {nlpDict['original_dict']}")
             nlpDict = nlpDict["original_dict"]
-            
+
             self.nlpDict = nlpDict
             
             outputArr.append(nlpDict)
@@ -2141,7 +2141,7 @@ class ACS:
                                 break
 
                             else:
-                                if(cell[index + len(valueName)].isspace()):
+                                if(not cell[index + len(valueName)].isalpha()):
                                     valueColNum = colNum
 
                                     if("nm" in cell.lower()):
@@ -4626,7 +4626,7 @@ class ScienceDirect:
                                 break
 
                             else:
-                                if(cell[index + len(valueName)].isspace()):
+                                if(not cell[index + len(valueName)].isalpha()):
                                     valueColNum = colNum
 
                                     if("nm" in cell.lower()):
