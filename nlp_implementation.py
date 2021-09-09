@@ -355,7 +355,10 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                 else:
                     prob = soft_max(pred_dict['pred_start']).argmax(dim=-1).item() + \
                            soft_max(pred_dict['pred_end']).argmax(dim=-1).item()
-                    prob = int(prob * 100)
+                    if predict_metric == '1':
+                        prob = int(prob * 10)
+                    else:
+                        prob = int(prob * 100)
                     metric_vote.update([predict_metric] * prob)
 
         if len(metric_vote) > 0:
