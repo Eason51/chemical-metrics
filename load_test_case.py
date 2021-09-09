@@ -4,6 +4,9 @@ import numpy as np
 import torch
 import fastNLP
 from fastNLP import logger
+import nlp_implementation as nlp
+
+modelDict = nlp.load_pre_trained_nlp_model()
 
 
 TOTAL_FOLD = 10
@@ -72,5 +75,10 @@ print(five_fold[fold][:20])
 for i in range(len(five_fold[fold])):
     print(i, five_fold[fold][i]['content'])
     print(i, five_fold_parser[fold][i].title.lower())
+    nlpDict = nlp.get_nlp_results(five_fold_parser[fold][i], **modelDict)
+    print("nlpDict: ")
+    print(f"single_dict: {nlpDict['single_dict']}")
+    print()
+    print(f"original_dict: {nlpDict['original_dict']}")
     print('=' * 20)
 
