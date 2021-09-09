@@ -1,3 +1,4 @@
+
 import os
 import warnings
 from typing import Union
@@ -217,6 +218,7 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
         return q_st
 
     headers = kwargs.pop('headers')
+    print(headers)
     model = kwargs.pop('model')
     ner_model = kwargs.pop('ner_model')
     target_vocab = kwargs.pop('target_vocab')
@@ -359,7 +361,10 @@ def get_nlp_results(table_parser: Union[ACSTableParser, ScienceDirectTableParser
                     else:
                         prob = int(prob * 100)
                     metric_vote.update([predict_metric] * prob)
-
+        if u_metric.lower() == 'ki_ce':
+        #    import pdb
+        #   pdb.set_trace()
+            pass
         if len(metric_vote) > 0:
             metric_result = metric_vote.most_common(1)[0][0]
         else:
@@ -454,3 +459,5 @@ def get_nlp_results_test(table_parser: Union[ACSTableParser, ScienceDirectTableP
         result_dict['selectivity_Ce'] = '1 5 . 7 mg/ml'
         result_dict['solubility_An'] = '1 5 . 7 mg/ml'
     return result_dict
+
+
