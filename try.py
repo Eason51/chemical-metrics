@@ -1330,14 +1330,18 @@ class ACS:
                     tokenArr = nlp.def_tokenizer(nlpDict[key])
 
                     digits = ""
+                    over  = False
                     for token in tokenArr:
 
-                        if(digits):
+                        if(over):
                             break
 
                         for c in token:
                             if(c.isdigit() or c == "."):
                                 digits += c
+                            if(digits and not(c.isdigit() or c == ".")):
+                                over = True
+
                     
                     
                     if(digits):
@@ -3820,15 +3824,19 @@ class ScienceDirect:
                     
                     tokenArr = nlp.def_tokenizer(nlpDict[key])
 
+
                     digits = ""
+                    over  = False
                     for token in tokenArr:
 
-                        if(digits):
+                        if(over):
                             break
 
                         for c in token:
                             if(c.isdigit() or c == "."):
                                 digits += c
+                            if(digits and not(c.isdigit() or c == ".")):
+                                over = True
                     
                     
                     if(digits):
